@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:qvto="http://www.eclipse.org/qvt/1.0.0/Operational" name="kdm" default="main">
+	
+	<property name="Kdm" value="./models/carrito.logic_kdm.xmi"></property>
+	<property name="SubKdm" value="./models/res5/kdmResultadoSub.xmi"></property>
+	<property name="Cluster" value="./models/res5/representacion44.xmi"></property>
+	<property name="Visualizacion" value="./models/res5/visualizacion3.xmi"></property>
+			
+	<!-- Tranformacion 1-->
+	<target name="loadModelsT1">
+		<epsilon.emf.loadModel name="code" modelfile="${Kdm}" metamodeluri="http://www.eclipse.org/MoDisco/kdm/code,http://www.eclipse.org/MoDisco/kdm/source,http://www.eclipse.org/MoDisco/kdm/action,http://www.eclipse.org/MoDisco/kdm/kdm" read="true" store="false"></epsilon.emf.loadModel>
+		<epsilon.emf.loadModel name="kdmMicro" modelfile="${SubKdm}" metamodeluri="http://subkdm/kdmobjects,http://subkdm/kdmrelations,http://subkdm/sdm" read="false" store="true"></epsilon.emf.loadModel>
+	</target>
+		
+	<target name="Kdm2Kdm" depends="loadModelsT1">
+		<epsilon.etl src="./transformations/M2M/kdm2kdm.etl">
+			<model ref="code"></model>
+			<model ref="kdmMicro"></model>
+		</epsilon.etl>
+		
+		<epsilon.disposeModel model="kdmMicro"></epsilon.disposeModel>
+	</target>
+	
+	<!-- Tranformacion 2-->
+	<target name="loadModelsT2">
+		<epsilon.emf.loadModel name="sourcemodel" modelfile="${SubKdm}" metamodeluri="http://subkdm/kdmobjects,http://subkdm/kdmrelations,http://subkdm/sdm" read="true" store="true"></epsilon.emf.loadModel>
+	</target>
+	
+	<target name="micro2sdm" depends="loadModelsT2">
+		<epsilon.etl src="./transformations/M2M/micro2sdm.etl">
+			<model ref="sourcemodel"></model>
+		</epsilon.etl>
+		
+		<epsilon.disposeModel model="sourcemodel"></epsilon.disposeModel>
+	</target>
+
+	<!-- Tranformacion 3-->
+	<target name="loadModelsT3">	
+		<epsilon.emf.loadModel name="kdmMicro" modelfile="${SubKdm}" metamodeluri="http://subkdm/kdmobjects,http://subkdm/kdmrelations,http://subkdm/sdm" read="true" store="false"></epsilon.emf.loadModel>
+		<epsilon.emf.loadModel name="target" modelfile="${Cluster}" metamodeluri="http://visualizacionMetricas3,http://visualizacionMetricas3/representacion" read="false" store="true"></epsilon.emf.loadModel>
+	</target>
+		
+	<target name="sdm2Representacion" depends="loadModelsT3">
+		<epsilon.etl src="./transformations/M2M/sdm2Representacion.etl">
+			<model ref="kdmMicro"></model>
+			<model ref="target"></model>
+		</epsilon.etl>
+		
+		<epsilon.disposeModel model="target"></epsilon.disposeModel>
+	</target>
+	
+	<!-- Tranformacion 4-->
+		<target name="loadModelsT4">	
+			<epsilon.emf.loadModel name="source" modelfile="${Cluster}" metamodeluri="http://visualizacionMetricas3,http://visualizacionMetricas3/representacion" read="true" store="false"></epsilon.emf.loadModel>
+			<epsilon.emf.loadModel name="target" modelfile="${Visualizacion}" metamodeluri="http://visualizacionMetricas3,http://visualizacionMetricas3/visualizacion" read="false" store="true"></epsilon.emf.loadModel>
+		</target>
+			
+		<target name="sdm2Visualizacion" depends="loadModelsT4">
+			<epsilon.etl src="./transformations/M2M/Visualizacion/representacion2visualizacion.etl">
+				<model ref="source"></model>
+				<model ref="target"></model>
+			</epsilon.etl>
+			
+			<epsilon.disposeModel model="target"></epsilon.disposeModel>
+		</target>
+	
+	<!-- Main -->
+	
+	<target name="main">		
+		<antcall target="Kdm2Kdm" inheritall="true"></antcall>
+		<antcall target="micro2sdm"></antcall>
+		<antcall target="sdm2Representacion"></antcall>
+		<!--<antcall target="sdm2Visualizacion"></antcall>-->
+		
+		 <!-- epsilon.disposeModels></epsilon.disposeModels>--> 
+	</target>
+</project>

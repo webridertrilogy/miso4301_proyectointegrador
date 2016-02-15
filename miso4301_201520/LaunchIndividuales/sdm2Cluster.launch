@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.epsilon.etl.eclipse.dt.launching.EtlLaunchConfigurationDelegate">
+<booleanAttribute key="fine_grained_profiling" value="true"/>
+<listAttribute key="models">
+<listEntry value="#&#13;&#10;#Tue Nov 10 22:58:45 COT 2015&#13;&#10;isMetamodelFileBased=false&#13;&#10;name=kdmMicro&#13;&#10;readOnLoad=true&#13;&#10;storeOnDisposal=false&#13;&#10;aliases=kdmMicro&#13;&#10;cached=false&#13;&#10;fileBasedMetamodelUri=&#13;&#10;metamodelUri=http\://subkdm/kdmobjects,http\://subkdm/kdmrelations,http\://subkdm/sdm&#13;&#10;modelUri=platform\:/resource/miso4301_201520/models/kdmResultadoSub.xmi&#13;&#10;type=EMF&#13;&#10;modelFile=/miso4301_201520/models/kdmResultadoSub.xmi&#13;&#10;expand=true&#13;&#10;metamodelFile=&#13;&#10;"/>
+<listEntry value="#&#13;&#10;#Tue Nov 10 22:59:00 COT 2015&#13;&#10;isMetamodelFileBased=false&#13;&#10;name=target&#13;&#10;readOnLoad=false&#13;&#10;storeOnDisposal=true&#13;&#10;aliases=target&#13;&#10;cached=false&#13;&#10;fileBasedMetamodelUri=&#13;&#10;metamodelUri=http\://visualizacionMetricas3&#13;&#10;modelUri=platform\:/resource/miso4301_201520/models/visualizacionCluster.xmi&#13;&#10;type=EMF&#13;&#10;modelFile=/miso4301_201520/models/visualizacionCluster.xmi&#13;&#10;expand=true&#13;&#10;metamodelFile=&#13;&#10;"/>
+</listAttribute>
+<booleanAttribute key="profile_model_loading" value="true"/>
+<booleanAttribute key="profiling_enabled" value="true"/>
+<booleanAttribute key="reset_profiler" value="true"/>
+<stringAttribute key="source" value="/miso4301_201520/transformations/M2M/sdm2VisualizacionCluster.etl"/>
+</launchConfiguration>
