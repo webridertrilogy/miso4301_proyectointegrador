@@ -70,7 +70,7 @@
 		<antcall target="Kdm2Kdm" inheritall="true"></antcall>
 		<antcall target="micro2sdm"></antcall>
 		<antcall target="sdm2Representacion"></antcall>
-		<!--<antcall target="sdm2Visualizacion"></antcall>-->
+		<antcall target="sdm2Visualizacion"></antcall>
 		
 		 <!-- epsilon.disposeModels></epsilon.disposeModels>--> 
 	</target>
