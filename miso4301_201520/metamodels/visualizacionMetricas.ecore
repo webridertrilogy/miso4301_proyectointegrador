@@ -55,7 +55,7 @@
     <eClassifiers xsi:type="ecore:EClass" name="Cluster" eSuperTypes="#//Vinculo"/>
     <eClassifiers xsi:type="ecore:EClass" name="Paquete" eSuperTypes="#//Nodo"/>
     <eClassifiers xsi:type="ecore:EClass" name="Modulo" eSuperTypes="#//Nodo"/>
-    <eClassifiers xsi:type="ecore:EClass" name="Clase" eSuperTypes="#//Nodo"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ClaseR" eSuperTypes="#//Nodo"/>
     <eClassifiers xsi:type="ecore:EClass" name="Archivo" eSuperTypes="#//Nodo"/>
     <eClassifiers xsi:type="ecore:EClass" name="Servicio" eSuperTypes="#//Vinculo"/>
     <eClassifiers xsi:type="ecore:EClass" name="Tabla" eSuperTypes="#//Nodo"/>
