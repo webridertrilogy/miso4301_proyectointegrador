@@ -29,10 +29,10 @@ to o: target!Cluster{
   //adiciona paquetes y las clases del cluster
   for(codeItem in t.codeElement)
   {
-  	var ListClases = target!Clase.allInstances();
+  	var ListClases = target!ClaseR.allInstances();
   	if(not ListClases.exists(x| x.name == codeItem.name))
   	{
-	  	var class = new target!Clase();
+	  	var class = new target!ClaseR();
 	  	class.name = codeItem.name;
 	  	class.AddMetricsClass(codeItem);
 	  	class.AddElementsToClass(codeItem);
@@ -62,7 +62,7 @@ to o: target!Cluster{
 }
 
 //Adiciona metodos y atributos a las clases
-operation target!Clase AddElementsToClass(codeItem : kdmMicro!CodeItem){
+operation target!ClaseR AddElementsToClass(codeItem : kdmMicro!CodeItem){
 	var methods = codeItem.codeElement.select(x | x.isTypeOf(kdmMicro!MethodUnit));
 	var atributes = codeItem.codeElement.select(x | x.isTypeOf(kdmMicro!StorableUnit));
 	
@@ -83,7 +83,7 @@ operation target!Clase AddElementsToClass(codeItem : kdmMicro!CodeItem){
 }
 
 //Adiciona a la clase de un cluster las metricas obtenidas en subkdm
-operation target!Clase AddMetricsClass(class : kdmMicro!CodeItem){
+operation target!ClaseR AddMetricsClass(class : kdmMicro!CodeItem){
   var mofClass = kdmMicro!MofElement.allInstances().select(x| (x.element.isTypeOf(kdmMicro!ClassUnit) or x.element.isTypeOf(kdmMicro!InterfaceUnit)) and x.element.equals(class)).first();
   if(mofClass.isDefined())
   {
@@ -152,7 +152,7 @@ operation target!Metrica SetTipoMetrics(tipoMeasure: kdmMicro!Measure, tipoPor: 
 
 //Adiciona una clase a un paquete, si el paquete ya existe adiciona la clase
 //en caso contrario crea el nuevo paquete y adiciona la clase
-operation AddClassToPackage(class:target!Clase, codEl: kdmMicro!CodeItem){
+operation AddClassToPackage(class:target!ClaseR, codEl: kdmMicro!CodeItem){
 	 var packageName = codEl.GetNamePackage();
 	 var paquetes = target!Paquete.allInstances();
 	 var paquete = paquetes.select(x| x.name.equals(packageName)).first();
@@ -215,8 +215,8 @@ operation target!Cluster GetRelationsCluster(classLR: Sequence, nodosCluster: Se
 
 //adiciona las clases comunes entre clusters, se hace por cada relacion entre cluster existentes
 operation target!Arco CreateInterseptions (clusterTarget: target!Cluster, clusterSource: target!Cluster) {
-	var	clasesClusterTarget = clusterTarget.elementos.select(x| x.isTypeOf(target!Clase))->asSet();
-	var	clasesClusterSource = clusterSource.elementos.select(x| x.isTypeOf(target!Clase))->asSet();
+	var	clasesClusterTarget = clusterTarget.elementos.select(x| x.isTypeOf(target!ClaseR))->asSet();
+	var	clasesClusterSource = clusterSource.elementos.select(x| x.isTypeOf(target!ClaseR))->asSet();
 	
  	var intersect = new Set;	
  	intersect.addAll(clasesClusterTarget->select(c|clasesClusterSource->includes(c)));
@@ -273,11 +273,10 @@ operation target!Arco CreateMeasuresRelationsCluster(relation: kdmMicro!ClusterR
 operation CreateDependecies(){
 
 	var classLR = kdmMicro!ClassLevelRelation.allInstances();
-	var nodosClases = target!Clase.allInstances();
+	var nodosClases = target!ClaseR.allInstances();
 	
 	for(nodo in nodosClases)
 	{	
-		"hola".println();
 		nodo.GetRelationsClass(classLR, nodosClases);
 	}	
 }
