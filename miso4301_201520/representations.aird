@@ -31,8 +31,11 @@
   <models xmi:type="visualizacionMetricas3.representacion:Dependencia" href="models/res4/representacion44.xmi#/0"/>
   <models xmi:type="kdmObjects:Segment" href="models/res5/kdmResultadoSub.xmi#/0"/>
   <models xmi:type="kdmObjects:Segment" href="models/res6/kdmResultadoSub.xmi#/0"/>
-  <models xmi:type="visualizacionMetricas3.representacion:Dependencia" href="models/res6/representacion44.xmi#/0"/>
   <models xmi:type="visualizacionMetricas3.visualizacion:Diagrama" href="models/res6/visualizacion3.xmi#/0"/>
+  <models xmi:type="visualizacionMetricas3.representacion:Dependencia" href="models/res6/representacion44.xmi#/0"/>
+  <models xmi:type="kdmObjects:Segment" href="models/res7/kdmResultadoSub.xmi#/0"/>
+  <models xmi:type="kdmObjects:Segment" href="models/res8/kdmResultadoSub.xmi#/0"/>
+  <models xmi:type="visualizacionMetricas3.representacion:Dependencia" href="models/res8/representacion44.xmi#/0"/>
   <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_gT3RoEpmEeW6AbXvikMMBA" initialized="true">
     <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_gfBYwEpmEeW6AbXvikMMBA" name="SimplifiedDecisionMetrics class diagram">
       <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_gfU6wEpmEeW6AbXvikMMBA" source="GMF_DIAGRAMS">

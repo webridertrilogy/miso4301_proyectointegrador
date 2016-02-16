@@ -30,11 +30,12 @@ to o: target!Cluster{
   for(codeItem in t.codeElement)
   {
   	var ListClases = target!ClaseR.allInstances();
-  	if(not ListClases.exists(x| x.name == codeItem.name))
+  	if( not ListClases.exists(x| x.name == codeItem.name))
   	{
 	  	var class = new target!ClaseR();
 	  	class.name = codeItem.name;
 	  	class.AddMetricsClass(codeItem);
+	  	" voy".println(o.name);
 	  	class.AddElementsToClass(codeItem);
 	  	AddClassToPackage(class, codeItem);
 	  	o.elementos.add(class);
@@ -64,12 +65,56 @@ to o: target!Cluster{
 //Adiciona metodos y atributos a las clases
 operation target!ClaseR AddElementsToClass(codeItem : kdmMicro!CodeItem){
 	var methods = codeItem.codeElement.select(x | x.isTypeOf(kdmMicro!MethodUnit));
+	"entre".println();
+	//var atributesIn = signatures.parameterUnit.select(x | (x.isTypeOf(kmdMicro!ParameterUnit)) and (x.name<>''));
 	var atributes = codeItem.codeElement.select(x | x.isTypeOf(kdmMicro!StorableUnit));
 	
 	for(met in methods)
 	{
 		var newMethod =  new target!Metodo();
 		newMethod.name = met.name;
+
+		var signatures = met.codeElement.select(x | x.type.name="Signature");
+		for(sig in signatures)
+		{
+			var atributesIn = sig.parameterUnit.select(x | (x.isTypeOf(kdmMicro!ParameterUnit)) and x.name <> "");
+			for(atrIn in sig.parameterUnit)
+			{
+				if (atrIn.name.isDefined())
+				{
+					if (atrIn.type.isDefined())
+					{
+							if (atrIn.type.name.isDefined())
+							{
+									var newAtributeIn = new target!AtributoCM();
+									//" atrIn".println(atrIn);
+									newAtributeIn.name = atrIn.name;
+									//" atrInName".println(atrIn.name);
+									newAtributeIn.type = atrIn.type.name;
+									//" atrTypName".println(atrIn.type.name);
+									newMethod.atributosIn.add(newAtributeIn);
+							}
+							else{
+								//" NAME".println(codeItem.name);
+								//" TYPENAME".println(met.name);
+							}
+						}
+						else{
+							//" TYPE".println(met.name);
+						}
+				}
+				else{
+					if (atrIn.type.isDefined()){
+						newMethod.returnType = atrIn.type.name;
+					}
+					else {
+						newMethod.returnType = "void";
+					}
+					//" NAME".println(codeItem.name);
+					//" NAME".println(met.name);
+				}
+			}
+		}		
 		self.hijos.add(newMethod);
 	}
 	

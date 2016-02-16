@@ -50,6 +50,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="MetricaRelacion" eSuperTypes="#//Metrica">
     <eStructuralFeatures xsi:type="ecore:EReference" name="relacion" eType="#//Elemento"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AtributoCM">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eSubpackages name="representacion" nsURI="http://visualizacionMetricas3/representacion"
       nsPrefix="visualizacionMetricas3.representacion">
     <eClassifiers xsi:type="ecore:EClass" name="Cluster" eSuperTypes="#//Vinculo"/>
@@ -66,7 +70,11 @@
     <eClassifiers xsi:type="ecore:EClass" name="Composicion" eSuperTypes="#//TipoRelacion"/>
     <eClassifiers xsi:type="ecore:EClass" name="Agregacion" eSuperTypes="#//TipoRelacion"/>
     <eClassifiers xsi:type="ecore:EClass" name="Generalizacion" eSuperTypes="#//TipoRelacion"/>
-    <eClassifiers xsi:type="ecore:EClass" name="Metodo" eSuperTypes="#//Hoja"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Metodo" eSuperTypes="#//Hoja">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="atributosIn" upperBound="-1"
+          eType="#//AtributoCM"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="returnType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Atributo" eSuperTypes="#//Hoja"/>
     <eClassifiers xsi:type="ecore:EClass" name="Intercepcion" eSuperTypes="#//Vinculo">
       <eStructuralFeatures xsi:type="ecore:EReference" name="arco" lowerBound="1"

@@ -2,9 +2,9 @@
 <project xmlns:qvto="http://www.eclipse.org/qvt/1.0.0/Operational" name="kdm" default="main">
 	
 	<property name="Kdm" value="./models/carrito.logic_kdm.xmi"></property>
-	<property name="SubKdm" value="./models/res6/kdmResultadoSub.xmi"></property>
-	<property name="Cluster" value="./models/res6/representacion44.xmi"></property>
-	<property name="Visualizacion" value="./models/res6/visualizacion3.xmi"></property>
+	<property name="SubKdm" value="./models/res8/kdmResultadoSub.xmi"></property>
+	<property name="Cluster" value="./models/res8/representacion44.xmi"></property>
+	<property name="Visualizacion" value="./models/res8/visualizacion3.xmi"></property>
 			
 	<!-- Tranformacion 1-->
 	<target name="loadModelsT1">
@@ -67,11 +67,11 @@
 	<!-- Main -->
 	
 	<target name="main">		
-		<antcall target="Kdm2Kdm" inheritall="true"></antcall>
-		<antcall target="micro2sdm"></antcall>
+		<!-- <antcall target="Kdm2Kdm" inheritall="true"></antcall>
+		<antcall target="micro2sdm"></antcall>-->
 		<antcall target="sdm2Representacion"></antcall>
-		<antcall target="sdm2Visualizacion"></antcall>
+		<!-- <antcall target="sdm2Visualizacion"></antcall> -->
 		
-		 <!-- epsilon.disposeModels></epsilon.disposeModels>--> 
+		 <!-- epsilon.disposeModels></epsilon.disposeModels> --> 
 	</target>
 </project>
