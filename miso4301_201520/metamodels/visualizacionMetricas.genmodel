@@ -49,7 +49,7 @@
       <genClasses ecoreClass="visualizacionMetricas.ecore#//representacion/Cluster"/>
       <genClasses ecoreClass="visualizacionMetricas.ecore#//representacion/Paquete"/>
       <genClasses ecoreClass="visualizacionMetricas.ecore#//representacion/Modulo"/>
-      <genClasses ecoreClass="visualizacionMetricas.ecore#//representacion/Clase"/>
+      <genClasses ecoreClass="visualizacionMetricas.ecore#//representacion/ClaseR"/>
       <genClasses ecoreClass="visualizacionMetricas.ecore#//representacion/Archivo"/>
       <genClasses ecoreClass="visualizacionMetricas.ecore#//representacion/Servicio"/>
       <genClasses ecoreClass="visualizacionMetricas.ecore#//representacion/Tabla"/>

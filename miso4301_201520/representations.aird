@@ -23,9 +23,20 @@
   <semanticResources>models/gen/visualizacionCluster8.xmi</semanticResources>
   <semanticResources>models/visualizacionCluster6.xmi</semanticResources>
   <semanticResources>models/Copy%20of%20visualizacionCluster.xmi</semanticResources>
-  <semanticResources>models/sport.service.subsystem_kdm.xmi</semanticResources>
-  <semanticResources>models/CrudEJB_kdm.xmi</semanticResources>
-  <semanticResources>models/CrudEJB_java.xmi</semanticResources>
+  <semanticResources>models/res1/kdmResultadoSub.xmi</semanticResources>
+  <semanticResources>models/res1/representacion44.xmi</semanticResources>
+  <semanticResources>models/res2/representacion44.xmi</semanticResources>
+  <semanticResources>models/res1/visualizacion3.xmi</semanticResources>
+  <semanticResources>models/res4/kdmResultadoSub.xmi</semanticResources>
+  <semanticResources>models/res4/representacion44.xmi</semanticResources>
+  <semanticResources>models/res5/kdmResultadoSub.xmi</semanticResources>
+  <semanticResources>models/res6/kdmResultadoSub.xmi</semanticResources>
+  <semanticResources>models/res6/visualizacion3.xmi</semanticResources>
+  <semanticResources>models/res6/representacion44.xmi</semanticResources>
+  <semanticResources>models/res7/kdmResultadoSub.xmi</semanticResources>
+  <semanticResources>models/res8/kdmResultadoSub.xmi</semanticResources>
+  <semanticResources>models/res8/representacion44.xmi</semanticResources>
+  <semanticResources>models/res3/kdmResultadoSub.xmi</semanticResources>
   <semanticResources>models/res3/representacion44.xmi</semanticResources>
   <semanticResources>models/res3/visualizacion3.xmi</semanticResources>
   <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_gT3RoEpmEeW6AbXvikMMBA">
@@ -46,8 +57,8 @@
           <styles xmi:type="notation:DiagramStyle" xmi:id="_gfU6wkpmEeW6AbXvikMMBA"/>
         </data>
       </ownedAnnotationEntries>
-      <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_6yjRANKcEeWGJZ_Ds79KXw" source="DANNOTATION_CUSTOMIZATION_KEY">
-        <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_6yj4ENKcEeWGJZ_Ds79KXw"/>
+      <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_0UuusNRtEeW7h_2YAhydMQ" source="DANNOTATION_CUSTOMIZATION_KEY">
+        <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_0UvVwNRtEeW7h_2YAhydMQ"/>
       </ownedAnnotationEntries>
       <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_gfBYwUpmEeW6AbXvikMMBA" width="-1" height="-1">
         <target xmi:type="ecore:EPackage" href="metamodel/SimplifiedDecisionMetrics.ecore#/"/>

@@ -1,5 +1,11 @@
 KDM2Model.edit/
+KDM2Model.editor/
 VisualizacionMetricas3.editor/
 VisualizacionMetricas3/
 KDM2Model/
 VisualizacionMetricas3.edit/
+*.class
+/*.class
+workspace/
+runtime-EclipseApplication2/
+runtime-EclipseApplication/

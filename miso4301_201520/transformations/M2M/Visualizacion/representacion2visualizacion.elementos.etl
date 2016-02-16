@@ -121,7 +121,7 @@ rule Paquete2Paquete
 }
 
 rule Clase2Clase
-	transform i: source!Clase
+	transform i: source!ClaseR
 	to o: target!Clase 
 	extends Nodo2Contenedor {
 		o.esCompartida = i.compartida;

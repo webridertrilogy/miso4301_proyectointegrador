@@ -16,7 +16,7 @@ operation source!Vinculo instanciarDiagrama() : target!Diagrama {
 	return diagrama;
 }
 
-operation source!Clase instanciarHijos() : Sequence {
+operation source!ClaseR instanciarHijos() : Sequence {
 	var elementos = new Sequence();
 	for(h in self.hijos) {
 		var e = new target!Item();
@@ -31,7 +31,7 @@ operation source!Clase instanciarHijos() : Sequence {
 	return elementos;
 }
 
-operation source!Clase instanciarRelaciones(c : target!Clase, d : target!Diagrama) : Sequence {
+operation source!ClaseR instanciarRelaciones(c : target!Clase, d : target!Diagrama) : Sequence {
 	var conectores = new Sequence();
 	for(r in self.relaciones) {
 		var e : target!Conector;
