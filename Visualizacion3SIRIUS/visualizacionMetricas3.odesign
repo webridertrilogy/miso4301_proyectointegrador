@@ -242,7 +242,7 @@
         </edgeMappings>
         <containerMappings name="Contenedor" semanticCandidatesExpression="[self.diagrama.elementos /]" doubleClickDescription="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Contenedores']/@defaultLayer/@toolSections.0/@ownedTools[name='Zoom%20Contenedor']" domainClass="visualizacion.Contenedor" childrenPresentation="List">
           <subNodeMappings name="ElementoDiagrama" semanticCandidatesExpression="[self.diagrama.elementos /]" domainClass="visualizacion.ElementoDiagrama">
-            <style xsi:type="style:BundledImageDescription" iconPath="/VisualizacionMetricas3.instances/Class_Description.gif" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW">
+            <style xsi:type="style:BundledImageDescription" iconPath="/Visualizacion3SIRIUS/Class_Description.gif" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -288,6 +288,11 @@
           </vsmElementCustomizations>
           <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.grosor > 0/]">
             <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster']/@defaultLayer/@edgeMappings[name='Conector']/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Contenedores']/@defaultLayer/@edgeMappings[name='ConectorContenedores']/@style" attributeName="sizeComputationExpression" value="[self.grosor /]"/>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.esCompartida.toString() = 'true'/]">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Contenedores']/@defaultLayer/@containerMappings[name='Contenedor']/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']/@style" referenceName="foregroundColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
+            </featureCustomizations>
           </vsmElementCustomizations>
         </customization>
       </defaultLayer>

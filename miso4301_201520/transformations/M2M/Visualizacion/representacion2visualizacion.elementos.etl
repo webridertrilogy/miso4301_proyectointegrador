@@ -121,9 +121,10 @@ rule Paquete2Paquete
 }
 
 rule Clase2Clase
-	transform i: source!ClaseR
+	transform i: source!Clase
 	to o: target!Clase 
 	extends Nodo2Contenedor {
+		o.esCompartida = i.compartida;
 }
 
 rule Cluster2Elipse

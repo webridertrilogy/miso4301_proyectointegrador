@@ -55,7 +55,9 @@
     <eClassifiers xsi:type="ecore:EClass" name="Cluster" eSuperTypes="#//Vinculo"/>
     <eClassifiers xsi:type="ecore:EClass" name="Paquete" eSuperTypes="#//Nodo"/>
     <eClassifiers xsi:type="ecore:EClass" name="Modulo" eSuperTypes="#//Nodo"/>
-    <eClassifiers xsi:type="ecore:EClass" name="ClaseR" eSuperTypes="#//Nodo"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Clase" eSuperTypes="#//Nodo">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="compartida" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Archivo" eSuperTypes="#//Nodo"/>
     <eClassifiers xsi:type="ecore:EClass" name="Servicio" eSuperTypes="#//Vinculo"/>
     <eClassifiers xsi:type="ecore:EClass" name="Tabla" eSuperTypes="#//Nodo"/>
@@ -82,7 +84,9 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="elementos" upperBound="-1"
           eType="#//visualizacion/ElementoDiagrama" containment="true"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Clase" eSuperTypes="#//visualizacion/Contenedor"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Clase" eSuperTypes="#//visualizacion/Contenedor">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="esCompartida" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="FiguraGeometrica" abstract="true"
         eSuperTypes="#//visualizacion/ElementoDiagrama">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="color" eType="#//visualizacion/Color"

@@ -1,39 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:code="http://www.eclipse.org/MoDisco/kdm/code" xmlns:com.mtcflow.model="http://com.mtcflow.mtc/1.1" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" xmlns:h="http://subkdm/subkdm" xmlns:kdm="http://www.eclipse.org/MoDisco/kdm/kdm" xmlns:kdmObjects="http://subkdm/kdmobjects" xmlns:main="http://subkdm/main" xmlns:micromodel="http://micromodel/1.0" xmlns:modisco.xml="http://www.eclipse.org/MoDisco/Xml/0.1.incubation/XML" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xmlns:visualizacionMetricas="http://www.example.org/visualizacionMetricas" xmlns:visualizacionMetricas2="http://www.example.org/visualizacionMetricas2" xmlns:visualizacionMetricas3.representacion="http://visualizacionMetricas3/representacion" xmlns:visualizacionMetricas3.visualizacion="http://visualizacionMetricas3/visualizacion" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style http://visualizacionMetricas3/representacion http://visualizacionMetricas3/visualizacion#//representacion" xmi:id="_nNCrgEYqEeW7N-vUJFfzUA" selectedViews="_WSGicFJhEeWTjayuf0VR4w" version="8.1.1">
-  <models xmi:type="ecore:EPackage" href="metamodel/SimplifiedDecisionMetrics.ecore#/"/>
-  <models xmi:type="ecore:EPackage" href="http://www.eclipse.org/emf/2002/Ecore#/"/>
-  <models xmi:type="notation:Diagram" href="metamodel/SimplifiedDecisionMetrics.ecorediag#_Okeo4EX_EeWYeIof49VpUg"/>
-  <models xmi:type="kdm:Segment" href="models/n6_campeonato_kdm.xmi#/0"/>
-  <models xmi:type="code:CodeModel" href="models/kdmResultadoMicro.xmi#/0"/>
-  <models xmi:type="kdm:Segment" href="models/n1_empleado_kdm.xmi#/0"/>
-  <models xmi:type="ecore:EPackage" href="metamodel/SubKDM.ecore#/"/>
-  <models xmi:type="notation:Diagram" href="metamodel/SubKDM.ecorediag#_JpcB8EqDEeW7S8JcGMoWHA"/>
-  <models xmi:type="code:CodeModel" href="metamodel/kdmResultadoMicro.xmi#/"/>
-  <models xmi:type="modisco.xml:Root" href="pom.xml#/"/>
-  <models xmi:type="ecore:EPackage" href="src/main/resources/SubKDM.ecore#/"/>
-  <models xmi:type="ecore:EPackage" href="metamodel/visualizacionMetricas2.ecore#/"/>
-  <models xmi:type="ecore:EPackage" href="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#/"/>
-  <models xmi:type="ecore:EPackage" href="metamodel/visualizacionMetricas.ecore#/"/>
-  <models xmi:type="ecore:EPackage" href="http://www.eclipse.org/emf/2003/XMLType#/"/>
-  <models xmi:type="modisco.xml:Root" href="Build.xml#/"/>
-  <models xmi:type="ecore:EPackage" href="metamodels/visualizacionMetricas.ecore#/"/>
-  <models xmi:type="genmodel:GenModel" href="metamodels/visualizacionMetricas.genmodel#/"/>
-  <models xmi:type="visualizacionMetricas3.visualizacion:Diagrama" href="models/res/visualizacion.xmi#/0"/>
-  <models xmi:type="visualizacionMetricas3.representacion:Dependencia" href="models/gen/visualizacionCluster7.xmi#/0"/>
-  <models xmi:type="visualizacionMetricas3.representacion:Dependencia" href="models/gen/visualizacionCluster8.xmi#/0"/>
-  <models xmi:type="visualizacionMetricas3.representacion:Dependencia" href="models/visualizacionCluster6.xmi#/0"/>
-  <models xmi:type="visualizacionMetricas3.representacion:Dependencia" href="models/Copy%20of%20visualizacionCluster.xmi#/0"/>
-  <models xmi:type="kdmObjects:Segment" href="models/res1/kdmResultadoSub.xmi#/0"/>
-  <models xmi:type="visualizacionMetricas3.representacion:Dependencia" href="models/res1/representacion44.xmi#/0"/>
-  <models xmi:type="visualizacionMetricas3.representacion:Dependencia" href="models/res2/representacion44.xmi#/0"/>
-  <models xmi:type="visualizacionMetricas3.visualizacion:Diagrama" href="models/res1/visualizacion3.xmi#/0"/>
-  <models xmi:type="kdmObjects:Segment" href="models/res4/kdmResultadoSub.xmi#/0"/>
-  <models xmi:type="visualizacionMetricas3.representacion:Dependencia" href="models/res4/representacion44.xmi#/0"/>
-  <models xmi:type="kdmObjects:Segment" href="models/res5/kdmResultadoSub.xmi#/0"/>
-  <models xmi:type="kdmObjects:Segment" href="models/res6/kdmResultadoSub.xmi#/0"/>
-  <models xmi:type="visualizacionMetricas3.representacion:Dependencia" href="models/res6/representacion44.xmi#/0"/>
-  <models xmi:type="visualizacionMetricas3.visualizacion:Diagrama" href="models/res6/visualizacion3.xmi#/0"/>
-  <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_gT3RoEpmEeW6AbXvikMMBA" initialized="true">
+<viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.mtcflow.mtc_1.1="http://com.mtcflow.mtc/1.1" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:main="http://subkdm/main" xmlns:micromodel_1.0="http://micromodel/1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:subkdm="http://subkdm/subkdm" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xmlns:visualizacionMetricas="http://www.example.org/visualizacionMetricas" xmlns:visualizacionMetricas2="http://www.example.org/visualizacionMetricas2" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style" xmi:id="_nNCrgEYqEeW7N-vUJFfzUA" selectedViews="_WSGicFJhEeWTjayuf0VR4w" version="10.0.0.201505222000">
+  <semanticResources>metamodel/SimplifiedDecisionMetrics.ecore</semanticResources>
+  <semanticResources>http://www.eclipse.org/emf/2002/Ecore</semanticResources>
+  <semanticResources>metamodel/SimplifiedDecisionMetrics.ecorediag</semanticResources>
+  <semanticResources>models/n6_campeonato_kdm.xmi</semanticResources>
+  <semanticResources>models/kdmResultadoMicro.xmi</semanticResources>
+  <semanticResources>models/n1_empleado_kdm.xmi</semanticResources>
+  <semanticResources>metamodel/SubKDM.ecore</semanticResources>
+  <semanticResources>metamodel/SubKDM.ecorediag</semanticResources>
+  <semanticResources>metamodel/kdmResultadoMicro.xmi</semanticResources>
+  <semanticResources>pom.xml</semanticResources>
+  <semanticResources>src/main/resources/SubKDM.ecore</semanticResources>
+  <semanticResources>metamodel/visualizacionMetricas2.ecore</semanticResources>
+  <semanticResources>platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore</semanticResources>
+  <semanticResources>metamodel/visualizacionMetricas.ecore</semanticResources>
+  <semanticResources>http://www.eclipse.org/emf/2003/XMLType</semanticResources>
+  <semanticResources>Build.xml</semanticResources>
+  <semanticResources>metamodels/visualizacionMetricas.ecore</semanticResources>
+  <semanticResources>metamodels/visualizacionMetricas.genmodel</semanticResources>
+  <semanticResources>models/res/visualizacion.xmi</semanticResources>
+  <semanticResources>models/gen/visualizacionCluster7.xmi</semanticResources>
+  <semanticResources>models/gen/visualizacionCluster8.xmi</semanticResources>
+  <semanticResources>models/visualizacionCluster6.xmi</semanticResources>
+  <semanticResources>models/Copy%20of%20visualizacionCluster.xmi</semanticResources>
+  <semanticResources>models/sport.service.subsystem_kdm.xmi</semanticResources>
+  <semanticResources>models/CrudEJB_kdm.xmi</semanticResources>
+  <semanticResources>models/CrudEJB_java.xmi</semanticResources>
+  <semanticResources>models/res3/representacion44.xmi</semanticResources>
+  <semanticResources>models/res3/visualizacion3.xmi</semanticResources>
+  <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_gT3RoEpmEeW6AbXvikMMBA">
     <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_gfBYwEpmEeW6AbXvikMMBA" name="SimplifiedDecisionMetrics class diagram">
       <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_gfU6wEpmEeW6AbXvikMMBA" source="GMF_DIAGRAMS">
         <data xmi:type="notation:Diagram" xmi:id="_gfU6wUpmEeW6AbXvikMMBA" type="Sirius" element="_gfBYwEpmEeW6AbXvikMMBA" measurementUnit="Pixel">
@@ -51,13 +46,14 @@
           <styles xmi:type="notation:DiagramStyle" xmi:id="_gfU6wkpmEeW6AbXvikMMBA"/>
         </data>
       </ownedAnnotationEntries>
+      <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_6yjRANKcEeWGJZ_Ds79KXw" source="DANNOTATION_CUSTOMIZATION_KEY">
+        <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_6yj4ENKcEeWGJZ_Ds79KXw"/>
+      </ownedAnnotationEntries>
       <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_gfBYwUpmEeW6AbXvikMMBA" width="-1" height="-1">
         <target xmi:type="ecore:EPackage" href="metamodel/SimplifiedDecisionMetrics.ecore#/"/>
         <semanticElements xmi:type="ecore:EPackage" href="metamodel/SimplifiedDecisionMetrics.ecore#/"/>
         <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_gfBYwkpmEeW6AbXvikMMBA" showIcon="false" labelPosition="node" workspacePath="/org.eclipse.emf.ecoretools.design/icons/full/back/empty.svg">
-          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_gfBYw0pmEeW6AbXvikMMBA"/>
           <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@nodeMappings[name='Empty%20Diagram']/@style"/>
-          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_gfBYxEpmEeW6AbXvikMMBA"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@nodeMappings[name='Empty%20Diagram']"/>
       </ownedDiagramElements>
@@ -70,18 +66,18 @@
     </ownedRepresentations>
     <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
   </ownedViews>
-  <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_dIkoYFBbEeWrhpkgzqtU0A" initialized="true">
+  <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_dIkoYFBbEeWrhpkgzqtU0A">
     <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/KDMSDM.design/description/SDM.odesign#//@ownedViewpoints[name='sdm']"/>
   </ownedViews>
-  <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_WSGicFJhEeWTjayuf0VR4w" initialized="true">
+  <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_WSGicFJhEeWTjayuf0VR4w">
     <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/KDM2Model.design/description/SimplifiedDecisionMetrics.odesign#//@ownedViewpoints[name='sdm']"/>
   </ownedViews>
-  <models xmi:type="com.mtcflow.model:MTC" href="mtcs/Visualizacion.mtc#/"/>
+  <models xmi:type="com.mtcflow.mtc_1.1:MTC" href="mtcs/Visualizacion.mtc#/"/>
   <models xmi:type="visualizacionMetricas:Nodo" href="models/Visualizacion.xmi#/"/>
   <models xmi:type="visualizacionMetricas2:Aplicacion" href="models/Visualizacion.xmi#/"/>
-  <models xmi:type="h:Segment" href="models/kdmResultadoSub.xmi#/"/>
-  <models xmi:type="h:Segment" href="models/My.subkdm#/"/>
-  <models xmi:type="micromodel:MicroKDM" href="models/n6_buscaminas_MicroKDM.xmi#/"/>
-  <models xmi:type="micromodel:MicroKDM" href="models/KDMMicro.xmi#/0"/>
+  <models xmi:type="subkdm:Segment" href="models/kdmResultadoSub.xmi#/"/>
+  <models xmi:type="subkdm:Segment" href="models/My.subkdm#/"/>
+  <models xmi:type="micromodel_1.0:MicroKDM" href="models/n6_buscaminas_MicroKDM.xmi#/"/>
+  <models xmi:type="micromodel_1.0:MicroKDM" href="models/KDMMicro.xmi#/0"/>
   <models xmi:type="main:CodeModel" href="metamodel/CodeModelSub.xmi#/"/>
 </viewpoint:DAnalysis>

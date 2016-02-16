@@ -7,6 +7,7 @@ operation source!Vinculo instanciarDiagrama() : target!Diagrama {
 	for (e in self.elementos) {
 		var c = new target!Clase;
 		c.name = e.name;
+		c.esCompartida = e.compartida;
 		c.diagrama = c;
 		c.elementos = e.instanciarHijos();
 		c.conectores = e.instanciarRelaciones(c, diagrama);
@@ -15,7 +16,7 @@ operation source!Vinculo instanciarDiagrama() : target!Diagrama {
 	return diagrama;
 }
 
-operation source!ClaseR instanciarHijos() : Sequence {
+operation source!Clase instanciarHijos() : Sequence {
 	var elementos = new Sequence();
 	for(h in self.hijos) {
 		var e = new target!Item();
@@ -30,7 +31,7 @@ operation source!ClaseR instanciarHijos() : Sequence {
 	return elementos;
 }
 
-operation source!ClaseR instanciarRelaciones(c : target!Clase, d : target!Diagrama) : Sequence {
+operation source!Clase instanciarRelaciones(c : target!Clase, d : target!Diagrama) : Sequence {
 	var conectores = new Sequence();
 	for(r in self.relaciones) {
 		var e : target!Conector;
