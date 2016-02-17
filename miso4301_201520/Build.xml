@@ -2,10 +2,9 @@
 <project xmlns:qvto="http://www.eclipse.org/qvt/1.0.0/Operational" name="kdm" default="main">
 	
 	<property name="Kdm" value="./models/carrito.logic_kdm.xmi"></property>
-	<property name="SubKdm" value="./models/res3/kdmResultadoSub.xmi"></property>
-	<property name="Cluster" value="./models/res3/representacion44.xmi"></property>
-	<property name="Visualizacion" value="./models/res3/visualizacion3.xmi"></property>
-
+	<property name="SubKdm" value="./models/res17/kdmResultadoSub.xmi"></property>
+	<property name="Cluster" value="./models/res17/representacion44.xmi"></property>
+	<property name="Visualizacion" value="./models/res17/visualizacion3.xmi"></property>
 			
 	<!-- Tranformacion 1-->
 	<target name="loadModelsT1">

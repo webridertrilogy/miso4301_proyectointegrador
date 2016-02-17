@@ -9,6 +9,7 @@ post {
 rule SubKDM2SimplifiedDecisionMetrics 
 	transform microModel : sourcemodel!Segment
 	to sdm : sourcemodel!SimplifiedDecisionMetrics {
+	"entre0".println();
 	sdm.measures = microModel.defineMeasures();
 	sdm.observations = new List();
 	var observation = new sourcemodel!Observation();
@@ -19,7 +20,7 @@ rule SubKDM2SimplifiedDecisionMetrics
 
 operation sourcemodel!Segment defineMeasures () : List {
 	var resp = new List();
-	
+	"entre".println();
 	if(sourcemodel!ClassLevelRelation.allInstances().size() > 0)
 	{
 		var cbo = new sourcemodel!CouplingBetweenObjectsMeasure();
@@ -243,6 +244,7 @@ operation calculateNumberOfLines(measurements: List, nol: sourcemodel!NumberOfLi
 		
 		for(codeElement in cluster.codeElement)
 		{
+			" ".println(codeElement);
 			var dimensionMeasurant = getMofElementFromModelElement(codeElement).measurant.select(ce | ce.measure.isTypeOf(sourcemodel!NumberOfLinesMeasure));
 			value = value + dimensionMeasurant.first().value;
 		}

@@ -59,6 +59,7 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="MethodUnit" eSuperTypes="#//kdmObjects/ControlElement">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="#//kdmObjects/CallableKind"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="export" eType="#//kdmObjects/ExportKind"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="DataElement" eSuperTypes="#//kdmObjects/ComputationalObject">
       <eStructuralFeatures xsi:type="ecore:EReference" name="codeElement" upperBound="-1"
@@ -140,6 +141,9 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="codeElement" upperBound="-1"
           eType="#//kdmObjects/CodeItem"/>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="VoidType" eSuperTypes="#//kdmObjects/PrimitiveType"/>
+    <eClassifiers xsi:type="ecore:EClass" name="PrimitiveType" eSuperTypes="#//kdmObjects/DataType"/>
+    <eClassifiers xsi:type="ecore:EClass" name="TemplateType" eSuperTypes="#//kdmObjects/DataType"/>
   </eSubpackages>
   <eSubpackages name="SimplifiedDecisionMetrics" nsURI="http://subkdm/sdm" nsPrefix="sdm">
     <eClassifiers xsi:type="ecore:EClass" name="Observation">
