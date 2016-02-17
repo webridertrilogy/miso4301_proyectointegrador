@@ -4,7 +4,10 @@ pre {
 }
 
 operation generarDiagramaSimplificado() {
+	var pd = source!Clase.allInstances();
+	" dd".println(pd.size());
 	var diagrama = source!Diagrama.allInstances()->select(d | d.isRoot)->first();
+	" dd".println(diagrama);
 	var clusters = diagrama.elementos->select(e | e.isTypeOf(target!Elipse));
 	
 	"\tNúmero clusters: ".print();

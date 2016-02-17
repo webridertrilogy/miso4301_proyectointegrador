@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xmlns:visualizacionMetricas3.visualizacion="http://visualizacionMetricas3/visualizacion" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style http://visualizacionMetricas3/visualizacion http://visualizacionMetricas3#//visualizacion" xmi:id="_oIpicNRkEeW-caMzFg8ALw" selectedViews="_zaiGYNRkEeW-caMzFg8ALw" version="10.0.0.201505222000">
   <models xmi:type="visualizacionMetricas3.visualizacion:Diagrama" href="visualizacion3.visualizacionmetricas3#/0"/>
+  <models xmi:type="visualizacionMetricas3.visualizacion:Diagrama" href="simplificacion3.visualizacionmetricas3#/0"/>
   <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_zaiGYNRkEeW-caMzFg8ALw">
     <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_l2aOQNUNEeW9cNCsStbwHA" name="new Diagrama Cluster">
       <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_l2aOQdUNEeW9cNCsStbwHA" source="DANNOTATION_CUSTOMIZATION_KEY">
@@ -1104,6 +1105,1292 @@
       <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_l2cqtNUNEeW9cNCsStbwHA"/>
       <activatedLayers xmi:type="description_1:Layer" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster']/@defaultLayer"/>
       <target xmi:type="visualizacionMetricas3.visualizacion:Diagrama" href="visualizacion3.visualizacionmetricas3#/0"/>
+    </ownedRepresentations>
+    <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_fyhkgNWiEeWliqRL5nzYPw" name="new Diagrama Cluster Simplificado">
+      <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_fyw1ENWiEeWliqRL5nzYPw" source="GMF_DIAGRAMS">
+        <data xmi:type="notation:Diagram" xmi:id="_fyw1EdWiEeWliqRL5nzYPw" type="Sirius" element="_fyhkgNWiEeWliqRL5nzYPw" measurementUnit="Pixel">
+          <children xmi:type="notation:Node" xmi:id="_fy9CUNWiEeWliqRL5nzYPw" type="2003" element="_fyhkgdWiEeWliqRL5nzYPw">
+            <children xmi:type="notation:Node" xmi:id="_fzDI8NWiEeWliqRL5nzYPw" type="5007"/>
+            <children xmi:type="notation:Node" xmi:id="_fzIogNWiEeWliqRL5nzYPw" type="7004">
+              <children xmi:type="notation:Node" xmi:id="_fzbjcNWiEeWliqRL5nzYPw" type="3010" element="_fyhkh9WiEeWliqRL5nzYPw">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_fzbjcdWiEeWliqRL5nzYPw"/>
+              </children>
+              <styles xmi:type="notation:SortingStyle" xmi:id="_fzIogdWiEeWliqRL5nzYPw"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_fzIogtWiEeWliqRL5nzYPw"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_fy9CUdWiEeWliqRL5nzYPw" fontName="Segoe UI" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fy9CUtWiEeWliqRL5nzYPw" x="301" y="525"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_fzJ2oNWiEeWliqRL5nzYPw" type="2003" element="_fyhkjNWiEeWliqRL5nzYPw">
+            <children xmi:type="notation:Node" xmi:id="_fzLEwNWiEeWliqRL5nzYPw" type="5007"/>
+            <children xmi:type="notation:Node" xmi:id="_fzLr0NWiEeWliqRL5nzYPw" type="7004">
+              <children xmi:type="notation:Node" xmi:id="_fzcKgNWiEeWliqRL5nzYPw" type="3010" element="_fyhkktWiEeWliqRL5nzYPw">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_fzcKgdWiEeWliqRL5nzYPw"/>
+              </children>
+              <styles xmi:type="notation:SortingStyle" xmi:id="_fzLr0dWiEeWliqRL5nzYPw"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_fzLr0tWiEeWliqRL5nzYPw"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_fzJ2odWiEeWliqRL5nzYPw" fontName="Segoe UI" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fzJ2otWiEeWliqRL5nzYPw" y="105"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_fzLr09WiEeWliqRL5nzYPw" type="2003" element="_fyiLkNWiEeWliqRL5nzYPw">
+            <children xmi:type="notation:Node" xmi:id="_fzM58NWiEeWliqRL5nzYPw" type="5007"/>
+            <children xmi:type="notation:Node" xmi:id="_fzNhANWiEeWliqRL5nzYPw" type="7004">
+              <children xmi:type="notation:Node" xmi:id="_fzcxkNWiEeWliqRL5nzYPw" type="3010" element="_fyiLltWiEeWliqRL5nzYPw">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_fzcxkdWiEeWliqRL5nzYPw"/>
+              </children>
+              <styles xmi:type="notation:SortingStyle" xmi:id="_fzNhAdWiEeWliqRL5nzYPw"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_fzNhAtWiEeWliqRL5nzYPw"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_fzLr1NWiEeWliqRL5nzYPw" fontName="Segoe UI" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fzLr1dWiEeWliqRL5nzYPw" x="3"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_fzNhA9WiEeWliqRL5nzYPw" type="2003" element="_fyiLm9WiEeWliqRL5nzYPw">
+            <children xmi:type="notation:Node" xmi:id="_fzOvINWiEeWliqRL5nzYPw" type="5007"/>
+            <children xmi:type="notation:Node" xmi:id="_fzOvIdWiEeWliqRL5nzYPw" type="7004">
+              <children xmi:type="notation:Node" xmi:id="_fzcxktWiEeWliqRL5nzYPw" type="3010" element="_fyiLodWiEeWliqRL5nzYPw">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_fzcxk9WiEeWliqRL5nzYPw"/>
+              </children>
+              <styles xmi:type="notation:SortingStyle" xmi:id="_fzOvItWiEeWliqRL5nzYPw"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_fzOvI9WiEeWliqRL5nzYPw"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_fzNhBNWiEeWliqRL5nzYPw" fontName="Segoe UI" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fzNhBdWiEeWliqRL5nzYPw" x="303" y="420"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_fzPWMNWiEeWliqRL5nzYPw" type="2003" element="_fyiLptWiEeWliqRL5nzYPw">
+            <children xmi:type="notation:Node" xmi:id="_fzP9QNWiEeWliqRL5nzYPw" type="5007"/>
+            <children xmi:type="notation:Node" xmi:id="_fzQkUNWiEeWliqRL5nzYPw" type="7004">
+              <children xmi:type="notation:Node" xmi:id="_fzdYoNWiEeWliqRL5nzYPw" type="3010" element="_fyiLrNWiEeWliqRL5nzYPw">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_fzdYodWiEeWliqRL5nzYPw"/>
+              </children>
+              <styles xmi:type="notation:SortingStyle" xmi:id="_fzQkUdWiEeWliqRL5nzYPw"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_fzQkUtWiEeWliqRL5nzYPw"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_fzPWMdWiEeWliqRL5nzYPw" fontName="Segoe UI" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fzPWMtWiEeWliqRL5nzYPw" x="309" y="315"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_fzQkU9WiEeWliqRL5nzYPw" type="2003" element="_fyiLsdWiEeWliqRL5nzYPw">
+            <children xmi:type="notation:Node" xmi:id="_fzRycNWiEeWliqRL5nzYPw" type="5007"/>
+            <children xmi:type="notation:Node" xmi:id="_fzRycdWiEeWliqRL5nzYPw" type="7004">
+              <children xmi:type="notation:Node" xmi:id="_fzd_sNWiEeWliqRL5nzYPw" type="3010" element="_fyiLt9WiEeWliqRL5nzYPw">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_fzd_sdWiEeWliqRL5nzYPw"/>
+              </children>
+              <styles xmi:type="notation:SortingStyle" xmi:id="_fzRyctWiEeWliqRL5nzYPw"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_fzRyc9WiEeWliqRL5nzYPw"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_fzQkVNWiEeWliqRL5nzYPw" fontName="Segoe UI" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fzQkVdWiEeWliqRL5nzYPw" x="615" y="105"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_fzSZgNWiEeWliqRL5nzYPw" type="2003" element="_fyiLvNWiEeWliqRL5nzYPw">
+            <children xmi:type="notation:Node" xmi:id="_fzTAkNWiEeWliqRL5nzYPw" type="5007"/>
+            <children xmi:type="notation:Node" xmi:id="_fzUOsNWiEeWliqRL5nzYPw" type="7004">
+              <children xmi:type="notation:Node" xmi:id="_fzemwNWiEeWliqRL5nzYPw" type="3010" element="_fyiLwtWiEeWliqRL5nzYPw">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_fzemwdWiEeWliqRL5nzYPw"/>
+              </children>
+              <styles xmi:type="notation:SortingStyle" xmi:id="_fzUOsdWiEeWliqRL5nzYPw"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_fzUOstWiEeWliqRL5nzYPw"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_fzSZgdWiEeWliqRL5nzYPw" fontName="Segoe UI" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fzSZgtWiEeWliqRL5nzYPw" x="404" y="210"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_fzU1wNWiEeWliqRL5nzYPw" type="2003" element="_fyiLx9WiEeWliqRL5nzYPw">
+            <children xmi:type="notation:Node" xmi:id="_fzWD4NWiEeWliqRL5nzYPw" type="5007"/>
+            <children xmi:type="notation:Node" xmi:id="_fzWD4dWiEeWliqRL5nzYPw" type="7004">
+              <children xmi:type="notation:Node" xmi:id="_fzemwtWiEeWliqRL5nzYPw" type="3010" element="_fyiLzdWiEeWliqRL5nzYPw">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_fzemw9WiEeWliqRL5nzYPw"/>
+              </children>
+              <styles xmi:type="notation:SortingStyle" xmi:id="_fzWD4tWiEeWliqRL5nzYPw"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_fzWD49WiEeWliqRL5nzYPw"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_fzU1wdWiEeWliqRL5nzYPw" fontName="Segoe UI" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fzU1wtWiEeWliqRL5nzYPw" x="585"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_fzWq8NWiEeWliqRL5nzYPw" type="2003" element="_fyiL0tWiEeWliqRL5nzYPw">
+            <children xmi:type="notation:Node" xmi:id="_fzXSANWiEeWliqRL5nzYPw" type="5007"/>
+            <children xmi:type="notation:Node" xmi:id="_fzX5ENWiEeWliqRL5nzYPw" type="7004">
+              <children xmi:type="notation:Node" xmi:id="_fzfN0NWiEeWliqRL5nzYPw" type="3010" element="_fyiL2NWiEeWliqRL5nzYPw">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_fzfN0dWiEeWliqRL5nzYPw"/>
+              </children>
+              <styles xmi:type="notation:SortingStyle" xmi:id="_fzX5EdWiEeWliqRL5nzYPw"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_fzX5EtWiEeWliqRL5nzYPw"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_fzWq8dWiEeWliqRL5nzYPw" fontName="Segoe UI" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fzWq8tWiEeWliqRL5nzYPw" x="140" y="105"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_fzX5E9WiEeWliqRL5nzYPw" type="2003" element="_fyiL3dWiEeWliqRL5nzYPw">
+            <children xmi:type="notation:Node" xmi:id="_fzZHMNWiEeWliqRL5nzYPw" type="5007"/>
+            <children xmi:type="notation:Node" xmi:id="_fzZHMdWiEeWliqRL5nzYPw" type="7004">
+              <children xmi:type="notation:Node" xmi:id="_fzf04NWiEeWliqRL5nzYPw" type="3010" element="_fyiL49WiEeWliqRL5nzYPw">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_fzf04dWiEeWliqRL5nzYPw"/>
+              </children>
+              <styles xmi:type="notation:SortingStyle" xmi:id="_fzZHMtWiEeWliqRL5nzYPw"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_fzZHM9WiEeWliqRL5nzYPw"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_fzX5FNWiEeWliqRL5nzYPw" fontName="Segoe UI" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fzX5FdWiEeWliqRL5nzYPw" x="307"/>
+          </children>
+          <styles xmi:type="notation:DiagramStyle" xmi:id="_fyw1EtWiEeWliqRL5nzYPw"/>
+          <edges xmi:type="notation:Edge" xmi:id="_fzl7gNWiEeWliqRL5nzYPw" type="4001" element="_fyiL6NWiEeWliqRL5nzYPw" source="_fy9CUNWiEeWliqRL5nzYPw" target="_fzWq8NWiEeWliqRL5nzYPw">
+            <children xmi:type="notation:Node" xmi:id="_fznwsNWiEeWliqRL5nzYPw" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fznwsdWiEeWliqRL5nzYPw" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_fzo-0NWiEeWliqRL5nzYPw" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fzo-0dWiEeWliqRL5nzYPw" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_fzqM8NWiEeWliqRL5nzYPw" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fzqM8dWiEeWliqRL5nzYPw" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_fzl7gdWiEeWliqRL5nzYPw"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_fzl7gtWiEeWliqRL5nzYPw" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_fzl7g9WiEeWliqRL5nzYPw" points="[0, 0, 117, 375]$[-100, -61, 17, 314]$[-124, -166, -7, 209]$[-124, -315, -7, 60]$[-117, -375, 0, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_fz5dgNWiEeWliqRL5nzYPw" id="(0.5,0.0)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_fz6EkNWiEeWliqRL5nzYPw" id="(0.49650349650349657,1.0)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_fz6roNWiEeWliqRL5nzYPw" type="4001" element="_fyiL8dWiEeWliqRL5nzYPw" source="_fy9CUNWiEeWliqRL5nzYPw" target="_fzSZgNWiEeWliqRL5nzYPw">
+            <children xmi:type="notation:Node" xmi:id="_fz7SsNWiEeWliqRL5nzYPw" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fz7SsdWiEeWliqRL5nzYPw" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_fz75wNWiEeWliqRL5nzYPw" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fz75wdWiEeWliqRL5nzYPw" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_fz75wtWiEeWliqRL5nzYPw" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fz75w9WiEeWliqRL5nzYPw" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_fz6rodWiEeWliqRL5nzYPw"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_fz6rotWiEeWliqRL5nzYPw" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_fz6ro9WiEeWliqRL5nzYPw" points="[0, 0, -120, 270]$[99, -61, -21, 209]$[124, -166, 4, 104]$[120, -270, 0, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_fz8g0NWiEeWliqRL5nzYPw" id="(0.5,0.0)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_fz8g0dWiEeWliqRL5nzYPw" id="(0.4966442953020134,1.0)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_fz8g0tWiEeWliqRL5nzYPw" type="4001" element="_fyiL-tWiEeWliqRL5nzYPw" source="_fy9CUNWiEeWliqRL5nzYPw" target="_fzNhA9WiEeWliqRL5nzYPw">
+            <children xmi:type="notation:Node" xmi:id="_fz9H4NWiEeWliqRL5nzYPw" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fz9H4dWiEeWliqRL5nzYPw" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_fz9u8NWiEeWliqRL5nzYPw" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fz9u8dWiEeWliqRL5nzYPw" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_fz9u8tWiEeWliqRL5nzYPw" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fz9u89WiEeWliqRL5nzYPw" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_fz8g09WiEeWliqRL5nzYPw"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_fz8g1NWiEeWliqRL5nzYPw" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_fz8g1dWiEeWliqRL5nzYPw" points="[0, 0, 0, 60]$[0, -60, 0, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_fz-WANWiEeWliqRL5nzYPw" id="(0.5,0.0)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_fz-WAdWiEeWliqRL5nzYPw" id="(0.5,1.0)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_fz-9ENWiEeWliqRL5nzYPw" type="4001" element="_fyiMA9WiEeWliqRL5nzYPw" source="_fzJ2oNWiEeWliqRL5nzYPw" target="_fzLr09WiEeWliqRL5nzYPw">
+            <children xmi:type="notation:Node" xmi:id="_fz_kINWiEeWliqRL5nzYPw" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fz_kIdWiEeWliqRL5nzYPw" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_fz_kItWiEeWliqRL5nzYPw" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fz_kI9WiEeWliqRL5nzYPw" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_fz_kJNWiEeWliqRL5nzYPw" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fz_kJdWiEeWliqRL5nzYPw" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_fz-9EdWiEeWliqRL5nzYPw"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_fz-9EtWiEeWliqRL5nzYPw" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_fz-9E9WiEeWliqRL5nzYPw" points="[0, 0, 0, 60]$[0, -60, 0, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_f0ALMNWiEeWliqRL5nzYPw" id="(0.5,0.0)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_f0ALMdWiEeWliqRL5nzYPw" id="(0.5,1.0)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_f0AyQNWiEeWliqRL5nzYPw" type="4001" element="_fyiMDNWiEeWliqRL5nzYPw" source="_fzNhA9WiEeWliqRL5nzYPw" target="_fzPWMNWiEeWliqRL5nzYPw">
+            <children xmi:type="notation:Node" xmi:id="_f0BZUNWiEeWliqRL5nzYPw" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_f0BZUdWiEeWliqRL5nzYPw" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_f0BZUtWiEeWliqRL5nzYPw" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_f0BZU9WiEeWliqRL5nzYPw" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_f0BZVNWiEeWliqRL5nzYPw" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_f0BZVdWiEeWliqRL5nzYPw" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_f0AyQdWiEeWliqRL5nzYPw"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_f0AyQtWiEeWliqRL5nzYPw" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_f0AyQ9WiEeWliqRL5nzYPw" points="[0, 0, 0, 60]$[0, -60, 0, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_f0CAYNWiEeWliqRL5nzYPw" id="(0.5,0.0)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_f0CAYdWiEeWliqRL5nzYPw" id="(0.4948453608247423,1.0)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_f0DOgNWiEeWliqRL5nzYPw" type="4001" element="_fyiMFdWiEeWliqRL5nzYPw" source="_fzNhA9WiEeWliqRL5nzYPw" target="_fzWq8NWiEeWliqRL5nzYPw">
+            <children xmi:type="notation:Node" xmi:id="_f0D1kNWiEeWliqRL5nzYPw" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_f0D1kdWiEeWliqRL5nzYPw" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_f0D1ktWiEeWliqRL5nzYPw" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_f0D1k9WiEeWliqRL5nzYPw" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_f0EcoNWiEeWliqRL5nzYPw" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_f0EcodWiEeWliqRL5nzYPw" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_f0DOgdWiEeWliqRL5nzYPw"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_f0DOgtWiEeWliqRL5nzYPw" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_f0DOg9WiEeWliqRL5nzYPw" points="[0, 0, 117, 270]$[-93, -61, 24, 209]$[-95, -210, 22, 60]$[-117, -270, 0, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_f0EcotWiEeWliqRL5nzYPw" id="(0.5,0.0)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_f0Eco9WiEeWliqRL5nzYPw" id="(0.49650349650349657,1.0)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_f0FDsNWiEeWliqRL5nzYPw" type="4001" element="_fyiMHtWiEeWliqRL5nzYPw" source="_fzNhA9WiEeWliqRL5nzYPw" target="_fzSZgNWiEeWliqRL5nzYPw">
+            <children xmi:type="notation:Node" xmi:id="_f0FqwNWiEeWliqRL5nzYPw" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_f0FqwdWiEeWliqRL5nzYPw" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_f0FqwtWiEeWliqRL5nzYPw" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_f0Fqw9WiEeWliqRL5nzYPw" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_f0GR0NWiEeWliqRL5nzYPw" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_f0GR0dWiEeWliqRL5nzYPw" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_f0FDsdWiEeWliqRL5nzYPw"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_f0FDstWiEeWliqRL5nzYPw" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_f0FDs9WiEeWliqRL5nzYPw" points="[0, 0, -120, 165]$[93, -61, -27, 104]$[95, -105, -25, 60]$[120, -165, 0, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_f0GR0tWiEeWliqRL5nzYPw" id="(0.5,0.0)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_f0G44NWiEeWliqRL5nzYPw" id="(0.4966442953020134,1.0)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_f0G44dWiEeWliqRL5nzYPw" type="4001" element="_fyiMJ9WiEeWliqRL5nzYPw" source="_fzPWMNWiEeWliqRL5nzYPw" target="_fzSZgNWiEeWliqRL5nzYPw">
+            <children xmi:type="notation:Node" xmi:id="_f0Hf8NWiEeWliqRL5nzYPw" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_f0Hf8dWiEeWliqRL5nzYPw" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_f0Hf8tWiEeWliqRL5nzYPw" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_f0Hf89WiEeWliqRL5nzYPw" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_f0IHANWiEeWliqRL5nzYPw" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_f0IHAdWiEeWliqRL5nzYPw" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_f0G44tWiEeWliqRL5nzYPw"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_f0G449WiEeWliqRL5nzYPw" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_f0G45NWiEeWliqRL5nzYPw" points="[0, 0, -120, 60]$[120, -60, 0, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_f0IuENWiEeWliqRL5nzYPw" id="(0.4948453608247423,0.0)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_f0IuEdWiEeWliqRL5nzYPw" id="(0.4966442953020134,1.0)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_f0IuEtWiEeWliqRL5nzYPw" type="4001" element="_fyiMMNWiEeWliqRL5nzYPw" source="_fzPWMNWiEeWliqRL5nzYPw" target="_fzWq8NWiEeWliqRL5nzYPw">
+            <children xmi:type="notation:Node" xmi:id="_f0JVINWiEeWliqRL5nzYPw" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_f0JVIdWiEeWliqRL5nzYPw" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_f0J8MNWiEeWliqRL5nzYPw" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_f0J8MdWiEeWliqRL5nzYPw" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_f0J8MtWiEeWliqRL5nzYPw" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_f0J8M9WiEeWliqRL5nzYPw" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_f0IuE9WiEeWliqRL5nzYPw"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_f0IuFNWiEeWliqRL5nzYPw" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_f0IuFdWiEeWliqRL5nzYPw" points="[0, 0, 117, 165]$[-64, -105, 53, 60]$[-117, -165, 0, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_f0KjQNWiEeWliqRL5nzYPw" id="(0.4948453608247423,0.0)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_f0KjQdWiEeWliqRL5nzYPw" id="(0.49650349650349657,1.0)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_f0KjQtWiEeWliqRL5nzYPw" type="4001" element="_fyiMOdWiEeWliqRL5nzYPw" source="_fzPWMNWiEeWliqRL5nzYPw" target="_fzX5E9WiEeWliqRL5nzYPw">
+            <children xmi:type="notation:Node" xmi:id="_f0LKUNWiEeWliqRL5nzYPw" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_f0LKUdWiEeWliqRL5nzYPw" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_f0LxYNWiEeWliqRL5nzYPw" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_f0LxYdWiEeWliqRL5nzYPw" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_f0LxYtWiEeWliqRL5nzYPw" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_f0LxY9WiEeWliqRL5nzYPw" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_f0KjQ9WiEeWliqRL5nzYPw"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_f0KjRNWiEeWliqRL5nzYPw" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_f0KjRdWiEeWliqRL5nzYPw" points="[0, 0, 0, 270]$[0, -270, 0, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_f0MYcNWiEeWliqRL5nzYPw" id="(0.4948453608247423,0.0)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_f0MYcdWiEeWliqRL5nzYPw" id="(0.4951456310679612,1.0)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_f0M_gNWiEeWliqRL5nzYPw" type="4001" element="_fyiMQtWiEeWliqRL5nzYPw" source="_fzQkU9WiEeWliqRL5nzYPw" target="_fzU1wNWiEeWliqRL5nzYPw">
+            <children xmi:type="notation:Node" xmi:id="_f0NmkNWiEeWliqRL5nzYPw" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_f0NmkdWiEeWliqRL5nzYPw" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_f0NmktWiEeWliqRL5nzYPw" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_f0Nmk9WiEeWliqRL5nzYPw" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_f0ONoNWiEeWliqRL5nzYPw" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_f0ONodWiEeWliqRL5nzYPw" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_f0M_gdWiEeWliqRL5nzYPw"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_f0M_gtWiEeWliqRL5nzYPw" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_f0M_g9WiEeWliqRL5nzYPw" points="[0, 0, 0, 60]$[0, -60, 0, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_f0O0sNWiEeWliqRL5nzYPw" id="(0.49586776859504134,0.0)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_f0O0sdWiEeWliqRL5nzYPw" id="(0.49606299212598426,1.0)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_f0O0stWiEeWliqRL5nzYPw" type="4001" element="_fyiMS9WiEeWliqRL5nzYPw" source="_fzSZgNWiEeWliqRL5nzYPw" target="_fzX5E9WiEeWliqRL5nzYPw">
+            <children xmi:type="notation:Node" xmi:id="_f0PbwNWiEeWliqRL5nzYPw" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_f0PbwdWiEeWliqRL5nzYPw" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_f0PbwtWiEeWliqRL5nzYPw" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_f0Pbw9WiEeWliqRL5nzYPw" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_f0QC0NWiEeWliqRL5nzYPw" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_f0QC0dWiEeWliqRL5nzYPw" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_f0O0s9WiEeWliqRL5nzYPw"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_f0O0tNWiEeWliqRL5nzYPw" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_f0O0tdWiEeWliqRL5nzYPw" points="[0, 0, 120, 165]$[-120, -165, 0, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_f0Qp4NWiEeWliqRL5nzYPw" id="(0.4966442953020134,0.0)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_f0Qp4dWiEeWliqRL5nzYPw" id="(0.4951456310679612,1.0)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_f0Qp4tWiEeWliqRL5nzYPw" type="4001" element="_fyiMVNWiEeWliqRL5nzYPw" source="_fzSZgNWiEeWliqRL5nzYPw" target="_fzWq8NWiEeWliqRL5nzYPw">
+            <children xmi:type="notation:Node" xmi:id="_f0RQ8NWiEeWliqRL5nzYPw" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_f0RQ8dWiEeWliqRL5nzYPw" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_f0RQ8tWiEeWliqRL5nzYPw" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_f0RQ89WiEeWliqRL5nzYPw" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_f0R4ANWiEeWliqRL5nzYPw" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_f0R4AdWiEeWliqRL5nzYPw" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_f0Qp49WiEeWliqRL5nzYPw"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_f0Qp5NWiEeWliqRL5nzYPw" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_f0Qp5dWiEeWliqRL5nzYPw" points="[0, 0, 237, 60]$[-237, -60, 0, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_f0SfENWiEeWliqRL5nzYPw" id="(0.4966442953020134,0.0)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_f0SfEdWiEeWliqRL5nzYPw" id="(0.49650349650349657,1.0)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_f0SfEtWiEeWliqRL5nzYPw" type="4001" element="_fyiMXdWiEeWliqRL5nzYPw" source="_fzWq8NWiEeWliqRL5nzYPw" target="_fzX5E9WiEeWliqRL5nzYPw">
+            <children xmi:type="notation:Node" xmi:id="_f0TGINWiEeWliqRL5nzYPw" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_f0TGIdWiEeWliqRL5nzYPw" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_f0TGItWiEeWliqRL5nzYPw" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_f0TGI9WiEeWliqRL5nzYPw" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_f0TtMNWiEeWliqRL5nzYPw" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_f0TtMdWiEeWliqRL5nzYPw" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_f0SfE9WiEeWliqRL5nzYPw"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_f0SfFNWiEeWliqRL5nzYPw" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_f0SfFdWiEeWliqRL5nzYPw" points="[0, 0, -117, 60]$[117, -60, 0, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_f0UUQNWiEeWliqRL5nzYPw" id="(0.49650349650349657,0.0)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_f0UUQdWiEeWliqRL5nzYPw" id="(0.4951456310679612,1.0)"/>
+          </edges>
+        </data>
+      </ownedAnnotationEntries>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_fyhkgdWiEeWliqRL5nzYPw" name="Cluster 1" outgoingEdges="_fyiL6NWiEeWliqRL5nzYPw _fyiL8dWiEeWliqRL5nzYPw _fyiL-tWiEeWliqRL5nzYPw">
+        <target xmi:type="visualizacionMetricas3.visualizacion:Clase" href="simplificacion3.visualizacionmetricas3#/0/@elementos.0"/>
+        <semanticElements xmi:type="visualizacionMetricas3.visualizacion:Clase" href="simplificacion3.visualizacionmetricas3#/0/@elementos.0"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_fyhkgtWiEeWliqRL5nzYPw">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_fyhkg9WiEeWliqRL5nzYPw"/>
+          <description xmi:type="style:FlatContainerStyleDescription" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_fyhkhNWiEeWliqRL5nzYPw"/>
+          <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_fyhkhdWiEeWliqRL5nzYPw" red="255" green="255" blue="255"/>
+          <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_fyhkhtWiEeWliqRL5nzYPw" red="209" green="209" blue="209"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']"/>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_fyhkh9WiEeWliqRL5nzYPw" name="CarritoLogicService">
+          <target xmi:type="visualizacionMetricas3.visualizacion:Item" href="simplificacion3.visualizacionmetricas3#/0/@elementos.0/@elementos.0"/>
+          <semanticElements xmi:type="visualizacionMetricas3.visualizacion:Item" href="simplificacion3.visualizacionmetricas3#/0/@elementos.0/@elementos.0"/>
+          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_fyhkiNWiEeWliqRL5nzYPw" iconPath="/VisualizacionMetricas3.instances/Class_Description.gif" labelAlignment="LEFT" labelPosition="node">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_fyhkidWiEeWliqRL5nzYPw"/>
+            <description xmi:type="style:BundledImageDescription" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']/@subNodeMappings[name='ElementoDiagrama']/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_fyhkitWiEeWliqRL5nzYPw"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_fyhki9WiEeWliqRL5nzYPw"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']/@subNodeMappings[name='ElementoDiagrama']"/>
+        </ownedElements>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_fyhkjNWiEeWliqRL5nzYPw" name="Cluster 2" outgoingEdges="_fyiMA9WiEeWliqRL5nzYPw">
+        <target xmi:type="visualizacionMetricas3.visualizacion:Clase" href="simplificacion3.visualizacionmetricas3#/0/@elementos.1"/>
+        <semanticElements xmi:type="visualizacionMetricas3.visualizacion:Clase" href="simplificacion3.visualizacionmetricas3#/0/@elementos.1"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_fyhkjdWiEeWliqRL5nzYPw">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_fyhkjtWiEeWliqRL5nzYPw"/>
+          <description xmi:type="style:FlatContainerStyleDescription" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_fyhkj9WiEeWliqRL5nzYPw"/>
+          <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_fyhkkNWiEeWliqRL5nzYPw" red="255" green="255" blue="255"/>
+          <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_fyhkkdWiEeWliqRL5nzYPw" red="209" green="209" blue="209"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']"/>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_fyhkktWiEeWliqRL5nzYPw" name="ClientLogicService">
+          <target xmi:type="visualizacionMetricas3.visualizacion:Item" href="simplificacion3.visualizacionmetricas3#/0/@elementos.1/@elementos.0"/>
+          <semanticElements xmi:type="visualizacionMetricas3.visualizacion:Item" href="simplificacion3.visualizacionmetricas3#/0/@elementos.1/@elementos.0"/>
+          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_fyhkk9WiEeWliqRL5nzYPw" iconPath="/VisualizacionMetricas3.instances/Class_Description.gif" labelAlignment="LEFT" labelPosition="node">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_fyhklNWiEeWliqRL5nzYPw"/>
+            <description xmi:type="style:BundledImageDescription" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']/@subNodeMappings[name='ElementoDiagrama']/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_fyhkldWiEeWliqRL5nzYPw"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_fyhkltWiEeWliqRL5nzYPw"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']/@subNodeMappings[name='ElementoDiagrama']"/>
+        </ownedElements>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_fyiLkNWiEeWliqRL5nzYPw" name="Cluster 3" incomingEdges="_fyiMA9WiEeWliqRL5nzYPw">
+        <target xmi:type="visualizacionMetricas3.visualizacion:Clase" href="simplificacion3.visualizacionmetricas3#/0/@elementos.2"/>
+        <semanticElements xmi:type="visualizacionMetricas3.visualizacion:Clase" href="simplificacion3.visualizacionmetricas3#/0/@elementos.2"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_fyiLkdWiEeWliqRL5nzYPw">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiLktWiEeWliqRL5nzYPw"/>
+          <description xmi:type="style:FlatContainerStyleDescription" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiLk9WiEeWliqRL5nzYPw"/>
+          <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiLlNWiEeWliqRL5nzYPw" red="255" green="255" blue="255"/>
+          <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiLldWiEeWliqRL5nzYPw" red="209" green="209" blue="209"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']"/>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_fyiLltWiEeWliqRL5nzYPw" name="ClientPersistence">
+          <target xmi:type="visualizacionMetricas3.visualizacion:Item" href="simplificacion3.visualizacionmetricas3#/0/@elementos.2/@elementos.0"/>
+          <semanticElements xmi:type="visualizacionMetricas3.visualizacion:Item" href="simplificacion3.visualizacionmetricas3#/0/@elementos.2/@elementos.0"/>
+          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_fyiLl9WiEeWliqRL5nzYPw" iconPath="/VisualizacionMetricas3.instances/Class_Description.gif" labelAlignment="LEFT" labelPosition="node">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiLmNWiEeWliqRL5nzYPw"/>
+            <description xmi:type="style:BundledImageDescription" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']/@subNodeMappings[name='ElementoDiagrama']/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiLmdWiEeWliqRL5nzYPw"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_fyiLmtWiEeWliqRL5nzYPw"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']/@subNodeMappings[name='ElementoDiagrama']"/>
+        </ownedElements>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_fyiLm9WiEeWliqRL5nzYPw" name="Cluster 4" outgoingEdges="_fyiMDNWiEeWliqRL5nzYPw _fyiMFdWiEeWliqRL5nzYPw _fyiMHtWiEeWliqRL5nzYPw" incomingEdges="_fyiL-tWiEeWliqRL5nzYPw">
+        <target xmi:type="visualizacionMetricas3.visualizacion:Clase" href="simplificacion3.visualizacionmetricas3#/0/@elementos.3"/>
+        <semanticElements xmi:type="visualizacionMetricas3.visualizacion:Clase" href="simplificacion3.visualizacionmetricas3#/0/@elementos.3"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_fyiLnNWiEeWliqRL5nzYPw">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiLndWiEeWliqRL5nzYPw"/>
+          <description xmi:type="style:FlatContainerStyleDescription" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiLntWiEeWliqRL5nzYPw"/>
+          <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiLn9WiEeWliqRL5nzYPw" red="255" green="255" blue="255"/>
+          <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiLoNWiEeWliqRL5nzYPw" red="209" green="209" blue="209"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']"/>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_fyiLodWiEeWliqRL5nzYPw" name="CarritoPersistence">
+          <target xmi:type="visualizacionMetricas3.visualizacion:Item" href="simplificacion3.visualizacionmetricas3#/0/@elementos.3/@elementos.0"/>
+          <semanticElements xmi:type="visualizacionMetricas3.visualizacion:Item" href="simplificacion3.visualizacionmetricas3#/0/@elementos.3/@elementos.0"/>
+          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_fyiLotWiEeWliqRL5nzYPw" iconPath="/VisualizacionMetricas3.instances/Class_Description.gif" labelAlignment="LEFT" labelPosition="node">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiLo9WiEeWliqRL5nzYPw"/>
+            <description xmi:type="style:BundledImageDescription" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']/@subNodeMappings[name='ElementoDiagrama']/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiLpNWiEeWliqRL5nzYPw"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_fyiLpdWiEeWliqRL5nzYPw"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']/@subNodeMappings[name='ElementoDiagrama']"/>
+        </ownedElements>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_fyiLptWiEeWliqRL5nzYPw" name="Cluster 5" outgoingEdges="_fyiMJ9WiEeWliqRL5nzYPw _fyiMMNWiEeWliqRL5nzYPw _fyiMOdWiEeWliqRL5nzYPw" incomingEdges="_fyiMDNWiEeWliqRL5nzYPw">
+        <target xmi:type="visualizacionMetricas3.visualizacion:Clase" href="simplificacion3.visualizacionmetricas3#/0/@elementos.4"/>
+        <semanticElements xmi:type="visualizacionMetricas3.visualizacion:Clase" href="simplificacion3.visualizacionmetricas3#/0/@elementos.4"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_fyiLp9WiEeWliqRL5nzYPw">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiLqNWiEeWliqRL5nzYPw"/>
+          <description xmi:type="style:FlatContainerStyleDescription" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiLqdWiEeWliqRL5nzYPw"/>
+          <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiLqtWiEeWliqRL5nzYPw" red="255" green="255" blue="255"/>
+          <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiLq9WiEeWliqRL5nzYPw" red="209" green="209" blue="209"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']"/>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_fyiLrNWiEeWliqRL5nzYPw" name="ItemPersistence">
+          <target xmi:type="visualizacionMetricas3.visualizacion:Item" href="simplificacion3.visualizacionmetricas3#/0/@elementos.4/@elementos.0"/>
+          <semanticElements xmi:type="visualizacionMetricas3.visualizacion:Item" href="simplificacion3.visualizacionmetricas3#/0/@elementos.4/@elementos.0"/>
+          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_fyiLrdWiEeWliqRL5nzYPw" iconPath="/VisualizacionMetricas3.instances/Class_Description.gif" labelAlignment="LEFT" labelPosition="node">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiLrtWiEeWliqRL5nzYPw"/>
+            <description xmi:type="style:BundledImageDescription" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']/@subNodeMappings[name='ElementoDiagrama']/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiLr9WiEeWliqRL5nzYPw"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_fyiLsNWiEeWliqRL5nzYPw"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']/@subNodeMappings[name='ElementoDiagrama']"/>
+        </ownedElements>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_fyiLsdWiEeWliqRL5nzYPw" name="Cluster 6" outgoingEdges="_fyiMQtWiEeWliqRL5nzYPw">
+        <target xmi:type="visualizacionMetricas3.visualizacion:Clase" href="simplificacion3.visualizacionmetricas3#/0/@elementos.5"/>
+        <semanticElements xmi:type="visualizacionMetricas3.visualizacion:Clase" href="simplificacion3.visualizacionmetricas3#/0/@elementos.5"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_fyiLstWiEeWliqRL5nzYPw">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiLs9WiEeWliqRL5nzYPw"/>
+          <description xmi:type="style:FlatContainerStyleDescription" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiLtNWiEeWliqRL5nzYPw"/>
+          <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiLtdWiEeWliqRL5nzYPw" red="255" green="255" blue="255"/>
+          <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiLttWiEeWliqRL5nzYPw" red="209" green="209" blue="209"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']"/>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_fyiLt9WiEeWliqRL5nzYPw" name="ProductoPersistence">
+          <target xmi:type="visualizacionMetricas3.visualizacion:Item" href="simplificacion3.visualizacionmetricas3#/0/@elementos.5/@elementos.0"/>
+          <semanticElements xmi:type="visualizacionMetricas3.visualizacion:Item" href="simplificacion3.visualizacionmetricas3#/0/@elementos.5/@elementos.0"/>
+          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_fyiLuNWiEeWliqRL5nzYPw" iconPath="/VisualizacionMetricas3.instances/Class_Description.gif" labelAlignment="LEFT" labelPosition="node">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiLudWiEeWliqRL5nzYPw"/>
+            <description xmi:type="style:BundledImageDescription" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']/@subNodeMappings[name='ElementoDiagrama']/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiLutWiEeWliqRL5nzYPw"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_fyiLu9WiEeWliqRL5nzYPw"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']/@subNodeMappings[name='ElementoDiagrama']"/>
+        </ownedElements>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_fyiLvNWiEeWliqRL5nzYPw" name="Cluster 7" outgoingEdges="_fyiMS9WiEeWliqRL5nzYPw _fyiMVNWiEeWliqRL5nzYPw" incomingEdges="_fyiL8dWiEeWliqRL5nzYPw _fyiMHtWiEeWliqRL5nzYPw _fyiMJ9WiEeWliqRL5nzYPw">
+        <target xmi:type="visualizacionMetricas3.visualizacion:Clase" href="simplificacion3.visualizacionmetricas3#/0/@elementos.6"/>
+        <semanticElements xmi:type="visualizacionMetricas3.visualizacion:Clase" href="simplificacion3.visualizacionmetricas3#/0/@elementos.6"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_fyiLvdWiEeWliqRL5nzYPw">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiLvtWiEeWliqRL5nzYPw"/>
+          <description xmi:type="style:FlatContainerStyleDescription" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiLv9WiEeWliqRL5nzYPw"/>
+          <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiLwNWiEeWliqRL5nzYPw" red="255" green="255" blue="255"/>
+          <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiLwdWiEeWliqRL5nzYPw" red="209" green="209" blue="209"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']"/>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_fyiLwtWiEeWliqRL5nzYPw" name="CarritoMasterLogicService">
+          <target xmi:type="visualizacionMetricas3.visualizacion:Item" href="simplificacion3.visualizacionmetricas3#/0/@elementos.6/@elementos.0"/>
+          <semanticElements xmi:type="visualizacionMetricas3.visualizacion:Item" href="simplificacion3.visualizacionmetricas3#/0/@elementos.6/@elementos.0"/>
+          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_fyiLw9WiEeWliqRL5nzYPw" iconPath="/VisualizacionMetricas3.instances/Class_Description.gif" labelAlignment="LEFT" labelPosition="node">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiLxNWiEeWliqRL5nzYPw"/>
+            <description xmi:type="style:BundledImageDescription" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']/@subNodeMappings[name='ElementoDiagrama']/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiLxdWiEeWliqRL5nzYPw"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_fyiLxtWiEeWliqRL5nzYPw"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']/@subNodeMappings[name='ElementoDiagrama']"/>
+        </ownedElements>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_fyiLx9WiEeWliqRL5nzYPw" name="Cluster 8" incomingEdges="_fyiMQtWiEeWliqRL5nzYPw">
+        <target xmi:type="visualizacionMetricas3.visualizacion:Clase" href="simplificacion3.visualizacionmetricas3#/0/@elementos.7"/>
+        <semanticElements xmi:type="visualizacionMetricas3.visualizacion:Clase" href="simplificacion3.visualizacionmetricas3#/0/@elementos.7"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_fyiLyNWiEeWliqRL5nzYPw">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiLydWiEeWliqRL5nzYPw"/>
+          <description xmi:type="style:FlatContainerStyleDescription" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiLytWiEeWliqRL5nzYPw"/>
+          <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiLy9WiEeWliqRL5nzYPw" red="255" green="255" blue="255"/>
+          <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiLzNWiEeWliqRL5nzYPw" red="209" green="209" blue="209"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']"/>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_fyiLzdWiEeWliqRL5nzYPw" name="ProductoLogicService">
+          <target xmi:type="visualizacionMetricas3.visualizacion:Item" href="simplificacion3.visualizacionmetricas3#/0/@elementos.7/@elementos.0"/>
+          <semanticElements xmi:type="visualizacionMetricas3.visualizacion:Item" href="simplificacion3.visualizacionmetricas3#/0/@elementos.7/@elementos.0"/>
+          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_fyiLztWiEeWliqRL5nzYPw" iconPath="/VisualizacionMetricas3.instances/Class_Description.gif" labelAlignment="LEFT" labelPosition="node">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiLz9WiEeWliqRL5nzYPw"/>
+            <description xmi:type="style:BundledImageDescription" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']/@subNodeMappings[name='ElementoDiagrama']/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiL0NWiEeWliqRL5nzYPw"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_fyiL0dWiEeWliqRL5nzYPw"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']/@subNodeMappings[name='ElementoDiagrama']"/>
+        </ownedElements>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_fyiL0tWiEeWliqRL5nzYPw" name="Cluster 9" outgoingEdges="_fyiMXdWiEeWliqRL5nzYPw" incomingEdges="_fyiL6NWiEeWliqRL5nzYPw _fyiMFdWiEeWliqRL5nzYPw _fyiMMNWiEeWliqRL5nzYPw _fyiMVNWiEeWliqRL5nzYPw">
+        <target xmi:type="visualizacionMetricas3.visualizacion:Clase" href="simplificacion3.visualizacionmetricas3#/0/@elementos.8"/>
+        <semanticElements xmi:type="visualizacionMetricas3.visualizacion:Clase" href="simplificacion3.visualizacionmetricas3#/0/@elementos.8"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_fyiL09WiEeWliqRL5nzYPw">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiL1NWiEeWliqRL5nzYPw"/>
+          <description xmi:type="style:FlatContainerStyleDescription" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiL1dWiEeWliqRL5nzYPw"/>
+          <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiL1tWiEeWliqRL5nzYPw" red="255" green="255" blue="255"/>
+          <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiL19WiEeWliqRL5nzYPw" red="209" green="209" blue="209"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']"/>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_fyiL2NWiEeWliqRL5nzYPw" name="CarritoMasterPersistence">
+          <target xmi:type="visualizacionMetricas3.visualizacion:Item" href="simplificacion3.visualizacionmetricas3#/0/@elementos.8/@elementos.0"/>
+          <semanticElements xmi:type="visualizacionMetricas3.visualizacion:Item" href="simplificacion3.visualizacionmetricas3#/0/@elementos.8/@elementos.0"/>
+          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_fyiL2dWiEeWliqRL5nzYPw" iconPath="/VisualizacionMetricas3.instances/Class_Description.gif" labelAlignment="LEFT" labelPosition="node">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiL2tWiEeWliqRL5nzYPw"/>
+            <description xmi:type="style:BundledImageDescription" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']/@subNodeMappings[name='ElementoDiagrama']/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiL29WiEeWliqRL5nzYPw"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_fyiL3NWiEeWliqRL5nzYPw"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']/@subNodeMappings[name='ElementoDiagrama']"/>
+        </ownedElements>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_fyiL3dWiEeWliqRL5nzYPw" name="Cluster 10" incomingEdges="_fyiMOdWiEeWliqRL5nzYPw _fyiMS9WiEeWliqRL5nzYPw _fyiMXdWiEeWliqRL5nzYPw">
+        <target xmi:type="visualizacionMetricas3.visualizacion:Clase" href="simplificacion3.visualizacionmetricas3#/0/@elementos.9"/>
+        <semanticElements xmi:type="visualizacionMetricas3.visualizacion:Clase" href="simplificacion3.visualizacionmetricas3#/0/@elementos.9"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_fyiL3tWiEeWliqRL5nzYPw">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiL39WiEeWliqRL5nzYPw"/>
+          <description xmi:type="style:FlatContainerStyleDescription" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiL4NWiEeWliqRL5nzYPw"/>
+          <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiL4dWiEeWliqRL5nzYPw" red="255" green="255" blue="255"/>
+          <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiL4tWiEeWliqRL5nzYPw" red="209" green="209" blue="209"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']"/>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_fyiL49WiEeWliqRL5nzYPw" name="ItemLogicService">
+          <target xmi:type="visualizacionMetricas3.visualizacion:Item" href="simplificacion3.visualizacionmetricas3#/0/@elementos.9/@elementos.0"/>
+          <semanticElements xmi:type="visualizacionMetricas3.visualizacion:Item" href="simplificacion3.visualizacionmetricas3#/0/@elementos.9/@elementos.0"/>
+          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_fyiL5NWiEeWliqRL5nzYPw" iconPath="/VisualizacionMetricas3.instances/Class_Description.gif" labelAlignment="LEFT" labelPosition="node">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiL5dWiEeWliqRL5nzYPw"/>
+            <description xmi:type="style:BundledImageDescription" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']/@subNodeMappings[name='ElementoDiagrama']/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiL5tWiEeWliqRL5nzYPw"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_fyiL59WiEeWliqRL5nzYPw"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']/@subNodeMappings[name='ElementoDiagrama']"/>
+        </ownedElements>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_fyiL6NWiEeWliqRL5nzYPw" sourceNode="_fyhkgdWiEeWliqRL5nzYPw" targetNode="_fyiL0tWiEeWliqRL5nzYPw">
+        <target xmi:type="visualizacionMetricas3.visualizacion:Asociacion" href="simplificacion3.visualizacionmetricas3#/0/@elementos.0/@conectores.0"/>
+        <semanticElements xmi:type="visualizacionMetricas3.visualizacion:Asociacion" href="simplificacion3.visualizacionmetricas3#/0/@elementos.0/@conectores.0"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_fyiL6dWiEeWliqRL5nzYPw" targetArrow="NoDecoration" size="0">
+          <description xmi:type="style:EdgeStyleDescription" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@edgeMappings[name='Conector']/@style"/>
+          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiL6tWiEeWliqRL5nzYPw" red="136" green="136" blue="136"/>
+          <beginLabelStyle xmi:type="diagram:BeginLabelStyle" xmi:id="_fyiL69WiEeWliqRL5nzYPw">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiL7NWiEeWliqRL5nzYPw"/>
+          </beginLabelStyle>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_fyiL7dWiEeWliqRL5nzYPw" showIcon="false">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiL7tWiEeWliqRL5nzYPw"/>
+          </centerLabelStyle>
+          <endLabelStyle xmi:type="diagram:EndLabelStyle" xmi:id="_fyiL79WiEeWliqRL5nzYPw">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiL8NWiEeWliqRL5nzYPw"/>
+          </endLabelStyle>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@edgeMappings[name='Conector']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_fyiL8dWiEeWliqRL5nzYPw" sourceNode="_fyhkgdWiEeWliqRL5nzYPw" targetNode="_fyiLvNWiEeWliqRL5nzYPw">
+        <target xmi:type="visualizacionMetricas3.visualizacion:Asociacion" href="simplificacion3.visualizacionmetricas3#/0/@elementos.0/@conectores.1"/>
+        <semanticElements xmi:type="visualizacionMetricas3.visualizacion:Asociacion" href="simplificacion3.visualizacionmetricas3#/0/@elementos.0/@conectores.1"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_fyiL8tWiEeWliqRL5nzYPw" targetArrow="NoDecoration" size="0">
+          <description xmi:type="style:EdgeStyleDescription" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@edgeMappings[name='Conector']/@style"/>
+          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiL89WiEeWliqRL5nzYPw" red="136" green="136" blue="136"/>
+          <beginLabelStyle xmi:type="diagram:BeginLabelStyle" xmi:id="_fyiL9NWiEeWliqRL5nzYPw">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiL9dWiEeWliqRL5nzYPw"/>
+          </beginLabelStyle>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_fyiL9tWiEeWliqRL5nzYPw" showIcon="false">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiL99WiEeWliqRL5nzYPw"/>
+          </centerLabelStyle>
+          <endLabelStyle xmi:type="diagram:EndLabelStyle" xmi:id="_fyiL-NWiEeWliqRL5nzYPw">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiL-dWiEeWliqRL5nzYPw"/>
+          </endLabelStyle>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@edgeMappings[name='Conector']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_fyiL-tWiEeWliqRL5nzYPw" sourceNode="_fyhkgdWiEeWliqRL5nzYPw" targetNode="_fyiLm9WiEeWliqRL5nzYPw">
+        <target xmi:type="visualizacionMetricas3.visualizacion:Asociacion" href="simplificacion3.visualizacionmetricas3#/0/@elementos.0/@conectores.2"/>
+        <semanticElements xmi:type="visualizacionMetricas3.visualizacion:Asociacion" href="simplificacion3.visualizacionmetricas3#/0/@elementos.0/@conectores.2"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_fyiL-9WiEeWliqRL5nzYPw" targetArrow="NoDecoration" size="0">
+          <description xmi:type="style:EdgeStyleDescription" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@edgeMappings[name='Conector']/@style"/>
+          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiL_NWiEeWliqRL5nzYPw" red="136" green="136" blue="136"/>
+          <beginLabelStyle xmi:type="diagram:BeginLabelStyle" xmi:id="_fyiL_dWiEeWliqRL5nzYPw">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiL_tWiEeWliqRL5nzYPw"/>
+          </beginLabelStyle>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_fyiL_9WiEeWliqRL5nzYPw" showIcon="false">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiMANWiEeWliqRL5nzYPw"/>
+          </centerLabelStyle>
+          <endLabelStyle xmi:type="diagram:EndLabelStyle" xmi:id="_fyiMAdWiEeWliqRL5nzYPw">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiMAtWiEeWliqRL5nzYPw"/>
+          </endLabelStyle>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@edgeMappings[name='Conector']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_fyiMA9WiEeWliqRL5nzYPw" sourceNode="_fyhkjNWiEeWliqRL5nzYPw" targetNode="_fyiLkNWiEeWliqRL5nzYPw">
+        <target xmi:type="visualizacionMetricas3.visualizacion:Asociacion" href="simplificacion3.visualizacionmetricas3#/0/@elementos.1/@conectores.0"/>
+        <semanticElements xmi:type="visualizacionMetricas3.visualizacion:Asociacion" href="simplificacion3.visualizacionmetricas3#/0/@elementos.1/@conectores.0"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_fyiMBNWiEeWliqRL5nzYPw" targetArrow="NoDecoration" size="0">
+          <description xmi:type="style:EdgeStyleDescription" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@edgeMappings[name='Conector']/@style"/>
+          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiMBdWiEeWliqRL5nzYPw" red="136" green="136" blue="136"/>
+          <beginLabelStyle xmi:type="diagram:BeginLabelStyle" xmi:id="_fyiMBtWiEeWliqRL5nzYPw">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiMB9WiEeWliqRL5nzYPw"/>
+          </beginLabelStyle>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_fyiMCNWiEeWliqRL5nzYPw" showIcon="false">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiMCdWiEeWliqRL5nzYPw"/>
+          </centerLabelStyle>
+          <endLabelStyle xmi:type="diagram:EndLabelStyle" xmi:id="_fyiMCtWiEeWliqRL5nzYPw">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiMC9WiEeWliqRL5nzYPw"/>
+          </endLabelStyle>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@edgeMappings[name='Conector']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_fyiMDNWiEeWliqRL5nzYPw" sourceNode="_fyiLm9WiEeWliqRL5nzYPw" targetNode="_fyiLptWiEeWliqRL5nzYPw">
+        <target xmi:type="visualizacionMetricas3.visualizacion:Asociacion" href="simplificacion3.visualizacionmetricas3#/0/@elementos.3/@conectores.0"/>
+        <semanticElements xmi:type="visualizacionMetricas3.visualizacion:Asociacion" href="simplificacion3.visualizacionmetricas3#/0/@elementos.3/@conectores.0"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_fyiMDdWiEeWliqRL5nzYPw" targetArrow="NoDecoration" size="0">
+          <description xmi:type="style:EdgeStyleDescription" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@edgeMappings[name='Conector']/@style"/>
+          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiMDtWiEeWliqRL5nzYPw" red="136" green="136" blue="136"/>
+          <beginLabelStyle xmi:type="diagram:BeginLabelStyle" xmi:id="_fyiMD9WiEeWliqRL5nzYPw">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiMENWiEeWliqRL5nzYPw"/>
+          </beginLabelStyle>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_fyiMEdWiEeWliqRL5nzYPw" showIcon="false">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiMEtWiEeWliqRL5nzYPw"/>
+          </centerLabelStyle>
+          <endLabelStyle xmi:type="diagram:EndLabelStyle" xmi:id="_fyiME9WiEeWliqRL5nzYPw">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiMFNWiEeWliqRL5nzYPw"/>
+          </endLabelStyle>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@edgeMappings[name='Conector']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_fyiMFdWiEeWliqRL5nzYPw" sourceNode="_fyiLm9WiEeWliqRL5nzYPw" targetNode="_fyiL0tWiEeWliqRL5nzYPw">
+        <target xmi:type="visualizacionMetricas3.visualizacion:Asociacion" href="simplificacion3.visualizacionmetricas3#/0/@elementos.3/@conectores.1"/>
+        <semanticElements xmi:type="visualizacionMetricas3.visualizacion:Asociacion" href="simplificacion3.visualizacionmetricas3#/0/@elementos.3/@conectores.1"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_fyiMFtWiEeWliqRL5nzYPw" targetArrow="NoDecoration" size="0">
+          <description xmi:type="style:EdgeStyleDescription" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@edgeMappings[name='Conector']/@style"/>
+          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiMF9WiEeWliqRL5nzYPw" red="136" green="136" blue="136"/>
+          <beginLabelStyle xmi:type="diagram:BeginLabelStyle" xmi:id="_fyiMGNWiEeWliqRL5nzYPw">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiMGdWiEeWliqRL5nzYPw"/>
+          </beginLabelStyle>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_fyiMGtWiEeWliqRL5nzYPw" showIcon="false">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiMG9WiEeWliqRL5nzYPw"/>
+          </centerLabelStyle>
+          <endLabelStyle xmi:type="diagram:EndLabelStyle" xmi:id="_fyiMHNWiEeWliqRL5nzYPw">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiMHdWiEeWliqRL5nzYPw"/>
+          </endLabelStyle>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@edgeMappings[name='Conector']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_fyiMHtWiEeWliqRL5nzYPw" sourceNode="_fyiLm9WiEeWliqRL5nzYPw" targetNode="_fyiLvNWiEeWliqRL5nzYPw">
+        <target xmi:type="visualizacionMetricas3.visualizacion:Asociacion" href="simplificacion3.visualizacionmetricas3#/0/@elementos.3/@conectores.2"/>
+        <semanticElements xmi:type="visualizacionMetricas3.visualizacion:Asociacion" href="simplificacion3.visualizacionmetricas3#/0/@elementos.3/@conectores.2"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_fyiMH9WiEeWliqRL5nzYPw" targetArrow="NoDecoration" size="0">
+          <description xmi:type="style:EdgeStyleDescription" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@edgeMappings[name='Conector']/@style"/>
+          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiMINWiEeWliqRL5nzYPw" red="136" green="136" blue="136"/>
+          <beginLabelStyle xmi:type="diagram:BeginLabelStyle" xmi:id="_fyiMIdWiEeWliqRL5nzYPw">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiMItWiEeWliqRL5nzYPw"/>
+          </beginLabelStyle>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_fyiMI9WiEeWliqRL5nzYPw" showIcon="false">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiMJNWiEeWliqRL5nzYPw"/>
+          </centerLabelStyle>
+          <endLabelStyle xmi:type="diagram:EndLabelStyle" xmi:id="_fyiMJdWiEeWliqRL5nzYPw">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiMJtWiEeWliqRL5nzYPw"/>
+          </endLabelStyle>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@edgeMappings[name='Conector']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_fyiMJ9WiEeWliqRL5nzYPw" sourceNode="_fyiLptWiEeWliqRL5nzYPw" targetNode="_fyiLvNWiEeWliqRL5nzYPw">
+        <target xmi:type="visualizacionMetricas3.visualizacion:Asociacion" href="simplificacion3.visualizacionmetricas3#/0/@elementos.4/@conectores.0"/>
+        <semanticElements xmi:type="visualizacionMetricas3.visualizacion:Asociacion" href="simplificacion3.visualizacionmetricas3#/0/@elementos.4/@conectores.0"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_fyiMKNWiEeWliqRL5nzYPw" targetArrow="NoDecoration" size="0">
+          <description xmi:type="style:EdgeStyleDescription" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@edgeMappings[name='Conector']/@style"/>
+          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiMKdWiEeWliqRL5nzYPw" red="136" green="136" blue="136"/>
+          <beginLabelStyle xmi:type="diagram:BeginLabelStyle" xmi:id="_fyiMKtWiEeWliqRL5nzYPw">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiMK9WiEeWliqRL5nzYPw"/>
+          </beginLabelStyle>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_fyiMLNWiEeWliqRL5nzYPw" showIcon="false">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiMLdWiEeWliqRL5nzYPw"/>
+          </centerLabelStyle>
+          <endLabelStyle xmi:type="diagram:EndLabelStyle" xmi:id="_fyiMLtWiEeWliqRL5nzYPw">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiML9WiEeWliqRL5nzYPw"/>
+          </endLabelStyle>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@edgeMappings[name='Conector']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_fyiMMNWiEeWliqRL5nzYPw" sourceNode="_fyiLptWiEeWliqRL5nzYPw" targetNode="_fyiL0tWiEeWliqRL5nzYPw">
+        <target xmi:type="visualizacionMetricas3.visualizacion:Asociacion" href="simplificacion3.visualizacionmetricas3#/0/@elementos.4/@conectores.1"/>
+        <semanticElements xmi:type="visualizacionMetricas3.visualizacion:Asociacion" href="simplificacion3.visualizacionmetricas3#/0/@elementos.4/@conectores.1"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_fyiMMdWiEeWliqRL5nzYPw" targetArrow="NoDecoration" size="0">
+          <description xmi:type="style:EdgeStyleDescription" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@edgeMappings[name='Conector']/@style"/>
+          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiMMtWiEeWliqRL5nzYPw" red="136" green="136" blue="136"/>
+          <beginLabelStyle xmi:type="diagram:BeginLabelStyle" xmi:id="_fyiMM9WiEeWliqRL5nzYPw">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiMNNWiEeWliqRL5nzYPw"/>
+          </beginLabelStyle>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_fyiMNdWiEeWliqRL5nzYPw" showIcon="false">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiMNtWiEeWliqRL5nzYPw"/>
+          </centerLabelStyle>
+          <endLabelStyle xmi:type="diagram:EndLabelStyle" xmi:id="_fyiMN9WiEeWliqRL5nzYPw">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiMONWiEeWliqRL5nzYPw"/>
+          </endLabelStyle>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@edgeMappings[name='Conector']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_fyiMOdWiEeWliqRL5nzYPw" sourceNode="_fyiLptWiEeWliqRL5nzYPw" targetNode="_fyiL3dWiEeWliqRL5nzYPw">
+        <target xmi:type="visualizacionMetricas3.visualizacion:Asociacion" href="simplificacion3.visualizacionmetricas3#/0/@elementos.4/@conectores.2"/>
+        <semanticElements xmi:type="visualizacionMetricas3.visualizacion:Asociacion" href="simplificacion3.visualizacionmetricas3#/0/@elementos.4/@conectores.2"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_fyiMOtWiEeWliqRL5nzYPw" targetArrow="NoDecoration" size="0">
+          <description xmi:type="style:EdgeStyleDescription" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@edgeMappings[name='Conector']/@style"/>
+          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiMO9WiEeWliqRL5nzYPw" red="136" green="136" blue="136"/>
+          <beginLabelStyle xmi:type="diagram:BeginLabelStyle" xmi:id="_fyiMPNWiEeWliqRL5nzYPw">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiMPdWiEeWliqRL5nzYPw"/>
+          </beginLabelStyle>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_fyiMPtWiEeWliqRL5nzYPw" showIcon="false">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiMP9WiEeWliqRL5nzYPw"/>
+          </centerLabelStyle>
+          <endLabelStyle xmi:type="diagram:EndLabelStyle" xmi:id="_fyiMQNWiEeWliqRL5nzYPw">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiMQdWiEeWliqRL5nzYPw"/>
+          </endLabelStyle>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@edgeMappings[name='Conector']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_fyiMQtWiEeWliqRL5nzYPw" sourceNode="_fyiLsdWiEeWliqRL5nzYPw" targetNode="_fyiLx9WiEeWliqRL5nzYPw">
+        <target xmi:type="visualizacionMetricas3.visualizacion:Asociacion" href="simplificacion3.visualizacionmetricas3#/0/@elementos.5/@conectores.0"/>
+        <semanticElements xmi:type="visualizacionMetricas3.visualizacion:Asociacion" href="simplificacion3.visualizacionmetricas3#/0/@elementos.5/@conectores.0"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_fyiMQ9WiEeWliqRL5nzYPw" targetArrow="NoDecoration" size="0">
+          <description xmi:type="style:EdgeStyleDescription" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@edgeMappings[name='Conector']/@style"/>
+          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiMRNWiEeWliqRL5nzYPw" red="136" green="136" blue="136"/>
+          <beginLabelStyle xmi:type="diagram:BeginLabelStyle" xmi:id="_fyiMRdWiEeWliqRL5nzYPw">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiMRtWiEeWliqRL5nzYPw"/>
+          </beginLabelStyle>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_fyiMR9WiEeWliqRL5nzYPw" showIcon="false">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiMSNWiEeWliqRL5nzYPw"/>
+          </centerLabelStyle>
+          <endLabelStyle xmi:type="diagram:EndLabelStyle" xmi:id="_fyiMSdWiEeWliqRL5nzYPw">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiMStWiEeWliqRL5nzYPw"/>
+          </endLabelStyle>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@edgeMappings[name='Conector']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_fyiMS9WiEeWliqRL5nzYPw" sourceNode="_fyiLvNWiEeWliqRL5nzYPw" targetNode="_fyiL3dWiEeWliqRL5nzYPw">
+        <target xmi:type="visualizacionMetricas3.visualizacion:Asociacion" href="simplificacion3.visualizacionmetricas3#/0/@elementos.6/@conectores.0"/>
+        <semanticElements xmi:type="visualizacionMetricas3.visualizacion:Asociacion" href="simplificacion3.visualizacionmetricas3#/0/@elementos.6/@conectores.0"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_fyiMTNWiEeWliqRL5nzYPw" targetArrow="NoDecoration" size="0">
+          <description xmi:type="style:EdgeStyleDescription" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@edgeMappings[name='Conector']/@style"/>
+          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiMTdWiEeWliqRL5nzYPw" red="136" green="136" blue="136"/>
+          <beginLabelStyle xmi:type="diagram:BeginLabelStyle" xmi:id="_fyiMTtWiEeWliqRL5nzYPw">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiMT9WiEeWliqRL5nzYPw"/>
+          </beginLabelStyle>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_fyiMUNWiEeWliqRL5nzYPw" showIcon="false">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiMUdWiEeWliqRL5nzYPw"/>
+          </centerLabelStyle>
+          <endLabelStyle xmi:type="diagram:EndLabelStyle" xmi:id="_fyiMUtWiEeWliqRL5nzYPw">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiMU9WiEeWliqRL5nzYPw"/>
+          </endLabelStyle>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@edgeMappings[name='Conector']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_fyiMVNWiEeWliqRL5nzYPw" sourceNode="_fyiLvNWiEeWliqRL5nzYPw" targetNode="_fyiL0tWiEeWliqRL5nzYPw">
+        <target xmi:type="visualizacionMetricas3.visualizacion:Asociacion" href="simplificacion3.visualizacionmetricas3#/0/@elementos.6/@conectores.1"/>
+        <semanticElements xmi:type="visualizacionMetricas3.visualizacion:Asociacion" href="simplificacion3.visualizacionmetricas3#/0/@elementos.6/@conectores.1"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_fyiMVdWiEeWliqRL5nzYPw" targetArrow="NoDecoration" size="0">
+          <description xmi:type="style:EdgeStyleDescription" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@edgeMappings[name='Conector']/@style"/>
+          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiMVtWiEeWliqRL5nzYPw" red="136" green="136" blue="136"/>
+          <beginLabelStyle xmi:type="diagram:BeginLabelStyle" xmi:id="_fyiMV9WiEeWliqRL5nzYPw">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiMWNWiEeWliqRL5nzYPw"/>
+          </beginLabelStyle>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_fyiMWdWiEeWliqRL5nzYPw" showIcon="false">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiMWtWiEeWliqRL5nzYPw"/>
+          </centerLabelStyle>
+          <endLabelStyle xmi:type="diagram:EndLabelStyle" xmi:id="_fyiMW9WiEeWliqRL5nzYPw">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiMXNWiEeWliqRL5nzYPw"/>
+          </endLabelStyle>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@edgeMappings[name='Conector']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_fyiMXdWiEeWliqRL5nzYPw" sourceNode="_fyiL0tWiEeWliqRL5nzYPw" targetNode="_fyiL3dWiEeWliqRL5nzYPw">
+        <target xmi:type="visualizacionMetricas3.visualizacion:Asociacion" href="simplificacion3.visualizacionmetricas3#/0/@elementos.8/@conectores.0"/>
+        <semanticElements xmi:type="visualizacionMetricas3.visualizacion:Asociacion" href="simplificacion3.visualizacionmetricas3#/0/@elementos.8/@conectores.0"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_fyiMXtWiEeWliqRL5nzYPw" targetArrow="NoDecoration" size="0">
+          <description xmi:type="style:EdgeStyleDescription" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@edgeMappings[name='Conector']/@style"/>
+          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiMX9WiEeWliqRL5nzYPw" red="136" green="136" blue="136"/>
+          <beginLabelStyle xmi:type="diagram:BeginLabelStyle" xmi:id="_fyiMYNWiEeWliqRL5nzYPw">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiMYdWiEeWliqRL5nzYPw"/>
+          </beginLabelStyle>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_fyiMYtWiEeWliqRL5nzYPw" showIcon="false">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiMY9WiEeWliqRL5nzYPw"/>
+          </centerLabelStyle>
+          <endLabelStyle xmi:type="diagram:EndLabelStyle" xmi:id="_fyiMZNWiEeWliqRL5nzYPw">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_fyiMZdWiEeWliqRL5nzYPw"/>
+          </endLabelStyle>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@edgeMappings[name='Conector']"/>
+      </ownedDiagramElements>
+      <description xmi:type="description_1:DiagramDescription" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']"/>
+      <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_fyiMZtWiEeWliqRL5nzYPw"/>
+      <activatedLayers xmi:type="description_1:Layer" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer"/>
+      <target xmi:type="visualizacionMetricas3.visualizacion:Diagrama" href="simplificacion3.visualizacionmetricas3#/0"/>
+    </ownedRepresentations>
+    <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_mO81YNWiEeWliqRL5nzYPw" name="new Diagrama Cluster Simplificado">
+      <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_mPGmYNWiEeWliqRL5nzYPw" source="GMF_DIAGRAMS">
+        <data xmi:type="notation:Diagram" xmi:id="_mPGmYdWiEeWliqRL5nzYPw" type="Sirius" element="_mO81YNWiEeWliqRL5nzYPw" measurementUnit="Pixel">
+          <children xmi:type="notation:Node" xmi:id="_mPGmY9WiEeWliqRL5nzYPw" type="2003" element="_mO81YdWiEeWliqRL5nzYPw">
+            <children xmi:type="notation:Node" xmi:id="_mPGmZtWiEeWliqRL5nzYPw" type="5007"/>
+            <children xmi:type="notation:Node" xmi:id="_mPGmZ9WiEeWliqRL5nzYPw" type="7004">
+              <children xmi:type="notation:Node" xmi:id="_mPQXa9WiEeWliqRL5nzYPw" type="3010" element="_mO81Z9WiEeWliqRL5nzYPw">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_mPQXbNWiEeWliqRL5nzYPw"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_mPQXbdWiEeWliqRL5nzYPw" type="3010" element="_mO81bNWiEeWliqRL5nzYPw">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_mPQXbtWiEeWliqRL5nzYPw"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_mPQXb9WiEeWliqRL5nzYPw" type="3010" element="_mO81cdWiEeWliqRL5nzYPw">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_mPQXcNWiEeWliqRL5nzYPw"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_mPQXcdWiEeWliqRL5nzYPw" type="3010" element="_mO81dtWiEeWliqRL5nzYPw">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_mPQXctWiEeWliqRL5nzYPw"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_mPQXc9WiEeWliqRL5nzYPw" type="3010" element="_mO81e9WiEeWliqRL5nzYPw">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_mPQXdNWiEeWliqRL5nzYPw"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_mPQXddWiEeWliqRL5nzYPw" type="3010" element="_mO81gNWiEeWliqRL5nzYPw">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_mPQXdtWiEeWliqRL5nzYPw"/>
+              </children>
+              <styles xmi:type="notation:SortingStyle" xmi:id="_mPGmaNWiEeWliqRL5nzYPw"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_mPGmadWiEeWliqRL5nzYPw"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_mPGmZNWiEeWliqRL5nzYPw" fontName="Segoe UI" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mPGmZdWiEeWliqRL5nzYPw"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_mPGmatWiEeWliqRL5nzYPw" type="2003" element="_mO81hdWiEeWliqRL5nzYPw">
+            <children xmi:type="notation:Node" xmi:id="_mPQXYNWiEeWliqRL5nzYPw" type="5007"/>
+            <children xmi:type="notation:Node" xmi:id="_mPQXYdWiEeWliqRL5nzYPw" type="7004">
+              <children xmi:type="notation:Node" xmi:id="_mPQXd9WiEeWliqRL5nzYPw" type="3010" element="_mO81i9WiEeWliqRL5nzYPw">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_mPQXeNWiEeWliqRL5nzYPw"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_mPQXedWiEeWliqRL5nzYPw" type="3010" element="_mO81kNWiEeWliqRL5nzYPw">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_mPQXetWiEeWliqRL5nzYPw"/>
+              </children>
+              <styles xmi:type="notation:SortingStyle" xmi:id="_mPQXYtWiEeWliqRL5nzYPw"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_mPQXY9WiEeWliqRL5nzYPw"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_mPGma9WiEeWliqRL5nzYPw" fontName="Segoe UI" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mPGmbNWiEeWliqRL5nzYPw" x="210"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_mPQXZNWiEeWliqRL5nzYPw" type="2003" element="_mO81ldWiEeWliqRL5nzYPw">
+            <children xmi:type="notation:Node" xmi:id="_mPQXZ9WiEeWliqRL5nzYPw" type="5007"/>
+            <children xmi:type="notation:Node" xmi:id="_mPQXaNWiEeWliqRL5nzYPw" type="7004">
+              <children xmi:type="notation:Node" xmi:id="_mPQXe9WiEeWliqRL5nzYPw" type="3010" element="_mO81m9WiEeWliqRL5nzYPw">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_mPQXfNWiEeWliqRL5nzYPw"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_mPQXfdWiEeWliqRL5nzYPw" type="3010" element="_mO81oNWiEeWliqRL5nzYPw">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_mPQXftWiEeWliqRL5nzYPw"/>
+              </children>
+              <styles xmi:type="notation:SortingStyle" xmi:id="_mPQXadWiEeWliqRL5nzYPw"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_mPQXatWiEeWliqRL5nzYPw"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_mPQXZdWiEeWliqRL5nzYPw" fontName="Segoe UI" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mPQXZtWiEeWliqRL5nzYPw" x="380"/>
+          </children>
+          <styles xmi:type="notation:DiagramStyle" xmi:id="_mPGmYtWiEeWliqRL5nzYPw"/>
+        </data>
+      </ownedAnnotationEntries>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_mO81YdWiEeWliqRL5nzYPw" name="Cluster 1">
+        <target xmi:type="visualizacionMetricas3.visualizacion:Clase" href="simplificacion3.visualizacionmetricas3#/19/@elementos.0"/>
+        <semanticElements xmi:type="visualizacionMetricas3.visualizacion:Clase" href="simplificacion3.visualizacionmetricas3#/19/@elementos.0"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_mO81YtWiEeWliqRL5nzYPw">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_mO81Y9WiEeWliqRL5nzYPw"/>
+          <description xmi:type="style:FlatContainerStyleDescription" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_mO81ZNWiEeWliqRL5nzYPw"/>
+          <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_mO81ZdWiEeWliqRL5nzYPw" red="255" green="255" blue="255"/>
+          <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_mO81ZtWiEeWliqRL5nzYPw" red="209" green="209" blue="209"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']"/>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_mO81Z9WiEeWliqRL5nzYPw" name="CarritoPersistence">
+          <target xmi:type="visualizacionMetricas3.visualizacion:Item" href="simplificacion3.visualizacionmetricas3#/19/@elementos.0/@elementos.0"/>
+          <semanticElements xmi:type="visualizacionMetricas3.visualizacion:Item" href="simplificacion3.visualizacionmetricas3#/19/@elementos.0/@elementos.0"/>
+          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_mO81aNWiEeWliqRL5nzYPw" iconPath="/VisualizacionMetricas3.instances/Class_Description.gif" labelAlignment="LEFT" labelPosition="node">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_mO81adWiEeWliqRL5nzYPw"/>
+            <description xmi:type="style:BundledImageDescription" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']/@subNodeMappings[name='ElementoDiagrama']/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_mO81atWiEeWliqRL5nzYPw"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_mO81a9WiEeWliqRL5nzYPw"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']/@subNodeMappings[name='ElementoDiagrama']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_mO81bNWiEeWliqRL5nzYPw" name="CarritoMasterPersistence">
+          <target xmi:type="visualizacionMetricas3.visualizacion:Item" href="simplificacion3.visualizacionmetricas3#/19/@elementos.0/@elementos.1"/>
+          <semanticElements xmi:type="visualizacionMetricas3.visualizacion:Item" href="simplificacion3.visualizacionmetricas3#/19/@elementos.0/@elementos.1"/>
+          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_mO81bdWiEeWliqRL5nzYPw" iconPath="/VisualizacionMetricas3.instances/Class_Description.gif" labelAlignment="LEFT" labelPosition="node">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_mO81btWiEeWliqRL5nzYPw"/>
+            <description xmi:type="style:BundledImageDescription" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']/@subNodeMappings[name='ElementoDiagrama']/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_mO81b9WiEeWliqRL5nzYPw"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_mO81cNWiEeWliqRL5nzYPw"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']/@subNodeMappings[name='ElementoDiagrama']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_mO81cdWiEeWliqRL5nzYPw" name="ItemLogicService">
+          <target xmi:type="visualizacionMetricas3.visualizacion:Item" href="simplificacion3.visualizacionmetricas3#/19/@elementos.0/@elementos.2"/>
+          <semanticElements xmi:type="visualizacionMetricas3.visualizacion:Item" href="simplificacion3.visualizacionmetricas3#/19/@elementos.0/@elementos.2"/>
+          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_mO81ctWiEeWliqRL5nzYPw" iconPath="/VisualizacionMetricas3.instances/Class_Description.gif" labelAlignment="LEFT" labelPosition="node">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_mO81c9WiEeWliqRL5nzYPw"/>
+            <description xmi:type="style:BundledImageDescription" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']/@subNodeMappings[name='ElementoDiagrama']/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_mO81dNWiEeWliqRL5nzYPw"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_mO81ddWiEeWliqRL5nzYPw"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']/@subNodeMappings[name='ElementoDiagrama']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_mO81dtWiEeWliqRL5nzYPw" name="CarritoMasterLogicService">
+          <target xmi:type="visualizacionMetricas3.visualizacion:Item" href="simplificacion3.visualizacionmetricas3#/19/@elementos.0/@elementos.3"/>
+          <semanticElements xmi:type="visualizacionMetricas3.visualizacion:Item" href="simplificacion3.visualizacionmetricas3#/19/@elementos.0/@elementos.3"/>
+          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_mO81d9WiEeWliqRL5nzYPw" iconPath="/VisualizacionMetricas3.instances/Class_Description.gif" labelAlignment="LEFT" labelPosition="node">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_mO81eNWiEeWliqRL5nzYPw"/>
+            <description xmi:type="style:BundledImageDescription" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']/@subNodeMappings[name='ElementoDiagrama']/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_mO81edWiEeWliqRL5nzYPw"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_mO81etWiEeWliqRL5nzYPw"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']/@subNodeMappings[name='ElementoDiagrama']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_mO81e9WiEeWliqRL5nzYPw" name="CarritoLogicService">
+          <target xmi:type="visualizacionMetricas3.visualizacion:Item" href="simplificacion3.visualizacionmetricas3#/19/@elementos.0/@elementos.4"/>
+          <semanticElements xmi:type="visualizacionMetricas3.visualizacion:Item" href="simplificacion3.visualizacionmetricas3#/19/@elementos.0/@elementos.4"/>
+          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_mO81fNWiEeWliqRL5nzYPw" iconPath="/VisualizacionMetricas3.instances/Class_Description.gif" labelAlignment="LEFT" labelPosition="node">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_mO81fdWiEeWliqRL5nzYPw"/>
+            <description xmi:type="style:BundledImageDescription" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']/@subNodeMappings[name='ElementoDiagrama']/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_mO81ftWiEeWliqRL5nzYPw"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_mO81f9WiEeWliqRL5nzYPw"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']/@subNodeMappings[name='ElementoDiagrama']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_mO81gNWiEeWliqRL5nzYPw" name="ItemPersistence">
+          <target xmi:type="visualizacionMetricas3.visualizacion:Item" href="simplificacion3.visualizacionmetricas3#/19/@elementos.0/@elementos.5"/>
+          <semanticElements xmi:type="visualizacionMetricas3.visualizacion:Item" href="simplificacion3.visualizacionmetricas3#/19/@elementos.0/@elementos.5"/>
+          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_mO81gdWiEeWliqRL5nzYPw" iconPath="/VisualizacionMetricas3.instances/Class_Description.gif" labelAlignment="LEFT" labelPosition="node">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_mO81gtWiEeWliqRL5nzYPw"/>
+            <description xmi:type="style:BundledImageDescription" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']/@subNodeMappings[name='ElementoDiagrama']/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_mO81g9WiEeWliqRL5nzYPw"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_mO81hNWiEeWliqRL5nzYPw"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']/@subNodeMappings[name='ElementoDiagrama']"/>
+        </ownedElements>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_mO81hdWiEeWliqRL5nzYPw" name="Cluster 2">
+        <target xmi:type="visualizacionMetricas3.visualizacion:Clase" href="simplificacion3.visualizacionmetricas3#/19/@elementos.1"/>
+        <semanticElements xmi:type="visualizacionMetricas3.visualizacion:Clase" href="simplificacion3.visualizacionmetricas3#/19/@elementos.1"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_mO81htWiEeWliqRL5nzYPw">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_mO81h9WiEeWliqRL5nzYPw"/>
+          <description xmi:type="style:FlatContainerStyleDescription" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_mO81iNWiEeWliqRL5nzYPw"/>
+          <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_mO81idWiEeWliqRL5nzYPw" red="255" green="255" blue="255"/>
+          <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_mO81itWiEeWliqRL5nzYPw" red="209" green="209" blue="209"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']"/>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_mO81i9WiEeWliqRL5nzYPw" name="ClientPersistence">
+          <target xmi:type="visualizacionMetricas3.visualizacion:Item" href="simplificacion3.visualizacionmetricas3#/19/@elementos.1/@elementos.0"/>
+          <semanticElements xmi:type="visualizacionMetricas3.visualizacion:Item" href="simplificacion3.visualizacionmetricas3#/19/@elementos.1/@elementos.0"/>
+          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_mO81jNWiEeWliqRL5nzYPw" iconPath="/VisualizacionMetricas3.instances/Class_Description.gif" labelAlignment="LEFT" labelPosition="node">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_mO81jdWiEeWliqRL5nzYPw"/>
+            <description xmi:type="style:BundledImageDescription" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']/@subNodeMappings[name='ElementoDiagrama']/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_mO81jtWiEeWliqRL5nzYPw"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_mO81j9WiEeWliqRL5nzYPw"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']/@subNodeMappings[name='ElementoDiagrama']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_mO81kNWiEeWliqRL5nzYPw" name="ClientLogicService">
+          <target xmi:type="visualizacionMetricas3.visualizacion:Item" href="simplificacion3.visualizacionmetricas3#/19/@elementos.1/@elementos.1"/>
+          <semanticElements xmi:type="visualizacionMetricas3.visualizacion:Item" href="simplificacion3.visualizacionmetricas3#/19/@elementos.1/@elementos.1"/>
+          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_mO81kdWiEeWliqRL5nzYPw" iconPath="/VisualizacionMetricas3.instances/Class_Description.gif" labelAlignment="LEFT" labelPosition="node">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_mO81ktWiEeWliqRL5nzYPw"/>
+            <description xmi:type="style:BundledImageDescription" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']/@subNodeMappings[name='ElementoDiagrama']/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_mO81k9WiEeWliqRL5nzYPw"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_mO81lNWiEeWliqRL5nzYPw"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']/@subNodeMappings[name='ElementoDiagrama']"/>
+        </ownedElements>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_mO81ldWiEeWliqRL5nzYPw" name="Cluster 3">
+        <target xmi:type="visualizacionMetricas3.visualizacion:Clase" href="simplificacion3.visualizacionmetricas3#/19/@elementos.2"/>
+        <semanticElements xmi:type="visualizacionMetricas3.visualizacion:Clase" href="simplificacion3.visualizacionmetricas3#/19/@elementos.2"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_mO81ltWiEeWliqRL5nzYPw">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_mO81l9WiEeWliqRL5nzYPw"/>
+          <description xmi:type="style:FlatContainerStyleDescription" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_mO81mNWiEeWliqRL5nzYPw"/>
+          <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_mO81mdWiEeWliqRL5nzYPw" red="255" green="255" blue="255"/>
+          <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_mO81mtWiEeWliqRL5nzYPw" red="209" green="209" blue="209"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']"/>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_mO81m9WiEeWliqRL5nzYPw" name="ProductoLogicService">
+          <target xmi:type="visualizacionMetricas3.visualizacion:Item" href="simplificacion3.visualizacionmetricas3#/19/@elementos.2/@elementos.0"/>
+          <semanticElements xmi:type="visualizacionMetricas3.visualizacion:Item" href="simplificacion3.visualizacionmetricas3#/19/@elementos.2/@elementos.0"/>
+          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_mO81nNWiEeWliqRL5nzYPw" iconPath="/VisualizacionMetricas3.instances/Class_Description.gif" labelAlignment="LEFT" labelPosition="node">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_mO81ndWiEeWliqRL5nzYPw"/>
+            <description xmi:type="style:BundledImageDescription" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']/@subNodeMappings[name='ElementoDiagrama']/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_mO81ntWiEeWliqRL5nzYPw"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_mO81n9WiEeWliqRL5nzYPw"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']/@subNodeMappings[name='ElementoDiagrama']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_mO81oNWiEeWliqRL5nzYPw" name="ProductoPersistence">
+          <target xmi:type="visualizacionMetricas3.visualizacion:Item" href="simplificacion3.visualizacionmetricas3#/19/@elementos.2/@elementos.1"/>
+          <semanticElements xmi:type="visualizacionMetricas3.visualizacion:Item" href="simplificacion3.visualizacionmetricas3#/19/@elementos.2/@elementos.1"/>
+          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_mO81odWiEeWliqRL5nzYPw" iconPath="/VisualizacionMetricas3.instances/Class_Description.gif" labelAlignment="LEFT" labelPosition="node">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_mO81otWiEeWliqRL5nzYPw"/>
+            <description xmi:type="style:BundledImageDescription" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']/@subNodeMappings[name='ElementoDiagrama']/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_mO81o9WiEeWliqRL5nzYPw"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_mO81pNWiEeWliqRL5nzYPw"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']/@subNodeMappings[name='ElementoDiagrama']"/>
+        </ownedElements>
+      </ownedDiagramElements>
+      <description xmi:type="description_1:DiagramDescription" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']"/>
+      <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_mO81pdWiEeWliqRL5nzYPw"/>
+      <activatedLayers xmi:type="description_1:Layer" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer"/>
+      <target xmi:type="visualizacionMetricas3.visualizacion:Diagrama" href="simplificacion3.visualizacionmetricas3#/19"/>
+    </ownedRepresentations>
+    <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_qeeJ0NWiEeWliqRL5nzYPw" name="new Diagrama Cluster Simplificado">
+      <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_qeeKHNWiEeWliqRL5nzYPw" source="GMF_DIAGRAMS">
+        <data xmi:type="notation:Diagram" xmi:id="_qeeKHdWiEeWliqRL5nzYPw" type="Sirius" element="_qeeJ0NWiEeWliqRL5nzYPw" measurementUnit="Pixel">
+          <children xmi:type="notation:Node" xmi:id="_qeeKH9WiEeWliqRL5nzYPw" type="2003" element="_qeeJ0dWiEeWliqRL5nzYPw">
+            <children xmi:type="notation:Node" xmi:id="_qeeKItWiEeWliqRL5nzYPw" type="5007"/>
+            <children xmi:type="notation:Node" xmi:id="_qeeKI9WiEeWliqRL5nzYPw" type="7004">
+              <children xmi:type="notation:Node" xmi:id="_qen64tWiEeWliqRL5nzYPw" type="3010" element="_qeeJ19WiEeWliqRL5nzYPw">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_qen649WiEeWliqRL5nzYPw"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_qen65NWiEeWliqRL5nzYPw" type="3010" element="_qeeJ3NWiEeWliqRL5nzYPw">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_qen65dWiEeWliqRL5nzYPw"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_qen65tWiEeWliqRL5nzYPw" type="3010" element="_qeeJ4dWiEeWliqRL5nzYPw">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_qen659WiEeWliqRL5nzYPw"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_qen66NWiEeWliqRL5nzYPw" type="3010" element="_qeeJ5tWiEeWliqRL5nzYPw">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_qen66dWiEeWliqRL5nzYPw"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_qen66tWiEeWliqRL5nzYPw" type="3010" element="_qeeJ69WiEeWliqRL5nzYPw">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_qen669WiEeWliqRL5nzYPw"/>
+              </children>
+              <styles xmi:type="notation:SortingStyle" xmi:id="_qeeKJNWiEeWliqRL5nzYPw"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_qeeKJdWiEeWliqRL5nzYPw"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_qeeKINWiEeWliqRL5nzYPw" fontName="Segoe UI" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qeeKIdWiEeWliqRL5nzYPw"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_qeeKJtWiEeWliqRL5nzYPw" type="2003" element="_qeeJ8NWiEeWliqRL5nzYPw">
+            <children xmi:type="notation:Node" xmi:id="_qen60NWiEeWliqRL5nzYPw" type="5007"/>
+            <children xmi:type="notation:Node" xmi:id="_qen60dWiEeWliqRL5nzYPw" type="7004">
+              <children xmi:type="notation:Node" xmi:id="_qen67NWiEeWliqRL5nzYPw" type="3010" element="_qeeJ9tWiEeWliqRL5nzYPw">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_qen67dWiEeWliqRL5nzYPw"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_qen67tWiEeWliqRL5nzYPw" type="3010" element="_qeeJ-9WiEeWliqRL5nzYPw">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_qen679WiEeWliqRL5nzYPw"/>
+              </children>
+              <styles xmi:type="notation:SortingStyle" xmi:id="_qen60tWiEeWliqRL5nzYPw"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_qen609WiEeWliqRL5nzYPw"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_qeeKJ9WiEeWliqRL5nzYPw" fontName="Segoe UI" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qeeKKNWiEeWliqRL5nzYPw" x="210"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_qen61NWiEeWliqRL5nzYPw" type="2003" element="_qeeKANWiEeWliqRL5nzYPw">
+            <children xmi:type="notation:Node" xmi:id="_qen619WiEeWliqRL5nzYPw" type="5007"/>
+            <children xmi:type="notation:Node" xmi:id="_qen62NWiEeWliqRL5nzYPw" type="7004">
+              <children xmi:type="notation:Node" xmi:id="_qen68NWiEeWliqRL5nzYPw" type="3010" element="_qeeKBtWiEeWliqRL5nzYPw">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_qen68dWiEeWliqRL5nzYPw"/>
+              </children>
+              <styles xmi:type="notation:SortingStyle" xmi:id="_qen62dWiEeWliqRL5nzYPw"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_qen62tWiEeWliqRL5nzYPw"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_qen61dWiEeWliqRL5nzYPw" fontName="Segoe UI" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qen61tWiEeWliqRL5nzYPw" x="380"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_qen629WiEeWliqRL5nzYPw" type="2003" element="_qeeKC9WiEeWliqRL5nzYPw">
+            <children xmi:type="notation:Node" xmi:id="_qen63tWiEeWliqRL5nzYPw" type="5007"/>
+            <children xmi:type="notation:Node" xmi:id="_qen639WiEeWliqRL5nzYPw" type="7004">
+              <children xmi:type="notation:Node" xmi:id="_qen68tWiEeWliqRL5nzYPw" type="3010" element="_qeeKEdWiEeWliqRL5nzYPw">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_qen689WiEeWliqRL5nzYPw"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_qen69NWiEeWliqRL5nzYPw" type="3010" element="_qeeKFtWiEeWliqRL5nzYPw">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_qen69dWiEeWliqRL5nzYPw"/>
+              </children>
+              <styles xmi:type="notation:SortingStyle" xmi:id="_qen64NWiEeWliqRL5nzYPw"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_qen64dWiEeWliqRL5nzYPw"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_qen63NWiEeWliqRL5nzYPw" fontName="Segoe UI" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qen63dWiEeWliqRL5nzYPw" x="535"/>
+          </children>
+          <styles xmi:type="notation:DiagramStyle" xmi:id="_qeeKHtWiEeWliqRL5nzYPw"/>
+        </data>
+      </ownedAnnotationEntries>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_qeeJ0dWiEeWliqRL5nzYPw" name="Cluster 1">
+        <target xmi:type="visualizacionMetricas3.visualizacion:Clase" href="simplificacion3.visualizacionmetricas3#/10/@elementos.0"/>
+        <semanticElements xmi:type="visualizacionMetricas3.visualizacion:Clase" href="simplificacion3.visualizacionmetricas3#/10/@elementos.0"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_qeeJ0tWiEeWliqRL5nzYPw">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_qeeJ09WiEeWliqRL5nzYPw"/>
+          <description xmi:type="style:FlatContainerStyleDescription" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_qeeJ1NWiEeWliqRL5nzYPw"/>
+          <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_qeeJ1dWiEeWliqRL5nzYPw" red="255" green="255" blue="255"/>
+          <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_qeeJ1tWiEeWliqRL5nzYPw" red="209" green="209" blue="209"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']"/>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_qeeJ19WiEeWliqRL5nzYPw" name="CarritoPersistence">
+          <target xmi:type="visualizacionMetricas3.visualizacion:Item" href="simplificacion3.visualizacionmetricas3#/10/@elementos.0/@elementos.0"/>
+          <semanticElements xmi:type="visualizacionMetricas3.visualizacion:Item" href="simplificacion3.visualizacionmetricas3#/10/@elementos.0/@elementos.0"/>
+          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_qeeJ2NWiEeWliqRL5nzYPw" iconPath="/VisualizacionMetricas3.instances/Class_Description.gif" labelAlignment="LEFT" labelPosition="node">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_qeeJ2dWiEeWliqRL5nzYPw"/>
+            <description xmi:type="style:BundledImageDescription" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']/@subNodeMappings[name='ElementoDiagrama']/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_qeeJ2tWiEeWliqRL5nzYPw"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_qeeJ29WiEeWliqRL5nzYPw"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']/@subNodeMappings[name='ElementoDiagrama']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_qeeJ3NWiEeWliqRL5nzYPw" name="CarritoMasterPersistence">
+          <target xmi:type="visualizacionMetricas3.visualizacion:Item" href="simplificacion3.visualizacionmetricas3#/10/@elementos.0/@elementos.1"/>
+          <semanticElements xmi:type="visualizacionMetricas3.visualizacion:Item" href="simplificacion3.visualizacionmetricas3#/10/@elementos.0/@elementos.1"/>
+          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_qeeJ3dWiEeWliqRL5nzYPw" iconPath="/VisualizacionMetricas3.instances/Class_Description.gif" labelAlignment="LEFT" labelPosition="node">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_qeeJ3tWiEeWliqRL5nzYPw"/>
+            <description xmi:type="style:BundledImageDescription" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']/@subNodeMappings[name='ElementoDiagrama']/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_qeeJ39WiEeWliqRL5nzYPw"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_qeeJ4NWiEeWliqRL5nzYPw"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']/@subNodeMappings[name='ElementoDiagrama']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_qeeJ4dWiEeWliqRL5nzYPw" name="ItemLogicService">
+          <target xmi:type="visualizacionMetricas3.visualizacion:Item" href="simplificacion3.visualizacionmetricas3#/10/@elementos.0/@elementos.2"/>
+          <semanticElements xmi:type="visualizacionMetricas3.visualizacion:Item" href="simplificacion3.visualizacionmetricas3#/10/@elementos.0/@elementos.2"/>
+          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_qeeJ4tWiEeWliqRL5nzYPw" iconPath="/VisualizacionMetricas3.instances/Class_Description.gif" labelAlignment="LEFT" labelPosition="node">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_qeeJ49WiEeWliqRL5nzYPw"/>
+            <description xmi:type="style:BundledImageDescription" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']/@subNodeMappings[name='ElementoDiagrama']/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_qeeJ5NWiEeWliqRL5nzYPw"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_qeeJ5dWiEeWliqRL5nzYPw"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']/@subNodeMappings[name='ElementoDiagrama']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_qeeJ5tWiEeWliqRL5nzYPw" name="CarritoMasterLogicService">
+          <target xmi:type="visualizacionMetricas3.visualizacion:Item" href="simplificacion3.visualizacionmetricas3#/10/@elementos.0/@elementos.3"/>
+          <semanticElements xmi:type="visualizacionMetricas3.visualizacion:Item" href="simplificacion3.visualizacionmetricas3#/10/@elementos.0/@elementos.3"/>
+          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_qeeJ59WiEeWliqRL5nzYPw" iconPath="/VisualizacionMetricas3.instances/Class_Description.gif" labelAlignment="LEFT" labelPosition="node">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_qeeJ6NWiEeWliqRL5nzYPw"/>
+            <description xmi:type="style:BundledImageDescription" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']/@subNodeMappings[name='ElementoDiagrama']/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_qeeJ6dWiEeWliqRL5nzYPw"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_qeeJ6tWiEeWliqRL5nzYPw"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']/@subNodeMappings[name='ElementoDiagrama']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_qeeJ69WiEeWliqRL5nzYPw" name="CarritoLogicService">
+          <target xmi:type="visualizacionMetricas3.visualizacion:Item" href="simplificacion3.visualizacionmetricas3#/10/@elementos.0/@elementos.4"/>
+          <semanticElements xmi:type="visualizacionMetricas3.visualizacion:Item" href="simplificacion3.visualizacionmetricas3#/10/@elementos.0/@elementos.4"/>
+          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_qeeJ7NWiEeWliqRL5nzYPw" iconPath="/VisualizacionMetricas3.instances/Class_Description.gif" labelAlignment="LEFT" labelPosition="node">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_qeeJ7dWiEeWliqRL5nzYPw"/>
+            <description xmi:type="style:BundledImageDescription" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']/@subNodeMappings[name='ElementoDiagrama']/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_qeeJ7tWiEeWliqRL5nzYPw"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_qeeJ79WiEeWliqRL5nzYPw"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']/@subNodeMappings[name='ElementoDiagrama']"/>
+        </ownedElements>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_qeeJ8NWiEeWliqRL5nzYPw" name="Cluster 2">
+        <target xmi:type="visualizacionMetricas3.visualizacion:Clase" href="simplificacion3.visualizacionmetricas3#/10/@elementos.1"/>
+        <semanticElements xmi:type="visualizacionMetricas3.visualizacion:Clase" href="simplificacion3.visualizacionmetricas3#/10/@elementos.1"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_qeeJ8dWiEeWliqRL5nzYPw">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_qeeJ8tWiEeWliqRL5nzYPw"/>
+          <description xmi:type="style:FlatContainerStyleDescription" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_qeeJ89WiEeWliqRL5nzYPw"/>
+          <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_qeeJ9NWiEeWliqRL5nzYPw" red="255" green="255" blue="255"/>
+          <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_qeeJ9dWiEeWliqRL5nzYPw" red="209" green="209" blue="209"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']"/>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_qeeJ9tWiEeWliqRL5nzYPw" name="ClientPersistence">
+          <target xmi:type="visualizacionMetricas3.visualizacion:Item" href="simplificacion3.visualizacionmetricas3#/10/@elementos.1/@elementos.0"/>
+          <semanticElements xmi:type="visualizacionMetricas3.visualizacion:Item" href="simplificacion3.visualizacionmetricas3#/10/@elementos.1/@elementos.0"/>
+          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_qeeJ99WiEeWliqRL5nzYPw" iconPath="/VisualizacionMetricas3.instances/Class_Description.gif" labelAlignment="LEFT" labelPosition="node">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_qeeJ-NWiEeWliqRL5nzYPw"/>
+            <description xmi:type="style:BundledImageDescription" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']/@subNodeMappings[name='ElementoDiagrama']/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_qeeJ-dWiEeWliqRL5nzYPw"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_qeeJ-tWiEeWliqRL5nzYPw"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']/@subNodeMappings[name='ElementoDiagrama']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_qeeJ-9WiEeWliqRL5nzYPw" name="ClientLogicService">
+          <target xmi:type="visualizacionMetricas3.visualizacion:Item" href="simplificacion3.visualizacionmetricas3#/10/@elementos.1/@elementos.1"/>
+          <semanticElements xmi:type="visualizacionMetricas3.visualizacion:Item" href="simplificacion3.visualizacionmetricas3#/10/@elementos.1/@elementos.1"/>
+          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_qeeJ_NWiEeWliqRL5nzYPw" iconPath="/VisualizacionMetricas3.instances/Class_Description.gif" labelAlignment="LEFT" labelPosition="node">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_qeeJ_dWiEeWliqRL5nzYPw"/>
+            <description xmi:type="style:BundledImageDescription" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']/@subNodeMappings[name='ElementoDiagrama']/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_qeeJ_tWiEeWliqRL5nzYPw"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_qeeJ_9WiEeWliqRL5nzYPw"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']/@subNodeMappings[name='ElementoDiagrama']"/>
+        </ownedElements>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_qeeKANWiEeWliqRL5nzYPw" name="Cluster 3">
+        <target xmi:type="visualizacionMetricas3.visualizacion:Clase" href="simplificacion3.visualizacionmetricas3#/10/@elementos.2"/>
+        <semanticElements xmi:type="visualizacionMetricas3.visualizacion:Clase" href="simplificacion3.visualizacionmetricas3#/10/@elementos.2"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_qeeKAdWiEeWliqRL5nzYPw">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_qeeKAtWiEeWliqRL5nzYPw"/>
+          <description xmi:type="style:FlatContainerStyleDescription" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_qeeKA9WiEeWliqRL5nzYPw"/>
+          <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_qeeKBNWiEeWliqRL5nzYPw" red="255" green="255" blue="255"/>
+          <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_qeeKBdWiEeWliqRL5nzYPw" red="209" green="209" blue="209"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']"/>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_qeeKBtWiEeWliqRL5nzYPw" name="ItemPersistence">
+          <target xmi:type="visualizacionMetricas3.visualizacion:Item" href="simplificacion3.visualizacionmetricas3#/10/@elementos.2/@elementos.0"/>
+          <semanticElements xmi:type="visualizacionMetricas3.visualizacion:Item" href="simplificacion3.visualizacionmetricas3#/10/@elementos.2/@elementos.0"/>
+          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_qeeKB9WiEeWliqRL5nzYPw" iconPath="/VisualizacionMetricas3.instances/Class_Description.gif" labelAlignment="LEFT" labelPosition="node">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_qeeKCNWiEeWliqRL5nzYPw"/>
+            <description xmi:type="style:BundledImageDescription" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']/@subNodeMappings[name='ElementoDiagrama']/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_qeeKCdWiEeWliqRL5nzYPw"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_qeeKCtWiEeWliqRL5nzYPw"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']/@subNodeMappings[name='ElementoDiagrama']"/>
+        </ownedElements>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_qeeKC9WiEeWliqRL5nzYPw" name="Cluster 4">
+        <target xmi:type="visualizacionMetricas3.visualizacion:Clase" href="simplificacion3.visualizacionmetricas3#/10/@elementos.3"/>
+        <semanticElements xmi:type="visualizacionMetricas3.visualizacion:Clase" href="simplificacion3.visualizacionmetricas3#/10/@elementos.3"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_qeeKDNWiEeWliqRL5nzYPw">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_qeeKDdWiEeWliqRL5nzYPw"/>
+          <description xmi:type="style:FlatContainerStyleDescription" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_qeeKDtWiEeWliqRL5nzYPw"/>
+          <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_qeeKD9WiEeWliqRL5nzYPw" red="255" green="255" blue="255"/>
+          <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_qeeKENWiEeWliqRL5nzYPw" red="209" green="209" blue="209"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']"/>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_qeeKEdWiEeWliqRL5nzYPw" name="ProductoLogicService">
+          <target xmi:type="visualizacionMetricas3.visualizacion:Item" href="simplificacion3.visualizacionmetricas3#/10/@elementos.3/@elementos.0"/>
+          <semanticElements xmi:type="visualizacionMetricas3.visualizacion:Item" href="simplificacion3.visualizacionmetricas3#/10/@elementos.3/@elementos.0"/>
+          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_qeeKEtWiEeWliqRL5nzYPw" iconPath="/VisualizacionMetricas3.instances/Class_Description.gif" labelAlignment="LEFT" labelPosition="node">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_qeeKE9WiEeWliqRL5nzYPw"/>
+            <description xmi:type="style:BundledImageDescription" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']/@subNodeMappings[name='ElementoDiagrama']/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_qeeKFNWiEeWliqRL5nzYPw"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_qeeKFdWiEeWliqRL5nzYPw"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']/@subNodeMappings[name='ElementoDiagrama']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_qeeKFtWiEeWliqRL5nzYPw" name="ProductoPersistence">
+          <target xmi:type="visualizacionMetricas3.visualizacion:Item" href="simplificacion3.visualizacionmetricas3#/10/@elementos.3/@elementos.1"/>
+          <semanticElements xmi:type="visualizacionMetricas3.visualizacion:Item" href="simplificacion3.visualizacionmetricas3#/10/@elementos.3/@elementos.1"/>
+          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_qeeKF9WiEeWliqRL5nzYPw" iconPath="/VisualizacionMetricas3.instances/Class_Description.gif" labelAlignment="LEFT" labelPosition="node">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_qeeKGNWiEeWliqRL5nzYPw"/>
+            <description xmi:type="style:BundledImageDescription" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']/@subNodeMappings[name='ElementoDiagrama']/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_qeeKGdWiEeWliqRL5nzYPw"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_qeeKGtWiEeWliqRL5nzYPw"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']/@subNodeMappings[name='ElementoDiagrama']"/>
+        </ownedElements>
+      </ownedDiagramElements>
+      <description xmi:type="description_1:DiagramDescription" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']"/>
+      <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_qeeKG9WiEeWliqRL5nzYPw"/>
+      <activatedLayers xmi:type="description_1:Layer" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer"/>
+      <target xmi:type="visualizacionMetricas3.visualizacion:Diagrama" href="simplificacion3.visualizacionmetricas3#/10"/>
     </ownedRepresentations>
     <viewpoint xmi:type="description:Viewpoint" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']"/>
   </ownedViews>

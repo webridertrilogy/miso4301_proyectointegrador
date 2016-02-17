@@ -7,7 +7,7 @@
   <visualizacionMetricas3.representacion:Generalizacion/>
   <visualizacionMetricas3.representacion:Aplicacion name="carrito.logic">
     <hijos xsi:type="visualizacionMetricas3.representacion:Paquete" name="co.edu.uniandes.csw.ejemplo.carrito.logic.api.">
-      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="_ICarritoLogicService" compartida="false">
+      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="_ICarritoLogicService">
         <metricas tipo="CouplingBetweenObjects" valor="4.0"/>
         <metricas tipo="NumberOfLinesMeasure" valor="6.0"/>
         <relaciones target="/5/@hijos.3/@hijos.1" tipos="/0" source="/5/@hijos.0/@hijos.0">
@@ -22,7 +22,7 @@
         <hijos xsi:type="visualizacionMetricas3.representacion:Metodo" name="updateCarrito" atributosIn="/9"/>
         <hijos xsi:type="visualizacionMetricas3.representacion:Metodo" name="getCarritos" atributosIn="/10 /11"/>
       </hijos>
-      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="ICarritoLogicService" compartida="false">
+      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="ICarritoLogicService">
         <metricas tipo="CouplingBetweenObjects" valor="3.0"/>
         <metricas tipo="NumberOfLinesMeasure"/>
         <relaciones target="/5/@hijos.0/@hijos.0" tipos="/4" source="/5/@hijos.0/@hijos.1">
@@ -33,7 +33,7 @@
       </hijos>
     </hijos>
     <hijos xsi:type="visualizacionMetricas3.representacion:Paquete" name="co.edu.uniandes.csw.ejemplo.carrito.logic.ejb.">
-      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="_CarritoLogicService" compartida="true">
+      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="_CarritoLogicService">
         <metricas tipo="CouplingBetweenObjects" valor="7.0"/>
         <metricas tipo="NumberOfLinesMeasure" valor="7.0"/>
         <relaciones target="/5/@hijos.2/@hijos.1" tipos="/2" source="/5/@hijos.1/@hijos.0">
@@ -69,7 +69,7 @@
         <hijos xsi:type="visualizacionMetricas3.representacion:Metodo" name="updateCarrito" atributosIn="/17" returnType="void"/>
         <hijos xsi:type="visualizacionMetricas3.representacion:Atributo" name="persistance"/>
       </hijos>
-      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="CarritoLogicServiceTest" compartida="true">
+      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="CarritoLogicServiceTest">
         <metricas tipo="CouplingBetweenObjects" valor="10.0"/>
         <metricas tipo="NumberOfLinesMeasure" valor="14.0"/>
         <relaciones target="/5/@hijos.0/@hijos.1" tipos="/2" source="/5/@hijos.1/@hijos.1">
@@ -127,7 +127,7 @@
         <hijos xsi:type="visualizacionMetricas3.representacion:Atributo" name="carritoPersistence"/>
         <hijos xsi:type="visualizacionMetricas3.representacion:Atributo" name="data"/>
       </hijos>
-      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="CarritoLogicService" compartida="true">
+      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="CarritoLogicService">
         <metricas tipo="CouplingBetweenObjects" valor="4.0"/>
         <metricas tipo="NumberOfLinesMeasure" valor="2.0"/>
         <relaciones target="/5/@hijos.2/@hijos.1" tipos="/0" source="/5/@hijos.1/@hijos.2">
@@ -155,7 +155,7 @@
       </hijos>
     </hijos>
     <hijos xsi:type="visualizacionMetricas3.representacion:Paquete" name="co.edu.uniandes.csw.ejemplo.carrito.persistence.api.">
-      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="_ICarritoPersistence" compartida="true">
+      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="_ICarritoPersistence">
         <metricas tipo="CouplingBetweenObjects" valor="9.0"/>
         <metricas tipo="NumberOfLinesMeasure" valor="6.0"/>
         <relaciones target="/5/@hijos.3/@hijos.1" tipos="/0" source="/5/@hijos.2/@hijos.0">
@@ -175,7 +175,7 @@
         <hijos xsi:type="visualizacionMetricas3.representacion:Metodo" name="deleteCarrito" atributosIn="/22" returnType="void"/>
         <hijos xsi:type="visualizacionMetricas3.representacion:Metodo" name="updateCarrito" atributosIn="/23" returnType="void"/>
       </hijos>
-      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="ICarritoPersistence" compartida="true">
+      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="ICarritoPersistence">
         <metricas tipo="CouplingBetweenObjects" valor="9.0"/>
         <metricas tipo="NumberOfLinesMeasure" valor="1.0"/>
         <relaciones target="/5/@hijos.3/@hijos.0" tipos="/0" source="/5/@hijos.2/@hijos.1">
@@ -192,7 +192,7 @@
       </hijos>
     </hijos>
     <hijos xsi:type="visualizacionMetricas3.representacion:Paquete" name="co.edu.uniandes.csw.ejemplo.carrito.logic.dto.">
-      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="CarritoPageDTO" compartida="true">
+      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="CarritoPageDTO">
         <metricas tipo="CouplingBetweenObjects" valor="9.0"/>
         <metricas tipo="WeightedMethodsPerClass" valor="1.0"/>
         <metricas tipo="NumberOfLinesMeasure" valor="1.0"/>
@@ -203,7 +203,7 @@
         </relaciones>
         <hijos xsi:type="visualizacionMetricas3.representacion:Metodo" name="CarritoPageDTO"/>
       </hijos>
-      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="CarritoDTO" compartida="true">
+      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="CarritoDTO">
         <metricas tipo="CouplingBetweenObjects" valor="11.0"/>
         <metricas tipo="WeightedMethodsPerClass" valor="1.0"/>
         <metricas tipo="NumberOfLinesMeasure" valor="1.0"/>
@@ -214,7 +214,7 @@
         </relaciones>
         <hijos xsi:type="visualizacionMetricas3.representacion:Metodo" name="CarritoDTO"/>
       </hijos>
-      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="_CarritoDTO" compartida="true">
+      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="_CarritoDTO">
         <metricas tipo="CouplingBetweenObjects" valor="5.0"/>
         <metricas tipo="WeightedMethodsPerClass" valor="6.0"/>
         <metricas tipo="NumberOfLinesMeasure" valor="6.0"/>
@@ -225,7 +225,7 @@
         <hijos xsi:type="visualizacionMetricas3.representacion:Metodo" name="getName"/>
         <hijos xsi:type="visualizacionMetricas3.representacion:Metodo" name="getClientId"/>
       </hijos>
-      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="_CarritoPageDTO" compartida="true">
+      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="_CarritoPageDTO">
         <metricas tipo="CouplingBetweenObjects" valor="5.0"/>
         <metricas tipo="WeightedMethodsPerClass" valor="4.0"/>
         <metricas tipo="NumberOfLinesMeasure" valor="4.0"/>
@@ -258,7 +258,7 @@
       </relaciones>
     </hijos>
     <hijos xsi:type="visualizacionMetricas3.representacion:Paquete" name="co.edu.uniandes.csw.ejemplo.item.persistence.api.">
-      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="IItemPersistence" compartida="true">
+      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="IItemPersistence">
         <metricas tipo="CouplingBetweenObjects" valor="6.0"/>
         <metricas tipo="NumberOfLinesMeasure"/>
         <relaciones target="/5/@hijos.5/@hijos.1" tipos="/4" source="/5/@hijos.5/@hijos.0">
@@ -267,7 +267,7 @@
           <metricas/>
         </relaciones>
       </hijos>
-      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="_IItemPersistence" compartida="true">
+      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="_IItemPersistence">
         <metricas tipo="CouplingBetweenObjects" valor="9.0"/>
         <metricas tipo="NumberOfLinesMeasure" valor="6.0"/>
         <relaciones target="/5/@hijos.8/@hijos.3" tipos="/0" source="/5/@hijos.5/@hijos.1">
@@ -289,7 +289,7 @@
       </hijos>
     </hijos>
     <hijos xsi:type="visualizacionMetricas3.representacion:Paquete" name="co.edu.uniandes.csw.ejemplo.carrito.master.logic.ejb.">
-      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="_CarritoMasterLogicService" compartida="true">
+      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="_CarritoMasterLogicService">
         <metricas tipo="CouplingBetweenObjects" valor="16.0"/>
         <metricas tipo="NumberOfLinesMeasure" valor="7.0"/>
         <relaciones target="/5/@hijos.2/@hijos.1" tipos="/2" source="/5/@hijos.6/@hijos.0">
@@ -370,7 +370,7 @@
         <hijos xsi:type="visualizacionMetricas3.representacion:Atributo" name="carritoMasterPersistance"/>
         <hijos xsi:type="visualizacionMetricas3.representacion:Atributo" name="itemPersistance"/>
       </hijos>
-      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="CarritoMasterLogicService" compartida="true">
+      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="CarritoMasterLogicService">
         <metricas tipo="CouplingBetweenObjects" valor="2.0"/>
         <metricas tipo="NumberOfLinesMeasure"/>
         <relaciones target="/5/@hijos.9/@hijos.0" tipos="/4" source="/5/@hijos.6/@hijos.1">
@@ -386,7 +386,7 @@
       </hijos>
     </hijos>
     <hijos xsi:type="visualizacionMetricas3.representacion:Paquete" name="co.edu.uniandes.csw.ejemplo.item.persistence.converter.">
-      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="_ItemConverter" compartida="true">
+      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="_ItemConverter">
         <metricas tipo="CouplingBetweenObjects" valor="7.0"/>
         <metricas tipo="NumberOfLinesMeasure" valor="4.0"/>
         <relaciones target="/5/@hijos.8/@hijos.3" tipos="/2 /0" source="/5/@hijos.7/@hijos.0">
@@ -414,7 +414,7 @@
         <hijos xsi:type="visualizacionMetricas3.representacion:Metodo" name="entity2PersistenceDTOList" atributosIn="/41" returnType="java.util.List&lt;co.edu.uniandes.csw.ejemplo.item.logic.dto.ItemDTO>"/>
         <hijos xsi:type="visualizacionMetricas3.representacion:Metodo" name="persistenceDTO2EntityList" atributosIn="/42" returnType="java.util.List&lt;co.edu.uniandes.csw.ejemplo.item.persistence.entity.ItemEntity>"/>
       </hijos>
-      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="ItemConverter" compartida="true">
+      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="ItemConverter">
         <metricas tipo="CouplingBetweenObjects" valor="1.0"/>
         <metricas tipo="NumberOfLinesMeasure"/>
         <relaciones target="/5/@hijos.7/@hijos.0" tipos="/4" source="/5/@hijos.7/@hijos.1">
@@ -425,7 +425,7 @@
       </hijos>
     </hijos>
     <hijos xsi:type="visualizacionMetricas3.representacion:Paquete" name="co.edu.uniandes.csw.ejemplo.item.logic.dto.">
-      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="ItemPageDTO" compartida="true">
+      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="ItemPageDTO">
         <metricas tipo="CouplingBetweenObjects" valor="6.0"/>
         <metricas tipo="WeightedMethodsPerClass" valor="1.0"/>
         <metricas tipo="NumberOfLinesMeasure" valor="1.0"/>
@@ -436,7 +436,7 @@
         </relaciones>
         <hijos xsi:type="visualizacionMetricas3.representacion:Metodo" name="ItemPageDTO"/>
       </hijos>
-      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="_ItemDTO" compartida="true">
+      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="_ItemDTO">
         <metricas tipo="CouplingBetweenObjects" valor="5.0"/>
         <metricas tipo="WeightedMethodsPerClass" valor="8.0"/>
         <metricas tipo="NumberOfLinesMeasure" valor="8.0"/>
@@ -449,7 +449,7 @@
         <hijos xsi:type="visualizacionMetricas3.representacion:Metodo" name="getName"/>
         <hijos xsi:type="visualizacionMetricas3.representacion:Metodo" name="getProductoId"/>
       </hijos>
-      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="_ItemPageDTO" compartida="true">
+      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="_ItemPageDTO">
         <metricas tipo="CouplingBetweenObjects" valor="4.0"/>
         <metricas tipo="WeightedMethodsPerClass" valor="4.0"/>
         <metricas tipo="NumberOfLinesMeasure" valor="4.0"/>
@@ -458,7 +458,7 @@
         <hijos xsi:type="visualizacionMetricas3.representacion:Metodo" name="getRecords"/>
         <hijos xsi:type="visualizacionMetricas3.representacion:Metodo" name="getTotalRecords"/>
       </hijos>
-      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="ItemDTO" compartida="true">
+      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="ItemDTO">
         <metricas tipo="CouplingBetweenObjects" valor="9.0"/>
         <metricas tipo="WeightedMethodsPerClass" valor="1.0"/>
         <metricas tipo="NumberOfLinesMeasure" valor="1.0"/>
@@ -471,7 +471,7 @@
       </hijos>
     </hijos>
     <hijos xsi:type="visualizacionMetricas3.representacion:Paquete" name="co.edu.uniandes.csw.ejemplo.carrito.master.logic.api.">
-      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="ICarritoMasterLogicService" compartida="false">
+      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="ICarritoMasterLogicService">
         <metricas tipo="CouplingBetweenObjects" valor="2.0"/>
         <metricas tipo="NumberOfLinesMeasure"/>
         <relaciones target="/5/@hijos.9/@hijos.1" tipos="/4" source="/5/@hijos.9/@hijos.0">
@@ -480,13 +480,13 @@
           <metricas/>
         </relaciones>
       </hijos>
-      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="_ICarritoMasterLogicService" compartida="false">
+      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="_ICarritoMasterLogicService">
         <metricas tipo="CouplingBetweenObjects" valor="2.0"/>
         <metricas tipo="NumberOfLinesMeasure"/>
       </hijos>
     </hijos>
     <hijos xsi:type="visualizacionMetricas3.representacion:Paquete" name="co.edu.uniandes.csw.ejemplo.carrito.master.persistence.">
-      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="CarritoMasterPersistence" compartida="true">
+      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="CarritoMasterPersistence">
         <metricas tipo="CouplingBetweenObjects" valor="2.0"/>
         <metricas tipo="NumberOfLinesMeasure"/>
         <relaciones target="/5/@hijos.12/@hijos.0" tipos="/4" source="/5/@hijos.10/@hijos.0">
@@ -500,7 +500,7 @@
           <metricas/>
         </relaciones>
       </hijos>
-      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="_CarritoMasterPersistence" compartida="true">
+      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="_CarritoMasterPersistence">
         <metricas tipo="CouplingBetweenObjects" valor="9.0"/>
         <metricas tipo="NumberOfLinesMeasure" valor="6.0"/>
         <relaciones target="/5/@hijos.2/@hijos.1" tipos="/2" source="/5/@hijos.10/@hijos.1">
@@ -547,7 +547,7 @@
       </hijos>
     </hijos>
     <hijos xsi:type="visualizacionMetricas3.representacion:Paquete" name="co.edu.uniandes.csw.ejemplo.item.persistence.entity.">
-      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="_ItemEntity" compartida="true">
+      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="_ItemEntity">
         <metricas tipo="CouplingBetweenObjects" valor="4.0"/>
         <metricas tipo="NumberOfLinesMeasure" valor="12.0"/>
         <hijos xsi:type="visualizacionMetricas3.representacion:Metodo" name="getId" returnType="Long"/>
@@ -563,7 +563,7 @@
         <hijos xsi:type="visualizacionMetricas3.representacion:Atributo" name="name"/>
         <hijos xsi:type="visualizacionMetricas3.representacion:Atributo" name="productoId"/>
       </hijos>
-      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="ItemEntity" compartida="true">
+      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="ItemEntity">
         <metricas tipo="CouplingBetweenObjects" valor="5.0"/>
         <metricas tipo="WeightedMethodsPerClass" valor="1.0"/>
         <metricas tipo="NumberOfLinesMeasure" valor="1.0"/>
@@ -576,7 +576,7 @@
       </hijos>
     </hijos>
     <hijos xsi:type="visualizacionMetricas3.representacion:Paquete" name="co.edu.uniandes.csw.ejemplo.carrito.master.persistence.api.">
-      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="ICarritoMasterPersistence" compartida="true">
+      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="ICarritoMasterPersistence">
         <metricas tipo="CouplingBetweenObjects" valor="3.0"/>
         <metricas tipo="NumberOfLinesMeasure"/>
         <relaciones target="/5/@hijos.12/@hijos.1" tipos="/4" source="/5/@hijos.12/@hijos.0">
@@ -585,7 +585,7 @@
           <metricas/>
         </relaciones>
       </hijos>
-      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="_ICarritoMasterPersistence" compartida="true">
+      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="_ICarritoMasterPersistence">
         <metricas tipo="CouplingBetweenObjects" valor="6.0"/>
         <metricas tipo="NumberOfLinesMeasure" valor="4.0"/>
         <relaciones target="/5/@hijos.14/@hijos.1" tipos="/0" source="/5/@hijos.12/@hijos.1">
@@ -605,7 +605,7 @@
       </hijos>
     </hijos>
     <hijos xsi:type="visualizacionMetricas3.representacion:Paquete" name="co.edu.uniandes.csw.ejemplo.item.persistence.">
-      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="_ItemPersistence" compartida="true">
+      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="_ItemPersistence">
         <metricas tipo="CouplingBetweenObjects" valor="8.0"/>
         <metricas tipo="NumberOfLinesMeasure" valor="7.0"/>
         <relaciones target="/5/@hijos.11/@hijos.1" tipos="/2" source="/5/@hijos.13/@hijos.0">
@@ -646,7 +646,7 @@
         <hijos xsi:type="visualizacionMetricas3.representacion:Metodo" name="updateItem" atributosIn="/58" returnType="void"/>
         <hijos xsi:type="visualizacionMetricas3.representacion:Atributo" name="entityManager"/>
       </hijos>
-      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="ItemPersistence" compartida="true">
+      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="ItemPersistence">
         <metricas tipo="CouplingBetweenObjects" valor="2.0"/>
         <metricas tipo="NumberOfLinesMeasure"/>
         <relaciones target="/5/@hijos.5/@hijos.0" tipos="/4" source="/5/@hijos.13/@hijos.1">
@@ -660,7 +660,7 @@
           <metricas/>
         </relaciones>
       </hijos>
-      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="ItemPersistenceTest" compartida="true">
+      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="ItemPersistenceTest">
         <metricas tipo="CouplingBetweenObjects" valor="10.0"/>
         <metricas tipo="NumberOfLinesMeasure" valor="15.0"/>
         <relaciones target="/5/@hijos.5/@hijos.0" tipos="/2" source="/5/@hijos.13/@hijos.2">
@@ -721,7 +721,7 @@
       </hijos>
     </hijos>
     <hijos xsi:type="visualizacionMetricas3.representacion:Paquete" name="co.edu.uniandes.csw.ejemplo.carrito.master.logic.dto.">
-      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="_CarritoMasterDTO" compartida="true">
+      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="_CarritoMasterDTO">
         <metricas tipo="CouplingBetweenObjects" valor="4.0"/>
         <metricas tipo="WeightedMethodsPerClass" valor="6.0"/>
         <metricas tipo="NumberOfLinesMeasure" valor="6.0"/>
@@ -737,7 +737,7 @@
         <hijos xsi:type="visualizacionMetricas3.representacion:Metodo" name="setCarritoEntity" atributosIn="/68"/>
         <hijos xsi:type="visualizacionMetricas3.representacion:Metodo" name="setListitem" atributosIn="/69"/>
       </hijos>
-      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="CarritoMasterDTO" compartida="true">
+      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="CarritoMasterDTO">
         <metricas tipo="CouplingBetweenObjects" valor="4.0"/>
         <metricas tipo="WeightedMethodsPerClass" valor="1.0"/>
         <metricas tipo="NumberOfLinesMeasure" valor="1.0"/>
@@ -750,7 +750,7 @@
       </hijos>
     </hijos>
     <hijos xsi:type="visualizacionMetricas3.representacion:Paquete" name="co.edu.uniandes.csw.ejemplo.carrito.master.persistence.entity.">
-      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="CarritoitemEntity" compartida="true">
+      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="CarritoitemEntity">
         <metricas tipo="CouplingBetweenObjects" valor="5.0"/>
         <metricas tipo="NumberOfLinesMeasure" valor="14.0"/>
         <relaciones target="/5/@hijos.11/@hijos.1" tipos="/2 /0" source="/5/@hijos.15/@hijos.0">
@@ -803,7 +803,7 @@
       </relaciones>
     </hijos>
     <hijos xsi:type="visualizacionMetricas3.representacion:Paquete" name="co.edu.uniandes.csw.ejemplo.producto.persistence.entity.">
-      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="_ProductoEntity" compartida="false">
+      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="_ProductoEntity">
         <metricas tipo="CouplingBetweenObjects" valor="4.0"/>
         <metricas tipo="NumberOfLinesMeasure" valor="6.0"/>
         <hijos xsi:type="visualizacionMetricas3.representacion:Metodo" name="getName" returnType="String"/>
@@ -813,7 +813,7 @@
         <hijos xsi:type="visualizacionMetricas3.representacion:Atributo" name="name"/>
         <hijos xsi:type="visualizacionMetricas3.representacion:Atributo" name="id"/>
       </hijos>
-      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="ProductoEntity" compartida="false">
+      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="ProductoEntity">
         <metricas tipo="CouplingBetweenObjects" valor="4.0"/>
         <metricas tipo="WeightedMethodsPerClass" valor="1.0"/>
         <metricas tipo="NumberOfLinesMeasure" valor="1.0"/>
@@ -826,7 +826,7 @@
       </hijos>
     </hijos>
     <hijos xsi:type="visualizacionMetricas3.representacion:Paquete" name="co.edu.uniandes.csw.ejemplo.producto.persistence.api.">
-      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="IProductoPersistence" compartida="true">
+      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="IProductoPersistence">
         <metricas tipo="CouplingBetweenObjects" valor="5.0"/>
         <metricas tipo="NumberOfLinesMeasure"/>
         <relaciones target="/5/@hijos.18/@hijos.1" tipos="/4" source="/5/@hijos.18/@hijos.0">
@@ -835,7 +835,7 @@
           <metricas/>
         </relaciones>
       </hijos>
-      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="_IProductoPersistence" compartida="true">
+      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="_IProductoPersistence">
         <metricas tipo="CouplingBetweenObjects" valor="8.0"/>
         <metricas tipo="NumberOfLinesMeasure" valor="6.0"/>
         <relaciones target="/5/@hijos.19/@hijos.3" tipos="/0" source="/5/@hijos.18/@hijos.1">
@@ -857,7 +857,7 @@
       </hijos>
     </hijos>
     <hijos xsi:type="visualizacionMetricas3.representacion:Paquete" name="co.edu.uniandes.csw.ejemplo.producto.logic.dto.">
-      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="_ProductoPageDTO" compartida="true">
+      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="_ProductoPageDTO">
         <metricas tipo="CouplingBetweenObjects" valor="4.0"/>
         <metricas tipo="WeightedMethodsPerClass" valor="4.0"/>
         <metricas tipo="NumberOfLinesMeasure" valor="4.0"/>
@@ -866,7 +866,7 @@
         <hijos xsi:type="visualizacionMetricas3.representacion:Metodo" name="getRecords"/>
         <hijos xsi:type="visualizacionMetricas3.representacion:Metodo" name="getTotalRecords"/>
       </hijos>
-      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="ProductoPageDTO" compartida="true">
+      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="ProductoPageDTO">
         <metricas tipo="CouplingBetweenObjects" valor="6.0"/>
         <metricas tipo="WeightedMethodsPerClass" valor="1.0"/>
         <metricas tipo="NumberOfLinesMeasure" valor="1.0"/>
@@ -877,7 +877,7 @@
         </relaciones>
         <hijos xsi:type="visualizacionMetricas3.representacion:Metodo" name="ProductoPageDTO"/>
       </hijos>
-      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="_ProductoDTO" compartida="true">
+      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="_ProductoDTO">
         <metricas tipo="CouplingBetweenObjects" valor="4.0"/>
         <metricas tipo="WeightedMethodsPerClass" valor="4.0"/>
         <metricas tipo="NumberOfLinesMeasure" valor="4.0"/>
@@ -886,7 +886,7 @@
         <hijos xsi:type="visualizacionMetricas3.representacion:Metodo" name="getName"/>
         <hijos xsi:type="visualizacionMetricas3.representacion:Metodo" name="getId"/>
       </hijos>
-      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="ProductoDTO" compartida="true">
+      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="ProductoDTO">
         <metricas tipo="CouplingBetweenObjects" valor="8.0"/>
         <metricas tipo="WeightedMethodsPerClass" valor="1.0"/>
         <metricas tipo="NumberOfLinesMeasure" valor="1.0"/>
@@ -899,7 +899,7 @@
       </hijos>
     </hijos>
     <hijos xsi:type="visualizacionMetricas3.representacion:Paquete" name="co.edu.uniandes.csw.ejemplo.producto.persistence.">
-      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="ProductoPersistence" compartida="false">
+      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="ProductoPersistence">
         <metricas tipo="CouplingBetweenObjects" valor="2.0"/>
         <metricas tipo="NumberOfLinesMeasure"/>
         <relaciones target="/5/@hijos.18/@hijos.0" tipos="/4" source="/5/@hijos.20/@hijos.0">
@@ -913,7 +913,7 @@
           <metricas/>
         </relaciones>
       </hijos>
-      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="_ProductoPersistence" compartida="false">
+      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="_ProductoPersistence">
         <metricas tipo="CouplingBetweenObjects" valor="8.0"/>
         <metricas tipo="NumberOfLinesMeasure" valor="7.0"/>
         <relaciones target="/5/@hijos.17/@hijos.1" tipos="/2" source="/5/@hijos.20/@hijos.1">
@@ -954,7 +954,7 @@
         <hijos xsi:type="visualizacionMetricas3.representacion:Metodo" name="updateProducto" atributosIn="/98" returnType="void"/>
         <hijos xsi:type="visualizacionMetricas3.representacion:Atributo" name="entityManager"/>
       </hijos>
-      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="ProductoPersistenceTest" compartida="false">
+      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="ProductoPersistenceTest">
         <metricas tipo="CouplingBetweenObjects" valor="10.0"/>
         <metricas tipo="NumberOfLinesMeasure" valor="15.0"/>
         <relaciones target="/5/@hijos.18/@hijos.0" tipos="/2" source="/5/@hijos.20/@hijos.2">
@@ -1015,7 +1015,7 @@
       </hijos>
     </hijos>
     <hijos xsi:type="visualizacionMetricas3.representacion:Paquete" name="co.edu.uniandes.csw.ejemplo.producto.logic.ejb.">
-      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="_ProductoLogicService" compartida="true">
+      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="_ProductoLogicService">
         <metricas tipo="CouplingBetweenObjects" valor="7.0"/>
         <metricas tipo="NumberOfLinesMeasure" valor="7.0"/>
         <relaciones target="/5/@hijos.18/@hijos.0" tipos="/2" source="/5/@hijos.21/@hijos.0">
@@ -1051,7 +1051,7 @@
         <hijos xsi:type="visualizacionMetricas3.representacion:Metodo" name="updateProducto" atributosIn="/92" returnType="void"/>
         <hijos xsi:type="visualizacionMetricas3.representacion:Atributo" name="persistance"/>
       </hijos>
-      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="ProductoLogicService" compartida="true">
+      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="ProductoLogicService">
         <metricas tipo="CouplingBetweenObjects" valor="2.0"/>
         <metricas tipo="NumberOfLinesMeasure"/>
         <relaciones target="/5/@hijos.42/@hijos.1" tipos="/4" source="/5/@hijos.21/@hijos.1">
@@ -1065,7 +1065,7 @@
           <metricas/>
         </relaciones>
       </hijos>
-      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="ProductoLogicServiceTest" compartida="true">
+      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="ProductoLogicServiceTest">
         <metricas tipo="CouplingBetweenObjects" valor="10.0"/>
         <metricas tipo="NumberOfLinesMeasure" valor="14.0"/>
         <relaciones target="/5/@hijos.42/@hijos.1" tipos="/2" source="/5/@hijos.21/@hijos.2">
@@ -1125,7 +1125,7 @@
       </hijos>
     </hijos>
     <hijos xsi:type="visualizacionMetricas3.representacion:Paquete" name="co.edu.uniandes.csw.ejemplo.producto.persistence.converter.">
-      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="_ProductoConverter" compartida="false">
+      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="_ProductoConverter">
         <metricas tipo="CouplingBetweenObjects" valor="6.0"/>
         <metricas tipo="NumberOfLinesMeasure" valor="4.0"/>
         <relaciones target="/5/@hijos.19/@hijos.3" tipos="/2 /0" source="/5/@hijos.22/@hijos.0">
@@ -1153,7 +1153,7 @@
         <hijos xsi:type="visualizacionMetricas3.representacion:Metodo" name="entity2PersistenceDTOList" atributosIn="/101" returnType="java.util.List&lt;co.edu.uniandes.csw.ejemplo.producto.logic.dto.ProductoDTO>"/>
         <hijos xsi:type="visualizacionMetricas3.representacion:Metodo" name="persistenceDTO2EntityList" atributosIn="/102" returnType="java.util.List&lt;co.edu.uniandes.csw.ejemplo.producto.persistence.entity.ProductoEntity>"/>
       </hijos>
-      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="ProductoConverter" compartida="false">
+      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="ProductoConverter">
         <metricas tipo="CouplingBetweenObjects" valor="1.0"/>
         <metricas tipo="NumberOfLinesMeasure"/>
         <relaciones target="/5/@hijos.22/@hijos.0" tipos="/4" source="/5/@hijos.22/@hijos.1">
@@ -1174,7 +1174,7 @@
       </relaciones>
     </hijos>
     <hijos xsi:type="visualizacionMetricas3.representacion:Paquete" name="co.edu.uniandes.csw.ejemplo.item.logic.ejb.">
-      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="ItemLogicService" compartida="true">
+      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="ItemLogicService">
         <metricas tipo="CouplingBetweenObjects" valor="2.0"/>
         <metricas tipo="NumberOfLinesMeasure"/>
         <relaciones target="/5/@hijos.25/@hijos.1" tipos="/4" source="/5/@hijos.24/@hijos.0">
@@ -1188,7 +1188,7 @@
           <metricas/>
         </relaciones>
       </hijos>
-      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="_ItemLogicService" compartida="true">
+      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="_ItemLogicService">
         <metricas tipo="CouplingBetweenObjects" valor="7.0"/>
         <metricas tipo="NumberOfLinesMeasure" valor="7.0"/>
         <relaciones target="/5/@hijos.5/@hijos.0" tipos="/2" source="/5/@hijos.24/@hijos.1">
@@ -1224,7 +1224,7 @@
         <hijos xsi:type="visualizacionMetricas3.representacion:Metodo" name="updateItem" atributosIn="/116" returnType="void"/>
         <hijos xsi:type="visualizacionMetricas3.representacion:Atributo" name="persistance"/>
       </hijos>
-      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="ItemLogicServiceTest" compartida="true">
+      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="ItemLogicServiceTest">
         <metricas tipo="CouplingBetweenObjects" valor="10.0"/>
         <metricas tipo="NumberOfLinesMeasure" valor="14.0"/>
         <relaciones target="/5/@hijos.25/@hijos.1" tipos="/2" source="/5/@hijos.24/@hijos.2">
@@ -1284,7 +1284,7 @@
       </hijos>
     </hijos>
     <hijos xsi:type="visualizacionMetricas3.representacion:Paquete" name="co.edu.uniandes.csw.ejemplo.item.logic.api.">
-      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="_IItemLogicService" compartida="false">
+      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="_IItemLogicService">
         <metricas tipo="CouplingBetweenObjects" valor="4.0"/>
         <metricas tipo="NumberOfLinesMeasure" valor="6.0"/>
         <relaciones target="/5/@hijos.8/@hijos.3" tipos="/0" source="/5/@hijos.25/@hijos.0">
@@ -1299,7 +1299,7 @@
         <hijos xsi:type="visualizacionMetricas3.representacion:Metodo" name="updateItem" atributosIn="/120"/>
         <hijos xsi:type="visualizacionMetricas3.representacion:Metodo" name="getItems" atributosIn="/121 /122"/>
       </hijos>
-      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="IItemLogicService" compartida="false">
+      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="IItemLogicService">
         <metricas tipo="CouplingBetweenObjects" valor="3.0"/>
         <metricas tipo="NumberOfLinesMeasure"/>
         <relaciones target="/5/@hijos.25/@hijos.0" tipos="/4" source="/5/@hijos.25/@hijos.1">
@@ -1326,7 +1326,7 @@
       </relaciones>
     </hijos>
     <hijos xsi:type="visualizacionMetricas3.representacion:Paquete" name="co.edu.uniandes.csw.ejemplo.client.logic.dto.">
-      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="_ClientDTO" compartida="true">
+      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="_ClientDTO">
         <metricas tipo="CouplingBetweenObjects" valor="6.0"/>
         <metricas tipo="WeightedMethodsPerClass" valor="6.0"/>
         <metricas tipo="NumberOfLinesMeasure" valor="6.0"/>
@@ -1337,7 +1337,7 @@
         <hijos xsi:type="visualizacionMetricas3.representacion:Metodo" name="getName"/>
         <hijos xsi:type="visualizacionMetricas3.representacion:Metodo" name="getId"/>
       </hijos>
-      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="ClientPageDTO" compartida="true">
+      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="ClientPageDTO">
         <metricas tipo="CouplingBetweenObjects" valor="6.0"/>
         <metricas tipo="WeightedMethodsPerClass" valor="1.0"/>
         <metricas tipo="NumberOfLinesMeasure" valor="1.0"/>
@@ -1348,7 +1348,7 @@
         </relaciones>
         <hijos xsi:type="visualizacionMetricas3.representacion:Metodo" name="ClientPageDTO"/>
       </hijos>
-      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="ClientDTO" compartida="true">
+      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="ClientDTO">
         <metricas tipo="CouplingBetweenObjects" valor="12.0"/>
         <metricas tipo="WeightedMethodsPerClass" valor="3.0"/>
         <metricas tipo="NumberOfLinesMeasure" valor="3.0"/>
@@ -1361,7 +1361,7 @@
         <hijos xsi:type="visualizacionMetricas3.representacion:Metodo" name="setRole" atributosIn="/126"/>
         <hijos xsi:type="visualizacionMetricas3.representacion:Metodo" name="getRole"/>
       </hijos>
-      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="_ClientPageDTO" compartida="true">
+      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="_ClientPageDTO">
         <metricas tipo="CouplingBetweenObjects" valor="4.0"/>
         <metricas tipo="WeightedMethodsPerClass" valor="4.0"/>
         <metricas tipo="NumberOfLinesMeasure" valor="4.0"/>
@@ -1372,7 +1372,7 @@
       </hijos>
     </hijos>
     <hijos xsi:type="visualizacionMetricas3.representacion:Paquete" name="co.edu.uniandes.csw.ejemplo.client.logic.ejb.">
-      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="ClientLogicServiceTest" compartida="true">
+      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="ClientLogicServiceTest">
         <metricas tipo="CouplingBetweenObjects" valor="10.0"/>
         <metricas tipo="NumberOfLinesMeasure" valor="14.0"/>
         <relaciones target="/5/@hijos.30/@hijos.1" tipos="/2" source="/5/@hijos.28/@hijos.0">
@@ -1430,7 +1430,7 @@
         <hijos xsi:type="visualizacionMetricas3.representacion:Atributo" name="clientPersistence"/>
         <hijos xsi:type="visualizacionMetricas3.representacion:Atributo" name="data"/>
       </hijos>
-      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="ClientLogicService" compartida="true">
+      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="ClientLogicService">
         <metricas tipo="CouplingBetweenObjects" valor="4.0"/>
         <metricas tipo="NumberOfLinesMeasure" valor="1.0"/>
         <relaciones target="/5/@hijos.29/@hijos.0" tipos="/0" source="/5/@hijos.28/@hijos.1">
@@ -1455,7 +1455,7 @@
         </relaciones>
         <hijos xsi:type="visualizacionMetricas3.representacion:Metodo" name="getClientId" atributosIn="/127" returnType="ClientDTO"/>
       </hijos>
-      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="_ClientLogicService" compartida="true">
+      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="_ClientLogicService">
         <metricas tipo="CouplingBetweenObjects" valor="7.0"/>
         <metricas tipo="NumberOfLinesMeasure" valor="7.0"/>
         <relaciones target="/5/@hijos.29/@hijos.0" tipos="/2" source="/5/@hijos.28/@hijos.2">
@@ -1493,7 +1493,7 @@
       </hijos>
     </hijos>
     <hijos xsi:type="visualizacionMetricas3.representacion:Paquete" name="co.edu.uniandes.csw.ejemplo.client.persistence.api.">
-      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="IClientPersistence" compartida="true">
+      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="IClientPersistence">
         <metricas tipo="CouplingBetweenObjects" valor="7.0"/>
         <metricas tipo="NumberOfLinesMeasure" valor="1.0"/>
         <relaciones target="/5/@hijos.27/@hijos.2" tipos="/0" source="/5/@hijos.29/@hijos.0">
@@ -1508,7 +1508,7 @@
         </relaciones>
         <hijos xsi:type="visualizacionMetricas3.representacion:Metodo" name="getClientId" atributosIn="/134" returnType="ClientDTO"/>
       </hijos>
-      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="_IClientPersistence" compartida="true">
+      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="_IClientPersistence">
         <metricas tipo="CouplingBetweenObjects" valor="8.0"/>
         <metricas tipo="NumberOfLinesMeasure" valor="6.0"/>
         <relaciones target="/5/@hijos.27/@hijos.2" tipos="/0" source="/5/@hijos.29/@hijos.1">
@@ -1530,7 +1530,7 @@
       </hijos>
     </hijos>
     <hijos xsi:type="visualizacionMetricas3.representacion:Paquete" name="co.edu.uniandes.csw.ejemplo.client.logic.api.">
-      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="_IClientLogicService" compartida="false">
+      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="_IClientLogicService">
         <metricas tipo="CouplingBetweenObjects" valor="4.0"/>
         <metricas tipo="NumberOfLinesMeasure" valor="6.0"/>
         <relaciones target="/5/@hijos.27/@hijos.2" tipos="/0" source="/5/@hijos.30/@hijos.0">
@@ -1545,7 +1545,7 @@
         <hijos xsi:type="visualizacionMetricas3.representacion:Metodo" name="updateClient" atributosIn="/138"/>
         <hijos xsi:type="visualizacionMetricas3.representacion:Metodo" name="getClients" atributosIn="/139 /140"/>
       </hijos>
-      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="IClientLogicService" compartida="false">
+      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="IClientLogicService">
         <metricas tipo="CouplingBetweenObjects" valor="3.0"/>
         <metricas tipo="NumberOfLinesMeasure"/>
         <relaciones target="/5/@hijos.30/@hijos.0" tipos="/4" source="/5/@hijos.30/@hijos.1">
@@ -1566,7 +1566,7 @@
       </relaciones>
     </hijos>
     <hijos xsi:type="visualizacionMetricas3.representacion:Paquete" name="co.edu.uniandes.csw.ejemplo.carrito.persistence.entity.">
-      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="CarritoEntity" compartida="false">
+      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="CarritoEntity">
         <metricas tipo="CouplingBetweenObjects" valor="4.0"/>
         <metricas tipo="WeightedMethodsPerClass" valor="1.0"/>
         <metricas tipo="NumberOfLinesMeasure" valor="1.0"/>
@@ -1577,7 +1577,7 @@
         </relaciones>
         <hijos xsi:type="visualizacionMetricas3.representacion:Metodo" name="CarritoEntity"/>
       </hijos>
-      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="_CarritoEntity" compartida="false">
+      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="_CarritoEntity">
         <metricas tipo="CouplingBetweenObjects" valor="4.0"/>
         <metricas tipo="NumberOfLinesMeasure" valor="9.0"/>
         <hijos xsi:type="visualizacionMetricas3.representacion:Metodo" name="getId" returnType="Long"/>
@@ -1592,7 +1592,7 @@
       </hijos>
     </hijos>
     <hijos xsi:type="visualizacionMetricas3.representacion:Paquete" name="co.edu.uniandes.csw.ejemplo.carrito.persistence.converter.">
-      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="CarritoConverter" compartida="false">
+      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="CarritoConverter">
         <metricas tipo="CouplingBetweenObjects" valor="1.0"/>
         <metricas tipo="NumberOfLinesMeasure"/>
         <relaciones target="/5/@hijos.33/@hijos.1" tipos="/4" source="/5/@hijos.33/@hijos.0">
@@ -1601,7 +1601,7 @@
           <metricas/>
         </relaciones>
       </hijos>
-      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="_CarritoConverter" compartida="false">
+      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="_CarritoConverter">
         <metricas tipo="CouplingBetweenObjects" valor="7.0"/>
         <metricas tipo="NumberOfLinesMeasure" valor="4.0"/>
         <relaciones target="/5/@hijos.3/@hijos.1" tipos="/2 /0" source="/5/@hijos.33/@hijos.1">
@@ -1631,7 +1631,7 @@
       </hijos>
     </hijos>
     <hijos xsi:type="visualizacionMetricas3.representacion:Paquete" name="co.edu.uniandes.csw.ejemplo.carrito.persistence.">
-      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="_CarritoPersistence" compartida="false">
+      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="_CarritoPersistence">
         <metricas tipo="CouplingBetweenObjects" valor="8.0"/>
         <metricas tipo="NumberOfLinesMeasure" valor="7.0"/>
         <relaciones target="/5/@hijos.32/@hijos.0" tipos="/2" source="/5/@hijos.34/@hijos.0">
@@ -1672,7 +1672,7 @@
         <hijos xsi:type="visualizacionMetricas3.representacion:Metodo" name="updateCarrito" atributosIn="/154" returnType="void"/>
         <hijos xsi:type="visualizacionMetricas3.representacion:Atributo" name="entityManager"/>
       </hijos>
-      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="CarritoPersistence" compartida="false">
+      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="CarritoPersistence">
         <metricas tipo="CouplingBetweenObjects" valor="5.0"/>
         <metricas tipo="NumberOfLinesMeasure" valor="1.0"/>
         <relaciones target="/5/@hijos.3/@hijos.0" tipos="/2 /0" source="/5/@hijos.34/@hijos.1">
@@ -1702,7 +1702,7 @@
         </relaciones>
         <hijos xsi:type="visualizacionMetricas3.representacion:Metodo" name="getCarritoCliente" atributosIn="/162 /163 /164" returnType="CarritoPageDTO"/>
       </hijos>
-      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="CarritoPersistenceTest" compartida="false">
+      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="CarritoPersistenceTest">
         <metricas tipo="CouplingBetweenObjects" valor="10.0"/>
         <metricas tipo="NumberOfLinesMeasure" valor="15.0"/>
         <relaciones target="/5/@hijos.2/@hijos.1" tipos="/2" source="/5/@hijos.34/@hijos.2">
@@ -1793,7 +1793,7 @@
       <metricas tipo="NumberOfClassesMeasure" valor="24.0"/>
     </hijos>
     <hijos xsi:type="visualizacionMetricas3.representacion:Paquete" name="co.edu.uniandes.csw.ejemplo.client.persistence.entity.">
-      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="_ClientEntity" compartida="false">
+      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="_ClientEntity">
         <metricas tipo="CouplingBetweenObjects" valor="5.0"/>
         <metricas tipo="NumberOfLinesMeasure" valor="9.0"/>
         <hijos xsi:type="visualizacionMetricas3.representacion:Metodo" name="getId" returnType="Long"/>
@@ -1806,7 +1806,7 @@
         <hijos xsi:type="visualizacionMetricas3.representacion:Atributo" name="password"/>
         <hijos xsi:type="visualizacionMetricas3.representacion:Atributo" name="name"/>
       </hijos>
-      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="ClientEntity" compartida="false">
+      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="ClientEntity">
         <metricas tipo="CouplingBetweenObjects" valor="7.0"/>
         <metricas tipo="WeightedMethodsPerClass" valor="1.0"/>
         <metricas tipo="NumberOfLinesMeasure" valor="4.0"/>
@@ -1822,7 +1822,7 @@
       </hijos>
     </hijos>
     <hijos xsi:type="visualizacionMetricas3.representacion:Paquete" name="co.edu.uniandes.csw.ejemplo.client.persistence.converter.">
-      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="ClientConverter" compartida="false">
+      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="ClientConverter">
         <metricas tipo="CouplingBetweenObjects" valor="7.0"/>
         <metricas tipo="NumberOfLinesMeasure" valor="4.0"/>
         <relaciones target="/5/@hijos.27/@hijos.2" tipos="/2 /0" source="/5/@hijos.39/@hijos.0">
@@ -1855,7 +1855,7 @@
         <hijos xsi:type="visualizacionMetricas3.representacion:Metodo" name="entity2PersistenceDTOList" atributosIn="/171" returnType="java.util.List&lt;co.edu.uniandes.csw.ejemplo.client.logic.dto.ClientDTO>"/>
         <hijos xsi:type="visualizacionMetricas3.representacion:Metodo" name="persistenceDTO2EntityList" atributosIn="/172" returnType="java.util.List&lt;co.edu.uniandes.csw.ejemplo.client.persistence.entity.ClientEntity>"/>
       </hijos>
-      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="_ClientConverter" compartida="false">
+      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="_ClientConverter">
         <metricas tipo="CouplingBetweenObjects" valor="5.0"/>
         <metricas tipo="NumberOfLinesMeasure" valor="4.0"/>
         <relaciones target="/5/@hijos.27/@hijos.2" tipos="/2 /0" source="/5/@hijos.39/@hijos.1">
@@ -1885,7 +1885,7 @@
       </hijos>
     </hijos>
     <hijos xsi:type="visualizacionMetricas3.representacion:Paquete" name="co.edu.uniandes.csw.ejemplo.client.persistence.">
-      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="_ClientPersistence" compartida="false">
+      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="_ClientPersistence">
         <metricas tipo="CouplingBetweenObjects" valor="8.0"/>
         <metricas tipo="NumberOfLinesMeasure" valor="7.0"/>
         <relaciones target="/5/@hijos.38/@hijos.1" tipos="/2" source="/5/@hijos.40/@hijos.0">
@@ -1926,7 +1926,7 @@
         <hijos xsi:type="visualizacionMetricas3.representacion:Metodo" name="updateClient" atributosIn="/182" returnType="void"/>
         <hijos xsi:type="visualizacionMetricas3.representacion:Atributo" name="entityManager"/>
       </hijos>
-      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="ClientPersistenceTest" compartida="false">
+      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="ClientPersistenceTest">
         <metricas tipo="CouplingBetweenObjects" valor="10.0"/>
         <metricas tipo="NumberOfLinesMeasure" valor="15.0"/>
         <relaciones target="/5/@hijos.29/@hijos.0" tipos="/2" source="/5/@hijos.40/@hijos.1">
@@ -1985,7 +1985,7 @@
         <hijos xsi:type="visualizacionMetricas3.representacion:Atributo" name="utx"/>
         <hijos xsi:type="visualizacionMetricas3.representacion:Atributo" name="data"/>
       </hijos>
-      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="ClientPersistence" compartida="false">
+      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="ClientPersistence">
         <metricas tipo="CouplingBetweenObjects" valor="6.0"/>
         <metricas tipo="NumberOfLinesMeasure" valor="4.0"/>
         <relaciones target="/5/@hijos.38/@hijos.1" tipos="/2" source="/5/@hijos.40/@hijos.2">
@@ -2029,7 +2029,7 @@
       <metricas tipo="NumberOfClassesMeasure" valor="16.0"/>
     </hijos>
     <hijos xsi:type="visualizacionMetricas3.representacion:Paquete" name="co.edu.uniandes.csw.ejemplo.producto.logic.api.">
-      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="_IProductoLogicService" compartida="false">
+      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="_IProductoLogicService">
         <metricas tipo="CouplingBetweenObjects" valor="4.0"/>
         <metricas tipo="NumberOfLinesMeasure" valor="6.0"/>
         <relaciones target="/5/@hijos.19/@hijos.3" tipos="/0" source="/5/@hijos.42/@hijos.0">
@@ -2044,7 +2044,7 @@
         <hijos xsi:type="visualizacionMetricas3.representacion:Metodo" name="updateProducto" atributosIn="/189"/>
         <hijos xsi:type="visualizacionMetricas3.representacion:Metodo" name="getProductos" atributosIn="/190 /191"/>
       </hijos>
-      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="IProductoLogicService" compartida="false">
+      <hijos xsi:type="visualizacionMetricas3.representacion:ClaseR" name="IProductoLogicService">
         <metricas tipo="CouplingBetweenObjects" valor="3.0"/>
         <metricas tipo="NumberOfLinesMeasure"/>
         <relaciones target="/5/@hijos.42/@hijos.0" tipos="/4" source="/5/@hijos.42/@hijos.1">

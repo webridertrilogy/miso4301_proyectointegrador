@@ -2,9 +2,10 @@
 <project xmlns:qvto="http://www.eclipse.org/qvt/1.0.0/Operational" name="kdm" default="main">
 	
 	<property name="Kdm" value="./models/carrito.logic_kdm.xmi"></property>
-	<property name="SubKdm" value="./models/res17/kdmResultadoSub.xmi"></property>
-	<property name="Cluster" value="./models/res17/representacion44.xmi"></property>
-	<property name="Visualizacion" value="./models/res17/visualizacion3.xmi"></property>
+	<property name="SubKdm" value="./models/res21/kdmResultadoSub.xmi"></property>
+	<property name="Cluster" value="./models/res21/representacion44.xmi"></property>
+	<property name="Visualizacion" value="./models/res21/visualizacion3.xmi"></property>
+	<property name="Simplificacion" value="./models/res21/simplificacion3.xmi"></property>
 			
 	<!-- Tranformacion 1-->
 	<target name="loadModelsT1">
@@ -63,14 +64,29 @@
 			
 			<epsilon.disposeModel model="target"></epsilon.disposeModel>
 		</target>
-	
+
+	<!-- Tranformacion 5-->
+		<target name="loadModelsT5">	
+			<epsilon.emf.loadModel name="source" modelfile="${Visualizacion}" metamodeluri="http://visualizacionMetricas3,http://visualizacionMetricas3/visualizacion" read="true" store="false"></epsilon.emf.loadModel>
+			<epsilon.emf.loadModel name="target" modelfile="${Simplificacion}" metamodeluri="http://visualizacionMetricas3,http://visualizacionMetricas3/visualizacion" read="false" store="true"></epsilon.emf.loadModel>
+		</target>
+			
+		<target name="visualizacion2simplificacion" depends="loadModelsT5">
+			<epsilon.etl src="./transformations/M2M/Visualizacion/visualizacion2simplificacion.etl">
+				<model ref="source"></model>
+				<model ref="target"></model>
+			</epsilon.etl>
+			
+			<epsilon.disposeModel model="target"></epsilon.disposeModel>
+		</target>
 	<!-- Main -->
 	
 	<target name="main">		
-		<antcall target="Kdm2Kdm" inheritall="true"></antcall>
-		<antcall target="micro2sdm"></antcall>
+		<!--<antcall target="Kdm2Kdm" inheritall="true"></antcall>
+		<antcall target="micro2sdm"></antcall> 
 		<antcall target="sdm2Representacion"></antcall>
-		<antcall target="sdm2Visualizacion"></antcall>
+		 <antcall target="sdm2Visualizacion"></antcall>-->
+		<antcall target="visualizacion2simplificacion"></antcall>
 		
 		 <!-- epsilon.disposeModels></epsilon.disposeModels> --> 
 	</target>

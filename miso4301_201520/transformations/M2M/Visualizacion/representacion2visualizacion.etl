@@ -7,9 +7,9 @@ import "representacion2visualizacion.utils.etl";
 
 pre {
   	"Running Visulization Transformation".println();
-	//var formaCluster = "Eliptica";
+	var formaCluster = "Eliptica";
   	//var formaCluster = "Triangular";
-  	var formaCluster = "Cuadrangular";
+  	//var formaCluster = "Cuadrangular";
 }
 
 post transformacionVinculos {
