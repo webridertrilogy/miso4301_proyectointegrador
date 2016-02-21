@@ -207,6 +207,9 @@
     <eClassifiers xsi:type="ecore:EClass" name="Composicion" eSuperTypes="#//visualizacion/Conector"/>
     <eClassifiers xsi:type="ecore:EClass" name="Item" eSuperTypes="#//visualizacion/ElementoDiagrama">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="icono" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="atributosIn" upperBound="-1"
+          eType="#//AtributoCM"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="returnType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Dibujable" abstract="true" interface="true">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="grosor" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Int"

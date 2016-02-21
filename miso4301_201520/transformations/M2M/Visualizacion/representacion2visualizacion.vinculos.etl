@@ -25,6 +25,8 @@ operation source!ClaseR instanciarHijos() : Sequence {
 			e.icono="PropertyCreation";
 		} if (h.isTypeOf(source!Metodo)) {
 			e.icono="MessageSynchCallCreation";
+			e.atributosIn = h.atributosIn;
+			e.returnType = h.returnType;
 		}
 		elementos.add(e);
 	}

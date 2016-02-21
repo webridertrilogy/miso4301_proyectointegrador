@@ -68,6 +68,7 @@ rule Vinculo2FiguraGeometrica
 	transform i: source!Vinculo
 	to o: target!FiguraGeometrica 
 	extends Elemento2ElementoDiagrama { --Vinculo2ElementoDiagrama {
+		"entre a esta cosa".println();
 		o.diagrama = i.instanciarDiagrama();
 }
 
@@ -84,6 +85,7 @@ rule Vinculo2Contenedor
 	transform i: source!Vinculo
 	to o: target!Contenedor 
 	extends Elemento2ElementoDiagrama { --Vinculo2ElementoDiagrama {
+		"entre a esta otra cosa".println();
 		o.diagrama = i.instanciarDiagrama();
 }
 
@@ -153,6 +155,8 @@ rule Metodo2Item
 	to o: target!Item 
 	extends Hoja2Item {
 		o.icono="MessageSynchCallCreation";
+		o.atributosIn = i.atributosIn;
+		o.returnType = i.returnType;
 }
 
 rule Atributo2Item
