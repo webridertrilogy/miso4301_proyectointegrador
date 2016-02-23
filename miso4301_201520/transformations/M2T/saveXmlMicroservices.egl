@@ -1,0 +1,9 @@
+[% 
+	var i : Integer = 100;
+	for(diagrama in Diagrama.all.select(x| " Simplificado ".isSubstringOf(x.name))) {
+		var t:Template:= TemplateFactory.load('xmlMicroservices.egl');
+		t.populate('diagrama',diagrama);
+		t.generate('Result/kdmResult' + i + '.xml');
+		i = i - 5;
+	}
+%]

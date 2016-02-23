@@ -5,7 +5,8 @@
 	<property name="SubKdm" value="./models/res1/kdmResultadoSub.xmi"></property>
 	<property name="Cluster" value="./models/res1/representacion44.xmi"></property>
 	<property name="Visualizacion" value="./models/res2/visualizacion3.xmi"></property>
-	<property name="Simplificacion" value="./models/res2/simplificacion3.xmi"></property>
+	<property name="Simplificacion" value="./models/res2/visualizacion3.xmi"></property>
+	<!--<property name="Simplificacion" value="./models/res2/simplificacion3.xmi"></property>-->
 			
 	<!-- Tranformacion 1-->
 	<target name="loadModelsT1">

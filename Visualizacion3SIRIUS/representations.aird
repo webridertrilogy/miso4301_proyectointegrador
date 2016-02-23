@@ -4,6 +4,7 @@
   <models xmi:type="visualizacionMetricas3.visualizacion:Diagrama" href="simplificacion3.visualizacionmetricas3#/0"/>
   <models xmi:type="visualizacionMetricas3.visualizacion:Diagrama" href="simplificacion3Nuevo.visualizacionmetricas3#/0"/>
   <models xmi:type="visualizacionMetricas3.visualizacion:Diagrama" href="visualizacion3Nuevo.visualizacionmetricas3#/0"/>
+  <models xmi:type="visualizacionMetricas3.visualizacion:Diagrama" href="visualizacion3ConSimp.visualizacionmetricas3#/0"/>
   <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_zaiGYNRkEeW-caMzFg8ALw">
     <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_l2aOQNUNEeW9cNCsStbwHA" name="new Diagrama Cluster">
       <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_l2aOQdUNEeW9cNCsStbwHA" source="DANNOTATION_CUSTOMIZATION_KEY">
