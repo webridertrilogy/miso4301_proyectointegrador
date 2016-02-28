@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<migration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="kdmResult.xsd">
+	<microservices>
+		<microservice name="cluster1">
+			<qualifiedType>CarritoLogicService</qualifiedType>
+			<qualifiedType>ItemPersistence</qualifiedType>
+			<qualifiedType>CarritoMasterPersistence</qualifiedType>
+			<qualifiedType>CarritoPersistence</qualifiedType>
+			<qualifiedType>ItemLogicService</qualifiedType>
+			<qualifiedType>CarritoMasterLogicService</qualifiedType>
+		</microservice>
+		<microservice name="cluster2">
+			<qualifiedType>ClientLogicService</qualifiedType>
+			<qualifiedType>ClientPersistence</qualifiedType>
+		</microservice>
+		<microservice name="cluster3">
+			<qualifiedType>ProductoLogicService</qualifiedType>
+			<qualifiedType>ProductoPersistence</qualifiedType>
+		</microservice>
+	</microservices>
+	<relationships>
+	</relationships>
+</migration>

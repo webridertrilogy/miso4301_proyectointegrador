@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns:qvto="http://www.eclipse.org/qvt/1.0.0/Operational" name="kdm" default="main">
 	
-	<property name="Kdm" value="./models/CrudEJB_kdm.xmi"></property>
-	<property name="SubKdm" value="./models/res/kdmResultadoSub.xmi"></property>
-	<property name="Cluster" value="./models/res/representacion44.xmi"></property>
-	<property name="Visualizacion" value="./models/res/visualizacion3.xmi"></property>
-	<property name="Simplificacion" value="./models/res/simplificacion3.xmi"></property>
+	<property name="Kdm" value="./models/carrito.logic_kdm.xmi"></property>
+	<property name="SubKdm" value="./models/res1/kdmResultadoSub.xmi"></property>
+	<property name="Cluster" value="./models/res1/representacion44.xmi"></property>
+	<property name="Visualizacion" value="./models/res2/visualizacion3.xmi"></property>
+	<property name="Simplificacion" value="./models/res2/visualizacion3.xmi"></property>
+	<!--<property name="Simplificacion" value="./models/res2/simplificacion3.xmi"></property>-->
+
 			
 	<!-- Tranformacion 1-->
 	<target name="loadModelsT1">

@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xmlns:visualizacionMetricas3.visualizacion="http://visualizacionMetricas3/visualizacion" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style http://visualizacionMetricas3/visualizacion http://visualizacionMetricas3#//visualizacion" xmi:id="_RKvCkNkBEeWzPLGW9cBwwg" selectedViews="_bQ9rsNkBEeWzPLGW9cBwwg" version="10.0.0.201505222000">
   <semanticResources>My.visualizacionmetricas3</semanticResources>
   <semanticResources>simplificacion3Nuevo2.visualizacionmetricas3</semanticResources>
@@ -10,6 +11,435 @@
     <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_9dMkINkEEeWzPLGW9cBwwg" name="new Diagrama Cluster Simplificado">
       <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_9dMkIdkEEeWzPLGW9cBwwg" source="DANNOTATION_CUSTOMIZATION_KEY">
         <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_9dMkItkEEeWzPLGW9cBwwg"/>
+=======
+<viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xmlns:visualizacionMetricas3.visualizacion="http://visualizacionMetricas3/visualizacion" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style http://visualizacionMetricas3/visualizacion http://visualizacionMetricas3#//visualizacion" xmi:id="_oIpicNRkEeW-caMzFg8ALw" selectedViews="_zaiGYNRkEeW-caMzFg8ALw" version="10.0.0.201505222000">
+  <models xmi:type="visualizacionMetricas3.visualizacion:Diagrama" href="visualizacion3.visualizacionmetricas3#/0"/>
+  <models xmi:type="visualizacionMetricas3.visualizacion:Diagrama" href="simplificacion3.visualizacionmetricas3#/0"/>
+  <models xmi:type="visualizacionMetricas3.visualizacion:Diagrama" href="simplificacion3Nuevo.visualizacionmetricas3#/0"/>
+  <models xmi:type="visualizacionMetricas3.visualizacion:Diagrama" href="visualizacion3Nuevo.visualizacionmetricas3#/0"/>
+  <models xmi:type="visualizacionMetricas3.visualizacion:Diagrama" href="visualizacion3ConSimp.visualizacionmetricas3#/0"/>
+  <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_zaiGYNRkEeW-caMzFg8ALw">
+    <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_l2aOQNUNEeW9cNCsStbwHA" name="new Diagrama Cluster">
+      <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_l2aOQdUNEeW9cNCsStbwHA" source="DANNOTATION_CUSTOMIZATION_KEY">
+        <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_l2aOQtUNEeW9cNCsStbwHA">
+          <computedStyleDescriptions xmi:type="style:SquareDescription" xmi:id="_l2aOQ9UNEeW9cNCsStbwHA" labelPosition="node" resizeKind="NSEW" height="5">
+            <borderColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
+          </computedStyleDescriptions>
+          <computedStyleDescriptions xmi:type="style:SquareDescription" xmi:id="_l2aORNUNEeW9cNCsStbwHA" labelPosition="node" resizeKind="NSEW" height="20">
+            <borderColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
+          </computedStyleDescriptions>
+          <computedStyleDescriptions xmi:type="style:SquareDescription" xmi:id="_l2aORdUNEeW9cNCsStbwHA" labelPosition="node" resizeKind="NSEW" height="8">
+            <borderColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
+          </computedStyleDescriptions>
+          <computedStyleDescriptions xmi:type="style:SquareDescription" xmi:id="_l2aORtUNEeW9cNCsStbwHA" labelPosition="node" resizeKind="NSEW" height="5">
+            <borderColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
+          </computedStyleDescriptions>
+          <computedStyleDescriptions xmi:type="style:SquareDescription" xmi:id="_l2aOR9UNEeW9cNCsStbwHA" labelPosition="node" resizeKind="NSEW" height="5">
+            <borderColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
+          </computedStyleDescriptions>
+          <computedStyleDescriptions xmi:type="style:SquareDescription" xmi:id="_l2aOSNUNEeW9cNCsStbwHA" labelPosition="node" resizeKind="NSEW" height="12">
+            <borderColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='yellow']"/>
+          </computedStyleDescriptions>
+          <computedStyleDescriptions xmi:type="style:SquareDescription" xmi:id="_l2aOSdUNEeW9cNCsStbwHA" labelPosition="node" resizeKind="NSEW" height="14">
+            <borderColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='orange']"/>
+          </computedStyleDescriptions>
+          <computedStyleDescriptions xmi:type="style:SquareDescription" xmi:id="_l2aOStUNEeW9cNCsStbwHA" labelPosition="node" resizeKind="NSEW" height="15">
+            <borderColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='orange']"/>
+          </computedStyleDescriptions>
+          <computedStyleDescriptions xmi:type="style:SquareDescription" xmi:id="_l2aOS9UNEeW9cNCsStbwHA" labelPosition="node" resizeKind="NSEW" height="8">
+            <borderColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='yellow']"/>
+          </computedStyleDescriptions>
+          <computedStyleDescriptions xmi:type="style:SquareDescription" xmi:id="_l2aOTNUNEeW9cNCsStbwHA" labelPosition="node" resizeKind="NSEW" height="5">
+            <borderColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
+          </computedStyleDescriptions>
+          <computedStyleDescriptions xmi:type="style:EdgeStyleDescription" xmi:id="_l2aOTdUNEeW9cNCsStbwHA" targetArrow="NoDecoration" sizeComputationExpression="1">
+            <strokeColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <beginLabelStyleDescription xmi:type="style:BeginLabelStyleDescription" xmi:id="_l2aOTtUNEeW9cNCsStbwHA" labelExpression="[self.nameSource /]">
+              <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </beginLabelStyleDescription>
+            <centerLabelStyleDescription xmi:type="style:CenterLabelStyleDescription" xmi:id="_l2aOT9UNEeW9cNCsStbwHA" showIcon="false" labelExpression="[self.name /]">
+              <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+            <endLabelStyleDescription xmi:type="style:EndLabelStyleDescription" xmi:id="_l2aOUNUNEeW9cNCsStbwHA" labelExpression="[self.nameTarget /]">
+              <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </endLabelStyleDescription>
+          </computedStyleDescriptions>
+          <computedStyleDescriptions xmi:type="style:EdgeStyleDescription" xmi:id="_l2aOUdUNEeW9cNCsStbwHA" targetArrow="NoDecoration" sizeComputationExpression="2">
+            <strokeColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <beginLabelStyleDescription xmi:type="style:BeginLabelStyleDescription" xmi:id="_l2aOUtUNEeW9cNCsStbwHA" labelExpression="[self.nameSource /]">
+              <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </beginLabelStyleDescription>
+            <centerLabelStyleDescription xmi:type="style:CenterLabelStyleDescription" xmi:id="_l2aOU9UNEeW9cNCsStbwHA" showIcon="false" labelExpression="[self.name /]">
+              <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+            <endLabelStyleDescription xmi:type="style:EndLabelStyleDescription" xmi:id="_l2aOVNUNEeW9cNCsStbwHA" labelExpression="[self.nameTarget /]">
+              <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </endLabelStyleDescription>
+          </computedStyleDescriptions>
+          <computedStyleDescriptions xmi:type="style:EdgeStyleDescription" xmi:id="_l2aOVdUNEeW9cNCsStbwHA" targetArrow="NoDecoration" sizeComputationExpression="1">
+            <strokeColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <beginLabelStyleDescription xmi:type="style:BeginLabelStyleDescription" xmi:id="_l2aOVtUNEeW9cNCsStbwHA" labelExpression="[self.nameSource /]">
+              <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </beginLabelStyleDescription>
+            <centerLabelStyleDescription xmi:type="style:CenterLabelStyleDescription" xmi:id="_l2aOV9UNEeW9cNCsStbwHA" showIcon="false" labelExpression="[self.name /]">
+              <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+            <endLabelStyleDescription xmi:type="style:EndLabelStyleDescription" xmi:id="_l2aOWNUNEeW9cNCsStbwHA" labelExpression="[self.nameTarget /]">
+              <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </endLabelStyleDescription>
+          </computedStyleDescriptions>
+          <computedStyleDescriptions xmi:type="style:EdgeStyleDescription" xmi:id="_l2aOWdUNEeW9cNCsStbwHA" targetArrow="NoDecoration" sizeComputationExpression="1">
+            <strokeColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <beginLabelStyleDescription xmi:type="style:BeginLabelStyleDescription" xmi:id="_l2aOWtUNEeW9cNCsStbwHA" labelExpression="[self.nameSource /]">
+              <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </beginLabelStyleDescription>
+            <centerLabelStyleDescription xmi:type="style:CenterLabelStyleDescription" xmi:id="_l2aOW9UNEeW9cNCsStbwHA" showIcon="false" labelExpression="[self.name /]">
+              <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+            <endLabelStyleDescription xmi:type="style:EndLabelStyleDescription" xmi:id="_l2aOXNUNEeW9cNCsStbwHA" labelExpression="[self.nameTarget /]">
+              <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </endLabelStyleDescription>
+          </computedStyleDescriptions>
+          <computedStyleDescriptions xmi:type="style:EdgeStyleDescription" xmi:id="_l2aOXdUNEeW9cNCsStbwHA" targetArrow="NoDecoration" sizeComputationExpression="2">
+            <strokeColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <beginLabelStyleDescription xmi:type="style:BeginLabelStyleDescription" xmi:id="_l2aOXtUNEeW9cNCsStbwHA" labelExpression="[self.nameSource /]">
+              <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </beginLabelStyleDescription>
+            <centerLabelStyleDescription xmi:type="style:CenterLabelStyleDescription" xmi:id="_l2aOX9UNEeW9cNCsStbwHA" showIcon="false" labelExpression="[self.name /]">
+              <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+            <endLabelStyleDescription xmi:type="style:EndLabelStyleDescription" xmi:id="_l2aOYNUNEeW9cNCsStbwHA" labelExpression="[self.nameTarget /]">
+              <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </endLabelStyleDescription>
+          </computedStyleDescriptions>
+          <computedStyleDescriptions xmi:type="style:EdgeStyleDescription" xmi:id="_l2aOYdUNEeW9cNCsStbwHA" targetArrow="NoDecoration" sizeComputationExpression="4">
+            <strokeColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <beginLabelStyleDescription xmi:type="style:BeginLabelStyleDescription" xmi:id="_l2aOYtUNEeW9cNCsStbwHA" labelExpression="[self.nameSource /]">
+              <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </beginLabelStyleDescription>
+            <centerLabelStyleDescription xmi:type="style:CenterLabelStyleDescription" xmi:id="_l2aOY9UNEeW9cNCsStbwHA" showIcon="false" labelExpression="[self.name /]">
+              <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+            <endLabelStyleDescription xmi:type="style:EndLabelStyleDescription" xmi:id="_l2aOZNUNEeW9cNCsStbwHA" labelExpression="[self.nameTarget /]">
+              <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </endLabelStyleDescription>
+          </computedStyleDescriptions>
+          <computedStyleDescriptions xmi:type="style:EdgeStyleDescription" xmi:id="_l2aOZdUNEeW9cNCsStbwHA" targetArrow="NoDecoration" sizeComputationExpression="5">
+            <strokeColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <beginLabelStyleDescription xmi:type="style:BeginLabelStyleDescription" xmi:id="_l2aOZtUNEeW9cNCsStbwHA" labelExpression="[self.nameSource /]">
+              <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </beginLabelStyleDescription>
+            <centerLabelStyleDescription xmi:type="style:CenterLabelStyleDescription" xmi:id="_l2aOZ9UNEeW9cNCsStbwHA" showIcon="false" labelExpression="[self.name /]">
+              <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+            <endLabelStyleDescription xmi:type="style:EndLabelStyleDescription" xmi:id="_l2aOaNUNEeW9cNCsStbwHA" labelExpression="[self.nameTarget /]">
+              <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </endLabelStyleDescription>
+          </computedStyleDescriptions>
+          <computedStyleDescriptions xmi:type="style:EdgeStyleDescription" xmi:id="_l2aOadUNEeW9cNCsStbwHA" targetArrow="NoDecoration" sizeComputationExpression="2">
+            <strokeColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <beginLabelStyleDescription xmi:type="style:BeginLabelStyleDescription" xmi:id="_l2aOatUNEeW9cNCsStbwHA" labelExpression="[self.nameSource /]">
+              <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </beginLabelStyleDescription>
+            <centerLabelStyleDescription xmi:type="style:CenterLabelStyleDescription" xmi:id="_l2aOa9UNEeW9cNCsStbwHA" showIcon="false" labelExpression="[self.name /]">
+              <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+            <endLabelStyleDescription xmi:type="style:EndLabelStyleDescription" xmi:id="_l2aObNUNEeW9cNCsStbwHA" labelExpression="[self.nameTarget /]">
+              <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </endLabelStyleDescription>
+          </computedStyleDescriptions>
+          <computedStyleDescriptions xmi:type="style:EdgeStyleDescription" xmi:id="_l2aObdUNEeW9cNCsStbwHA" targetArrow="NoDecoration" sizeComputationExpression="2">
+            <strokeColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <beginLabelStyleDescription xmi:type="style:BeginLabelStyleDescription" xmi:id="_l2aObtUNEeW9cNCsStbwHA" labelExpression="[self.nameSource /]">
+              <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </beginLabelStyleDescription>
+            <centerLabelStyleDescription xmi:type="style:CenterLabelStyleDescription" xmi:id="_l2aOb9UNEeW9cNCsStbwHA" showIcon="false" labelExpression="[self.name /]">
+              <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+            <endLabelStyleDescription xmi:type="style:EndLabelStyleDescription" xmi:id="_l2aOcNUNEeW9cNCsStbwHA" labelExpression="[self.nameTarget /]">
+              <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </endLabelStyleDescription>
+          </computedStyleDescriptions>
+          <computedStyleDescriptions xmi:type="style:EdgeStyleDescription" xmi:id="_l2aOcdUNEeW9cNCsStbwHA" targetArrow="NoDecoration" sizeComputationExpression="1">
+            <strokeColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <beginLabelStyleDescription xmi:type="style:BeginLabelStyleDescription" xmi:id="_l2aOctUNEeW9cNCsStbwHA" labelExpression="[self.nameSource /]">
+              <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </beginLabelStyleDescription>
+            <centerLabelStyleDescription xmi:type="style:CenterLabelStyleDescription" xmi:id="_l2aOc9UNEeW9cNCsStbwHA" showIcon="false" labelExpression="[self.name /]">
+              <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+            <endLabelStyleDescription xmi:type="style:EndLabelStyleDescription" xmi:id="_l2aOdNUNEeW9cNCsStbwHA" labelExpression="[self.nameTarget /]">
+              <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </endLabelStyleDescription>
+          </computedStyleDescriptions>
+          <computedStyleDescriptions xmi:type="style:EdgeStyleDescription" xmi:id="_l2aOddUNEeW9cNCsStbwHA" targetArrow="NoDecoration" sizeComputationExpression="2">
+            <strokeColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <beginLabelStyleDescription xmi:type="style:BeginLabelStyleDescription" xmi:id="_l2aOdtUNEeW9cNCsStbwHA" labelExpression="[self.nameSource /]">
+              <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </beginLabelStyleDescription>
+            <centerLabelStyleDescription xmi:type="style:CenterLabelStyleDescription" xmi:id="_l2aOd9UNEeW9cNCsStbwHA" showIcon="false" labelExpression="[self.name /]">
+              <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+            <endLabelStyleDescription xmi:type="style:EndLabelStyleDescription" xmi:id="_l2aOeNUNEeW9cNCsStbwHA" labelExpression="[self.nameTarget /]">
+              <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </endLabelStyleDescription>
+          </computedStyleDescriptions>
+          <computedStyleDescriptions xmi:type="style:EdgeStyleDescription" xmi:id="_l2aOedUNEeW9cNCsStbwHA" targetArrow="NoDecoration" sizeComputationExpression="1">
+            <strokeColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <beginLabelStyleDescription xmi:type="style:BeginLabelStyleDescription" xmi:id="_l2aOetUNEeW9cNCsStbwHA" labelExpression="[self.nameSource /]">
+              <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </beginLabelStyleDescription>
+            <centerLabelStyleDescription xmi:type="style:CenterLabelStyleDescription" xmi:id="_l2aOe9UNEeW9cNCsStbwHA" showIcon="false" labelExpression="[self.name /]">
+              <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+            <endLabelStyleDescription xmi:type="style:EndLabelStyleDescription" xmi:id="_l2aOfNUNEeW9cNCsStbwHA" labelExpression="[self.nameTarget /]">
+              <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </endLabelStyleDescription>
+          </computedStyleDescriptions>
+          <computedStyleDescriptions xmi:type="style:EdgeStyleDescription" xmi:id="_l2aOfdUNEeW9cNCsStbwHA" targetArrow="NoDecoration" sizeComputationExpression="2">
+            <strokeColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <beginLabelStyleDescription xmi:type="style:BeginLabelStyleDescription" xmi:id="_l2aOftUNEeW9cNCsStbwHA" labelExpression="[self.nameSource /]">
+              <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </beginLabelStyleDescription>
+            <centerLabelStyleDescription xmi:type="style:CenterLabelStyleDescription" xmi:id="_l2aOf9UNEeW9cNCsStbwHA" showIcon="false" labelExpression="[self.name /]">
+              <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+            <endLabelStyleDescription xmi:type="style:EndLabelStyleDescription" xmi:id="_l2aOgNUNEeW9cNCsStbwHA" labelExpression="[self.nameTarget /]">
+              <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </endLabelStyleDescription>
+          </computedStyleDescriptions>
+          <computedStyleDescriptions xmi:type="style:EdgeStyleDescription" xmi:id="_l2aOgdUNEeW9cNCsStbwHA" targetArrow="NoDecoration" sizeComputationExpression="3">
+            <strokeColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <beginLabelStyleDescription xmi:type="style:BeginLabelStyleDescription" xmi:id="_l2aOgtUNEeW9cNCsStbwHA" labelExpression="[self.nameSource /]">
+              <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </beginLabelStyleDescription>
+            <centerLabelStyleDescription xmi:type="style:CenterLabelStyleDescription" xmi:id="_l2aOg9UNEeW9cNCsStbwHA" showIcon="false" labelExpression="[self.name /]">
+              <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+            <endLabelStyleDescription xmi:type="style:EndLabelStyleDescription" xmi:id="_l2aOhNUNEeW9cNCsStbwHA" labelExpression="[self.nameTarget /]">
+              <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </endLabelStyleDescription>
+          </computedStyleDescriptions>
+          <cache xmi:type="diagram:DiagramElementMapping2ModelElement" xmi:id="_l2aOhdUNEeW9cNCsStbwHA">
+            <key xmi:type="description_1:NodeMapping" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster']/@defaultLayer/@nodeMappings[name='FiguraGeometrica']"/>
+            <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_l2aOhtUNEeW9cNCsStbwHA">
+              <key xmi:type="visualizacionMetricas3.visualizacion:Cuadrilatero" href="visualizacion3.visualizacionmetricas3#/0/@elementos.4"/>
+              <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_l2aOh9UNEeW9cNCsStbwHA" key="_l2aOz9UNEeW9cNCsStbwHA">
+                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_l2aOiNUNEeW9cNCsStbwHA" value="_l2aOQ9UNEeW9cNCsStbwHA">
+                  <key xmi:type="visualizacionMetricas3.visualizacion:Diagrama" href="visualizacion3.visualizacionmetricas3#/0"/>
+                </value>
+              </value>
+            </value>
+            <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_l2aOidUNEeW9cNCsStbwHA">
+              <key xmi:type="visualizacionMetricas3.visualizacion:Cuadrilatero" href="visualizacion3.visualizacionmetricas3#/0/@elementos.16"/>
+              <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_l2aOitUNEeW9cNCsStbwHA" key="_l2aO1NUNEeW9cNCsStbwHA">
+                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_l2aOi9UNEeW9cNCsStbwHA" value="_l2aORNUNEeW9cNCsStbwHA">
+                  <key xmi:type="visualizacionMetricas3.visualizacion:Diagrama" href="visualizacion3.visualizacionmetricas3#/0"/>
+                </value>
+              </value>
+            </value>
+            <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_l2aOjNUNEeW9cNCsStbwHA">
+              <key xmi:type="visualizacionMetricas3.visualizacion:Cuadrilatero" href="visualizacion3.visualizacionmetricas3#/0/@elementos.23"/>
+              <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_l2aOjdUNEeW9cNCsStbwHA" key="_l2aO2dUNEeW9cNCsStbwHA">
+                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_l2aOjtUNEeW9cNCsStbwHA" value="_l2aORdUNEeW9cNCsStbwHA">
+                  <key xmi:type="visualizacionMetricas3.visualizacion:Diagrama" href="visualizacion3.visualizacionmetricas3#/0"/>
+                </value>
+              </value>
+            </value>
+            <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_l2aOj9UNEeW9cNCsStbwHA">
+              <key xmi:type="visualizacionMetricas3.visualizacion:Cuadrilatero" href="visualizacion3.visualizacionmetricas3#/0/@elementos.26"/>
+              <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_l2aOkNUNEeW9cNCsStbwHA" key="_l2aO3tUNEeW9cNCsStbwHA">
+                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_l2aOkdUNEeW9cNCsStbwHA" value="_l2aORtUNEeW9cNCsStbwHA">
+                  <key xmi:type="visualizacionMetricas3.visualizacion:Diagrama" href="visualizacion3.visualizacionmetricas3#/0"/>
+                </value>
+              </value>
+            </value>
+            <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_l2aOktUNEeW9cNCsStbwHA">
+              <key xmi:type="visualizacionMetricas3.visualizacion:Cuadrilatero" href="visualizacion3.visualizacionmetricas3#/0/@elementos.31"/>
+              <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_l2aOk9UNEeW9cNCsStbwHA" key="_l2aO49UNEeW9cNCsStbwHA">
+                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_l2aOlNUNEeW9cNCsStbwHA" value="_l2aOR9UNEeW9cNCsStbwHA">
+                  <key xmi:type="visualizacionMetricas3.visualizacion:Diagrama" href="visualizacion3.visualizacionmetricas3#/0"/>
+                </value>
+              </value>
+            </value>
+            <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_l2aOldUNEeW9cNCsStbwHA">
+              <key xmi:type="visualizacionMetricas3.visualizacion:Cuadrilatero" href="visualizacion3.visualizacionmetricas3#/0/@elementos.35"/>
+              <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_l2aOltUNEeW9cNCsStbwHA" key="_l2aO6NUNEeW9cNCsStbwHA">
+                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_l2aOl9UNEeW9cNCsStbwHA" value="_l2aOSNUNEeW9cNCsStbwHA">
+                  <key xmi:type="visualizacionMetricas3.visualizacion:Diagrama" href="visualizacion3.visualizacionmetricas3#/0"/>
+                </value>
+              </value>
+            </value>
+            <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_l2aOmNUNEeW9cNCsStbwHA">
+              <key xmi:type="visualizacionMetricas3.visualizacion:Cuadrilatero" href="visualizacion3.visualizacionmetricas3#/0/@elementos.36"/>
+              <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_l2aOmdUNEeW9cNCsStbwHA" key="_l2aO7dUNEeW9cNCsStbwHA">
+                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_l2aOmtUNEeW9cNCsStbwHA" value="_l2aOSdUNEeW9cNCsStbwHA">
+                  <key xmi:type="visualizacionMetricas3.visualizacion:Diagrama" href="visualizacion3.visualizacionmetricas3#/0"/>
+                </value>
+              </value>
+            </value>
+            <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_l2aOm9UNEeW9cNCsStbwHA">
+              <key xmi:type="visualizacionMetricas3.visualizacion:Cuadrilatero" href="visualizacion3.visualizacionmetricas3#/0/@elementos.37"/>
+              <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_l2aOnNUNEeW9cNCsStbwHA" key="_l2aO8tUNEeW9cNCsStbwHA">
+                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_l2aOndUNEeW9cNCsStbwHA" value="_l2aOStUNEeW9cNCsStbwHA">
+                  <key xmi:type="visualizacionMetricas3.visualizacion:Diagrama" href="visualizacion3.visualizacionmetricas3#/0"/>
+                </value>
+              </value>
+            </value>
+            <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_l2aOntUNEeW9cNCsStbwHA">
+              <key xmi:type="visualizacionMetricas3.visualizacion:Cuadrilatero" href="visualizacion3.visualizacionmetricas3#/0/@elementos.41"/>
+              <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_l2aOn9UNEeW9cNCsStbwHA" key="_l2aO99UNEeW9cNCsStbwHA">
+                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_l2aOoNUNEeW9cNCsStbwHA" value="_l2aOS9UNEeW9cNCsStbwHA">
+                  <key xmi:type="visualizacionMetricas3.visualizacion:Diagrama" href="visualizacion3.visualizacionmetricas3#/0"/>
+                </value>
+              </value>
+            </value>
+            <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_l2aOodUNEeW9cNCsStbwHA">
+              <key xmi:type="visualizacionMetricas3.visualizacion:Cuadrilatero" href="visualizacion3.visualizacionmetricas3#/0/@elementos.43"/>
+              <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_l2aOotUNEeW9cNCsStbwHA" key="_l2aO_NUNEeW9cNCsStbwHA">
+                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_l2aOo9UNEeW9cNCsStbwHA" value="_l2aOTNUNEeW9cNCsStbwHA">
+                  <key xmi:type="visualizacionMetricas3.visualizacion:Diagrama" href="visualizacion3.visualizacionmetricas3#/0"/>
+                </value>
+              </value>
+            </value>
+          </cache>
+          <cache xmi:type="diagram:DiagramElementMapping2ModelElement" xmi:id="_l2aOpNUNEeW9cNCsStbwHA">
+            <key xmi:type="description_1:EdgeMapping" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster']/@defaultLayer/@edgeMappings[name='Conector']"/>
+            <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_l2aOpdUNEeW9cNCsStbwHA">
+              <key xmi:type="visualizacionMetricas3.visualizacion:Asociacion" href="visualizacion3.visualizacionmetricas3#/0/@elementos.4/@conectores.0"/>
+              <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_l2aOptUNEeW9cNCsStbwHA" key="_l2aPAdUNEeW9cNCsStbwHA">
+                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_l2aOp9UNEeW9cNCsStbwHA" value="_l2aOTdUNEeW9cNCsStbwHA">
+                  <key xmi:type="visualizacionMetricas3.visualizacion:Diagrama" href="visualizacion3.visualizacionmetricas3#/0"/>
+                </value>
+              </value>
+            </value>
+            <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_l2aOqNUNEeW9cNCsStbwHA">
+              <key xmi:type="visualizacionMetricas3.visualizacion:Asociacion" href="visualizacion3.visualizacionmetricas3#/0/@elementos.4/@conectores.1"/>
+              <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_l2aOqdUNEeW9cNCsStbwHA" key="_l2aPCtUNEeW9cNCsStbwHA">
+                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_l2aOqtUNEeW9cNCsStbwHA" value="_l2aOUdUNEeW9cNCsStbwHA">
+                  <key xmi:type="visualizacionMetricas3.visualizacion:Diagrama" href="visualizacion3.visualizacionmetricas3#/0"/>
+                </value>
+              </value>
+            </value>
+            <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_l2aOq9UNEeW9cNCsStbwHA">
+              <key xmi:type="visualizacionMetricas3.visualizacion:Asociacion" href="visualizacion3.visualizacionmetricas3#/0/@elementos.4/@conectores.2"/>
+              <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_l2aOrNUNEeW9cNCsStbwHA" key="_l2aPE9UNEeW9cNCsStbwHA">
+                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_l2aOrdUNEeW9cNCsStbwHA" value="_l2aOVdUNEeW9cNCsStbwHA">
+                  <key xmi:type="visualizacionMetricas3.visualizacion:Diagrama" href="visualizacion3.visualizacionmetricas3#/0"/>
+                </value>
+              </value>
+            </value>
+            <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_l2aOrtUNEeW9cNCsStbwHA">
+              <key xmi:type="visualizacionMetricas3.visualizacion:Asociacion" href="visualizacion3.visualizacionmetricas3#/0/@elementos.16/@conectores.0"/>
+              <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_l2aOr9UNEeW9cNCsStbwHA" key="_l2aPHNUNEeW9cNCsStbwHA">
+                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_l2aOsNUNEeW9cNCsStbwHA" value="_l2aOWdUNEeW9cNCsStbwHA">
+                  <key xmi:type="visualizacionMetricas3.visualizacion:Diagrama" href="visualizacion3.visualizacionmetricas3#/0"/>
+                </value>
+              </value>
+            </value>
+            <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_l2aOsdUNEeW9cNCsStbwHA">
+              <key xmi:type="visualizacionMetricas3.visualizacion:Asociacion" href="visualizacion3.visualizacionmetricas3#/0/@elementos.16/@conectores.1"/>
+              <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_l2aOstUNEeW9cNCsStbwHA" key="_l2aPJdUNEeW9cNCsStbwHA">
+                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_l2aOs9UNEeW9cNCsStbwHA" value="_l2aOXdUNEeW9cNCsStbwHA">
+                  <key xmi:type="visualizacionMetricas3.visualizacion:Diagrama" href="visualizacion3.visualizacionmetricas3#/0"/>
+                </value>
+              </value>
+            </value>
+            <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_l2aOtNUNEeW9cNCsStbwHA">
+              <key xmi:type="visualizacionMetricas3.visualizacion:Asociacion" href="visualizacion3.visualizacionmetricas3#/0/@elementos.16/@conectores.2"/>
+              <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_l2aOtdUNEeW9cNCsStbwHA" key="_l2aPLtUNEeW9cNCsStbwHA">
+                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_l2aOttUNEeW9cNCsStbwHA" value="_l2aOYdUNEeW9cNCsStbwHA">
+                  <key xmi:type="visualizacionMetricas3.visualizacion:Diagrama" href="visualizacion3.visualizacionmetricas3#/0"/>
+                </value>
+              </value>
+            </value>
+            <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_l2aOt9UNEeW9cNCsStbwHA">
+              <key xmi:type="visualizacionMetricas3.visualizacion:Asociacion" href="visualizacion3.visualizacionmetricas3#/0/@elementos.16/@conectores.3"/>
+              <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_l2aOuNUNEeW9cNCsStbwHA" key="_l2aPN9UNEeW9cNCsStbwHA">
+                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_l2aOudUNEeW9cNCsStbwHA" value="_l2aOZdUNEeW9cNCsStbwHA">
+                  <key xmi:type="visualizacionMetricas3.visualizacion:Diagrama" href="visualizacion3.visualizacionmetricas3#/0"/>
+                </value>
+              </value>
+            </value>
+            <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_l2aOutUNEeW9cNCsStbwHA">
+              <key xmi:type="visualizacionMetricas3.visualizacion:Asociacion" href="visualizacion3.visualizacionmetricas3#/0/@elementos.23/@conectores.0"/>
+              <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_l2aOu9UNEeW9cNCsStbwHA" key="_l2aPQNUNEeW9cNCsStbwHA">
+                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_l2aOvNUNEeW9cNCsStbwHA" value="_l2aOadUNEeW9cNCsStbwHA">
+                  <key xmi:type="visualizacionMetricas3.visualizacion:Diagrama" href="visualizacion3.visualizacionmetricas3#/0"/>
+                </value>
+              </value>
+            </value>
+            <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_l2aOvdUNEeW9cNCsStbwHA">
+              <key xmi:type="visualizacionMetricas3.visualizacion:Asociacion" href="visualizacion3.visualizacionmetricas3#/0/@elementos.26/@conectores.0"/>
+              <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_l2aOvtUNEeW9cNCsStbwHA" key="_l2aPSdUNEeW9cNCsStbwHA">
+                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_l2aOv9UNEeW9cNCsStbwHA" value="_l2aObdUNEeW9cNCsStbwHA">
+                  <key xmi:type="visualizacionMetricas3.visualizacion:Diagrama" href="visualizacion3.visualizacionmetricas3#/0"/>
+                </value>
+              </value>
+            </value>
+            <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_l2aOwNUNEeW9cNCsStbwHA">
+              <key xmi:type="visualizacionMetricas3.visualizacion:Asociacion" href="visualizacion3.visualizacionmetricas3#/0/@elementos.26/@conectores.1"/>
+              <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_l2aOwdUNEeW9cNCsStbwHA" key="_l2cqh9UNEeW9cNCsStbwHA">
+                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_l2aOwtUNEeW9cNCsStbwHA" value="_l2aOcdUNEeW9cNCsStbwHA">
+                  <key xmi:type="visualizacionMetricas3.visualizacion:Diagrama" href="visualizacion3.visualizacionmetricas3#/0"/>
+                </value>
+              </value>
+            </value>
+            <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_l2aOw9UNEeW9cNCsStbwHA">
+              <key xmi:type="visualizacionMetricas3.visualizacion:Asociacion" href="visualizacion3.visualizacionmetricas3#/0/@elementos.31/@conectores.0"/>
+              <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_l2aOxNUNEeW9cNCsStbwHA" key="_l2cqkNUNEeW9cNCsStbwHA">
+                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_l2aOxdUNEeW9cNCsStbwHA" value="_l2aOddUNEeW9cNCsStbwHA">
+                  <key xmi:type="visualizacionMetricas3.visualizacion:Diagrama" href="visualizacion3.visualizacionmetricas3#/0"/>
+                </value>
+              </value>
+            </value>
+            <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_l2aOxtUNEeW9cNCsStbwHA">
+              <key xmi:type="visualizacionMetricas3.visualizacion:Asociacion" href="visualizacion3.visualizacionmetricas3#/0/@elementos.35/@conectores.0"/>
+              <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_l2aOx9UNEeW9cNCsStbwHA" key="_l2cqmdUNEeW9cNCsStbwHA">
+                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_l2aOyNUNEeW9cNCsStbwHA" value="_l2aOedUNEeW9cNCsStbwHA">
+                  <key xmi:type="visualizacionMetricas3.visualizacion:Diagrama" href="visualizacion3.visualizacionmetricas3#/0"/>
+                </value>
+              </value>
+            </value>
+            <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_l2aOydUNEeW9cNCsStbwHA">
+              <key xmi:type="visualizacionMetricas3.visualizacion:Asociacion" href="visualizacion3.visualizacionmetricas3#/0/@elementos.35/@conectores.1"/>
+              <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_l2aOytUNEeW9cNCsStbwHA" key="_l2cqotUNEeW9cNCsStbwHA">
+                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_l2aOy9UNEeW9cNCsStbwHA" value="_l2aOfdUNEeW9cNCsStbwHA">
+                  <key xmi:type="visualizacionMetricas3.visualizacion:Diagrama" href="visualizacion3.visualizacionmetricas3#/0"/>
+                </value>
+              </value>
+            </value>
+            <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_l2aOzNUNEeW9cNCsStbwHA">
+              <key xmi:type="visualizacionMetricas3.visualizacion:Asociacion" href="visualizacion3.visualizacionmetricas3#/0/@elementos.36/@conectores.0"/>
+              <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_l2aOzdUNEeW9cNCsStbwHA" key="_l2cqq9UNEeW9cNCsStbwHA">
+                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_l2aOztUNEeW9cNCsStbwHA" value="_l2aOgdUNEeW9cNCsStbwHA">
+                  <key xmi:type="visualizacionMetricas3.visualizacion:Diagrama" href="visualizacion3.visualizacionmetricas3#/0"/>
+                </value>
+              </value>
+            </value>
+          </cache>
+        </data>
+>>>>>>> ae699c1a2b2500cee3d8513b1dcaba4d86d9ab0a
       </ownedAnnotationEntries>
       <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_9dSDsNkEEeWzPLGW9cBwwg" source="GMF_DIAGRAMS">
         <data xmi:type="notation:Diagram" xmi:id="_9dSDsdkEEeWzPLGW9cBwwg" type="Sirius" element="_9dMkINkEEeWzPLGW9cBwwg" measurementUnit="Pixel">

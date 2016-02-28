@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<migration 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation ="kdmResult.xsd">
+	<microservices>
+[%
+	for(cluster in diagrama.elementos) 
+	{
+		%]
+		<microservice name="[%=cluster.name.replace(' ','').toLowerCase()%]">
+		[%
+			for(clases in cluster.elementos) 
+			{
+				%]
+			<qualifiedType>[%=clases.name%]</qualifiedType>
+				[%
+			}
+		%]
+		</microservice>
+		[%
+	}
+%]
+	</microservices>
+	<relationships>
+[%
+	for(cluster in diagrama.elementos) 
+	{
+		%]
+		[%
+			for(conector in cluster.conectores) 
+			{
+				%]
+		<methodInvocation>
+			<from>
+				<qualifiedType>co.uniandes.app.MyClassB</qualifiedType>
+				<sourceMicroservice>[%=conector.source.name.replace(' ','').toLowerCase()%]</sourceMicroservice>
+				<fromMethod>
+					<visibility>public</visibility>
+					<returnType>void</returnType>
+					<methodName>foo1</methodName>
+					<parameters>
+						<parameter>
+							<paramType>int</paramType>
+							<paramName>param</paramName>
+						</parameter>
+					</parameters>
+				</fromMethod>
+			</from>
+			<to>
+				<qualifiedType>co.uniandes.app.MyClassC</qualifiedType>
+				<targetMicroservice>[%=conector.target.name.replace(' ','').toLowerCase()%]</targetMicroservice>
+				<toMethod>
+					<visibility>public</visibility>
+					<returnType>void</returnType>
+					<methodName>bar1</methodName>
+					<parameters>
+						<parameter>
+							<paramType>int</paramType>
+							<paramName>param</paramName>
+						</parameter>
+					</parameters>
+				</toMethod>
+			</to>
+		</methodInvocation>	
+				[%
+			}
+		%]
+		[%
+	}
+%]
+	</relationships>
+</migration>
