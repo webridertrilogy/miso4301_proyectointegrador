@@ -144,6 +144,9 @@
     <eClassifiers xsi:type="ecore:EClass" name="VoidType" eSuperTypes="#//kdmObjects/PrimitiveType"/>
     <eClassifiers xsi:type="ecore:EClass" name="PrimitiveType" eSuperTypes="#//kdmObjects/DataType"/>
     <eClassifiers xsi:type="ecore:EClass" name="TemplateType" eSuperTypes="#//kdmObjects/DataType"/>
+    <eClassifiers xsi:type="ecore:EClass" name="IntegerType" eSuperTypes="#//kdmObjects/DataType"/>
+    <eClassifiers xsi:type="ecore:EClass" name="TemplateParameter" eSuperTypes="#//kdmObjects/DataType"/>
+    <eClassifiers xsi:type="ecore:EClass" name="FloatType" eSuperTypes="#//kdmObjects/DataType"/>
   </eSubpackages>
   <eSubpackages name="SimplifiedDecisionMetrics" nsURI="http://subkdm/sdm" nsPrefix="sdm">
     <eClassifiers xsi:type="ecore:EClass" name="Observation">
@@ -222,6 +225,9 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="TypeRelation" eSuperTypes="#//kdmObjects/ModelElement">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="call" eType="#//kdmRelations/Calls"
+          containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="esEntreMetodos" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ClusterRelation" eSuperTypes="#//kdmObjects/ModelElement">
       <eStructuralFeatures xsi:type="ecore:EReference" name="to" eType="#//kdmObjects/Cluster"/>

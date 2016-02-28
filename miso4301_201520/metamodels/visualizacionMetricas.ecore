@@ -25,6 +25,8 @@
         eType="#//TipoRelacion"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
         eType="#//Elemento"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="invocaciones" upperBound="-1"
+        eType="#//representacion/Invocacion"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Metrica">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="tipo" eType="#//TipoMetrica"/>
@@ -76,11 +78,19 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="atributosIn" upperBound="-1"
           eType="#//AtributoCM"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="returnType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="visibility" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="sourceCluster" eType="#//representacion/Cluster"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="clase" eType="#//representacion/ClaseR"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombreMetodo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Atributo" eSuperTypes="#//Hoja"/>
     <eClassifiers xsi:type="ecore:EClass" name="Intercepcion" eSuperTypes="#//Vinculo">
       <eStructuralFeatures xsi:type="ecore:EReference" name="arco" lowerBound="1"
           eType="#//Arco"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Invocacion">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="fromMethod" eType="#//representacion/Metodo"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="toMethod" eType="#//representacion/Metodo"/>
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="visualizacion" nsURI="http://visualizacionMetricas3/visualizacion"
