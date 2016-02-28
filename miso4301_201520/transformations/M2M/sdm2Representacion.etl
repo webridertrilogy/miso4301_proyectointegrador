@@ -36,7 +36,7 @@ to o: target!Cluster{
 	  	class.name = codeItem.name;
 	    class.compartida = "false";
 	  	class.AddMetricsClass(codeItem);
-	  	" voy".println(o.name);
+	  	
 	  	class.AddElementsToClass(codeItem);
 	  	AddClassToPackage(class, codeItem);
 	  	o.elementos.add(class);
@@ -67,7 +67,7 @@ to o: target!Cluster{
 //Adiciona metodos y atributos a las clases
 operation target!ClaseR AddElementsToClass(codeItem : kdmMicro!CodeItem){
 	var methods = codeItem.codeElement.select(x | x.isTypeOf(kdmMicro!MethodUnit));
-	"entre".println();
+	
 	//var atributesIn = signatures.parameterUnit.select(x | (x.isTypeOf(kmdMicro!ParameterUnit)) and (x.name<>''));
 	var atributes = codeItem.codeElement.select(x | x.isTypeOf(kdmMicro!StorableUnit));
 	
@@ -185,7 +185,7 @@ operation target!Metrica SetTipoMetrics(tipoMeasure: kdmMicro!Measure, tipoPor: 
 	else if(tipoMeasure.isTypeOf(kdmMicro!ClusterRelationConflictPercentageMeasure))
 	{
 		mensaje = "ClusterRelationConflictPercentageMeasure";
-		tipoPor.println();
+		
 		if(tipoPor == "1")
 		{
 			self.tipo = target!TipoMetrica#ClusterRelationConflictPercentageMeasureTarget;
@@ -295,9 +295,7 @@ operation target!Arco CreateMeasuresRelationsCluster(relation: kdmMicro!ClusterR
 			
 			if(m.isTypeOf(kdmMicro!DimensionalToObjectMeasurement))
 			{
-				m.object.name.println();
-				clusterTarget.name.println();
-				clusterSource.name.println();
+				
 				if(m.object.name.equals(clusterTarget.name))
 				{
 					tipoPor = "1";
@@ -344,12 +342,173 @@ operation target!Nodo GetRelationsClass(classLR: Sequence, nodosClases: Sequence
 		    
 		    for(t in rel.typeRelations){
 		    	dep.AddTypeRelation(t);
-		    }
-		    
+		    	if (t.name = 'Uses' and t.esEntreMetodos = 'true') {
+		    	        ('*********Llamado metodos*******').println();
+				    	var call = t.call;
+				    	var callTo = call.`to`;
+						var callFrom = call.`from`.getMethodUnit();
+						var callFromClass = call.`from`.getClassUnit();
+						var callToClass = call.`to`.getClassUnit();
+						var callToType = callTo.`type`.`parameterUnit`;
+						var callFromType = callFrom.`type`.`parameterUnit`;
+			
+						var parametrosFrom = new Set;
+						for (pu in callFromType->select(p | p.isTypeOf(kdmMicro!ParameterUnit) and not (p.name = null or p.name = '') and not p.type.isTypeOf(kdmMicro!VoidType))){				  
+						   var class = pu.`type`;
+						   if (class.isTypeOf(kdmMicro!PrimitiveType) or class.isTypeOf(kdmMicro!TemplateParameter) or class.isTypeOf(kdmMicro!FloatType) or class.isTypeOf(kdmMicro!IntegerType)  or class.isTypeOf(kdmMicro!TemplateType) or class.isTypeOf(kdmMicro!ClassUnit) or class.isTypeOf(kdmMicro!InterfaceUnit) or class.isTypeOf(kdmMicro!TemplateUnit) ) {
+							   var paquete = class.getPackage();
+							   var atributoCM = new target!AtributoCM();
+							   atributoCM.name = pu.name;
+							   atributoCM.type = paquete + class.name;
+							   parametrosFrom.add(atributoCM);					  
+						   }						   
+						   else if (not class.isTypeOf(kdmMicro!VoidType)) {
+						   		class.println();
+						   	   var atributoCM = new target!AtributoCM();
+							   atributoCM.name = pu.name;
+							   atributoCM.type = 'UK';
+							   parametrosFrom.add(atributoCM);
+						   }
+						}
+				
+						var typoRetornoFrom = '';			
+						for (pu in callFromType->select(p | p.isTypeOf(kdmMicro!ParameterUnit) and (p.name = '' or p.name = null))){				  
+						   var class = pu.`type`;
+						   if (class.isTypeOf(kdmMicro!PrimitiveType) or class.isTypeOf(kdmMicro!TemplateParameter) or class.isTypeOf(kdmMicro!FloatType) or class.isTypeOf(kdmMicro!IntegerType)  or class.isTypeOf(kdmMicro!TemplateType) or class.isTypeOf(kdmMicro!ClassUnit) or class.isTypeOf(kdmMicro!InterfaceUnit) or class.isTypeOf(kdmMicro!TemplateUnit)  ) {
+							   typoRetornoFrom = class.getPackage() + class.name;					  				  
+						   }
+						   else if (class.isTypeOf(kdmMicro!VoidType)) {
+						   		typoRetornoFrom = 'void';
+						   }
+						   
+						   else  {
+						   
+						   	typoRetornoFrom = 'UK';
+						   }
+						   
+						}	
+				
+						var parametrosTo= new Set;						
+						for (pu in callToType->select(p | p.isTypeOf(kdmMicro!ParameterUnit) and not (p.name = '' or p.name = null) and not p.type.isTypeOf(kdmMicro!VoidType))){
+						  
+						   var class = pu.`type`;
+						  					  				  
+						   if (class.isTypeOf(kdmMicro!PrimitiveType) or class.isTypeOf(kdmMicro!TemplateParameter) or class.isTypeOf(kdmMicro!FloatType) or class.isTypeOf(kdmMicro!IntegerType) or class.isTypeOf(kdmMicro!TemplateType) or class.isTypeOf(kdmMicro!ClassUnit) or class.isTypeOf(kdmMicro!InterfaceUnit) or class.isTypeOf(kdmMicro!TemplateUnit)) {
+							   var paquete = class.getPackage();
+							   var atributoCM = new target!AtributoCM();
+							   atributoCM.name = pu.name;
+							   atributoCM.type = paquete + class.name;
+							   parametrosTo.add(atributoCM);
+						   }
+						   else {
+						   	   var atributoCM = new target!AtributoCM();
+							   atributoCM.name = pu.name;
+							   atributoCM.type = 'UK';
+							   parametrosTo.add(atributoCM);
+						   }
+						}
+				
+						var typoRetornoTo = '';		
+						for (pu in callToType->select(p | p.isTypeOf(kdmMicro!ParameterUnit) and (p.name = '' or p.name = null))){
+						  
+						   var class = pu.`type`;
+						  
+						   if (class.isTypeOf(kdmMicro!PrimitiveType) or class.isTypeOf(kdmMicro!TemplateParameter) or class.isTypeOf(kdmMicro!FloatType) or class.isTypeOf(kdmMicro!IntegerType) or class.isTypeOf(kdmMicro!TemplateType) or class.isTypeOf(kdmMicro!ClassUnit) or class.isTypeOf(kdmMicro!InterfaceUnit) or class.isTypeOf(kdmMicro!TemplateUnit) ) {
+							   typoRetornoTo = class.getPackage() + class.name;
+						   }
+						    else if (class.isTypeOf(kdmMicro!VoidType)) {
+						   		typoRetornoTo = 'void';
+						   }
+						   else {
+						   	typoRetornoTo = 'UK';
+						   }
+						}
+				
+						var visibilidadFrom = callFrom.export + '';
+						var visibilidadTo = callTo.export + '';
+				
+						('- Metodo invocador (clase ' + callFromClass.name+ ' ): ').println();
+						(visibilidadFrom + ' ' + typoRetornoFrom + ' ' + callFrom.name + '(' ).println();
+						for (atr in parametrosFrom) {
+							(' ' + atr.type + ' ' + atr.name ).println();
+						}
+						');'.println();
+						
+						('- Metodo invocado: (clase ' + callToClass.name+ ' ): ').println();
+						(visibilidadTo + ' ' + typoRetornoTo + ' ' + callTo.name + '(' ).println();
+						for (atr in parametrosTo) {
+							(' ' + atr.type + ' ' + atr.name ).println();
+						}
+						');'.println();
+						
+		    	
+			    		var inv = new target!Invocacion();
+			    		
+			    		var metodoFrom = new target!Metodo();
+			    		var metodoTo = new target!Metodo();
+			    		
+			    		metodoFrom.nombreMetodo = callFrom.name;
+			    		metodoFrom.clase = self;
+			    		metodoFrom.visibility = visibilidadFrom;
+			    		metodoFrom.returnType = typoRetornoFrom;
+			    		metodoFrom.atributosIn = parametrosFrom;
+			    		
+			    		metodoTo.nombreMetodo = callTo.name;
+			    		metodoTo.clase = ClaseTarg;
+			    		metodoTo.visibility = visibilidadTo;
+			    		metodoTo.returnType = typoRetornoTo;
+			    		metodoTo.atributosIn = parametrosTo;
+			    		
+			    		inv.fromMethod = metodoFrom;
+			    		inv.toMethod = metodoTo;
+		    		
+		    			dep.invocaciones.add(inv);
+		    	}
+		    	
+		    }	    
+		   
 			self.relaciones.add(dep);
 	    }
 	}
 }
+
+//Obtiene la clase "CodeItem" que contiene o a la que pertenece el AbstractCodeElement 
+operation kdmMicro!AbstractCodeElement getParentClassUnit() : kdmMicro!CodeItem{
+	var class = self;
+	while (not (class.isTypeOf(kdmMicro!PrimitiveType) or class.isTypeOf(kdmMicro!TemplateParameter) or class.isTypeOf(kdmMicro!FloatType) or class.isTypeOf(kdmMicro!IntegerType) or class.isTypeOf(kdmMicro!VoidType) or class.isTypeOf(kdmMicro!TemplateType) or class.isTypeOf(kdmMicro!ClassUnit) or class.isTypeOf(kdmMicro!InterfaceUnit) or class.isTypeOf(kdmMicro!TemplateUnit))){
+			class = class.eContainer();
+	}
+	return class;
+}
+
+ 
+operation kdmMicro!AbstractCodeElement getMethodUnit() : kdmMicro!CodeItem{
+	var class = self;
+	while (not (class.isTypeOf(kdmMicro!MethodUnit))){
+			class = class.eContainer();
+	}
+	return class;
+}
+
+operation kdmMicro!AbstractCodeElement getClassUnit() : kdmMicro!CodeItem{
+	var class = self;
+	while (not (class.isTypeOf(kdmMicro!TemplateType) or class.isTypeOf(kdmMicro!ClassUnit) or class.isTypeOf(kdmMicro!InterfaceUnit) or class.isTypeOf(kdmMicro!TemplateUnit))){
+			class = class.eContainer();
+	}
+	return class;
+}
+
+
+operation kdmMicro!AbstractCodeElement getPackage() : String{
+	var paquete = '';
+	var pack = self.eContainer();
+	while ((pack.isTypeOf(kdmMicro!Package))){			
+			paquete = pack.name + "." + paquete ;
+			pack = pack.eContainer();
+	}
+	return paquete;
+}
+
 
 //asocia metricas de relaciones - arcos
 operation target!Arco CreateMeasuresRelations(relation: kdmMicro!ClassLevelRelation){

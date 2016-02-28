@@ -3,7 +3,7 @@
   <ownedViewpoints name="Metricas" modelFileExtension="visualizacionmetricas3">
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Diagrama Cluster" domainClass="visualizacion.Diagrama" preconditionExpression="[self.isRoot /]" enablePopupBars="true">
       <defaultLayer name="Default">
-        <nodeMappings name="FiguraGeometrica" semanticCandidatesExpression="[self.elementos /]" doubleClickDescription="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster']/@defaultLayer/@toolSections.0/@ownedTools[name='Zoom%20FiguraGeometrica']" domainClass="visualizacion.FiguraGeometrica">
+        <nodeMappings name="FiguraGeometrica" semanticCandidatesExpression="[self.elementos /]" doubleClickDescription="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@toolSections.0/@ownedTools[name='Zoom%20FiguraGeometrica']" domainClass="visualizacion.FiguraGeometrica">
           <conditionnalStyles predicateExpression="[self.oclIsTypeOf(Elipse)/]">
             <style xsi:type="style:EllipseNodeDescription" labelPosition="node" resizeKind="NSEW" horizontalDiameterComputationExpression="feature:largo" verticalDiameterComputationExpression="feature:alto">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -48,7 +48,7 @@
           </style>
         </edgeMappings>
         <toolSections>
-          <ownedTools xsi:type="tool:DoubleClickDescription" name="Zoom FiguraGeometrica" mappings="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster']/@defaultLayer/@nodeMappings[name='FiguraGeometrica']">
+          <ownedTools xsi:type="tool:DoubleClickDescription" name="Zoom FiguraGeometrica">
             <element name="element"/>
             <elementView name="elementView"/>
             <initialOperation>
@@ -241,7 +241,7 @@
           </style>
         </edgeMappings>
         <containerMappings name="Contenedor" semanticCandidatesExpression="[self.diagrama.elementos /]" doubleClickDescription="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Contenedores']/@defaultLayer/@toolSections.0/@ownedTools[name='Zoom%20Contenedor']" domainClass="visualizacion.Contenedor" childrenPresentation="List">
-          <subNodeMappings name="ElementoDiagrama" semanticCandidatesExpression="[self.diagrama.elementos /]" domainClass="visualizacion.ElementoDiagrama">
+          <subNodeMappings name="ElementoDiagrama" semanticCandidatesExpression="[self.diagrama.elementos /]" doubleClickDescription="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@toolSections.0/@ownedTools[name='Zoom%20FiguraGeometrica']" domainClass="visualizacion.ElementoDiagrama">
             <style xsi:type="style:BundledImageDescription" iconPath="/Visualizacion3SIRIUS/Class_Description.gif" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -266,7 +266,7 @@
         </toolSections>
         <customization>
           <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.oclIsTypeOf(Item) /]">
-            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Contenedores']/@defaultLayer/@containerMappings[name='Contenedor']/@subNodeMappings[name='ElementoDiagrama']/@style" attributeName="iconPath" value="['/VisualizacionMetricas3.instances/' + self.icono + '.gif'/]"/>
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Contenedores']/@defaultLayer/@containerMappings[name='Contenedor']/@subNodeMappings[name='ElementoDiagrama']/@style" attributeName="iconPath" value="['/Visualizacion3SIRIUS/' + self.icono + '.gif'/]"/>
           </vsmElementCustomizations>
           <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.flecha_target.toString() = 'TRIANGULAR'/]">
             <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Contenedores']/@defaultLayer/@edgeMappings[name='ConectorContenedores']/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster']/@defaultLayer/@edgeMappings[name='Conector']/@style" attributeName="targetArrow" value="['InputClosedArrow'/]"/>
@@ -313,9 +313,9 @@
             </endLabelStyleDescription>
           </style>
         </edgeMappings>
-        <containerMappings name="Cluster" semanticCandidatesExpression="[self.elementos /]" domainClass="visualizacion.Clase" childrenPresentation="List">
-          <subNodeMappings name="ElementoDiagrama" semanticCandidatesExpression="[self.diagrama.elementos /]" domainClass="visualizacion.ElementoDiagrama">
-            <style xsi:type="style:BundledImageDescription" iconPath="/VisualizacionMetricas3.instances/Class_Description.gif" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW">
+        <containerMappings name="Cluster" semanticCandidatesExpression="[self.elementos /]" doubleClickDescription="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@toolSections.0/@ownedTools[name='Zoom%20FiguraGeometrica']" domainClass="visualizacion.Clase" childrenPresentation="List">
+          <subNodeMappings name="ElementoDiagrama" semanticCandidatesExpression="[self.diagrama.elementos /]" doubleClickDescription="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@toolSections.0/@ownedTools[name='Zoom%20FiguraGeometrica']" domainClass="visualizacion.ElementoDiagrama">
+            <style xsi:type="style:BundledImageDescription" iconPath="/Visualizacion3SIRIUS/Class_Description.gif" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -329,7 +329,7 @@
           </style>
         </containerMappings>
         <toolSections>
-          <ownedTools xsi:type="tool:DoubleClickDescription" name="Zoom FiguraGeometrica">
+          <ownedTools xsi:type="tool:DoubleClickDescription" name="Zoom FiguraGeometrica" mappings="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Contenedores']/@defaultLayer/@containerMappings[name='Contenedor']/@subNodeMappings[name='ElementoDiagrama'] //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']/@subNodeMappings[name='ElementoDiagrama'] //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster'] //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster']/@defaultLayer/@nodeMappings[name='FiguraGeometrica']">
             <element name="element"/>
             <elementView name="elementView"/>
             <initialOperation>

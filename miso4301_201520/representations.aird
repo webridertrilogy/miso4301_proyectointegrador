@@ -70,13 +70,14 @@
           <styles xmi:type="notation:DiagramStyle" xmi:id="_gfU6wkpmEeW6AbXvikMMBA"/>
         </data>
       </ownedAnnotationEntries>
+      <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_xJZUYNj9EeWtXLPkA0nlWA" source="DANNOTATION_CUSTOMIZATION_KEY">
+        <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_xJZ7cNj9EeWtXLPkA0nlWA"/>
+      </ownedAnnotationEntries>
       <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_gfBYwUpmEeW6AbXvikMMBA" width="-1" height="-1">
         <target xmi:type="ecore:EPackage" href="metamodel/SimplifiedDecisionMetrics.ecore#/"/>
         <semanticElements xmi:type="ecore:EPackage" href="metamodel/SimplifiedDecisionMetrics.ecore#/"/>
         <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_gfBYwkpmEeW6AbXvikMMBA" showIcon="false" labelPosition="node" workspacePath="/org.eclipse.emf.ecoretools.design/icons/full/back/empty.svg">
-          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_gfBYw0pmEeW6AbXvikMMBA"/>
           <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@nodeMappings[name='Empty%20Diagram']/@style"/>
-          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_gfBYxEpmEeW6AbXvikMMBA"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@nodeMappings[name='Empty%20Diagram']"/>
       </ownedDiagramElements>
@@ -89,18 +90,18 @@
     </ownedRepresentations>
     <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
   </ownedViews>
-  <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_dIkoYFBbEeWrhpkgzqtU0A" initialized="true">
+  <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_dIkoYFBbEeWrhpkgzqtU0A">
     <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/KDMSDM.design/description/SDM.odesign#//@ownedViewpoints[name='sdm']"/>
   </ownedViews>
-  <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_WSGicFJhEeWTjayuf0VR4w" initialized="true">
+  <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_WSGicFJhEeWTjayuf0VR4w">
     <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/KDM2Model.design/description/SimplifiedDecisionMetrics.odesign#//@ownedViewpoints[name='sdm']"/>
   </ownedViews>
-  <models xmi:type="com.mtcflow.model:MTC" href="mtcs/Visualizacion.mtc#/"/>
+  <models xmi:type="com.mtcflow.mtc_1.1:MTC" href="mtcs/Visualizacion.mtc#/"/>
   <models xmi:type="visualizacionMetricas:Nodo" href="models/Visualizacion.xmi#/"/>
   <models xmi:type="visualizacionMetricas2:Aplicacion" href="models/Visualizacion.xmi#/"/>
-  <models xmi:type="h:Segment" href="models/kdmResultadoSub.xmi#/"/>
-  <models xmi:type="h:Segment" href="models/My.subkdm#/"/>
-  <models xmi:type="micromodel:MicroKDM" href="models/n6_buscaminas_MicroKDM.xmi#/"/>
-  <models xmi:type="micromodel:MicroKDM" href="models/KDMMicro.xmi#/0"/>
+  <models xmi:type="subkdm:Segment" href="models/kdmResultadoSub.xmi#/"/>
+  <models xmi:type="subkdm:Segment" href="models/My.subkdm#/"/>
+  <models xmi:type="micromodel_1.0:MicroKDM" href="models/n6_buscaminas_MicroKDM.xmi#/"/>
+  <models xmi:type="micromodel_1.0:MicroKDM" href="models/KDMMicro.xmi#/0"/>
   <models xmi:type="main:CodeModel" href="metamodel/CodeModelSub.xmi#/"/>
 </viewpoint:DAnalysis>
