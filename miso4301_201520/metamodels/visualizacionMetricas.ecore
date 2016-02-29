@@ -183,6 +183,8 @@
           eType="#//visualizacion/ElementoDiagrama"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="nameSource" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="nameTarget" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="invocaciones" upperBound="-1"
+          eType="#//representacion/Invocacion"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="EstiloLinea">
       <eLiterals name="SOLIDA"/>
@@ -226,6 +228,10 @@
           defaultValueLiteral="0"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="color" eType="#//visualizacion/Color"
           defaultValueLiteral="black"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="InvocacionV">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="fromMethod" eType="#//visualizacion/Item"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="toMethod" eType="#//visualizacion/Item"/>
     </eClassifiers>
   </eSubpackages>
 </ecore:EPackage>

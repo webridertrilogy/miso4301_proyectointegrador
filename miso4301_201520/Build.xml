@@ -2,10 +2,10 @@
 <project xmlns:qvto="http://www.eclipse.org/qvt/1.0.0/Operational" name="kdm" default="main">
 	
 	<property name="Kdm" value="./models/carrito.logic_kdm.xmi"></property>
-	<property name="SubKdm" value="./models/res1/kdmResultadoSub.xmi"></property>
-	<property name="Cluster" value="./models/res1/representacion44.xmi"></property>
-	<property name="Visualizacion" value="./models/res2/visualizacion3.xmi"></property>
-	<property name="Simplificacion" value="./models/res2/visualizacion3.xmi"></property>
+	<property name="SubKdm" value="./models/res3/kdmResultadoSub.xmi"></property>
+	<property name="Cluster" value="./models/res3/representacion44.xmi"></property>
+	<property name="Visualizacion" value="./models/res3/visualizacion3.xmi"></property>
+	<property name="Simplificacion" value="./models/res3/visualizacion3.xmi"></property>
 	<!--<property name="Simplificacion" value="./models/res2/simplificacion3.xmi"></property>-->
 
 			
@@ -84,12 +84,12 @@
 	<!-- Main -->
 	
 	<target name="main">		
+		<!--<antcall target="Kdm2Kdm" inheritall="true"></antcall>-->
+		<!--<antcall target="micro2sdm"></antcall> -->
+		<!--<antcall target="sdm2Representacion"></antcall>-->
+		<!--<antcall target="sdm2Visualizacion"></antcall>-->
+		<antcall target="visualizacion2simplificacion"></antcall>
 		
-		
-	
-				<antcall target="sdm2Representacion"></antcall>
-				
-		
-		 <!-- epsilon.disposeModels></epsilon.disposeModels> --> 
+		 <!-- epsilon.disposeModels></epsilon.disposeModels> -->  
 	</target>
 </project>
