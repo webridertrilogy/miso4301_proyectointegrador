@@ -4,6 +4,7 @@
 	xsi:noNamespaceSchemaLocation ="kdmResult.xsd">
 	<microservices>
 [%
+	var clases = Clase.all
 	for(cluster in diagrama.elementos) 
 	{
 		%]

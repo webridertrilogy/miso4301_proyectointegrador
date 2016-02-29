@@ -84,9 +84,9 @@
 	<!-- Main -->
 	
 	<target name="main">		
-		<!--<antcall target="Kdm2Kdm" inheritall="true"></antcall>-->
-		<!--<antcall target="micro2sdm"></antcall> -->
-		<!--<antcall target="sdm2Representacion"></antcall>-->
+		<!--<antcall target="Kdm2Kdm" inheritall="true"></antcall>
+		<antcall target="micro2sdm"></antcall>
+		<antcall target="sdm2Representacion"></antcall>-->
 		<!--<antcall target="sdm2Visualizacion"></antcall>-->
 		<antcall target="visualizacion2simplificacion"></antcall>
 		

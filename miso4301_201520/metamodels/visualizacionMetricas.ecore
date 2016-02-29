@@ -26,7 +26,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
         eType="#//Elemento"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="invocaciones" upperBound="-1"
-        eType="#//Invocacion"/>
+        eType="#//representacion/Invocacion"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Metrica">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="tipo" eType="#//TipoMetrica"/>
@@ -56,12 +56,12 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Invocacion">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="fromMethod" eType="#//representacion/Metodo"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="toMethod" eType="#//representacion/Metodo"/>
-  </eClassifiers>
   <eSubpackages name="representacion" nsURI="http://visualizacionMetricas3/representacion"
       nsPrefix="visualizacionMetricas3.representacion">
+    <eClassifiers xsi:type="ecore:EClass" name="Invocacion">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="fromMethod" eType="#//representacion/Metodo"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="toMethod" eType="#//representacion/Metodo"/>
+    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Cluster" eSuperTypes="#//Vinculo"/>
     <eClassifiers xsi:type="ecore:EClass" name="Paquete" eSuperTypes="#//Nodo"/>
     <eClassifiers xsi:type="ecore:EClass" name="Modulo" eSuperTypes="#//Nodo"/>
@@ -184,7 +184,7 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="nameSource" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="nameTarget" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="invocaciones" upperBound="-1"
-          eType="#//Invocacion"/>
+          eType="#//representacion/Invocacion"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="EstiloLinea">
       <eLiterals name="SOLIDA"/>
