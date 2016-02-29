@@ -8870,481 +8870,1028 @@
       <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="getProductoId" icono="MessageSynchCallCreation"/>
     </elementos>
   </visualizacionMetricas3.visualizacion:Diagrama>
-  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/973" name="carrito.logic Simplificado 100%">
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/973/@elementos.0" name="Cluster 1">
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/973/@elementos.0" target="/973/@elementos.1"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientPersistence"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/973/@elementos.1" name="Cluster 2">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientLogicService"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/973/@elementos.2" name="Cluster 3">
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/973/@elementos.2" target="/973/@elementos.5"/>
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/973/@elementos.2" target="/973/@elementos.3"/>
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/973/@elementos.2" target="/973/@elementos.9"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoLogicService"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/973/@elementos.3" name="Cluster 4">
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/973/@elementos.3" target="/973/@elementos.9"/>
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/973/@elementos.3" target="/973/@elementos.6"/>
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/973/@elementos.3" target="/973/@elementos.5"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoPersistence"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/973/@elementos.4" name="Cluster 5">
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/973/@elementos.4" target="/973/@elementos.8"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoLogicService"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/973/@elementos.5" name="Cluster 6">
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/973/@elementos.5" target="/973/@elementos.6"/>
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/973/@elementos.5" target="/973/@elementos.9"/>
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/973/@elementos.5" target="/973/@elementos.7"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterLogicService"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/973/@elementos.6" name="Cluster 7">
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/973/@elementos.6" target="/973/@elementos.9"/>
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/973/@elementos.6" target="/973/@elementos.7"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemPersistence"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/973/@elementos.7" name="Cluster 8">
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/973/@elementos.7" target="/973/@elementos.9"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemLogicService"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/973/@elementos.8" name="Cluster 9">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoPersistence"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/973/@elementos.9" name="Cluster 10">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterPersistence"/>
-    </elementos>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/973" name="carrito.logic Simplificado 100%" isRoot="true"/>
+  <visualizacionMetricas3.visualizacion:Elipse name="Clusterd 1"/>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/975" name="Sim100-1"/>
+  <visualizacionMetricas3.visualizacion:Elipse/>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/977" name="carrito.logic Simplificado 100%" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 1"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 2"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 3"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 4"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 5"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 6"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 7"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 8"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 9"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 10"/>
   </visualizacionMetricas3.visualizacion:Diagrama>
-  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/974" name="carrito.logic Simplificado 95%">
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/974/@elementos.0" name="Cluster 1">
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/974/@elementos.0" target="/974/@elementos.1"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientPersistence"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/974/@elementos.1" name="Cluster 2">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientLogicService"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/974/@elementos.2" name="Cluster 3">
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/974/@elementos.2" target="/974/@elementos.5"/>
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/974/@elementos.2" target="/974/@elementos.3"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoLogicService"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/974/@elementos.3" name="Cluster 4">
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/974/@elementos.3" target="/974/@elementos.6"/>
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/974/@elementos.3" target="/974/@elementos.5"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoPersistence"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/974/@elementos.4" name="Cluster 5">
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/974/@elementos.4" target="/974/@elementos.8"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoLogicService"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/974/@elementos.5" name="Cluster 6">
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/974/@elementos.5" target="/974/@elementos.6"/>
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/974/@elementos.5" target="/974/@elementos.7"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterLogicService"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/974/@elementos.6" name="Cluster 7">
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/974/@elementos.6" target="/974/@elementos.7"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemPersistence"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/974/@elementos.7" name="Cluster 8">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemLogicService"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/974/@elementos.8" name="Cluster 9">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoPersistence"/>
-    </elementos>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/978" name="Sim100-1">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/950"/>
   </visualizacionMetricas3.visualizacion:Diagrama>
-  <visualizacionMetricas3.visualizacion:Asociacion source="/974/@elementos.2" target="/974/@elementos.5"/>
-  <visualizacionMetricas3.visualizacion:Asociacion source="/974/@elementos.3" target="/974/@elementos.5"/>
-  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/977" name="carrito.logic Simplificado 90%">
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/977/@elementos.0" name="Cluster 1">
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/977/@elementos.0" target="/977/@elementos.1"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientPersistence"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/977/@elementos.1" name="Cluster 2">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientLogicService"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/977/@elementos.2" name="Cluster 3">
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/977/@elementos.2" target="/977/@elementos.5"/>
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/977/@elementos.2" target="/977/@elementos.3"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoLogicService"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/977/@elementos.3" name="Cluster 4">
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/977/@elementos.3" target="/977/@elementos.5"/>
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/977/@elementos.3" target="/977/@elementos.6"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoPersistence"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/977/@elementos.4" name="Cluster 5">
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/977/@elementos.4" target="/977/@elementos.8"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoLogicService"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/977/@elementos.5" name="Cluster 6">
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/977/@elementos.5" target="/977/@elementos.7"/>
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/977/@elementos.5" target="/977/@elementos.6"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterLogicService"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/977/@elementos.6" name="Cluster 7">
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/977/@elementos.6" target="/977/@elementos.7"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemPersistence"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/977/@elementos.7" name="Cluster 8">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemLogicService"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/977/@elementos.8" name="Cluster 9">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoPersistence"/>
-    </elementos>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/979" name="Sim100-2">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/949"/>
   </visualizacionMetricas3.visualizacion:Diagrama>
-  <visualizacionMetricas3.visualizacion:Asociacion source="/977/@elementos.2" target="/977/@elementos.5"/>
-  <visualizacionMetricas3.visualizacion:Asociacion source="/977/@elementos.3" target="/977/@elementos.5"/>
-  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/980" name="carrito.logic Simplificado 85%">
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/980/@elementos.0" name="Cluster 1">
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/980/@elementos.0" target="/980/@elementos.1"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientPersistence"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/980/@elementos.1" name="Cluster 2">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientLogicService"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/980/@elementos.2" name="Cluster 3">
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/980/@elementos.2" target="/980/@elementos.3"/>
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/980/@elementos.2" target="/980/@elementos.5"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoLogicService"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/980/@elementos.3" name="Cluster 4">
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/980/@elementos.3" target="/980/@elementos.5"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoPersistence"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/980/@elementos.4" name="Cluster 5">
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/980/@elementos.4" target="/980/@elementos.7"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoLogicService"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/980/@elementos.5" name="Cluster 6">
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/980/@elementos.5" target="/980/@elementos.6"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterLogicService"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/980/@elementos.6" name="Cluster 7">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemLogicService"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/980/@elementos.7" name="Cluster 8">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoPersistence"/>
-    </elementos>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/980" name="Sim100-3">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/956"/>
   </visualizacionMetricas3.visualizacion:Diagrama>
-  <visualizacionMetricas3.visualizacion:Asociacion source="/980/@elementos.2" target="/980/@elementos.5"/>
-  <visualizacionMetricas3.visualizacion:Asociacion source="/980/@elementos.3" target="/980/@elementos.5"/>
-  <visualizacionMetricas3.visualizacion:Asociacion source="/980/@elementos.3" target="/980/@elementos.5"/>
-  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/984" name="carrito.logic Simplificado 80%">
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/984/@elementos.0" name="Cluster 1">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientLogicService"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/984/@elementos.1" name="Cluster 2">
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/984/@elementos.1" target="/984/@elementos.3"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoLogicService"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoPersistence"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/984/@elementos.2" name="Cluster 3">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoLogicService"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/984/@elementos.3" name="Cluster 4">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemLogicService"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterLogicService"/>
-    </elementos>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/981" name="Sim100-4">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/955"/>
   </visualizacionMetricas3.visualizacion:Diagrama>
-  <visualizacionMetricas3.visualizacion:Asociacion source="/984/@elementos.1" target="/984/@elementos.3"/>
-  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/986" name="carrito.logic Simplificado 75%">
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/986/@elementos.0" name="Cluster 1">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientLogicService"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/986/@elementos.1" name="Cluster 2">
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/986/@elementos.1" target="/986/@elementos.3"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoLogicService"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoPersistence"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/986/@elementos.2" name="Cluster 3">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoLogicService"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/986/@elementos.3" name="Cluster 4">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemLogicService"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterLogicService"/>
-    </elementos>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/982" name="Sim100-5">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/958"/>
   </visualizacionMetricas3.visualizacion:Diagrama>
-  <visualizacionMetricas3.visualizacion:Asociacion source="/986/@elementos.1" target="/986/@elementos.3"/>
-  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/988" name="carrito.logic Simplificado 70%">
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/988/@elementos.0" name="Cluster 1">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientLogicService"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/988/@elementos.1" name="Cluster 2">
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/988/@elementos.1" target="/988/@elementos.3"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoLogicService"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoPersistence"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/988/@elementos.2" name="Cluster 3">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoLogicService"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/988/@elementos.3" name="Cluster 4">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemLogicService"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterLogicService"/>
-    </elementos>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/983" name="Sim100-6">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/954"/>
   </visualizacionMetricas3.visualizacion:Diagrama>
-  <visualizacionMetricas3.visualizacion:Asociacion source="/988/@elementos.1" target="/988/@elementos.3"/>
-  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/990" name="carrito.logic Simplificado 65%">
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/990/@elementos.0" name="Cluster 1">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientLogicService"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/990/@elementos.1" name="Cluster 2">
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/990/@elementos.1" target="/990/@elementos.3"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoLogicService"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoPersistence"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/990/@elementos.2" name="Cluster 3">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoLogicService"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/990/@elementos.3" name="Cluster 4">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemLogicService"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterLogicService"/>
-    </elementos>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/984" name="Sim100-7">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/953"/>
   </visualizacionMetricas3.visualizacion:Diagrama>
-  <visualizacionMetricas3.visualizacion:Asociacion source="/990/@elementos.1" target="/990/@elementos.3"/>
-  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/992" name="carrito.logic Simplificado 60%">
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/992/@elementos.0" name="Cluster 1">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientLogicService"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/992/@elementos.1" name="Cluster 2">
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/992/@elementos.1" target="/992/@elementos.3"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoLogicService"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoPersistence"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/992/@elementos.2" name="Cluster 3">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoLogicService"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/992/@elementos.3" name="Cluster 4">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemLogicService"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterLogicService"/>
-    </elementos>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/985" name="Sim100-8">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/952"/>
   </visualizacionMetricas3.visualizacion:Diagrama>
-  <visualizacionMetricas3.visualizacion:Asociacion source="/992/@elementos.1" target="/992/@elementos.3"/>
-  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/994" name="carrito.logic Simplificado 55%">
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/994/@elementos.0" name="Cluster 1">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientLogicService"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/994/@elementos.1" name="Cluster 2">
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/994/@elementos.1" target="/994/@elementos.3"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoLogicService"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoPersistence"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/994/@elementos.2" name="Cluster 3">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoLogicService"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/994/@elementos.3" name="Cluster 4">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemLogicService"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterLogicService"/>
-    </elementos>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/986" name="Sim100-9">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/957"/>
   </visualizacionMetricas3.visualizacion:Diagrama>
-  <visualizacionMetricas3.visualizacion:Asociacion source="/994/@elementos.1" target="/994/@elementos.3"/>
-  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/996" name="carrito.logic Simplificado 50%">
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/996/@elementos.0" name="Cluster 1">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientLogicService"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/996/@elementos.1" name="Cluster 2">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemLogicService"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoLogicService"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterLogicService"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoPersistence"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/996/@elementos.2" name="Cluster 3">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoLogicService"/>
-    </elementos>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/987" name="Sim100-10">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/951"/>
   </visualizacionMetricas3.visualizacion:Diagrama>
-  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/997" name="carrito.logic Simplificado 45%">
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/997/@elementos.0" name="Cluster 1">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientLogicService"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/997/@elementos.1" name="Cluster 2">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemLogicService"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoLogicService"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterLogicService"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoPersistence"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/997/@elementos.2" name="Cluster 3">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoLogicService"/>
-    </elementos>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/988" name="carrito.logic Simplificado 95%" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 1"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 2"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 3"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 4"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 5"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 6"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 7"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 8"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 9"/>
   </visualizacionMetricas3.visualizacion:Diagrama>
-  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/998" name="carrito.logic Simplificado 40%">
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/998/@elementos.0" name="Cluster 1">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientLogicService"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/998/@elementos.1" name="Cluster 2">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemLogicService"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoLogicService"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterLogicService"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoPersistence"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/998/@elementos.2" name="Cluster 3">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoLogicService"/>
-    </elementos>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/989" name="Sim95-1">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/950"/>
   </visualizacionMetricas3.visualizacion:Diagrama>
-  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/999" name="carrito.logic Simplificado 35%">
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/999/@elementos.0" name="Cluster 1">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientLogicService"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/999/@elementos.1" name="Cluster 2">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemLogicService"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoLogicService"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterLogicService"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoPersistence"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/999/@elementos.2" name="Cluster 3">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoLogicService"/>
-    </elementos>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/990" name="Sim95-2">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/949"/>
   </visualizacionMetricas3.visualizacion:Diagrama>
-  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1000" name="carrito.logic Simplificado 30%">
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/1000/@elementos.0" name="Cluster 1">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientLogicService"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/1000/@elementos.1" name="Cluster 2">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemLogicService"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoLogicService"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterLogicService"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoPersistence"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/1000/@elementos.2" name="Cluster 3">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoLogicService"/>
-    </elementos>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/991" name="Sim95-3">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/956"/>
   </visualizacionMetricas3.visualizacion:Diagrama>
-  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1001" name="carrito.logic Simplificado 25%">
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/1001/@elementos.0" name="Cluster 1">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientLogicService"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/1001/@elementos.1" name="Cluster 2">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemLogicService"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoLogicService"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterLogicService"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoPersistence"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/1001/@elementos.2" name="Cluster 3">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoLogicService"/>
-    </elementos>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/992" name="Sim95-4">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/955"/>
   </visualizacionMetricas3.visualizacion:Diagrama>
-  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1002" name="carrito.logic Simplificado 20%">
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/1002/@elementos.0" name="Cluster 1">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientLogicService"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/1002/@elementos.1" name="Cluster 2">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemLogicService"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoLogicService"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterLogicService"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoPersistence"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/1002/@elementos.2" name="Cluster 3">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoLogicService"/>
-    </elementos>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/993" name="Sim95-5">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/958"/>
   </visualizacionMetricas3.visualizacion:Diagrama>
-  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1003" name="carrito.logic Simplificado 15%">
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/1003/@elementos.0" name="Cluster 1">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientLogicService"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/1003/@elementos.1" name="Cluster 2">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemLogicService"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoLogicService"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterLogicService"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoPersistence"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/1003/@elementos.2" name="Cluster 3">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoLogicService"/>
-    </elementos>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/994" name="Sim95-6">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/951"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/954"/>
   </visualizacionMetricas3.visualizacion:Diagrama>
-  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1004" name="carrito.logic Simplificado 10%">
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/1004/@elementos.0" name="Cluster 1">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientLogicService"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/1004/@elementos.1" name="Cluster 2">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemLogicService"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoLogicService"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterLogicService"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoPersistence"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/1004/@elementos.2" name="Cluster 3">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoLogicService"/>
-    </elementos>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/995" name="Sim95-7">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/953"/>
   </visualizacionMetricas3.visualizacion:Diagrama>
-  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1005" name="carrito.logic Simplificado 5%">
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/1005/@elementos.0" name="Cluster 1">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientLogicService"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/1005/@elementos.1" name="Cluster 2">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemLogicService"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoLogicService"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterLogicService"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoPersistence"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/1005/@elementos.2" name="Cluster 3">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoLogicService"/>
-    </elementos>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/996" name="Sim95-8">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/952"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/997" name="Sim95-9">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/957"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/998" name="carrito.logic Simplificado 90%" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 1"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 2"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 3"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 4"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 5"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 6"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 7"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 8"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 9"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/999" name="Sim90-1">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/950"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1000" name="Sim90-2">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/949"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1001" name="Sim90-3">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/956"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1002" name="Sim90-4">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/955"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1003" name="Sim90-5">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/958"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1004" name="Sim90-6">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/951"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/954"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1005" name="Sim90-7">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/953"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1006" name="Sim90-8">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/952"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1007" name="Sim90-9">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/957"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1008" name="carrito.logic Simplificado 85%" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 1"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 2"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 3"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 4"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 5"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 6"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 7"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 8"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1009" name="Sim85-1">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/950"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1010" name="Sim85-2">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/949"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1011" name="Sim85-3">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/956"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1012" name="Sim85-4">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/955"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1013" name="Sim85-5">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/958"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1014" name="Sim85-6">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/951"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/953"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/954"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1015" name="Sim85-7">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/952"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1016" name="Sim85-8">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/957"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1017" name="carrito.logic Simplificado 80%" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 1"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 2"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 3"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 4"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1018" name="Sim80-1">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/950"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/949"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1019" name="Sim80-2">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/956"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/955"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1020" name="Sim80-3">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/958"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/957"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1021" name="Sim80-4">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/951"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/953"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/954"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/952"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1022" name="carrito.logic Simplificado 75%" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 1"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 2"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 3"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 4"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1023" name="Sim75-1">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/950"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/949"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1024" name="Sim75-2">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/956"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/955"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1025" name="Sim75-3">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/958"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/957"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1026" name="Sim75-4">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/951"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/953"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/954"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/952"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1027" name="carrito.logic Simplificado 70%" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 1"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 2"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 3"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 4"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1028" name="Sim70-1">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/950"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/949"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1029" name="Sim70-2">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/956"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/955"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1030" name="Sim70-3">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/958"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/957"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1031" name="Sim70-4">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/951"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/953"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/954"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/952"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1032" name="carrito.logic Simplificado 65%" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 1"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 2"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 3"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 4"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1033" name="Sim65-1">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/950"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/949"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1034" name="Sim65-2">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/956"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/955"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1035" name="Sim65-3">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/958"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/957"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1036" name="Sim65-4">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/951"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/953"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/954"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/952"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1037" name="carrito.logic Simplificado 60%" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 1"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 2"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 3"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 4"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1038" name="Sim60-1">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/950"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/949"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1039" name="Sim60-2">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/956"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/955"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1040" name="Sim60-3">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/958"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/957"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1041" name="Sim60-4">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/951"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/953"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/954"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/952"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1042" name="carrito.logic Simplificado 55%" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 1"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 2"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 3"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 4"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1043" name="Sim55-1">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/950"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/949"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1044" name="Sim55-2">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/956"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/955"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1045" name="Sim55-3">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/958"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/957"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1046" name="Sim55-4">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/951"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/953"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/954"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/952"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1047" name="carrito.logic Simplificado 50%" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 1"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 2"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 3"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1048" name="Sim50-1">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/950"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/949"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1049" name="Sim50-2">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/951"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/956"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/953"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/955"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/954"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/952"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1050" name="Sim50-3">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/958"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/957"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1051" name="carrito.logic Simplificado 45%" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 1"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 2"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 3"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1052" name="Sim45-1">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/950"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/949"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1053" name="Sim45-2">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/951"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/956"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/953"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/955"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/954"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/952"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1054" name="Sim45-3">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/958"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/957"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1055" name="carrito.logic Simplificado 40%" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 1"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 2"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 3"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1056" name="Sim40-1">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/950"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/949"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1057" name="Sim40-2">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/951"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/956"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/953"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/955"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/954"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/952"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1058" name="Sim40-3">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/958"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/957"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1059" name="carrito.logic Simplificado 35%" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 1"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 2"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 3"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1060" name="Sim35-1">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/950"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/949"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1061" name="Sim35-2">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/951"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/956"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/953"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/955"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/954"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/952"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1062" name="Sim35-3">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/958"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/957"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1063" name="carrito.logic Simplificado 30%" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 1"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 2"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 3"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1064" name="Sim30-1">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/950"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/949"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1065" name="Sim30-2">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/951"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/956"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/953"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/955"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/954"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/952"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1066" name="Sim30-3">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/958"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/957"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1067" name="carrito.logic Simplificado 25%" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 1"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 2"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 3"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1068" name="Sim25-1">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/950"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/949"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1069" name="Sim25-2">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/951"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/956"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/953"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/955"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/954"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/952"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1070" name="Sim25-3">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/958"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/957"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1071" name="carrito.logic Simplificado 20%" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 1"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 2"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 3"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1072" name="Sim20-1">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/950"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/949"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1073" name="Sim20-2">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/951"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/956"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/953"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/955"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/954"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/952"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1074" name="Sim20-3">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/958"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/957"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1075" name="carrito.logic Simplificado 15%" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 1"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 2"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 3"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1076" name="Sim15-1">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/950"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/949"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1077" name="Sim15-2">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/951"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/956"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/953"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/955"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/954"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/952"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1078" name="Sim15-3">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/958"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/957"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1079" name="carrito.logic Simplificado 10%" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 1"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 2"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 3"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1080" name="Sim10-1">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/950"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/949"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1081" name="Sim10-2">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/951"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/956"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/953"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/955"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/954"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/952"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1082" name="Sim10-3">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/958"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/957"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1083" name="carrito.logic Simplificado 5%" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 1"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 2"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 3"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1084" name="Sim5-1">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/950"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/949"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1085" name="Sim5-2">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/951"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/956"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/953"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/955"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/954"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/952"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1086" name="Sim5-3">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/958"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/957"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1087" name="carrito.logic Simplificado 100%" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 1"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 2"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 3"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 4"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 5"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 6"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 7"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 8"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 9"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 10"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1088" name="Sim100-1" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/950"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1089" name="Sim100-2" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/949"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1090" name="Sim100-3" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/956"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1091" name="Sim100-4" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/955"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1092" name="Sim100-5" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/958"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1093" name="Sim100-6" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/954"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1094" name="Sim100-7" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/953"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1095" name="Sim100-8" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/952"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1096" name="Sim100-9" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/957"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1097" name="Sim100-10" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/951"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1098" name="carrito.logic Simplificado 95%" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 1"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 2"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 3"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 4"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 5"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 6"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 7"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 8"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 9"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1099" name="Sim95-1" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/950"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1100" name="Sim95-2" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/949"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1101" name="Sim95-3" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/956"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1102" name="Sim95-4" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/955"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1103" name="Sim95-5" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/958"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1104" name="Sim95-6" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/951"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/954"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1105" name="Sim95-7" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/953"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1106" name="Sim95-8" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/952"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1107" name="Sim95-9" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/957"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1108" name="carrito.logic Simplificado 90%" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 1"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 2"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 3"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 4"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 5"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 6"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 7"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 8"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 9"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1109" name="Sim90-1" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/950"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1110" name="Sim90-2" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/949"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1111" name="Sim90-3" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/956"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1112" name="Sim90-4" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/955"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1113" name="Sim90-5" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/958"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1114" name="Sim90-6" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/951"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/954"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1115" name="Sim90-7" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/953"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1116" name="Sim90-8" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/952"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1117" name="Sim90-9" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/957"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1118" name="carrito.logic Simplificado 85%" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 1"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 2"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 3"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 4"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 5"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 6"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 7"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 8"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1119" name="Sim85-1" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/950"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1120" name="Sim85-2" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/949"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1121" name="Sim85-3" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/956"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1122" name="Sim85-4" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/955"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1123" name="Sim85-5" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/958"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1124" name="Sim85-6" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/951"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/953"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/954"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1125" name="Sim85-7" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/952"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1126" name="Sim85-8" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/957"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1127" name="carrito.logic Simplificado 80%" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 1"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 2"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 3"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 4"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1128" name="Sim80-1" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/950"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/949"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1129" name="Sim80-2" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/956"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/955"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1130" name="Sim80-3" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/958"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/957"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1131" name="Sim80-4" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/951"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/953"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/954"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/952"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1132" name="carrito.logic Simplificado 75%" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 1"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 2"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 3"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 4"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1133" name="Sim75-1" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/950"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/949"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1134" name="Sim75-2" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/956"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/955"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1135" name="Sim75-3" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/958"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/957"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1136" name="Sim75-4" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/951"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/953"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/954"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/952"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1137" name="carrito.logic Simplificado 70%" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 1"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 2"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 3"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 4"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1138" name="Sim70-1" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/950"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/949"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1139" name="Sim70-2" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/956"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/955"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1140" name="Sim70-3" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/958"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/957"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1141" name="Sim70-4" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/951"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/953"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/954"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/952"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1142" name="carrito.logic Simplificado 65%" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 1"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 2"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 3"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 4"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1143" name="Sim65-1" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/950"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/949"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1144" name="Sim65-2" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/956"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/955"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1145" name="Sim65-3" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/958"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/957"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1146" name="Sim65-4" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/951"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/953"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/954"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/952"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1147" name="carrito.logic Simplificado 60%" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 1"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 2"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 3"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 4"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1148" name="Sim60-1" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/950"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/949"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1149" name="Sim60-2" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/956"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/955"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1150" name="Sim60-3" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/958"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/957"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1151" name="Sim60-4" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/951"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/953"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/954"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/952"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1152" name="carrito.logic Simplificado 55%" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 1"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 2"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 3"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 4"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1153" name="Sim55-1" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/950"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/949"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1154" name="Sim55-2" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/956"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/955"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1155" name="Sim55-3" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/958"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/957"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1156" name="Sim55-4" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/951"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/953"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/954"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/952"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1157" name="carrito.logic Simplificado 50%" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 1"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 2"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 3"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1158" name="Sim50-1" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/950"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/949"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1159" name="Sim50-2" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/951"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/956"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/953"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/955"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/954"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/952"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1160" name="Sim50-3" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/958"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/957"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1161" name="carrito.logic Simplificado 45%" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 1"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 2"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 3"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1162" name="Sim45-1" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/950"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/949"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1163" name="Sim45-2" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/951"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/956"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/953"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/955"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/954"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/952"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1164" name="Sim45-3" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/958"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/957"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1165" name="carrito.logic Simplificado 40%" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 1"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 2"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 3"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1166" name="Sim40-1" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/950"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/949"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1167" name="Sim40-2" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/951"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/956"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/953"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/955"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/954"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/952"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1168" name="Sim40-3" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/958"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/957"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1169" name="carrito.logic Simplificado 35%" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 1"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 2"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 3"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1170" name="Sim35-1" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/950"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/949"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1171" name="Sim35-2" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/951"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/956"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/953"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/955"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/954"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/952"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1172" name="Sim35-3" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/958"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/957"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1173" name="carrito.logic Simplificado 30%" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 1"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 2"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 3"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1174" name="Sim30-1" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/950"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/949"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1175" name="Sim30-2" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/951"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/956"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/953"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/955"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/954"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/952"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1176" name="Sim30-3" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/958"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/957"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1177" name="carrito.logic Simplificado 25%" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 1"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 2"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 3"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1178" name="Sim25-1" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/950"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/949"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1179" name="Sim25-2" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/951"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/956"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/953"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/955"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/954"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/952"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1180" name="Sim25-3" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/958"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/957"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1181" name="carrito.logic Simplificado 20%" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 1"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 2"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 3"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1182" name="Sim20-1" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/950"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/949"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1183" name="Sim20-2" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/951"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/956"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/953"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/955"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/954"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/952"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1184" name="Sim20-3" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/958"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/957"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1185" name="carrito.logic Simplificado 15%" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 1"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 2"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 3"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1186" name="Sim15-1" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/950"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/949"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1187" name="Sim15-2" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/951"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/956"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/953"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/955"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/954"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/952"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1188" name="Sim15-3" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/958"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/957"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1189" name="carrito.logic Simplificado 10%" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 1"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 2"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 3"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1190" name="Sim10-1" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/950"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/949"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1191" name="Sim10-2" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/951"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/956"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/953"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/955"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/954"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/952"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1192" name="Sim10-3" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/958"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/957"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1193" name="carrito.logic Simplificado 5%" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 1"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 2"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Clusterd 3"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1194" name="Sim5-1" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/950"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/949"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1195" name="Sim5-2" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/951"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/956"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/953"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/955"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/954"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/952"/>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1196" name="Sim5-3" isRoot="true">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/958"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" diagrama="/957"/>
   </visualizacionMetricas3.visualizacion:Diagrama>
 </xmi:XMI>

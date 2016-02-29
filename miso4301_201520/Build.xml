@@ -4,8 +4,8 @@
 	<property name="Kdm" value="./models/carrito.logic_kdm.xmi"></property>
 	<property name="SubKdm" value="./models/res3/kdmResultadoSub.xmi"></property>
 	<property name="Cluster" value="./models/res3/representacion44.xmi"></property>
-	<property name="Visualizacion" value="./models/res3/visualizacion3.xmi"></property>
-	<property name="Simplificacion" value="./models/res3/visualizacion3.xmi"></property>
+	<property name="Visualizacion" value="./models/res3/visualizacion3Y.xmi"></property>
+	<property name="Simplificacion" value="./models/res3/visualizacion3Y.xmi"></property>
 	<!--<property name="Simplificacion" value="./models/res2/simplificacion3.xmi"></property>-->
 
 			
@@ -74,7 +74,7 @@
 		</target>
 			
 		<target name="visualizacion2simplificacion" depends="loadModelsT5">
-			<epsilon.etl src="./transformations/M2M/Visualizacion/visualizacion2simplificacion.etl">
+			<epsilon.etl src="./transformations/M2M/Visualizacion/visualizacion2simplificacionUV.etl">
 				<model ref="source"></model>
 				<model ref="target"></model>
 			</epsilon.etl>

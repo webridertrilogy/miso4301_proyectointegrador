@@ -14,6 +14,12 @@
   <models xmi:type="modisco.xml:Root" href="transformations/M2T/Result/kdmResult5.xml#/"/>
   <models xmi:type="modisco.xml:Root" href="transformations/M2T/Result/kdmResult50.xml#/"/>
   <models xmi:type="visualizacionMetricas3.representacion:Dependencia" href="transformations/M2T/representacion44.xmi#/0"/>
-  <models xmi:type="visualizacionMetricas3.visualizacion:Diagrama" href="models/res3/visualizacion3.xmi#/0"/>
   <models xmi:type="visualizacionMetricas3.visualizacion:Diagrama" href="transformations/M2T/visualizacion3.xmi#/0"/>
+  <models xmi:type="visualizacionMetricas3.visualizacion:Diagrama" href="models/res3/visualizacion3D.xmi#/0"/>
+  <models xmi:type="visualizacionMetricas3.visualizacion:Diagrama" href="models/res3/visualizacion3I.xmi#/0"/>
+  <models xmi:type="visualizacionMetricas3.visualizacion:Diagrama" href="models/res3/visualizacion3K.xmi#/0"/>
+  <models xmi:type="visualizacionMetricas3.visualizacion:Diagrama" href="models/res3/visualizacion3N.xmi#/0"/>
+  <models xmi:type="visualizacionMetricas3.visualizacion:Diagrama" href="models/res3/visualizacion3R.xmi#/0"/>
+  <models xmi:type="visualizacionMetricas3.visualizacion:Diagrama" href="models/res3/visualizacion3T.xmi#/0"/>
+  <models xmi:type="visualizacionMetricas3.visualizacion:Diagrama" href="models/res3/visualizacion3X.xmi#/0"/>
 </viewpoint:DAnalysis>

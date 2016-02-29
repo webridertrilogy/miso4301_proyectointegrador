@@ -95,7 +95,10 @@
   </eSubpackages>
   <eSubpackages name="visualizacion" nsURI="http://visualizacionMetricas3/visualizacion"
       nsPrefix="visualizacionMetricas3.visualizacion">
-    <eClassifiers xsi:type="ecore:EClass" name="Elipse" eSuperTypes="#//visualizacion/FiguraGeometrica"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Elipse" eSuperTypes="#//visualizacion/FiguraGeometrica">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="elipses" upperBound="-1"
+          eType="#//visualizacion/FiguraGeometrica"/>
+    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Cuadrilatero" eSuperTypes="#//visualizacion/FiguraGeometrica"/>
     <eClassifiers xsi:type="ecore:EClass" name="Contenedor" abstract="true" interface="true"
         eSuperTypes="#//visualizacion/ElementoDiagrama">
