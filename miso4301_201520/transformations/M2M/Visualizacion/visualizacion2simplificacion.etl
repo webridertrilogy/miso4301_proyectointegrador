@@ -86,7 +86,12 @@ operation generarRelacionesDiagramaSimplificado(simplificado : target!Diagrama) 
 							asociacion.enrutamiento = target!TipoEnrutamiento#DIRECTO;
 							asociacion.source = clase;
 							asociacion.target = relacionado;
-							asociaciones.add(asociacion);
+							if (not(asociaciones.select(x | x.source = clase and x.target = relacionado).isEmpty())){
+								"".println("ya existo");
+							}
+							else {
+								asociaciones.add(asociacion);
+							}
 						}
 					}
 				}

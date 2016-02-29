@@ -8880,14 +8880,14 @@
     </elementos>
     <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/973/@elementos.2" name="Cluster 3">
       <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/973/@elementos.2" target="/973/@elementos.5"/>
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/973/@elementos.2" target="/973/@elementos.9"/>
       <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/973/@elementos.2" target="/973/@elementos.3"/>
+      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/973/@elementos.2" target="/973/@elementos.9"/>
       <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoLogicService"/>
     </elementos>
     <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/973/@elementos.3" name="Cluster 4">
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/973/@elementos.3" target="/973/@elementos.5"/>
       <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/973/@elementos.3" target="/973/@elementos.9"/>
       <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/973/@elementos.3" target="/973/@elementos.6"/>
+      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/973/@elementos.3" target="/973/@elementos.5"/>
       <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoPersistence"/>
     </elementos>
     <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/973/@elementos.4" name="Cluster 5">
@@ -8895,14 +8895,14 @@
       <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoLogicService"/>
     </elementos>
     <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/973/@elementos.5" name="Cluster 6">
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/973/@elementos.5" target="/973/@elementos.7"/>
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/973/@elementos.5" target="/973/@elementos.9"/>
       <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/973/@elementos.5" target="/973/@elementos.6"/>
+      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/973/@elementos.5" target="/973/@elementos.9"/>
+      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/973/@elementos.5" target="/973/@elementos.7"/>
       <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterLogicService"/>
     </elementos>
     <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/973/@elementos.6" name="Cluster 7">
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/973/@elementos.6" target="/973/@elementos.7"/>
       <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/973/@elementos.6" target="/973/@elementos.9"/>
+      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/973/@elementos.6" target="/973/@elementos.7"/>
       <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemPersistence"/>
     </elementos>
     <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/973/@elementos.7" name="Cluster 8">
@@ -8926,14 +8926,12 @@
     </elementos>
     <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/974/@elementos.2" name="Cluster 3">
       <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/974/@elementos.2" target="/974/@elementos.5"/>
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/974/@elementos.2" target="/974/@elementos.5"/>
       <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/974/@elementos.2" target="/974/@elementos.3"/>
       <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoLogicService"/>
     </elementos>
     <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/974/@elementos.3" name="Cluster 4">
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/974/@elementos.3" target="/974/@elementos.5"/>
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/974/@elementos.3" target="/974/@elementos.5"/>
       <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/974/@elementos.3" target="/974/@elementos.6"/>
+      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/974/@elementos.3" target="/974/@elementos.5"/>
       <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoPersistence"/>
     </elementos>
     <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/974/@elementos.4" name="Cluster 5">
@@ -8941,8 +8939,8 @@
       <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoLogicService"/>
     </elementos>
     <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/974/@elementos.5" name="Cluster 6">
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/974/@elementos.5" target="/974/@elementos.7"/>
       <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/974/@elementos.5" target="/974/@elementos.6"/>
+      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/974/@elementos.5" target="/974/@elementos.7"/>
       <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterPersistence"/>
       <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterLogicService"/>
     </elementos>
@@ -8957,394 +8955,396 @@
       <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoPersistence"/>
     </elementos>
   </visualizacionMetricas3.visualizacion:Diagrama>
-  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/975" name="carrito.logic Simplificado 90%">
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/975/@elementos.0" name="Cluster 1">
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/975/@elementos.0" target="/975/@elementos.1"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientPersistence"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/975/@elementos.1" name="Cluster 2">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientLogicService"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/975/@elementos.2" name="Cluster 3">
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/975/@elementos.2" target="/975/@elementos.3"/>
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/975/@elementos.2" target="/975/@elementos.5"/>
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/975/@elementos.2" target="/975/@elementos.5"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoLogicService"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/975/@elementos.3" name="Cluster 4">
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/975/@elementos.3" target="/975/@elementos.5"/>
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/975/@elementos.3" target="/975/@elementos.6"/>
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/975/@elementos.3" target="/975/@elementos.5"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoPersistence"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/975/@elementos.4" name="Cluster 5">
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/975/@elementos.4" target="/975/@elementos.8"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoLogicService"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/975/@elementos.5" name="Cluster 6">
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/975/@elementos.5" target="/975/@elementos.6"/>
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/975/@elementos.5" target="/975/@elementos.7"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterLogicService"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/975/@elementos.6" name="Cluster 7">
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/975/@elementos.6" target="/975/@elementos.7"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemPersistence"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/975/@elementos.7" name="Cluster 8">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemLogicService"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/975/@elementos.8" name="Cluster 9">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoPersistence"/>
-    </elementos>
-  </visualizacionMetricas3.visualizacion:Diagrama>
-  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/976" name="carrito.logic Simplificado 85%">
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/976/@elementos.0" name="Cluster 1">
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/976/@elementos.0" target="/976/@elementos.1"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientPersistence"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/976/@elementos.1" name="Cluster 2">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientLogicService"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/976/@elementos.2" name="Cluster 3">
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/976/@elementos.2" target="/976/@elementos.5"/>
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/976/@elementos.2" target="/976/@elementos.3"/>
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/976/@elementos.2" target="/976/@elementos.5"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoLogicService"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/976/@elementos.3" name="Cluster 4">
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/976/@elementos.3" target="/976/@elementos.5"/>
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/976/@elementos.3" target="/976/@elementos.5"/>
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/976/@elementos.3" target="/976/@elementos.5"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoPersistence"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/976/@elementos.4" name="Cluster 5">
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/976/@elementos.4" target="/976/@elementos.7"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoLogicService"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/976/@elementos.5" name="Cluster 6">
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/976/@elementos.5" target="/976/@elementos.6"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterLogicService"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemPersistence"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/976/@elementos.6" name="Cluster 7">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemLogicService"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/976/@elementos.7" name="Cluster 8">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoPersistence"/>
-    </elementos>
-  </visualizacionMetricas3.visualizacion:Diagrama>
-  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/977" name="carrito.logic Simplificado 80%">
+  <visualizacionMetricas3.visualizacion:Asociacion source="/974/@elementos.2" target="/974/@elementos.5"/>
+  <visualizacionMetricas3.visualizacion:Asociacion source="/974/@elementos.3" target="/974/@elementos.5"/>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/977" name="carrito.logic Simplificado 90%">
     <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/977/@elementos.0" name="Cluster 1">
+      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/977/@elementos.0" target="/977/@elementos.1"/>
       <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientLogicService"/>
     </elementos>
     <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/977/@elementos.1" name="Cluster 2">
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/977/@elementos.1" target="/977/@elementos.3"/>
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/977/@elementos.1" target="/977/@elementos.3"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoLogicService"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoPersistence"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientLogicService"/>
     </elementos>
     <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/977/@elementos.2" name="Cluster 3">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoLogicService"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoPersistence"/>
+      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/977/@elementos.2" target="/977/@elementos.5"/>
+      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/977/@elementos.2" target="/977/@elementos.3"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoLogicService"/>
     </elementos>
     <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/977/@elementos.3" name="Cluster 4">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterLogicService"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemLogicService"/>
-    </elementos>
-  </visualizacionMetricas3.visualizacion:Diagrama>
-  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/978" name="carrito.logic Simplificado 75%">
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/978/@elementos.0" name="Cluster 1">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientLogicService"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/978/@elementos.1" name="Cluster 2">
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/978/@elementos.1" target="/978/@elementos.3"/>
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/978/@elementos.1" target="/978/@elementos.3"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoLogicService"/>
+      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/977/@elementos.3" target="/977/@elementos.5"/>
+      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/977/@elementos.3" target="/977/@elementos.6"/>
       <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoPersistence"/>
     </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/978/@elementos.2" name="Cluster 3">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/977/@elementos.4" name="Cluster 5">
+      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/977/@elementos.4" target="/977/@elementos.8"/>
       <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoLogicService"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoPersistence"/>
     </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/978/@elementos.3" name="Cluster 4">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/977/@elementos.5" name="Cluster 6">
+      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/977/@elementos.5" target="/977/@elementos.7"/>
+      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/977/@elementos.5" target="/977/@elementos.6"/>
       <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterPersistence"/>
       <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterLogicService"/>
+    </elementos>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/977/@elementos.6" name="Cluster 7">
+      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/977/@elementos.6" target="/977/@elementos.7"/>
       <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemPersistence"/>
+    </elementos>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/977/@elementos.7" name="Cluster 8">
       <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemLogicService"/>
     </elementos>
-  </visualizacionMetricas3.visualizacion:Diagrama>
-  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/979" name="carrito.logic Simplificado 70%">
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/979/@elementos.0" name="Cluster 1">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientLogicService"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/979/@elementos.1" name="Cluster 2">
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/979/@elementos.1" target="/979/@elementos.3"/>
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/979/@elementos.1" target="/979/@elementos.3"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoLogicService"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoPersistence"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/979/@elementos.2" name="Cluster 3">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoLogicService"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/977/@elementos.8" name="Cluster 9">
       <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoPersistence"/>
     </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/979/@elementos.3" name="Cluster 4">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterLogicService"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemLogicService"/>
-    </elementos>
   </visualizacionMetricas3.visualizacion:Diagrama>
-  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/980" name="carrito.logic Simplificado 65%">
+  <visualizacionMetricas3.visualizacion:Asociacion source="/977/@elementos.2" target="/977/@elementos.5"/>
+  <visualizacionMetricas3.visualizacion:Asociacion source="/977/@elementos.3" target="/977/@elementos.5"/>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/980" name="carrito.logic Simplificado 85%">
     <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/980/@elementos.0" name="Cluster 1">
+      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/980/@elementos.0" target="/980/@elementos.1"/>
       <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientLogicService"/>
     </elementos>
     <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/980/@elementos.1" name="Cluster 2">
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/980/@elementos.1" target="/980/@elementos.3"/>
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/980/@elementos.1" target="/980/@elementos.3"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoLogicService"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoPersistence"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientLogicService"/>
     </elementos>
     <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/980/@elementos.2" name="Cluster 3">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoLogicService"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoPersistence"/>
+      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/980/@elementos.2" target="/980/@elementos.3"/>
+      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/980/@elementos.2" target="/980/@elementos.5"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoLogicService"/>
     </elementos>
     <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/980/@elementos.3" name="Cluster 4">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterLogicService"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemLogicService"/>
-    </elementos>
-  </visualizacionMetricas3.visualizacion:Diagrama>
-  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/981" name="carrito.logic Simplificado 60%">
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/981/@elementos.0" name="Cluster 1">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientLogicService"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/981/@elementos.1" name="Cluster 2">
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/981/@elementos.1" target="/981/@elementos.3"/>
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/981/@elementos.1" target="/981/@elementos.3"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoLogicService"/>
+      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/980/@elementos.3" target="/980/@elementos.5"/>
       <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoPersistence"/>
     </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/981/@elementos.2" name="Cluster 3">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/980/@elementos.4" name="Cluster 5">
+      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/980/@elementos.4" target="/980/@elementos.7"/>
       <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoLogicService"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoPersistence"/>
     </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/981/@elementos.3" name="Cluster 4">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/980/@elementos.5" name="Cluster 6">
+      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/980/@elementos.5" target="/980/@elementos.6"/>
       <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterLogicService"/>
       <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemPersistence"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterLogicService"/>
+    </elementos>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/980/@elementos.6" name="Cluster 7">
       <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemLogicService"/>
     </elementos>
-  </visualizacionMetricas3.visualizacion:Diagrama>
-  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/982" name="carrito.logic Simplificado 55%">
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/982/@elementos.0" name="Cluster 1">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientLogicService"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/982/@elementos.1" name="Cluster 2">
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/982/@elementos.1" target="/982/@elementos.3"/>
-      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/982/@elementos.1" target="/982/@elementos.3"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoLogicService"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoPersistence"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/982/@elementos.2" name="Cluster 3">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoLogicService"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoPersistence"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/982/@elementos.3" name="Cluster 4">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterLogicService"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemLogicService"/>
-    </elementos>
-  </visualizacionMetricas3.visualizacion:Diagrama>
-  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/983" name="carrito.logic Simplificado 50%">
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/983/@elementos.0" name="Cluster 1">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientLogicService"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/983/@elementos.1" name="Cluster 2">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoLogicService"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterLogicService"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemLogicService"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/983/@elementos.2" name="Cluster 3">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoLogicService"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/980/@elementos.7" name="Cluster 8">
       <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoPersistence"/>
     </elementos>
   </visualizacionMetricas3.visualizacion:Diagrama>
-  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/984" name="carrito.logic Simplificado 45%">
+  <visualizacionMetricas3.visualizacion:Asociacion source="/980/@elementos.2" target="/980/@elementos.5"/>
+  <visualizacionMetricas3.visualizacion:Asociacion source="/980/@elementos.3" target="/980/@elementos.5"/>
+  <visualizacionMetricas3.visualizacion:Asociacion source="/980/@elementos.3" target="/980/@elementos.5"/>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/984" name="carrito.logic Simplificado 80%">
     <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/984/@elementos.0" name="Cluster 1">
       <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientPersistence"/>
       <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientLogicService"/>
     </elementos>
     <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/984/@elementos.1" name="Cluster 2">
+      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/984/@elementos.1" target="/984/@elementos.3"/>
       <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoLogicService"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterLogicService"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemPersistence"/>
       <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemLogicService"/>
     </elementos>
     <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/984/@elementos.2" name="Cluster 3">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoLogicService"/>
       <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoPersistence"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoLogicService"/>
     </elementos>
-  </visualizacionMetricas3.visualizacion:Diagrama>
-  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/985" name="carrito.logic Simplificado 40%">
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/985/@elementos.0" name="Cluster 1">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientLogicService"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/985/@elementos.1" name="Cluster 2">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoLogicService"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/984/@elementos.3" name="Cluster 4">
       <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterLogicService"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoPersistence"/>
       <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemLogicService"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/985/@elementos.2" name="Cluster 3">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoLogicService"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoPersistence"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemPersistence"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterLogicService"/>
     </elementos>
   </visualizacionMetricas3.visualizacion:Diagrama>
-  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/986" name="carrito.logic Simplificado 35%">
+  <visualizacionMetricas3.visualizacion:Asociacion source="/984/@elementos.1" target="/984/@elementos.3"/>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/986" name="carrito.logic Simplificado 75%">
     <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/986/@elementos.0" name="Cluster 1">
       <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientPersistence"/>
       <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientLogicService"/>
     </elementos>
     <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/986/@elementos.1" name="Cluster 2">
+      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/986/@elementos.1" target="/986/@elementos.3"/>
       <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoLogicService"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterLogicService"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemPersistence"/>
       <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemLogicService"/>
     </elementos>
     <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/986/@elementos.2" name="Cluster 3">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoLogicService"/>
       <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoPersistence"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoLogicService"/>
     </elementos>
-  </visualizacionMetricas3.visualizacion:Diagrama>
-  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/987" name="carrito.logic Simplificado 30%">
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/987/@elementos.0" name="Cluster 1">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientLogicService"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/987/@elementos.1" name="Cluster 2">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoLogicService"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/986/@elementos.3" name="Cluster 4">
       <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterLogicService"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoPersistence"/>
       <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemLogicService"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/987/@elementos.2" name="Cluster 3">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoLogicService"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoPersistence"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemPersistence"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterLogicService"/>
     </elementos>
   </visualizacionMetricas3.visualizacion:Diagrama>
-  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/988" name="carrito.logic Simplificado 25%">
+  <visualizacionMetricas3.visualizacion:Asociacion source="/986/@elementos.1" target="/986/@elementos.3"/>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/988" name="carrito.logic Simplificado 70%">
     <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/988/@elementos.0" name="Cluster 1">
       <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientPersistence"/>
       <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientLogicService"/>
     </elementos>
     <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/988/@elementos.1" name="Cluster 2">
+      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/988/@elementos.1" target="/988/@elementos.3"/>
       <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoLogicService"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterLogicService"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemPersistence"/>
       <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemLogicService"/>
     </elementos>
     <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/988/@elementos.2" name="Cluster 3">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoLogicService"/>
       <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoPersistence"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoLogicService"/>
     </elementos>
-  </visualizacionMetricas3.visualizacion:Diagrama>
-  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/989" name="carrito.logic Simplificado 20%">
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/989/@elementos.0" name="Cluster 1">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientLogicService"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/989/@elementos.1" name="Cluster 2">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoLogicService"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/988/@elementos.3" name="Cluster 4">
       <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterLogicService"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoPersistence"/>
       <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemLogicService"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/989/@elementos.2" name="Cluster 3">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoLogicService"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoPersistence"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemPersistence"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterLogicService"/>
     </elementos>
   </visualizacionMetricas3.visualizacion:Diagrama>
-  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/990" name="carrito.logic Simplificado 15%">
+  <visualizacionMetricas3.visualizacion:Asociacion source="/988/@elementos.1" target="/988/@elementos.3"/>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/990" name="carrito.logic Simplificado 65%">
     <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/990/@elementos.0" name="Cluster 1">
       <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientPersistence"/>
       <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientLogicService"/>
     </elementos>
     <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/990/@elementos.1" name="Cluster 2">
+      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/990/@elementos.1" target="/990/@elementos.3"/>
       <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoLogicService"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterLogicService"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemPersistence"/>
       <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemLogicService"/>
     </elementos>
     <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/990/@elementos.2" name="Cluster 3">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoLogicService"/>
       <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoPersistence"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoLogicService"/>
     </elementos>
-  </visualizacionMetricas3.visualizacion:Diagrama>
-  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/991" name="carrito.logic Simplificado 10%">
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/991/@elementos.0" name="Cluster 1">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientLogicService"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/991/@elementos.1" name="Cluster 2">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoLogicService"/>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/990/@elementos.3" name="Cluster 4">
       <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterLogicService"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoPersistence"/>
       <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemLogicService"/>
-    </elementos>
-    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/991/@elementos.2" name="Cluster 3">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoLogicService"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoPersistence"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemPersistence"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterLogicService"/>
     </elementos>
   </visualizacionMetricas3.visualizacion:Diagrama>
-  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/992" name="carrito.logic Simplificado 5%">
+  <visualizacionMetricas3.visualizacion:Asociacion source="/990/@elementos.1" target="/990/@elementos.3"/>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/992" name="carrito.logic Simplificado 60%">
     <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/992/@elementos.0" name="Cluster 1">
       <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientPersistence"/>
       <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientLogicService"/>
     </elementos>
     <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/992/@elementos.1" name="Cluster 2">
+      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/992/@elementos.1" target="/992/@elementos.3"/>
       <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoLogicService"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterLogicService"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemPersistence"/>
       <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoPersistence"/>
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemLogicService"/>
     </elementos>
     <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/992/@elementos.2" name="Cluster 3">
-      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoLogicService"/>
       <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoPersistence"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoLogicService"/>
+    </elementos>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/992/@elementos.3" name="Cluster 4">
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterPersistence"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemLogicService"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemPersistence"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterLogicService"/>
+    </elementos>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Asociacion source="/992/@elementos.1" target="/992/@elementos.3"/>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/994" name="carrito.logic Simplificado 55%">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/994/@elementos.0" name="Cluster 1">
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientPersistence"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientLogicService"/>
+    </elementos>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/994/@elementos.1" name="Cluster 2">
+      <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" source="/994/@elementos.1" target="/994/@elementos.3"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoLogicService"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoPersistence"/>
+    </elementos>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/994/@elementos.2" name="Cluster 3">
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoPersistence"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoLogicService"/>
+    </elementos>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/994/@elementos.3" name="Cluster 4">
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterPersistence"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemLogicService"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemPersistence"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterLogicService"/>
+    </elementos>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Asociacion source="/994/@elementos.1" target="/994/@elementos.3"/>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/996" name="carrito.logic Simplificado 50%">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/996/@elementos.0" name="Cluster 1">
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientPersistence"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientLogicService"/>
+    </elementos>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/996/@elementos.1" name="Cluster 2">
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterPersistence"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemLogicService"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoLogicService"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemPersistence"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterLogicService"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoPersistence"/>
+    </elementos>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/996/@elementos.2" name="Cluster 3">
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoPersistence"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoLogicService"/>
+    </elementos>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/997" name="carrito.logic Simplificado 45%">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/997/@elementos.0" name="Cluster 1">
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientPersistence"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientLogicService"/>
+    </elementos>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/997/@elementos.1" name="Cluster 2">
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterPersistence"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemLogicService"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoLogicService"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemPersistence"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterLogicService"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoPersistence"/>
+    </elementos>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/997/@elementos.2" name="Cluster 3">
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoPersistence"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoLogicService"/>
+    </elementos>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/998" name="carrito.logic Simplificado 40%">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/998/@elementos.0" name="Cluster 1">
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientPersistence"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientLogicService"/>
+    </elementos>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/998/@elementos.1" name="Cluster 2">
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterPersistence"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemLogicService"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoLogicService"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemPersistence"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterLogicService"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoPersistence"/>
+    </elementos>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/998/@elementos.2" name="Cluster 3">
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoPersistence"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoLogicService"/>
+    </elementos>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/999" name="carrito.logic Simplificado 35%">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/999/@elementos.0" name="Cluster 1">
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientPersistence"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientLogicService"/>
+    </elementos>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/999/@elementos.1" name="Cluster 2">
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterPersistence"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemLogicService"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoLogicService"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemPersistence"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterLogicService"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoPersistence"/>
+    </elementos>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/999/@elementos.2" name="Cluster 3">
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoPersistence"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoLogicService"/>
+    </elementos>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1000" name="carrito.logic Simplificado 30%">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/1000/@elementos.0" name="Cluster 1">
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientPersistence"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientLogicService"/>
+    </elementos>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/1000/@elementos.1" name="Cluster 2">
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterPersistence"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemLogicService"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoLogicService"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemPersistence"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterLogicService"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoPersistence"/>
+    </elementos>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/1000/@elementos.2" name="Cluster 3">
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoPersistence"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoLogicService"/>
+    </elementos>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1001" name="carrito.logic Simplificado 25%">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/1001/@elementos.0" name="Cluster 1">
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientPersistence"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientLogicService"/>
+    </elementos>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/1001/@elementos.1" name="Cluster 2">
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterPersistence"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemLogicService"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoLogicService"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemPersistence"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterLogicService"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoPersistence"/>
+    </elementos>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/1001/@elementos.2" name="Cluster 3">
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoPersistence"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoLogicService"/>
+    </elementos>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1002" name="carrito.logic Simplificado 20%">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/1002/@elementos.0" name="Cluster 1">
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientPersistence"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientLogicService"/>
+    </elementos>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/1002/@elementos.1" name="Cluster 2">
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterPersistence"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemLogicService"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoLogicService"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemPersistence"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterLogicService"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoPersistence"/>
+    </elementos>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/1002/@elementos.2" name="Cluster 3">
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoPersistence"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoLogicService"/>
+    </elementos>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1003" name="carrito.logic Simplificado 15%">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/1003/@elementos.0" name="Cluster 1">
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientPersistence"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientLogicService"/>
+    </elementos>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/1003/@elementos.1" name="Cluster 2">
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterPersistence"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemLogicService"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoLogicService"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemPersistence"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterLogicService"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoPersistence"/>
+    </elementos>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/1003/@elementos.2" name="Cluster 3">
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoPersistence"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoLogicService"/>
+    </elementos>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1004" name="carrito.logic Simplificado 10%">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/1004/@elementos.0" name="Cluster 1">
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientPersistence"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientLogicService"/>
+    </elementos>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/1004/@elementos.1" name="Cluster 2">
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterPersistence"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemLogicService"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoLogicService"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemPersistence"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterLogicService"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoPersistence"/>
+    </elementos>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/1004/@elementos.2" name="Cluster 3">
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoPersistence"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoLogicService"/>
+    </elementos>
+  </visualizacionMetricas3.visualizacion:Diagrama>
+  <visualizacionMetricas3.visualizacion:Diagrama diagrama="/1005" name="carrito.logic Simplificado 5%">
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/1005/@elementos.0" name="Cluster 1">
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientPersistence"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ClientLogicService"/>
+    </elementos>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/1005/@elementos.1" name="Cluster 2">
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterPersistence"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemLogicService"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoLogicService"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ItemPersistence"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoMasterLogicService"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="CarritoPersistence"/>
+    </elementos>
+    <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" diagrama="/1005/@elementos.2" name="Cluster 3">
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoPersistence"/>
+      <elementos xsi:type="visualizacionMetricas3.visualizacion:Item" name="ProductoLogicService"/>
     </elementos>
   </visualizacionMetricas3.visualizacion:Diagrama>
 </xmi:XMI>

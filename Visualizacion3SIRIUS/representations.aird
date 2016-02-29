@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xmlns:visualizacionMetricas3.visualizacion="http://visualizacionMetricas3/visualizacion" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style http://visualizacionMetricas3/visualizacion http://visualizacionMetricas3#//visualizacion" xmi:id="_oIpicNRkEeW-caMzFg8ALw" selectedViews="_zaiGYNRkEeW-caMzFg8ALw" version="10.0.0.201505222000">
-  <models xmi:type="visualizacionMetricas3.visualizacion:Diagrama" href="visualizacion3.visualizacionmetricas3#/0"/>
   <models xmi:type="visualizacionMetricas3.visualizacion:Diagrama" href="simplificacion3.visualizacionmetricas3#/0"/>
   <models xmi:type="visualizacionMetricas3.visualizacion:Diagrama" href="simplificacion3Nuevo.visualizacionmetricas3#/0"/>
   <models xmi:type="visualizacionMetricas3.visualizacion:Diagrama" href="visualizacion3Nuevo.visualizacionmetricas3#/0"/>
-  <models xmi:type="visualizacionMetricas3.visualizacion:Diagrama" href="visualizacion3N.visualizacion#/0"/>
-  <models xmi:type="visualizacionMetricas3.visualizacion:Diagrama" href="visualizacion3.visualizacionMetricas3#/0"/>
-  <models xmi:type="visualizacionMetricas3.visualizacion:Diagrama" href="visualizacion3V1.visualizacionMetricas3#/0"/>
+  <models xmi:type="visualizacionMetricas3.visualizacion:Diagrama" href="visualizacion3.visualizacionmetricas3#/0"/>
   <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_zaiGYNRkEeW-caMzFg8ALw">
     <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_l2aOQNUNEeW9cNCsStbwHA" name="new Diagrama Cluster">
       <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_l2aOQdUNEeW9cNCsStbwHA" source="DANNOTATION_CUSTOMIZATION_KEY">
@@ -232,7 +229,7 @@
           <cache xmi:type="diagram:DiagramElementMapping2ModelElement" xmi:id="_l2aOhdUNEeW9cNCsStbwHA">
             <key xmi:type="description_1:NodeMapping" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster']/@defaultLayer/@nodeMappings[name='FiguraGeometrica']"/>
             <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_l2aOhtUNEeW9cNCsStbwHA">
-              <key xmi:type="visualizacionMetricas3.visualizacion:Cuadrilatero" href="visualizacion3.visualizacionmetricas3#/0/@elementos.4"/>
+              <key xmi:type="visualizacionMetricas3.visualizacion:Paquete" href="visualizacion3.visualizacionmetricas3#/0/@elementos.4"/>
               <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_l2aOh9UNEeW9cNCsStbwHA" key="_l2aOz9UNEeW9cNCsStbwHA">
                 <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_l2aOiNUNEeW9cNCsStbwHA" value="_l2aOQ9UNEeW9cNCsStbwHA">
                   <key xmi:type="visualizacionMetricas3.visualizacion:Diagrama" href="visualizacion3.visualizacionmetricas3#/0"/>
@@ -240,7 +237,7 @@
               </value>
             </value>
             <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_l2aOidUNEeW9cNCsStbwHA">
-              <key xmi:type="visualizacionMetricas3.visualizacion:Cuadrilatero" href="visualizacion3.visualizacionmetricas3#/0/@elementos.16"/>
+              <key xmi:type="visualizacionMetricas3.visualizacion:Paquete" href="visualizacion3.visualizacionmetricas3#/0/@elementos.16"/>
               <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_l2aOitUNEeW9cNCsStbwHA" key="_l2aO1NUNEeW9cNCsStbwHA">
                 <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_l2aOi9UNEeW9cNCsStbwHA" value="_l2aORNUNEeW9cNCsStbwHA">
                   <key xmi:type="visualizacionMetricas3.visualizacion:Diagrama" href="visualizacion3.visualizacionmetricas3#/0"/>
@@ -248,7 +245,7 @@
               </value>
             </value>
             <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_l2aOjNUNEeW9cNCsStbwHA">
-              <key xmi:type="visualizacionMetricas3.visualizacion:Cuadrilatero" href="visualizacion3.visualizacionmetricas3#/0/@elementos.23"/>
+              <key xmi:type="visualizacionMetricas3.visualizacion:Paquete" href="visualizacion3.visualizacionmetricas3#/0/@elementos.23"/>
               <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_l2aOjdUNEeW9cNCsStbwHA" key="_l2aO2dUNEeW9cNCsStbwHA">
                 <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_l2aOjtUNEeW9cNCsStbwHA" value="_l2aORdUNEeW9cNCsStbwHA">
                   <key xmi:type="visualizacionMetricas3.visualizacion:Diagrama" href="visualizacion3.visualizacionmetricas3#/0"/>
@@ -256,7 +253,7 @@
               </value>
             </value>
             <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_l2aOj9UNEeW9cNCsStbwHA">
-              <key xmi:type="visualizacionMetricas3.visualizacion:Cuadrilatero" href="visualizacion3.visualizacionmetricas3#/0/@elementos.26"/>
+              <key xmi:type="visualizacionMetricas3.visualizacion:Paquete" href="visualizacion3.visualizacionmetricas3#/0/@elementos.26"/>
               <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_l2aOkNUNEeW9cNCsStbwHA" key="_l2aO3tUNEeW9cNCsStbwHA">
                 <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_l2aOkdUNEeW9cNCsStbwHA" value="_l2aORtUNEeW9cNCsStbwHA">
                   <key xmi:type="visualizacionMetricas3.visualizacion:Diagrama" href="visualizacion3.visualizacionmetricas3#/0"/>
@@ -264,7 +261,7 @@
               </value>
             </value>
             <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_l2aOktUNEeW9cNCsStbwHA">
-              <key xmi:type="visualizacionMetricas3.visualizacion:Cuadrilatero" href="visualizacion3.visualizacionmetricas3#/0/@elementos.31"/>
+              <key xmi:type="visualizacionMetricas3.visualizacion:Paquete" href="visualizacion3.visualizacionmetricas3#/0/@elementos.31"/>
               <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_l2aOk9UNEeW9cNCsStbwHA" key="_l2aO49UNEeW9cNCsStbwHA">
                 <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_l2aOlNUNEeW9cNCsStbwHA" value="_l2aOR9UNEeW9cNCsStbwHA">
                   <key xmi:type="visualizacionMetricas3.visualizacion:Diagrama" href="visualizacion3.visualizacionmetricas3#/0"/>
@@ -272,7 +269,7 @@
               </value>
             </value>
             <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_l2aOldUNEeW9cNCsStbwHA">
-              <key xmi:type="visualizacionMetricas3.visualizacion:Cuadrilatero" href="visualizacion3.visualizacionmetricas3#/0/@elementos.35"/>
+              <key xmi:type="visualizacionMetricas3.visualizacion:Paquete" href="visualizacion3.visualizacionmetricas3#/0/@elementos.35"/>
               <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_l2aOltUNEeW9cNCsStbwHA" key="_l2aO6NUNEeW9cNCsStbwHA">
                 <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_l2aOl9UNEeW9cNCsStbwHA" value="_l2aOSNUNEeW9cNCsStbwHA">
                   <key xmi:type="visualizacionMetricas3.visualizacion:Diagrama" href="visualizacion3.visualizacionmetricas3#/0"/>
@@ -280,7 +277,7 @@
               </value>
             </value>
             <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_l2aOmNUNEeW9cNCsStbwHA">
-              <key xmi:type="visualizacionMetricas3.visualizacion:Cuadrilatero" href="visualizacion3.visualizacionmetricas3#/0/@elementos.36"/>
+              <key xmi:type="visualizacionMetricas3.visualizacion:Elipse" href="visualizacion3.visualizacionmetricas3#/0/@elementos.36"/>
               <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_l2aOmdUNEeW9cNCsStbwHA" key="_l2aO7dUNEeW9cNCsStbwHA">
                 <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_l2aOmtUNEeW9cNCsStbwHA" value="_l2aOSdUNEeW9cNCsStbwHA">
                   <key xmi:type="visualizacionMetricas3.visualizacion:Diagrama" href="visualizacion3.visualizacionmetricas3#/0"/>
@@ -288,7 +285,7 @@
               </value>
             </value>
             <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_l2aOm9UNEeW9cNCsStbwHA">
-              <key xmi:type="visualizacionMetricas3.visualizacion:Cuadrilatero" href="visualizacion3.visualizacionmetricas3#/0/@elementos.37"/>
+              <key xmi:type="visualizacionMetricas3.visualizacion:Paquete" href="visualizacion3.visualizacionmetricas3#/0/@elementos.37"/>
               <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_l2aOnNUNEeW9cNCsStbwHA" key="_l2aO8tUNEeW9cNCsStbwHA">
                 <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_l2aOndUNEeW9cNCsStbwHA" value="_l2aOStUNEeW9cNCsStbwHA">
                   <key xmi:type="visualizacionMetricas3.visualizacion:Diagrama" href="visualizacion3.visualizacionmetricas3#/0"/>
@@ -296,7 +293,7 @@
               </value>
             </value>
             <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_l2aOntUNEeW9cNCsStbwHA">
-              <key xmi:type="visualizacionMetricas3.visualizacion:Cuadrilatero" href="visualizacion3.visualizacionmetricas3#/0/@elementos.41"/>
+              <key xmi:type="visualizacionMetricas3.visualizacion:Paquete" href="visualizacion3.visualizacionmetricas3#/0/@elementos.41"/>
               <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_l2aOn9UNEeW9cNCsStbwHA" key="_l2aO99UNEeW9cNCsStbwHA">
                 <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_l2aOoNUNEeW9cNCsStbwHA" value="_l2aOS9UNEeW9cNCsStbwHA">
                   <key xmi:type="visualizacionMetricas3.visualizacion:Diagrama" href="visualizacion3.visualizacionmetricas3#/0"/>
@@ -304,7 +301,7 @@
               </value>
             </value>
             <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_l2aOodUNEeW9cNCsStbwHA">
-              <key xmi:type="visualizacionMetricas3.visualizacion:Cuadrilatero" href="visualizacion3.visualizacionmetricas3#/0/@elementos.43"/>
+              <key xmi:type="visualizacionMetricas3.visualizacion:Elipse" href="visualizacion3.visualizacionmetricas3#/0/@elementos.43"/>
               <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_l2aOotUNEeW9cNCsStbwHA" key="_l2aO_NUNEeW9cNCsStbwHA">
                 <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_l2aOo9UNEeW9cNCsStbwHA" value="_l2aOTNUNEeW9cNCsStbwHA">
                   <key xmi:type="visualizacionMetricas3.visualizacion:Diagrama" href="visualizacion3.visualizacionmetricas3#/0"/>
@@ -769,8 +766,8 @@
         </data>
       </ownedAnnotationEntries>
       <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_l2aOz9UNEeW9cNCsStbwHA" name="CarritoLogicService" outgoingEdges="_l2aPAdUNEeW9cNCsStbwHA _l2aPCtUNEeW9cNCsStbwHA _l2aPE9UNEeW9cNCsStbwHA" width="3" height="3" resizeKind="NSEW">
-        <target xmi:type="visualizacionMetricas3.visualizacion:Cuadrilatero" href="visualizacion3.visualizacionmetricas3#/0/@elementos.4"/>
-        <semanticElements xmi:type="visualizacionMetricas3.visualizacion:Cuadrilatero" href="visualizacion3.visualizacionmetricas3#/0/@elementos.4"/>
+        <target xmi:type="visualizacionMetricas3.visualizacion:Paquete" href="visualizacion3.visualizacionmetricas3#/0/@elementos.4"/>
+        <semanticElements xmi:type="visualizacionMetricas3.visualizacion:Paquete" href="visualizacion3.visualizacionmetricas3#/0/@elementos.4"/>
         <ownedStyle xmi:type="diagram:Square" xmi:id="_l2aO0NUNEeW9cNCsStbwHA" description="_l2aOQ9UNEeW9cNCsStbwHA" labelPosition="node" height="5">
           <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_l2aO0dUNEeW9cNCsStbwHA"/>
           <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_l2aO0tUNEeW9cNCsStbwHA"/>
@@ -779,8 +776,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster']/@defaultLayer/@nodeMappings[name='FiguraGeometrica']"/>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_l2aO1NUNEeW9cNCsStbwHA" name="CarritoMasterLogicService" outgoingEdges="_l2aPHNUNEeW9cNCsStbwHA _l2aPJdUNEeW9cNCsStbwHA _l2aPLtUNEeW9cNCsStbwHA _l2aPN9UNEeW9cNCsStbwHA" incomingEdges="_l2aPAdUNEeW9cNCsStbwHA" width="3" height="3" resizeKind="NSEW">
-        <target xmi:type="visualizacionMetricas3.visualizacion:Cuadrilatero" href="visualizacion3.visualizacionmetricas3#/0/@elementos.16"/>
-        <semanticElements xmi:type="visualizacionMetricas3.visualizacion:Cuadrilatero" href="visualizacion3.visualizacionmetricas3#/0/@elementos.16"/>
+        <target xmi:type="visualizacionMetricas3.visualizacion:Paquete" href="visualizacion3.visualizacionmetricas3#/0/@elementos.16"/>
+        <semanticElements xmi:type="visualizacionMetricas3.visualizacion:Paquete" href="visualizacion3.visualizacionmetricas3#/0/@elementos.16"/>
         <ownedStyle xmi:type="diagram:Square" xmi:id="_l2aO1dUNEeW9cNCsStbwHA" description="_l2aORNUNEeW9cNCsStbwHA" labelPosition="node" height="20">
           <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_l2aO1tUNEeW9cNCsStbwHA"/>
           <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_l2aO19UNEeW9cNCsStbwHA"/>
@@ -789,8 +786,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster']/@defaultLayer/@nodeMappings[name='FiguraGeometrica']"/>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_l2aO2dUNEeW9cNCsStbwHA" name="ProductoPersistence" outgoingEdges="_l2aPQNUNEeW9cNCsStbwHA" width="3" height="3" resizeKind="NSEW">
-        <target xmi:type="visualizacionMetricas3.visualizacion:Cuadrilatero" href="visualizacion3.visualizacionmetricas3#/0/@elementos.23"/>
-        <semanticElements xmi:type="visualizacionMetricas3.visualizacion:Cuadrilatero" href="visualizacion3.visualizacionmetricas3#/0/@elementos.23"/>
+        <target xmi:type="visualizacionMetricas3.visualizacion:Paquete" href="visualizacion3.visualizacionmetricas3#/0/@elementos.23"/>
+        <semanticElements xmi:type="visualizacionMetricas3.visualizacion:Paquete" href="visualizacion3.visualizacionmetricas3#/0/@elementos.23"/>
         <ownedStyle xmi:type="diagram:Square" xmi:id="_l2aO2tUNEeW9cNCsStbwHA" description="_l2aORdUNEeW9cNCsStbwHA" labelPosition="node" height="8">
           <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_l2aO29UNEeW9cNCsStbwHA"/>
           <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_l2aO3NUNEeW9cNCsStbwHA"/>
@@ -799,8 +796,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster']/@defaultLayer/@nodeMappings[name='FiguraGeometrica']"/>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_l2aO3tUNEeW9cNCsStbwHA" name="ItemLogicService" outgoingEdges="_l2aPSdUNEeW9cNCsStbwHA _l2cqh9UNEeW9cNCsStbwHA" incomingEdges="_l2aPHNUNEeW9cNCsStbwHA" width="3" height="3" resizeKind="NSEW">
-        <target xmi:type="visualizacionMetricas3.visualizacion:Cuadrilatero" href="visualizacion3.visualizacionmetricas3#/0/@elementos.26"/>
-        <semanticElements xmi:type="visualizacionMetricas3.visualizacion:Cuadrilatero" href="visualizacion3.visualizacionmetricas3#/0/@elementos.26"/>
+        <target xmi:type="visualizacionMetricas3.visualizacion:Paquete" href="visualizacion3.visualizacionmetricas3#/0/@elementos.26"/>
+        <semanticElements xmi:type="visualizacionMetricas3.visualizacion:Paquete" href="visualizacion3.visualizacionmetricas3#/0/@elementos.26"/>
         <ownedStyle xmi:type="diagram:Square" xmi:id="_l2aO39UNEeW9cNCsStbwHA" description="_l2aORtUNEeW9cNCsStbwHA" labelPosition="node" height="5">
           <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_l2aO4NUNEeW9cNCsStbwHA"/>
           <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_l2aO4dUNEeW9cNCsStbwHA"/>
@@ -809,8 +806,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster']/@defaultLayer/@nodeMappings[name='FiguraGeometrica']"/>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_l2aO49UNEeW9cNCsStbwHA" name="ClientLogicService" outgoingEdges="_l2cqkNUNEeW9cNCsStbwHA" width="3" height="3" resizeKind="NSEW">
-        <target xmi:type="visualizacionMetricas3.visualizacion:Cuadrilatero" href="visualizacion3.visualizacionmetricas3#/0/@elementos.31"/>
-        <semanticElements xmi:type="visualizacionMetricas3.visualizacion:Cuadrilatero" href="visualizacion3.visualizacionmetricas3#/0/@elementos.31"/>
+        <target xmi:type="visualizacionMetricas3.visualizacion:Paquete" href="visualizacion3.visualizacionmetricas3#/0/@elementos.31"/>
+        <semanticElements xmi:type="visualizacionMetricas3.visualizacion:Paquete" href="visualizacion3.visualizacionmetricas3#/0/@elementos.31"/>
         <ownedStyle xmi:type="diagram:Square" xmi:id="_l2aO5NUNEeW9cNCsStbwHA" description="_l2aOR9UNEeW9cNCsStbwHA" labelPosition="node" height="5">
           <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_l2aO5dUNEeW9cNCsStbwHA"/>
           <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_l2aO5tUNEeW9cNCsStbwHA"/>
@@ -819,8 +816,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster']/@defaultLayer/@nodeMappings[name='FiguraGeometrica']"/>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_l2aO6NUNEeW9cNCsStbwHA" name="CarritoPersistence" outgoingEdges="_l2cqmdUNEeW9cNCsStbwHA _l2cqotUNEeW9cNCsStbwHA" incomingEdges="_l2aPCtUNEeW9cNCsStbwHA _l2aPJdUNEeW9cNCsStbwHA" width="3" height="3" resizeKind="NSEW">
-        <target xmi:type="visualizacionMetricas3.visualizacion:Cuadrilatero" href="visualizacion3.visualizacionmetricas3#/0/@elementos.35"/>
-        <semanticElements xmi:type="visualizacionMetricas3.visualizacion:Cuadrilatero" href="visualizacion3.visualizacionmetricas3#/0/@elementos.35"/>
+        <target xmi:type="visualizacionMetricas3.visualizacion:Paquete" href="visualizacion3.visualizacionmetricas3#/0/@elementos.35"/>
+        <semanticElements xmi:type="visualizacionMetricas3.visualizacion:Paquete" href="visualizacion3.visualizacionmetricas3#/0/@elementos.35"/>
         <ownedStyle xmi:type="diagram:Square" xmi:id="_l2aO6dUNEeW9cNCsStbwHA" description="_l2aOSNUNEeW9cNCsStbwHA" labelPosition="node" height="12">
           <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_l2aO6tUNEeW9cNCsStbwHA"/>
           <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_l2aO69UNEeW9cNCsStbwHA"/>
@@ -829,8 +826,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster']/@defaultLayer/@nodeMappings[name='FiguraGeometrica']"/>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_l2aO7dUNEeW9cNCsStbwHA" name="ItemPersistence" outgoingEdges="_l2cqq9UNEeW9cNCsStbwHA" incomingEdges="_l2aPLtUNEeW9cNCsStbwHA _l2aPSdUNEeW9cNCsStbwHA _l2cqmdUNEeW9cNCsStbwHA" width="3" height="3" resizeKind="NSEW">
-        <target xmi:type="visualizacionMetricas3.visualizacion:Cuadrilatero" href="visualizacion3.visualizacionmetricas3#/0/@elementos.36"/>
-        <semanticElements xmi:type="visualizacionMetricas3.visualizacion:Cuadrilatero" href="visualizacion3.visualizacionmetricas3#/0/@elementos.36"/>
+        <target xmi:type="visualizacionMetricas3.visualizacion:Elipse" href="visualizacion3.visualizacionmetricas3#/0/@elementos.36"/>
+        <semanticElements xmi:type="visualizacionMetricas3.visualizacion:Elipse" href="visualizacion3.visualizacionmetricas3#/0/@elementos.36"/>
         <ownedStyle xmi:type="diagram:Square" xmi:id="_l2aO7tUNEeW9cNCsStbwHA" description="_l2aOSdUNEeW9cNCsStbwHA" labelPosition="node" height="14">
           <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_l2aO79UNEeW9cNCsStbwHA"/>
           <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_l2aO8NUNEeW9cNCsStbwHA"/>
@@ -839,8 +836,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster']/@defaultLayer/@nodeMappings[name='FiguraGeometrica']"/>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_l2aO8tUNEeW9cNCsStbwHA" name="CarritoMasterPersistence" incomingEdges="_l2aPE9UNEeW9cNCsStbwHA _l2aPN9UNEeW9cNCsStbwHA _l2cqh9UNEeW9cNCsStbwHA _l2cqotUNEeW9cNCsStbwHA _l2cqq9UNEeW9cNCsStbwHA" width="3" height="3" resizeKind="NSEW">
-        <target xmi:type="visualizacionMetricas3.visualizacion:Cuadrilatero" href="visualizacion3.visualizacionmetricas3#/0/@elementos.37"/>
-        <semanticElements xmi:type="visualizacionMetricas3.visualizacion:Cuadrilatero" href="visualizacion3.visualizacionmetricas3#/0/@elementos.37"/>
+        <target xmi:type="visualizacionMetricas3.visualizacion:Paquete" href="visualizacion3.visualizacionmetricas3#/0/@elementos.37"/>
+        <semanticElements xmi:type="visualizacionMetricas3.visualizacion:Paquete" href="visualizacion3.visualizacionmetricas3#/0/@elementos.37"/>
         <ownedStyle xmi:type="diagram:Square" xmi:id="_l2aO89UNEeW9cNCsStbwHA" description="_l2aOStUNEeW9cNCsStbwHA" labelPosition="node" height="15">
           <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_l2aO9NUNEeW9cNCsStbwHA"/>
           <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_l2aO9dUNEeW9cNCsStbwHA"/>
@@ -849,8 +846,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster']/@defaultLayer/@nodeMappings[name='FiguraGeometrica']"/>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_l2aO99UNEeW9cNCsStbwHA" name="ClientPersistence" incomingEdges="_l2cqkNUNEeW9cNCsStbwHA" width="3" height="3" resizeKind="NSEW">
-        <target xmi:type="visualizacionMetricas3.visualizacion:Cuadrilatero" href="visualizacion3.visualizacionmetricas3#/0/@elementos.41"/>
-        <semanticElements xmi:type="visualizacionMetricas3.visualizacion:Cuadrilatero" href="visualizacion3.visualizacionmetricas3#/0/@elementos.41"/>
+        <target xmi:type="visualizacionMetricas3.visualizacion:Paquete" href="visualizacion3.visualizacionmetricas3#/0/@elementos.41"/>
+        <semanticElements xmi:type="visualizacionMetricas3.visualizacion:Paquete" href="visualizacion3.visualizacionmetricas3#/0/@elementos.41"/>
         <ownedStyle xmi:type="diagram:Square" xmi:id="_l2aO-NUNEeW9cNCsStbwHA" description="_l2aOS9UNEeW9cNCsStbwHA" labelPosition="node" height="8">
           <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_l2aO-dUNEeW9cNCsStbwHA"/>
           <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_l2aO-tUNEeW9cNCsStbwHA"/>
@@ -859,8 +856,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="visualizacionMetricas3.odesign#//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster']/@defaultLayer/@nodeMappings[name='FiguraGeometrica']"/>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_l2aO_NUNEeW9cNCsStbwHA" name="ProductoLogicService" incomingEdges="_l2aPQNUNEeW9cNCsStbwHA" width="3" height="3" resizeKind="NSEW">
-        <target xmi:type="visualizacionMetricas3.visualizacion:Cuadrilatero" href="visualizacion3.visualizacionmetricas3#/0/@elementos.43"/>
-        <semanticElements xmi:type="visualizacionMetricas3.visualizacion:Cuadrilatero" href="visualizacion3.visualizacionmetricas3#/0/@elementos.43"/>
+        <target xmi:type="visualizacionMetricas3.visualizacion:Elipse" href="visualizacion3.visualizacionmetricas3#/0/@elementos.43"/>
+        <semanticElements xmi:type="visualizacionMetricas3.visualizacion:Elipse" href="visualizacion3.visualizacionmetricas3#/0/@elementos.43"/>
         <ownedStyle xmi:type="diagram:Square" xmi:id="_l2aO_dUNEeW9cNCsStbwHA" description="_l2aOTNUNEeW9cNCsStbwHA" labelPosition="node" height="5">
           <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_l2aO_tUNEeW9cNCsStbwHA"/>
           <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_l2aO_9UNEeW9cNCsStbwHA"/>

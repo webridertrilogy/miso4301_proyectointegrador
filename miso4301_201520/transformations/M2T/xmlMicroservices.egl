@@ -57,7 +57,8 @@
 								{			
 									//Se recorren todas las invocacioness de cada uno de los conectores de la clase origen
 									for(invocacionEnEJBOrigen in conectorEnEJBOrigen.invocaciones) 
-									{							
+									{
+										//Si existe una invocacion a una clase del cluster destino es por que se esta llamando un metodo entre clusters							
 										if (invocacionEnEJBOrigen.toMethod.clase.name == claseEnEJBDestino.name){
 										%]
 		<methodInvocation>
