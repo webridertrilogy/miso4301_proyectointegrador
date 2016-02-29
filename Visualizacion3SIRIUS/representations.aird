@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< HEAD
 <viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xmlns:visualizacionMetricas3.visualizacion="http://visualizacionMetricas3/visualizacion" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style http://visualizacionMetricas3/visualizacion http://visualizacionMetricas3#//visualizacion" xmi:id="_RKvCkNkBEeWzPLGW9cBwwg" selectedViews="_bQ9rsNkBEeWzPLGW9cBwwg" version="10.0.0.201505222000">
   <semanticResources>My.visualizacionmetricas3</semanticResources>
   <semanticResources>simplificacion3Nuevo2.visualizacionmetricas3</semanticResources>
@@ -11,17 +10,6 @@
     <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_9dMkINkEEeWzPLGW9cBwwg" name="new Diagrama Cluster Simplificado">
       <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_9dMkIdkEEeWzPLGW9cBwwg" source="DANNOTATION_CUSTOMIZATION_KEY">
         <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_9dMkItkEEeWzPLGW9cBwwg"/>
-=======
-<viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xmlns:visualizacionMetricas3.visualizacion="http://visualizacionMetricas3/visualizacion" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style http://visualizacionMetricas3/visualizacion http://visualizacionMetricas3#//visualizacion" xmi:id="_oIpicNRkEeW-caMzFg8ALw" selectedViews="_zaiGYNRkEeW-caMzFg8ALw" version="10.0.0.201505222000">
-  <models xmi:type="visualizacionMetricas3.visualizacion:Diagrama" href="visualizacion3.visualizacionmetricas3#/0"/>
-  <models xmi:type="visualizacionMetricas3.visualizacion:Diagrama" href="simplificacion3.visualizacionmetricas3#/0"/>
-  <models xmi:type="visualizacionMetricas3.visualizacion:Diagrama" href="simplificacion3Nuevo.visualizacionmetricas3#/0"/>
-  <models xmi:type="visualizacionMetricas3.visualizacion:Diagrama" href="visualizacion3Nuevo.visualizacionmetricas3#/0"/>
-  <models xmi:type="visualizacionMetricas3.visualizacion:Diagrama" href="visualizacion3ConSimp.visualizacionmetricas3#/0"/>
-  <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_zaiGYNRkEeW-caMzFg8ALw">
-    <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_l2aOQNUNEeW9cNCsStbwHA" name="new Diagrama Cluster">
-      <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_l2aOQdUNEeW9cNCsStbwHA" source="DANNOTATION_CUSTOMIZATION_KEY">
-        <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_l2aOQtUNEeW9cNCsStbwHA">
           <computedStyleDescriptions xmi:type="style:SquareDescription" xmi:id="_l2aOQ9UNEeW9cNCsStbwHA" labelPosition="node" resizeKind="NSEW" height="5">
             <borderColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>

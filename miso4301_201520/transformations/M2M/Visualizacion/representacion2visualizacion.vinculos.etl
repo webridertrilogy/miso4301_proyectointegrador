@@ -39,21 +39,26 @@ operation source!ClaseR instanciarRelaciones(c : target!Clase, d : target!Diagra
 		var e : target!Conector;
 		if (not r.tipos->select(t | t.isTypeOf(source!Dependencia)).isEmpty()) {
 			e = new target!Dependencia();
+			e.invocaciones = r.invocaciones;
 			e.enrutamiento = target!TipoEnrutamiento#DIRECTO;
 			e.name = r.buscarMetricaCouplingBetweenObjects();
 		} else if (not r.tipos->select(t | t.isTypeOf(source!Asociacion)).isEmpty()) {
 			e = new target!Asociacion();
+			e.invocaciones = r.invocaciones;
 			e.enrutamiento = target!TipoEnrutamiento#DIRECTO;
 		} else if (not r.tipos->select(t | t.isTypeOf(source!Composicion)).isEmpty()) {
 			e = new target!Composicion();
+			e.invocaciones = r.invocaciones;
 			e.flecha_target = target!TipoFlecha#DIAMANTE_RELLENA;
 			e.enrutamiento = target!TipoEnrutamiento#RECTILINEO;
 		} else if (not r.tipos->select(t | t.isTypeOf(source!Agregacion)).isEmpty()) {
 			e = new target!Agregacion();
+			e.invocaciones = r.invocaciones;
 			e.flecha_target = target!TipoFlecha#DIAMANTE;
 			e.enrutamiento = target!TipoEnrutamiento#RECTILINEO;
 		} else if (not r.tipos->select(t | t.isTypeOf(source!Generalizacion)).isEmpty()) {
 			e = new target!Herencia();
+			e.invocaciones = r.invocaciones;
 			e.flecha_target = target!TipoFlecha#TRIANGULAR;
 			e.enrutamiento = target!TipoEnrutamiento#ARBOL;
 		}

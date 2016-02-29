@@ -14,7 +14,7 @@ operation generarDiagramaSimplificado() {
 	clusters.size().println();
 	
 	var simplificado = new target!Diagrama();
-	simplificado.name = diagrama.name + " Simplificado " + (percentage * 100) + "%";
+	simplificado.name = diagrama.name + " Simplificado " + (percentage * 100).round() + "%";
 	simplificado.elementos = new Sequence();
 	simplificado.diagrama = simplificado;
 	
