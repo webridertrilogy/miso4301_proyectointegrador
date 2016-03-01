@@ -529,7 +529,7 @@
           </style>
         </edgeMappings>
         <toolSections>
-          <ownedTools xsi:type="tool:DoubleClickDescription" name="Zoom Elipse" mappings="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Contenedores']/@defaultLayer/@containerMappings[name='Contenedor']/@subNodeMappings[name='ElementoDiagrama'] //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Contenedores']/@defaultLayer/@containerMappings[name='Contenedor'] //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster']/@defaultLayer/@nodeMappings[name='FiguraGeometrica'] //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplicado%20nuevo']/@defaultLayer/@nodeMappings[name='Elipse']">
+          <ownedTools xsi:type="tool:DoubleClickDescription" name="Zoom Elipse" mappings="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Contenedores']/@defaultLayer/@containerMappings[name='Contenedor']/@subNodeMappings[name='ElementoDiagrama'] //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Contenedores']/@defaultLayer/@containerMappings[name='Contenedor'] //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplicado%20nuevo']/@defaultLayer/@nodeMappings[name='Elipse'] //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster']/@defaultLayer/@nodeMappings[name='FiguraGeometrica'] //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='ContenedoresM2']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM2']">
             <element name="element"/>
             <elementView name="elementView"/>
             <initialOperation>
@@ -537,6 +537,541 @@
             </initialOperation>
           </ownedTools>
         </toolSections>
+      </defaultLayer>
+    </ownedRepresentations>
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Diagrama Metodos1" domainClass="visualizacion.Diagrama" preconditionExpression="[self.isRoot /]" enablePopupBars="true">
+      <defaultLayer name="DefaultM1">
+        <nodeMappings name="FiguraGeometricaM1" semanticCandidatesExpression="[self.elementos /]" doubleClickDescription="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@toolSections.0/@ownedTools[name='Zoom%20FiguraGeometricaM1']" domainClass="visualizacion.FiguraGeometrica">
+          <conditionnalStyles predicateExpression="[self.oclIsTypeOf(Elipse)/]">
+            <style xsi:type="style:EllipseNodeDescription" labelPosition="node" resizeKind="NSEW" horizontalDiameterComputationExpression="feature:largo" verticalDiameterComputationExpression="feature:alto">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            </style>
+          </conditionnalStyles>
+          <conditionnalStyles predicateExpression="[self.oclIsTypeOf(Cuadrilatero)/]">
+            <style xsi:type="style:SquareDescription" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            </style>
+          </conditionnalStyles>
+          <conditionnalStyles predicateExpression="[self.oclIsTypeOf(Rombo)/]">
+            <style xsi:type="style:LozengeNodeDescription" labelPosition="node" resizeKind="NSEW" widthComputationExpression="feature:ancho" heightComputationExpression="feature:largo">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            </style>
+          </conditionnalStyles>
+          <conditionnalStyles predicateExpression="[self.oclIsTypeOf(Triangulo)/]">
+            <style xsi:type="style:BundledImageDescription" labelPosition="node" resizeKind="NSEW" shape="triangle">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </conditionnalStyles>
+        </nodeMappings>
+        <edgeMappings name="ConectorM1" semanticCandidatesExpression="[self.elementos.conectores /]" doubleClickDescription="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@toolSections.0/@ownedTools[name='Zoom%20ConectorM1']" sourceMapping="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']" targetMapping="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']" targetFinderExpression="[self.target /]" sourceFinderExpression="[self.source /]" domainClass="visualizacion.Conector" useDomainElement="true">
+          <style sizeComputationExpression="0">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <beginLabelStyleDescription labelExpression="[self.nameSource /]">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </beginLabelStyleDescription>
+            <centerLabelStyleDescription showIcon="false" labelExpression="[self.name /]">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+            <endLabelStyleDescription labelExpression="[self.nameTarget /]">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </endLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <toolSections name="sectionM1">
+          <ownedTools xsi:type="tool:DoubleClickDescription" name="Zoom FiguraGeometricaM1" mappings="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='ContenedoresM2']"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DoubleClickDescription" name="Zoom ConectorM1" mappings="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@edgeMappings[name='ConectorM1']">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Contenedores']"/>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <customization>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.color.toString() = 'white'/]">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.0/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.3/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.2/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.1/@style" referenceName="color">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.color.toString() = 'black'/]">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.0/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.3/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.2/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.1/@style" referenceName="color">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.color.toString() = 'blue'/]">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.0/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.3/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.2/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.1/@style" referenceName="color">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.color.toString() = 'chocolate'/]">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.0/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.3/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.2/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.1/@style" referenceName="color">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='chocolate']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.color.toString() = 'gray'/]">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.0/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.3/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.2/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.1/@style" referenceName="color">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.color.toString() = 'green'/]">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.0/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.3/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.2/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.1/@style" referenceName="color">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.color.toString() = 'orange'/]">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.0/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.3/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.2/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.1/@style" referenceName="color">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='orange']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.color.toString() = 'purple'/]">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.0/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.3/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.2/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.1/@style" referenceName="color">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='purple']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.color.toString() = 'red'/]">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.0/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.3/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.2/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.1/@style" referenceName="color">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.color.toString() = 'yellow'/]">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.0/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.3/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.2/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.1/@style" referenceName="color">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='yellow']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.label.color.toString() = 'white'/]">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.0/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.3/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.2/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.1/@style" referenceName="labelColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.label.color.toString() = 'black'/]">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.0/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.3/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.2/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.1/@style" referenceName="labelColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.label.color.toString() = 'blue'/]">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.0/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.3/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.2/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.1/@style" referenceName="labelColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.label.color.toString() = 'chocolate'/]">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.0/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.3/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.2/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.1/@style" referenceName="labelColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='chocolate']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.label.color.toString() = 'gray'/]">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.0/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.3/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.2/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.1/@style" referenceName="labelColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.label.color.toString() = 'green'/]">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.0/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.3/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.2/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.1/@style" referenceName="labelColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.label.color.toString() = 'orange'/]">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.0/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.3/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.2/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.1/@style" referenceName="labelColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='orange']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.label.color.toString() = 'purple'/]">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.0/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.3/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.2/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.1/@style" referenceName="labelColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='purple']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.label.color.toString() = 'red'/]">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.0/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.3/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.2/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.1/@style" referenceName="labelColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.label.color.toString() = 'yellow'/]">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.0/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.3/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.2/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.1/@style" referenceName="labelColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='yellow']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.borde.color.toString() = 'white'/]">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.0/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.3/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.2/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.1/@style" referenceName="borderColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.borde.color.toString() = 'black'/]">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.0/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.3/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.2/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.1/@style" referenceName="borderColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.borde.color.toString() = 'blue'/]">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.0/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.3/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.2/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.1/@style" referenceName="borderColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.borde.color.toString() = 'chocolate'/]">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.0/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.3/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.2/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.1/@style" referenceName="borderColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='chocolate']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.borde.color.toString() = 'gray'/]">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.0/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.3/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.2/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.1/@style" referenceName="borderColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.borde.color.toString() = 'green'/]">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.0/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.3/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.2/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.1/@style" referenceName="borderColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.borde.color.toString() = 'orange'/]">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.0/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.3/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.2/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.1/@style" referenceName="borderColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='orange']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.borde.color.toString() = 'purple'/]">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.0/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.3/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.2/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.1/@style" referenceName="borderColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='purple']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.borde.color.toString() = 'red'/]">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.0/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.3/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.2/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.1/@style" referenceName="borderColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.borde.color.toString() = 'yellow'/]">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.0/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.3/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.2/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.1/@style" referenceName="borderColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='yellow']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.borde.grosor > 0/]">
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.0/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.1/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.3/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.2/@style" attributeName="borderSizeComputationExpression" value="[self.borde.grosor /]"/>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.label.tamanio > 0/]">
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.0/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.1/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.3/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.2/@style" attributeName="labelSize" value="[self.label.tamanio /]"/>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.ancho > 0/]">
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.1/@style" attributeName="width" value="[self.ancho /]"/>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.alto > 0/]">
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.1/@style" attributeName="height" value="[self.alto /]"/>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomizationReuse" reuse="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Contenedores']/@defaultLayer/@customization/@vsmElementCustomizations.3/@featureCustomizations.0 //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Contenedores']/@defaultLayer/@customization/@vsmElementCustomizations.2/@featureCustomizations.0 //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Contenedores']/@defaultLayer/@customization/@vsmElementCustomizations.1/@featureCustomizations.0 //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Contenedores']/@defaultLayer/@customization/@vsmElementCustomizations.4/@featureCustomizations.0 //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Contenedores']/@defaultLayer/@customization/@vsmElementCustomizations.6/@featureCustomizations.0 //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Contenedores']/@defaultLayer/@customization/@vsmElementCustomizations.5/@featureCustomizations.0 //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Contenedores']/@defaultLayer/@customization/@vsmElementCustomizations.7/@featureCustomizations.0" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@edgeMappings[name='ConectorM1']/@style"/>
+        </customization>
+      </defaultLayer>
+    </ownedRepresentations>
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="ContenedoresM1" domainClass="visualizacion.NavegacionDiagrama" enablePopupBars="true">
+      <defaultLayer name="Default">
+        <edgeMappings name="ConectorContenedores" semanticCandidatesExpression="[self.diagrama.elementos.conectores /]" sourceMapping="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='ContenedoresM1']/@defaultLayer/@containerMappings[name='Contenedor']" targetMapping="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='ContenedoresM1']/@defaultLayer/@containerMappings[name='Contenedor']" targetFinderExpression="[self.target /]" sourceFinderExpression="[self.source /]" domainClass="visualizacion.Conector" useDomainElement="true">
+          <style sizeComputationExpression="0">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription showIcon="false" labelExpression="[self.name /]">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <containerMappings name="Contenedor" semanticCandidatesExpression="[self.diagrama.elementos /]" domainClass="visualizacion.FiguraGeometrica">
+          <subNodeMappings name="ElementoDiagrama" semanticCandidatesExpression="[self.diagrama.elementos /]" domainClass="visualizacion.FiguraGeometrica">
+            <conditionnalStyles predicateExpression="[self.oclIsTypeOf(Elipse)/]">
+              <style xsi:type="style:EllipseNodeDescription" labelPosition="node" resizeKind="NSEW" horizontalDiameterComputationExpression="feature:largo" verticalDiameterComputationExpression="feature:alto">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              </style>
+            </conditionnalStyles>
+            <conditionnalStyles predicateExpression="[self.oclIsTypeOf(Cuadrilatero)/]">
+              <style xsi:type="style:SquareDescription" labelPosition="node" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              </style>
+            </conditionnalStyles>
+            <conditionnalStyles predicateExpression="[self.oclIsTypeOf(Rombo)/]">
+              <style xsi:type="style:LozengeNodeDescription" labelPosition="node" resizeKind="NSEW" widthComputationExpression="feature:ancho" heightComputationExpression="feature:largo">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              </style>
+            </conditionnalStyles>
+            <conditionnalStyles predicateExpression="[self.oclIsTypeOf(Triangulo)/]">
+              <style xsi:type="style:BundledImageDescription" labelPosition="node" resizeKind="NSEW" shape="triangle">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </style>
+            </conditionnalStyles>
+          </subNodeMappings>
+          <style xsi:type="style:FlatContainerStyleDescription">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style>
+        </containerMappings>
+        <toolSections>
+          <ownedTools xsi:type="tool:DoubleClickDescription" name="Zoom Contenedor">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='ContenedoresM1']"/>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <customization>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.oclIsTypeOf(Item) /]">
+            <featureCustomizations xsi:type="description:EAttributeCustomization" attributeName="iconPath" value="['/Visualizacion3SIRIUS/' + self.icono + '.gif'/]"/>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.flecha_target.toString() = 'TRIANGULAR'/]">
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='ContenedoresM1']/@defaultLayer/@edgeMappings[name='ConectorContenedores']/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster']/@defaultLayer/@edgeMappings[name='Conector']/@style" attributeName="targetArrow" value="['InputClosedArrow'/]"/>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.flecha_target.toString() = 'DIAMANTE'/]">
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='ContenedoresM1']/@defaultLayer/@edgeMappings[name='ConectorContenedores']/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster']/@defaultLayer/@edgeMappings[name='Conector']/@style" attributeName="targetArrow" value="['Diamond'/]"/>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.flecha_target.toString() = 'DIAMANTE_RELLENA'/]">
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='ContenedoresM1']/@defaultLayer/@edgeMappings[name='ConectorContenedores']/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster']/@defaultLayer/@edgeMappings[name='Conector']/@style" attributeName="targetArrow" value="['FillDiamond'/]"/>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.flecha_target.toString() = 'NO_TIENE'/]">
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='ContenedoresM1']/@defaultLayer/@edgeMappings[name='ConectorContenedores']/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster']/@defaultLayer/@edgeMappings[name='Conector']/@style" attributeName="targetArrow" value="['NoDecoration'/]"/>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.enrutamiento.toString() = 'RECTILINEO'/]">
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='ContenedoresM1']/@defaultLayer/@edgeMappings[name='ConectorContenedores']/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster']/@defaultLayer/@edgeMappings[name='Conector']/@style" attributeName="routingStyle" value="['manhattan'/]"/>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.enrutamiento.toString() = 'ARBOL'/]">
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='ContenedoresM1']/@defaultLayer/@edgeMappings[name='ConectorContenedores']/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster']/@defaultLayer/@edgeMappings[name='Conector']/@style" attributeName="routingStyle" value="['manhattan'/]"/>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.grosor > 0/]">
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster']/@defaultLayer/@edgeMappings[name='Conector']/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='ContenedoresM1']/@defaultLayer/@edgeMappings[name='ConectorContenedores']/@style" attributeName="sizeComputationExpression" value="[self.grosor /]"/>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.esCompartida.toString() = 'true'/]">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='ContenedoresM1']/@defaultLayer/@containerMappings[name='Contenedor']/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplificado']/@defaultLayer/@containerMappings[name='Cluster']/@style" referenceName="foregroundColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+        </customization>
+      </defaultLayer>
+    </ownedRepresentations>
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="ContenedoresM2" domainClass="visualizacion.NavegacionDiagrama" enablePopupBars="true">
+      <defaultLayer name="Default">
+        <nodeMappings name="FiguraGeometricaM2" semanticCandidatesExpression="[self.diagrama.elementos /]" doubleClickDescription="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Cluster%20Simplicado%20nuevo']/@defaultLayer/@toolSections.0/@ownedTools[name='Zoom%20Elipse']" domainClass="visualizacion.FiguraGeometrica">
+          <conditionnalStyles predicateExpression="[self.oclIsTypeOf(Elipse)/]">
+            <style xsi:type="style:EllipseNodeDescription" labelPosition="node" resizeKind="NSEW" horizontalDiameterComputationExpression="feature:largo" verticalDiameterComputationExpression="feature:alto">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            </style>
+          </conditionnalStyles>
+          <conditionnalStyles predicateExpression="[self.oclIsTypeOf(Cuadrilatero)/]">
+            <style xsi:type="style:SquareDescription" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            </style>
+          </conditionnalStyles>
+          <conditionnalStyles predicateExpression="[self.oclIsTypeOf(Rombo)/]">
+            <style xsi:type="style:LozengeNodeDescription" labelPosition="node" resizeKind="NSEW" widthComputationExpression="feature:ancho" heightComputationExpression="feature:largo">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            </style>
+          </conditionnalStyles>
+          <conditionnalStyles predicateExpression="[self.oclIsTypeOf(Triangulo)/]">
+            <style xsi:type="style:BundledImageDescription" labelPosition="node" resizeKind="NSEW" shape="triangle">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </conditionnalStyles>
+        </nodeMappings>
+        <edgeMappings name="ConectorContenedores" semanticCandidatesExpression="[self.diagrama.elementos.conectores /]" sourceMapping="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='ContenedoresM2']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM2']" targetMapping="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='ContenedoresM2']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM2']" targetFinderExpression="[self.target /]" sourceFinderExpression="[self.source /]" domainClass="visualizacion.Conector" useDomainElement="true">
+          <style sizeComputationExpression="0">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription showIcon="false" labelExpression="[self.name /]">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <toolSections>
+          <ownedTools xsi:type="tool:DoubleClickDescription" name="Zoom Contenedor">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='ContenedoresM2']"/>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <customization>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.color.toString() = 'white'/]">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.0/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.3/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.2/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.1/@style" referenceName="color">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.color.toString() = 'black'/]">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.0/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.3/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.2/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.1/@style" referenceName="color">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.color.toString() = 'blue'/]">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.0/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.3/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.2/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.1/@style" referenceName="color">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.color.toString() = 'chocolate'/]">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.0/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.3/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.2/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.1/@style" referenceName="color">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='chocolate']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.color.toString() = 'gray'/]">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.0/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.3/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.2/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.1/@style" referenceName="color">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.color.toString() = 'green'/]">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.0/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.3/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.2/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.1/@style" referenceName="color">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.color.toString() = 'orange'/]">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.0/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.3/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.2/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.1/@style" referenceName="color">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='orange']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.color.toString() = 'purple'/]">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.0/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.3/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.2/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.1/@style" referenceName="color">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='purple']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.color.toString() = 'red'/]">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.0/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.3/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.2/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.1/@style" referenceName="color">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.color.toString() = 'yellow'/]">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.0/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.3/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.2/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.1/@style" referenceName="color">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='yellow']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.label.color.toString() = 'white'/]">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.0/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.3/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.2/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.1/@style" referenceName="labelColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.label.color.toString() = 'black'/]">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.0/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.3/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.2/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.1/@style" referenceName="labelColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.label.color.toString() = 'blue'/]">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.0/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.3/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.2/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.1/@style" referenceName="labelColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.label.color.toString() = 'chocolate'/]">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.0/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.3/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.2/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.1/@style" referenceName="labelColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='chocolate']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.label.color.toString() = 'gray'/]">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.0/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.3/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.2/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.1/@style" referenceName="labelColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.label.color.toString() = 'green'/]">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.0/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.3/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.2/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.1/@style" referenceName="labelColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.label.color.toString() = 'orange'/]">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.0/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.3/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.2/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.1/@style" referenceName="labelColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='orange']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.label.color.toString() = 'purple'/]">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.0/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.3/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.2/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.1/@style" referenceName="labelColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='purple']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.label.color.toString() = 'red'/]">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.0/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.3/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.2/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.1/@style" referenceName="labelColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.label.color.toString() = 'yellow'/]">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.0/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.3/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.2/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.1/@style" referenceName="labelColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='yellow']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.borde.color.toString() = 'white'/]">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.0/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.3/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.2/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.1/@style" referenceName="borderColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.borde.color.toString() = 'black'/]">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.0/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.3/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.2/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.1/@style" referenceName="borderColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.borde.color.toString() = 'blue'/]">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.0/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.3/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.2/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.1/@style" referenceName="borderColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.borde.color.toString() = 'chocolate'/]">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.0/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.3/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.2/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.1/@style" referenceName="borderColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='chocolate']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.borde.color.toString() = 'gray'/]">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.0/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.3/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.2/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.1/@style" referenceName="borderColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.borde.color.toString() = 'green'/]">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.0/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.3/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.2/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.1/@style" referenceName="borderColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.borde.color.toString() = 'orange'/]">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.0/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.3/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.2/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.1/@style" referenceName="borderColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='orange']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.borde.color.toString() = 'purple'/]">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.0/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.3/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.2/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.1/@style" referenceName="borderColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='purple']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.borde.color.toString() = 'red'/]">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.0/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.3/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.2/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.1/@style" referenceName="borderColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.borde.color.toString() = 'yellow'/]">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.0/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.3/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.2/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.1/@style" referenceName="borderColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='yellow']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.borde.grosor > 0/]">
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.0/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.1/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.3/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.2/@style" attributeName="borderSizeComputationExpression" value="[self.borde.grosor /]"/>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.label.tamanio > 0/]">
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.0/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.1/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.3/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.2/@style" attributeName="labelSize" value="[self.label.tamanio /]"/>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.ancho > 0/]">
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.1/@style" attributeName="width" value="[self.ancho /]"/>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.alto > 0/]">
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']/@conditionnalStyles.1/@style" attributeName="height" value="[self.alto /]"/>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomizationReuse" reuse="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Contenedores']/@defaultLayer/@customization/@vsmElementCustomizations.3/@featureCustomizations.0 //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Contenedores']/@defaultLayer/@customization/@vsmElementCustomizations.2/@featureCustomizations.0 //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Contenedores']/@defaultLayer/@customization/@vsmElementCustomizations.1/@featureCustomizations.0 //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Contenedores']/@defaultLayer/@customization/@vsmElementCustomizations.4/@featureCustomizations.0 //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Contenedores']/@defaultLayer/@customization/@vsmElementCustomizations.6/@featureCustomizations.0 //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Contenedores']/@defaultLayer/@customization/@vsmElementCustomizations.5/@featureCustomizations.0 //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Contenedores']/@defaultLayer/@customization/@vsmElementCustomizations.7/@featureCustomizations.0" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Metodos1']/@defaultLayer/@edgeMappings[name='ConectorM1']/@style"/>
+        </customization>
       </defaultLayer>
     </ownedRepresentations>
   </ownedViewpoints>

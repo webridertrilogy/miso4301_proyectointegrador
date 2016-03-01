@@ -17,7 +17,7 @@ rule Arco2Conector
 		o.source ::= i.source;
 		o.target ::= i.target;
 		o.~arco = i;
-		o.invocaciones = i.invocaciones;
+		o.invocaciones = i.invocaciones.clone();
 		o.name = i.buscarMetricaCouplingBetweenObjects();
 		i.buscarMetricaClusterRelationConflictPercentageMeasure(o);
 		--o.nameSource = i.buscarMetricaClusterRelationConflictPercentageMeasureSource();

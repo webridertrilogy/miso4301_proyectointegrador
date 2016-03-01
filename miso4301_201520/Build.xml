@@ -4,8 +4,8 @@
 	<property name="Kdm" value="./models/carrito.logic_kdm.xmi"></property>
 	<property name="SubKdm" value="./models/res3/kdmResultadoSub.xmi"></property>
 	<property name="Cluster" value="./models/res3/representacion44.xmi"></property>
-	<property name="Visualizacion" value="./models/res3/visualizacion3Y.xmi"></property>
-	<property name="Simplificacion" value="./models/res3/visualizacion3Y.xmi"></property>
+	<property name="Visualizacion" value="./models/res3/visualizacion3AN.xmi"></property>
+	<property name="Simplificacion" value="./models/res3/visualizacion3AN.xmi"></property>
 	<!--<property name="Simplificacion" value="./models/res2/simplificacion3.xmi"></property>-->
 
 			
@@ -69,8 +69,8 @@
 
 	<!-- Tranformacion 5-->
 		<target name="loadModelsT5">	
-			<epsilon.emf.loadModel name="source" modelfile="${Visualizacion}" metamodeluri="http://visualizacionMetricas3,http://visualizacionMetricas3/visualizacion" read="true" store="false"></epsilon.emf.loadModel>
-			<epsilon.emf.loadModel name="target" modelfile="${Simplificacion}" metamodeluri="http://visualizacionMetricas3,http://visualizacionMetricas3/visualizacion" read="false" store="true"></epsilon.emf.loadModel>
+			<epsilon.emf.loadModel name="source" modelfile="${Visualizacion}" metamodeluri="http://visualizacionMetricas3,http://visualizacionMetricas3/representacion,http://visualizacionMetricas3/visualizacion" read="true" store="false"></epsilon.emf.loadModel>
+			<epsilon.emf.loadModel name="target" modelfile="${Simplificacion}" metamodeluri="http://visualizacionMetricas3,http://visualizacionMetricas3/representacion,http://visualizacionMetricas3/visualizacion" read="false" store="true"></epsilon.emf.loadModel>
 		</target>
 			
 		<target name="visualizacion2simplificacion" depends="loadModelsT5">
