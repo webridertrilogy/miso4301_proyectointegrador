@@ -35,30 +35,96 @@ operation source!ClaseR instanciarHijos() : Sequence {
 
 operation source!ClaseR instanciarRelaciones(c : target!Clase, d : target!Diagrama) : Sequence {
 	var conectores = new Sequence();
+	"diego".println();
 	for(r in self.relaciones) {
 		var e : target!Conector;
 		if (not r.tipos->select(t | t.isTypeOf(source!Dependencia)).isEmpty()) {
 			e = new target!Dependencia();
-			e.invocaciones = r.invocaciones.clone();
+			e.invocaciones = r.invocaciones;
+			e.invocacionesV = new Sequence();
+			for(invoca in r.invocaciones){
+				var invocaTarget = new target!InvocacionV();
+				var fromRelacion = new target!RelacionInvocacion();
+				var toRelacion = new target!RelacionInvocacion();
+				fromRelacion.nombreClase = invoca.fromMethod.clase.name;
+				fromRelacion.nombreMetodo = invoca.fromMethod.nombreMetodo;
+				invocaTarget.fromMethod = fromRelacion;
+				toRelacion.nombreClase = invoca.toMethod.clase.name;
+				toRelacion.nombreMetodo = invoca.toMethod.nombreMetodo;
+				invocaTarget.toMethod = toRelacion;
+				e.invocacionesV.add(invocaTarget);
+			}
 			e.enrutamiento = target!TipoEnrutamiento#DIRECTO;
 			e.name = r.buscarMetricaCouplingBetweenObjects();
 		} else if (not r.tipos->select(t | t.isTypeOf(source!Asociacion)).isEmpty()) {
 			e = new target!Asociacion();
-			e.invocaciones = r.invocaciones.clone();
+			e.invocaciones = r.invocaciones;
+			e.invocacionesV = new Sequence();
+			for(invoca in r.invocaciones){
+				var invocaTarget = new target!InvocacionV();
+				var fromRelacion = new target!RelacionInvocacion();
+				var toRelacion = new target!RelacionInvocacion();
+				fromRelacion.nombreClase = invoca.fromMethod.clase.name;
+				fromRelacion.nombreMetodo = invoca.fromMethod.nombreMetodo;
+				invocaTarget.fromMethod = fromRelacion;
+				toRelacion.nombreClase = invoca.toMethod.clase.name;
+				toRelacion.nombreMetodo = invoca.toMethod.nombreMetodo;
+				invocaTarget.toMethod = toRelacion;
+				e.invocacionesV.add(invocaTarget);
+			}
 			e.enrutamiento = target!TipoEnrutamiento#DIRECTO;
 		} else if (not r.tipos->select(t | t.isTypeOf(source!Composicion)).isEmpty()) {
 			e = new target!Composicion();
-			e.invocaciones = r.invocaciones.clone();
+			e.invocaciones = r.invocaciones;
+			e.invocacionesV = new Sequence();
+			for(invoca in r.invocaciones){
+				var invocaTarget = new target!InvocacionV();
+				var fromRelacion = new target!RelacionInvocacion();
+				var toRelacion = new target!RelacionInvocacion();
+				fromRelacion.nombreClase = invoca.fromMethod.clase.name;
+				fromRelacion.nombreMetodo = invoca.fromMethod.nombreMetodo;
+				invocaTarget.fromMethod = fromRelacion;
+				toRelacion.nombreClase = invoca.toMethod.clase.name;
+				toRelacion.nombreMetodo = invoca.toMethod.nombreMetodo;
+				invocaTarget.toMethod = toRelacion;
+				e.invocacionesV.add(invocaTarget);
+			}
 			e.flecha_target = target!TipoFlecha#DIAMANTE_RELLENA;
 			e.enrutamiento = target!TipoEnrutamiento#RECTILINEO;
 		} else if (not r.tipos->select(t | t.isTypeOf(source!Agregacion)).isEmpty()) {
 			e = new target!Agregacion();
-			e.invocaciones = r.invocaciones.clone();
+			e.invocaciones = r.invocaciones;
+			e.invocacionesV = new Sequence();
+			for(invoca in r.invocaciones){
+				var invocaTarget = new target!InvocacionV();
+				var fromRelacion = new target!RelacionInvocacion();
+				var toRelacion = new target!RelacionInvocacion();
+				fromRelacion.nombreClase = invoca.fromMethod.clase.name;
+				fromRelacion.nombreMetodo = invoca.fromMethod.nombreMetodo;
+				invocaTarget.fromMethod = fromRelacion;
+				toRelacion.nombreClase = invoca.toMethod.clase.name;
+				toRelacion.nombreMetodo = invoca.toMethod.nombreMetodo;
+				invocaTarget.toMethod = toRelacion;
+				e.invocacionesV.add(invocaTarget);
+			}
 			e.flecha_target = target!TipoFlecha#DIAMANTE;
 			e.enrutamiento = target!TipoEnrutamiento#RECTILINEO;
 		} else if (not r.tipos->select(t | t.isTypeOf(source!Generalizacion)).isEmpty()) {
 			e = new target!Herencia();
-			e.invocaciones = r.invocaciones.clone();
+			e.invocaciones = r.invocaciones;
+			e.invocacionesV = new Sequence();
+			for(invoca in r.invocaciones){
+				var invocaTarget = new target!InvocacionV();
+				var fromRelacion = new target!RelacionInvocacion();
+				var toRelacion = new target!RelacionInvocacion();
+				fromRelacion.nombreClase = invoca.fromMethod.clase.name;
+				fromRelacion.nombreMetodo = invoca.fromMethod.nombreMetodo;
+				invocaTarget.fromMethod = fromRelacion;
+				toRelacion.nombreClase = invoca.toMethod.clase.name;
+				toRelacion.nombreMetodo = invoca.toMethod.nombreMetodo;
+				invocaTarget.toMethod = toRelacion;
+				e.invocacionesV.add(invocaTarget);
+			}
 			e.flecha_target = target!TipoFlecha#TRIANGULAR;
 			e.enrutamiento = target!TipoEnrutamiento#ARBOL;
 		}

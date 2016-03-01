@@ -6,7 +6,7 @@ import "representacion2visualizacion.utils.etl";
 
 
 pre {
-  	"Running Visulization Transformation".println();
+  	"Running Visulization Transformationd".println();
 	var formaCluster = "Eliptica";
   	//var formaCluster = "Triangular";
   	//var formaCluster = "Cuadrangular";

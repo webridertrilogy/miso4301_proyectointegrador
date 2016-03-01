@@ -17,7 +17,22 @@ rule Arco2Conector
 		o.source ::= i.source;
 		o.target ::= i.target;
 		o.~arco = i;
-		o.invocaciones = i.invocaciones.clone();
+		o.invocacionesV = new Sequence();
+		for(invoca in i.invocaciones){
+			var invocaTarget = new target!InvocacionV();
+			var fromRelacion = new target!RelacionInvocacion();
+			var toRelacion = new target!RelacionInvocacion();
+			fromRelacion.nombreClase = invoca.fromMethod.clase.name;
+			fromRelacion.nombreMetodo = invoca.fromMethod.nombreMetodo;
+			invocaTarget.fromMethod = fromRelacion;
+			toRelacion.nombreClase = invoca.toMethod.clase.name;
+			toRelacion.nombreMetodo = invoca.toMethod.nombreMetodo;
+			invocaTarget.toMethod = toRelacion;
+			o.invocacionesV.add(invocaTarget);
+		}
+		" tamano ".println(o.invocacionesV.size());
+		" tamano2 ".println(i.invocaciones.size());
+		o.invocaciones = i.invocaciones;
 		o.name = i.buscarMetricaCouplingBetweenObjects();
 		i.buscarMetricaClusterRelationConflictPercentageMeasure(o);
 		--o.nameSource = i.buscarMetricaClusterRelationConflictPercentageMeasureSource();

@@ -148,21 +148,47 @@ operation generarDiagramaRelacionEntreClusters(origen : target!Elipse, destino :
 					//Se recorren todos los conectores de la clase origen
 					for(conectorEnEJBOrigen in claseEnEJBOrigen.conectores) 
 					{		
-						" CantidadInvoca".println(conectorEnEJBOrigen.invocaciones.size());	
+						" CantidadInvoca".println(conectorEnEJBOrigen.invocacionesV.size());	
 						//Se recorren todas las invocacioness de cada uno de los conectores de la clase origen
-						for(invocacionEnEJBOrigen in conectorEnEJBOrigen.invocaciones) 
+						for(invocacionEnEJBOrigen in conectorEnEJBOrigen.invocacionesV) 
 						{
-							var metodo = new source!Metodo();
-							var invocacion2 = new source!Invocacion();
-							invocacion2.toMethod = metodo;
-							"pruebass".println(invocacion2.toMethod);
-							var invocacion = new source!Invocacion();
-							invocacion = invocacionEnEJBOrigen;
-							metodo = invocacion.toMethod;
-							" Invoca".println(invocacionEnEJBOrigen);
-							" InvocaNueva".println(invocacion);
-							" prueba".println(invocacion.toMethod);
-							"prueba".println(invocacion.toMethod);
+							//Si existe una invocacion a una clase del cluster destino es por que se esta llamando un metodo entre clusters							
+							if (invocacionEnEJBOrigen.toMethod.nombreClase == claseEnEJBDestino.name){
+								var clasO;
+								var clasD;
+								if(clasesCreadasOrigen.select(x| x.name == invocacionEnEJBOrigen.fromMethod.nombreClase).isEmpty()){
+									var claseOrigen  = new target!Clase();
+									claseOrigen.elementos = new Sequence();
+									claseOrigen.name = invocacionEnEJBOrigen.fromMethod.nombreClase;
+									claseOrigen.diagrama = claseOrigen;
+									clasO = claseOrigen;
+									clasesCreadasOrigen.add(claseOrigen);
+								}
+								else {
+									clasO = clasesCreadasOrigen.select(x| x.name == invocacionEnEJBOrigen.fromMethod.nombreClase).first();
+								}
+								
+								var itemOrigen = new target!Item(); 
+								itemOrigen.name = invocacionEnEJBOrigen.fromMethod.nombreMetodo;
+								itemOrigen.icono = "MessageSynchCallCreation";				
+								clasO.elementos.add(itemOrigen);
+								
+								if(clasesCreadasDestino.select(x| x.name == invocacionEnEJBOrigen.toMethod.nombreClase).isEmpty()){
+									var claseDestino  = new target!Clase();
+									claseDestino.elementos = new Sequence();
+									claseDestino.name = invocacionEnEJBOrigen.toMethod.nombreClase;
+									claseDestino.diagrama = claseDestino;
+									clasD = claseDestino;
+									clasesCreadasDestino.add(claseDestino);	
+								}
+								else {
+									clasD = clasesCreadasDestino.select(x| x.name == invocacionEnEJBOrigen.toMethod.nombreClase).first();
+								}								
+								var itemDestino = new target!Item(); 
+								itemDestino.name = invocacionEnEJBOrigen.toMethod.nombreMetodo;
+								itemDestino.icono = "MessageSynchCallCreation";
+								clasD.elementos.add(itemOrigen);
+							}
 						}
 					}
 				}

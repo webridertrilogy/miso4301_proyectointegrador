@@ -188,6 +188,8 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="nameTarget" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="invocaciones" upperBound="-1"
           eType="#//representacion/Invocacion"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="invocacionesV" upperBound="-1"
+          eType="#//visualizacion/InvocacionV"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="EstiloLinea">
       <eLiterals name="SOLIDA"/>
@@ -233,8 +235,12 @@
           defaultValueLiteral="black"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="InvocacionV">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="fromMethod" eType="#//visualizacion/Item"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="toMethod" eType="#//visualizacion/Item"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="fromMethod" eType="#//visualizacion/RelacionInvocacion"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="toMethod" eType="#//visualizacion/RelacionInvocacion"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="RelacionInvocacion">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombreClase" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombreMetodo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
   </eSubpackages>
 </ecore:EPackage>

@@ -27,4 +27,8 @@
   <models xmi:type="visualizacionMetricas3.visualizacion:Diagrama" href="models/res3/visualizacion3AF.xmi#/0"/>
   <models xmi:type="visualizacionMetricas3.visualizacion:Diagrama" href="models/res3/visualizacion3AG.xmi#/0"/>
   <models xmi:type="visualizacionMetricas3.visualizacion:Diagrama" href="models/res3/visualizacion3AJ.xmi#/0"/>
+  <models xmi:type="visualizacionMetricas3.visualizacion:Diagrama" href="models/res3/visualizacion3AR.xmi#/0"/>
+  <models xmi:type="visualizacionMetricas3.visualizacion:Diagrama" href="models/res8/visualizacion4.xmi#/0"/>
+  <models xmi:type="visualizacionMetricas3.visualizacion:Diagrama" href="models/res10/visualizacion4.xmi#/0"/>
+  <models xmi:type="visualizacionMetricas3.visualizacion:Diagrama" href="models/res10/visualizacion4Ant.xmi#/0"/>
 </viewpoint:DAnalysis>
