@@ -9,3 +9,7 @@ VisualizacionMetricas3.edit/
 workspace/
 runtime-EclipseApplication2/
 runtime-EclipseApplication/
+miso4301_201520/models/res*/*.xmi
+*.aird
+/*.aird
+Visualizacion3SIRIUS/*.visualizacionmetricas3
