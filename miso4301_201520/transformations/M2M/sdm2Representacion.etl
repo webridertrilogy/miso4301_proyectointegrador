@@ -1,5 +1,5 @@
 pre {
-  "Running Visulization Transformation".println();
+  "Running Representacion Transformation".println();
   
   //Se crean los tipos de relacion
   var dependencia = new target!Dependencia();
@@ -10,6 +10,9 @@ pre {
   
   var Codemodel = kdmMicro!CodeModel.allInstances().first();
   var app = new target!Aplicacion();
+  
+  var porcentajeAcoplamientoMicroservicios = 
+  	System.user.promptInteger("Digite porcentaje(0-100) minimo de acomplamiento entre EJBs para calcular Microservicios", 100);
   app.name = Codemodel.name;
 }
 
@@ -18,6 +21,8 @@ post {
     CreateDependecies();
     "Creando dependencias Cluster".println();
     CreateDependeciesCluster();	
+    "Calculando Microservicios a partir de relaciones EJB".println();
+    crearMicroservivios();
 	"Done".println();
 }
 
@@ -240,6 +245,72 @@ operation CreateDependeciesCluster(){
 	{
 		nodo.GetRelationsCluster(classLR, nodosCluster);
 	}	
+}
+
+//Particione los cluster EJB en microservicios
+operation crearMicroservivios(){
+  	
+	var ejbs = target!Cluster.allInstances();
+	var microServicios = new Map;
+	
+	var contadorMicroservicio = 1;
+	var ejbVisitados = new Set;
+	for (ejb in ejbs) {
+		if (ejbVisitados->includes(ejb)) {
+			continue;
+		}
+		
+		
+		var ejbConectadosMicroservicio = ejb.darEjbsConectados(ejbVisitados);
+		if (not ejbConectadosMicroservicio.isEmpty()) {				
+			var ejbsMicroservicio = new Set;
+			for(ejbConectado in ejbConectadosMicroservicio){				
+				ejbsMicroservicio.add(ejbConectado);
+			}						
+			microServicios.put("Microservicio " + contadorMicroservicio, ejbsMicroservicio);				
+			contadorMicroservicio = contadorMicroservicio +1;
+		}	
+	}
+	(" Resultado particion EJBs(Clusters) en microservicios con minimo %" 
+		+ porcentajeAcoplamientoMicroservicios + " de acoplamiento: ").println();
+	for (nombreMicro in microServicios.keySet()) {
+		var ejbsMicroservicio =  microServicios.get(nombreMicro);
+		(" * " + nombreMicro).println();
+		var ms = new target!Microservicio;
+		ms.name = nombreMicro;
+		ms.elementos = ejbsMicroservicio;		
+		for(ejbConectado in ejbsMicroservicio){				
+				("   - " + ejbConectado.name).println();
+		}
+	}
+		
+}
+
+// Obtiene los EJB conectados al EJB actual y verifica su % de acoplamiento
+operation target!Cluster darEjbsConectados(ejbVisitados : Set) : Set {
+	var ejbConectados = new Set;
+	ejbConectados.add(self);
+	ejbVisitados.add(self);
+		
+	("  -> Verificando conectados de EJB " + self.name).println();
+	var metricasConexionEJBActual = 
+		target!Metrica.allInstances().select(m | m.tipo = target!TipoMetrica#ClusterRelationConflictPercentageMeasureSource and m.eContainer().source.name = self.name);
+	//var metricasConexionEJBActual =
+	//	metricasConexion.select(m | m.eContainer().source.name = self.name);
+	for (metricaConexion in metricasConexionEJBActual) {
+		
+		var porcentajeAcoplamientoActual = (metricaConexion.valor * 100).intValue();
+		var arco = metricaConexion.eContainer();		
+		if(porcentajeAcoplamientoActual >= porcentajeAcoplamientoMicroservicios) {
+			if (ejbVisitados->includes(arco.target)) {
+				continue;
+			}
+			ejbConectados.add(arco.target);
+			ejbVisitados.add(arco.target);
+			ejbConectados.addAll(arco.target.darEjbsConectados(ejbVisitados));
+		} 
+	}
+	return ejbConectados;
 }
 
 //Obtiene las relaciones de cada cluster 
