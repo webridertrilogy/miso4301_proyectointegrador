@@ -35,7 +35,7 @@ operation source!ClaseR instanciarHijos() : Sequence {
 
 operation source!ClaseR instanciarRelaciones(c : target!Clase, d : target!Diagrama) : Sequence {
 	var conectores = new Sequence();
-	"diego".println();
+	
 	for(r in self.relaciones) {
 		var e : target!Conector;
 		if (not r.tipos->select(t | t.isTypeOf(source!Dependencia)).isEmpty()) {

@@ -30,8 +30,7 @@ rule Arco2Conector
 			invocaTarget.toMethod = toRelacion;
 			o.invocacionesV.add(invocaTarget);
 		}
-		" tamano ".println(o.invocacionesV.size());
-		" tamano2 ".println(i.invocaciones.size());
+		
 		o.invocaciones = i.invocaciones;
 		o.name = i.buscarMetricaCouplingBetweenObjects();
 		i.buscarMetricaClusterRelationConflictPercentageMeasure(o);

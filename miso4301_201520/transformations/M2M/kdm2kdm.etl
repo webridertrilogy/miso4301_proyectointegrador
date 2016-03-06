@@ -17,9 +17,9 @@ post {
 operation executeClusteres(){
 	var modelElem = kdmMicro!CodeModel.allInstances().first();
   	var classes = modelElem.getAllContents()->select(class|class.isTypeOf(kdmMicro!ClassUnit) or class.isTypeOf(kdmMicro!InterfaceUnit) or class.isTypeOf(kdmMicro!TemplateUnit));
-	" tC".println(classes.size());
+	
 	var clases2 = classes->asSet()->select(class|not(class.isTypeOf(kdmMicro!PrimitiveType) or class.isTypeOf(kdmMicro!TemplateParameter) or class.isTypeOf(kdmMicro!FloatType) or class.isTypeOf(kdmMicro!IntegerType) or class.isTypeOf(kdmMicro!VoidType)));
-	" tC".println(clases2.size());
+	" clases totales".println(clases2.size());
 	var relations = kdmMicro!ClassLevelRelation.allInstances();
 	var clusterTool = new Native("clusterer.EJBClusterer");
 	
@@ -48,7 +48,7 @@ operation executeClusteres(){
 		
 		cl.codeElement.addAll(df);
 		modelElem.codeElement.add(cl);
-		("-----------"+cl.name+"------------").println();
+		("-----------Cluster(EJB) "+cl.name+"------------").println();
 		for (elem in cl.codeElement){
 				elem.name.println();
 		}
