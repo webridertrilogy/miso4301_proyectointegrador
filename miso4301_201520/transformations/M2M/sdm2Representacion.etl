@@ -283,6 +283,38 @@ operation crearMicroservivios(){
 				("   - " + ejbConectado.name).println();
 		}
 	}
+	
+	// relaciones entre microservicios
+	"Calculando asociaciones entre microservicios...".println();
+	for (microservicio in target!Microservicio.allInstances()) {
+			microservicio.relaciones = new Set;
+			var msAsociados = new Set;
+			("  ...Verificando " + microservicio.name).println();
+			for (ejb in microservicio.elementos) {						
+						for (relacion in ejb.relaciones) {
+							for (arco in relacion.select(a | not a.tipos->select(t | t.isTypeOf(target!Asociacion)).isEmpty())) {
+								var ejbTarget = arco.target;								
+								for (msTemp in target!Microservicio.allInstances().select(m | m.name <> microservicio.name)) {
+									for (ejbTemp in msTemp.elementos) {
+										if (ejbTarget.name = ejbTemp.name) {
+											if (msAsociados->includes(msTemp.name)) {
+												continue;
+											}
+											var arco = new target!Arco;
+											arco.target =  msTemp;
+										    arco.source = microservicio;	
+										    arco.tipos.add(asociacion);
+										    msAsociados.add(msTemp.name);									    
+										    microservicio.relaciones.add(arco);
+										}
+									}
+								}
+							}
+						}			
+				
+			}
+	}	
+			
 		
 }
 

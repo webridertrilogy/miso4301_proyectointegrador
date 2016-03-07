@@ -5,7 +5,7 @@
 	<property name="SubKdm" value="./models/res3/kdmResultadoSub.xmi"></property>
 	<property name="Cluster" value="./models/res3/representacion44.xmi"></property>
 	<property name="Visualizacion" value="./models/res10/visualizacion4.xmi"></property>
-	<property name="Simplificacion" value="./models/res10/visualizacion4.xmi"></property>
+	<property name="Simplificacion" value="./models/res10/simplificacion4.xmi"></property>
 	<!--<property name="Simplificacion" value="./models/res2/simplificacion3.xmi"></property>-->
 
 			
@@ -58,7 +58,7 @@
 			<epsilon.emf.loadModel name="target" modelfile="${Visualizacion}" metamodeluri="http://visualizacionMetricas3,http://visualizacionMetricas3/visualizacion" read="false" store="true"></epsilon.emf.loadModel>
 		</target>
 			
-		<target name="sdm2Visualizacion" depends="loadModelsT4">
+		<target name="representacion2Visualizacion" depends="loadModelsT4">
 			<epsilon.etl src="./transformations/M2M/Visualizacion/representacion2visualizacion.etl">
 				<model ref="source"></model>
 				<model ref="target"></model>
@@ -67,7 +67,7 @@
 			<epsilon.disposeModel model="target"></epsilon.disposeModel>
 		</target>
 
-	<!-- Tranformacion 5-->
+	<!-- Tranformacion 5
 		<target name="loadModelsT5">	
 			<epsilon.emf.loadModel name="source" modelfile="${Visualizacion}" metamodeluri="http://visualizacionMetricas3,http://visualizacionMetricas3/visualizacion" read="true" store="false"></epsilon.emf.loadModel>
 			<epsilon.emf.loadModel name="target" modelfile="${Simplificacion}" metamodeluri="http://visualizacionMetricas3,http://visualizacionMetricas3/visualizacion" read="false" store="true"></epsilon.emf.loadModel>
@@ -80,15 +80,29 @@
 			</epsilon.etl>
 			
 			<epsilon.disposeModel model="target"></epsilon.disposeModel>
-		</target>
+		</target> -->
+		
+			<target name="loadModelsT5">	
+				<epsilon.emf.loadModel name="source" modelfile="${Cluster}" metamodeluri="http://visualizacionMetricas3,http://visualizacionMetricas3/representacion" read="true" store="false"></epsilon.emf.loadModel>
+				<epsilon.emf.loadModel name="target" modelfile="${Simplificacion}" metamodeluri="http://visualizacionMetricas3,http://visualizacionMetricas3/visualizacion" read="false" store="true"></epsilon.emf.loadModel>
+			</target>
+				
+			<target name="representacion2Simplificacion" depends="loadModelsT5">
+				<epsilon.etl src="./transformations/M2M/Visualizacion/representacion2simplificacion.etl">
+					<model ref="source"></model>
+					<model ref="target"></model>
+				</epsilon.etl>
+				
+				<epsilon.disposeModel model="target"></epsilon.disposeModel>
+			</target>
 	<!-- Main -->
 	
 	<target name="main">		
 		<antcall target="Kdm2Kdm" inheritall="true"></antcall>
 		<antcall target="micro2sdm"></antcall>
 		<antcall target="sdm2Representacion"></antcall>
-		<antcall target="sdm2Visualizacion"></antcall>
-		<!--<antcall target="visualizacion2simplificacion"></antcall> -->
+		<antcall target="representacion2Visualizacion"></antcall>
+		<antcall target="representacion2Simplificacion"></antcall> 
 		
 		 <!-- epsilon.disposeModels></epsilon.disposeModels> -->  
 	</target>
