@@ -256,11 +256,11 @@ operation crearMicroservivios(){
 	var contadorMicroservicio = 1;
 	var ejbVisitados = new Set;
 	for (ejb in ejbs) {
-		if (ejbVisitados->includes(ejb)) {
+		if (ejbVisitados->includes(ejb.name)) {
 			continue;
 		}
 		
-		
+		("Cluster " + ejb.name).println();
 		var ejbConectadosMicroservicio = ejb.darEjbsConectados(ejbVisitados);
 		if (not ejbConectadosMicroservicio.isEmpty()) {				
 			var ejbsMicroservicio = new Set;
@@ -290,26 +290,46 @@ operation crearMicroservivios(){
 operation target!Cluster darEjbsConectados(ejbVisitados : Set) : Set {
 	var ejbConectados = new Set;
 	ejbConectados.add(self);
-	ejbVisitados.add(self);
+	ejbVisitados.add(self.name);
 		
 	("  -> Verificando conectados de EJB " + self.name).println();
-	var metricasConexionEJBActual = 
+	var metricasConexionEJBActualOut = 
 		target!Metrica.allInstances().select(m | m.tipo = target!TipoMetrica#ClusterRelationConflictPercentageMeasureSource and m.eContainer().source.name = self.name);
-	//var metricasConexionEJBActual =
-	//	metricasConexion.select(m | m.eContainer().source.name = self.name);
-	for (metricaConexion in metricasConexionEJBActual) {
+	
+	var metricasConexionEJBActualIn = 
+		target!Metrica.allInstances().select(m | m.tipo = target!TipoMetrica#ClusterRelationConflictPercentageMeasureTarget and m.eContainer().source.name = self.name);
+		
+	for (metricaConexion in metricasConexionEJBActualOut) {
+		
+		var porcentajeAcoplamientoActual = (metricaConexion.valor * 100).intValue();
+		var arco = metricaConexion.eContainer();		
+						
+		if(porcentajeAcoplamientoActual >= porcentajeAcoplamientoMicroservicios) {
+			if (ejbVisitados->includes(arco.target.name)) {				
+				continue;
+			}
+			
+			ejbConectados.add(arco.target);
+			ejbVisitados.add(arco.target.name);
+			ejbConectados.addAll(arco.target.darEjbsConectados(ejbVisitados));
+		} 
+	}
+	
+	for (metricaConexion in metricasConexionEJBActualIn) {
 		
 		var porcentajeAcoplamientoActual = (metricaConexion.valor * 100).intValue();
 		var arco = metricaConexion.eContainer();		
 		if(porcentajeAcoplamientoActual >= porcentajeAcoplamientoMicroservicios) {
-			if (ejbVisitados->includes(arco.target)) {
+			if (ejbVisitados->includes(arco.target.name)) {				
 				continue;
 			}
+			
 			ejbConectados.add(arco.target);
-			ejbVisitados.add(arco.target);
+			ejbVisitados.add(arco.target.name);
 			ejbConectados.addAll(arco.target.darEjbsConectados(ejbVisitados));
 		} 
 	}
+	
 	return ejbConectados;
 }
 
