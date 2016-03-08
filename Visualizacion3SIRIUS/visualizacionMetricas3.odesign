@@ -355,7 +355,7 @@
             <element name="element"/>
             <elementView name="elementView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='ContenedorM1']"/>
+              <firstModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Contenedor%20clases%20union%20Microservicios']"/>
             </initialOperation>
           </ownedTools>
         </toolSections>
@@ -526,9 +526,9 @@
         </customization>
       </defaultLayer>
     </ownedRepresentations>
-    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="ContenedorM1" domainClass="visualizacion." enablePopupBars="true">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Contenedor clases union Microservicios" domainClass="visualizacion.NavegacionDiagrama" enablePopupBars="true">
       <defaultLayer name="Default">
-        <edgeMappings name="ConectorContenedores" semanticCandidatesExpression="[self.diagrama.elementos.conectores /]" sourceMapping="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='ContenedorM1']/@defaultLayer/@containerMappings[name='Contenedor']" targetMapping="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='ContenedorM1']/@defaultLayer/@containerMappings[name='Contenedor']" targetFinderExpression="[self.target /]" sourceFinderExpression="[self.source /]" domainClass="visualizacion.Conector" useDomainElement="true">
+        <edgeMappings name="ConectorContenedores" semanticCandidatesExpression="[self.diagrama.elementos.conectores /]" sourceMapping="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Contenedor%20clases%20union%20Microservicios']/@defaultLayer/@containerMappings[name='Contenedor']" targetMapping="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Contenedor%20clases%20union%20Microservicios']/@defaultLayer/@containerMappings[name='Contenedor']" targetFinderExpression="[self.target /]" sourceFinderExpression="[self.source /]" domainClass="visualizacion.Conector" useDomainElement="true">
           <style sizeComputationExpression="0">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription showIcon="false" labelExpression="[self.name /]">
@@ -536,36 +536,13 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <containerMappings name="Contenedor" semanticCandidatesExpression="[self.diagrama.elementos /]" domainClass="visualizacion.FiguraGeometrica">
-          <subNodeMappings name="ElementoDiagrama" semanticCandidatesExpression="[self.diagrama.elementos /]" domainClass="visualizacion.FiguraGeometrica">
-            <conditionnalStyles predicateExpression="[self.oclIsTypeOf(Elipse)/]">
-              <style xsi:type="style:EllipseNodeDescription" labelPosition="node" resizeKind="NSEW" horizontalDiameterComputationExpression="feature:largo" verticalDiameterComputationExpression="feature:alto">
-                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
-              </style>
-            </conditionnalStyles>
-            <conditionnalStyles predicateExpression="[self.oclIsTypeOf(Cuadrilatero)/]">
-              <style xsi:type="style:SquareDescription" labelPosition="node" resizeKind="NSEW">
-                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
-              </style>
-            </conditionnalStyles>
-            <conditionnalStyles predicateExpression="[self.oclIsTypeOf(Rombo)/]">
-              <style xsi:type="style:LozengeNodeDescription" labelPosition="node" resizeKind="NSEW" widthComputationExpression="feature:ancho" heightComputationExpression="feature:largo">
-                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
-              </style>
-            </conditionnalStyles>
-            <conditionnalStyles predicateExpression="[self.oclIsTypeOf(Triangulo)/]">
-              <style xsi:type="style:BundledImageDescription" labelPosition="node" resizeKind="NSEW" shape="triangle">
-                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              </style>
-            </conditionnalStyles>
+        <containerMappings name="Contenedor" semanticCandidatesExpression="[self.diagrama.elementos /]" domainClass="visualizacion.Contenedor" childrenPresentation="List">
+          <subNodeMappings name="ElementoDiagrama" semanticCandidatesExpression="[self.elementos /]" domainClass="visualizacion.ElementoDiagrama">
+            <style xsi:type="style:BundledImageDescription" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
           </subNodeMappings>
           <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -579,7 +556,7 @@
             <element name="element"/>
             <elementView name="elementView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='ContenedorM1']"/>
+              <firstModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Contenedor%20clases%20union%20Microservicios']"/>
             </initialOperation>
           </ownedTools>
         </toolSections>
@@ -588,28 +565,28 @@
             <featureCustomizations xsi:type="description:EAttributeCustomization" attributeName="iconPath" value="['/Visualizacion3SIRIUS/' + self.icono + '.gif'/]"/>
           </vsmElementCustomizations>
           <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.flecha_target.toString() = 'TRIANGULAR'/]">
-            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='ContenedorM1']/@defaultLayer/@edgeMappings[name='ConectorContenedores']/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20dependencias%20clusters%20EJB']/@defaultLayer/@edgeMappings[name='Conector']/@style" attributeName="targetArrow" value="['InputClosedArrow'/]"/>
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Contenedor%20clases%20union%20Microservicios']/@defaultLayer/@edgeMappings[name='ConectorContenedores']/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20dependencias%20clusters%20EJB']/@defaultLayer/@edgeMappings[name='Conector']/@style" attributeName="targetArrow" value="['InputClosedArrow'/]"/>
           </vsmElementCustomizations>
           <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.flecha_target.toString() = 'DIAMANTE'/]">
-            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='ContenedorM1']/@defaultLayer/@edgeMappings[name='ConectorContenedores']/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20dependencias%20clusters%20EJB']/@defaultLayer/@edgeMappings[name='Conector']/@style" attributeName="targetArrow" value="['Diamond'/]"/>
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Contenedor%20clases%20union%20Microservicios']/@defaultLayer/@edgeMappings[name='ConectorContenedores']/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20dependencias%20clusters%20EJB']/@defaultLayer/@edgeMappings[name='Conector']/@style" attributeName="targetArrow" value="['Diamond'/]"/>
           </vsmElementCustomizations>
           <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.flecha_target.toString() = 'DIAMANTE_RELLENA'/]">
-            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='ContenedorM1']/@defaultLayer/@edgeMappings[name='ConectorContenedores']/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20dependencias%20clusters%20EJB']/@defaultLayer/@edgeMappings[name='Conector']/@style" attributeName="targetArrow" value="['FillDiamond'/]"/>
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Contenedor%20clases%20union%20Microservicios']/@defaultLayer/@edgeMappings[name='ConectorContenedores']/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20dependencias%20clusters%20EJB']/@defaultLayer/@edgeMappings[name='Conector']/@style" attributeName="targetArrow" value="['FillDiamond'/]"/>
           </vsmElementCustomizations>
           <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.flecha_target.toString() = 'NO_TIENE'/]">
-            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='ContenedorM1']/@defaultLayer/@edgeMappings[name='ConectorContenedores']/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20dependencias%20clusters%20EJB']/@defaultLayer/@edgeMappings[name='Conector']/@style" attributeName="targetArrow" value="['NoDecoration'/]"/>
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Contenedor%20clases%20union%20Microservicios']/@defaultLayer/@edgeMappings[name='ConectorContenedores']/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20dependencias%20clusters%20EJB']/@defaultLayer/@edgeMappings[name='Conector']/@style" attributeName="targetArrow" value="['NoDecoration'/]"/>
           </vsmElementCustomizations>
           <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.enrutamiento.toString() = 'RECTILINEO'/]">
-            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='ContenedorM1']/@defaultLayer/@edgeMappings[name='ConectorContenedores']/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20dependencias%20clusters%20EJB']/@defaultLayer/@edgeMappings[name='Conector']/@style" attributeName="routingStyle" value="['manhattan'/]"/>
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Contenedor%20clases%20union%20Microservicios']/@defaultLayer/@edgeMappings[name='ConectorContenedores']/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20dependencias%20clusters%20EJB']/@defaultLayer/@edgeMappings[name='Conector']/@style" attributeName="routingStyle" value="['manhattan'/]"/>
           </vsmElementCustomizations>
           <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.enrutamiento.toString() = 'ARBOL'/]">
-            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='ContenedorM1']/@defaultLayer/@edgeMappings[name='ConectorContenedores']/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20dependencias%20clusters%20EJB']/@defaultLayer/@edgeMappings[name='Conector']/@style" attributeName="routingStyle" value="['manhattan'/]"/>
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Contenedor%20clases%20union%20Microservicios']/@defaultLayer/@edgeMappings[name='ConectorContenedores']/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20dependencias%20clusters%20EJB']/@defaultLayer/@edgeMappings[name='Conector']/@style" attributeName="routingStyle" value="['manhattan'/]"/>
           </vsmElementCustomizations>
           <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.grosor > 0/]">
-            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20dependencias%20clusters%20EJB']/@defaultLayer/@edgeMappings[name='Conector']/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='ContenedorM1']/@defaultLayer/@edgeMappings[name='ConectorContenedores']/@style" attributeName="sizeComputationExpression" value="[self.grosor /]"/>
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20dependencias%20clusters%20EJB']/@defaultLayer/@edgeMappings[name='Conector']/@style //@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Contenedor%20clases%20union%20Microservicios']/@defaultLayer/@edgeMappings[name='ConectorContenedores']/@style" attributeName="sizeComputationExpression" value="[self.grosor /]"/>
           </vsmElementCustomizations>
           <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.esCompartida.toString() = 'true'/]">
-            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='ContenedorM1']/@defaultLayer/@containerMappings[name='Contenedor']/@style" referenceName="foregroundColor">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Contenedor%20clases%20union%20Microservicios']/@defaultLayer/@containerMappings[name='Contenedor']/@style" referenceName="foregroundColor">
               <value href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
             </featureCustomizations>
           </vsmElementCustomizations>
