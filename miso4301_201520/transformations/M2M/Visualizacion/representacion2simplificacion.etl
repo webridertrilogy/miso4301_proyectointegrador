@@ -116,6 +116,7 @@ operation generarDiagramaSimplificado() {
 										var claseDestino;
 										if (nombresClasesInterseccion->includes(claseTarget.name )) {										
 											claseDestino = clasesInterseccion.select(c | c.name = claseTarget.name  ).first();
+											claseDestino.esCompartida = 'true';											
 										}
 										else {										
 											claseDestino  = new target!Clase();
@@ -172,6 +173,35 @@ operation generarDiagramaSimplificado() {
 			}		
 		}				
 	}
+	
+	/*
+	// todas las clases del microservicio
+	var clasesModelo = new Set;
+	for (microservicio in microservicios) {
+	
+	  var elipseMicroservicio = simplificado.elementos.select(e | e.name = microservicio.name and e.isTypeOf(target!Elipse)).first();
+	
+	  var  diagramaClases = new target!Diagrama;
+	  diagramaClases.name = "Clases " + microservicio.name;
+	  diagramaClases.elementos = new Sequence();
+	  diagramaClases.isRoot = false;	
+	  elipseMicroservicio.diagrama = 	diagramaClases;	
+	 
+	 
+	  for(clusterEjb in microservicio.elementos) {
+	  	for (claseR in clusterEjb.elementos) {	  
+			var claseV = clasesModelo.select(c | c.name = claseR.name).first();	
+	  		 if (not claseV.isDefined()) {	  		 	
+	  		 	claseV  = new target!Clase();
+				claseV.elementos = new Set();
+				claseV.name = claseR.name ;	
+				clasesModelo.add(claseV);
+				
+	  		 }
+			diagramaClases.elementos.add(claseV);
+	  	}
+	  }
+	}*/
 	
 }
 
