@@ -54,10 +54,17 @@ operation generarDiagramaSimplificado() {
 	// conectores entre elipses de microservicios
 	for (microservicio in microservicios) {
 		
+		var clasesMicroservicio = new Set;
+		for (ejbCluster in microservicio.elementos) {
+			for (clase in ejbCluster.elementos) {
+				clasesMicroservicio.add(clase.name);
+			}
+		}
+		
 		var elipseSource = simplificado.elementos.select(e | e.name = microservicio.name and e.isTypeOf(target!Elipse)).first();
 		elipseSource.conectores = new Set;	
 		
-		var ejbsInterseccion = new Set;		
+		
 		for(relacion in microservicio.relaciones){
 					var asociacion = new target!Asociacion();					
 					asociacion.color = target!Color#black;
@@ -69,44 +76,66 @@ operation generarDiagramaSimplificado() {
 					asociacion.target = simplificado.elementos.select(e | e.name = relacion.target.name and e.isTypeOf(target!Elipse)).first(); 
 					
 					
-					/*
+					
 					asociacion.diagrama = new target!Diagrama;
 					asociacion.diagrama.name = "Conector " + asociacion.source.name + " - " + asociacion.target.name;
 					asociacion.diagrama.elementos = new Sequence();
-					asociacion.diagrama.isRoot = false;
-						
-							
-						for (ejb in microservicio.elementos) {	
+					asociacion.diagrama.isRoot = false;						
 										
-								for (relacion in ejb.relaciones) {
-									
-									for (arco in relacion.select(a | not a.tipos->select(t | t.isTypeOf(source!Asociacion)).isEmpty())) {
-										var ejbTarget = arco.target;
-																
-										for (msTemp in source!Microservicio.allInstances().select(m | m.name <> microservicio.name)) {
-											
-											for (ejbTemp in msTemp.elementos) {
-												ejbTarget.name.println();
-												ejbTemp.name.println();
-												if (ejbTarget.name = ejbTemp.name) {
-													if (ejbsInterseccion->includes(ejbTarget.name)) {
-														continue;
-													}
-													ejbsInterseccion.add(ejbTemp.name);
-													asociacion.diagrama.elementos.add(ejbTarget);
-													asociacion.diagrama.elementos.add(arco.source);
-													ejbsInterseccion.add(arco.source.name);
-													
-												}
-											}
+					var clasesInterseccion = new Set;
+					var nombresClasesInterseccion = new Set;		
+					for (ejbCluster in relacion.target.elementos) {
+						for (claseTarget in ejbCluster.elementos) {						    
+							for (claseSource in clasesMicroservicio) {	
+								if (claseTarget.name <> claseSource and clasesMicroservicio.includes(claseTarget.name)) {	
+								 			   
+									var invocacion1 = 
+										source!Invocacion.allInstances().select(i | i.fromMethod.clase.name = claseSource and  i.toMethod.clase.name = claseTarget.name).first();
+									var invocacion2 = 
+										source!Invocacion.allInstances().select(i | i.fromMethod.clase.name = claseTarget.name and  i.toMethod.clase.name = claseSource).first();
+									if (invocacion1.isDefined()) {
+										
+										var claseFuente;
+										if (nombresClasesInterseccion->includes(claseSource )) {										
+											claseFuente = clasesInterseccion.select(c | c.name = claseSource  ).first();
 										}
+										else {										
+											claseFuente  = new target!Clase();
+											claseFuente.elementos = new Set();
+											claseFuente.name = claseSource ;	
+											clasesInterseccion.add(claseFuente);
+											nombresClasesInterseccion.add(claseFuente.name);
+											asociacion.diagrama.elementos.add(claseFuente);	
+											
+										}
+										var invocacionMetodos = new target!Item(); 
+										invocacionMetodos.name = invocacion1.fromMethod.nombreMetodo + "->" + invocacion1.toMethod.clase.name + "." + invocacion1.toMethod.nombreMetodo ;
+										invocacionMetodos.icono = "MessageSynchCallCreation";
+										claseFuente.elementos.add(invocacionMetodos);	
+										
+										var claseDestino;
+										if (nombresClasesInterseccion->includes(claseTarget.name )) {										
+											claseDestino = clasesInterseccion.select(c | c.name = claseTarget.name  ).first();
+										}
+										else {										
+											claseDestino  = new target!Clase();
+											claseDestino.elementos = new Set();
+											claseDestino.name = claseTarget.name ;	
+											clasesInterseccion.add(claseDestino);
+											nombresClasesInterseccion.add(claseDestino.name);
+											asociacion.diagrama.elementos.add(claseDestino);
+											
+										}
+																
+										
 									}
-								}			
-						
-					}
-						*/
-						
-															
+								}
+							} 
+							
+												
+						}
+					}	
+																		
  					elipseSource.conectores.add(asociacion);
 		}						
 	}
