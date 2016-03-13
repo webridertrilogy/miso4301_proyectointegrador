@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns:qvto="http://www.eclipse.org/qvt/1.0.0/Operational" name="kdm" default="main">
 	
+	
 	<property name="Kdm" value="./models/carrito.logic_kdm.xmi"></property>
 	<property name="SubKdm" value="./models/res3/kdmResultadoSub.xmi"></property>
-	<property name="Cluster" value="./models/res3/representacion44.xmi"></property>
-	<property name="Visualizacion" value="./models/res10/visualizacion4.xmi"></property>
-	<property name="Simplificacion" value="./models/res10/simplificacion4.xmi"></property>
+	<property name="Cluster" value="./models/res3/representacion.xmi"></property>
+	<property name="Visualizacion" value="./models/res10/visualizacion.xmi"></property>
+	<property name="Simplificacion" value="./models/res10/simplificacion.xmi"></property>
 	<!--<property name="Simplificacion" value="./models/res2/simplificacion3.xmi"></property>-->
 
 			
 	<!-- Tranformacion 1-->
 	<target name="loadModelsT1">
 		<epsilon.emf.loadModel name="code" modelfile="${Kdm}" metamodeluri="http://www.eclipse.org/MoDisco/kdm/code,http://www.eclipse.org/MoDisco/kdm/source,http://www.eclipse.org/MoDisco/kdm/action,http://www.eclipse.org/MoDisco/kdm/kdm" read="true" store="false"></epsilon.emf.loadModel>
-		<epsilon.emf.loadModel name="kdmMicro" modelfile="${SubKdm}" metamodeluri="http://subkdm/kdmobjects,http://subkdm/kdmrelations,http://subkdm/sdm" read="false" store="true"></epsilon.emf.loadModel>
+		<epsilon.emf.loadModel name="kdmMicro" modelfile="${SubKdm}" metamodeluri="http://subkdm/kdmobjects,http://subkdm/kdmrelations,http://subkdm/sdm" read="false" store="true"></epsilon.emf.loadModel>		
 	</target>
 		
 	<target name="Kdm2Kdm" depends="loadModelsT1">
@@ -99,10 +100,10 @@
 	
 	<target name="main">		
 		<antcall target="Kdm2Kdm" inheritall="true"></antcall>
-		<antcall target="micro2sdm"></antcall>
+		<antcall target="micro2sdm"></antcall> 
 		<antcall target="sdm2Representacion"></antcall>
 		<antcall target="representacion2Visualizacion"></antcall>
-		<antcall target="representacion2Simplificacion"></antcall> 
+		<antcall target="representacion2Simplificacion"></antcall>
 		
 		 <!-- epsilon.disposeModels></epsilon.disposeModels> -->  
 	</target>

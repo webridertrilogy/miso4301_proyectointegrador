@@ -49,10 +49,12 @@ public class EJBClusterer {
 		for(CodeItem ejb : ejbs){
 			Cluster mod = factory.createCluster();
 			mod.setName(ejb.getName());
+			System.out.println("Verificando caminos de " + ejb.getName() + " hacia entities");
 			
 			Set<CodeItem> elementos = new HashSet<CodeItem>();
 			
-			for(CodeItem elem : getHeritageTree(ejb)){
+			// por cada EJB detecta todas las clases que hay en un camino hacia una entidad
+			for(CodeItem elem : getHeritageTree(ejb)){ 
 				elementos.add(elem);
 				for(Set<CodeItem> entityHt : allEntityHt)
 				{
@@ -67,29 +69,48 @@ public class EJBClusterer {
 						}
 					}
 				}
+				
 			}
-			
+						
 			List<CodeItem> allNodes = new ArrayList<CodeItem>(graph.getVertices());
 			allNodes.removeAll(elementos);
-			
+						
+			//Ahora por cada clase enocntrada en el camino, se buscan sus clases relacionadas
 			Set<CodeItem> extras = new HashSet<CodeItem>();
 			for (CodeItem elem : elementos){
 				for(CodeItem item : allNodes)
 				{
-					for(ClassLevelRelation clr : sp.getPath(elem, item)){
-						extras.add(clr.getFrom());
-						extras.add(clr.getTo());
+
+					
+					// teniendo la clase relacionada como origen
+					for (CodeItem itemH : getHeritageTree(item)) {
+						
+						for(ClassLevelRelation clr : sp.getPath(elem, itemH)){
+							extras.add(clr.getFrom());
+							extras.add(clr.getTo());
+						}
 					}
 						
-					for(ClassLevelRelation clr : sp.getPath(item, elem)){
-						extras.add(clr.getFrom());
-						extras.add(clr.getTo());
+					// teniendo la clase relacionada como destino (solo herencias)
+					for (CodeItem itemH : getHeritageTree(item)) {
+						boolean todoEsHerencia = true;
+						for(ClassLevelRelation clr : sp.getPath(itemH, elem)){
+							if (!isExtensionOrImplementation(clr)) {
+								todoEsHerencia = false;
+							}
+						}
+						
+						if (todoEsHerencia) {
+							for(ClassLevelRelation clr : sp.getPath(itemH, elem)){
+									extras.add(clr.getFrom());
+									extras.add(clr.getTo());								
+							}
+						}
 					}
 				}
 			}
 			
-			elementos.addAll(extras);
-			
+			elementos.addAll(extras);			
 			mod.getCodeElement().addAll(elementos);
 			firstclusters.add(mod);
 		}
@@ -109,12 +130,13 @@ public class EJBClusterer {
 	
 	public Set<CodeItem> getHeritageTree(CodeItem item){
 		Set<CodeItem> set = new HashSet<CodeItem>();
+		set.add(item);
 		Collection<ClassLevelRelation> allclr = graph.getOutEdges(item);
 		
 		for(ClassLevelRelation clr: allclr){
-			if(isExtensionOrImplementation(clr)){
-				System.out.println("-----relación: " + clr.getFrom() + " a " + clr.getTo());
+			if(isExtensionOrImplementation(clr)){				
 				set.add(clr.getFrom());
+				set.add(clr.getTo());
 				set.addAll(getHeritageTree(clr.getTo()));
 			}
 		}

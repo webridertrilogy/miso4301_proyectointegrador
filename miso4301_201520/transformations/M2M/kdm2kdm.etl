@@ -19,15 +19,14 @@ operation executeClusteres(){
   	var classes = modelElem.getAllContents()->select(class|class.isTypeOf(kdmMicro!ClassUnit) or class.isTypeOf(kdmMicro!InterfaceUnit) or class.isTypeOf(kdmMicro!TemplateUnit));
 	
 	var clases2 = classes->asSet()->select(class|not(class.isTypeOf(kdmMicro!PrimitiveType) or class.isTypeOf(kdmMicro!TemplateParameter) or class.isTypeOf(kdmMicro!FloatType) or class.isTypeOf(kdmMicro!IntegerType) or class.isTypeOf(kdmMicro!VoidType)));
-	" clases totales".println(clases2.size());
+	" clases totales ".println(clases2.size());
 	var relations = kdmMicro!ClassLevelRelation.allInstances();
 	var clusterTool = new Native("clusterer.EJBClusterer");
 	
 	var ejbs = new Set;
 	var entities = new Set;
 	
-	for(c in clases2){
-		" nom".println(c);
+	for(c in clases2){		
 		if (c.containsEntity()){
 			entities.add(c);
 		}
@@ -35,6 +34,8 @@ operation executeClusteres(){
 			ejbs.add(c);
 		}
 	}
+	(" clases EJB: " + ejbs).println(ejbs.size());
+	(" clases entidad: " + entities).println(entities.size());	
 	
 	clusterTool.constructGraph(clases2->asSet(),relations->asSet());
 	
@@ -60,10 +61,12 @@ operation executeClusteres(){
 	for(cluster in clusters){
 		union.addAll(cluster.codeElement);
 	}
-	
-	var noClasificadas = union->asSet()->select(c| clases2->asSet()->select(a|a.name==c.name)->isEmpty());
-	
-	noClasificadas.println();
+		
+	var noClasificadas =   clases2->asSet()->select(c | union->asSet()->select(a|a.name==c.name)->isEmpty());
+	("********************  Clases no clasificadas en algun cluster EJB (no aparece en algun camino)  *******: ").println();
+	for (noClasificada in noClasificadas) {
+		(noClasificada.name).println();
+	}
 	
 	var i = 1;
 	for(a in clusters){

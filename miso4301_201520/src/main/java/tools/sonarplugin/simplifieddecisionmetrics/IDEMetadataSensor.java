@@ -1,23 +1,9 @@
 package tools.sonarplugin.simplifieddecisionmetrics;
 
-import java.util.Collection;
-import java.util.Iterator;
-
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.util.EcoreEList;
-import org.eclipse.epsilon.emc.emf.EmfModel;
-import org.eclipse.modisco.kdm.source.discoverer.internal.KDMSourceDiscoverer;
 import org.sonar.api.batch.Sensor;
 import org.sonar.api.batch.SensorContext;
-import org.sonar.api.measures.Measure;
 import org.sonar.api.resources.Project;
-import org.sonar.api.resources.Project.AnalysisType;
 import org.sonar.api.scan.filesystem.ModuleFileSystem;
-
-import tools.sonarplugin.simplifieddecisionmetrics.transformer.EpsilonStandaloneExecuter;
-import tools.sonarplugin.simplifieddecisionmetrics.transformer.SubKDM2SDMTransformation;
 
 public class IDEMetadataSensor implements Sensor {
 
@@ -32,7 +18,7 @@ public class IDEMetadataSensor implements Sensor {
 	}
 
 	public void analyse(Project projectInfo, SensorContext sensorContext) {
-
+/*
 		try {
 			final KDMSourceDiscoverer disco = new KDMSourceDiscoverer();
 			final Resource modelKDM = disco.getKDMModelFromDirectory(fileSystem
@@ -104,6 +90,8 @@ public class IDEMetadataSensor implements Sensor {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		*/
+		
 
 	}
 }
