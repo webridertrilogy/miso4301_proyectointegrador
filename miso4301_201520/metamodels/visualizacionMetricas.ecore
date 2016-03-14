@@ -67,6 +67,10 @@
     <eClassifiers xsi:type="ecore:EClass" name="Modulo" eSuperTypes="#//Nodo"/>
     <eClassifiers xsi:type="ecore:EClass" name="ClaseR" eSuperTypes="#//Nodo">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="compartida" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="isService" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="isInterface" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="clasesHeredadas" upperBound="-1"
+          eType="#//representacion/ClaseR"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Archivo" eSuperTypes="#//Nodo"/>
     <eClassifiers xsi:type="ecore:EClass" name="Servicio" eSuperTypes="#//Vinculo"/>
@@ -83,16 +87,21 @@
           eType="#//AtributoCM"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="returnType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="visibility" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="sourceCluster" eType="#//representacion/Cluster"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="clase" eType="#//representacion/ClaseR"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombreMetodo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="microservicio" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Atributo" eSuperTypes="#//Hoja"/>
     <eClassifiers xsi:type="ecore:EClass" name="Intercepcion" eSuperTypes="#//Vinculo">
       <eStructuralFeatures xsi:type="ecore:EReference" name="arco" lowerBound="1"
           eType="#//Arco"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Microservicio" eSuperTypes="#//Vinculo"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Microservicio" eSuperTypes="#//Vinculo">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="clases" upperBound="-1"
+          eType="#//representacion/ClaseR"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="invocacionesServicios"
+          upperBound="-1" eType="#//representacion/Invocacion"/>
+    </eClassifiers>
   </eSubpackages>
   <eSubpackages name="visualizacion" nsURI="http://visualizacionMetricas3/visualizacion"
       nsPrefix="visualizacionMetricas3.visualizacion">

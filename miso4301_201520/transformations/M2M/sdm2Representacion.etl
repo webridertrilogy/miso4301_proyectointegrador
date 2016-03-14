@@ -39,7 +39,15 @@ to o: target!Cluster{
   	{
 	  	var class = new target!ClaseR();
 	  	class.name = codeItem.name;
+	  	class.isService = codeItem.isService;
 	    class.compartida = "false";
+	    if (codeItem.isTypeOf(kdmMicro!InterfaceUnit)) {
+	    	 class.isInterface = "true";
+	    }
+	    else {
+	    	 class.isInterface = "false";
+	    }
+	    
 	  	class.AddMetricsClass(codeItem);
 	  	
 	  	class.AddElementsToClass(codeItem);
@@ -285,34 +293,54 @@ operation crearMicroservivios(){
 	}
 	
 	// relaciones entre microservicios
-	"Calculando asociaciones entre microservicios...".println();
+	"Calculando asociaciones entre microservicios...".println();		
 	for (microservicio in target!Microservicio.allInstances()) {
 			microservicio.relaciones = new Set;
+			microservicio.clases = new Set;
+			microservicio.invocacionesServicios = new Set;
 			var msAsociados = new Set;
+			var clasesRMS = new Set;
 			("  ...Verificando " + microservicio.name).println();
-			for (ejb in microservicio.elementos) {						
-						for (relacion in ejb.relaciones) {
-							for (arco in relacion.select(a | not a.tipos->select(t | t.isTypeOf(target!Asociacion)).isEmpty())) {
-								var ejbTarget = arco.target;								
-								for (msTemp in target!Microservicio.allInstances().select(m | m.name <> microservicio.name)) {
-									for (ejbTemp in msTemp.elementos) {
-										if (ejbTarget.name = ejbTemp.name) {
-											if (msAsociados->includes(msTemp.name)) {
-												continue;
+			
+			// Obtiene las clases/interfaces tipo Servicio en ambos MicroServicios y verifica los
+			// llamados entre ellos
+			for (cluster in microservicio.elementos) {	
+						microservicio.clases.addAll(cluster.elementos);					
+						clasesRMS.addAll(cluster.elementos.select(c| c.isService = "true" ));											
+			}
+			
+			
+			for (msTemp in target!Microservicio.allInstances().select(m | m.name <> microservicio.name)) {
+				//("  ->Comparando con " + msTemp.name).println();
+				var clasesRMSTemp = new Set;
+				for (cluster in msTemp.elementos) {	
+						clasesRMSTemp.addAll(cluster.elementos.select(c| c.isService = "true" ));						
+				}
+				
+				for (claseServicioOrigen in clasesRMS ) {
+					for (claseServicioDestino in clasesRMSTemp) {
+						//("  --->Clase orignen  " + claseServicioOrigen.name + " clase destino " + claseServicioDestino.name).println();
+						var invocacionesServicioOrigen = 
+								target!Invocacion.allInstances().select(i | i.fromMethod.clase.name = claseServicioOrigen.name and   i.toMethod.clase.name = claseServicioDestino.name);
+						for (invocacion in invocacionesServicioOrigen) {
+											if (not msAsociados->includes(msTemp.name)) {
+												//("  -------> agregando relacion " + microservicio.name + " a" + msTemp.name).println();
+												var arco = new target!Arco;
+												arco.target =  msTemp;
+											    arco.source = microservicio;	
+											    arco.tipos.add(asociacion);
+											    msAsociados.add(msTemp.name);									    
+											    microservicio.relaciones.add(arco);
 											}
-											var arco = new target!Arco;
-											arco.target =  msTemp;
-										    arco.source = microservicio;	
-										    arco.tipos.add(asociacion);
-										    msAsociados.add(msTemp.name);									    
-										    microservicio.relaciones.add(arco);
-										}
-									}
-								}
-							}
-						}			
+							invocacion.fromMethod.microservicio = microservicio.name;
+							invocacion.toMethod.microservicio =	msTemp.name;										
+							microservicio.invocacionesServicios.add(invocacion);				
+						}
+					}
+				}
 				
 			}
+			
 	}	
 			
 		
@@ -447,7 +475,26 @@ operation CreateDependecies(){
 	for(nodo in nodosClases)
 	{	
 		nodo.GetRelationsClass(classLR, nodosClases);
-	}	
+	}
+	
+	CreateClasesHeredadas();	
+}
+
+// Instancia las interfaces heradadas de cada ejb
+operation CreateClasesHeredadas(){
+
+	var ejbs = target!ClaseR.allInstances().select(c | c.isService = "true" and c.isInterface = "false");
+	for (ejb in ejbs) {
+		ejb.clasesHeredadas = new Set;		
+		var claseOriginal = kdmMicro!ClassUnit.allInstances().select(c | c.name = ejb.name).first();		
+		if (claseOriginal.clasesHeredadas.isDefined()){
+			for (interfaceOriginal in claseOriginal.clasesHeredadas) {
+				var interface = target!ClaseR.allInstances().select(c | c.name = interfaceOriginal.name).first();
+				ejb.clasesHeredadas.add(interface);
+			}
+		}
+	}
+	
 }
 
 //Obtiene las relaciones de cada clase 

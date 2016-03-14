@@ -16,7 +16,10 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
           defaultValueLiteral=""/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="CodeItem" eSuperTypes="#//kdmObjects/AbstractCodeElement"/>
+    <eClassifiers xsi:type="ecore:EClass" name="CodeItem" eSuperTypes="#//kdmObjects/AbstractCodeElement">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="isService" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral=""/>
+    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Module" eSuperTypes="#//kdmObjects/CodeItem">
       <eStructuralFeatures xsi:type="ecore:EReference" name="codeElement" upperBound="-1"
           eType="#//kdmObjects/AbstractCodeElement" containment="true"/>
@@ -27,6 +30,8 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="codeElement" upperBound="-1"
           eType="#//kdmObjects/CodeItem" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="isAbstract" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="clasesHeredadas" upperBound="-1"
+          eType="#//kdmObjects/InterfaceUnit"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="InterfaceUnit" eSuperTypes="#//kdmObjects/DataType">
       <eStructuralFeatures xsi:type="ecore:EReference" name="codeElement" upperBound="-1"

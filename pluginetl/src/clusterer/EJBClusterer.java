@@ -5,14 +5,17 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import subkdm.kdmObjects.Cluster;
-import subkdm.kdmObjects.CodeItem;
-import subkdm.kdmObjects.KdmObjectsFactory;
-import subkdm.kdmRelations.ClassLevelRelation;
-import subkdm.kdmRelations.TypeRelation;
+
 import edu.uci.ics.jung.algorithms.shortestpath.DijkstraShortestPath;
 import edu.uci.ics.jung.graph.DirectedGraph;
 import edu.uci.ics.jung.graph.DirectedSparseMultigraph;
+import subkdm.kdmObjects.ClassUnit;
+import subkdm.kdmObjects.Cluster;
+import subkdm.kdmObjects.CodeItem;
+import subkdm.kdmObjects.InterfaceUnit;
+import subkdm.kdmObjects.KdmObjectsFactory;
+import subkdm.kdmRelations.ClassLevelRelation;
+import subkdm.kdmRelations.TypeRelation;
 
 public class EJBClusterer {
 	
@@ -48,14 +51,20 @@ public class EJBClusterer {
 		
 		for(CodeItem ejb : ejbs){
 			Cluster mod = factory.createCluster();
-			mod.setName(ejb.getName());
+			mod.setName(ejb.getName()); 
 			System.out.println("Verificando caminos de " + ejb.getName() + " hacia entities");
 			
 			Set<CodeItem> elementos = new HashSet<CodeItem>();
+			Set<InterfaceUnit> clasesPadre = new  HashSet<InterfaceUnit>();
 			
 			// por cada EJB detecta todas las clases que hay en un camino hacia una entidad
 			for(CodeItem elem : getHeritageTree(ejb)){ 
 				elementos.add(elem);
+				elem.setIsService("true"); // marca al ejb o sus interfaces como servicios
+				if (!elem.getName().equals(ejb.getName()) && elem instanceof InterfaceUnit) {
+					clasesPadre.add((InterfaceUnit)elem);
+				}
+				
 				for(Set<CodeItem> entityHt : allEntityHt)
 				{
 					for(CodeItem entHtElem : entityHt)
@@ -110,6 +119,7 @@ public class EJBClusterer {
 				}
 			}
 			
+			((ClassUnit)ejb).getClasesHeredadas().addAll(clasesPadre);
 			elementos.addAll(extras);			
 			mod.getCodeElement().addAll(elementos);
 			firstclusters.add(mod);
