@@ -197,7 +197,7 @@ extends ComputationalObject2ComputationalObject{
 	o.type = t.type.equivalent();
 	
 	o.codeElement = o.codeElement.equivalent();
-	o.ext = t.ext;
+	o.`ext` = t.`ext`;
 	if(t.size.isDefined()){
 	o.size = t.size;}
 }
