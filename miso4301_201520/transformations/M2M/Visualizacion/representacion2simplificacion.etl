@@ -23,6 +23,7 @@ operation generarDiagramaSimplificado() {
 	
 	var countColor = 1;
 	var elipsesEjb = new Set();
+	
 	for (microservicio in microservicios) {
 			
 			("Conviertiendo " + microservicio.name).println();
@@ -34,19 +35,26 @@ operation generarDiagramaSimplificado() {
 			
 			elipseMs.color = rangoColores.get(countColor);
 			countColor = countColor + 1;
-			elipseMs.largo = 10;
-			elipseMs.alto = 10;
+			elipseMs.largo = 8;
+			elipseMs.alto = 8;
 			elipseMs.name = microservicio.name;
 			elipseMs.elipses = new Sequence();	
 			for (ejb in microservicio.elementos) {
-				var elipseClusterEjb =  new target!Elipse();
+				var elipseClusterEjb =  new target!Rombo();
 				elipseClusterEjb.largo = 10;
 				elipseClusterEjb.alto = 10;				
 				elipseClusterEjb.name = ejb.name;
 				elipseMs.elipses.add(elipseClusterEjb);		
 				elipsesEjb.add(elipseClusterEjb);					
+			}
+			var cant = 0;
+			for(relacion in microservicio.relaciones){
+				var microDestino = microservicios.select(e | e.name = relacion.target.name and e.isTypeOf(source!Microservicio)).first();
+				var invocacionesToMs = microservicio.invocacionesServicios.select(i | i.toMethod.microservicio = microDestino.name);
+				cant = cant + invocacionesToMs.size();
 			}			
-			
+			elipseMs.largo = elipseMs.largo + cant;
+			elipseMs.alto = elipseMs.alto + cant;
 			simplificado.elementos.add(elipseMs);
 				
 	}
@@ -81,9 +89,9 @@ operation generarDiagramaSimplificado() {
 					
 					//obtiene todas las invocaciones al ms relacionado.
 					var invocacionesToMs = microservicio.invocacionesServicios.select(i | i.toMethod.microservicio = asociacion.target.name);
-					
 					var clasesFuente = new Set;
 					var clasesDestino = new Set;
+					asociacion.nameTarget = invocacionesToMs.size().toString();
 					for (invocacion in invocacionesToMs) {
 					
 						var nombreClaseOrigen = "(" + invocacion.fromMethod.microservicio + ") " + invocacion.fromMethod.clase.name ;
@@ -105,6 +113,7 @@ operation generarDiagramaSimplificado() {
 						invocacionMetodo.name = invocacion.fromMethod.nombreMetodo + "--> (" + invocacion.toMethod.microservicio + ") " + invocacion.toMethod.clase.name + "." + invocacion.toMethod.nombreMetodo ;
 						invocacionMetodo.icono = "MessageSynchCallCreation";
 						claseFuente.elementos.add(invocacionMetodo);					
+						
 						
 						var nombreClaseDestino = "(" + invocacion.toMethod.microservicio + ") " + invocacion.toMethod.clase.name ;					
 						var claseDestino  = clasesDestino.select(c | c.name = nombreClaseDestino).first();		

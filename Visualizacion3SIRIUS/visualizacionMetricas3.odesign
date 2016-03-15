@@ -19,7 +19,7 @@
             </style>
           </conditionnalStyles>
           <conditionnalStyles predicateExpression="[self.oclIsTypeOf(Rombo)/]">
-            <style xsi:type="style:LozengeNodeDescription" labelPosition="node" resizeKind="NSEW" widthComputationExpression="feature:ancho" heightComputationExpression="feature:largo">
+            <style xsi:type="style:LozengeNodeDescription" labelPosition="node" resizeKind="NSEW" widthComputationExpression="feature:alto" heightComputationExpression="feature:largo">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
@@ -301,7 +301,7 @@
       <defaultLayer name="DefaultM1">
         <nodeMappings name="FiguraGeometricaM1" semanticCandidatesExpression="[self.elementos /]" doubleClickDescription="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Microservicios%20(Simplificacion)']/@defaultLayer/@toolSections.0/@ownedTools[name='Zoom%20FiguraGeometricaCluster']" domainClass="visualizacion.Elipse">
           <conditionnalStyles predicateExpression="[self.oclIsTypeOf(Elipse)/]">
-            <style xsi:type="style:EllipseNodeDescription" labelPosition="node" resizeKind="NSEW" horizontalDiameterComputationExpression="15" verticalDiameterComputationExpression="15">
+            <style xsi:type="style:EllipseNodeDescription" labelPosition="node" resizeKind="NSEW" horizontalDiameterComputationExpression="feature:largo" verticalDiameterComputationExpression="feature:alto">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
@@ -315,7 +315,7 @@
             </style>
           </conditionnalStyles>
           <conditionnalStyles predicateExpression="[self.oclIsTypeOf(Rombo)/]">
-            <style xsi:type="style:LozengeNodeDescription" labelPosition="node" resizeKind="NSEW" widthComputationExpression="feature:ancho" heightComputationExpression="feature:largo">
+            <style xsi:type="style:LozengeNodeDescription" labelPosition="node" resizeKind="NSEW" widthComputationExpression="feature:alto" heightComputationExpression="feature:largo">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
@@ -631,7 +631,7 @@
             </style>
           </conditionnalStyles>
           <conditionnalStyles predicateExpression="[self.oclIsTypeOf(Rombo)/]">
-            <style xsi:type="style:LozengeNodeDescription" labelPosition="node" resizeKind="NSEW" widthComputationExpression="feature:ancho" heightComputationExpression="feature:largo">
+            <style xsi:type="style:LozengeNodeDescription" labelPosition="node" resizeKind="NSEW" widthComputationExpression="feature:alto" heightComputationExpression="feature:largo">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
