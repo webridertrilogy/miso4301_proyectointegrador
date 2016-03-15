@@ -150,6 +150,13 @@ rule Cluster2Cuadrilatero
 		guard : formaCluster = "Cuadrangular"
 }
 
+rule Cluster2Rombo
+	transform i: source!Cluster
+	to o: target!Rombo 
+	extends Vinculo2FiguraGeometrica {
+		guard : formaCluster = "Rombo"
+}
+
 rule Metodo2Item
 	transform i: source!Metodo
 	to o: target!Item 

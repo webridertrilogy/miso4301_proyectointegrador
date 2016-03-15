@@ -613,9 +613,9 @@
         </customization>
       </defaultLayer>
     </ownedRepresentations>
-    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Contenedor clusters " domainClass="visualizacion.Elipse" enablePopupBars="true">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Contenedor clusters " domainClass="visualizacion.Rombo" enablePopupBars="true">
       <defaultLayer name="Default">
-        <nodeMappings name="FiguraGeometricaM2" semanticCandidatesExpression="[self.elipses /]" domainClass="visualizacion.FiguraGeometrica">
+        <nodeMappings name="FiguraGeometricaM2" semanticCandidatesExpression="[self.elipses /]" doubleClickDescription="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Contenedor%20clusters%20']/@defaultLayer/@toolSections.0/@ownedTools[name='Zoom%20Contenedor']" domainClass="visualizacion.FiguraGeometrica">
           <conditionnalStyles predicateExpression="[self.oclIsTypeOf(Elipse)/]">
             <style xsi:type="style:EllipseNodeDescription" labelPosition="node" resizeKind="NSEW" horizontalDiameterComputationExpression="feature:largo" verticalDiameterComputationExpression="feature:alto">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -645,20 +645,33 @@
             </style>
           </conditionnalStyles>
         </nodeMappings>
-        <edgeMappings name="ConectorContenedores" semanticCandidatesExpression="[self.elipses.conectores /]" sourceMapping="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Contenedor%20clusters%20']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM2']" targetMapping="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Contenedor%20clusters%20']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM2']" targetFinderExpression="[self.target /]" sourceFinderExpression="[self.source /]" domainClass="visualizacion.Conector" useDomainElement="true">
-          <style sizeComputationExpression="0">
+        <edgeMappings name="ConectorContenedores" semanticCandidatesExpression="[self.elipses.conectores /]" doubleClickDescription="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Contenedor%20clusters%20']/@defaultLayer/@toolSections.0/@ownedTools[name='Zoomm%20ConectorM1']" sourceMapping="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Contenedor%20clusters%20']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM2']" targetMapping="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Contenedor%20clusters%20']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM2']" targetFinderExpression="[self.target /]" sourceFinderExpression="[self.source /]" domainClass="visualizacion.Conector" useDomainElement="true">
+          <style targetArrow="NoDecoration" sizeComputationExpression="0">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <beginLabelStyleDescription labelExpression="[self.nameSource /]">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </beginLabelStyleDescription>
             <centerLabelStyleDescription showIcon="false" labelExpression="[self.name /]">
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </centerLabelStyleDescription>
+            <endLabelStyleDescription labelExpression="[self.nameTarget /]">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </endLabelStyleDescription>
           </style>
         </edgeMappings>
         <toolSections>
-          <ownedTools xsi:type="tool:DoubleClickDescription" name="Zoom Contenedor">
+          <ownedTools xsi:type="tool:DoubleClickDescription" name="Zoom Contenedor" mappings="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Contenedor%20clusters%20']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM2']">
             <element name="element"/>
             <elementView name="elementView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Contenedor%20clusters%20']"/>
+              <firstModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Contenedor%20clases']"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DoubleClickDescription" name="Zoomm ConectorM1" mappings="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Contenedor%20clusters%20']/@defaultLayer/@edgeMappings[name='ConectorContenedores']">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Contenedor%20llamados%20entre%20microservicios']"/>
             </initialOperation>
           </ownedTools>
         </toolSections>

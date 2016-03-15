@@ -1,6 +1,16 @@
+import "representacion2visualizacion.metricas.etl";
+import "representacion2visualizacion.elementos.etl";
+import "representacion2visualizacion.conectores.etl";
+import "representacion2visualizacion.vinculos.etl";
+import "representacion2visualizacion.utils.etl";
+
+
 pre {
-  "Running Simplification Transformation".println();
-    eliminarDiagramasDuplicados();
+  	"Running Visulization Transformationd".println();
+	var formaCluster = "Rombo";
+  	//var formaCluster = "Triangular";
+  	//var formaCluster = "Cuadrangular";
+    eliminarDiagramasDuplicadosSim();
 	var microservicios = source!Microservicio.allInstances();	
 	var rangoColores = Sequence {target!Color#blue, target!Color#green, target!Color#yellow, target!Color#orange, target!Color#red, target!Color#purple, target!Color#gray};  
 	var simplificado = new target!Diagrama();
@@ -9,15 +19,51 @@ pre {
 	simplificado.isRoot = true;
 }
 
-operation eliminarDiagramasDuplicados() {
+operation eliminarDiagramasDuplicadosSim() {
 	delete target!ElementoDiagrama.allInstances();
-	delete target!Asociacion.allInstances();
-	
+	delete target!Asociacion.allInstances();	
 }
 
+post transformacionSimplificacion {
+	generarDiagramaSimplificado();
+}
 
-operation generarDiagramaSimplificado() {	
-	"Numero microservicios obtenidos: ".print();
+operation generarDiagramaSimplificado() {
+	"EliminarDiagramasDuplicados".println();
+	eliminarDiagramasDuplicados();
+	
+	"\n\nActualizarReferenciasTarget".println();
+	actualizarReferenciasTarget();
+	
+	"\n\nActualizarReferenciasDiagrama".println();
+	actualizarReferenciasDiagrama();
+	
+	"\n\nEliminarConectoresSinTarget".println();
+	eliminarConectoresSinTarget();
+
+	"\nCalcularRangoMetricas".println();
+	calcularRangoMetricas();
+	
+	"\nInstanciarMetricasFigurasGeometricas".println();
+	instanciarMetricasFigurasGeometricas();
+	
+	"\n\nInstanciarMetricasConectores".println();
+	instanciarMetricasConectores();
+	
+	var itemsdelete = target!Item.allInstances()->select(c | not c.name.isDefined());
+	
+	"\tNúmero itemsDelete: ".println();
+	itemsdelete.size().println();
+	
+	for (c in itemsdelete) {
+		delete c;
+	}
+
+	delete target!InvocacionV.allInstances();
+	delete target!Paquete.allInstances();
+	delete target!RelacionInvocacion.allInstances();
+		
+	"Numero microservicios obtenidos: ".println();
 	microservicios.size().println();
 	
 	
@@ -40,12 +86,13 @@ operation generarDiagramaSimplificado() {
 			elipseMs.name = microservicio.name;
 			elipseMs.elipses = new Sequence();	
 			for (ejb in microservicio.elementos) {
-				var elipseClusterEjb =  new target!Rombo();
-				elipseClusterEjb.largo = 10;
-				elipseClusterEjb.alto = 10;				
-				elipseClusterEjb.name = ejb.name;
-				elipseMs.elipses.add(elipseClusterEjb);		
-				elipsesEjb.add(elipseClusterEjb);					
+				var ejbSource = target!Rombo.allInstances().select(t | t.name = ejb.name).first();
+				//var elipseClusterEjb =  new target!Rombo();
+				//elipseClusterEjb.largo = 10;
+				//elipseClusterEjb.alto = 10;				
+				//elipseClusterEjb.name = ejb.name;
+				elipseMs.elipses.add(ejbSource);		
+				elipsesEjb.add(ejbSource);					
 			}
 			var cant = 0;
 			for(relacion in microservicio.relaciones){
@@ -146,71 +193,10 @@ operation generarDiagramaSimplificado() {
  					elipseSource.conectores.add(asociacion);
 		}						
 	}
-	
-	// conectores entre elipses de clusters EJB (los cuales estan dentro de las elipses de micros)
-	for (ejb in source!Cluster.allInstances()) {
-		var ejbAsociados = new Set;
-		var elipseSource = elipsesEjb.select(e | e.name = ejb.name and e.isTypeOf(target!Rombo)).first();
-		if (elipseSource.isDefined()) {			
-			elipseSource.conectores = new Set;	
-			for(relacion in ejb.relaciones){
-						
-						var asociacion = new target!Asociacion();					
-						asociacion.color = target!Color#black;
-						asociacion.estilo = target!EstiloLinea#SOLIDA;
-						asociacion.enrutamiento = target!TipoEnrutamiento#DIRECTO;
-						asociacion.flecha_source = target!TipoFlecha#NO_TIENE;
-						asociacion.flecha_target = target!TipoFlecha#NO_TIENE;					
-						asociacion.source = elipseSource;
-						asociacion.target = elipsesEjb.select(e | e.name = relacion.target.name and e.isTypeOf(target!Rombo)).first(); 
-						//subAsociacion.diagrama = conecOrigen.diagrama; 					
-	 					if (ejbAsociados->includes(asociacion.target.name)) {
-							continue;
-						}
-						if (asociacion.source.name = asociacion.target.name ) {
-							continue;
-						}
-													
-						
-						ejbAsociados.add(asociacion.target.name);
-						elipseSource.conectores.add(asociacion);
-						
-	 					
-			}		
-		}				
-	}
-	
-	/*
-	// todas las clases del microservicio
-	var clasesModelo = new Set;
-	for (microservicio in microservicios) {
-	
-	  var elipseMicroservicio = simplificado.elementos.select(e | e.name = microservicio.name and e.isTypeOf(target!Elipse)).first();
-	
-	  var  diagramaClases = new target!Diagrama;
-	  diagramaClases.name = "Clases " + microservicio.name;
-	  diagramaClases.elementos = new Sequence();
-	  diagramaClases.isRoot = false;	
-	  elipseMicroservicio.diagrama = 	diagramaClases;	
-	 
-	 
-	  for(clusterEjb in microservicio.elementos) {
-	  	for (claseR in clusterEjb.elementos) {	  
-			var claseV = clasesModelo.select(c | c.name = claseR.name).first();	
-	  		 if (not claseV.isDefined()) {	  		 	
-	  		 	claseV  = new target!Clase();
-				claseV.elementos = new Set();
-				claseV.name = claseR.name ;	
-				clasesModelo.add(claseV);
-				
-	  		 }
-			diagramaClases.elementos.add(claseV);
-	  	}
-	  }
-	}*/
+
 	
 }
 
 post {
-	generarDiagramaSimplificado();
+	"\n\nDone".println();
 }
