@@ -4,15 +4,15 @@
 	xsi:noNamespaceSchemaLocation ="kdmResult.xsd">
 	<microservices>
 [%
-	for(cluster in diagrama.elementos) 
+	for(microservicio in Microservicio.all) 
 	{
 		%]
-		<microservice name="[%=cluster.name.replace(' ','').toLowerCase()%]">
+		<microservice name="[%=microservicio.name.replace(' ','').toLowerCase()%]">
 		[%
-			for(clases in cluster.elementos) 
+			for(cluster in microservicio.elementos) 
 			{
 				%]
-			<qualifiedType>[%=clases.name%]</qualifiedType>
+			<qualifiedType>[%=cluster.name%]</qualifiedType>
 				[%
 			}
 		%]
@@ -23,56 +23,27 @@
 	</microservices>
 	<relationships>
 [%
-	for(cluster in diagrama.elementos) 
+	for(microservicio in Microservicio.all) 
 	{
 			//Conectores que hay entre clusters
-			for(conector in cluster.conectores) 
+			for(invocacion in microservicio.invocacionesServicios) 
 			{
-				var origen = conector.source;
-				var destino = conector.target;
-				//Se recorren los diagramas que componen cada cluster iniciando por el origen
-				for(claseDiagramaOrigen in origen.elementos) 
-				{
-					var diagramaEJBOrigen = Diagrama.all.select(x| x.name == claseDiagramaOrigen.name).first();
-					//Se recorren los diagramas que componen cada cluster del destino
-					for(claseDiagramaDestino in destino.elementos) 
-					{
-						var diagramaEJBDestino = Diagrama.all.select(x| x.name == claseDiagramaDestino.name).first();
-						
-						//Se recorren las clases que tiene un EJB en el cluster origen
-						for(claseEnEJBOrigen in diagramaEJBOrigen.elementos) 
-						{						
-							//Se recorren las clases que tiene un EJB en el cluster destino
-							for(claseEnEJBDestino in diagramaEJBDestino.elementos) 
-							{
-								//var conectoresConInvocacion = claseEnEJBOrigen.conectores.select(x| x.invocaciones.size > 0);
-								//var conectoresConInvocacionP = claseEnEJBOrigen.conectores.select(x| x.invocaciones.toMethod.clase.name=("ICarritoPersistence"));
-								//var clasesRelacionadas = conectoresConInvocacion.select(x| x.invocaciones.toMethod.clase.name == claseEnEJBDestino.name);
-
-								//for(invocacionesConector in conectoresConInvocacion.invocaciones) 
-								//{
-								//}								
-								//Se recorren todos los conectores de la clase origen
-								for(conectorEnEJBOrigen in claseEnEJBOrigen.conectores) 
-								{			
-									//Se recorren todas las invocacioness de cada uno de los conectores de la clase origen
-									for(invocacionEnEJBOrigen in conectorEnEJBOrigen.invocaciones) 
-									{
-										//Si existe una invocacion a una clase del cluster destino es por que se esta llamando un metodo entre clusters							
-										if (invocacionEnEJBOrigen.toMethod.clase.name == claseEnEJBDestino.name){
-										%]
+				var invocaOrigen = invocacion.fromMethod;
+				var invocaDestino = invocacion.toMethod;
+				
+			%]
 		<methodInvocation>
 			<from>
-				<qualifiedType>[%=invocacionEnEJBOrigen.fromMethod.clase.eContainer.name%][%=invocacionEnEJBOrigen.fromMethod.clase.name%]</qualifiedType>
-				<sourceMicroservice>[%=conector.source.name.replace(' ','').toLowerCase()%]</sourceMicroservice>
+				<qualifiedType>[%=invocaOrigen.clase.eContainer.name%][%=invocaOrigen.clase.name%]</qualifiedType>
+				<sourceMicroservice>[%=invocaOrigen.microservicio.replace(' ','').toLowerCase()%]</sourceMicroservice>
 				<fromMethod>
 					<visibility>public</visibility>
-					<returnType>[%=invocacionEnEJBOrigen.fromMethod.returnType%]</returnType>
-					<methodName>[%=invocacionEnEJBOrigen.fromMethod.nombreMetodo%]</methodName>
+					<returnType>[%=invocaOrigen.returnType%]</returnType>
+					<methodName>[%=invocaOrigen.nombreMetodo%]</methodName>
 					<parameters>
 					[%
 					//Se recorren todas los atributos del metodo origen					
-					for(atributoMetodoOrigen in invocacionEnEJBOrigen.fromMethod.atributosIn) 
+					for(atributoMetodoOrigen in invocaOrigen.atributosIn) 
 					{
 					%]
 						<parameter>
@@ -86,16 +57,16 @@
 				</fromMethod>
 			</from>
 			<to>
-				<qualifiedType>[%=invocacionEnEJBOrigen.toMethod.clase.eContainer.name%][%=invocacionEnEJBOrigen.toMethod.clase.name%]</qualifiedType>
-				<targetMicroservice>[%=conector.target.name.replace(' ','').toLowerCase()%]</targetMicroservice>
+				<qualifiedType>[%=invocaDestino.clase.eContainer.name%][%=invocaDestino.clase.name%]</qualifiedType>
+				<targetMicroservice>[%=invocaDestino.microservicio.replace(' ','').toLowerCase()%]</targetMicroservice>
 				<toMethod>
 					<visibility>public</visibility>
-					<returnType>[%=invocacionEnEJBOrigen.toMethod.returnType%]</returnType>
-					<methodName>[%=invocacionEnEJBOrigen.toMethod.nombreMetodo%]</methodName>
+					<returnType>[%=invocaDestino.returnType%]</returnType>
+					<methodName>[%=invocaDestino.nombreMetodo%]</methodName>
 					<parameters>
 					[%
 					//Se recorren todas los atributos del metodo destino					
-					for(atributoMetodoDestino in invocacionEnEJBOrigen.toMethod.atributosIn) 
+					for(atributoMetodoDestino in invocaDestino.atributosIn) 
 					{
 					%]
 						<parameter>
@@ -109,14 +80,7 @@
 				</toMethod>
 			</to>
 		</methodInvocation>	
-										[%				
-										}									
-									}									
-								}
-							}								
-						}
-					}
-				}				
+			[%			
 			}
 	}
 %]
