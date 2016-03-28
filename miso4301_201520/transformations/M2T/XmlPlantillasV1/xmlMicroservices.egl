@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<migration 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation ="kdmResult.xsd">
+	<microservices>
+[%
+	for(cluster in diagrama.elementos) 
+	{
+		%]
+		<microservice name="[%=cluster.name.replace(' ','').toLowerCase()%]">
+		[%
+			for(clases in cluster.elementos) 
+			{
+				%]
+			<qualifiedType>[%=clases.name%]</qualifiedType>
+				[%
+			}
+		%]
+		</microservice>
+		[%
+	}
+%]
+	</microservices>
+	<relationships>
+[%
+	for(cluster in diagrama.elementos) 
+	{
+			//Conectores que hay entre clusters
+			for(conector in cluster.conectores) 
+			{
+				var origen = conector.source;
+				var destino = conector.target;
+				//Se recorren los diagramas que componen cada cluster iniciando por el origen
+				for(claseDiagramaOrigen in origen.elementos) 
+				{
+					var diagramaEJBOrigen = Diagrama.all.select(x| x.name == claseDiagramaOrigen.name).first();
+					//Se recorren los diagramas que componen cada cluster del destino
+					for(claseDiagramaDestino in destino.elementos) 
+					{
+						var diagramaEJBDestino = Diagrama.all.select(x| x.name == claseDiagramaDestino.name).first();
+						
+						//Se recorren las clases que tiene un EJB en el cluster origen
+						for(claseEnEJBOrigen in diagramaEJBOrigen.elementos) 
+						{						
+							//Se recorren las clases que tiene un EJB en el cluster destino
+							for(claseEnEJBDestino in diagramaEJBDestino.elementos) 
+							{
+								//var conectoresConInvocacion = claseEnEJBOrigen.conectores.select(x| x.invocaciones.size > 0);
+								//var conectoresConInvocacionP = claseEnEJBOrigen.conectores.select(x| x.invocaciones.toMethod.clase.name=("ICarritoPersistence"));
+								//var clasesRelacionadas = conectoresConInvocacion.select(x| x.invocaciones.toMethod.clase.name == claseEnEJBDestino.name);
+
+								//for(invocacionesConector in conectoresConInvocacion.invocaciones) 
+								//{
+								//}								
+								//Se recorren todos los conectores de la clase origen
+								for(conectorEnEJBOrigen in claseEnEJBOrigen.conectores) 
+								{			
+									//Se recorren todas las invocacioness de cada uno de los conectores de la clase origen
+									for(invocacionEnEJBOrigen in conectorEnEJBOrigen.invocaciones) 
+									{
+										//Si existe una invocacion a una clase del cluster destino es por que se esta llamando un metodo entre clusters							
+										if (invocacionEnEJBOrigen.toMethod.clase.name == claseEnEJBDestino.name){
+										%]
+		<methodInvocation>
+			<from>
+				<qualifiedType>[%=invocacionEnEJBOrigen.fromMethod.clase.eContainer.name%][%=invocacionEnEJBOrigen.fromMethod.clase.name%]</qualifiedType>
+				<sourceMicroservice>[%=conector.source.name.replace(' ','').toLowerCase()%]</sourceMicroservice>
+				<fromMethod>
+					<visibility>public</visibility>
+					<returnType>[%=invocacionEnEJBOrigen.fromMethod.returnType%]</returnType>
+					<methodName>[%=invocacionEnEJBOrigen.fromMethod.nombreMetodo%]</methodName>
+					<parameters>
+					[%
+					//Se recorren todas los atributos del metodo origen					
+					for(atributoMetodoOrigen in invocacionEnEJBOrigen.fromMethod.atributosIn) 
+					{
+					%]
+						<parameter>
+							<paramType>[%=atributoMetodoOrigen.type%]</paramType>
+							<paramName>[%=atributoMetodoOrigen.name%]</paramName>
+						</parameter>
+					[%
+					}
+					%]
+					</parameters>
+				</fromMethod>
+			</from>
+			<to>
+				<qualifiedType>[%=invocacionEnEJBOrigen.toMethod.clase.eContainer.name%][%=invocacionEnEJBOrigen.toMethod.clase.name%]</qualifiedType>
+				<targetMicroservice>[%=conector.target.name.replace(' ','').toLowerCase()%]</targetMicroservice>
+				<toMethod>
+					<visibility>public</visibility>
+					<returnType>[%=invocacionEnEJBOrigen.toMethod.returnType%]</returnType>
+					<methodName>[%=invocacionEnEJBOrigen.toMethod.nombreMetodo%]</methodName>
+					<parameters>
+					[%
+					//Se recorren todas los atributos del metodo destino					
+					for(atributoMetodoDestino in invocacionEnEJBOrigen.toMethod.atributosIn) 
+					{
+					%]
+						<parameter>
+							<paramType>[%=atributoMetodoDestino.type%]</paramType>
+							<paramName>[%=atributoMetodoDestino.name%]</paramName>
+						</parameter>
+					[%
+					}
+					%]
+					</parameters>
+				</toMethod>
+			</to>
+		</methodInvocation>	
+										[%				
+										}									
+									}									
+								}
+							}								
+						}
+					}
+				}				
+			}
+	}
+%]
+	</relationships>
+</migration>
