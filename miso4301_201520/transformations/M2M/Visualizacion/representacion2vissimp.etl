@@ -94,16 +94,34 @@ operation generarDiagramaSimplificado() {
 				elipseMs.elipses.add(ejbSource);		
 				elipsesEjb.add(ejbSource);					
 			}
-			var cant = 0;
-			for(relacion in microservicio.relaciones){
-				var microDestino = microservicios.select(e | e.name = relacion.target.name and e.isTypeOf(source!Microservicio)).first();
-				var invocacionesToMs = microservicio.invocacionesServicios.select(i | i.toMethod.microservicio = microDestino.name);
-				cant = cant + invocacionesToMs.size();
-			}			
-			elipseMs.largo = elipseMs.largo + cant;
-			elipseMs.alto = elipseMs.alto + cant;
+			var cantLineas = 0;
+			var cantClases = 0;
+			for (claseR in microservicio.clases) {
+				cantLineas = cantLineas + claseR.metricas.second().valor.asInteger();
+				cantClases = cantClases + 1;
+			}
+			var modulo = cantClases;
+			if (modulo > 7){
+				while (modulo > 7){
+					modulo = cantClases / 10;
+					modulo = cantClases - (modulo * 10);
+					if (modulo > 7 and modulo < 10){
+						modulo = 7;
+					}
+				}
+			}
+			if (modulo == 0){
+				modulo = 1;
+			}	
+			elipseMs.color = rangoColores.get(modulo-1);
+			//for(relacion in microservicio.relaciones){
+			//	var microDestino = microservicios.select(e | e.name = relacion.target.name and e.isTypeOf(source!Microservicio)).first();
+			//	var invocacionesToMs = microservicio.invocacionesServicios.select(i | i.toMethod.microservicio = microDestino.name);
+			//	cant = cant + invocacionesToMs.size();
+			//}			
+			elipseMs.largo = (elipseMs.largo + cantLineas)/10;
+			elipseMs.alto = (elipseMs.alto + cantLineas)/10;
 			simplificado.elementos.add(elipseMs);
-				
 	}
 
 	// conectores entre elipses de microservicios

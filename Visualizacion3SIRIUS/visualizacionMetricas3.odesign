@@ -344,16 +344,16 @@
           </style>
         </edgeMappings>
         <toolSections name="sectionM1">
-          <ownedTools xsi:type="tool:DoubleClickDescription" name="Zoom FiguraGeometricaCluster" mappings="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Microservicios%20(Simplificacion)']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']">
+          <ownedTools xsi:type="tool:DoubleClickDescription" name="Zoom FiguraGeometricaCluster" forceRefresh="true" mappings="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Microservicios%20(Simplificacion)']/@defaultLayer/@nodeMappings[name='FiguraGeometricaM1']">
             <element name="element"/>
-            <elementView name="elementView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Contenedor%20clusters%20']"/>
+              <firstModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Contenedor%20clusters%20']">
+                <subModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Contenedor%20clusters%20']"/>
+              </firstModelOperations>
             </initialOperation>
           </ownedTools>
           <ownedTools xsi:type="tool:DoubleClickDescription" name="Zoom ConectorM1" mappings="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Diagrama%20Microservicios%20(Simplificacion)']/@defaultLayer/@edgeMappings[name='ConectorM1']">
             <element name="element"/>
-            <elementView name="elementView"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Contenedor%20llamados%20entre%20microservicios']"/>
             </initialOperation>
@@ -613,7 +613,7 @@
         </customization>
       </defaultLayer>
     </ownedRepresentations>
-    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Contenedor clusters " domainClass="visualizacion.Rombo" enablePopupBars="true">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Contenedor clusters " domainClass="visualizacion.Elipse" enablePopupBars="true">
       <defaultLayer name="Default">
         <nodeMappings name="FiguraGeometricaM2" semanticCandidatesExpression="[self.elipses /]" doubleClickDescription="//@ownedViewpoints[name='Metricas']/@ownedRepresentations[name='Contenedor%20clusters%20']/@defaultLayer/@toolSections.0/@ownedTools[name='Zoom%20Contenedor']" domainClass="visualizacion.FiguraGeometrica">
           <conditionnalStyles predicateExpression="[self.oclIsTypeOf(Elipse)/]">
