@@ -3,10 +3,10 @@
 	
 	
 	<property name="Kdm" value="./models/carrito.logic_kdm.xmi"></property>
-	<property name="SubKdm" value="./models/res8/kdmResultadoSub.xmi"></property>
-	<property name="Cluster" value="./models/res8/representacion.xmi"></property>
-	<property name="Visualizacion" value="./models/res8/visualizacion.xmi"></property>
-	<property name="Simplificacion" value="./models/res8/simplificacion.xmi"></property>
+	<property name="SubKdm" value="./models/res9/kdmResultadoSub.xmi"></property>
+	<property name="Cluster" value="./models/res9/representacion.xmi"></property>
+	<property name="Visualizacion" value="./models/res9/visualizacion.xmi"></property>
+	<property name="Simplificacion" value="./models/res9/simplificacion.xmi"></property>
 	<!--<property name="Simplificacion" value="./models/res2/simplificacion3.xmi"></property>-->
 
 			
