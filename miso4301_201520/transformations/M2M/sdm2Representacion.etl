@@ -379,14 +379,20 @@ operation target!Cluster darEjbsConectados(ejbVisitados : Set) : Set {
 		target!Metrica.allInstances().select(m | m.tipo = target!TipoMetrica#ClusterRelationConflictPercentageMeasureSource and m.eContainer().source.name = self.name);
 	
 	var metricasConexionEJBActualIn = 
-		target!Metrica.allInstances().select(m | m.tipo = target!TipoMetrica#ClusterRelationConflictPercentageMeasureTarget and m.eContainer().source.name = self.name);
+		target!Metrica.allInstances().select(m | m.tipo = target!TipoMetrica#ClusterRelationConflictPercentageMeasureTarget and m.eContainer().target.name = self.name);
 		
 	for (metricaConexion in metricasConexionEJBActualOut) {
 		
+		
 		var porcentajeAcoplamientoActual = (metricaConexion.valor * 100).intValue();
 		var arco = metricaConexion.eContainer();		
-						
-		if(porcentajeAcoplamientoActual >= porcentajeAcoplamientoMicroservicios) {
+		var metricasConexionContraria = 
+			target!Metrica.allInstances().select(m | m.tipo = target!TipoMetrica#ClusterRelationConflictPercentageMeasureTarget and m.eContainer().source.name = self.name and  m.eContainer().target.name = arco.target.name).first();
+	
+		var porcentajeAcoplamientoActualOtroLado = (metricasConexionContraria.valor * 100).intValue();
+		
+		("  - - out " + arco.target.name + " " + metricaConexion.valor * 100 + " " + metricasConexionContraria.valor * 100).println();
+		if(porcentajeAcoplamientoActual >= porcentajeAcoplamientoMicroservicios or porcentajeAcoplamientoActualOtroLado >= porcentajeAcoplamientoMicroservicios) {
 			if (ejbVisitados->includes(arco.target.name)) {				
 				continue;
 			}
@@ -401,14 +407,20 @@ operation target!Cluster darEjbsConectados(ejbVisitados : Set) : Set {
 		
 		var porcentajeAcoplamientoActual = (metricaConexion.valor * 100).intValue();
 		var arco = metricaConexion.eContainer();		
-		if(porcentajeAcoplamientoActual >= porcentajeAcoplamientoMicroservicios) {
-			if (ejbVisitados->includes(arco.target.name)) {				
+		var metricasConexionContraria = 
+			target!Metrica.allInstances().select(m | m.tipo = target!TipoMetrica#ClusterRelationConflictPercentageMeasureSource and m.eContainer().target.name = self.name and  m.eContainer().source.name = arco.source.name).first();
+	
+		var porcentajeAcoplamientoActualOtroLado = (metricasConexionContraria.valor * 100).intValue();
+		
+		("  - - in " + arco.source.name + " " + metricaConexion.valor * 100 + " " + metricasConexionContraria.valor * 100).println();
+		if(porcentajeAcoplamientoActual >= porcentajeAcoplamientoMicroservicios or porcentajeAcoplamientoActualOtroLado >= porcentajeAcoplamientoMicroservicios) {
+			if (ejbVisitados->includes(arco.source.name)) {				
 				continue;
 			}
 			
-			ejbConectados.add(arco.target);
-			ejbVisitados.add(arco.target.name);
-			ejbConectados.addAll(arco.target.darEjbsConectados(ejbVisitados));
+			ejbConectados.add(arco.source);
+			ejbVisitados.add(arco.source.name);
+			ejbConectados.addAll(arco.source.darEjbsConectados(ejbVisitados));
 		} 
 	}
 	
