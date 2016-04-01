@@ -496,6 +496,7 @@ operation generateClassLevelRelations(){
 	var sonsExt = modExt.getAllContents();
 	
 	//A tiene un atributo de B
+	("->Cantidad A tiene un atributo de B: " + sons->select(a| a.isTypeOf(kdmMicro!StorableUnit))->size()).println();
 	for (e in sons->select(a| a.isTypeOf(kdmMicro!StorableUnit)) ){
 		if (e.type.isDefined()){
 		    var ori = e.getParentClassUnit();
@@ -513,28 +514,31 @@ operation generateClassLevelRelations(){
 	}
 	
 	//A llama un servicio de B "calls"
+	("->Cantidad A llama un servicio de B (calls): " + sons->select(a |a.isTypeOf(kdmMicro!ActionElement) and a.name = 'method invocation' )->size()).println();
 	for (e in sons->select(a |a.isTypeOf(kdmMicro!ActionElement) and a.name = 'method invocation' )){
 		var call = e.eContents()->select(c |c.isTypeOf(kdmMicro!Calls)).first();
 		if (call <> null and (call.`from`.getParentClassUnit() <> call.`to`.getParentClassUnit())){
 
 			var ori = call.`from`.getParentClassUnit();
 			var dest = call.`to`.getParentClassUnit();
-			
-			var exists = sonsExt.ValidateClassUnitExistsInExternals(dest);
-			
-			if(not exists)
-			{
-				var crel := mod.darRelation(ori,dest);
-				var types = new  kdmMicro!TypeRelation;
-				types.name = "Uses";
-				types.call = call;
-				types.esEntreMetodos = "true";
-				crel.typeRelations.add(types);
+			if (dest.name <> 'valueOf') {
+				var exists = sonsExt.ValidateClassUnitExistsInExternals(dest);
+				
+				if(not exists)
+				{
+					var crel := mod.darRelation(ori,dest);
+					var types = new  kdmMicro!TypeRelation;
+					types.name = "Uses";
+					types.call = call;
+					types.esEntreMetodos = "true";
+					crel.typeRelations.add(types);
+				} 
 			}
 		}	
 	}
 	
 	//A tiene un metodo que referencia a B como parametro o como retorno
+	("->Cantidad A tiene un metodo que referencia a B como parametro o como retorno: " + sons->select(a |a.isTypeOf(kdmMicro!ParameterUnit))->size()).println();
 	for (e in sons->select(a |a.isTypeOf(kdmMicro!ParameterUnit))){
 		if (e.type.isDefined()){
 			var ori = e.getParentClassUnit();
@@ -552,6 +556,7 @@ operation generateClassLevelRelations(){
 	}
 
 	//A implementa B
+	("->Cantidad A implementa B: " +  sons->select(a |a.isTypeOf(kdmMicro!Implements))->size()).println();
 	for (e in sons->select(a |a.isTypeOf(kdmMicro!Implements))){
 		if (e.`from`.isDefined()){
 			var ori = e.`from`.getParentClassUnit();
@@ -569,6 +574,7 @@ operation generateClassLevelRelations(){
 	}
 	
 	//A extiende de B
+	("->Cantidad A extiende de B: " +  sons->select(a |a.isTypeOf(kdmMicro!Extends))->size()).println();
 	for (e in sons->select(a |a.isTypeOf(kdmMicro!Extends))){
 		if (e.type.isDefined()){
 			var ori = e.`from`.getParentClassUnit();
@@ -586,6 +592,7 @@ operation generateClassLevelRelations(){
 	}
 	
 	//Dentro de un metodo de una clase A se usa, modifica o instancia una variabale de tipo B - Writes/Reads/Creates
+	("->Cantidad Dentro de un metodo de una clase A se usa, modifica o instancia una variabale de tipo B - Writes/Reads/Creates: " +  sons->select(a |a.isTypeOf(kdmMicro!ActionElement) and a.name = 'ASSIGN' )->size()).println();
 	for (e in sons->select(a |a.isTypeOf(kdmMicro!ActionElement) and a.name = 'ASSIGN' )){
 		var call = e.eContents()->select(c |c.isTypeOf(kdmMicro!Writes) or c.isTypeOf(kdmMicro!Reads) or c.isTypeOf(kdmMicro!Creates)).first();	
 		if (call.isDefined()){
@@ -607,6 +614,7 @@ operation generateClassLevelRelations(){
 	}
 	
 	//Anotaciones - HasValue
+	("->Cantidad Anotaciones - HasValue: " +  sons->select(a |a.isTypeOf(kdmMicro!HasValue))->size()).println();
 	for (e in sons->select(a |a.isTypeOf(kdmMicro!HasValue))){
 	    var call = e.eContents()->select(c |c.isTypeOf(kdmMicro!Annotation)).first(); 	
 		if (call.isDefined() and  e.`from`.getParentClassUnit() <> e.`to`.getParentClassUnit()){
@@ -628,7 +636,7 @@ operation generateClassLevelRelations(){
 //Obtiene la clase "CodeItem" que contiene o a la que pertenece el AbstractCodeElement 
 operation kdmMicro!AbstractCodeElement getParentClassUnit() : kdmMicro!CodeItem{
 	var class = self;
-	while (not (class.isTypeOf(kdmMicro!PrimitiveType) or class.isTypeOf(kdmMicro!TemplateParameter) or class.isTypeOf(kdmMicro!FloatType) or class.isTypeOf(kdmMicro!IntegerType) or  class.isTypeOf(kdmMicro!VoidType) or class.isTypeOf(kdmMicro!TemplateType) or class.isTypeOf(kdmMicro!ClassUnit) or class.isTypeOf(kdmMicro!InterfaceUnit) or class.isTypeOf(kdmMicro!TemplateUnit))){
+	while (class.name <> 'valueOf' and not (class.isTypeOf(kdmMicro!PrimitiveType) or class.isTypeOf(kdmMicro!TemplateParameter) or class.isTypeOf(kdmMicro!FloatType) or class.isTypeOf(kdmMicro!IntegerType) or  class.isTypeOf(kdmMicro!VoidType) or class.isTypeOf(kdmMicro!TemplateType) or class.isTypeOf(kdmMicro!ClassUnit) or class.isTypeOf(kdmMicro!InterfaceUnit) or class.isTypeOf(kdmMicro!TemplateUnit))){
 			class = class.eContainer();
 	}
 	return class;
@@ -708,5 +716,5 @@ operation kdmMicro!CodeItem containsEntity(): Boolean
 
 operation kdmMicro!CodeItem containsEJB(): Boolean
 {
-	return self.codeRelation.select(hasValue | hasValue.isTypeOf(kdmMicro!HasValue) and hasValue.annotation.size() > 0 and (hasValue.`to`.name.equalsIgnoreCase("Stateless") or hasValue.`to`.name.equalsIgnoreCase("Stateful") or hasValue.`to`.name.equalsIgnoreCase("Remote") ) ).size > 0;
+	return self.codeRelation.select(hasValue | hasValue.isTypeOf(kdmMicro!HasValue) and hasValue.annotation.size() > 0 and (hasValue.`to`.name.equalsIgnoreCase("Stateless") or hasValue.`to`.name.equalsIgnoreCase("Stateful") or hasValue.`to`.name.equalsIgnoreCase("Remote") or hasValue.`to`.name.equalsIgnoreCase("Service")  or hasValue.`to`.name.equalsIgnoreCase("Repository") ) ).size > 0;
 }
