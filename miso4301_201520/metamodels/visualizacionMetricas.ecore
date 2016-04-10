@@ -64,7 +64,6 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Cluster" eSuperTypes="#//Vinculo"/>
     <eClassifiers xsi:type="ecore:EClass" name="Paquete" eSuperTypes="#//Nodo"/>
-    <eClassifiers xsi:type="ecore:EClass" name="Modulo" eSuperTypes="#//Nodo"/>
     <eClassifiers xsi:type="ecore:EClass" name="ClaseR" eSuperTypes="#//Nodo">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="compartida" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="isService" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -72,10 +71,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="clasesHeredadas" upperBound="-1"
           eType="#//representacion/ClaseR"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Archivo" eSuperTypes="#//Nodo"/>
-    <eClassifiers xsi:type="ecore:EClass" name="Servicio" eSuperTypes="#//Vinculo"/>
     <eClassifiers xsi:type="ecore:EClass" name="Tabla" eSuperTypes="#//Nodo"/>
-    <eClassifiers xsi:type="ecore:EClass" name="Form" eSuperTypes="#//Nodo"/>
     <eClassifiers xsi:type="ecore:EClass" name="Aplicacion" eSuperTypes="#//Nodo"/>
     <eClassifiers xsi:type="ecore:EClass" name="Dependencia" eSuperTypes="#//TipoRelacion"/>
     <eClassifiers xsi:type="ecore:EClass" name="Asociacion" eSuperTypes="#//TipoRelacion"/>

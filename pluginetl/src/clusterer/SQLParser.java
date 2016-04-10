@@ -170,7 +170,8 @@ public class SQLParser {
 	
 	public static void main(String...strings){
 		SQLParser p = new SQLParser();
-		p.analyzeSQL("C:\\Users\\caespinosam\\Documents\\uniandes\\PIN\\VersionDiego\\GITHUB\\miso4301_proyectointegrador\\miso4301_201520\\models\\votaciones-log-sql.log");
+		//p.analyzeSQL("C:\\Users\\caespinosam\\Documents\\uniandes\\PIN\\VersionDiego\\GITHUB\\miso4301_proyectointegrador\\miso4301_201520\\models\\votaciones-log-sql.log");
+		p.analyzeSQL("C:\\Andes\\ProyectoIntegraodrCodigoVF\\miso4301_201520\\models\\votaciones-log-sql.log");
 				
 	}
 }

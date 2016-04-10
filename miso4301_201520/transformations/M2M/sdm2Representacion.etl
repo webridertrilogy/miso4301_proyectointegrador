@@ -1,6 +1,6 @@
 pre {
   "Running Representacion Transformation".println();
-  
+ 
   //Se crean los tipos de relacion
   var dependencia = new target!Dependencia();
   var asociacion = new target!Asociacion();
@@ -17,7 +17,6 @@ pre {
   
   var rutaLogsSQL = 
   	System.user.prompt("Digite ruta absoluta del archivo de logs SQL (opcional)", "");
-  
 }
 
 post {
@@ -760,9 +759,27 @@ operation target!Arco AddTypeRelation(relation: kdmMicro!TypeRelation){
 }
 
 // Extrae las sentencias sql del archivo de log y los asocia a la clase que la ejecuta
-operation procesarArchivoLogSQL() {	
-  
+operation procesarArchivoLogSQL() {
+	var i = 0;
     var parser = new Native("clusterer.SQLParser");
 	var clasesTablas = parser.analyzeSQL(rutaLogsSQL);	
+    
+	for(claseTabla in clasesTablas) {
+		"entre";
+		"".println(claseTabla);
+    }
+    
+	var it = clasesTablas.keySet().iterator();
+	while (it.hasNext()) {
+		var claseTabla = it.next();
+		var nombreClase = claseTabla;
+		
+		" ".println("Clase: " + nombreClase);
+		for (relacionTabla in clasesTablas.get(claseTabla)){
+			" ".println("	Tabla: " + relacionTabla.tabla + " - TipoRelacion: " + relacionTabla.tipoRelacion);
+		}
+		//" ".println("Clase: " + clase + " -> Valor: " + clasesTablas.get(clase));
+	}
+	
 	("Resultado analisis sql: " + clasesTablas).println();
 }
