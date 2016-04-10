@@ -1,0 +1,41 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package co.uniandes.sisinfo.serviciosnegocio;
+
+import javax.ejb.Remote;
+
+/**
+ *
+ * @author Administrador
+ */
+@Remote
+public interface EventoExternoBeanRemote {
+
+    String crearEditarEventoExterno(String xml);
+
+    String consultarEventoExterno(String comandoXML);
+
+    String consultarEventosExternos(String xml);
+
+    String consultarCategorias(String xml);
+
+    String editarCategorias(String xml);
+
+    String consultarTiposCampoAdicional(String xml);
+
+    String editarTiposCampo(String xml);
+
+    String eliminarCategoria(String xml);
+
+    String eliminarTipoCampo(String xml);
+
+    String eliminarEventoExterno(String comandoXML);
+
+    String cambiarEstadoEvento(String comandoXML);
+
+    String subirImagenEventoExterno(String comandoXML);
+
+    void manejoTimmersEventoExterno(String comando);
+}
