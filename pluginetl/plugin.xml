@@ -22,5 +22,12 @@
             defaultName="EJBClusterer">
       </tool>
    </extension>
+   <extension
+         point="org.eclipse.epsilon.common.dt.tool">
+      <tool
+            class="clusterer.SQLParser"
+            defaultName="SQLParser">
+      </tool>
+   </extension>
 
 </plugin>

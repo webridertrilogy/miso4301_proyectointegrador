@@ -14,6 +14,10 @@ pre {
   var porcentajeAcoplamientoMicroservicios = 
   	System.user.promptInteger("Digite porcentaje(0-100) minimo de acomplamiento entre EJBs para calcular Microservicios", 100);
   app.name = Codemodel.name;
+  
+  var rutaLogsSQL = 
+  	System.user.prompt("Digite ruta absoluta del archivo de logs SQL (opcional)", "");
+  
 }
 
 post {
@@ -23,6 +27,8 @@ post {
     CreateDependeciesCluster();	
     "Calculando Microservicios a partir de relaciones EJB".println();
     crearMicroservivios();
+    "Analizando archivo de logs SQL".println();
+    procesarArchivoLogSQL();
 	"Done".println();
 }
 
@@ -751,4 +757,12 @@ operation target!Arco AddTypeRelation(relation: kdmMicro!TypeRelation){
 	{
 		self.tipos.add(generalizacion);
 	}
+}
+
+// Extrae las sentencias sql del archivo de log y los asocia a la clase que la ejecuta
+operation procesarArchivoLogSQL() {	
+  
+    var parser = new Native("clusterer.SQLParser");
+	var clasesTablas = parser.analyzeSQL(rutaLogsSQL);	
+	("Resultado analisis sql: " + clasesTablas).println();
 }
