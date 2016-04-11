@@ -136,7 +136,7 @@ operation generarDiagramaSimplificado() {
 		elipseSource.conectores = new Set;	
 		
 		
-		for(relacion in microservicio.relaciones){
+		for(relacion in microservicio.relaciones.select(r | r.tipos.first().isTypeOf(source!Asociacion))){
 					var elipseDestino = simplificado.elementos.select(e | e.name = relacion.target.name and e.isTypeOf(target!Elipse)).first(); 
 					var asociacion = new target!Asociacion();					
 					asociacion.color = target!Color#black;

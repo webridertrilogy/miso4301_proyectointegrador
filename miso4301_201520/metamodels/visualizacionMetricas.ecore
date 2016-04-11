@@ -109,6 +109,10 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="invocacionesServicios"
           upperBound="-1" eType="#//representacion/Invocacion"/>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Create" eSuperTypes="#//TipoRelacion"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Read" eSuperTypes="#//TipoRelacion"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Update" eSuperTypes="#//TipoRelacion"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Delete" eSuperTypes="#//TipoRelacion"/>
   </eSubpackages>
   <eSubpackages name="visualizacion" nsURI="http://visualizacionMetricas3/visualizacion"
       nsPrefix="visualizacionMetricas3.visualizacion">
