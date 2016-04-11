@@ -56,6 +56,12 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="TipoQueryEnum">
+    <eLiterals name="Create" literal="Create"/>
+    <eLiterals name="Read" value="1" literal="Read"/>
+    <eLiterals name="Update" value="2" literal="Update"/>
+    <eLiterals name="Delete" value="3" literal="Delete"/>
+  </eClassifiers>
   <eSubpackages name="representacion" nsURI="http://visualizacionMetricas3/representacion"
       nsPrefix="visualizacionMetricas3.representacion">
     <eClassifiers xsi:type="ecore:EClass" name="Invocacion">
@@ -70,8 +76,13 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="isInterface" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="clasesHeredadas" upperBound="-1"
           eType="#//representacion/ClaseR"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="tablasAccedidas" upperBound="-1"
+          eType="#//representacion/Tabla"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Tabla" eSuperTypes="#//Nodo"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Tabla" eSuperTypes="#//Nodo">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="tiposQuery" upperBound="-1"
+          eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EEnumLiteral"/>
+    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Aplicacion" eSuperTypes="#//Nodo"/>
     <eClassifiers xsi:type="ecore:EClass" name="Dependencia" eSuperTypes="#//TipoRelacion"/>
     <eClassifiers xsi:type="ecore:EClass" name="Asociacion" eSuperTypes="#//TipoRelacion"/>
