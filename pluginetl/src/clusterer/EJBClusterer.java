@@ -6,9 +6,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import edu.uci.ics.jung.algorithms.shortestpath.DijkstraShortestPath;
-import edu.uci.ics.jung.graph.DirectedGraph;
-import edu.uci.ics.jung.graph.DirectedSparseMultigraph;
 import subkdm.kdmObjects.ClassUnit;
 import subkdm.kdmObjects.Cluster;
 import subkdm.kdmObjects.CodeItem;
@@ -16,6 +13,9 @@ import subkdm.kdmObjects.InterfaceUnit;
 import subkdm.kdmObjects.KdmObjectsFactory;
 import subkdm.kdmRelations.ClassLevelRelation;
 import subkdm.kdmRelations.TypeRelation;
+import edu.uci.ics.jung.algorithms.shortestpath.DijkstraShortestPath;
+import edu.uci.ics.jung.graph.DirectedGraph;
+import edu.uci.ics.jung.graph.DirectedSparseMultigraph;
 
 public class EJBClusterer {
 	
@@ -59,6 +59,9 @@ public class EJBClusterer {
 			
 			// por cada EJB detecta todas las clases que hay en un camino hacia una entidad
 			for(CodeItem elem : getHeritageTree(ejb)){ 
+				if (elem.getName().contains("Base") || elem.getName().contains("Abstract")) {
+					continue;
+				}
 				elementos.add(elem);
 				elem.setIsService("true"); // marca al ejb o sus interfaces como servicios
 				if (!elem.getName().equals(ejb.getName()) && elem instanceof InterfaceUnit) {

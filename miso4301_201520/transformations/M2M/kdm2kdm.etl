@@ -716,5 +716,5 @@ operation kdmMicro!CodeItem containsEntity(): Boolean
 
 operation kdmMicro!CodeItem containsEJB(): Boolean
 {
-	return self.codeRelation.select(hasValue | hasValue.isTypeOf(kdmMicro!HasValue) and hasValue.annotation.size() > 0 and (hasValue.`to`.name.equalsIgnoreCase("Stateless") or hasValue.`to`.name.equalsIgnoreCase("Stateful") or hasValue.`to`.name.equalsIgnoreCase("Remote") or hasValue.`to`.name.equalsIgnoreCase("Service")  or hasValue.`to`.name.equalsIgnoreCase("Repository") ) ).size > 0;
+	return self.isTypeOf(kdmMicro!ClassUnit)  and self.codeRelation.select(hasValue | hasValue.isTypeOf(kdmMicro!HasValue) and hasValue.annotation.size() > 0 and (hasValue.`to`.name.equalsIgnoreCase("Stateless") or hasValue.`to`.name.equalsIgnoreCase("Stateful") or hasValue.`to`.name.equalsIgnoreCase("Remote") or hasValue.`to`.name.equalsIgnoreCase("Service")  or hasValue.`to`.name.equalsIgnoreCase("Repository") ) ).size > 0;
 }

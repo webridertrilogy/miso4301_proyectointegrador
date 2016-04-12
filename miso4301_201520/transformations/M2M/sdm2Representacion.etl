@@ -331,8 +331,12 @@ operation crearMicroservivios(){
 				}
 				
 				for (claseServicioOrigen in clasesRMS ) {
+					if (claseServicioOrigen.isInterface = "true") {
+						continue;
+					}
+					
 					for (claseServicioDestino in clasesRMSTemp) {
-						//("  --->Clase orignen  " + claseServicioOrigen.name + " clase destino " + claseServicioDestino.name).println();
+						("  --->Clase orignen  " + claseServicioOrigen.name + " clase destino " + claseServicioDestino.name).println();
 						
 						
 						//en caso de que la clase destino sea una interfaz de ejb, se verifica si en el mservicio destino existe la implementacion
@@ -350,13 +354,14 @@ operation crearMicroservivios(){
 								}
 							}
 						}
-						
+						("  ------>msDestinoConImpl " + msDestinoConImpl).println();
 						if (not msDestinoConImpl) { // el ms destino no tiene alguna implementacion de la interfaz ejb (se considera que el ms destino contiene la interfaz tambien como un llamado remoto hacia otro ms que sí lo contenga)
 							continue;
 						}
 						
 						var invocacionesServicioOrigen = 
 								target!Invocacion.allInstances().select(i | i.fromMethod.clase.name = claseServicioOrigen.name and   i.toMethod.clase.name = claseServicioDestino.name);
+						("  --------->msDestinoConImpl " + invocacionesServicioOrigen).println();
 						for (invocacion in invocacionesServicioOrigen) {
 											if (not msAsociados->includes(msTemp.name)) {
 												//("  -------> agregando relacion " + microservicio.name + " a" + msTemp.name).println();
