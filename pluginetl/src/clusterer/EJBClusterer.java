@@ -50,6 +50,9 @@ public class EJBClusterer {
 		
 		
 		for(CodeItem ejb : ejbs){
+			if (!(ejb instanceof ClassUnit)) {
+				continue;
+			}
 			Cluster mod = factory.createCluster();
 			mod.setName(ejb.getName()); 
 			System.out.println("Verificando caminos de " + ejb.getName() + " hacia entities");
