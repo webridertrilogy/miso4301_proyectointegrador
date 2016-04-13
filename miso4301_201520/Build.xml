@@ -3,10 +3,10 @@
 	
 	
 	<property name="Kdm" value="./models/sisinfo_core_kdm.xmi"></property>
-	<property name="SubKdm" value="./models/res4/kdmResultadoSub.xmi"></property>
-	<property name="Cluster" value="./models/res4/representacion.xmi"></property>
-	<property name="Visualizacion" value="./models/res4/visualizacion.xmi"></property>
-	<property name="Simplificacion" value="./models/res4/simplificacion.xmi"></property>
+	<property name="SubKdm" value="./models/res5/kdmResultadoSub.xmi"></property>
+	<property name="Cluster" value="./models/res5/representacion.xmi"></property>
+	<property name="Visualizacion" value="./models/res5/visualizacion.xmi"></property>
+	<property name="Simplificacion" value="./models/res5/simplificacion.xmi"></property>
 	<!--<property name="Simplificacion" value="./models/res2/simplificacion3.xmi"></property>-->
 
 			
