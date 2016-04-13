@@ -49,7 +49,6 @@ import visualizacionMetricas3.impl.VisualizacionMetricas3FactoryImpl;
  *  
  */
 public class SQLParser {
-
 	// Fabrica de elementos del modelo de visualizacion.
 	private VisualizacionMetricas3Factory factory;
 	// Patron de las lineas a extraer del log, la cual contiene una sentencia sql y la clase que la manda a ejecutar 
