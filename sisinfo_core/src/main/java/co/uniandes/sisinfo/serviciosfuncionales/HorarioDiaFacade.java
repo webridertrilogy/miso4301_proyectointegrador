@@ -12,7 +12,7 @@ import javax.persistence.PersistenceContext;
  */
 @Stateless
 public class HorarioDiaFacade implements HorarioDiaFacadeLocal, HorarioDiaFacadeRemote {
-    @PersistenceContext(unitName = "ReservasInventarioPU")
+    @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 
     public void create(HorarioDia entity) {

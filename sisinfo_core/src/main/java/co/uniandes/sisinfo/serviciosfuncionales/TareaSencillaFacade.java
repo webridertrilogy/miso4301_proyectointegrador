@@ -29,7 +29,7 @@ import org.hibernate.Hibernate;
 @EJB(name = "TareaSencillaFacade", beanInterface = co.uniandes.sisinfo.serviciosfuncionales.TareaSencillaFacadeLocal.class)
 public class TareaSencillaFacade implements TareaSencillaFacadeLocal, TareaSencillaFacadeRemote {
 
-    @PersistenceContext
+	@PersistenceContext(unitName="SoporteSisinfoPU")
     private EntityManager em;
 
     @Override

@@ -33,7 +33,7 @@ import org.hibernate.Hibernate;
 @EJB(name = "CursoFacade", beanInterface = co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.CursoFacadeRemote.class)
 public class CursoFacade implements CursoFacadeLocal, CursoFacadeRemote {
 
-    @PersistenceContext()
+	@PersistenceContext(unitName="SoporteSisinfoPU")
     private EntityManager em;
 
     @Override

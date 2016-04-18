@@ -4,6 +4,7 @@
  */
 package co.uniandes.sisinfo.serviciosfuncionales;
 
+import co.uniandes.sisinfo.base.AbstractFacade;
 import co.uniandes.sisinfo.entities.ReservaInventario;
 import co.uniandes.sisinfo.entities.ReservaMultiple;
 import java.util.Collection;
@@ -23,7 +24,7 @@ import javax.persistence.Query;
 @Stateless
 public class ReservaMultipleFacade extends AbstractFacade<ReservaMultiple> implements ReservaMultipleFacadeLocal, ReservaMultipleFacadeRemote {
 
-    @PersistenceContext(unitName = "ReservasInventarioPU")
+    @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 
     protected EntityManager getEntityManager() {

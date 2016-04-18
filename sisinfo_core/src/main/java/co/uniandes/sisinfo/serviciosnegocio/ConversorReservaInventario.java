@@ -4,6 +4,14 @@
  */
 package co.uniandes.sisinfo.serviciosnegocio;
 
+import java.sql.Timestamp;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Collection;
+import java.util.Date;
+
 import co.uniandes.sisinfo.bo.HoraBO;
 import co.uniandes.sisinfo.comun.constantes.Constantes;
 import co.uniandes.sisinfo.entities.Autorizado;
@@ -16,23 +24,10 @@ import co.uniandes.sisinfo.entities.ReservaMultiple;
 import co.uniandes.sisinfo.entities.datosmaestros.Persona;
 import co.uniandes.sisinfo.serviciosfuncionales.EncargadoFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.LaboratorioFacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.ReservaMultipleFacade;
 import co.uniandes.sisinfo.serviciosfuncionales.ReservaMultipleFacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.ServiceLocator;
 import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.PersonaFacadeRemote;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
 import co.uniandes.sisinfo.serviciosfuncionales.seguridad.AccesoLDAP;
-import java.sql.Timestamp;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Collection;
-import java.util.Date;
-import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.naming.NamingException;
 
 /**
  *

@@ -5,6 +5,19 @@
 
 package co.uniandes.sisinfo.serviciosnegocio;
 
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Date;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import javax.ejb.EJB;
+import javax.naming.NamingException;
+
 import co.uniandes.sisinfo.bo.excepciones.InformacionAcademicaException;
 import co.uniandes.sisinfo.comun.constantes.Constantes;
 import co.uniandes.sisinfo.comun.constantes.Mensajes;
@@ -20,9 +33,9 @@ import co.uniandes.sisinfo.entities.datosmaestros.Estudiante;
 import co.uniandes.sisinfo.entities.datosmaestros.InformacionAcademica;
 import co.uniandes.sisinfo.entities.datosmaestros.NivelFormacion;
 import co.uniandes.sisinfo.entities.datosmaestros.Persona;
-import co.uniandes.sisinfo.entities.soporte.Pais;
-import co.uniandes.sisinfo.entities.soporte.TipoCuenta;
-import co.uniandes.sisinfo.entities.soporte.TipoDocumento;
+import co.uniandes.sisinfo.entities.datosmaestros.soporte.Pais;
+import co.uniandes.sisinfo.entities.datosmaestros.soporte.TipoCuenta;
+import co.uniandes.sisinfo.entities.datosmaestros.soporte.TipoDocumento;
 import co.uniandes.sisinfo.serviciosfuncionales.AspiranteFacadeRemote;
 import co.uniandes.sisinfo.serviciosfuncionales.Horario_DisponibleFacadeRemote;
 import co.uniandes.sisinfo.serviciosfuncionales.MonitoriaOtroDepartamentoFacadeRemote;
@@ -40,17 +53,6 @@ import co.uniandes.sisinfo.serviciosfuncionales.seguridad.AccesoLDAP;
 import co.uniandes.sisinfo.serviciosfuncionales.soporte.PaisFacadeRemote;
 import co.uniandes.sisinfo.serviciosfuncionales.soporte.TipoCuentaFacadeRemote;
 import co.uniandes.sisinfo.serviciosfuncionales.soporte.TipoDocumentoFacadeRemote;
-import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Date;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.ejb.EJB;
-import javax.naming.NamingException;
 
 /**
  *

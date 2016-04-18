@@ -12,7 +12,7 @@ import javax.persistence.PersistenceContext;
  */
 @Stateless
 public class InformacionEmpresaFacade implements InformacionEmpresaFacadeLocal, InformacionEmpresaFacadeRemote {
-    @PersistenceContext
+	@PersistenceContext(unitName="SoporteSisinfoPU")
     private EntityManager em;
 
     public void create(InformacionEmpresa informacionEmpresa) {

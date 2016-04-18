@@ -4,12 +4,14 @@
  */
 package co.uniandes.sisinfo.serviciosnegocio;
 
+import java.sql.Timestamp;
+import java.util.Date;
+
+import javax.ejb.Local;
+
 import co.uniandes.sisinfo.entities.RangoFechas;
 import co.uniandes.sisinfo.entities.Solicitud;
 import co.uniandes.sisinfo.entities.datosmaestros.Seccion;
-import java.sql.Timestamp;
-import java.util.Date;
-import javax.ejb.Local;
 
 /**
  *

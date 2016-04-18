@@ -9,47 +9,38 @@
  */
 package co.uniandes.sisinfo.serviciosnegocio;
 
-import co.uniandes.sisinfo.entities.datosmaestros.Persona;
-import co.uniandes.sisinfo.comun.constantes.Constantes;
-import co.uniandes.sisinfo.comun.constantes.Mensajes;
-import co.uniandes.sisinfo.entities.datosmaestros.Curso;
-import co.uniandes.sisinfo.entities.datosmaestros.Facultad;
-import co.uniandes.sisinfo.entities.datosmaestros.Profesor;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.PersonaFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.ProfesorFacadeRemote;
-import co.uniandes.sisinfo.entities.datosmaestros.Parametro;
-import co.uniandes.sisinfo.entities.datosmaestros.Programa;
-import co.uniandes.sisinfo.entities.datosmaestros.Rol;
-import co.uniandes.sisinfo.entities.datosmaestros.Seccion;
-import co.uniandes.sisinfo.entities.datosmaestros.Sesion;
-import co.uniandes.sisinfo.entities.datosmaestros.Usuario;
-import co.uniandes.sisinfo.serviciosfuncionales.CorreoRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.ServiceLocator;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.CursoFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.FacultadFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.ProgramaFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.SeccionFacadeRemote;
-
-import co.uniandes.sisinfo.serviciosfuncionales.parser.Atributo;
-import co.uniandes.sisinfo.serviciosfuncionales.parser.ParserT;
-import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
-import co.uniandes.sisinfo.serviciosfuncionales.seguridad.UsuarioFacadeLocal;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.Date;
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import javax.naming.NamingException;
+
+import co.uniandes.sisinfo.comun.constantes.Constantes;
+import co.uniandes.sisinfo.comun.constantes.Mensajes;
+import co.uniandes.sisinfo.entities.datosmaestros.Curso;
+import co.uniandes.sisinfo.entities.datosmaestros.Facultad;
+import co.uniandes.sisinfo.entities.datosmaestros.Profesor;
+import co.uniandes.sisinfo.entities.datosmaestros.Programa;
+import co.uniandes.sisinfo.entities.datosmaestros.Seccion;
+import co.uniandes.sisinfo.entities.datosmaestros.Sesion;
+import co.uniandes.sisinfo.serviciosfuncionales.ServiceLocator;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.CursoFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.FacultadFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.ProfesorFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.ProgramaFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.SeccionFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.parser.Atributo;
+import co.uniandes.sisinfo.serviciosfuncionales.parser.ParserT;
+import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
 
 /**
  * Servicio de negocio: Administración de cursos

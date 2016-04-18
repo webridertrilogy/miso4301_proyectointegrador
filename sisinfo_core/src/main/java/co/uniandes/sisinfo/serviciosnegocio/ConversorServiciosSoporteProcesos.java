@@ -5,6 +5,14 @@
 
 package co.uniandes.sisinfo.serviciosnegocio;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import javax.ejb.EJB;
+import javax.naming.NamingException;
+
 import co.uniandes.sisinfo.comun.constantes.Constantes;
 import co.uniandes.sisinfo.entities.Periodicidad;
 import co.uniandes.sisinfo.entities.datosmaestros.DiaCompleto;
@@ -12,12 +20,6 @@ import co.uniandes.sisinfo.entities.datosmaestros.Sesion;
 import co.uniandes.sisinfo.serviciosfuncionales.ServiceLocator;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Atributo;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.ejb.EJB;
-import javax.naming.NamingException;
 
 /**
  *

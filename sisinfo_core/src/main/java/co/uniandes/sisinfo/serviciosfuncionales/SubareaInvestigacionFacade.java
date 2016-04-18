@@ -22,7 +22,7 @@ import org.hibernate.Hibernate;
 @Stateless
 public class SubareaInvestigacionFacade implements SubareaInvestigacionFacadeLocal, SubareaInvestigacionFacadeRemote {
 
-    @PersistenceContext(unitName = "EntitiesPU")
+    @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 
     public void create(SubareaInvestigacion subareaInvestigacion) {

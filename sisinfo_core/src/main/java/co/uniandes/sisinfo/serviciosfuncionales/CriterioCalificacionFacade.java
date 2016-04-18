@@ -5,6 +5,7 @@
 
 package co.uniandes.sisinfo.serviciosfuncionales;
 
+import co.uniandes.sisinfo.base.AbstractFacade;
 import co.uniandes.sisinfo.entities.CriterioCalificacion;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -16,7 +17,7 @@ import javax.persistence.PersistenceContext;
  */
 @Stateless
 public class CriterioCalificacionFacade extends AbstractFacade<CriterioCalificacion> implements CriterioCalificacionFacadeLocal, CriterioCalificacionFacadeRemote {
-    @PersistenceContext(unitName = "TesisMaestriaPU")
+    @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 
     protected EntityManager getEntityManager() {

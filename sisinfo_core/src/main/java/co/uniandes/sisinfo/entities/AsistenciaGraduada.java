@@ -20,11 +20,11 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "AsistenciaGraduada")
 @NamedQueries({
-    @NamedQuery(name = "AsistenciaGraduada.findById", query = "SELECT a FROM AsistenciaGraduada a WHERE id=:id"),
-    @NamedQuery(name = "AsistenciaGraduada.findByPeriodo", query = "SELECT a FROM AsistenciaGraduada a WHERE periodo.periodo=:periodo"),
-    @NamedQuery(name = "AsistenciaGraduada.findByCorreoProfesor", query = "SELECT a FROM AsistenciaGraduada a WHERE encargado.correo=:correo"),
-    @NamedQuery(name = "AsistenciaGraduada.findByCorreoEstudiante", query = "SELECT a FROM AsistenciaGraduada a WHERE estudiante.persona.correo=:correo"),
-    @NamedQuery(name = "AsistenciaGraduada.findByPeriodoYCorreoEstudiante", query = "SELECT a FROM AsistenciaGraduada a WHERE periodo.periodo=:periodo AND estudiante.persona.correo=:correo")
+    @NamedQuery(name = "AsistenciaGraduada.findById", query = "SELECT a FROM AsistenciaGraduada a WHERE a.id=:id"),
+    @NamedQuery(name = "AsistenciaGraduada.findByPeriodo", query = "SELECT a FROM AsistenciaGraduada a WHERE a.periodo.periodo=:periodo"),
+    @NamedQuery(name = "AsistenciaGraduada.findByCorreoProfesor", query = "SELECT a FROM AsistenciaGraduada a WHERE a.encargado.correo=:correo"),
+    @NamedQuery(name = "AsistenciaGraduada.findByCorreoEstudiante", query = "SELECT a FROM AsistenciaGraduada a WHERE a.estudiante.persona.correo=:correo"),
+    @NamedQuery(name = "AsistenciaGraduada.findByPeriodoYCorreoEstudiante", query = "SELECT a FROM AsistenciaGraduada a WHERE a.periodo.periodo=:periodo AND a.estudiante.persona.correo=:correo")
 })
 public class AsistenciaGraduada implements Serializable {
 

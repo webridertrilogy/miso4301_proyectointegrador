@@ -23,7 +23,7 @@ import org.hibernate.Hibernate;
 @Stateless
 public class CargaProfesorFacade implements CargaProfesorFacadeLocal, CargaProfesorFacadeRemote {
 
-    @PersistenceContext(unitName = "CargaYCompromisoProfPU")
+    @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 
     public void create(CargaProfesor cargaProfesor) {

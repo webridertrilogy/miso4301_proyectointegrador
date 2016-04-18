@@ -20,7 +20,7 @@ import javax.persistence.Query;
 @Stateless
 public class RangoFechasFacade implements RangoFechasFacadeLocal {
 
-    @PersistenceContext(unitName = "EntitiesPU")
+    @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 
     public void create(RangoFechas rangoFechas) {

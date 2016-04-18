@@ -19,7 +19,7 @@ import javax.persistence.Query;
  */
 @Stateless
 public class CandidatoFacade implements CandidatoFacadeLocal, CandidatoFacadeRemote {
-    @PersistenceContext
+	@PersistenceContext(unitName="SoporteSisinfoPU")
     private EntityManager em;
 
     public void create(Candidato candidato) {

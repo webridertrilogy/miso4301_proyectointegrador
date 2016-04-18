@@ -5,6 +5,13 @@
 
 package co.uniandes.sisinfo.serviciosnegocio;
 
+import java.util.Collection;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import javax.ejb.EJB;
+import javax.ejb.Stateless;
+
 import co.uniandes.sisinfo.comun.constantes.Constantes;
 import co.uniandes.sisinfo.comun.constantes.Notificaciones;
 import co.uniandes.sisinfo.entities.MonitoriaAceptada;
@@ -18,11 +25,6 @@ import co.uniandes.sisinfo.serviciosfuncionales.TareaMultipleFacadeRemote;
 import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.CursoFacadeRemote;
 import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.ProfesorFacadeRemote;
 import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.SeccionFacadeRemote;
-import java.util.Collection;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.ejb.EJB;
-import javax.ejb.Stateless;
 
 /**
  *

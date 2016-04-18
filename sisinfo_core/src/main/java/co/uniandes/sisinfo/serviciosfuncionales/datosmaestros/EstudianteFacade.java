@@ -21,7 +21,7 @@ import org.hibernate.Hibernate;
 @Stateless
 public class EstudianteFacade implements EstudianteFacadeLocal, EstudianteFacadeRemote {
 
-    @PersistenceContext(unitName = "DatosMaestrosPU")
+    @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 
     public void create(Estudiante estudiante) {

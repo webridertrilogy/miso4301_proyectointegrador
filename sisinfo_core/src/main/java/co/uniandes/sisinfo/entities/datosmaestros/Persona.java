@@ -1,21 +1,22 @@
 package co.uniandes.sisinfo.entities.datosmaestros;
 
-import co.uniandes.sisinfo.entities.soporte.Pais;
-import co.uniandes.sisinfo.entities.soporte.TipoDocumento;
 import java.io.Serializable;
 import java.sql.Timestamp;
 
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+
+import co.uniandes.sisinfo.entities.datosmaestros.soporte.Pais;
+import co.uniandes.sisinfo.entities.datosmaestros.soporte.TipoDocumento;
 
 /**
  * @author Ivan Melo

@@ -38,7 +38,7 @@ public class HojaVida implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private Long id;
-    @Column(name = "contenido",length=214123)
+    @Column(name = "contenido",length=1000)
     private String contenido;
     @Column(name = "fechaCreacion")
     @Temporal(javax.persistence.TemporalType.DATE)

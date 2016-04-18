@@ -89,10 +89,10 @@ public class CorreoBean implements CorreoRemote, CorreoLocal {
     private ConstanteRemote constanteBean;
     @EJB
     private FiltroCorreoFacadeLocal filtroCorreoFacade;
-    @EJB
-    private CorreoSinEnviarBeanLocal correoSinEnviarBean;
-    @EJB
-    private FiltroCorreoBeanLocal filtroCorreoBean;
+//    @EJB
+//    private CorreoSinEnviarBeanLocal correoSinEnviarBean;
+ //   @EJB
+  //  private FiltroCorreoBeanLocal filtroCorreoBean;
 
 
     String to, subject = null, from = null,
@@ -120,35 +120,35 @@ public class CorreoBean implements CorreoRemote, CorreoLocal {
 
     @Override
     public void enviarMail(String para, String asunto, String cc, String cco, String archivo, String mensaje) {
-        FiltroCorreo filtro = filtroCorreoBean.evaluarFiltros(para, asunto, cc, cco, archivo, mensaje);
-        if(filtro == null){
-            // Si el mensaje no se ajusta a ningun filtro, entonces se envia normalmente
-            enviarMailDirecto(para, asunto, cc, cco, archivo, mensaje,null);
-        }else{
-            // Si el mensaje se ajusta a alguno de los filtros, entonces se debe cambiar el destinatario o guardarlo en la lista de correos sin enviar
-            if(filtro.getRedireccion()==null){
-                correoSinEnviarBean.agregarCorreo(para, asunto, cc, cco, archivo, mensaje);
-            }else{
-                enviarMailDirecto(filtro.getRedireccion(), asunto, cc, cco, archivo, mensaje,null);
-            }            
-        }      
+//        FiltroCorreo filtro = filtroCorreoBean.evaluarFiltros(para, asunto, cc, cco, archivo, mensaje);
+//        if(filtro == null){
+//            // Si el mensaje no se ajusta a ningun filtro, entonces se envia normalmente
+//            enviarMailDirecto(para, asunto, cc, cco, archivo, mensaje,null);
+//        }else{
+//            // Si el mensaje se ajusta a alguno de los filtros, entonces se debe cambiar el destinatario o guardarlo en la lista de correos sin enviar
+//            if(filtro.getRedireccion()==null){
+//               // correoSinEnviarBean.agregarCorreo(para, asunto, cc, cco, archivo, mensaje);
+//            }else{
+//                enviarMailDirecto(filtro.getRedireccion(), asunto, cc, cco, archivo, mensaje,null);
+//            }            
+//        }      
     }
 
     @Override
     public void enviarMail(String para, String asunto, String cc, String cco, String archivo, String mensaje,String imagen) {
-        FiltroCorreo filtro = filtroCorreoBean.evaluarFiltros(para, asunto, cc, cco, archivo, mensaje);
-        if(filtro == null){
-            // Si el mensaje no se ajusta a ningun filtro, entonces se envia normalmente
-            enviarMailDirecto(para, asunto, cc, cco, archivo, mensaje,imagen);
-        }else{
-            // Si el mensaje se ajusta a alguno de los filtros, entonces se debe cambiar el destinatario o guardarlo en la lista de correos sin enviar
-            if(filtro.getRedireccion()==null){
-                correoSinEnviarBean.agregarCorreo(para, asunto, cc, cco, archivo, mensaje);
-            }else{
-                enviarMailDirecto(filtro.getRedireccion(), asunto, cc, cco, archivo, mensaje,imagen);
-            }
-
-        }
+//        FiltroCorreo filtro = filtroCorreoBean.evaluarFiltros(para, asunto, cc, cco, archivo, mensaje);
+//        if(filtro == null){
+//            // Si el mensaje no se ajusta a ningun filtro, entonces se envia normalmente
+//            enviarMailDirecto(para, asunto, cc, cco, archivo, mensaje,imagen);
+//        }else{
+//            // Si el mensaje se ajusta a alguno de los filtros, entonces se debe cambiar el destinatario o guardarlo en la lista de correos sin enviar
+//            if(filtro.getRedireccion()==null){
+//            //    correoSinEnviarBean.agregarCorreo(para, asunto, cc, cco, archivo, mensaje);
+//            }else{
+//                enviarMailDirecto(filtro.getRedireccion(), asunto, cc, cco, archivo, mensaje,imagen);
+//            }
+//
+//        }
     }
 
     private void enviarMailDirecto(String para, String asunto, String cc, String cco, String archivo, String mensaje,String imagen) {

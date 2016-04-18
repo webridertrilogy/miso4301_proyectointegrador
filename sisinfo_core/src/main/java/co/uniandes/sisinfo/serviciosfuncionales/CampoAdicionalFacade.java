@@ -5,6 +5,7 @@
 
 package co.uniandes.sisinfo.serviciosfuncionales;
 
+import co.uniandes.sisinfo.base.AbstractFacade;
 import co.uniandes.sisinfo.entities.CampoAdicional;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -16,7 +17,7 @@ import javax.persistence.PersistenceContext;
  */
 @Stateless
 public class CampoAdicionalFacade extends AbstractFacade<CampoAdicional> implements CampoAdicionalFacadeLocal, CampoAdicionalFacadeRemote {
-    @PersistenceContext(unitName = "ContactosCrmPU")
+    @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 
     protected EntityManager getEntityManager() {

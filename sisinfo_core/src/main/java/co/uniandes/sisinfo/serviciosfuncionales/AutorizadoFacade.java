@@ -5,6 +5,7 @@
 
 package co.uniandes.sisinfo.serviciosfuncionales;
 
+import co.uniandes.sisinfo.base.AbstractFacade;
 import co.uniandes.sisinfo.entities.Autorizado;
 import java.util.List;
 import javax.ejb.Stateless;
@@ -18,7 +19,7 @@ import javax.persistence.Query;
  */
 @Stateless
 public class AutorizadoFacade extends AbstractFacade<Autorizado> implements AutorizadoFacadeLocal, AutorizadoFacadeRemote {
-    @PersistenceContext(unitName = "ReservasInventarioPU")
+    @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 
     protected EntityManager getEntityManager() {

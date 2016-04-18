@@ -16,7 +16,7 @@ import javax.persistence.Query;
 @Stateless
 public class OfertaFacade implements OfertaFacadeLocal, OfertaFacadeRemote {
 
-    @PersistenceContext
+	@PersistenceContext(unitName="SoporteSisinfoPU")
     private EntityManager em;
 
     public void create(Oferta oferta) {

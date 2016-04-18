@@ -1,5 +1,20 @@
 package co.uniandes.sisinfo.serviciosnegocio;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Date;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.Locale;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import javax.ejb.EJB;
+import javax.ejb.Stateless;
+import javax.naming.NamingException;
+
 import co.uniandes.sisinfo.comun.constantes.Constantes;
 import co.uniandes.sisinfo.comun.constantes.Mensajes;
 import co.uniandes.sisinfo.entities.datosmaestros.Estudiante;
@@ -7,8 +22,8 @@ import co.uniandes.sisinfo.entities.datosmaestros.InformacionAcademica;
 import co.uniandes.sisinfo.entities.datosmaestros.Persona;
 import co.uniandes.sisinfo.entities.datosmaestros.Rol;
 import co.uniandes.sisinfo.entities.datosmaestros.Usuario;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.EstudianteFacadeRemote;
 import co.uniandes.sisinfo.serviciosfuncionales.ServiceLocator;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.EstudianteFacadeRemote;
 import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.InformacionAcademicaFacadeRemote;
 import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.NivelFormacionFacadeRemote;
 import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.PersonaFacadeRemote;
@@ -20,19 +35,6 @@ import co.uniandes.sisinfo.serviciosfuncionales.seguridad.UsuarioFacadeRemote;
 import co.uniandes.sisinfo.serviciosfuncionales.soporte.PaisFacadeRemote;
 import co.uniandes.sisinfo.serviciosfuncionales.soporte.TipoCuentaFacadeRemote;
 import co.uniandes.sisinfo.serviciosfuncionales.soporte.TipoDocumentoFacadeRemote;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Date;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.Locale;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.ejb.EJB;
-import javax.ejb.Stateless;
-import javax.naming.NamingException;
 
 /**
  * Servicio de negocio: Administración de estudiantes

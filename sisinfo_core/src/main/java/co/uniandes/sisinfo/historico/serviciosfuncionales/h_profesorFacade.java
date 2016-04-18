@@ -18,7 +18,7 @@ import javax.persistence.Query;
  */
 @Stateless
 public class h_profesorFacade implements h_profesorFacadeLocal, h_profesorFacadeRemote {
-    @PersistenceContext(unitName = "HistoricoPU")
+    @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 
     public void create(h_profesor h_profesor) {

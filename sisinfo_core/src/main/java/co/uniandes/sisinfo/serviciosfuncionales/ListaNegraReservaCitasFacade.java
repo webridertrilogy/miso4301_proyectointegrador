@@ -5,6 +5,7 @@
 
 package co.uniandes.sisinfo.serviciosfuncionales;
 
+import co.uniandes.sisinfo.base.AbstractFacade;
 import co.uniandes.sisinfo.entities.ListaNegraReservaCitas;
 import java.util.List;
 import javax.ejb.Stateless;
@@ -20,7 +21,7 @@ import javax.persistence.Query;
  */
 @Stateless
 public class ListaNegraReservaCitasFacade extends AbstractFacade<ListaNegraReservaCitas> implements ListaNegraReservaCitasFacadeLocal, ListaNegraReservaCitasFacadeRemote {
-    @PersistenceContext(unitName = "ReservaCitasPU")
+    @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 
     protected EntityManager getEntityManager() {

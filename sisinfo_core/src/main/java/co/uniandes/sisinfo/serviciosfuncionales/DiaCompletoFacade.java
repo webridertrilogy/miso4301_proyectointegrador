@@ -5,6 +5,7 @@
 
 package co.uniandes.sisinfo.serviciosfuncionales;
 
+import co.uniandes.sisinfo.base.AbstractFacade;
 import co.uniandes.sisinfo.entities.datosmaestros.DiaCompleto;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -16,7 +17,7 @@ import javax.persistence.PersistenceContext;
  */
 @Stateless
 public class DiaCompletoFacade extends AbstractFacade<DiaCompleto> implements DiaCompletoFacadeLocal, DiaCompletoFacadeRemote {
-    @PersistenceContext
+	@PersistenceContext(unitName="SoporteSisinfoPU")
     private EntityManager em;
 
     protected EntityManager getEntityManager() {

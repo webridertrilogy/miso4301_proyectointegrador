@@ -30,7 +30,7 @@ import javax.persistence.OneToMany;
     @NamedQuery(name = "Tesis1.findByEstadoTesis", query = "SELECT i FROM Tesis1 i WHERE i.estadoTesis =:estadoTesis"),
     @NamedQuery(name = "Tesis1.findByEstadoYPeriodoTesis", query = "SELECT i FROM Tesis1 i WHERE i.estadoTesis =:estado AND i.semestreIniciacion.id like :idPeriodo"),
     @NamedQuery(name = "Tesis1.findByTemaTesis", query = "SELECT i FROM Tesis1 i WHERE i.temaTesis =:tema"),
-    @NamedQuery(name = "Tesis1.findByComentariosTesis", query = "SELECT i FROM Tesis1 i WHERE i.comentariosAsesor.size < 1 AND i.semestreIniciacion.periodo LIKE :periodo order by asesor.persona.apellidos"),
+   // @NamedQuery(name = "Tesis1.findByComentariosTesis", query = "SELECT i FROM Tesis1 i WHERE i.comentariosAsesor.size < 1 AND i.semestreIniciacion.periodo LIKE :periodo order by asesor.persona.apellidos"),
     @NamedQuery(name = "Tesis1.findByPeriodoEstadoAsesor", query = "SELECT i FROM Tesis1 i WHERE i.estadoTesis =:estadoTesis AND i.semestreIniciacion.periodo =:periodo "
     + "AND i.asesor.persona.correo =:correoasesor "),
     @NamedQuery(name = "Tesis1.findByPeriodoEstado", query = "SELECT i FROM Tesis1 i WHERE i.estadoTesis like :estadoTesis AND i.semestreIniciacion.periodo like :periodo "),

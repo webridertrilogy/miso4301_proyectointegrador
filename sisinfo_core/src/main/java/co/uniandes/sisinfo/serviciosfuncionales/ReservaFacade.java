@@ -20,7 +20,7 @@ import javax.persistence.Query;
 @Stateless
 public class ReservaFacade implements ReservaFacadeLocal, ReservaFacadeRemote {
 
-    @PersistenceContext(unitName = "ReservaCitasPU")
+    @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 
     public void create(Reserva Reserva) {

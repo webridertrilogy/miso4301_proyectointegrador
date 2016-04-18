@@ -12,7 +12,7 @@ import javax.persistence.PersistenceContext;
  */
 @Stateless
 public class DiaDisponibilidadFacade implements DiaDisponibilidadFacadeLocal, DiaDisponibilidadFacadeRemote {
-    @PersistenceContext(unitName = "ReservaCitasPU")
+    @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 
    public void create(DiaDisponibilidad DiaDisponibilidad) {

@@ -20,7 +20,7 @@ import org.hibernate.Hibernate;
  */
 @Stateless
 public class TemaTesis1Facade implements TemaTesis1FacadeLocal, TemaTesis1FacadeRemote {
-    @PersistenceContext(unitName = "TesisMaestriaPU")
+    @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 
     public void create(TemaTesis1 temaTesis1) {

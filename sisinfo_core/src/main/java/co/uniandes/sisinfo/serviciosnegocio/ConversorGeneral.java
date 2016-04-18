@@ -5,10 +5,11 @@
 
 package co.uniandes.sisinfo.serviciosnegocio;
 
+import javax.ejb.EJB;
+
 import co.uniandes.sisinfo.comun.constantes.Constantes;
 import co.uniandes.sisinfo.serviciosfuncionales.ServiceLocator;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.ParserT;
-import javax.ejb.EJB;
 
 /**
  *

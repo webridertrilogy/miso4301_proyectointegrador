@@ -1,5 +1,18 @@
 package co.uniandes.sisinfo.serviciosnegocio;
 
+import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Properties;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import javax.ejb.EJB;
+import javax.ejb.Stateless;
+import javax.naming.NamingException;
+
 import co.uniandes.sisinfo.comun.constantes.Constantes;
 import co.uniandes.sisinfo.comun.constantes.Mensajes;
 import co.uniandes.sisinfo.comun.constantes.Notificaciones;
@@ -10,16 +23,16 @@ import co.uniandes.sisinfo.entities.TareaSencilla;
 import co.uniandes.sisinfo.entities.TipoAsistenciaGraduada;
 import co.uniandes.sisinfo.entities.datosmaestros.Estudiante;
 import co.uniandes.sisinfo.entities.datosmaestros.Persona;
-import co.uniandes.sisinfo.serviciosfuncionales.CorreoRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.PeriodoFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.ServiceLocator;
 import co.uniandes.sisinfo.serviciosfuncionales.AsistenciaGraduadaFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.CorreoRemote;
 import co.uniandes.sisinfo.serviciosfuncionales.EstudiantePosgradoFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.HojaVidaFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.InformacionEmpresaFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.OfertaFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.PeriodoFacadeRemote;
 import co.uniandes.sisinfo.serviciosfuncionales.ProponenteFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.RangoFechasGeneralFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.ServiceLocator;
 import co.uniandes.sisinfo.serviciosfuncionales.TareaSencillaFacadeRemote;
 import co.uniandes.sisinfo.serviciosfuncionales.TipoAsistenciaGraduadaFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.EstudianteFacadeRemote;
@@ -29,17 +42,6 @@ import co.uniandes.sisinfo.serviciosfuncionales.parser.ParserT;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
 import co.uniandes.sisinfo.serviciosfuncionales.soporte.PaisFacadeRemote;
 import co.uniandes.sisinfo.serviciosfuncionales.soporte.TipoDocumentoFacadeRemote;
-import java.sql.Timestamp;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.Properties;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.ejb.EJB;
-import javax.ejb.Stateless;
-import javax.naming.NamingException;
 
 /**
  * Servicios de administración de asistencias graduadas

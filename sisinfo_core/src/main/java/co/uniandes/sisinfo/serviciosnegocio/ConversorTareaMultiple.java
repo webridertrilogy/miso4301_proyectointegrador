@@ -4,6 +4,11 @@
  */
 package co.uniandes.sisinfo.serviciosnegocio;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.Properties;
+
 import co.uniandes.sisinfo.bo.TareaPendienteVencidaBO;
 import co.uniandes.sisinfo.comun.constantes.Constantes;
 import co.uniandes.sisinfo.entities.AlertaMultiple;
@@ -13,10 +18,6 @@ import co.uniandes.sisinfo.entities.datosmaestros.Parametro;
 import co.uniandes.sisinfo.serviciosfuncionales.AlertaMultipleFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Atributo;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.Properties;
 
 /**
  *

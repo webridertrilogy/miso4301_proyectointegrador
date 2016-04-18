@@ -4,10 +4,11 @@
  */
 package co.uniandes.sisinfo.serviciosnegocio;
 
+import javax.ejb.Local;
+
 import co.uniandes.sisinfo.entities.PeriodoTesis;
 import co.uniandes.sisinfo.entities.Tesis2;
 import co.uniandes.sisinfo.entities.datosmaestros.Persona;
-import javax.ejb.Local;
 
 /**
  *

@@ -5,10 +5,10 @@
 
 package co.uniandes.sisinfo.serviciosnegocio;
 
+import javax.ejb.Local;
+
 import co.uniandes.sisinfo.entities.InscripcionSubareaInvestigacion;
 import co.uniandes.sisinfo.entities.PeriodoTesis;
-
-import javax.ejb.Local;
 
 /**
  *

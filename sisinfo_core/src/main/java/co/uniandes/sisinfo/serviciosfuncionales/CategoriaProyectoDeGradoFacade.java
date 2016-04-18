@@ -18,7 +18,7 @@ import javax.persistence.Query;
  */
 @Stateless
 public class CategoriaProyectoDeGradoFacade implements CategoriaProyectoDeGradoFacadeLocal, CategoriaProyectoDeGradoFacadeRemote {
-    @PersistenceContext(unitName = "ProyectoDeGradoPregradoPU")
+    @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 
     public void create(CategoriaProyectoDeGrado categoriaProyectoDeGrado) {

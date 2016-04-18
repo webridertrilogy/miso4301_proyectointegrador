@@ -5,9 +5,8 @@
 package co.uniandes.sisinfo.serviciosnegocio;
 
 import java.sql.Timestamp;
-import java.util.Date;
+
 import javax.ejb.Local;
-import javax.persistence.NoResultException;
 
 /**
  *

@@ -15,7 +15,7 @@ import org.hibernate.Hibernate;
  */
 @Stateless
 public class EstudiantePosgradoFacade implements EstudiantePosgradoFacadeLocal, EstudiantePosgradoFacadeRemote {
-    @PersistenceContext(unitName = "BolsaEmpleoPU")
+    @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 
     public void create(EstudiantePosgrado estudiantePosgrado) {

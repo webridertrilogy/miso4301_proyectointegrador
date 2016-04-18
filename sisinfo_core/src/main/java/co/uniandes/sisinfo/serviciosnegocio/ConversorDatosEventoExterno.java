@@ -4,17 +4,15 @@
  */
 package co.uniandes.sisinfo.serviciosnegocio;
 
-import co.uniandes.sisinfo.comun.constantes.Constantes;
-import co.uniandes.sisinfo.entities.soporte.Ciudad;
-import co.uniandes.sisinfo.entities.soporte.Departamento;
-import co.uniandes.sisinfo.entities.soporte.TipoDocumento;
-import co.uniandes.sisinfo.serviciosfuncionales.ServiceLocator;
-import co.uniandes.sisinfo.serviciosfuncionales.parser.Atributo;
-import co.uniandes.sisinfo.serviciosfuncionales.parser.ParserT;
-import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
-import java.util.ArrayList;
 import java.util.Collection;
+
 import javax.ejb.EJB;
+
+import co.uniandes.sisinfo.comun.constantes.Constantes;
+import co.uniandes.sisinfo.entities.datosmaestros.soporte.Ciudad;
+import co.uniandes.sisinfo.entities.datosmaestros.soporte.Departamento;
+import co.uniandes.sisinfo.entities.datosmaestros.soporte.TipoDocumento;
+import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
 
 /**
  *

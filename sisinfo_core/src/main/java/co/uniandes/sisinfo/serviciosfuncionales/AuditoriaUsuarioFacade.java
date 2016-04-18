@@ -22,7 +22,7 @@ import javax.persistence.Query;
 @Stateless
 public class AuditoriaUsuarioFacade implements AuditoriaUsuarioFacadeLocal,AuditoriaUsuarioFacadeRemote{
 
-    @PersistenceContext
+	@PersistenceContext(unitName="SoporteSisinfoPU")
     private EntityManager em;
 
     @Override

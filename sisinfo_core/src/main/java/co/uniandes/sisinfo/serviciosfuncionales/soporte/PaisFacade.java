@@ -6,9 +6,8 @@
 package co.uniandes.sisinfo.serviciosfuncionales.soporte;
 
 
-import co.uniandes.sisinfo.entities.soporte.Pais;
-import co.uniandes.sisinfo.entities.soporte.Pais;
 import java.util.List;
+
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -16,7 +15,8 @@ import javax.persistence.NoResultException;
 import javax.persistence.NonUniqueResultException;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
-import org.hibernate.annotations.NamedQuery;
+
+import co.uniandes.sisinfo.entities.datosmaestros.soporte.Pais;
 
 /**
  *
@@ -25,7 +25,7 @@ import org.hibernate.annotations.NamedQuery;
 @Stateless
 @EJB(name = "PaisFacade", beanInterface =co.uniandes.sisinfo.serviciosfuncionales.soporte.PaisFacadeLocal.class)
 public class PaisFacade implements PaisFacadeLocal, PaisFacadeRemote {
-    @PersistenceContext
+	@PersistenceContext(unitName="SoporteSisinfoPU")
     private EntityManager em;
 
     @Override

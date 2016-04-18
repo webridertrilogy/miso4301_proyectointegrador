@@ -18,7 +18,7 @@ import javax.persistence.Query;
  */
 @Stateless
 public class h_curso_planeadoFacade implements h_curso_planeadoFacadeLocal, h_curso_planeadoFacadeRemote {
-    @PersistenceContext(unitName = "HistoricoPU")
+    @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 
     public void create(h_curso_planeado h_curso_planeado) {

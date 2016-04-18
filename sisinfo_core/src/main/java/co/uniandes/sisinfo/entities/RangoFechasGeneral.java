@@ -18,8 +18,8 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "RangoFechasGeneral")
 @NamedQueries({
-    @NamedQuery(name = "RangoFechasGeneral.findById", query = "SELECT a FROM RangoFechasGeneral a WHERE id=:id"),
-    @NamedQuery(name = "RangoFechasGeneral.findByNombre", query = "SELECT a FROM RangoFechasGeneral a WHERE nombre=:nombre")
+    @NamedQuery(name = "RangoFechasGeneral.findById", query = "SELECT a FROM RangoFechasGeneral a WHERE a.id=:id"),
+    @NamedQuery(name = "RangoFechasGeneral.findByNombre", query = "SELECT a FROM RangoFechasGeneral a WHERE a.nombre=:nombre")
 })
 public class RangoFechasGeneral implements Serializable {
 

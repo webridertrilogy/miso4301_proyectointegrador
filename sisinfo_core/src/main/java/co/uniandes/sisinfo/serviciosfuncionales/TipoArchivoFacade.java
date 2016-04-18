@@ -19,7 +19,7 @@ import javax.persistence.PersistenceContext;
  */
 @Stateless
 public class TipoArchivoFacade implements TipoArchivoFacadeLocal, TipoArchivoFacadeRemote {
-    @PersistenceContext
+	@PersistenceContext(unitName="SoporteSisinfoPU")
     private EntityManager em;
 
     public void create(TipoArchivo tipoArchivo) {

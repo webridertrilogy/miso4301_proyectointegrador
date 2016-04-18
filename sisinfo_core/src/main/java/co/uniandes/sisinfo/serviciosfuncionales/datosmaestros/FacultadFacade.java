@@ -28,7 +28,7 @@ import org.hibernate.Hibernate;
 @EJB(name = "FacultadFacade", beanInterface = co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.FacultadFacadeLocal.class)
 public class FacultadFacade implements FacultadFacadeLocal, FacultadFacadeRemote {
 
-    @PersistenceContext
+	@PersistenceContext(unitName="SoporteSisinfoPU")
     private EntityManager em;
 
     @Override

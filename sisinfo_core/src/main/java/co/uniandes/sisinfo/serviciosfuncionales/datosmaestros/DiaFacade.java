@@ -18,7 +18,7 @@ import javax.persistence.Query;
  */
 @Stateless
 public class DiaFacade implements DiaFacadeLocal, DiaFacadeRemote {
-    @PersistenceContext(unitName = "EntitiesPU")
+    @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 
     public void create(Dia dia) {

@@ -21,7 +21,7 @@ import javax.persistence.PersistenceContext;
 @Stateless
 public class DocumentoPrivadoFacade implements DocumentoPrivadoFacadeLocal, DocumentoPrivadoFacadeRemote {
 
-    @PersistenceContext
+	@PersistenceContext(unitName="SoporteSisinfoPU")
     private EntityManager em;
 
     public void create(DocumentoPrivado documentoPrivado) {

@@ -19,7 +19,7 @@ public class EstudianteMatriculadoFacade implements EstudianteMatriculadoFacadeL
     //----------------------------------------------
     // ATRIBUTOS
     //----------------------------------------------
-    @PersistenceContext(unitName = "SisinfoAdministradorSisinfoPU")
+    @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 
     //----------------------------------------------

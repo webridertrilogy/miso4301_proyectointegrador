@@ -22,7 +22,7 @@ import org.hibernate.NonUniqueObjectException;
 @Stateless
 public class TemaTesisPregradoFacade implements TemaTesisPregradoFacadeLocal, TemaTesisPregradoFacadeRemote {
 
-    @PersistenceContext(unitName = "ProyectoDeGradoPregradoPU")
+    @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 
     public void create(TemaTesisPregrado temaTesisPregrado) {

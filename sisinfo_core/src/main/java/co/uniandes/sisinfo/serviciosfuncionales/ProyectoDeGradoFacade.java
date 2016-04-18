@@ -20,7 +20,7 @@ import org.hibernate.Hibernate;
 @Stateless
 public class ProyectoDeGradoFacade implements ProyectoDeGradoFacadeLocal, ProyectoDeGradoFacadeRemote {
 
-    @PersistenceContext(unitName = "ProyectoDeGradoPregradoPU")
+    @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 
     public void create(ProyectoDeGrado proyectoDeGrado) {

@@ -4,6 +4,23 @@
  */
 package co.uniandes.sisinfo.serviciosnegocio;
 
+import java.io.File;
+import java.security.MessageDigest;
+import java.sql.Date;
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.LinkedList;
+import java.util.Locale;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import javax.ejb.EJB;
+import javax.ejb.Stateless;
+import javax.naming.AuthenticationException;
+import javax.naming.NamingException;
+
 import co.uniandes.sisinfo.comun.constantes.Constantes;
 import co.uniandes.sisinfo.comun.constantes.Mensajes;
 import co.uniandes.sisinfo.comun.constantes.Notificaciones;
@@ -17,7 +34,6 @@ import co.uniandes.sisinfo.entities.SectorCorporativo;
 import co.uniandes.sisinfo.entities.UsuarioEventos;
 import co.uniandes.sisinfo.seguridad.Protector2;
 import co.uniandes.sisinfo.serviciosfuncionales.CargoFacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.soporte.PaisFacadeRemote;
 import co.uniandes.sisinfo.serviciosfuncionales.ContactoFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.CorreoRemote;
 import co.uniandes.sisinfo.serviciosfuncionales.EventoExternoFacadeLocal;
@@ -30,22 +46,8 @@ import co.uniandes.sisinfo.serviciosfuncionales.parser.ParserT;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
 import co.uniandes.sisinfo.serviciosfuncionales.seguridad.AccesoLDAP;
 import co.uniandes.sisinfo.serviciosfuncionales.soporte.DepartamentoFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.soporte.PaisFacadeRemote;
 import co.uniandes.sisinfo.serviciosfuncionales.soporte.TipoDocumentoFacadeRemote;
-import java.io.File;
-import java.security.MessageDigest;
-import java.sql.Date;
-import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.LinkedList;
-import java.util.Locale;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.ejb.EJB;
-import javax.ejb.Stateless;
-import javax.naming.AuthenticationException;
-import javax.naming.NamingException;
 
 /**
  *

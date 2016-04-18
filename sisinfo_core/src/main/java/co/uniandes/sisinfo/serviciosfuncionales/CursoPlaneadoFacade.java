@@ -18,7 +18,7 @@ import javax.persistence.Query;
  */
 @Stateless
 public class CursoPlaneadoFacade implements CursoPlaneadoFacadeLocal, CursoPlaneadoFacadeRemote {
-    @PersistenceContext(unitName = "CargaYCompromisoProfPU")
+    @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 
     public void create(CursoPlaneado cursoPlaneado) {

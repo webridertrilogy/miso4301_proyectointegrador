@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE resources PUBLIC
+    "-//GlassFish.org//DTD GlassFish Application Server 3.1 Resource Definitions//EN"
+    "http://glassfish.org/dtds/glassfish-resources_1_5.dtd">
+<resources>
+    <jdbc-resource pool-name="jdbc/sisinfo_pool"
+        jndi-name="jdbc/sisinfo"/>
+   <jdbc-connection-pool name="jdbc/sisinfo_pool" datasource-classname="fr.ms.log4jdbc.DataSource"  res-type="javax.sql.DataSource">
+        <property name="URL" value="jdbc:log4jdbc:postgresql://localhost:5432/sisinfo"/>
+        <property name="User" value="sisinfo"/>
+        <property name="Password" value="sisinfo"/>
+        <property name="DatabaseName" value="sisinfo"/>
+        <property name="driverClass" value="fr.ms.log4jdbc.Driver"/>
+    </jdbc-connection-pool>
+<!-- <jdbc-connection-pool name="jdbc/sisinfo_pool" datasource-classname="com.mchange.v2.c3p0.ComboPooledDataSource" res-type="javax.sql.ConnectionPoolDataSource"> -->
+<!--         <property name="URL" value="jdbc:log4jdbc:hsqldb:mem:memory-db"/> -->
+<!--         <property name="User" value="sa"/> -->
+<!--         <property name="Password" value=""/>        -->
+<!--         <property name="driverClass" value="net.sf.log4jdbc.DriverSpy"/> -->
+<!--     </jdbc-connection-pool> -->
+</resources>

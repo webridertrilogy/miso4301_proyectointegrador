@@ -5,6 +5,7 @@
 
 package co.uniandes.sisinfo.serviciosfuncionales;
 
+import co.uniandes.sisinfo.base.AbstractFacade;
 import co.uniandes.sisinfo.entities.InscripcionEventoExterno;
 import java.util.Collection;
 import java.util.List;
@@ -18,7 +19,7 @@ import javax.persistence.PersistenceContext;
  */
 @Stateless
 public class InscripcionEventoExternoFacade extends AbstractFacade<InscripcionEventoExterno> implements InscripcionEventoExternoFacadeLocal, InscripcionEventoExternoFacadeRemote {
-    @PersistenceContext(unitName = "ContactosCrmPU")
+    @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 
     protected EntityManager getEntityManager() {

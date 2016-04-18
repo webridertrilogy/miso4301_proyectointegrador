@@ -27,7 +27,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name="votacion")
 @NamedQueries({
-    @NamedQuery(name = "Votacion.findVotacionesActivas", query = "SELECT v FROM Votacion v WHERE abierta=true"),
+    @NamedQuery(name = "Votacion.findVotacionesActivas", query = "SELECT v FROM Votacion v WHERE v.abierta=true"),
     @NamedQuery(name = "Votacion.findVotacionesPorCorreo", query = "SELECT v FROM Votacion v LEFT JOIN v.votantes vot WHERE vot.persona.correo = :correo")
 })
 public class Votacion implements Serializable {

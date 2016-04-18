@@ -1,5 +1,9 @@
 package co.uniandes.sisinfo.serviciosnegocio;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
 import co.uniandes.sisinfo.comun.constantes.Constantes;
 import co.uniandes.sisinfo.entities.CargaProfesor;
 import co.uniandes.sisinfo.entities.CursoPlaneado;
@@ -32,9 +36,6 @@ import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.EstudianteFacadeRe
 import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.NivelFormacionFacadeRemote;
 import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.SeccionFacadeRemote;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
 
 public class ConversorCargaYCompromisos {
 

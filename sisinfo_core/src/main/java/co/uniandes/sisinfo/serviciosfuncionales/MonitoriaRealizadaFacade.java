@@ -20,7 +20,7 @@ import javax.persistence.Query;
  */
 @Stateless
 public class MonitoriaRealizadaFacade implements MonitoriaRealizadaFacadeLocal, MonitoriaRealizadaFacadeRemote {
-    @PersistenceContext(unitName = "EntitiesPU")
+    @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 
     public void create(MonitoriaRealizada monitoriaRealizada) {

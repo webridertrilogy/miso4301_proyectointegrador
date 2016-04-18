@@ -5,6 +5,7 @@
 
 package co.uniandes.sisinfo.serviciosfuncionales;
 
+import co.uniandes.sisinfo.base.AbstractFacade;
 import co.uniandes.sisinfo.entities.DirectorioInterfacesPorRol;
 import java.util.Collection;
 import javax.ejb.Stateless;
@@ -17,7 +18,7 @@ import javax.persistence.PersistenceContext;
  */
 @Stateless
 public class DirectorioInterfacesPorRolFacade extends AbstractFacade<DirectorioInterfacesPorRol> implements DirectorioInterfacesPorRolFacadeLocal, DirectorioInterfacesPorRolFacadeRemote {
-    @PersistenceContext(unitName = "ServiciosInfraestructuraPU")
+    @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 
     protected EntityManager getEntityManager() {

@@ -30,7 +30,7 @@ import org.hibernate.Hibernate;
 @EJB(name = "AspiranteFacade", beanInterface = co.uniandes.sisinfo.serviciosfuncionales.AspiranteFacadeLocal.class, mappedName = "AspiranteFacade")
 public class AspiranteFacade implements AspiranteFacadeRemote, AspiranteFacadeLocal {
 
-    @PersistenceContext(unitName = "EntitiesPU")
+    @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 
     @Override

@@ -12,7 +12,7 @@ import javax.persistence.PersistenceContext;
  */
 @Stateless
 public class ElementoFacade implements ElementoFacadeLocal, ElementoFacadeRemote {
-    @PersistenceContext(unitName = "ReservasInventarioPU")
+    @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 
     public void create(Elemento entity) {

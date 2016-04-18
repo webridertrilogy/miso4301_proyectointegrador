@@ -28,7 +28,7 @@ import org.hibernate.Hibernate;
 @EJB(name = "PeriodoFacade", beanInterface = co.uniandes.sisinfo.serviciosfuncionales.PeriodoFacadeLocal.class)
 public class PeriodoFacade implements PeriodoFacadeLocal, PeriodoFacadeRemote {
 
-    @PersistenceContext
+	@PersistenceContext(unitName="SoporteSisinfoPU")
     private EntityManager em;
 
     @Override

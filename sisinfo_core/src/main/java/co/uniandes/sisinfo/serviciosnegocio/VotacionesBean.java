@@ -4,28 +4,6 @@
  */
 package co.uniandes.sisinfo.serviciosnegocio;
 
-import co.uniandes.sisinfo.comun.constantes.Constantes;
-import co.uniandes.sisinfo.comun.constantes.Mensajes;
-import co.uniandes.sisinfo.comun.constantes.Notificaciones;
-import co.uniandes.sisinfo.entities.Candidato;
-import co.uniandes.sisinfo.entities.TareaMultiple;
-import co.uniandes.sisinfo.entities.TareaSencilla;
-
-import co.uniandes.sisinfo.entities.Votacion;
-import co.uniandes.sisinfo.entities.Votante;
-import co.uniandes.sisinfo.entities.datosmaestros.Parametro;
-import co.uniandes.sisinfo.entities.datosmaestros.Persona;
-import co.uniandes.sisinfo.serviciosfuncionales.CandidatoFacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.CorreoRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.PeriodicidadFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.ServiceLocator;
-import co.uniandes.sisinfo.serviciosfuncionales.TareaMultipleFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.TareaSencillaFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.PersonaFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.VotacionFacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.VotanteFacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.parser.ParserT;
-import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -39,9 +17,32 @@ import java.util.List;
 import java.util.Locale;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import javax.naming.NamingException;
+
+import co.uniandes.sisinfo.comun.constantes.Constantes;
+import co.uniandes.sisinfo.comun.constantes.Mensajes;
+import co.uniandes.sisinfo.comun.constantes.Notificaciones;
+import co.uniandes.sisinfo.entities.Candidato;
+import co.uniandes.sisinfo.entities.TareaMultiple;
+import co.uniandes.sisinfo.entities.TareaSencilla;
+import co.uniandes.sisinfo.entities.Votacion;
+import co.uniandes.sisinfo.entities.Votante;
+import co.uniandes.sisinfo.entities.datosmaestros.Parametro;
+import co.uniandes.sisinfo.entities.datosmaestros.Persona;
+import co.uniandes.sisinfo.serviciosfuncionales.CandidatoFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.CorreoRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.PeriodicidadFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.ServiceLocator;
+import co.uniandes.sisinfo.serviciosfuncionales.TareaMultipleFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.TareaSencillaFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.VotacionFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.VotanteFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.PersonaFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.parser.ParserT;
+import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
 
 /**
  *

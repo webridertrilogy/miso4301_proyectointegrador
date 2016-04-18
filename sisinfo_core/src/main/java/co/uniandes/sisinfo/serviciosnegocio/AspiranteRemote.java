@@ -9,8 +9,6 @@
  */
 package co.uniandes.sisinfo.serviciosnegocio;
 
-//import co.uniandes.sisinfo.entities.Aspirante;
-import java.util.Collection;
 import javax.ejb.Remote;
 
 /**

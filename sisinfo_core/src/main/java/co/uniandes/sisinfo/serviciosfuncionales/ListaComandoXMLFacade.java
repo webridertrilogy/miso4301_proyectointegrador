@@ -5,6 +5,7 @@
  */
 package co.uniandes.sisinfo.serviciosfuncionales;
 
+import co.uniandes.sisinfo.base.AbstractFacade;
 import co.uniandes.sisinfo.entities.ComandoXML;
 import co.uniandes.sisinfo.entities.ListaComandoXML;
 import java.util.List;

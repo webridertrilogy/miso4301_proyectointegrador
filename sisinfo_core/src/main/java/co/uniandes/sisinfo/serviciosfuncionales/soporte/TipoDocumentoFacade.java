@@ -5,15 +5,17 @@
 
 package co.uniandes.sisinfo.serviciosfuncionales.soporte;
 
-import co.uniandes.sisinfo.entities.soporte.TipoDocumento;
-import co.uniandes.sisinfo.entities.soporte.TipoDocumento;
 import java.util.List;
+
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.NonUniqueResultException;
 import javax.persistence.PersistenceContext;
+
 import org.hibernate.Hibernate;
+
+import co.uniandes.sisinfo.entities.datosmaestros.soporte.TipoDocumento;
 
 /**
  *
@@ -21,7 +23,7 @@ import org.hibernate.Hibernate;
  */
 @Stateless
 public class TipoDocumentoFacade implements TipoDocumentoFacadeLocal, TipoDocumentoFacadeRemote {
-    @PersistenceContext
+	@PersistenceContext(unitName="SoporteSisinfoPU")
     private EntityManager em;
 
     public void create(TipoDocumento tipoDocumento) {

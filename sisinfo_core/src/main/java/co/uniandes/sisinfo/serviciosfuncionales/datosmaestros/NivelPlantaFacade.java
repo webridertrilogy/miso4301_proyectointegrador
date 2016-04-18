@@ -20,7 +20,7 @@ import javax.persistence.Query;
  */
 @Stateless
 public class NivelPlantaFacade implements NivelPlantaFacadeLocal, NivelPlantaFacadeRemote {
-    @PersistenceContext(unitName = "DatosMaestrosPU")
+    @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 
     public void create(NivelPlanta nivelPlanta) {

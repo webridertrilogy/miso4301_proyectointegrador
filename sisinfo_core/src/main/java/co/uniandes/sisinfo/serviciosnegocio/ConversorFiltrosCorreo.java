@@ -5,12 +5,13 @@
 
 package co.uniandes.sisinfo.serviciosnegocio;
 
+import java.util.ArrayList;
+import java.util.Collection;
+
 import co.uniandes.sisinfo.comun.constantes.Constantes;
 import co.uniandes.sisinfo.entities.CondicionFiltroCorreo;
 import co.uniandes.sisinfo.entities.FiltroCorreo;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
-import java.util.ArrayList;
-import java.util.Collection;
 
 /**
  *

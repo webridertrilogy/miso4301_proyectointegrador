@@ -1,5 +1,17 @@
 package co.uniandes.sisinfo.serviciosnegocio;
 
+import java.sql.Timestamp;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import javax.ejb.EJB;
+import javax.naming.NamingException;
+
 import co.uniandes.sisinfo.comun.constantes.Constantes;
 import co.uniandes.sisinfo.entities.AsistenciaGraduada;
 import co.uniandes.sisinfo.entities.EstudiantePosgrado;
@@ -12,8 +24,8 @@ import co.uniandes.sisinfo.entities.TipoAsistenciaGraduada;
 import co.uniandes.sisinfo.entities.datosmaestros.Estudiante;
 import co.uniandes.sisinfo.entities.datosmaestros.InformacionAcademica;
 import co.uniandes.sisinfo.entities.datosmaestros.Persona;
-import co.uniandes.sisinfo.entities.soporte.Pais;
-import co.uniandes.sisinfo.entities.soporte.TipoDocumento;
+import co.uniandes.sisinfo.entities.datosmaestros.soporte.Pais;
+import co.uniandes.sisinfo.entities.datosmaestros.soporte.TipoDocumento;
 import co.uniandes.sisinfo.serviciosfuncionales.EstudiantePosgradoFacadeRemote;
 import co.uniandes.sisinfo.serviciosfuncionales.HojaVidaFacadeRemote;
 import co.uniandes.sisinfo.serviciosfuncionales.InformacionEmpresaFacadeRemote;
@@ -28,16 +40,6 @@ import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.PersonaFacadeRemot
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
 import co.uniandes.sisinfo.serviciosfuncionales.soporte.PaisFacadeRemote;
 import co.uniandes.sisinfo.serviciosfuncionales.soporte.TipoDocumentoFacadeRemote;
-import java.sql.Timestamp;
-import java.util.Date;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.ejb.EJB;
-import javax.naming.NamingException;
 
 /**
  * Conversor del módulo de Asistencias Graduadas y Bolsa de Empleo

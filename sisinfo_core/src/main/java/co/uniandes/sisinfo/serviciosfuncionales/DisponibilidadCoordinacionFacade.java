@@ -12,7 +12,7 @@ import javax.persistence.PersistenceContext;
  */
 @Stateless
 public class DisponibilidadCoordinacionFacade implements DisponibilidadCoordinacionFacadeLocal, DisponibilidadCoordinacionFacadeRemote {
-    @PersistenceContext(unitName = "ReservaCitasPU")
+    @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 
     public void create(DisponibilidadCoordinacion DisponibilidadCoordinacion) {

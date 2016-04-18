@@ -1,5 +1,6 @@
 package co.uniandes.sisinfo.serviciosfuncionales;
 
+import co.uniandes.sisinfo.base.AbstractFacadeCH;
 import co.uniandes.sisinfo.comun.constantes.Constantes;
 import co.uniandes.sisinfo.entities.PeticionConflictoHorario;
 import co.uniandes.sisinfo.serviciosnegocio.ConstanteRemote;
@@ -25,7 +26,7 @@ public class PeticionConflictoHorarioFacade extends AbstractFacadeCH<PeticionCon
     @EJB
     private ConstanteRemote constanteBean;
 
-    @PersistenceContext(unitName = "ConflictoHorariosPU")
+    @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 
     protected EntityManager getEntityManager() {

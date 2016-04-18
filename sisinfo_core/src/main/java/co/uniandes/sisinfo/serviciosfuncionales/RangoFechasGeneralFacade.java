@@ -15,7 +15,7 @@ import javax.persistence.PersistenceContext;
 @Stateless
 public class RangoFechasGeneralFacade implements RangoFechasGeneralFacadeLocal, RangoFechasGeneralFacadeRemote {
 
-    @PersistenceContext
+	@PersistenceContext(unitName="SoporteSisinfoPU")
     private EntityManager em;
 
     @Override

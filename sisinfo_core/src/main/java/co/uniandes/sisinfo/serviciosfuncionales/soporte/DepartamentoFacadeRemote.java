@@ -4,9 +4,11 @@
  */
 package co.uniandes.sisinfo.serviciosfuncionales.soporte;
 
-import co.uniandes.sisinfo.entities.soporte.Departamento;
 import java.util.List;
+
 import javax.ejb.Remote;
+
+import co.uniandes.sisinfo.entities.datosmaestros.soporte.Departamento;
 
 /**
  *

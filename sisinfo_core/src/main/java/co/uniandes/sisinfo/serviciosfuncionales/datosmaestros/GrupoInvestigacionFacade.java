@@ -21,7 +21,7 @@ import org.hibernate.Hibernate;
  */
 @Stateless
 public class GrupoInvestigacionFacade implements GrupoInvestigacionFacadeLocal, GrupoInvestigacionFacadeRemote {
-    @PersistenceContext(unitName = "DatosMaestrosPU")
+    @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 
     public void create(GrupoInvestigacion grupoInvestigacion) {

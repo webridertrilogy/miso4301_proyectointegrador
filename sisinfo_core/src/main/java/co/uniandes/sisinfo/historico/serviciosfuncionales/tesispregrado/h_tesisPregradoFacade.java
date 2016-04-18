@@ -14,7 +14,7 @@ import javax.persistence.Query;
 @Stateless
 public class h_tesisPregradoFacade implements h_tesisPregradoFacadeLocal, h_tesisPregradoFacadeRemote {
 
-    @PersistenceContext(unitName = "HistoricoPU")
+    @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 
     public void create(h_tesisPregrado h_tesisPregrado) {

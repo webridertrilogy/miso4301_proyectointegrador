@@ -20,7 +20,7 @@ import javax.persistence.Query;
  */
 @Stateless
 public class InformacionAcademicaFacade implements InformacionAcademicaFacadeLocal, InformacionAcademicaFacadeRemote {
-    @PersistenceContext(unitName = "DatosMaestrosPU")
+    @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 
     public void create(InformacionAcademica informacionAcademica) {

@@ -1,7 +1,7 @@
 package co.uniandes.sisinfo.serviciosnegocio;
 
 import java.sql.Timestamp;
-import java.util.Date;
+
 import javax.ejb.Remote;
 
 /**

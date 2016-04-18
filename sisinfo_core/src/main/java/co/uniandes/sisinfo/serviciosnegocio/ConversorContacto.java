@@ -4,6 +4,16 @@
  */
 package co.uniandes.sisinfo.serviciosnegocio;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import javax.ejb.EJB;
+import javax.naming.NamingException;
+
 import co.uniandes.sisinfo.comun.constantes.Constantes;
 import co.uniandes.sisinfo.entities.Cargo;
 import co.uniandes.sisinfo.entities.Contacto;
@@ -12,29 +22,17 @@ import co.uniandes.sisinfo.entities.Pregunta;
 import co.uniandes.sisinfo.entities.Respuesta;
 import co.uniandes.sisinfo.entities.SectorCorporativo;
 import co.uniandes.sisinfo.entities.UsuarioEventos;
-import co.uniandes.sisinfo.entities.soporte.Departamento;
-import co.uniandes.sisinfo.entities.soporte.Pais;
-import co.uniandes.sisinfo.entities.soporte.TipoDocumento;
+import co.uniandes.sisinfo.entities.datosmaestros.soporte.Departamento;
+import co.uniandes.sisinfo.entities.datosmaestros.soporte.Pais;
+import co.uniandes.sisinfo.entities.datosmaestros.soporte.TipoDocumento;
 import co.uniandes.sisinfo.serviciosfuncionales.CargoFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.PreguntaFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.SectorCorporativoFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.ServiceLocator;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
-import co.uniandes.sisinfo.serviciosfuncionales.soporte.DepartamentoFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.soporte.DepartamentoFacadeRemote;
 import co.uniandes.sisinfo.serviciosfuncionales.soporte.PaisFacadeRemote;
 import co.uniandes.sisinfo.serviciosfuncionales.soporte.TipoDocumentoFacadeRemote;
-import java.sql.Date;
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.ejb.EJB;
-import javax.naming.NamingException;
 
 /**
  *

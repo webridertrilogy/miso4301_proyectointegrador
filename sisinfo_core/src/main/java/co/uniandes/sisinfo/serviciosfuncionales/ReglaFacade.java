@@ -26,7 +26,7 @@ import javax.persistence.PersistenceContext;
 @EJB(name = "ReglaFacade", beanInterface = co.uniandes.sisinfo.serviciosfuncionales.ReglaFacadeLocal.class)
 public class ReglaFacade implements ReglaFacadeLocal, ReglaFacadeRemote {
 
-    @PersistenceContext
+	@PersistenceContext(unitName="SoporteSisinfoPU")
     private EntityManager em;
 
     @Override

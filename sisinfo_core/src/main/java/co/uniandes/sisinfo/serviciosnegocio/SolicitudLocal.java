@@ -9,7 +9,6 @@
  */
 package co.uniandes.sisinfo.serviciosnegocio;
 
-import co.uniandes.sisinfo.entities.Monitoria_Solicitada;
 import javax.ejb.Local;
 
 /**

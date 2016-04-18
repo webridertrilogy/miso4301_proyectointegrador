@@ -4,9 +4,11 @@
  */
 package co.uniandes.sisinfo.serviciosnegocio;
 
-import co.uniandes.sisinfo.bo.AccionBO;
 import java.util.Collection;
+
 import javax.ejb.Remote;
+
+import co.uniandes.sisinfo.bo.AccionBO;
 
 /**
  *

@@ -13,13 +13,13 @@ import javax.persistence.*;
  */
 @Entity(name = "peticionconflictohorario")
 @NamedQueries({
-    @NamedQuery(name = "PeticionConflictoHorario.findByEstudianteYSeccionDestino", query = "SELECT p FROM peticionconflictohorario p WHERE estudiante.persona.correo=:correoEstudiante and destino.id=:idSeccionDestino"),
-    @NamedQuery(name = "PeticionConflictoHorario.findByCorreo", query = "SELECT p FROM peticionconflictohorario p WHERE estudiante.persona.correo=:correo"),
-    @NamedQuery(name = "PeticionConflictoHorario.findByIdYCorreo", query = "SELECT p FROM peticionconflictohorario p WHERE estudiante.persona.correo=:correo and id=:id"),
-    @NamedQuery(name = "PeticionConflictoHorario.findByCodigoCurso", query = "SELECT p FROM peticionconflictohorario p WHERE cursoDestino.codigo=:codigo"),
-    @NamedQuery(name = "PeticionConflictoHorario.findByCodigoCursoYTipo", query = "SELECT p FROM peticionconflictohorario p WHERE cursoDestino.codigo=:codigo and tipo=:tipo and fechaResolucion is null"),
-    @NamedQuery(name = "PeticionConflictoHorario.findResueltas", query = "SELECT p FROM peticionconflictohorario p WHERE fechaResolucion is not null"),
-    @NamedQuery(name = "PeticionConflictoHorario.findByIdSeccion", query = "SELECT p FROM peticionconflictohorario p WHERE origen.id=:id or destino.id=:id")
+    @NamedQuery(name = "PeticionConflictoHorario.findByEstudianteYSeccionDestino", query = "SELECT p FROM peticionconflictohorario p WHERE p.estudiante.persona.correo=:correoEstudiante and p.destino.id=:idSeccionDestino"),
+    @NamedQuery(name = "PeticionConflictoHorario.findByCorreo", query = "SELECT p FROM peticionconflictohorario p WHERE p.estudiante.persona.correo=:correo"),
+    @NamedQuery(name = "PeticionConflictoHorario.findByIdYCorreo", query = "SELECT p FROM peticionconflictohorario p WHERE p.estudiante.persona.correo=:correo and p.id=:id"),
+    @NamedQuery(name = "PeticionConflictoHorario.findByCodigoCurso", query = "SELECT p FROM peticionconflictohorario p WHERE p.cursoDestino.codigo=:codigo"),
+    @NamedQuery(name = "PeticionConflictoHorario.findByCodigoCursoYTipo", query = "SELECT p FROM peticionconflictohorario p WHERE p.cursoDestino.codigo=:codigo and p.tipo=:tipo and p.fechaResolucion is null"),
+    @NamedQuery(name = "PeticionConflictoHorario.findResueltas", query = "SELECT p FROM peticionconflictohorario p WHERE p.fechaResolucion is not null"),
+    @NamedQuery(name = "PeticionConflictoHorario.findByIdSeccion", query = "SELECT p FROM peticionconflictohorario p WHERE p.origen.id=:id or p.destino.id=:id")
 })
 public class PeticionConflictoHorario implements Serializable {
 

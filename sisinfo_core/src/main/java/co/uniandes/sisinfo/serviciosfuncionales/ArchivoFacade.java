@@ -20,7 +20,7 @@ import org.hibernate.Hibernate;
  */
 @Stateless
 public class ArchivoFacade implements ArchivoFacadeLocal, ArchivoFacadeRemote {
-    @PersistenceContext
+	@PersistenceContext(unitName="SoporteSisinfoPU")
     private EntityManager em;
 
     public void create(Archivo archivo) {

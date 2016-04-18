@@ -9,36 +9,6 @@
  */
 package co.uniandes.sisinfo.serviciosnegocio;
 
-import co.uniandes.sisinfo.comun.constantes.Constantes;
-import co.uniandes.sisinfo.comun.constantes.Mensajes;
-import co.uniandes.sisinfo.comun.constantes.Notificaciones;
-import co.uniandes.sisinfo.entities.Aspirante;
-
-import co.uniandes.sisinfo.entities.MonitoriaAceptada;
-import co.uniandes.sisinfo.entities.Solicitud;
-import co.uniandes.sisinfo.entities.datosmaestros.Curso;
-import co.uniandes.sisinfo.entities.datosmaestros.Estudiante;
-import co.uniandes.sisinfo.entities.datosmaestros.Persona;
-import co.uniandes.sisinfo.entities.datosmaestros.Profesor;
-import co.uniandes.sisinfo.entities.datosmaestros.InformacionAcademica;
-import co.uniandes.sisinfo.entities.datosmaestros.Seccion;
-import co.uniandes.sisinfo.serviciosfuncionales.AspiranteFacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.Horario_DisponibleFacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.MonitoriaFacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.SolicitudFacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.TimerEstudianteLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.TimerProfesorLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.parser.ParserT;
-import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
-import co.uniandes.sisinfo.serviciosfuncionales.CorreoRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.PeriodicidadFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.ServiceLocator;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.CursoFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.EstudianteFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.InformacionAcademicaFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.ProfesorFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.SeccionFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.parser.Atributo;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -48,9 +18,36 @@ import java.util.List;
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import javax.naming.NamingException;
+
+import co.uniandes.sisinfo.comun.constantes.Constantes;
+import co.uniandes.sisinfo.comun.constantes.Mensajes;
+import co.uniandes.sisinfo.comun.constantes.Notificaciones;
+import co.uniandes.sisinfo.entities.Aspirante;
+import co.uniandes.sisinfo.entities.MonitoriaAceptada;
+import co.uniandes.sisinfo.entities.Solicitud;
+import co.uniandes.sisinfo.entities.datosmaestros.Curso;
+import co.uniandes.sisinfo.entities.datosmaestros.Estudiante;
+import co.uniandes.sisinfo.entities.datosmaestros.InformacionAcademica;
+import co.uniandes.sisinfo.entities.datosmaestros.Persona;
+import co.uniandes.sisinfo.entities.datosmaestros.Profesor;
+import co.uniandes.sisinfo.entities.datosmaestros.Seccion;
+import co.uniandes.sisinfo.serviciosfuncionales.CorreoRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.MonitoriaFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.PeriodicidadFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.ServiceLocator;
+import co.uniandes.sisinfo.serviciosfuncionales.SolicitudFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.CursoFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.EstudianteFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.InformacionAcademicaFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.ProfesorFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.SeccionFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.parser.Atributo;
+import co.uniandes.sisinfo.serviciosfuncionales.parser.ParserT;
+import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
 
 /**
  * Servicio de negocio: Preselección

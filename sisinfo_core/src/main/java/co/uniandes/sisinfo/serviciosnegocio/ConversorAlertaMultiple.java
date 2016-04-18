@@ -5,17 +5,17 @@
 
 package co.uniandes.sisinfo.serviciosnegocio;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+
 import co.uniandes.sisinfo.comun.constantes.Constantes;
 import co.uniandes.sisinfo.entities.AlertaMultiple;
 import co.uniandes.sisinfo.entities.TareaMultiple;
 import co.uniandes.sisinfo.serviciosfuncionales.AlertaMultipleFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.PeriodicidadFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
 
 /**
  *

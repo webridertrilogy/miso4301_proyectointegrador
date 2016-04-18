@@ -18,7 +18,7 @@ import javax.persistence.Query;
  */
 @Stateless
 public class NivelTesisFacade implements NivelTesisFacadeLocal, NivelTesisFacadeRemote {
-    @PersistenceContext(unitName = "CargaYCompromisoProfPU")
+    @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 
     public void create(NivelTesis nivelTesis) {

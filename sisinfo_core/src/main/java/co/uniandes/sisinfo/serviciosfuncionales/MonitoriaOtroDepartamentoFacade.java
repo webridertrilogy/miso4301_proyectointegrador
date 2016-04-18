@@ -5,6 +5,7 @@
 
 package co.uniandes.sisinfo.serviciosfuncionales;
 
+import co.uniandes.sisinfo.base.AbstractFacade;
 import co.uniandes.sisinfo.entities.MonitoriaOtroDepartamento;
 import java.util.List;
 import javax.ejb.Stateless;
@@ -19,7 +20,7 @@ import javax.persistence.PersistenceContext;
  */
 @Stateless
 public class MonitoriaOtroDepartamentoFacade extends AbstractFacade<MonitoriaOtroDepartamento> implements MonitoriaOtroDepartamentoFacadeLocal, MonitoriaOtroDepartamentoFacadeRemote {
-    @PersistenceContext(unitName = "EntitiesPU")
+    @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 
     protected EntityManager getEntityManager() {

@@ -1,10 +1,11 @@
 package co.uniandes.sisinfo.serviciosnegocio;
 
+import java.text.SimpleDateFormat;
+import java.util.Collection;
+
 import co.uniandes.sisinfo.comun.constantes.Constantes;
 import co.uniandes.sisinfo.entities.CorreoAuditoria;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
-import java.text.SimpleDateFormat;
-import java.util.Collection;
 
 /**
  * Conversor de Correo Auditoría

@@ -18,7 +18,7 @@ import javax.persistence.Query;
  */
 @Stateless
 public class OtrasActividadesFacade implements OtrasActividadesFacadeLocal, OtrasActividadesFacadeRemote {
-    @PersistenceContext(unitName = "CargaYCompromisoProfPU")
+    @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 
     public void create(OtrasActividades otrasActividades) {

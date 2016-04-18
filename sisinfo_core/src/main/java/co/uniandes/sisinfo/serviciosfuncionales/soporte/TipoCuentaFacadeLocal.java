@@ -5,10 +5,11 @@
 
 package co.uniandes.sisinfo.serviciosfuncionales.soporte;
 
-import co.uniandes.sisinfo.entities.soporte.TipoCuenta;
-import co.uniandes.sisinfo.entities.soporte.TipoCuenta;
 import java.util.List;
+
 import javax.ejb.Local;
+
+import co.uniandes.sisinfo.entities.datosmaestros.soporte.TipoCuenta;
 
 /**
  *
@@ -31,6 +32,6 @@ public interface TipoCuentaFacadeLocal {
 
     int count();
 
-    public java.util.List<co.uniandes.sisinfo.entities.soporte.TipoCuenta> findByName(java.lang.String name);
+    public java.util.List<TipoCuenta> findByName(java.lang.String name);
 
 }

@@ -22,7 +22,7 @@ import org.hibernate.Hibernate;
  */
 @Stateless
 public class Tesis2Facade implements Tesis2FacadeLocal, Tesis2FacadeRemote {
-    @PersistenceContext(unitName = "TesisMaestriaPU")
+    @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 
     public void create(Tesis2 tesis2) {
@@ -172,11 +172,12 @@ public class Tesis2Facade implements Tesis2FacadeLocal, Tesis2FacadeRemote {
     }
 
     public Collection<Tesis2> findBySincomentariosTesis(String periodo) {
-       List<Tesis2> temp = em.createNamedQuery("Tesis2.findByComentariosTesis").setParameter("periodo", periodo).getResultList();
-        for (Tesis2 inscripcionSubareaInvestigacion : temp) {
-            hibernateInitialize(inscripcionSubareaInvestigacion);
-        }
-        return temp;
+//       List<Tesis2> temp = em.createNamedQuery("Tesis2.findByComentariosTesis").setParameter("periodo", periodo).getResultList();
+//        for (Tesis2 inscripcionSubareaInvestigacion : temp) {
+//            hibernateInitialize(inscripcionSubareaInvestigacion);
+//        }
+//        return temp;
+    	return null;
     }
 
     public Collection<Persona> findAsesoresByEstadoYPeriodo(String estado, String periodo) {

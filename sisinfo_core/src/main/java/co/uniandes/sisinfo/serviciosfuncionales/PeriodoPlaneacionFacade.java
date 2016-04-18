@@ -23,7 +23,7 @@ import org.hibernate.Hibernate;
 @Stateless
 public class PeriodoPlaneacionFacade implements PeriodoPlaneacionFacadeLocal, PeriodoPlaneacionFacadeRemote {
 
-    @PersistenceContext(unitName = "CargaYCompromisoProfPU")
+    @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 
     public void create(PeriodoPlaneacion periodoPlaneacion) {

@@ -22,7 +22,7 @@ import org.hibernate.Hibernate;
  */
 @Stateless
 public class h_direccion_tesisFacade implements h_direccion_tesisFacadeLocal, h_direccion_tesisFacadeRemote {
-    @PersistenceContext(unitName = "HistoricoPU")
+    @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 
     public void create(h_direccion_tesis h_direccion_tesis) {

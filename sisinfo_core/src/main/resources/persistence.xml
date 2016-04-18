@@ -1,0 +1,569 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+  <persistence-unit name="SoporteSisinfoPU" transaction-type="JTA">
+    <provider>org.hibernate.ejb.HibernatePersistence</provider>      
+    <jta-data-source>jdbc/sisinfo</jta-data-source>
+   
+     <class>co.uniandes.sisinfo.entities.datosmaestros.Seccion</class>
+    <class>co.uniandes.sisinfo.entities.datosmaestros.Profesor</class>
+    <class>co.uniandes.sisinfo.entities.datosmaestros.GrupoInvestigacion</class>
+    <class>co.uniandes.sisinfo.entities.datosmaestros.Persona</class>
+   
+    <class>co.uniandes.sisinfo.entities.datosmaestros.Estudiante</class>
+    <class>co.uniandes.sisinfo.entities.datosmaestros.InformacionAcademica</class>
+    <class>co.uniandes.sisinfo.entities.datosmaestros.Programa</class>
+   
+    <class>co.uniandes.sisinfo.entities.datosmaestros.Facultad</class>
+    <class>co.uniandes.sisinfo.entities.datosmaestros.Curso</class>
+    <class>co.uniandes.sisinfo.entities.datosmaestros.Sesion</class>
+    <class>co.uniandes.sisinfo.entities.datosmaestros.Dia</class>
+    <class>co.uniandes.sisinfo.entities.datosmaestros.DiaCompleto</class>
+    <class>co.uniandes.sisinfo.entities.datosmaestros.Franja</class>
+    <class>co.uniandes.sisinfo.entities.datosmaestros.Rol</class>
+    <class>co.uniandes.sisinfo.entities.datosmaestros.Parametro</class>
+    <class>co.uniandes.sisinfo.entities.datosmaestros.NivelFormacion</class>
+    <class>co.uniandes.sisinfo.entities.datosmaestros.NivelPlanta</class>
+    <class>co.uniandes.sisinfo.entities.datosmaestros.DiaCompleto</class>
+    <class>co.uniandes.sisinfo.entities.datosmaestros.Usuario</class>
+     <exclude-unlisted-classes>false</exclude-unlisted-classes>
+   <properties>
+<!--    	<property name="hibernate.archive.autodetection" value="class"/> -->
+<!--     <property name="javax.persistence.jdbc.url" value="jdbc:log4jdbc:postgresql://localhost:5432/sisinfo" /> -->
+<!--     <property name="javax.persistence.jdbc.user" value="sisinfo" /> -->
+<!--     <property name="javax.persistence.jdbc.password" value="sisinfo" /> -->
+<!--     <property name="javax.persistence.jdbc.driver" value="net.sf.log4jdbc.DriverSpy" /> -->
+
+    <property name="hibernate.show_sql" value="false" /> 
+<!--     <property name="hibernate.format_sql" value="false" /> -->
+     <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" /> 
+     <property name="hibernate.hbm2ddl.auto" value="create-drop" /> 
+<!--     <property name="hibernate.default_schema" value="public"/> -->
+  
+	  <property name="eclipselink.ddl-generation" value="drop-and-create-tables"/> 
+<!--       <property name="eclipselink.target-database" value="PostgreSQL"/> -->
+<!--       <property name="javax.persistence.jdbc.driver" value="net.sf.log4jdbc.DriverSpy"/> -->
+<!--       <property name="javax.persistence.jdbc.url" value="jdbc:log4jdbc:postgresql://localhost:5432/sisinfo"/> -->
+<!--       <property name="javax.persistence.jdbc.user" value="sisinfo"/> -->
+<!--       <property name="javax.persistence.jdbc.password" value="sisinfo"/> -->
+      
+    </properties>
+  </persistence-unit>
+<!--   <persistence-unit name="TesisMaestriaPU" transaction-type="JTA"> -->
+<!--     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>     -->
+<!--     <class>co.uniandes.sisinfo.entities.soporte.Ciudad</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.soporte.Departamento</class> -->
+<!--      <class>co.uniandes.sisinfo.entities.datosmaestros.Seccion</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Profesor</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.GrupoInvestigacion</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Persona</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.soporte.Pais</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.soporte.TipoDocumento</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Estudiante</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.InformacionAcademica</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Programa</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.soporte.TipoCuenta</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Facultad</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Curso</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Sesion</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Dia</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.DiaCompleto</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Franja</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Rol</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Parametro</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.NivelFormacion</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.NivelPlanta</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.DiaCompleto</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Usuario</class> -->
+<!--     <exclude-unlisted-classes>false</exclude-unlisted-classes> -->
+<!--    <properties> -->
+<!--    	<property name="eclipselink.ddl-generation" value="create-tables"/> -->
+         
+<!--       <property name="javax.persistence.jdbc.driver" value="org.hsqldb.jdbcDriver"/> -->
+<!--       <property name="javax.persistence.jdbc.url" value="jdbc:hsqldb:mem:memory-db"/> -->
+<!--       <property name="javax.persistence.jdbc.user" value="sa"/> -->
+<!--       <property name="javax.persistence.jdbc.password" value=""/> -->
+<!--       <property name="eclipselink.target-database" value="HSQL"/> -->
+<!--     </properties> -->
+<!--   </persistence-unit> -->
+<!--   <persistence-unit name="" transaction-type="JTA"> -->
+<!--     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>   -->
+<!--     <class>co.uniandes.sisinfo.entities.soporte.Ciudad</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.soporte.Departamento</class> -->
+<!--      <class>co.uniandes.sisinfo.entities.datosmaestros.Seccion</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Profesor</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.GrupoInvestigacion</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Persona</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.soporte.Pais</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.soporte.TipoDocumento</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Estudiante</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.InformacionAcademica</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Programa</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.soporte.TipoCuenta</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Facultad</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Curso</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Sesion</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Dia</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.DiaCompleto</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Franja</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Rol</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Parametro</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.NivelFormacion</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.NivelPlanta</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.DiaCompleto</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Usuario</class>   -->
+<!--     <exclude-unlisted-classes>false</exclude-unlisted-classes> -->
+<!--    <properties> -->
+<!--    	<property name="eclipselink.ddl-generation" value="create-tables"/> -->
+         
+<!--       <property name="javax.persistence.jdbc.driver" value="org.hsqldb.jdbcDriver"/> -->
+<!--       <property name="javax.persistence.jdbc.url" value="jdbc:hsqldb:mem:memory-db"/> -->
+<!--       <property name="javax.persistence.jdbc.user" value="sa"/> -->
+<!--       <property name="javax.persistence.jdbc.password" value=""/> -->
+<!--       <property name="eclipselink.target-database" value="HSQL"/> -->
+<!--     </properties> -->
+<!--   </persistence-unit> -->
+<!--   <persistence-unit name="CargaYCompromisoProfPU" transaction-type="JTA"> -->
+<!--     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>     -->
+<!--     <class>co.uniandes.sisinfo.entities.soporte.Ciudad</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.soporte.Departamento</class> -->
+<!--      <class>co.uniandes.sisinfo.entities.datosmaestros.Seccion</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Profesor</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.GrupoInvestigacion</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Persona</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.soporte.Pais</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.soporte.TipoDocumento</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Estudiante</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.InformacionAcademica</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Programa</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.soporte.TipoCuenta</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Facultad</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Curso</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Sesion</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Dia</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.DiaCompleto</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Franja</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Rol</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Parametro</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.NivelFormacion</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.NivelPlanta</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.DiaCompleto</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Usuario</class> -->
+<!--     <exclude-unlisted-classes>false</exclude-unlisted-classes> -->
+<!--    <properties> -->
+<!--    	<property name="eclipselink.ddl-generation" value="create-tables"/> -->
+         
+<!--       <property name="javax.persistence.jdbc.driver" value="org.hsqldb.jdbcDriver"/> -->
+<!--       <property name="javax.persistence.jdbc.url" value="jdbc:hsqldb:mem:memory-db"/> -->
+<!--       <property name="javax.persistence.jdbc.user" value="sa"/> -->
+<!--       <property name="javax.persistence.jdbc.password" value=""/> -->
+<!--       <property name="eclipselink.target-database" value="HSQL"/> -->
+<!--     </properties> -->
+<!--   </persistence-unit> -->
+<!--   <persistence-unit name="ContactosCrmPU" transaction-type="JTA"> -->
+<!--     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>   -->
+<!--     <class>co.uniandes.sisinfo.entities.soporte.Ciudad</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.soporte.Departamento</class> -->
+<!--      <class>co.uniandes.sisinfo.entities.datosmaestros.Seccion</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Profesor</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.GrupoInvestigacion</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Persona</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.soporte.Pais</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.soporte.TipoDocumento</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Estudiante</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.InformacionAcademica</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Programa</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.soporte.TipoCuenta</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Facultad</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Curso</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Sesion</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Dia</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.DiaCompleto</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Franja</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Rol</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Parametro</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.NivelFormacion</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.NivelPlanta</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.DiaCompleto</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Usuario</class> -->
+<!--     <exclude-unlisted-classes>false</exclude-unlisted-classes>   -->
+<!--    <properties> -->
+<!--    		<property name="eclipselink.ddl-generation" value="create-tables"/> -->
+         
+<!--       <property name="javax.persistence.jdbc.driver" value="org.hsqldb.jdbcDriver"/> -->
+<!--       <property name="javax.persistence.jdbc.url" value="jdbc:hsqldb:mem:memory-db"/> -->
+<!--       <property name="javax.persistence.jdbc.user" value="sa"/> -->
+<!--       <property name="javax.persistence.jdbc.password" value=""/> -->
+<!--       <property name="eclipselink.target-database" value="HSQL"/> -->
+<!--     </properties> -->
+<!--   </persistence-unit> -->
+<!--   <persistence-unit name="BolsaEmpleoPU" transaction-type="JTA"> -->
+<!--     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>   -->
+<!--     <class>co.uniandes.sisinfo.entities.soporte.Ciudad</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.soporte.Departamento</class> -->
+<!--      <class>co.uniandes.sisinfo.entities.datosmaestros.Seccion</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Profesor</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.GrupoInvestigacion</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Persona</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.soporte.Pais</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.soporte.TipoDocumento</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Estudiante</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.InformacionAcademica</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Programa</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.soporte.TipoCuenta</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Facultad</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Curso</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Sesion</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Dia</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.DiaCompleto</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Franja</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Rol</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Parametro</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.NivelFormacion</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.NivelPlanta</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.DiaCompleto</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Usuario</class> -->
+<!--     <exclude-unlisted-classes>false</exclude-unlisted-classes>   -->
+<!--    <properties> -->
+<!--    		<property name="eclipselink.ddl-generation" value="create-tables"/> -->
+         
+<!--       <property name="javax.persistence.jdbc.driver" value="org.hsqldb.jdbcDriver"/> -->
+<!--       <property name="javax.persistence.jdbc.url" value="jdbc:hsqldb:mem:memory-db"/> -->
+<!--       <property name="javax.persistence.jdbc.user" value="sa"/> -->
+<!--       <property name="javax.persistence.jdbc.password" value=""/> -->
+<!--       <property name="eclipselink.target-database" value="HSQL"/> -->
+<!--     </properties> -->
+<!--   </persistence-unit> -->
+<!--   <persistence-unit name="EntitiesPU" transaction-type="JTA"> -->
+<!--     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>  -->
+<!--     <class>co.uniandes.sisinfo.entities.soporte.Ciudad</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.soporte.Departamento</class> -->
+<!--      <class>co.uniandes.sisinfo.entities.datosmaestros.Seccion</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Profesor</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.GrupoInvestigacion</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Persona</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.soporte.Pais</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.soporte.TipoDocumento</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Estudiante</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.InformacionAcademica</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Programa</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.soporte.TipoCuenta</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Facultad</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Curso</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Sesion</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Dia</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.DiaCompleto</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Franja</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Rol</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Parametro</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.NivelFormacion</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.NivelPlanta</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.DiaCompleto</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Usuario</class>    -->
+<!--     <exclude-unlisted-classes>false</exclude-unlisted-classes> -->
+<!--    <properties> -->
+<!--    	<property name="eclipselink.ddl-generation" value="create-tables"/> -->
+         
+<!--       <property name="javax.persistence.jdbc.driver" value="org.hsqldb.jdbcDriver"/> -->
+<!--       <property name="javax.persistence.jdbc.url" value="jdbc:hsqldb:mem:memory-db"/> -->
+<!--       <property name="javax.persistence.jdbc.user" value="sa"/> -->
+<!--       <property name="javax.persistence.jdbc.password" value=""/> -->
+<!--       <property name="eclipselink.target-database" value="HSQL"/> -->
+<!--     </properties> -->
+<!--   </persistence-unit> -->
+<!--   <persistence-unit name="ReservasInventarioPU" transaction-type="JTA"> -->
+<!--     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider> -->
+<!--     <class>co.uniandes.sisinfo.entities.soporte.Ciudad</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.soporte.Departamento</class> -->
+<!--      <class>co.uniandes.sisinfo.entities.datosmaestros.Seccion</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Profesor</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.GrupoInvestigacion</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Persona</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.soporte.Pais</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.soporte.TipoDocumento</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Estudiante</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.InformacionAcademica</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Programa</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.soporte.TipoCuenta</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Facultad</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Curso</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Sesion</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Dia</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.DiaCompleto</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Franja</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Rol</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Parametro</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.NivelFormacion</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.NivelPlanta</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.DiaCompleto</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Usuario</class> -->
+<!--     <exclude-unlisted-classes>false</exclude-unlisted-classes>     -->
+<!--    <properties> -->
+<!--    		<property name="eclipselink.ddl-generation" value="create-tables"/> -->
+         
+<!--       <property name="javax.persistence.jdbc.driver" value="org.hsqldb.jdbcDriver"/> -->
+<!--       <property name="javax.persistence.jdbc.url" value="jdbc:hsqldb:mem:memory-db"/> -->
+<!--       <property name="javax.persistence.jdbc.user" value="sa"/> -->
+<!--       <property name="javax.persistence.jdbc.password" value=""/> -->
+<!--       <property name="eclipselink.target-database" value="HSQL"/> -->
+<!--     </properties> -->
+<!--   </persistence-unit> -->
+<!--    <persistence-unit name="ProyectoDeGradoPregradoPU" transaction-type="JTA"> -->
+<!--     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>  -->
+<!--     <class>co.uniandes.sisinfo.entities.soporte.Ciudad</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.soporte.Departamento</class> -->
+<!--      <class>co.uniandes.sisinfo.entities.datosmaestros.Seccion</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Profesor</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.GrupoInvestigacion</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Persona</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.soporte.Pais</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.soporte.TipoDocumento</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Estudiante</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.InformacionAcademica</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Programa</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.soporte.TipoCuenta</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Facultad</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Curso</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Sesion</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Dia</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.DiaCompleto</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Franja</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Rol</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Parametro</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.NivelFormacion</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.NivelPlanta</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.DiaCompleto</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Usuario</class>    -->
+<!--     <exclude-unlisted-classes>false</exclude-unlisted-classes> -->
+<!--    <properties> -->
+<!--    		<property name="eclipselink.ddl-generation" value="create-tables"/> -->
+         
+<!--       <property name="javax.persistence.jdbc.driver" value="org.hsqldb.jdbcDriver"/> -->
+<!--       <property name="javax.persistence.jdbc.url" value="jdbc:hsqldb:mem:memory-db"/> -->
+<!--       <property name="javax.persistence.jdbc.user" value="sa"/> -->
+<!--       <property name="javax.persistence.jdbc.password" value=""/> -->
+<!--       <property name="eclipselink.target-database" value="HSQL"/> -->
+<!--     </properties> -->
+<!--   </persistence-unit> -->
+<!--   <persistence-unit name="ConflictoHorariosPU" transaction-type="JTA"> -->
+<!--     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>  -->
+<!--     <class>co.uniandes.sisinfo.entities.soporte.Ciudad</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.soporte.Departamento</class> -->
+<!--      <class>co.uniandes.sisinfo.entities.datosmaestros.Seccion</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Profesor</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.GrupoInvestigacion</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Persona</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.soporte.Pais</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.soporte.TipoDocumento</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Estudiante</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.InformacionAcademica</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Programa</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.soporte.TipoCuenta</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Facultad</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Curso</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Sesion</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Dia</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.DiaCompleto</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Franja</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Rol</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Parametro</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.NivelFormacion</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.NivelPlanta</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.DiaCompleto</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Usuario</class>    -->
+<!--     <exclude-unlisted-classes>false</exclude-unlisted-classes> -->
+<!--    <properties> -->
+<!--    		<property name="eclipselink.ddl-generation" value="create-tables"/> -->
+         
+<!--       <property name="javax.persistence.jdbc.driver" value="org.hsqldb.jdbcDriver"/> -->
+<!--       <property name="javax.persistence.jdbc.url" value="jdbc:hsqldb:mem:memory-db"/> -->
+<!--       <property name="javax.persistence.jdbc.user" value="sa"/> -->
+<!--       <property name="javax.persistence.jdbc.password" value=""/> -->
+<!--       <property name="eclipselink.target-database" value="HSQL"/> -->
+<!--     </properties> -->
+<!--   </persistence-unit> -->
+<!--   <persistence-unit name="ServiciosInfraestructuraPU" transaction-type="JTA"> -->
+<!--     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>  -->
+<!--     <class>co.uniandes.sisinfo.entities.soporte.Ciudad</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.soporte.Departamento</class> -->
+<!--      <class>co.uniandes.sisinfo.entities.datosmaestros.Seccion</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Profesor</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.GrupoInvestigacion</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Persona</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.soporte.Pais</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.soporte.TipoDocumento</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Estudiante</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.InformacionAcademica</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Programa</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.soporte.TipoCuenta</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Facultad</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Curso</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Sesion</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Dia</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.DiaCompleto</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Franja</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Rol</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Parametro</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.NivelFormacion</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.NivelPlanta</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.DiaCompleto</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Usuario</class>    -->
+<!--     <exclude-unlisted-classes>false</exclude-unlisted-classes> -->
+<!--    <properties> -->
+<!--    		<property name="eclipselink.ddl-generation" value="create-tables"/> -->
+         
+<!--       <property name="javax.persistence.jdbc.driver" value="org.hsqldb.jdbcDriver"/> -->
+<!--       <property name="javax.persistence.jdbc.url" value="jdbc:hsqldb:mem:memory-db"/> -->
+<!--       <property name="javax.persistence.jdbc.user" value="sa"/> -->
+<!--       <property name="javax.persistence.jdbc.password" value=""/> -->
+<!--       <property name="eclipselink.target-database" value="HSQL"/> -->
+<!--     </properties> -->
+<!--   </persistence-unit> -->
+<!--   <persistence-unit name="CargaYCompromisoProfPU" transaction-type="JTA"> -->
+<!--     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>  -->
+<!--     <class>co.uniandes.sisinfo.entities.soporte.Ciudad</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.soporte.Departamento</class> -->
+<!--      <class>co.uniandes.sisinfo.entities.datosmaestros.Seccion</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Profesor</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.GrupoInvestigacion</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Persona</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.soporte.Pais</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.soporte.TipoDocumento</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Estudiante</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.InformacionAcademica</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Programa</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.soporte.TipoCuenta</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Facultad</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Curso</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Sesion</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Dia</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.DiaCompleto</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Franja</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Rol</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Parametro</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.NivelFormacion</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.NivelPlanta</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.DiaCompleto</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Usuario</class>  -->
+<!--     <exclude-unlisted-classes>false</exclude-unlisted-classes>   -->
+<!--    <properties> -->
+<!--    		<property name="eclipselink.ddl-generation" value="create-tables"/> -->
+         
+<!--       <property name="javax.persistence.jdbc.driver" value="org.hsqldb.jdbcDriver"/> -->
+<!--       <property name="javax.persistence.jdbc.url" value="jdbc:hsqldb:mem:memory-db"/> -->
+<!--       <property name="javax.persistence.jdbc.user" value="sa"/> -->
+<!--       <property name="eclipselink.target-database" value="HSQL"/> -->
+<!--       <property name="javax.persistence.jdbc.password" value=""/> -->
+<!--     </properties> -->
+<!--   </persistence-unit> -->
+<!--   <persistence-unit name="ReservaCitasPU" transaction-type="JTA"> -->
+<!--     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider> -->
+<!--     <class>co.uniandes.sisinfo.entities.soporte.Ciudad</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.soporte.Departamento</class> -->
+<!--      <class>co.uniandes.sisinfo.entities.datosmaestros.Seccion</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Profesor</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.GrupoInvestigacion</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Persona</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.soporte.Pais</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.soporte.TipoDocumento</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Estudiante</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.InformacionAcademica</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Programa</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.soporte.TipoCuenta</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Facultad</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Curso</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Sesion</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Dia</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.DiaCompleto</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Franja</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Rol</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Parametro</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.NivelFormacion</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.NivelPlanta</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.DiaCompleto</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Usuario</class> -->
+<!--     <exclude-unlisted-classes>false</exclude-unlisted-classes>     -->
+<!--    <properties> -->
+<!--    		<property name="eclipselink.ddl-generation" value="create-tables"/> -->
+         
+<!--       <property name="javax.persistence.jdbc.driver" value="org.hsqldb.jdbcDriver"/> -->
+<!--       <property name="javax.persistence.jdbc.url" value="jdbc:hsqldb:mem:memory-db"/> -->
+<!--       <property name="javax.persistence.jdbc.user" value="sa"/> -->
+<!--       <property name="javax.persistence.jdbc.password" value=""/> -->
+<!--       <property name="eclipselink.target-database" value="HSQL"/> -->
+<!--     </properties> -->
+<!--   </persistence-unit> -->
+<!--   <persistence-unit name="ReservasInventarioPU" transaction-type="JTA"> -->
+<!--     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>   -->
+<!--     <class>co.uniandes.sisinfo.entities.soporte.Ciudad</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.soporte.Departamento</class> -->
+<!--      <class>co.uniandes.sisinfo.entities.datosmaestros.Seccion</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Profesor</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.GrupoInvestigacion</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Persona</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.soporte.Pais</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.soporte.TipoDocumento</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Estudiante</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.InformacionAcademica</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Programa</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.soporte.TipoCuenta</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Facultad</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Curso</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Sesion</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Dia</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.DiaCompleto</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Franja</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Rol</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Parametro</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.NivelFormacion</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.NivelPlanta</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.DiaCompleto</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Usuario</class>   -->
+<!--     <exclude-unlisted-classes>false</exclude-unlisted-classes> -->
+<!--    <properties> -->
+<!--    		<property name="eclipselink.ddl-generation" value="create-tables"/> -->
+         
+<!--       <property name="javax.persistence.jdbc.driver" value="org.hsqldb.jdbcDriver"/> -->
+<!--       <property name="javax.persistence.jdbc.url" value="jdbc:hsqldb:mem:memory-db"/> -->
+<!--       <property name="javax.persistence.jdbc.user" value="sa"/> -->
+<!--       <property name="javax.persistence.jdbc.password" value=""/> -->
+<!--       <property name="eclipselink.target-database" value="HSQL"/> -->
+<!--     </properties> -->
+<!--   </persistence-unit> -->
+<!--   <persistence-unit name="SisinfoAdministradorSisinfoPU" transaction-type="JTA"> -->
+<!--     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider> -->
+<!--     <class>co.uniandes.sisinfo.entities.soporte.Ciudad</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.soporte.Departamento</class> -->
+<!--      <class>co.uniandes.sisinfo.entities.datosmaestros.Seccion</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Profesor</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.GrupoInvestigacion</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Persona</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.soporte.Pais</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.soporte.TipoDocumento</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Estudiante</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.InformacionAcademica</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Programa</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.soporte.TipoCuenta</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Facultad</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Curso</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Sesion</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Dia</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.DiaCompleto</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Franja</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Rol</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Parametro</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.NivelFormacion</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.NivelPlanta</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.DiaCompleto</class> -->
+<!--     <class>co.uniandes.sisinfo.entities.datosmaestros.Usuario</class>    -->
+<!--     <exclude-unlisted-classes>false</exclude-unlisted-classes>  -->
+<!--    <properties> -->
+<!--    		<property name="eclipselink.ddl-generation" value="create-tables"/> -->
+         
+<!--       <property name="javax.persistence.jdbc.driver" value="org.hsqldb.jdbcDriver"/> -->
+<!--       <property name="javax.persistence.jdbc.url" value="jdbc:hsqldb:mem:memory-db"/> -->
+<!--       <property name="javax.persistence.jdbc.user" value="sa"/> -->
+<!--       <property name="javax.persistence.jdbc.password" value=""/> -->
+<!--       <property name="eclipselink.target-database" value="HSQL"/> -->
+<!--     </properties> -->
+<!--   </persistence-unit> -->
+</persistence> 

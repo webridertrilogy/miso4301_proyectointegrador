@@ -28,7 +28,7 @@ import org.hibernate.Hibernate;
 @Stateless
 @EJB(name = "ProgramaFacade", beanInterface = co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.ProgramaFacadeLocal.class)
 public class ProgramaFacade implements ProgramaFacadeLocal, ProgramaFacadeRemote {
-    @PersistenceContext
+	@PersistenceContext(unitName="SoporteSisinfoPU")
     private EntityManager em;
 
     @Override

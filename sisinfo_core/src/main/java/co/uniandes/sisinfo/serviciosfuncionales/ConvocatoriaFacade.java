@@ -24,7 +24,7 @@ import javax.persistence.PersistenceContext;
 @EJB(name = "ConvocatoriaFacade", beanInterface = co.uniandes.sisinfo.serviciosfuncionales.ConvocatoriaFacadeLocal.class)
 public class ConvocatoriaFacade implements ConvocatoriaFacadeLocal, ConvocatoriaFacadeRemote {
 
-    @PersistenceContext
+	@PersistenceContext(unitName="SoporteSisinfoPU")
     private EntityManager em;
 
     @Override

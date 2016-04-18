@@ -1,7 +1,7 @@
 package co.uniandes.sisinfo.entities.datosmaestros;
 
-import co.uniandes.sisinfo.entities.soporte.TipoCuenta;
 import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,6 +12,8 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import co.uniandes.sisinfo.entities.datosmaestros.soporte.TipoCuenta;
 
 /**
  * @author Administrador

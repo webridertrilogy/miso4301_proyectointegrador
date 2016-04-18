@@ -18,7 +18,7 @@ import javax.persistence.Query;
  */
 @Stateless
 public class EventoFacade implements EventoFacadeLocal, EventoFacadeRemote {
-    @PersistenceContext(unitName = "CargaYCompromisoProfPU")
+    @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 
     public void create(Evento evento) {

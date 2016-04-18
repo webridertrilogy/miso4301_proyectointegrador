@@ -8,33 +8,6 @@
  */
 package co.uniandes.sisinfo.serviciosnegocio;
 
-import co.uniandes.sisinfo.entities.datosmaestros.Profesor;
-import co.uniandes.sisinfo.comun.constantes.Constantes;
-import co.uniandes.sisinfo.comun.constantes.Mensajes;
-import co.uniandes.sisinfo.comun.constantes.Notificaciones;
-import co.uniandes.sisinfo.entities.Archivo;
-import co.uniandes.sisinfo.entities.Periodicidad;
-import co.uniandes.sisinfo.entities.Periodo;
-import co.uniandes.sisinfo.entities.RangoFechasGeneral;
-import co.uniandes.sisinfo.entities.TareaSencilla;
-
-import co.uniandes.sisinfo.entities.TipoArchivo;
-import co.uniandes.sisinfo.entities.datosmaestros.Curso;
-import co.uniandes.sisinfo.entities.datosmaestros.Parametro;
-import co.uniandes.sisinfo.entities.datosmaestros.Seccion;
-
-import co.uniandes.sisinfo.serviciosfuncionales.ArchivoFacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.CorreoRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.PeriodicidadFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.PeriodoFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.RangoFechasGeneralFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.ServiceLocator;
-import co.uniandes.sisinfo.serviciosfuncionales.TareaSencillaFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.TipoArchivoFacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.CursoFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.SeccionFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.parser.ParserT;
-import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
 import java.io.File;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
@@ -50,9 +23,36 @@ import java.util.Properties;
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import javax.naming.NamingException;
+
+import co.uniandes.sisinfo.comun.constantes.Constantes;
+import co.uniandes.sisinfo.comun.constantes.Mensajes;
+import co.uniandes.sisinfo.comun.constantes.Notificaciones;
+import co.uniandes.sisinfo.entities.Archivo;
+import co.uniandes.sisinfo.entities.Periodicidad;
+import co.uniandes.sisinfo.entities.Periodo;
+import co.uniandes.sisinfo.entities.RangoFechasGeneral;
+import co.uniandes.sisinfo.entities.TareaSencilla;
+import co.uniandes.sisinfo.entities.TipoArchivo;
+import co.uniandes.sisinfo.entities.datosmaestros.Curso;
+import co.uniandes.sisinfo.entities.datosmaestros.Parametro;
+import co.uniandes.sisinfo.entities.datosmaestros.Profesor;
+import co.uniandes.sisinfo.entities.datosmaestros.Seccion;
+import co.uniandes.sisinfo.serviciosfuncionales.ArchivoFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.CorreoRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.PeriodicidadFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.PeriodoFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.RangoFechasGeneralFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.ServiceLocator;
+import co.uniandes.sisinfo.serviciosfuncionales.TareaSencillaFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.TipoArchivoFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.CursoFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.SeccionFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.parser.ParserT;
+import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
 
 /**
  * Servicio de negocio: Administración de archivos

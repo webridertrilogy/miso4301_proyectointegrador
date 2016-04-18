@@ -24,7 +24,7 @@ import javax.persistence.Query;
 @Stateless
 public class NodoFacade implements NodoFacadeLocal, NodoFacadeRemote {
 
-    @PersistenceContext
+	@PersistenceContext(unitName="SoporteSisinfoPU")
     private EntityManager em;
 
     public void create(Nodo nodo) {

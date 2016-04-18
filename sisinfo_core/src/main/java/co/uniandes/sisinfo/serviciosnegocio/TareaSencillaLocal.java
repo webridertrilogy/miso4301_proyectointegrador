@@ -8,9 +8,11 @@
  */
 package co.uniandes.sisinfo.serviciosnegocio;
 
-import co.uniandes.sisinfo.entities.TareaSencilla;
 import java.util.HashMap;
+
 import javax.ejb.Local;
+
+import co.uniandes.sisinfo.entities.TareaSencilla;
 
 /**
  * Interface Local

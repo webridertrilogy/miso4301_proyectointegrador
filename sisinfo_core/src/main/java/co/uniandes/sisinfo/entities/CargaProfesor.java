@@ -30,9 +30,9 @@ import javax.persistence.Table;
     @NamedQuery(name = "CargaProfesor.findAll", query = "SELECT e FROM CargaProfesor e"),
     @NamedQuery(name = "CargaProfesor.findById", query = "SELECT e FROM CargaProfesor e WHERE e.id = :id"),
     @NamedQuery(name = "CargaProfesor.findByCorreo", query = "SELECT e FROM CargaProfesor e WHERE e.profesor.persona.correo = :correo"),
-    @NamedQuery(name = "CargaProfesor.findByIdProfesorAndPeriodo", query = "SELECT e FROM CargaProfesor e WHERE e.profesor.id = :idProfesor AND periodoPlaneacion.periodo = :periodo "),
-    @NamedQuery(name = "CargaProfesor.findByCorreoYPeriodo", query = "SELECT e FROM CargaProfesor e WHERE e.profesor.persona.correo = :correo AND periodoPlaneacion.periodo = :periodo"),
-    @NamedQuery(name = "CargaProfesor.findByPeriodo", query = "SELECT e FROM CargaProfesor e WHERE periodoPlaneacion.periodo = :periodo")
+    @NamedQuery(name = "CargaProfesor.findByIdProfesorAndPeriodo", query = "SELECT e FROM CargaProfesor e WHERE e.profesor.id = :idProfesor AND e.periodoPlaneacion.periodo = :periodo "),
+    @NamedQuery(name = "CargaProfesor.findByCorreoYPeriodo", query = "SELECT e FROM CargaProfesor e WHERE e.profesor.persona.correo = :correo AND e.periodoPlaneacion.periodo = :periodo"),
+    @NamedQuery(name = "CargaProfesor.findByPeriodo", query = "SELECT e FROM CargaProfesor e WHERE e.periodoPlaneacion.periodo = :periodo")
 })
 public class CargaProfesor implements Serializable {
 

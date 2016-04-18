@@ -4,6 +4,12 @@
  */
 package co.uniandes.sisinfo.serviciosnegocio;
 
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Date;
+
 import co.uniandes.sisinfo.comun.constantes.Constantes;
 import co.uniandes.sisinfo.entities.CampoAdicional;
 import co.uniandes.sisinfo.entities.CategoriaEventoExterno;
@@ -13,11 +19,6 @@ import co.uniandes.sisinfo.entities.TipoCampo;
 import co.uniandes.sisinfo.serviciosfuncionales.CategoriaEventoExternoFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.EventoExternoFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
-import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Date;
 
 /**
  *

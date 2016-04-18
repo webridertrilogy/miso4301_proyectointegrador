@@ -24,7 +24,7 @@ import javax.persistence.PersistenceContext;
 @EJB(name = "ComandoAuditoriaFacade", beanInterface = co.uniandes.sisinfo.serviciosfuncionales.ComandoAuditoriaFacadeLocal.class)
 public class ComandoAuditoriaFacade implements ComandoAuditoriaFacadeLocal {
 
-    @PersistenceContext
+	@PersistenceContext(unitName="SoporteSisinfoPU")
     private EntityManager em;
     private static SisinfoCache<ComandoAuditoria> cache;
 

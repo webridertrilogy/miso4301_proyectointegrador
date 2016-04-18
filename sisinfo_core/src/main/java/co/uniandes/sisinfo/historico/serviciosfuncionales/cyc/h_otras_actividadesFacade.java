@@ -18,7 +18,7 @@ import javax.persistence.Query;
  */
 @Stateless
 public class h_otras_actividadesFacade implements h_otras_actividadesFacadeLocal, h_otras_actividadesFacadeRemote {
-    @PersistenceContext(unitName = "HistoricoPU")
+    @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 
     public void create(h_otras_actividades h_otras_actividades) {

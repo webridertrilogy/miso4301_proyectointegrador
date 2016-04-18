@@ -1,15 +1,37 @@
 package co.uniandes.sisinfo.serviciosnegocio;
 
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Date;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import javax.annotation.Resource;
+import javax.ejb.EJB;
+import javax.ejb.SessionContext;
+import javax.ejb.Stateless;
+import javax.ejb.Timeout;
+import javax.ejb.Timer;
+import javax.ejb.TimerService;
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
+import javax.persistence.NonUniqueResultException;
+import javax.persistence.PersistenceContext;
+
 import co.uniandes.sisinfo.comun.constantes.Constantes;
 import co.uniandes.sisinfo.comun.constantes.Mensajes;
-import co.uniandes.sisinfo.entities.AlertaMultiple;
 import co.uniandes.sisinfo.entities.TimerAuditoria;
 import co.uniandes.sisinfo.entities.TimerGenerico;
-import co.uniandes.sisinfo.entities.datosmaestros.Usuario;
-import co.uniandes.sisinfo.serviciosfuncionales.AlertaMultipleFacade;
-import co.uniandes.sisinfo.serviciosfuncionales.AlertaMultipleFacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.CorreoRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.PeriodicidadFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.PeriodicidadFacadeRemote;
 import co.uniandes.sisinfo.serviciosfuncionales.ServiceLocator;
 import co.uniandes.sisinfo.serviciosfuncionales.TimerAuditoriaFacade;
@@ -17,35 +39,6 @@ import co.uniandes.sisinfo.serviciosfuncionales.TimerAuditoriaFacadeRemote;
 import co.uniandes.sisinfo.serviciosfuncionales.TimerGenericoFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.ParserT;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
-import co.uniandes.sisinfo.serviciosfuncionales.seguridad.UsuarioFacade;
-import co.uniandes.sisinfo.serviciosfuncionales.seguridad.UsuarioFacadeLocal;
-import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
-import javax.ejb.SessionContext;
-import javax.ejb.Timeout;
-import javax.ejb.Timer;
-import javax.annotation.Resource;
-import javax.ejb.TimerService;
-import javax.naming.NamingException;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import java.lang.reflect.InvocationTargetException;
-import java.util.Date;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.ejb.Stateless;
-import java.lang.reflect.Method;
-import java.util.AbstractList;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
-import javax.ejb.EJB;
-import javax.naming.Context;
-import javax.naming.InitialContext;
-import javax.persistence.NoResultException;
-import javax.persistence.NonUniqueResultException;
 
 /**
  * Servicios de negocio para administración de timers
@@ -57,7 +50,7 @@ public class TimerGenericoBean implements TimerGenericoBeanRemote, TimerGenerico
     // ----------------------------------------------------------------------
     // Atributos
     // ----------------------------------------------------------------------
-    @PersistenceContext
+	@PersistenceContext(unitName="SoporteSisinfoPU")
     private EntityManager em;
     private SimpleDateFormat sdf;
     private SimpleDateFormat sdfHMS;

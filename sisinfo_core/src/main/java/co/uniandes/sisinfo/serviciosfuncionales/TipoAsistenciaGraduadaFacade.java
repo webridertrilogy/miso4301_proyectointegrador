@@ -15,7 +15,7 @@ import javax.persistence.PersistenceContext;
 @Stateless
 public class TipoAsistenciaGraduadaFacade implements TipoAsistenciaGraduadaFacadeLocal, TipoAsistenciaGraduadaFacadeRemote {
 
-    @PersistenceContext(unitName = "BolsaEmpleoPU")
+    @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 
     public void create(TipoAsistenciaGraduada tipoAsistenciaGraduada) {

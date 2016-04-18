@@ -20,7 +20,7 @@ import org.hibernate.Hibernate;
  */
 @Stateless
 public class h_seccionFacade implements h_seccionFacadeLocal, h_seccionFacadeRemote {
-    @PersistenceContext(unitName = "HistoricoPU")
+    @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 
     public void create(h_seccion h_seccion) {

@@ -15,7 +15,7 @@ import javax.persistence.Query;
 @Stateless
 public class h_InscripcionSubareaInvest_Facade implements h_InscripcionSubareaInvest_FacadeLocal, h_InscripcionSubareaInvest_FacadeRemote {
 
-    @PersistenceContext(unitName = "HistoricoPU")
+    @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 
     public void create(h_inscripcion_subarea h_inscripcion_subarea) {

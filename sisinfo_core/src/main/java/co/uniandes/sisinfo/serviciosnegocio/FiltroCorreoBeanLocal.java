@@ -5,8 +5,9 @@
 
 package co.uniandes.sisinfo.serviciosnegocio;
 
-import co.uniandes.sisinfo.entities.FiltroCorreo;
 import javax.ejb.Local;
+
+import co.uniandes.sisinfo.entities.FiltroCorreo;
 
 /**
  *

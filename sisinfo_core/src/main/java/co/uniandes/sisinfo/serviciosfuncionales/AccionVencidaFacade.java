@@ -5,12 +5,16 @@
  */
 package co.uniandes.sisinfo.serviciosfuncionales;
 
-import co.uniandes.sisinfo.entities.AccionVencida;
 import java.util.List;
+
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+
 import org.hibernate.Hibernate;
+
+import co.uniandes.sisinfo.base.AbstractFacade;
+import co.uniandes.sisinfo.entities.AccionVencida;
 
 /**
  *

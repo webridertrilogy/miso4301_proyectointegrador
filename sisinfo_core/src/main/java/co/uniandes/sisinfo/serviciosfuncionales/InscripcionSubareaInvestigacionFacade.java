@@ -24,7 +24,7 @@ import org.hibernate.Hibernate;
 @Stateless
 public class InscripcionSubareaInvestigacionFacade implements InscripcionSubareaInvestigacionFacadeLocal, InscripcionSubareaInvestigacionFacadeRemote {
 
-    @PersistenceContext(unitName = "TesisMaestriaPU")
+    @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 
     public void create(InscripcionSubareaInvestigacion tesis1) {

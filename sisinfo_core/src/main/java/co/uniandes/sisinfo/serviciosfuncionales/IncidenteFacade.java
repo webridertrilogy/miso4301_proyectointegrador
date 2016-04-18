@@ -5,6 +5,7 @@
  */
 package co.uniandes.sisinfo.serviciosfuncionales;
 
+import co.uniandes.sisinfo.base.AbstractFacade;
 import co.uniandes.sisinfo.entities.Incidente;
 import java.sql.Timestamp;
 import java.util.Collection;

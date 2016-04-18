@@ -1,5 +1,19 @@
 package co.uniandes.sisinfo.serviciosnegocio;
 
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Properties;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import javax.ejb.EJB;
+import javax.ejb.Stateless;
+
 import co.uniandes.sisinfo.bo.AccionBO;
 import co.uniandes.sisinfo.comun.constantes.Constantes;
 import co.uniandes.sisinfo.comun.constantes.Mensajes;
@@ -8,7 +22,6 @@ import co.uniandes.sisinfo.entities.CategoriaProyectoDeGrado;
 import co.uniandes.sisinfo.entities.ComentarioTesisPregrado;
 import co.uniandes.sisinfo.entities.PeriodoTesisPregrado;
 import co.uniandes.sisinfo.entities.ProyectoDeGrado;
-import co.uniandes.sisinfo.entities.TareaMultiple;
 import co.uniandes.sisinfo.entities.TareaSencilla;
 import co.uniandes.sisinfo.entities.TemaTesisPregrado;
 import co.uniandes.sisinfo.entities.datosmaestros.Estudiante;
@@ -28,22 +41,9 @@ import co.uniandes.sisinfo.serviciosfuncionales.TareaSencillaFacadeRemote;
 import co.uniandes.sisinfo.serviciosfuncionales.TemaTesisPregradoFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.EstudianteFacadeRemote;
 import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.NivelFormacionFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.PersonaFacade;
 import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.ProfesorFacadeRemote;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.ParserT;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
-import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.Properties;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.ejb.EJB;
-import javax.ejb.Stateless;
 
 /**
  * Servicios de administración de proyectos de grado

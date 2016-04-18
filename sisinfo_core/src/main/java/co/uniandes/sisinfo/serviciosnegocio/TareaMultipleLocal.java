@@ -8,11 +8,13 @@
  */
 package co.uniandes.sisinfo.serviciosnegocio;
 
-import co.uniandes.sisinfo.entities.TareaMultiple;
 import java.sql.Timestamp;
 import java.util.HashMap;
 import java.util.Properties;
+
 import javax.ejb.Local;
+
+import co.uniandes.sisinfo.entities.TareaMultiple;
 
 /**
  * Interface Local

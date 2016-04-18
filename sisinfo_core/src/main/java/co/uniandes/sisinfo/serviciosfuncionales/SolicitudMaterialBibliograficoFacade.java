@@ -21,7 +21,7 @@ import javax.persistence.Query;
  */
 @Stateless
 public class SolicitudMaterialBibliograficoFacade implements SolicitudMaterialBibliograficoFacadeLocal, SolicitudMaterialBibliograficoFacadeRemote {
-    @PersistenceContext
+	@PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 
     @Override

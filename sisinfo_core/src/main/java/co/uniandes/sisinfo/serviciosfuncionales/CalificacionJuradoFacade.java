@@ -4,6 +4,7 @@
  */
 package co.uniandes.sisinfo.serviciosfuncionales;
 
+import co.uniandes.sisinfo.base.AbstractFacade;
 import co.uniandes.sisinfo.entities.CalificacionCriterio;
 import co.uniandes.sisinfo.entities.CalificacionJurado;
 import co.uniandes.sisinfo.entities.CategoriaCriterioJurado;
@@ -23,7 +24,7 @@ import org.hibernate.Hibernate;
 @Stateless
 public class CalificacionJuradoFacade extends AbstractFacade<CalificacionJurado> implements CalificacionJuradoFacadeLocal, CalificacionJuradoFacadeRemote {
 
-    @PersistenceContext(unitName = "TesisMaestriaPU")
+    @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 
     protected EntityManager getEntityManager() {

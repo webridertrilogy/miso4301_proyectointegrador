@@ -4,26 +4,25 @@
  */
 package co.uniandes.sisinfo.serviciosnegocio;
 
+import java.util.List;
+
+import javax.annotation.Resource;
+import javax.ejb.EJB;
+import javax.ejb.SessionContext;
+import javax.ejb.Stateless;
+import javax.naming.NamingException;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
 import co.uniandes.sisinfo.comun.constantes.Constantes;
 import co.uniandes.sisinfo.comun.constantes.Notificaciones;
 import co.uniandes.sisinfo.entities.AlertaMultiple;
-import co.uniandes.sisinfo.entities.TimerGenerico;
 import co.uniandes.sisinfo.entities.datosmaestros.Usuario;
 import co.uniandes.sisinfo.serviciosfuncionales.AlertaMultipleFacadeRemote;
 import co.uniandes.sisinfo.serviciosfuncionales.CorreoRemote;
 import co.uniandes.sisinfo.serviciosfuncionales.ServiceLocator;
 import co.uniandes.sisinfo.serviciosfuncionales.TimerGenericoFacadeRemote;
 import co.uniandes.sisinfo.serviciosfuncionales.seguridad.UsuarioFacadeRemote;
-import java.util.Collection;
-import java.util.List;
-import javax.annotation.Resource;
-import javax.ejb.EJB;
-import javax.ejb.SessionContext;
-import javax.ejb.Stateless;
-import javax.ejb.Timer;
-import javax.naming.NamingException;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 
 /**
  *
@@ -48,7 +47,7 @@ public class AdministradorSisinfoBean implements AdministradorSisinfoBeanRemote,
     private CorreoRemote correoBean;
     @Resource
     private SessionContext ctx;
-    @PersistenceContext
+    @PersistenceContext(unitName="SoporteSisinfoPU")
     private EntityManager em;
     @EJB
     private TimerGenericoFacadeRemote timerGenericoFacade;

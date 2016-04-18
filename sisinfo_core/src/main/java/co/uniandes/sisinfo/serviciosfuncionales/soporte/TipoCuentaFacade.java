@@ -5,14 +5,15 @@
 
 package co.uniandes.sisinfo.serviciosfuncionales.soporte;
 
-import co.uniandes.sisinfo.entities.soporte.TipoCuenta;
-import co.uniandes.sisinfo.entities.soporte.TipoCuenta;
 import java.util.List;
+
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
+
+import co.uniandes.sisinfo.entities.datosmaestros.soporte.TipoCuenta;
 
 /**
  *
@@ -20,7 +21,7 @@ import javax.persistence.Query;
  */
 @Stateless
 public class TipoCuentaFacade implements TipoCuentaFacadeLocal, TipoCuentaFacadeRemote {
-    @PersistenceContext(unitName = "DatosMaestrosPU")
+    @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 
     public void create(TipoCuenta tipoCuenta) {

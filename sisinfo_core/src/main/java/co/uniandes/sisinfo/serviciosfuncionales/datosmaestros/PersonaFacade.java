@@ -21,7 +21,7 @@ import org.hibernate.Hibernate;
 @Stateless
 public class PersonaFacade implements PersonaFacadeLocal, PersonaFacadeRemote {
 
-    @PersistenceContext
+	@PersistenceContext(unitName="SoporteSisinfoPU")
     private EntityManager em;
 
     public void create(Persona persona) {

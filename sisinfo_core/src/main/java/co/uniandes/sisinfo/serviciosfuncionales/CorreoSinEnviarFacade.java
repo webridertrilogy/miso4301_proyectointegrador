@@ -5,6 +5,7 @@
 
 package co.uniandes.sisinfo.serviciosfuncionales;
 
+import co.uniandes.sisinfo.base.AbstractFacade;
 import co.uniandes.sisinfo.entities.CorreoSinEnviar;
 import java.util.List;
 import javax.ejb.Stateless;
@@ -17,7 +18,7 @@ import javax.persistence.PersistenceContext;
  */
 @Stateless
 public class CorreoSinEnviarFacade extends AbstractFacade<CorreoSinEnviar> implements CorreoSinEnviarFacadeLocal, CorreoSinEnviarFacadeRemote {
-    @PersistenceContext(unitName = "ServiciosInfraestructuraPU")
+    @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 
     protected EntityManager getEntityManager() {

@@ -5,10 +5,12 @@
 
 package co.uniandes.sisinfo.serviciosfuncionales.soporte;
 
-import co.uniandes.sisinfo.entities.soporte.Ciudad;
 import java.util.Collection;
 import java.util.List;
+
 import javax.ejb.Remote;
+
+import co.uniandes.sisinfo.entities.datosmaestros.soporte.Ciudad;
 
 /**
  *

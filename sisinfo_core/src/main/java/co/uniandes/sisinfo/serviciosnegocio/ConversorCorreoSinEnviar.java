@@ -5,13 +5,14 @@
 
 package co.uniandes.sisinfo.serviciosnegocio;
 
-import co.uniandes.sisinfo.comun.constantes.Constantes;
-import co.uniandes.sisinfo.entities.CorreoSinEnviar;
-import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
+
+import co.uniandes.sisinfo.comun.constantes.Constantes;
+import co.uniandes.sisinfo.entities.CorreoSinEnviar;
+import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
 
 /**
  *

@@ -17,7 +17,7 @@ import javax.persistence.TemporalType;
  */
 @Stateless
 public class ReservaInventarioFacade implements ReservaInventarioFacadeLocal, ReservaInventarioFacadeRemote {
-    @PersistenceContext(unitName = "ReservasInventarioPU")
+    @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 
     public void create(ReservaInventario entity) {

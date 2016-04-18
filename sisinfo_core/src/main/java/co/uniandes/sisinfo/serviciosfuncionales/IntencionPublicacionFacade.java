@@ -18,7 +18,7 @@ import javax.persistence.Query;
  */
 @Stateless
 public class IntencionPublicacionFacade implements IntencionPublicacionFacadeLocal, IntencionPublicacionFacadeRemote {
-    @PersistenceContext(unitName = "CargaYCompromisoProfPU")
+    @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 
     public void create(IntencionPublicacion intencionPublicacion) {

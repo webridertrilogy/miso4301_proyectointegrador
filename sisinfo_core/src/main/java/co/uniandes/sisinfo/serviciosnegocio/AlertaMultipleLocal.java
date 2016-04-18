@@ -8,8 +8,9 @@
  */
 package co.uniandes.sisinfo.serviciosnegocio;
 
-import co.uniandes.sisinfo.entities.AlertaMultiple;
 import javax.ejb.Local;
+
+import co.uniandes.sisinfo.entities.AlertaMultiple;
 
 /**
  * Interface Local

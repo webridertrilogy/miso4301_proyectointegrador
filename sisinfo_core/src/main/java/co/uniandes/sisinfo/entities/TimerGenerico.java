@@ -29,9 +29,9 @@ import javax.persistence.NamedQuery;
     @NamedQuery(name = "TimerGenerico.findById", query = "SELECT a FROM TimerGenerico a WHERE a.id = :id "),
     @NamedQuery(name = "TimerGenerico.findByNombreMetodoALlamar", query = "SELECT a FROM TimerGenerico a WHERE a.nombreMetodoALLamar = :nombreMetodo"),
     @NamedQuery(name = "TimerGenerico.findByParametroExterno", query = "SELECT a FROM TimerGenerico a WHERE a.infoTimer = :infoTimer"),
-    @NamedQuery(name = "TimerGenerico.findByTodosLosParametros", query = "SELECT a FROM TimerGenerico a WHERE a.nombreMetodoALLamar = :nombreMetodo AND direccionInterfaz = :direccionInterfaz AND infoTimer = :infoTimer AND  FechaFin = :FechaFin"),
-    @NamedQuery(name = "TimerGenerico.findByDireccionNombreYParametro", query = "SELECT a FROM TimerGenerico a WHERE direccionInterfaz = :direccionInterfaz AND a.nombreMetodoALLamar = :nombreMetodoALLamar AND infoTimer = :infoTimer"),
-    @NamedQuery(name = "TimerGenerico.findByDireccionInterfaz", query = "SELECT a FROM TimerGenerico a WHERE direccionInterfaz = :direccionInterfaz")
+    @NamedQuery(name = "TimerGenerico.findByTodosLosParametros", query = "SELECT a FROM TimerGenerico a WHERE a.nombreMetodoALLamar = :nombreMetodo AND a.direccionInterfaz = :direccionInterfaz AND a.infoTimer = :infoTimer AND  a.fechaFin = :FechaFin"),
+    @NamedQuery(name = "TimerGenerico.findByDireccionNombreYParametro", query = "SELECT a FROM TimerGenerico a WHERE a.direccionInterfaz = :direccionInterfaz AND a.nombreMetodoALLamar = :nombreMetodoALLamar AND a.infoTimer = :infoTimer"),
+    @NamedQuery(name = "TimerGenerico.findByDireccionInterfaz", query = "SELECT a FROM TimerGenerico a WHERE a.direccionInterfaz = :direccionInterfaz")
 })
 public class TimerGenerico implements Serializable {
 

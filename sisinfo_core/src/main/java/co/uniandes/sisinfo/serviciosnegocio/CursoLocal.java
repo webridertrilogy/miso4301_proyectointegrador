@@ -10,9 +10,11 @@
 package co.uniandes.sisinfo.serviciosnegocio;
 
 
-import co.uniandes.sisinfo.entities.datosmaestros.Seccion;
 import java.util.Collection;
+
 import javax.ejb.Local;
+
+import co.uniandes.sisinfo.entities.datosmaestros.Seccion;
 
 /**
  * Interface Local

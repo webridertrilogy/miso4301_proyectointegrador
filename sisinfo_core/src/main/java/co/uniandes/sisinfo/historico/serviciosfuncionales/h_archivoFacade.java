@@ -21,7 +21,7 @@ import javax.persistence.Query;
  */
 @Stateless
 public class h_archivoFacade implements h_archivoFacadeLocal, h_archivoFacadeRemote {
-    @PersistenceContext(unitName = "HistoricoPU")
+    @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 
     public void create(h_archivo h_archivo) {

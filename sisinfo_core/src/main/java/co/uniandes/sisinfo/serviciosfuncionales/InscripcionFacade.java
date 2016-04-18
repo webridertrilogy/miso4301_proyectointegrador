@@ -24,7 +24,7 @@ public class InscripcionFacade implements InscripcionFacadeRemote, InscripcionFa
     // Add business logic below. (Right-click in editor and choose
     // "Insert Code > Add Business Method")
 
-     @PersistenceContext
+	@PersistenceContext(unitName="SoporteSisinfoPU")
     private EntityManager em;
 
     public void create(Inscripcion inscripcion) {

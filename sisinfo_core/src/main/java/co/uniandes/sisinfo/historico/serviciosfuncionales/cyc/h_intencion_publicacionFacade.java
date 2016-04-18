@@ -20,7 +20,7 @@ import javax.persistence.Query;
  */
 @Stateless
 public class h_intencion_publicacionFacade implements h_intencion_publicacionFacadeLocal, h_intencion_publicacionFacadeRemote {
-    @PersistenceContext(unitName = "HistoricoPU")
+    @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 
     public void create(h_intencion_publicacion h_intencion_publicacion) {

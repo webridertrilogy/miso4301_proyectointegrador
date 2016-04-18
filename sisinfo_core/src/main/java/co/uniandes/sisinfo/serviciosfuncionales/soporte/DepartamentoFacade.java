@@ -4,14 +4,17 @@
  */
 package co.uniandes.sisinfo.serviciosfuncionales.soporte;
 
-import co.uniandes.sisinfo.entities.soporte.Ciudad;
-import co.uniandes.sisinfo.entities.soporte.Departamento;
 import java.util.Collection;
+
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
+
 import org.hibernate.Hibernate;
+
+import co.uniandes.sisinfo.entities.datosmaestros.soporte.Ciudad;
+import co.uniandes.sisinfo.entities.datosmaestros.soporte.Departamento;
 
 /**
  *
@@ -20,7 +23,7 @@ import org.hibernate.Hibernate;
 @Stateless
 public class DepartamentoFacade extends AbstractFacade<Departamento> implements DepartamentoFacadeLocal, DepartamentoFacadeRemote {
 
-    @PersistenceContext(unitName = "DatosMaestrosPU")
+    @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 
     protected EntityManager getEntityManager() {

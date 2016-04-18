@@ -1,4 +1,4 @@
-package co.uniandes.sisinfo.serviciosfuncionales;
+package co.uniandes.sisinfo.base;
 
 import java.util.List;
 import javax.persistence.EntityManager;

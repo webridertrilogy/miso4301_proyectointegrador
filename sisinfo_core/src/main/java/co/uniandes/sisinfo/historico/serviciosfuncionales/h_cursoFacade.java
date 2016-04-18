@@ -24,7 +24,7 @@ import org.hibernate.Hibernate;
  */
 @Stateless
 public class h_cursoFacade implements h_cursoFacadeLocal, h_cursoFacadeRemote {
-    @PersistenceContext(unitName = "HistoricoPU")
+    @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 
     public void create(h_curso h_curso) {

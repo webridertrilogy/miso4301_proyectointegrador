@@ -23,7 +23,7 @@ import org.hibernate.Hibernate;
  */
 @Stateless
 public class h_cargaProfesor_cycFacade implements h_cargaProfesor_cycFacadeLocal, h_cargaProfesor_cycFacadeRemote {
-    @PersistenceContext(unitName = "HistoricoPU")
+    @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 
     public void create(h_cargaProfesor_cyc h_cargaProfesor_cyc) {

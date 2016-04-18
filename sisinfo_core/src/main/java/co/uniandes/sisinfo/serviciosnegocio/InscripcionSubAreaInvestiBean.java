@@ -4,6 +4,20 @@
  */
 package co.uniandes.sisinfo.serviciosnegocio;
 
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Properties;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import javax.ejb.EJB;
+import javax.ejb.Stateless;
+
 import co.uniandes.sisinfo.comun.constantes.Constantes;
 import co.uniandes.sisinfo.comun.constantes.Mensajes;
 import co.uniandes.sisinfo.comun.constantes.Notificaciones;
@@ -13,7 +27,6 @@ import co.uniandes.sisinfo.entities.InscripcionSubareaInvestigacion;
 import co.uniandes.sisinfo.entities.PeriodoTesis;
 import co.uniandes.sisinfo.entities.TareaSencilla;
 import co.uniandes.sisinfo.entities.datosmaestros.Persona;
-import co.uniandes.sisinfo.entities.datosmaestros.Profesor;
 import co.uniandes.sisinfo.serviciosfuncionales.CorreoRemote;
 import co.uniandes.sisinfo.serviciosfuncionales.CursoMaestriaFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.CursoTesisFacadeLocal;
@@ -27,18 +40,6 @@ import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.EstudianteFacadeRe
 import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.ProfesorFacadeRemote;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.ParserT;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
-import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.Properties;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.ejb.EJB;
-import javax.ejb.Stateless;
 
 /**
  *

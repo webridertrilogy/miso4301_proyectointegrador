@@ -17,7 +17,7 @@ import javax.persistence.Query;
 @Stateless
 public class LaboratorioFacade implements LaboratorioFacadeLocal, LaboratorioFacadeRemote {
 
-    @PersistenceContext(unitName = "ReservasInventarioPU")
+    @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 
     public void create(Laboratorio entity) {

@@ -5,8 +5,9 @@
 
 package co.uniandes.sisinfo.serviciosnegocio;
 
-import co.uniandes.sisinfo.entities.Tesis2;
 import javax.ejb.Local;
+
+import co.uniandes.sisinfo.entities.Tesis2;
 
 /**
  *

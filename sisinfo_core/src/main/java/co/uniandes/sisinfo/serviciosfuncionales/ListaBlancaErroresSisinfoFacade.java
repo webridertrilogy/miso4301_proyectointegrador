@@ -5,6 +5,7 @@
 
 package co.uniandes.sisinfo.serviciosfuncionales;
 
+import co.uniandes.sisinfo.base.AbstractFacade;
 import co.uniandes.sisinfo.entities.ListaBlancaErroresSisinfo;
 import java.util.List;
 import javax.ejb.Stateless;

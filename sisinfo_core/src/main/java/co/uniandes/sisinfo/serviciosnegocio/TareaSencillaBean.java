@@ -10,14 +10,6 @@
 package co.uniandes.sisinfo.serviciosnegocio;
 
 
-import co.uniandes.sisinfo.comun.constantes.Constantes;
-import co.uniandes.sisinfo.entities.TareaSencilla;
-import co.uniandes.sisinfo.entities.datosmaestros.Parametro;
-import co.uniandes.sisinfo.serviciosfuncionales.parser.ParserT;
-import co.uniandes.sisinfo.serviciosfuncionales.AlertaMultipleFacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.ServiceLocator;
-import co.uniandes.sisinfo.serviciosfuncionales.TareaSencillaFacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.seguridad.RolFacadeLocal;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -25,9 +17,19 @@ import java.util.Iterator;
 import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import javax.naming.NamingException;
+
+import co.uniandes.sisinfo.comun.constantes.Constantes;
+import co.uniandes.sisinfo.entities.TareaSencilla;
+import co.uniandes.sisinfo.entities.datosmaestros.Parametro;
+import co.uniandes.sisinfo.serviciosfuncionales.AlertaMultipleFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.ServiceLocator;
+import co.uniandes.sisinfo.serviciosfuncionales.TareaSencillaFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.parser.ParserT;
+import co.uniandes.sisinfo.serviciosfuncionales.seguridad.RolFacadeLocal;
 
 /**
  * Servicio de negocio: Administración de tareas sencillas

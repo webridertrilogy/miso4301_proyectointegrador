@@ -27,7 +27,7 @@ import javax.persistence.PersistenceContext;
 @Stateless
 @EJB(name = "CredencialFacade", beanInterface = co.uniandes.sisinfo.serviciosfuncionales.CredencialFacadeLocal.class)
 public class CredencialFacade implements CredencialFacadeLocal, CredencialFacadeRemote {
-    @PersistenceContext
+	@PersistenceContext(unitName="SoporteSisinfoPU")
     private EntityManager em;
 
     public void create(Credencial credencial) {

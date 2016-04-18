@@ -24,7 +24,7 @@ import javax.persistence.PersistenceContext;
 @EJB(name = "HorarioFacade", beanInterface = co.uniandes.sisinfo.serviciosfuncionales.HorarioFacadeLocal.class)
 public class HorarioFacade implements HorarioFacadeLocal, HorarioFacadeRemote {
 
-    @PersistenceContext
+	@PersistenceContext(unitName="SoporteSisinfoPU")
     private EntityManager em;
 
     @Override

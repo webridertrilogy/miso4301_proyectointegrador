@@ -24,7 +24,7 @@ import javax.persistence.Query;
 @Stateless
 public class ContactoFacade implements ContactoFacadeLocal, ContactoFacadeRemote {
 
-    @PersistenceContext(unitName = "ContactosCrmPU")
+    @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 
     public void create(Contacto contacto) {

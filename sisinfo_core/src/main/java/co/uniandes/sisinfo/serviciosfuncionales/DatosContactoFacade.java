@@ -14,7 +14,7 @@ import javax.persistence.PersistenceContext;
  */
 @Stateless
 public class DatosContactoFacade implements DatosContactoFacadeLocal, DatosContactoFacadeRemote {
-    @PersistenceContext(unitName = "ReservaCitasPU")
+    @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 
     public void create(DatosContacto DatosContacto) {

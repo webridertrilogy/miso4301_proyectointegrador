@@ -17,7 +17,7 @@ import javax.persistence.PersistenceContext;
  */
 @Stateless
 public class MaterialBibliograficoFacade implements MaterialBibliograficoFacadeLocal {
-    @PersistenceContext
+	@PersistenceContext(unitName="SoporteSisinfoPU")
     private EntityManager em;
 
     public void create(MaterialBibliografico materialBibliografico) {

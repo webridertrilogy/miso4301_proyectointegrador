@@ -29,13 +29,13 @@ import javax.persistence.OneToOne;
     @NamedQuery(name = "Tesis2.findByEstadoTesis", query = "SELECT i FROM Tesis2 i WHERE i.estadoTesis =:estado"),
     @NamedQuery(name = "Tesis2.findByEstadoYPeriodoTesis", query = "SELECT i FROM Tesis2 i WHERE i.estadoTesis =:estado AND i.semestreInicio.id like :periodo"),
     @NamedQuery(name = "Tesis2.findByGrupoInvestigacion", query = "SELECT i FROM Tesis2 i WHERE i.subGrupoInvestigacion.nombreSubarea =:nombreGrupo"),
-    @NamedQuery(name = "Tesis2.findByHorarioSustentacion", query = "SELECT i FROM Tesis2 i WHERE i.semestreInicio.periodo =:periodo OR i.semestreInicio.periodo =:periodoAnterior AND horarioSustentacion != null AND horarioSustentacion.fechaSustentacion "
-    + "!=null ORDER BY  horarioSustentacion.fechaSustentacion ASC"),
-    @NamedQuery(name = "Tesis2.findAllOrderBySemestre", query = "SELECT i FROM Tesis2 i ORDER BY  semestreInicio.periodo DESC"),
-    @NamedQuery(name = "Tesis2.findByComentariosTesis", query = "SELECT i FROM Tesis2 i WHERE i.comentariosAsesor.size < 1 AND  i.semestreInicio.periodo =:periodo  order by asesor.persona.apellidos"),
+    @NamedQuery(name = "Tesis2.findByHorarioSustentacion", query = "SELECT i FROM Tesis2 i WHERE i.semestreInicio.periodo =:periodo OR i.semestreInicio.periodo =:periodoAnterior AND i.horarioSustentacion is not  null AND i.horarioSustentacion.fechaSustentacion "
+    + "is not null ORDER BY  i.horarioSustentacion.fechaSustentacion ASC"),
+    @NamedQuery(name = "Tesis2.findAllOrderBySemestre", query = "SELECT i FROM Tesis2 i ORDER BY  i.semestreInicio.periodo DESC"),
+   // @NamedQuery(name = "Tesis2.findByComentariosTesis", query = "SELECT i FROM Tesis2 i WHERE i.comentariosAsesor.size < 1 AND  i.semestreInicio.periodo =:periodo  order by i.asesor.persona.apellidos"),
     @NamedQuery(name = "Tesis2.findAsesoresByPeriodoEstado", query = "SELECT Distinct i.asesor.persona FROM Tesis2 i WHERE i.estadoTesis =:estadoTesis AND i.semestreInicio.periodo =:periodo  "),
     @NamedQuery(name = "Tesis2.findDetallesSustentacionByPeriodoEstado", query = "SELECT Distinct i FROM Tesis2 i WHERE  i.semestreInicio.periodo =:periodo AND i.horarioSustentacion.fechaSustentacion is not null "),
-    @NamedQuery(name = "Tesis2.findByDiferentePeriodoTesis", query = "SELECT i FROM Tesis2 i WHERE  i.semestreInicio.periodo!=:periodo and i.estadoTesis=:estadoTesis  and (estaEnPendienteEspecial is null or estaEnPendienteEspecial=false)")
+    @NamedQuery(name = "Tesis2.findByDiferentePeriodoTesis", query = "SELECT i FROM Tesis2 i WHERE  i.semestreInicio.periodo!=:periodo and i.estadoTesis=:estadoTesis  and (i.estaEnPendienteEspecial is null or i.estaEnPendienteEspecial=false)")
 })
 public class Tesis2 implements Serializable {
 

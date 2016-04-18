@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="off">    
+    <Appenders>
+        <RollingFile name="fileWriter"
+                      fileName="D:\\LOGS_APP\\log-sql-sisinfo.log"
+                     filePattern="D:\\LOGS_APP\\log-sql-sisinfo-%d{yyyy-MM-dd}-%i.log">
+          <PatternLayout>
+			<pattern>%m%n</pattern>
+		  </PatternLayout>
+          <Policies>				
+				 <SizeBasedTriggeringPolicy size="20 MB" />
+				 <TimeBasedTriggeringPolicy />
+		   </Policies>
+        </RollingFile>
+    </Appenders>
+    <Loggers>
+        <Root level="off">
+            <AppenderRef ref="fileWriter"/>
+        </Root>
+        
+         <Logger name="log4j.logger.jdbc.audit" level="debug" additivity="false">      
+ 	      <AppenderRef ref="fileWriter"/> 
+ 	    </Logger>
+<!--  	     <Logger name="jdbc.audit" level="debug" additivity="false">       -->
+<!--  	      <AppenderRef ref="fileWriter"/>  -->
+<!--  	    </Logger>  -->
+        <Logger name="jdbc.audit" level="debug" additivity="false">      
+ 	      <AppenderRef ref="fileWriter"/> 
+ 	    </Logger>
+ 	    <Logger name="jdbc.connection" level="off" additivity="false">      
+ 	      <AppenderRef ref="fileWriter"/> 
+ 	    </Logger>
+ 	    <Logger name="log4j.logger.jdbc.connection" level="off" additivity="false">      
+ 	      <AppenderRef ref="fileWriter"/> 
+ 	    </Logger>    
+ 	     
+		 	    <logger name="log4jdbc.log4j2" level="debug" additivity="false">
+		
+			<MarkerFilter marker="LOG4JDBC_AUDIT" onMatch="ACCEPT" onMismatch="DENY"/>
+		  <appender-ref ref="fileWriter"/>
+		
+		
+		</logger>
+    </Loggers>
+</Configuration>

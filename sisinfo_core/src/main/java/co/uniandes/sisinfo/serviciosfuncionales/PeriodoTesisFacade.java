@@ -20,7 +20,7 @@ import javax.persistence.Query;
  */
 @Stateless
 public class PeriodoTesisFacade implements PeriodoTesisFacadeLocal, PeriodoTesisFacadeRemote {
-    @PersistenceContext(unitName = "TesisMaestriaPU")
+    @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 
     public void create(PeriodoTesis periodoTesis) {

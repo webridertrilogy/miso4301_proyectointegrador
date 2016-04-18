@@ -32,17 +32,17 @@ public class CorreoAuditoria implements Serializable {
     private Long id;
     @Column(name = "asunto")
     private String asunto;
-    @Column(name = "mensaje", length = 450000)
+    @Column(name = "mensaje", length = 2000)
     private String mensaje;
     @Column(name = "fecha")
     private Timestamp fechaEnvio;
-    @Column(name = "destinatarios", length = 214123)
+    @Column(name = "destinatarios", length = 2000)
     private String destinatarios;
-    @Column(name = "destinatarioscc", length = 214123)
+    @Column(name = "destinatarioscc", length = 2000)
     private String destinatariosCC;
-    @Column(name = "destinatarioscco", length = 214123)
+    @Column(name = "destinatarioscco", length = 2000)
     private String destinatariosCCO;
-    @Column(name = "nombreAdjunto", length = 214123)
+    @Column(name = "nombreAdjunto", length = 2000)
     private String nombreAdjunto;
     @Column(name = "enviado")
     private Boolean enviado;

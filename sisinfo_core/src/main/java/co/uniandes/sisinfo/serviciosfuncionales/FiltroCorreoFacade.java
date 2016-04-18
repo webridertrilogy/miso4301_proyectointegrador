@@ -5,14 +5,14 @@
 
 package co.uniandes.sisinfo.serviciosfuncionales;
 
-import co.uniandes.sisinfo.entities.FiltroCorreo;
-import co.uniandes.sisinfo.entities.FiltroCorreo;
-import java.util.ArrayList;
-import java.util.Collection;
+import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
+import javax.enterprise.inject.Default;
 import javax.persistence.EntityManager;
-import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
+
+import co.uniandes.sisinfo.base.AbstractFacade;
+import co.uniandes.sisinfo.entities.FiltroCorreo;
 
 /**
  *
@@ -20,7 +20,7 @@ import javax.persistence.PersistenceContext;
  */
 @Stateless
 public class FiltroCorreoFacade extends AbstractFacade<FiltroCorreo> implements FiltroCorreoFacadeLocal, FiltroCorreoFacadeRemote {
-    @PersistenceContext(unitName = "ServiciosInfraestructuraPU")
+    @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 
     protected EntityManager getEntityManager() {

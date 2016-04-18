@@ -24,7 +24,7 @@ import javax.persistence.PersistenceContext;
 @EJB(name = "ConstanteFacade", beanInterface = co.uniandes.sisinfo.serviciosfuncionales.ConstanteFacadeLocal.class)
 public class ConstanteFacade implements ConstanteFacadeLocal {
 
-    @PersistenceContext
+	@PersistenceContext(unitName="SoporteSisinfoPU")
     private EntityManager em;
     private static SisinfoCache<Constante> cache;
 

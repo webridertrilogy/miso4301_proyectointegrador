@@ -23,7 +23,7 @@ import org.hibernate.Hibernate;
  */
 @Stateless
 public class ProyectoFinanciadoFacade implements ProyectoFinanciadoFacadeLocal, ProyectoFinanciadoFacadeRemote {
-    @PersistenceContext(unitName = "CargaYCompromisoProfPU")
+    @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 
     public void create(ProyectoFinanciado proyectoFinanciado) {

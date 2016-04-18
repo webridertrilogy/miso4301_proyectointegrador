@@ -115,7 +115,7 @@ public class ReportesFacade implements ReportesFacadeLocal, ReportesFacadeRemote
 //    public final static String USER = "root";
 //    public final static String PASSWORD = "mysql";
 //    private String rutaReportes = "C:\\TEMP\\";
-    @PersistenceContext
+    @PersistenceContext(unitName="SoporteSisinfoPU")
     private EntityManager em;
     private ServiceLocator serviceLocator;
     /**

@@ -18,7 +18,7 @@ import javax.persistence.PersistenceContext;
 @Stateless
 public class TimerAuditoriaFacade implements TimerAuditoriaFacadeLocal,TimerAuditoriaFacadeRemote{
 
-    @PersistenceContext
+	@PersistenceContext(unitName="SoporteSisinfoPU")
     private EntityManager em;
 
     @Override

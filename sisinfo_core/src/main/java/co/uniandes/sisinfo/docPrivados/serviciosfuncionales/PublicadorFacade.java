@@ -23,7 +23,7 @@ import javax.persistence.Query;
 @Stateless
 public class PublicadorFacade implements PublicadorFacadeLocal, PublicadorFacadeRemote {
 
-    @PersistenceContext
+	@PersistenceContext(unitName="SoporteSisinfoPU")
     private EntityManager em;
 
     public void create(Publicador publicador) {

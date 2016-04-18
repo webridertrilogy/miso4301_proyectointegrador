@@ -23,7 +23,7 @@ import javax.persistence.Table;
 @Table(name = "excepcionsisinfo")
 @NamedQueries({
     @NamedQuery(name = "ExcepcionSisinfo.findByComandoFechaMetodo", query = "SELECT i FROM ExcepcionSisinfo i WHERE "
-    + "i.comandoSisinfo  =:comando AND i.metodoSisinfo =:nombreMetodo AND fechaError =:fecha "),
+    + "i.comandoSisinfo  =:comando AND i.metodoSisinfo =:nombreMetodo AND i.fechaError =:fecha "),
     @NamedQuery(name = "ExcepcionSisinfo.findByEstado", query = "SELECT i FROM ExcepcionSisinfo i WHERE "
     + "i.solucionado  =:estado AND i.eliminado = false"),
     @NamedQuery(name = "ExcepcionSisinfo.findByNoBorradas", query = "SELECT i FROM ExcepcionSisinfo i WHERE i.eliminado = false")})

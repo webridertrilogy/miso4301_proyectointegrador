@@ -6,6 +6,7 @@
 package co.uniandes.sisinfo.serviciosnegocio;
 
 import java.util.List;
+
 import javax.persistence.EntityManager;
 
 /**

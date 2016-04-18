@@ -20,7 +20,7 @@ import javax.persistence.Query;
  */
 @Stateless
 public class TipoPublicacionFacade implements TipoPublicacionFacadeLocal, TipoPublicacionFacadeRemote {
-       @PersistenceContext
+	@PersistenceContext(unitName="SoporteSisinfoPU")
     private EntityManager em;
 
     public void create(TipoPublicacion tipoPublicacion) {

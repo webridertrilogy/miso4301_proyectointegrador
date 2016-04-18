@@ -21,7 +21,7 @@ import javax.persistence.PersistenceContext;
  */
 @Stateless
 public class GrupoFacade implements GrupoFacadeLocal, GrupoFacadeRemote {
-    @PersistenceContext
+	@PersistenceContext(unitName="SoporteSisinfoPU")
     private EntityManager em;
 
     public void create(Grupo grupo) {

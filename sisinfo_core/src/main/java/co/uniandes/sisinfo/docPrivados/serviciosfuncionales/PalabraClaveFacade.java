@@ -24,7 +24,7 @@ import javax.persistence.Query;
 @Stateless
 public class PalabraClaveFacade implements PalabraClaveFacadeLocal, PalabraClaveFacadeRemote {
 
-    @PersistenceContext
+	@PersistenceContext(unitName="SoporteSisinfoPU")
     private EntityManager em;
 
     public void create(PalabraClave palabraClave) {

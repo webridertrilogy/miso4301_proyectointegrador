@@ -26,7 +26,7 @@ import org.hibernate.Hibernate;
  */
 @Stateless
 public class AlertaMultipleFacade implements AlertaMultipleFacadeLocal,AlertaMultipleFacadeRemote {
-    @PersistenceContext
+	@PersistenceContext(unitName="SoporteSisinfoPU")
     private EntityManager em;
 
     @Override

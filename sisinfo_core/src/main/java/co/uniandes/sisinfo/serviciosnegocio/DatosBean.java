@@ -8,31 +8,31 @@
  */
 package co.uniandes.sisinfo.serviciosnegocio;
 
-import co.uniandes.sisinfo.entities.soporte.Pais;
-import co.uniandes.sisinfo.entities.soporte.TipoDocumento;
-import co.uniandes.sisinfo.serviciosfuncionales.soporte.PaisFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.soporte.TipoDocumentoFacadeRemote;
-import co.uniandes.sisinfo.comun.constantes.Constantes;
-import co.uniandes.sisinfo.comun.constantes.Mensajes;
-import co.uniandes.sisinfo.entities.soporte.Ciudad;
-import co.uniandes.sisinfo.entities.soporte.Departamento;
-import co.uniandes.sisinfo.serviciosfuncionales.ServiceLocator;
-import co.uniandes.sisinfo.serviciosfuncionales.parser.ParserT;
-import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
-import co.uniandes.sisinfo.serviciosfuncionales.soporte.CiudadFacade;
-import co.uniandes.sisinfo.serviciosfuncionales.soporte.CiudadFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.soporte.DepartamentoFacadeRemote;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import javax.naming.NamingException;
+
+import co.uniandes.sisinfo.comun.constantes.Constantes;
+import co.uniandes.sisinfo.comun.constantes.Mensajes;
+import co.uniandes.sisinfo.entities.datosmaestros.soporte.Ciudad;
+import co.uniandes.sisinfo.entities.datosmaestros.soporte.Departamento;
+import co.uniandes.sisinfo.entities.datosmaestros.soporte.Pais;
+import co.uniandes.sisinfo.entities.datosmaestros.soporte.TipoDocumento;
+import co.uniandes.sisinfo.serviciosfuncionales.ServiceLocator;
+import co.uniandes.sisinfo.serviciosfuncionales.parser.ParserT;
+import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
+import co.uniandes.sisinfo.serviciosfuncionales.soporte.CiudadFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.soporte.DepartamentoFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.soporte.PaisFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.soporte.TipoDocumentoFacadeRemote;
 
 /**
  * Servicio de negocio: Administración de datos

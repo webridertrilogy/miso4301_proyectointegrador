@@ -28,7 +28,7 @@ import javax.persistence.Table;
     @NamedQuery(name = "TemaTesisPregrado.findBycorreoAsesor", query = "SELECT i FROM TemaTesisPregrado i WHERE i.asesor.persona.correo =:correoasesor"),
     @NamedQuery(name = "TemaTesisPregrado.findByNombreTemaTesisYCorreoAsesor", query = "SELECT i FROM TemaTesisPregrado i WHERE i.nombreTema =:nombre AND i.asesor.persona.correo=:correo"),
     @NamedQuery(name = "TemaTesisPregrado.findByNombreTemaTesisYCorreoAsesorYPeriodo", query = "SELECT i FROM TemaTesisPregrado i WHERE i.nombreTema =:nombre AND i.asesor.persona.correo=:correo AND i.periodo.nombre=:periodo"),
-    @NamedQuery(name = "TemaTesisPregrado.findByPeriodoYCorreoAsesor", query = "SELECT i FROM TemaTesisPregrado i WHERE i.asesor.persona.correo =:correoasesor AND periodo.nombre =:periodo")
+    @NamedQuery(name = "TemaTesisPregrado.findByPeriodoYCorreoAsesor", query = "SELECT i FROM TemaTesisPregrado i WHERE i.asesor.persona.correo =:correoasesor AND i.periodo.nombre =:periodo")
 })
 public class TemaTesisPregrado implements Serializable {
 

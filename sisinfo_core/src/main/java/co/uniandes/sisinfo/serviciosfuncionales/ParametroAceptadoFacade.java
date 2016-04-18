@@ -20,7 +20,7 @@ import javax.persistence.PersistenceContext;
  */
 @Stateless
 public class ParametroAceptadoFacade implements ParametroAceptadoFacadeLocal, ParametroAceptadoFacadeRemote {
-    @PersistenceContext
+	@PersistenceContext(unitName="SoporteSisinfoPU")
     private EntityManager em;
 
     public void create(ParametroAceptado parametroAceptado) {

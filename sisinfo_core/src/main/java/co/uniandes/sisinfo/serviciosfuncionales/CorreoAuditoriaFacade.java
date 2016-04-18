@@ -1,5 +1,6 @@
 package co.uniandes.sisinfo.serviciosfuncionales;
 
+import co.uniandes.sisinfo.base.AbstractFacade;
 import co.uniandes.sisinfo.entities.CorreoAuditoria;
 import java.util.Date;
 import java.util.List;
@@ -14,7 +15,7 @@ import javax.persistence.PersistenceContext;
 @Stateless
 public class CorreoAuditoriaFacade extends AbstractFacade<CorreoAuditoria> implements CorreoAuditoriaFacadeLocal, CorreoAuditoriaFacadeRemote {
 
-    @PersistenceContext(unitName = "ServiciosInfraestructuraPU")
+    @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 
     protected EntityManager getEntityManager() {

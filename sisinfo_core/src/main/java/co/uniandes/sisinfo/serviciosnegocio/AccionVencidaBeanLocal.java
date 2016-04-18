@@ -5,8 +5,8 @@
 
 package co.uniandes.sisinfo.serviciosnegocio;
 
-import co.uniandes.sisinfo.entities.AccionVencida;
 import java.sql.Timestamp;
+
 import javax.ejb.Local;
 
 /**

@@ -14,7 +14,7 @@ import javax.persistence.Query;
  */
 @Stateless
 public class EncargadoFacade implements EncargadoFacadeLocal, EncargadoFacadeRemote {
-    @PersistenceContext(unitName = "ReservasInventarioPU")
+    @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 
     public void create(Encargado entity) {

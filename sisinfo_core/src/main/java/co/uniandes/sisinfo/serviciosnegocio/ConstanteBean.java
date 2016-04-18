@@ -8,10 +8,11 @@
  */
 package co.uniandes.sisinfo.serviciosnegocio;
 
-import co.uniandes.sisinfo.entities.Constante;
-import co.uniandes.sisinfo.serviciosfuncionales.ConstanteFacadeLocal;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
+
+import co.uniandes.sisinfo.entities.Constante;
+import co.uniandes.sisinfo.serviciosfuncionales.ConstanteFacadeLocal;
 
 /**
  * Servicio de negocio: Administración de constantes
