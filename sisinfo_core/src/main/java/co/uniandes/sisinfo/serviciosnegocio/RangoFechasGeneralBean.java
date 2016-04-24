@@ -13,12 +13,10 @@ import java.util.logging.Logger;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
-import javax.naming.NamingException;
 
 import co.uniandes.sisinfo.comun.constantes.Constantes;
 import co.uniandes.sisinfo.comun.constantes.Mensajes;
 import co.uniandes.sisinfo.entities.RangoFechasGeneral;
-import co.uniandes.sisinfo.nucleo.services.NucleoLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.RangoFechasGeneralFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.ServiceLocator;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.ParserT;
@@ -48,8 +46,8 @@ public class RangoFechasGeneralBean implements RangoFechasGeneralLocal {
     RangoFechasGeneralFacadeLocal rangoFechasGeneralFacade;
     //Servicios Remotos
     //Servicios Útiles
-    @EJB
-    private NucleoLocal nucleoBean;
+//    @EJB
+//    private NucleoLocal nucleoBean;
     @EJB
     private TimerGenericoBeanLocal timerGenerico;
     @EJB
@@ -382,7 +380,7 @@ public class RangoFechasGeneralBean implements RangoFechasGeneralLocal {
         System.out.println("MANEJO TIMERS RANGO FECHAS GENERAL: "+nombreComando);
         try {
             String comando = getParser().crearComando(nombreComando, getConstanteBean().getConstante(Constantes.VAL_TAG_TIPO_CMD_CONSULTA),getConstanteBean().getConstante(Constantes.ROL_ADMINISTRADOR_SISINFO), new ArrayList<Secuencia>());
-            nucleoBean.resolverComando(comando);
+            //nucleoBean.resolverComando(comando);
 
         } catch (Exception ex) {
             Logger.getLogger(RangoFechasGeneralBean.class.getName()).log(Level.SEVERE, null, ex);

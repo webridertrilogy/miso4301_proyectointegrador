@@ -23,7 +23,6 @@ import java.util.logging.Logger;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
-import javax.naming.NamingException;
 
 import co.uniandes.sisinfo.comun.constantes.Constantes;
 import co.uniandes.sisinfo.comun.constantes.Mensajes;
@@ -37,7 +36,6 @@ import co.uniandes.sisinfo.entities.datosmaestros.Persona;
 import co.uniandes.sisinfo.entities.datosmaestros.Profesor;
 import co.uniandes.sisinfo.entities.datosmaestros.Rol;
 import co.uniandes.sisinfo.entities.datosmaestros.Usuario;
-import co.uniandes.sisinfo.nucleo.services.NucleoLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.CorreoLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.ServiceLocator;
 import co.uniandes.sisinfo.serviciosfuncionales.TareaMultipleFacadeLocal;
@@ -78,8 +76,8 @@ public class ProfesorBean implements  ProfesorLocal {
     private NivelFormacionFacadeLocal nivelFormacionFacade;
     @EJB
     private NivelPlantaFacadeLocal nivelPlantaFacade;
-    @EJB
-    private NucleoLocal nucleoBean;
+//    @EJB
+//    private NucleoLocal nucleoBean;
     @EJB
     private PersonaFacadeLocal personaFacade;
     @EJB
@@ -315,7 +313,7 @@ public class ProfesorBean implements  ProfesorLocal {
             String comando;
             try {
                 comando = getParser().crearComando(getConstanteBean().getConstante(Constantes.CMD_CREAR_PROPONENTE), getConstanteBean().getConstante(Constantes.VAL_TAG_TIPO_CMD_CONSULTA), getParser().obtenerValor(getConstanteBean().getConstante(Constantes.ROL_COORDINACION)), secuencias);
-                nucleoBean.resolverComando(comando);
+               // nucleoBean.resolverComando(comando);
             } catch (Exception ex) {
                 Logger.getLogger(ProfesorBean.class.getName()).log(Level.SEVERE, null, ex);
             }

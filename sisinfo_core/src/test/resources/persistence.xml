@@ -7,10 +7,7 @@
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
 		<jta-data-source>jdbc/sisinfo</jta-data-source>
 		
-		<class>co.uniandes.sisinfo.docPrivados.entities.DocumentoPrivado</class>
-		<class>co.uniandes.sisinfo.docPrivados.entities.Nodo</class>
-		<class>co.uniandes.sisinfo.docPrivados.entities.PalabraClave</class>
-		<class>co.uniandes.sisinfo.docPrivados.entities.Publicador</class>
+		
 		<class>co.uniandes.sisinfo.entities.AccionVencida</class>
 		<class>co.uniandes.sisinfo.entities.AlertaMultiple</class>
 		<class>co.uniandes.sisinfo.entities.Archivo</class>
@@ -20,14 +17,14 @@
 		<class>co.uniandes.sisinfo.entities.Autorizado</class>
 		<class>co.uniandes.sisinfo.entities.CalificacionCriterio</class>
 		<class>co.uniandes.sisinfo.entities.CalificacionJurado</class>
-		<class>co.uniandes.sisinfo.entities.CampoAdicional</class>
+		
 		<class>co.uniandes.sisinfo.entities.Candidato</class>
 		<class>co.uniandes.sisinfo.entities.CargaProfesor</class>
-		<class>co.uniandes.sisinfo.entities.Cargo</class>
+
 		<class>co.uniandes.sisinfo.entities.Categoria</class>
 		<class>co.uniandes.sisinfo.entities.CategoriaCriterioJurado</class>
 		<class>co.uniandes.sisinfo.entities.CategoriaCriterioTesis2</class>
-		<class>co.uniandes.sisinfo.entities.CategoriaEventoExterno</class>
+		
 		<class>co.uniandes.sisinfo.entities.CategoriaProyectoDeGrado</class>
 		<class>co.uniandes.sisinfo.entities.ClasedePrueba</class>
 		<class>co.uniandes.sisinfo.entities.Coasesor</class>
@@ -38,7 +35,7 @@
 		<class>co.uniandes.sisinfo.entities.CondicionFiltroCorreo</class>
 		<class>co.uniandes.sisinfo.entities.ConfiguracionFechasCH</class>
 		<class>co.uniandes.sisinfo.entities.Constante</class>
-		<class>co.uniandes.sisinfo.entities.Contacto</class>
+	
 		<class>co.uniandes.sisinfo.entities.Convocatoria</class>
 		<class>co.uniandes.sisinfo.entities.CorreoAuditoria</class>
 		<class>co.uniandes.sisinfo.entities.CorreoSinEnviar</class>
@@ -59,7 +56,7 @@
 		<class>co.uniandes.sisinfo.entities.EstudianteMatriculado</class>
 		<class>co.uniandes.sisinfo.entities.EstudiantePosgrado</class>
 		<class>co.uniandes.sisinfo.entities.Evento</class>
-		<class>co.uniandes.sisinfo.entities.EventoExterno</class>
+	
 		<class>co.uniandes.sisinfo.entities.ExcepcionSisinfo</class>
 		<class>co.uniandes.sisinfo.entities.FiltroCorreo</class>
 		<class>co.uniandes.sisinfo.entities.Grupo</class>
@@ -71,7 +68,7 @@
 		<class>co.uniandes.sisinfo.entities.InformacionEmpresa</class>
 		<class>co.uniandes.sisinfo.entities.Inscripcion</class>
 		<class>co.uniandes.sisinfo.entities.InscripcionAsistente</class>
-		<class>co.uniandes.sisinfo.entities.InscripcionEventoExterno</class>
+	
 		<class>co.uniandes.sisinfo.entities.InscripcionSubareaInvestigacion</class>
 		<class>co.uniandes.sisinfo.entities.IntencionPublicacion</class>
 		<class>co.uniandes.sisinfo.entities.JuradoExternoUniversidad</class>
@@ -80,7 +77,7 @@
 		<class>co.uniandes.sisinfo.entities.ListaComandoXML</class>
 		<class>co.uniandes.sisinfo.entities.ListaNegraReservaCitas</class>
 		<class>co.uniandes.sisinfo.entities.Lista_Negra</class>
-		<class>co.uniandes.sisinfo.entities.MaterialBibliografico</class>
+		
 		<class>co.uniandes.sisinfo.entities.ModuloSisinfo</class>
 		<class>co.uniandes.sisinfo.entities.MonitoriaAceptada</class>
 		<class>co.uniandes.sisinfo.entities.MonitoriaOtroDepartamento</class>
@@ -97,7 +94,7 @@
 		<class>co.uniandes.sisinfo.entities.PeriodoTesisPregrado</class>
 		<class>co.uniandes.sisinfo.entities.PersonaSoporte</class>
 		<class>co.uniandes.sisinfo.entities.PeticionConflictoHorario</class>
-		<class>co.uniandes.sisinfo.entities.Pregunta</class>
+	
 		<class>co.uniandes.sisinfo.entities.Proponente</class>
 		<class>co.uniandes.sisinfo.entities.ProyectoDeGrado</class>
 		<class>co.uniandes.sisinfo.entities.ProyectoFinanciado</class>
@@ -107,10 +104,10 @@
 		<class>co.uniandes.sisinfo.entities.Reserva</class>
 		<class>co.uniandes.sisinfo.entities.ReservaInventario</class>
 		<class>co.uniandes.sisinfo.entities.ReservaMultiple</class>
-		<class>co.uniandes.sisinfo.entities.Respuesta</class>
-		<class>co.uniandes.sisinfo.entities.SectorCorporativo</class>
+
+
 		<class>co.uniandes.sisinfo.entities.Solicitud</class>
-		<class>co.uniandes.sisinfo.entities.SolicitudMaterialBibliografico</class>
+		
 		<class>co.uniandes.sisinfo.entities.SubareaInvestigacion</class>
 		<class>co.uniandes.sisinfo.entities.TareaMultiple</class>
 		<class>co.uniandes.sisinfo.entities.TareaSencilla</class>
@@ -122,10 +119,10 @@
 		<class>co.uniandes.sisinfo.entities.TimerGenerico</class>
 		<class>co.uniandes.sisinfo.entities.TipoArchivo</class>
 		<class>co.uniandes.sisinfo.entities.TipoAsistenciaGraduada</class>
-		<class>co.uniandes.sisinfo.entities.TipoCampo</class>
+
 		<class>co.uniandes.sisinfo.entities.TipoPublicacion</class>
-		<class>co.uniandes.sisinfo.entities.UsuarioEventos</class>
-		<class>co.uniandes.sisinfo.entities.Volumen</class>
+
+		
 		<class>co.uniandes.sisinfo.entities.Votacion</class>
 		<class>co.uniandes.sisinfo.entities.Votante</class>
 		<class>co.uniandes.sisinfo.entities.datosmaestros.Curso</class>

@@ -22,13 +22,11 @@ import javax.ejb.Stateless;
 import javax.ejb.Timeout;
 import javax.ejb.Timer;
 import javax.ejb.TimerService;
-import javax.naming.NamingException;
 
 import co.uniandes.sisinfo.comun.constantes.Constantes;
 import co.uniandes.sisinfo.entities.MonitoriaAceptada;
 import co.uniandes.sisinfo.entities.Solicitud;
 import co.uniandes.sisinfo.entities.datosmaestros.Seccion;
-import co.uniandes.sisinfo.nucleo.services.NucleoLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.ParserT;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
 import co.uniandes.sisinfo.serviciosnegocio.ConstanteLocal;
@@ -47,8 +45,8 @@ public class TimerProfesorBean implements  TimerProfesorLocal {
     @EJB
     private SolicitudFacadeLocal solicitudFacade;
 
-    @EJB
-    private NucleoLocal nucleo;
+//    @EJB
+//    private NucleoLocal nucleo;
 
     @EJB
     private ConstanteLocal constanteBean;
@@ -112,7 +110,7 @@ public class TimerProfesorBean implements  TimerProfesorLocal {
             if (valida && vigente) {
                 xml = parser.crearComando(getConstanteBean().getConstante(Constantes.CMD_CONFIRMAR_ESTUDIANTE), getConstanteBean().getConstante(Constantes.VAL_TAG_TIPO_CMD_PROCESO), getConstanteBean().getConstante(Constantes.ROL_COORDINACION), secuencias);
                 System.out.println("(TimerProfesorBean) xml" + xml);
-                nucleo.resolverComando(xml);
+               // nucleo.resolverComando(xml);
             }
             System.out.println("(TimerProfesorBean) acabe timer " + valida + "-" + vigente);
         } catch (Exception e) {

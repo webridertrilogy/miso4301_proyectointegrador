@@ -1,7 +1,6 @@
 package test.co.uniandes.sisinfo.serviciosfuncionales;
 
 import java.sql.SQLException;
-import java.sql.Timestamp;
 
 import javax.ejb.EJB;
 
@@ -15,14 +14,12 @@ import org.junit.runner.RunWith;
 import co.uniandes.sisinfo.entities.AccionVencida;
 import co.uniandes.sisinfo.entities.AsistenciaGraduada;
 import co.uniandes.sisinfo.entities.Incidente;
-import co.uniandes.sisinfo.nucleo.services.NucleoLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.AccionVencidaFacade;
 import co.uniandes.sisinfo.serviciosfuncionales.AccionVencidaFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.AsistenciaGraduadaFacade;
 import co.uniandes.sisinfo.serviciosfuncionales.AsistenciaGraduadaFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.ConstanteFacade;
 import co.uniandes.sisinfo.serviciosfuncionales.IncidenteFacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.UsuarioEventosFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.ProgramaFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.seguridad.RolFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.soporte.TipoDocumentoFacadeLocal;
@@ -58,10 +55,10 @@ public class IncidenteFacadeTest {
 				.addPackage(AsistenciaGraduada.class.getPackage())
 				.addPackage(ConstanteFacade.class.getPackage())
 				.addPackage(AsistenciaGraduadaFacadeLocal.class.getPackage())
-				.addPackage(NucleoLocal.class.getPackage())
+				 
 				.addPackage(EventoExternoBeanLocal.class.getPackage())
 				.addPackage(ProgramaFacadeLocal.class.getPackage())
-				.addPackage(UsuarioEventosFacadeLocal.class.getPackage())
+				 
 				.addPackage(RolFacadeLocal.class.getPackage())
 				.addPackage(TipoDocumentoFacadeLocal.class.getPackage())
 				
