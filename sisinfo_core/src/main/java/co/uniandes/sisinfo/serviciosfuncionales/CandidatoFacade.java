@@ -49,7 +49,9 @@ public class CandidatoFacade implements CandidatoFacadeLocal {
         try {
             return (Candidato) q.getSingleResult();
         } catch (NonUniqueResultException e) {
-            return (Candidato) q.getResultList().get(0);
+            return null;
+        } catch (Exception e) {
+            return null;
         }
     }
 
@@ -59,8 +61,11 @@ public class CandidatoFacade implements CandidatoFacadeLocal {
         try {
             return (Candidato) q.getSingleResult();
         } catch (NonUniqueResultException e) {
-            return (Candidato) q.getResultList().get(0);
-        }
+            return null;
+        
+    } catch (Exception e) {
+        return null;
+    }
     }
 
 }

@@ -93,48 +93,48 @@ public class InscripcionSubareaInvestigacionFacade implements InscripcionSubarea
     }
 
     private void hibernateInitialize(InscripcionSubareaInvestigacion i) {
-        Hibernate.initialize(i);
-        if (i.getAsesor() != null) {
-            Hibernate.initialize(i.getAsesor());
-            Hibernate.initialize(i.getAsesor().getPersona());
-        }
-//        if (i.getCoordinadorSubArea() != null) {
-//            Hibernate.initialize(i.getCoordinadorSubArea());
-//            Hibernate.initialize(i.getCoordinadorSubArea().getPersona());
+//        Hibernate.initialize(i);
+//        if (i.getAsesor() != null) {
+//            Hibernate.initialize(i.getAsesor());
+//            Hibernate.initialize(i.getAsesor().getPersona());
 //        }
-        if (i.getEstudiante() != null) {
-            Hibernate.initialize(i.getEstudiante());
-            Hibernate.initialize(i.getEstudiante().getPersona());
-        }
-        if (i.getSubareaInvestigacion() != null) {
-            Hibernate.initialize(i.getSubareaInvestigacion());
-            Hibernate.initialize(i.getSubareaInvestigacion().getCoordinadorSubarea());
-//            Hibernate.initialize(i.getSubGrupoInvestigacion().getCoordinadorGrupo().getPersona());
-        }
-        if (i.getObligatorias() != null) {
-            Collection<CursoTesis> cursos = i.getObligatorias();
-            for (CursoTesis object : cursos) {
-                Hibernate.initialize(object);
-            }
-        }
-        if (i.getSubArea() != null) {
-            Collection<CursoTesis> cursos = i.getSubArea();
-            for (CursoTesis object : cursos) {
-                Hibernate.initialize(object);
-            }
-        }
-        if (i.getNivelatorios() != null) {
-            Collection<CursoTesis> cursos = i.getNivelatorios();
-            for (CursoTesis object : cursos) {
-                Hibernate.initialize(object);
-            }
-        }
-        if (i.getOtraMaestria() != null) {
-            Hibernate.initialize(i.getOtraMaestria());
-        }
-        if (i.getOtraSubArea() != null) {
-            Hibernate.initialize(i.getOtraSubArea());
-        }
+////        if (i.getCoordinadorSubArea() != null) {
+////            Hibernate.initialize(i.getCoordinadorSubArea());
+////            Hibernate.initialize(i.getCoordinadorSubArea().getPersona());
+////        }
+//        if (i.getEstudiante() != null) {
+//            Hibernate.initialize(i.getEstudiante());
+//            Hibernate.initialize(i.getEstudiante().getPersona());
+//        }
+//        if (i.getSubareaInvestigacion() != null) {
+//            Hibernate.initialize(i.getSubareaInvestigacion());
+//            Hibernate.initialize(i.getSubareaInvestigacion().getCoordinadorSubarea());
+////            Hibernate.initialize(i.getSubGrupoInvestigacion().getCoordinadorGrupo().getPersona());
+//        }
+//        if (i.getObligatorias() != null) {
+//            Collection<CursoTesis> cursos = i.getObligatorias();
+//            for (CursoTesis object : cursos) {
+//                Hibernate.initialize(object);
+//            }
+//        }
+//        if (i.getSubArea() != null) {
+//            Collection<CursoTesis> cursos = i.getSubArea();
+//            for (CursoTesis object : cursos) {
+//                Hibernate.initialize(object);
+//            }
+//        }
+//        if (i.getNivelatorios() != null) {
+//            Collection<CursoTesis> cursos = i.getNivelatorios();
+//            for (CursoTesis object : cursos) {
+//                Hibernate.initialize(object);
+//            }
+//        }
+//        if (i.getOtraMaestria() != null) {
+//            Hibernate.initialize(i.getOtraMaestria());
+//        }
+//        if (i.getOtraSubArea() != null) {
+//            Hibernate.initialize(i.getOtraSubArea());
+//        }
 
     }
 

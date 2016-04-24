@@ -70,10 +70,10 @@ public class EstudiantePosgradoFacade implements EstudiantePosgradoFacadeLocal {
     }
 
      private void hibernateInitialize(EstudiantePosgrado e) {
-        Hibernate.initialize(e);
-        Hibernate.initialize(e.getEstudiante());
-        if(e.getEstudiante() != null)
-            Hibernate.initialize(e.getEstudiante().getPersona());
-        Hibernate.initialize(e.getHojaVida());
+//        Hibernate.initialize(e);
+//        Hibernate.initialize(e.getEstudiante());
+//        if(e.getEstudiante() != null)
+//            Hibernate.initialize(e.getEstudiante().getPersona());
+//        Hibernate.initialize(e.getHojaVida());
     }
 }

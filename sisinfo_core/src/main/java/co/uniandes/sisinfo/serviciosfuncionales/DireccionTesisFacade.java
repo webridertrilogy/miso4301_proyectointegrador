@@ -78,28 +78,28 @@ public class DireccionTesisFacade implements DireccionTesisFacadeLocal {
     }
 
     private void hibernateInitialize(DireccionTesis e) {
-        Hibernate.initialize(e);
-        if(e.getEstadoTesis()!=null)
-        Hibernate.initialize(e.getEstadoTesis());
-
-        if (e.getAutorEstudiante() != null) {
-            Hibernate.initialize(e.getAutorEstudiante());
-            Hibernate.initialize(e.getAutorEstudiante().getPersona());
-        }
-        if (e.getNivelFormacionTesis() != null) {
-            Hibernate.initialize(e.getNivelFormacionTesis());
-        }
-        if (e.getDirectorTesis() != null) {
-            CargaProfesor carga = e.getDirectorTesis();
-            Hibernate.initialize(carga);
-            if (carga.getProfesor() != null) {
-                Hibernate.initialize(carga.getProfesor());
-
-                if (carga.getProfesor().getPersona() != null) {
-                    Hibernate.initialize(carga.getProfesor().getPersona());
-                }
-            }
-
-        }
+//        Hibernate.initialize(e);
+//        if(e.getEstadoTesis()!=null)
+//        Hibernate.initialize(e.getEstadoTesis());
+//
+//        if (e.getAutorEstudiante() != null) {
+//            Hibernate.initialize(e.getAutorEstudiante());
+//            Hibernate.initialize(e.getAutorEstudiante().getPersona());
+//        }
+//        if (e.getNivelFormacionTesis() != null) {
+//            Hibernate.initialize(e.getNivelFormacionTesis());
+//        }
+//        if (e.getDirectorTesis() != null) {
+//            CargaProfesor carga = e.getDirectorTesis();
+//            Hibernate.initialize(carga);
+//            if (carga.getProfesor() != null) {
+//                Hibernate.initialize(carga.getProfesor());
+//
+//                if (carga.getProfesor().getPersona() != null) {
+//                    Hibernate.initialize(carga.getProfesor().getPersona());
+//                }
+//            }
+//
+//        }
     }
 }

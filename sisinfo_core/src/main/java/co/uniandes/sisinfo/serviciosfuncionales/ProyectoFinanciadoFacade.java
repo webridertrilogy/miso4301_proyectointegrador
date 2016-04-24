@@ -84,11 +84,11 @@ public class ProyectoFinanciadoFacade implements ProyectoFinanciadoFacadeLocal {
     }
     private void hibernateInitialize(ProyectoFinanciado p)
     {
-        Hibernate.initialize(p);
-        Collection<CargaProfesor> cargas= p.getProfesores();
-         for (CargaProfesor cargaProfesor : cargas) {
-            hibernateInitialize(cargaProfesor);
-        }
+//        Hibernate.initialize(p);
+//        Collection<CargaProfesor> cargas= p.getProfesores();
+//         for (CargaProfesor cargaProfesor : cargas) {
+//            hibernateInitialize(cargaProfesor);
+//        }
 
     }
 

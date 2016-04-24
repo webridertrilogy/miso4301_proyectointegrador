@@ -197,28 +197,28 @@ public class SolicitudFacade implements SolicitudFacadeLocal {
      * @param solicitud Solicitud
      */
     private void hibernateInitialize(Solicitud solicitud) {
-        Hibernate.initialize(solicitud);
-        Hibernate.initialize(solicitud.getEstudiante());
-        Hibernate.initialize(solicitud.getEstudiante().getPersona());
-        Hibernate.initialize(solicitud.getEstudiante().getPersona().getTipoDocumento());
-        Hibernate.initialize(solicitud.getEstudiante().getHorario_disponible());
-        Hibernate.initialize(solicitud.getEstudiante().getHorario_disponible().getDias_disponibles());
-        Hibernate.initialize(solicitud.getEstudiante().getEstudiante().getInformacion_Academica());
-        Hibernate.initialize(solicitud.getEstudiante().getEstudiante().getPrograma().getNombre());
-        Hibernate.initialize(solicitud.getMonitoria_solicitada());
-        Hibernate.initialize(solicitud.getMonitoria_solicitada().getCurso());
-        Collection<MonitoriaAceptada> monitorias = solicitud.getMonitorias();
-        for (Iterator<MonitoriaAceptada> it = monitorias.iterator(); it.hasNext();) {
-            MonitoriaAceptada monitoria = it.next();
-            Hibernate.initialize(monitoria);
-            Hibernate.initialize(monitoria.getSeccion());
-        }
-        Collection<MonitoriaRealizada> monitoriasRealizadas = solicitud.getEstudiante().getMonitoriasRealizadas();
-        Hibernate.initialize(monitoriasRealizadas);
-        for (MonitoriaRealizada monitoriaRealizada : monitoriasRealizadas) {
-            Hibernate.initialize(monitoriaRealizada);
-        }
-        Hibernate.initialize(solicitud.getResponsablePreseleccion());
+//        Hibernate.initialize(solicitud);
+//        Hibernate.initialize(solicitud.getEstudiante());
+//        Hibernate.initialize(solicitud.getEstudiante().getPersona());
+//        Hibernate.initialize(solicitud.getEstudiante().getPersona().getTipoDocumento());
+//        Hibernate.initialize(solicitud.getEstudiante().getHorario_disponible());
+//        Hibernate.initialize(solicitud.getEstudiante().getHorario_disponible().getDias_disponibles());
+//        Hibernate.initialize(solicitud.getEstudiante().getEstudiante().getInformacion_Academica());
+//        Hibernate.initialize(solicitud.getEstudiante().getEstudiante().getPrograma().getNombre());
+//        Hibernate.initialize(solicitud.getMonitoria_solicitada());
+//        Hibernate.initialize(solicitud.getMonitoria_solicitada().getCurso());
+//        Collection<MonitoriaAceptada> monitorias = solicitud.getMonitorias();
+//        for (Iterator<MonitoriaAceptada> it = monitorias.iterator(); it.hasNext();) {
+//            MonitoriaAceptada monitoria = it.next();
+//            Hibernate.initialize(monitoria);
+//            Hibernate.initialize(monitoria.getSeccion());
+//        }
+//        Collection<MonitoriaRealizada> monitoriasRealizadas = solicitud.getEstudiante().getMonitoriasRealizadas();
+//        Hibernate.initialize(monitoriasRealizadas);
+//        for (MonitoriaRealizada monitoriaRealizada : monitoriasRealizadas) {
+//            Hibernate.initialize(monitoriaRealizada);
+//        }
+//        Hibernate.initialize(solicitud.getResponsablePreseleccion());
 
     }
 

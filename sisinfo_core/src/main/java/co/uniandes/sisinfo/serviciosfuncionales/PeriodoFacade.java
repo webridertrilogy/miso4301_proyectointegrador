@@ -99,7 +99,7 @@ public class PeriodoFacade implements PeriodoFacadeLocal {
      * @param periodo Periodo
      */
     private void hibernateInitialize(Periodo periodo){
-        Hibernate.initialize(periodo);
-        Hibernate.initialize(periodo.getConvocatoria());
+//        Hibernate.initialize(periodo);
+//        Hibernate.initialize(periodo.getConvocatoria());
     }
 }

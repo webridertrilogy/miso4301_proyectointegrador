@@ -21,6 +21,9 @@ import java.io.StringReader;
 import java.util.StringTokenizer;
 
 import org.slf4j.LoggerFactory;
+
+import com.sun.org.apache.bcel.internal.generic.ISUB;
+
 import org.slf4j.Logger;
 
 /**
@@ -489,11 +492,16 @@ public class Slf4jSpyLogDelegator implements SpyLogDelegator
         for (int i = 0; i < stackTrace.length; i++)
         {
           className = stackTrace[i].getClassName();
+          String fileName =  stackTrace[i].getFileName();
+          boolean isAbstract = false;
+          if (fileName != null && fileName.startsWith("Abstract")) {
+        	  isAbstract = true;
+          }
           if (className.startsWith("net.sf.log4jdbc"))
           {
             firstLog4jdbcCall = i;
           }
-          else if (DriverSpy.TraceFromApplication &&
+          else if (DriverSpy.TraceFromApplication && !isAbstract &&
             (className.startsWith("test." + DriverSpy.DebugStackPrefix) || className.startsWith(DriverSpy.DebugStackPrefix)))
           {
             lastApplicationCall = i;

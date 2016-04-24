@@ -74,15 +74,15 @@ public class PeriodoPlaneacionFacade implements PeriodoPlaneacionFacadeLocal {
 
     private void hibernateInitialize(PeriodoPlaneacion p) {
 
-        Hibernate.initialize(p);
-        Collection<CargaProfesor> cargas = p.getCargaProfesores();
-        for (CargaProfesor e : cargas) {
-            Hibernate.initialize(e);
-            Hibernate.initialize(e.getProfesor());
-            if (e.getProfesor() != null) {
-                Hibernate.initialize(e.getProfesor().getPersona());
-            }
-        }
+//        Hibernate.initialize(p);
+//        Collection<CargaProfesor> cargas = p.getCargaProfesores();
+//        for (CargaProfesor e : cargas) {
+//            Hibernate.initialize(e);
+//            Hibernate.initialize(e.getProfesor());
+//            if (e.getProfesor() != null) {
+//                Hibernate.initialize(e.getProfesor().getPersona());
+//            }
+//        }
 
 
     }

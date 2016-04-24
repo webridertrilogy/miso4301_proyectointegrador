@@ -81,11 +81,11 @@ import javax.naming.NamingException;
 public class CorreoBean implements CorreoLocal {
 
     HashMap<String, String> escape = new HashMap<String, String>();
-    @EJB
+    //@EJB
     private CredencialLocal credencialBean;
     @EJB
     private CorreoAuditoriaFacadeLocal auditoriaLocal;
-    @EJB
+//  @EJB
     private ConstanteLocal constanteBean;
     @EJB
     private FiltroCorreoFacadeLocal filtroCorreoFacade;
@@ -744,7 +744,7 @@ public class CorreoBean implements CorreoLocal {
     }
 
     public ConstanteLocal getConstanteBean() {
-        return constanteBean;
+        return null;//constanteBean;
     }
 
     /*

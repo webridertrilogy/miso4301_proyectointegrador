@@ -65,11 +65,11 @@ public class TemaTesis1Facade implements TemaTesis1FacadeLocal {
     }
 
     private void hibernateInitialize(TemaTesis1 i) {
-        Hibernate.initialize(i);
-        if (i.getAsesor() != null) {
-            Hibernate.initialize(i.getAsesor());
-            Hibernate.initialize(i.getAsesor().getPersona());
-        }
+//        Hibernate.initialize(i);
+//        if (i.getAsesor() != null) {
+//            Hibernate.initialize(i.getAsesor());
+//            Hibernate.initialize(i.getAsesor().getPersona());
+//        }
     }
 
     public List<TemaTesis1> findByCorreoAsesor(String correo) {

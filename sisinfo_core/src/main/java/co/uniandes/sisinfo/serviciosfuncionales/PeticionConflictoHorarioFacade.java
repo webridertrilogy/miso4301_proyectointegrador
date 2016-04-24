@@ -23,7 +23,7 @@ import javax.persistence.Query;
 @Stateless
 public class PeticionConflictoHorarioFacade extends AbstractFacadeCH<PeticionConflictoHorario> implements PeticionConflictoHorarioFacadeLocal {
 
-    @EJB
+   // @EJB
     private ConstanteLocal constanteBean;
 
     @PersistenceContext(unitName = "SoporteSisinfoPU")

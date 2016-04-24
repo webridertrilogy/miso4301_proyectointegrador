@@ -81,14 +81,17 @@ public class InscripcionAsistenteFacade implements  InscripcionAsistenteFacadeLo
             List<InscripcionAsistente> lista = em.createNamedQuery("InscripcionAsistente.findByIdInscripcionYCorreoPersona").setParameter("idInscripcion", idInscripcion).setParameter("correo", correo).getResultList();
             return lista.get(0);
         }
+        catch (Exception e1) {
+          return null;
+        }
     }
 
     private void hibernateInitialize(InscripcionAsistente i) {
-        Hibernate.initialize(i);
-        if(i != null){
-            if (i.getPersona() != null) {
-                Hibernate.initialize(i.getPersona());
-            }
-        }
+//        Hibernate.initialize(i);
+//        if(i != null){
+//            if (i.getPersona() != null) {
+//                Hibernate.initialize(i.getPersona());
+//            }
+//        }
     }
 }

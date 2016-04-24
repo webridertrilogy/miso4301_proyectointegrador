@@ -64,18 +64,18 @@ public class InscripcionFacade implements InscripcionFacadeLocal {
 
 
      private void hibernateInitialize(Inscripcion i) {
-        Hibernate.initialize(i);
-        Collection<InscripcionAsistente> incrit = i.getInvitados();
-        if(incrit!=null)
-        {
-            for (InscripcionAsistente inscripcionAsistente : incrit) {
-                Hibernate.initialize(inscripcionAsistente);
-                if(inscripcionAsistente.getPersona()!=null)
-                {
-                    Hibernate.initialize(inscripcionAsistente.getPersona());
-                }
-            }
-        }
+//        Hibernate.initialize(i);
+//        Collection<InscripcionAsistente> incrit = i.getInvitados();
+//        if(incrit!=null)
+//        {
+//            for (InscripcionAsistente inscripcionAsistente : incrit) {
+//                Hibernate.initialize(inscripcionAsistente);
+//                if(inscripcionAsistente.getPersona()!=null)
+//                {
+//                    Hibernate.initialize(inscripcionAsistente.getPersona());
+//                }
+//            }
+//        }
     }
  
 }

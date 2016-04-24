@@ -13,10 +13,17 @@ import org.junit.runner.RunWith;
 
 import co.uniandes.sisinfo.entities.AccionVencida;
 import co.uniandes.sisinfo.entities.AsistenciaGraduada;
+import co.uniandes.sisinfo.nucleo.services.NucleoLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.AccionVencidaFacade;
 import co.uniandes.sisinfo.serviciosfuncionales.AccionVencidaFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.AsistenciaGraduadaFacade;
 import co.uniandes.sisinfo.serviciosfuncionales.AsistenciaGraduadaFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.ConstanteFacade;
+import co.uniandes.sisinfo.serviciosfuncionales.UsuarioEventosFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.ProgramaFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.seguridad.RolFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.soporte.TipoDocumentoFacadeLocal;
+import co.uniandes.sisinfo.serviciosnegocio.EventoExternoBeanLocal;
 
 /**
  * Prueba unitaria para ejecutar de manera explicita todos los metodos de todas
@@ -24,7 +31,7 @@ import co.uniandes.sisinfo.serviciosfuncionales.AsistenciaGraduadaFacadeLocal;
  * necesario para sacar el modelo dinamico de acceso a tablas.
  * 
  * Ejecutar esta prueba con el parámetro VM: 
- * 	 -Dlog4jdbc.debug.stack.prefix=-Dlog4jdbc.debug.stack.prefix=^co\.uniandes\.serviciosfuncionales.* -Xmx500m -XX:MaxPermSize=128m
+ * 	 -Xmx500m -XX:MaxPermSize=128m -Dlog4jdbc.debug.stack.prefix=co.uniandes.sisinfo
  * 
  * 
  * Esta prueba usa Arquillian para subir un Glassfish embebido y así desplegar
@@ -46,6 +53,15 @@ public class AccionVencidaFacadeTest {
 				.addPackage(AsistenciaGraduadaFacade.class.getPackage())
 				.addPackage(AsistenciaGraduadaFacadeLocal.class.getPackage())
 				.addPackage(AsistenciaGraduada.class.getPackage())
+				.addPackage(ConstanteFacade.class.getPackage())
+				.addPackage(AsistenciaGraduadaFacadeLocal.class.getPackage())
+				.addPackage(NucleoLocal.class.getPackage())
+				.addPackage(EventoExternoBeanLocal.class.getPackage())
+				.addPackage(ProgramaFacadeLocal.class.getPackage())
+				.addPackage(UsuarioEventosFacadeLocal.class.getPackage())
+				.addPackage(RolFacadeLocal.class.getPackage())
+				.addPackage(TipoDocumentoFacadeLocal.class.getPackage())
+				
 				.addAsResource("persistence.xml", "META-INF/persistence.xml")
 				.addAsWebInfResource("META-INF/beans.xml", "beans.xml");
 	}
@@ -61,7 +77,7 @@ public class AccionVencidaFacadeTest {
 		accionVencidaFacade.create(av);
 		av.setAccion("accion");
 		accionVencidaFacade.edit(av);
-//		accionVencidaFacade.remove(av);
+		accionVencidaFacade.remove(av);
 //		
 //		AsistenciaGraduada ag = new AsistenciaGraduada();
 //		asistenciaGraduadaFacadeLocal.create(ag);

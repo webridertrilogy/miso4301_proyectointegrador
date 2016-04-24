@@ -51,7 +51,7 @@ public class AspiranteFacade implements  AspiranteFacadeLocal {
     @Override
     public Aspirante find(Object id) {
         Aspirante aspirante = em.find(Aspirante.class, id);
-        hibernateInitialize(aspirante);
+    //    hibernateInitialize(aspirante);
         return aspirante;
     }
 
@@ -69,13 +69,13 @@ public class AspiranteFacade implements  AspiranteFacadeLocal {
     public Aspirante findByCodigo(String codigo) {
         try {
             Aspirante aspirante = (Aspirante) em.createNamedQuery("Aspirante.findByCodigo").setParameter("codigo", codigo).getSingleResult();
-            hibernateInitialize(aspirante);
+           //hibernateInitialize(aspirante);
             return aspirante;
         } catch (NoResultException e) {
             return null;
         } catch (NonUniqueResultException e) {
             Aspirante aspirante = (Aspirante) em.createNamedQuery("Aspirante.findByCodigo").setParameter("codigo", codigo).getResultList().get(0);
-            hibernateInitialize(aspirante);
+            //hibernateInitialize(aspirante);
             return aspirante;
         }
     }
@@ -84,13 +84,13 @@ public class AspiranteFacade implements  AspiranteFacadeLocal {
     public Aspirante findByCorreo(String correo) {
         try {
             Aspirante aspirante = (Aspirante) em.createNamedQuery("Aspirante.findByCorreo").setParameter("correo", correo).getSingleResult();
-            hibernateInitialize(aspirante);
+          //  hibernateInitialize(aspirante);
             return aspirante;
         } catch (NoResultException e) {
             return null;
         } catch (NonUniqueResultException e) {
             Aspirante aspirante = (Aspirante) em.createNamedQuery("Aspirante.findByCorreo").setParameter("correo", correo).getResultList().get(0);
-            hibernateInitialize(aspirante);
+          //  hibernateInitialize(aspirante);
             return aspirante;
         }
     }

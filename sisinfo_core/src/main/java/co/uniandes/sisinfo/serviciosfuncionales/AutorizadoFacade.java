@@ -70,11 +70,11 @@ public class AutorizadoFacade extends AbstractFacade<Autorizado> implements Auto
     } 
 
     public Autorizado findAutorizadoByCorreo(String correo) {
-        Query q=em.createNamedQuery("Autorizado.findAutorizadoByCorreo").setParameter("correo", correo);
+        Query q=em.createNamedQuery("Autorizado.findByCorreo").setParameter("correo", correo);
         try {
             return (Autorizado)q.getSingleResult();
         } catch (Exception e) {
-            return (Autorizado)q.getResultList().get(0);
+            return null;
         }
     }
 

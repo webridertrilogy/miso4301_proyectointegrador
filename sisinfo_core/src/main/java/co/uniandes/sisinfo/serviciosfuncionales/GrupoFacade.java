@@ -54,7 +54,10 @@ public class GrupoFacade implements GrupoFacadeLocal {
         } catch (NonUniqueResultException e) {
             Grupo grupo = (Grupo) em.createNamedQuery("Grupo.findByNombre").setParameter("nombre", nombre).getResultList().get(0);
             return grupo;
-        }
+        
+		    } catch (Exception e) {
+		           return null;
+		    }
     }
 
     public List<Grupo> findByCorreoDuenho(String correo) {

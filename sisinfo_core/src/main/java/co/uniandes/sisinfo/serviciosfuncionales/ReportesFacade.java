@@ -129,7 +129,7 @@ public class ReportesFacade implements ReportesFacadeLocal {
     /**
      *  ConstanteBean
      */
-    @EJB
+    //@EJB
     private ConstanteLocal constanteBean;
 
     public ReportesFacade() {

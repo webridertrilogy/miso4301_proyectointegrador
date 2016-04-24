@@ -151,32 +151,7 @@
 		<class>co.uniandes.sisinfo.entities.datosmaestros.soporte.Pais</class>
 		<class>co.uniandes.sisinfo.entities.datosmaestros.soporte.TipoCuenta</class>
 		<class>co.uniandes.sisinfo.entities.datosmaestros.soporte.TipoDocumento</class>
-		<class>co.uniandes.sisinfo.historico.entities.cyc.h_cargaProfesor_cyc</class>
-		<class>co.uniandes.sisinfo.historico.entities.cyc.h_curso_planeado</class>
-		<class>co.uniandes.sisinfo.historico.entities.cyc.h_direccion_tesis</class>
-		<class>co.uniandes.sisinfo.historico.entities.cyc.h_evento</class>
-		<class>co.uniandes.sisinfo.historico.entities.cyc.h_intencion_publicacion</class>
-		<class>co.uniandes.sisinfo.historico.entities.cyc.h_otras_actividades</class>
-		<class>co.uniandes.sisinfo.historico.entities.cyc.h_periodo_planeacion</class>
-		<class>co.uniandes.sisinfo.historico.entities.cyc.h_proyecto_financiado</class>
-		<class>co.uniandes.sisinfo.historico.entities.h_archivo</class>
-		<class>co.uniandes.sisinfo.historico.entities.h_curso</class>
-		<class>co.uniandes.sisinfo.historico.entities.h_informacionAcademica</class>
-		<class>co.uniandes.sisinfo.historico.entities.h_monitor</class>
-		<class>co.uniandes.sisinfo.historico.entities.h_monitoria</class>
-		<class>co.uniandes.sisinfo.historico.entities.h_profesor</class>
-		<class>co.uniandes.sisinfo.historico.entities.h_seccion</class>
-		<class>co.uniandes.sisinfo.historico.entities.tesisM.h_curso_tomado</class>
-		<class>co.uniandes.sisinfo.historico.entities.tesisM.h_detalleCalificacion_tesis_2</class>
-		<class>co.uniandes.sisinfo.historico.entities.tesisM.h_estudiante_maestria</class>
-		<class>co.uniandes.sisinfo.historico.entities.tesisM.h_inscripcion_subarea</class>
-		<class>co.uniandes.sisinfo.historico.entities.tesisM.h_jurado_tesis</class>
-		<class>co.uniandes.sisinfo.historico.entities.tesisM.h_tesis1_rechazadas</class>
-		<class>co.uniandes.sisinfo.historico.entities.tesisM.h_tesis2_rechazadas</class>
-		<class>co.uniandes.sisinfo.historico.entities.tesisM.h_tesis_1</class>
-		<class>co.uniandes.sisinfo.historico.entities.tesisM.h_tesis_2</class>
-		<class>co.uniandes.sisinfo.historico.entities.tesispregrado.h_estudiante_pregrado</class>
-		<class>co.uniandes.sisinfo.historico.entities.tesispregrado.h_tesisPregrado</class>
+		
 		<exclude-unlisted-classes>false</exclude-unlisted-classes>
 		<properties>
 			<property name="hibernate.archive.autodetection" value="class" />

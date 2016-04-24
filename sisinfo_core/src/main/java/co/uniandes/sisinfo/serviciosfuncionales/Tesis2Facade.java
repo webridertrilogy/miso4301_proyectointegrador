@@ -65,33 +65,33 @@ public class Tesis2Facade implements Tesis2FacadeLocal {
     }
 
      private void hibernateInitialize(Tesis2 i) {
-        Hibernate.initialize(i);
-        if(i.getAsesor()!=null)
-        {
-            Hibernate.initialize(i.getAsesor());
-            Hibernate.initialize(i.getAsesor().getPersona());
-
-        }
-        if(i.getEstudiante()!=null)
-        {
-            Hibernate.initialize(i.getEstudiante());
-            Hibernate.initialize(i.getEstudiante().getPersona());
-
-        }
-         if(i.getSemestreInicio()!=null)
-        {
-            Hibernate.initialize(i.getSemestreInicio());
-            Hibernate.initialize(i.getSemestreInicio());
-
-        }
-        if(i.getSemestreInicio()!=null)
-        {
-            Hibernate.initialize(i.getSemestreInicio());
-        }
-        if(i.getHorarioSustentacion()!=null)
-        {
-               Hibernate.initialize(i.getHorarioSustentacion());
-        }
+//        Hibernate.initialize(i);
+//        if(i.getAsesor()!=null)
+//        {
+//            Hibernate.initialize(i.getAsesor());
+//            Hibernate.initialize(i.getAsesor().getPersona());
+//
+//        }
+//        if(i.getEstudiante()!=null)
+//        {
+//            Hibernate.initialize(i.getEstudiante());
+//            Hibernate.initialize(i.getEstudiante().getPersona());
+//
+//        }
+//         if(i.getSemestreInicio()!=null)
+//        {
+//            Hibernate.initialize(i.getSemestreInicio());
+//            Hibernate.initialize(i.getSemestreInicio());
+//
+//        }
+//        if(i.getSemestreInicio()!=null)
+//        {
+//            Hibernate.initialize(i.getSemestreInicio());
+//        }
+//        if(i.getHorarioSustentacion()!=null)
+//        {
+//               Hibernate.initialize(i.getHorarioSustentacion());
+//        }
     }
 
     public Collection<Tesis2> findByCorreoEstudiante(String correo) {

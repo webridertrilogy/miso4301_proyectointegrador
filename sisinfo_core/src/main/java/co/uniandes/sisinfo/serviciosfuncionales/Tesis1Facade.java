@@ -64,20 +64,20 @@ public class Tesis1Facade implements Tesis1FacadeLocal {
     }
 
     private void hibernateInitialize(Tesis1 i) {
-        Hibernate.initialize(i);
-        if (i.getAsesor() != null) {
-            Hibernate.initialize(i.getAsesor());
-            Hibernate.initialize(i.getAsesor().getPersona());
-        }
-        if (i.getEstudiante() != null) {
-            Hibernate.initialize(i.getEstudiante());
-            Hibernate.initialize(i.getEstudiante().getPersona());
-
-        }
-        if (i.getSemestreIniciacion() != null) {
-            Hibernate.initialize(i.getSemestreIniciacion());
-            Hibernate.initialize(i.getSemestreIniciacion());
-        }
+//        Hibernate.initialize(i);
+//        if (i.getAsesor() != null) {
+//            Hibernate.initialize(i.getAsesor());
+//            Hibernate.initialize(i.getAsesor().getPersona());
+//        }
+//        if (i.getEstudiante() != null) {
+//            Hibernate.initialize(i.getEstudiante());
+//            Hibernate.initialize(i.getEstudiante().getPersona());
+//
+//        }
+//        if (i.getSemestreIniciacion() != null) {
+//            Hibernate.initialize(i.getSemestreIniciacion());
+//            Hibernate.initialize(i.getSemestreIniciacion());
+//        }
     }
 
     public Collection<Tesis1> findByCorreoEstudiante(String correo) {
