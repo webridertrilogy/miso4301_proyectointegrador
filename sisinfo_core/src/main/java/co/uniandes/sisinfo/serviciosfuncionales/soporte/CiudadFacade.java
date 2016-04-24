@@ -18,7 +18,7 @@ import co.uniandes.sisinfo.entities.datosmaestros.soporte.Ciudad;
  * @author Administrador
  */
 @Stateless
-public class CiudadFacade extends AbstractFacade<Ciudad> implements CiudadFacadeLocal, CiudadFacadeRemote {
+public class CiudadFacade extends AbstractFacade<Ciudad> implements CiudadFacadeLocal {
 
     @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;

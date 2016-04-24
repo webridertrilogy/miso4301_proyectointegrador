@@ -32,7 +32,7 @@ import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
  * @author Juan Manuel Moreno B.
  */
 @Stateless
-public class AuditoriaBean implements AuditoriaBeanRemote, AuditoriaBeanLocal {
+public class AuditoriaBean implements  AuditoriaBeanLocal {
 
     @EJB
     private ComandoXMLFacadeLocal comandoXMLFacade;
@@ -46,21 +46,21 @@ public class AuditoriaBean implements AuditoriaBeanRemote, AuditoriaBeanLocal {
     private ParserT parser;
     private ServiceLocator serviceLocator;
     @EJB
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
 
     public AuditoriaBean() {
-        try {
-            
-            parser = new ParserT();
-            serviceLocator = new ServiceLocator();
-            constanteBean = (ConstanteRemote) serviceLocator.getRemoteEJB(ConstanteRemote.class);
-        } catch (Exception ex) {
-
-            Logger.getLogger(AuditoriaBean.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        try {
+//            
+//            parser = new ParserT();
+//            serviceLocator = new ServiceLocator();
+//            constanteBean = (ConstanteLocal) serviceLocator.getLocalEJB(ConstanteLocal.class);
+//        } catch (Exception ex) {
+//
+//            Logger.getLogger(AuditoriaBean.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }
 
-    public ConstanteRemote getConstanteBean() {
+    public ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 

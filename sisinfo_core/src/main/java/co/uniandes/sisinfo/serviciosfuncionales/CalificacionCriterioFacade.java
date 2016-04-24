@@ -16,7 +16,7 @@ import javax.persistence.PersistenceContext;
  * @author Ivan Mauricio Melo Suarez
  */
 @Stateless
-public class CalificacionCriterioFacade extends AbstractFacade<CalificacionCriterio> implements CalificacionCriterioFacadeLocal, CalificacionCriterioFacadeRemote {
+public class CalificacionCriterioFacade extends AbstractFacade<CalificacionCriterio> implements CalificacionCriterioFacadeLocal {
     @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 

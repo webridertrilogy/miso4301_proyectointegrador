@@ -16,7 +16,7 @@ import javax.persistence.PersistenceContext;
  * @author lj.bautista31
  */
 @Stateless
-public class RolFacade implements RolFacadeLocal, RolFacadeRemote {
+public class RolFacade implements RolFacadeLocal {
 	@PersistenceContext(unitName="SoporteSisinfoPU")
     private EntityManager em;
 

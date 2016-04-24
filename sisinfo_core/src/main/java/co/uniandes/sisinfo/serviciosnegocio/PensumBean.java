@@ -21,23 +21,23 @@ import co.uniandes.sisinfo.serviciosfuncionales.parser.ParserT;
  */
 @Stateless
 @EJB(name = "PensumBean", beanInterface = co.uniandes.sisinfo.serviciosnegocio.PensumLocal.class)
-public class PensumBean implements PensumRemote, PensumLocal {
+public class PensumBean implements  PensumLocal {
     
     private ParserT parser;
 
 
     @EJB
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
 
     private ServiceLocator serviceLocator;
 
     public PensumBean(){
-        try {
-            serviceLocator = new ServiceLocator();            
-            constanteBean = (ConstanteRemote) serviceLocator.getRemoteEJB(ConstanteRemote.class);
-        } catch (NamingException ex) {
-            Logger.getLogger(PensumBean.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        try {
+//            serviceLocator = new ServiceLocator();            
+//            constanteBean = (ConstanteLocal) serviceLocator.getLocalEJB(ConstanteLocal.class);
+//        } catch (NamingException ex) {
+//            Logger.getLogger(PensumBean.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }
 
     public String darPensum(String comando) {
@@ -112,7 +112,7 @@ public class PensumBean implements PensumRemote, PensumLocal {
         return parser;    
     }
 
-    public ConstanteRemote getConstanteBean() {
+    public ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 

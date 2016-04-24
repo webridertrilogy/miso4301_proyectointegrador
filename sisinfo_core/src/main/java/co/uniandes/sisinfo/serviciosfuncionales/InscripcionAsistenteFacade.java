@@ -19,7 +19,7 @@ import org.hibernate.Hibernate;
  * @author im.melo33
  */
 @Stateless
-public class InscripcionAsistenteFacade implements InscripcionAsistenteFacadeRemote, InscripcionAsistenteFacadeLocal {
+public class InscripcionAsistenteFacade implements  InscripcionAsistenteFacadeLocal {
 
 	@PersistenceContext(unitName="SoporteSisinfoPU")
     private EntityManager em;

@@ -31,7 +31,7 @@ import org.hibernate.Hibernate;
  */
 @Stateless
 @EJB(name = "SolicitudFacade", beanInterface = co.uniandes.sisinfo.serviciosfuncionales.SolicitudFacadeLocal.class)
-public class SolicitudFacade implements SolicitudFacadeLocal, SolicitudFacadeRemote {
+public class SolicitudFacade implements SolicitudFacadeLocal {
 
     @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;

@@ -22,7 +22,7 @@ import javax.persistence.Query;
  * @author ivan melo
  */
 @Stateless
-public class ContactoFacade implements ContactoFacadeLocal, ContactoFacadeRemote {
+public class ContactoFacade implements ContactoFacadeLocal {
 
     @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;

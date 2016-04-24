@@ -14,7 +14,7 @@ import javax.persistence.Query;
  * @author Marcela Morales
  */
 @Stateless
-public class AsistenciaGraduadaFacade implements AsistenciaGraduadaFacadeLocal, AsistenciaGraduadaFacadeRemote {
+public class AsistenciaGraduadaFacade implements AsistenciaGraduadaFacadeLocal {
 
     @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;

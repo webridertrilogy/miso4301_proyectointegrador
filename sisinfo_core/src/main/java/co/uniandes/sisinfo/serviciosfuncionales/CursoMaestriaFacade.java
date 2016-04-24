@@ -19,7 +19,7 @@ import javax.persistence.Query;
  * @author Asistente
  */
 @Stateless
-public class CursoMaestriaFacade implements CursoMaestriaFacadeLocal, CursoMaestriaFacadeRemote {
+public class CursoMaestriaFacade implements CursoMaestriaFacadeLocal {
 
     @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;

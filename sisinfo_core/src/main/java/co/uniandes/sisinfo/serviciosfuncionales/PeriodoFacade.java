@@ -9,24 +9,26 @@
  */
 package co.uniandes.sisinfo.serviciosfuncionales;
 
-import co.uniandes.sisinfo.entities.Periodo;
-import co.uniandes.sisinfo.serviciosfuncionales.PeriodoFacadeRemote;
 import java.util.Iterator;
 import java.util.List;
+
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.NonUniqueResultException;
 import javax.persistence.PersistenceContext;
+
 import org.hibernate.Hibernate;
+
+import co.uniandes.sisinfo.entities.Periodo;
 
 /**
  * Servicios Entidad Periodo
  */
 @Stateless
 @EJB(name = "PeriodoFacade", beanInterface = co.uniandes.sisinfo.serviciosfuncionales.PeriodoFacadeLocal.class)
-public class PeriodoFacade implements PeriodoFacadeLocal, PeriodoFacadeRemote {
+public class PeriodoFacade implements PeriodoFacadeLocal {
 
 	@PersistenceContext(unitName="SoporteSisinfoPU")
     private EntityManager em;

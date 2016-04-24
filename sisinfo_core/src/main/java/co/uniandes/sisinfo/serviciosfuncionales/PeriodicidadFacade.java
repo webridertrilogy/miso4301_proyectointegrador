@@ -18,7 +18,7 @@ import javax.persistence.PersistenceContext;
  * @author david
  */
 @Stateless
-public class PeriodicidadFacade implements PeriodicidadFacadeLocal, PeriodicidadFacadeRemote {
+public class PeriodicidadFacade implements PeriodicidadFacadeLocal {
 	@PersistenceContext(unitName="SoporteSisinfoPU")
     private EntityManager em;
 

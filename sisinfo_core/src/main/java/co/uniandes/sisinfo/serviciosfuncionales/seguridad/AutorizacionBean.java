@@ -9,6 +9,20 @@
  */
 package co.uniandes.sisinfo.serviciosfuncionales.seguridad;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import javax.ejb.EJB;
+import javax.ejb.Stateless;
+import javax.naming.AuthenticationException;
+import javax.naming.CommunicationException;
+import javax.naming.NameNotFoundException;
+import javax.naming.NamingException;
+
 import co.uniandes.sisinfo.comun.constantes.Constantes;
 import co.uniandes.sisinfo.comun.constantes.Mensajes;
 import co.uniandes.sisinfo.entities.datosmaestros.Estudiante;
@@ -16,60 +30,49 @@ import co.uniandes.sisinfo.entities.datosmaestros.Persona;
 import co.uniandes.sisinfo.entities.datosmaestros.Profesor;
 import co.uniandes.sisinfo.entities.datosmaestros.Rol;
 import co.uniandes.sisinfo.entities.datosmaestros.Usuario;
+import co.uniandes.sisinfo.seguridad.Protector;
 import co.uniandes.sisinfo.serviciosfuncionales.ServiceLocator;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.EstudianteFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.PersonaFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.ProfesorFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.EstudianteFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.PersonaFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.ProfesorFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Atributo;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.ParserT;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
-import co.uniandes.sisinfo.serviciosnegocio.ConstanteRemote;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.ejb.EJB;
-import javax.ejb.Stateless;
-import javax.naming.AuthenticationException;
-import javax.naming.CommunicationException;
-import javax.naming.NameNotFoundException;
-import javax.naming.NamingException;
-import co.uniandes.sisinfo.seguridad.Protector;
+import co.uniandes.sisinfo.serviciosnegocio.ConstanteLocal;
+import co.uniandes.sisinfo.serviciosnegocio.ConstanteLocal;
 
 /**
  * Servicios de Autorización
  */
 @Stateless
 @EJB(name = "AutorizacionBean", beanInterface = co.uniandes.sisinfo.serviciosfuncionales.seguridad.AutorizacionLocal.class)
-public class AutorizacionBean implements AutorizacionRemote, AutorizacionLocal {
+public class AutorizacionBean implements  AutorizacionLocal {
 
     private ParserT parser;
     @EJB
-    private UsuarioFacadeRemote fachadaUsuario;
+    private UsuarioFacadeLocal fachadaUsuario;
     private AccesoLDAP ldap;
     @EJB
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
     private ServiceLocator serviceLocator;
     @EJB
-    private PersonaFacadeRemote personaFacade;
+    private PersonaFacadeLocal personaFacade;
     @EJB
-    private EstudianteFacadeRemote estudianteFacade;
+    private EstudianteFacadeLocal estudianteFacade;
     @EJB
-    private ProfesorFacadeRemote profesorFacade;
+    private ProfesorFacadeLocal profesorFacade;
 
     public AutorizacionBean() {
-        try {
-            serviceLocator = new ServiceLocator();
-            fachadaUsuario = (UsuarioFacadeRemote) serviceLocator.getRemoteEJB(UsuarioFacadeRemote.class);
-            constanteBean = (ConstanteRemote) serviceLocator.getRemoteEJB(ConstanteRemote.class);
-            personaFacade = (PersonaFacadeRemote)serviceLocator.getRemoteEJB(PersonaFacadeRemote.class);
-            estudianteFacade = (EstudianteFacadeRemote) serviceLocator.getRemoteEJB(EstudianteFacadeRemote.class);
-            profesorFacade = (ProfesorFacadeRemote) serviceLocator.getRemoteEJB(ProfesorFacadeRemote.class);
-        } catch (NamingException ex) {
-            Logger.getLogger(AutorizacionBean.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        try {
+//            serviceLocator = new ServiceLocator();
+//            //fachadaUsuario = (UsuarioFacadeLocal) serviceLocator.getLocalEJB(UsuarioFacadeLocal.class);
+//           // constanteBean = (ConstanteLocal) serviceLocator.getLocalEJB(ConstanteLocal.class);
+//           // personaFacade = (PersonaFacadeLocal)serviceLocator.getLocalEJB(PersonaFacadeLocal.class);
+//            //estudianteFacade = (EstudianteFacadeLocal) serviceLocator.getLocalEJB(EstudianteFacadeLocal.class);
+//            //profesorFacade = (ProfesorFacadeLocal) serviceLocator.getLocalEJB(ProfesorFacadeLocal.class);
+//        } catch (NamingException ex) {
+//            Logger.getLogger(AutorizacionBean.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }
 
     public ParserT getParser() {
@@ -92,11 +95,11 @@ public class AutorizacionBean implements AutorizacionRemote, AutorizacionLocal {
         this.ldap = ldap;
     }
 
-    public UsuarioFacadeRemote getFachadaUsuario() {
+    public UsuarioFacadeLocal getFachadaUsuario() {
         return fachadaUsuario;
     }
 
-    public void setFachadaUsuario(UsuarioFacadeRemote dachadaUsuario) {
+    public void setFachadaUsuario(UsuarioFacadeLocal dachadaUsuario) {
         this.fachadaUsuario = dachadaUsuario;
     }
 
@@ -421,18 +424,18 @@ public class AutorizacionBean implements AutorizacionRemote, AutorizacionLocal {
      * Retorna ConstanteBean
      * @return constanteBean ConstanteBean
      */
-    private ConstanteRemote getConstanteBean() {
-        if (constanteBean == null) {
-            try {
-                ServiceLocator serviceLocator = new ServiceLocator();
-                constanteBean = (ConstanteRemote) serviceLocator.getRemoteEJB(ConstanteRemote.class);
+    private ConstanteLocal getConstanteBean() {
+//        if (constanteBean == null) {
+//            try {
+//                ServiceLocator serviceLocator = new ServiceLocator();
+//                constanteBean = (ConstanteLocal) serviceLocator.getLocalEJB(ConstanteLocal.class);
+//
+//            } catch (NamingException ex) {
+//                Logger.getLogger(AutorizacionBean.class.getName()).log(Level.SEVERE, null, ex);
+//            }
+//        } 
 
-            } catch (NamingException ex) {
-                Logger.getLogger(AutorizacionBean.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        } 
-
-        return constanteBean;
+        return null;
     }
 
     public String estaRegistradoEnLDAP(String xml) {

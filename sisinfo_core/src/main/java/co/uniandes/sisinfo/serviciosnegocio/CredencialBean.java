@@ -45,7 +45,7 @@ import co.uniandes.sisinfo.serviciosfuncionales.parser.ParserT;
  */
 @Stateless
 @EJB(name = "CredencialBean", beanInterface = co.uniandes.sisinfo.serviciosnegocio.CredencialLocal.class)
-public class CredencialBean implements CredencialRemote, CredencialLocal {
+public class CredencialBean implements  CredencialLocal {
 
     //---------------------------------------
     // Atributos
@@ -63,7 +63,7 @@ public class CredencialBean implements CredencialRemote, CredencialLocal {
      *  ConstanteBean
      */
     @EJB
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
 
     private ServiceLocator serviceLocator;
 
@@ -75,12 +75,12 @@ public class CredencialBean implements CredencialRemote, CredencialLocal {
      */
     public CredencialBean()
     {
-        try {
-            serviceLocator = new ServiceLocator();
-            constanteBean = (ConstanteRemote) serviceLocator.getRemoteEJB(ConstanteRemote.class);
-        } catch (NamingException ex) {
-            Logger.getLogger(CredencialBean.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        try {
+//            serviceLocator = new ServiceLocator();
+//            constanteBean = (ConstanteLocal) serviceLocator.getLocalEJB(ConstanteLocal.class);
+//        } catch (NamingException ex) {
+//            Logger.getLogger(CredencialBean.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }
 
     //---------------------------------------
@@ -226,7 +226,7 @@ public class CredencialBean implements CredencialRemote, CredencialLocal {
      * Retorna ConstanteBean
      * @return constanteBean ConstanteBean
      */
-    private ConstanteRemote getConstanteBean() {
+    private ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 

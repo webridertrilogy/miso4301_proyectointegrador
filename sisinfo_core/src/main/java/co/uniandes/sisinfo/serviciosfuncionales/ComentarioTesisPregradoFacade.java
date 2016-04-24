@@ -17,7 +17,7 @@ import javax.persistence.Query;
  * @author Ivan Mauricio Melo S
  */
 @Stateless
-public class ComentarioTesisPregradoFacade implements ComentarioTesisPregradoFacadeLocal, ComentarioTesisPregradoFacadeRemote {
+public class ComentarioTesisPregradoFacade implements ComentarioTesisPregradoFacadeLocal {
     @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 

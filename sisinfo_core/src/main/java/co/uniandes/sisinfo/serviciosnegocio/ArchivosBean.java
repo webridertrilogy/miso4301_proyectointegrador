@@ -42,15 +42,15 @@ import co.uniandes.sisinfo.entities.datosmaestros.Parametro;
 import co.uniandes.sisinfo.entities.datosmaestros.Profesor;
 import co.uniandes.sisinfo.entities.datosmaestros.Seccion;
 import co.uniandes.sisinfo.serviciosfuncionales.ArchivoFacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.CorreoRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.PeriodicidadFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.PeriodoFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.RangoFechasGeneralFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.CorreoLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.PeriodicidadFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.PeriodoFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.RangoFechasGeneralFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.ServiceLocator;
-import co.uniandes.sisinfo.serviciosfuncionales.TareaSencillaFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.TareaSencillaFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.TipoArchivoFacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.CursoFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.SeccionFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.CursoFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.SeccionFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.ParserT;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
 
@@ -59,12 +59,12 @@ import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
  */
 @Stateless
 @EJB(name = "ArchivosBean", beanInterface = co.uniandes.sisinfo.serviciosnegocio.ArchivosLocal.class)
-public class ArchivosBean implements ArchivosRemote, ArchivosLocal {
+public class ArchivosBean implements ArchivosLocal {
 
     //---------------------------------------
     // Atributos
     //---------------------------------------
-    private final static String DIRECCION_INTERFAZ = "co.uniandes.sisinfo.serviciosnegocio.ArchivosRemote";
+    private final static String DIRECCION_INTERFAZ = "co.uniandes.sisinfo.serviciosnegocio.ArchivosLocal";
     private final static String NOMBRE_METODO = "manejoTimersArchivos";
     /**
      * Parser
@@ -74,12 +74,12 @@ public class ArchivosBean implements ArchivosRemote, ArchivosLocal {
      * SeccionFacade
      */
     @EJB
-    private SeccionFacadeRemote seccionFacade;
+    private SeccionFacadeLocal seccionFacade;
     /**
      *  ConstanteBean
      */
     @EJB
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
     /**
      * ArchivoFacade
      */
@@ -88,38 +88,38 @@ public class ArchivosBean implements ArchivosRemote, ArchivosLocal {
     @EJB
     private TipoArchivoFacadeLocal tipoArchivoFacade;
     @EJB
-    private CursoFacadeRemote cursoFacade;
+    private CursoFacadeLocal cursoFacade;
     @EJB
-    private CorreoRemote correoBean;
+    private CorreoLocal correoBean;
     /**
      * PeriodoFacade
      */
     @EJB
-    private PeriodoFacadeRemote periodoFacade;
+    private PeriodoFacadeLocal periodoFacade;
     private ServiceLocator serviceLocator;
     private String[] tipos;
     /**
      * Histórico
      */
-    private HistoricoRemote historicoBean;
+    //private HistoricoLocal historicoBean;
     @EJB
-    private PeriodicidadFacadeRemote periodicidadFacade;
+    private PeriodicidadFacadeLocal periodicidadFacade;
 
     /*
      * cambio de tareas y alertas
      */
     @EJB
-    private TareaSencillaRemote tareaSencillaBean;
+    private TareaSencillaLocal tareaSencillaBean;
     @EJB
-    private TareaMultipleRemote tareaMultipleBean;
+    private TareaMultipleLocal tareaMultipleBean;
     @EJB
-    private TareaMultipleRemote tareaBean;
+    private TareaMultipleLocal tareaBean;
     @EJB
-    private TareaSencillaFacadeRemote tareaSencillaFacade;
+    private TareaSencillaFacadeLocal tareaSencillaFacade;
     @EJB
-    private RangoFechasGeneralFacadeRemote rangoFechasFacade;
+    private RangoFechasGeneralFacadeLocal rangoFechasFacade;
     @EJB
-    private TimerGenericoBeanRemote timerGenericoBean;
+    private TimerGenericoBeanLocal timerGenericoBean;
 
     //---------------------------------------
     // Constructor
@@ -128,34 +128,34 @@ public class ArchivosBean implements ArchivosRemote, ArchivosLocal {
      * Constructor de ArchivosBean
      */
     public ArchivosBean() {
-        try {
-            serviceLocator = new ServiceLocator();
-
-            constanteBean = (ConstanteRemote) serviceLocator.getRemoteEJB(ConstanteRemote.class);
-            seccionFacade = (SeccionFacadeRemote) serviceLocator.getRemoteEJB(SeccionFacadeRemote.class);
-
-            periodoFacade = (PeriodoFacadeRemote) serviceLocator.getRemoteEJB(PeriodoFacadeRemote.class);
-            String[] tip = {getConstanteBean().getConstante(Constantes.TAG_PARAM_TIPO_PROGRAMA),
-                getConstanteBean().getConstante(Constantes.TAG_PARAM_TIPO_TREINTA_POR_CIENTO), getConstanteBean().getConstante(Constantes.TAG_PARAM_TIPO_CIERRE)};
-            tipos = tip;
-            cursoFacade = (CursoFacadeRemote) serviceLocator.getRemoteEJB(CursoFacadeRemote.class);
-            correoBean = (CorreoRemote) serviceLocator.getRemoteEJB(CorreoRemote.class);
-            historicoBean = (HistoricoRemote) serviceLocator.getRemoteEJB(HistoricoRemote.class);
-            timerGenericoBean = (TimerGenericoBeanRemote) serviceLocator.getRemoteEJB(TimerGenericoBeanRemote.class);
-            periodicidadFacade = (PeriodicidadFacadeRemote) serviceLocator.getRemoteEJB(PeriodicidadFacadeRemote.class);
-
-
-            rangoFechasFacade = (RangoFechasGeneralFacadeRemote) serviceLocator.getRemoteEJB(RangoFechasGeneralFacadeRemote.class);
-
-            tareaSencillaBean = (TareaSencillaRemote) serviceLocator.getRemoteEJB(TareaSencillaRemote.class);
-            tareaMultipleBean = (TareaMultipleRemote) serviceLocator.getRemoteEJB(TareaMultipleRemote.class);
-            tareaSencillaFacade = (TareaSencillaFacadeRemote) serviceLocator.getRemoteEJB(TareaSencillaFacadeRemote.class);
-            tareaBean = (TareaMultipleRemote) serviceLocator.getRemoteEJB(TareaMultipleRemote.class);
-
-            parser = new ParserT();
-        } catch (NamingException ex) {
-            Logger.getLogger(ArchivosBean.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        try {
+//            serviceLocator = new ServiceLocator();
+//
+//            constanteBean = (ConstanteLocal) serviceLocator.getLocalEJB(ConstanteLocal.class);
+//            seccionFacade = (SeccionFacadeLocal) serviceLocator.getLocalEJB(SeccionFacadeLocal.class);
+//
+//            periodoFacade = (PeriodoFacadeLocal) serviceLocator.getLocalEJB(PeriodoFacadeLocal.class);
+//            String[] tip = {getConstanteBean().getConstante(Constantes.TAG_PARAM_TIPO_PROGRAMA),
+//                getConstanteBean().getConstante(Constantes.TAG_PARAM_TIPO_TREINTA_POR_CIENTO), getConstanteBean().getConstante(Constantes.TAG_PARAM_TIPO_CIERRE)};
+//            tipos = tip;
+//            cursoFacade = (CursoFacadeLocal) serviceLocator.getLocalEJB(CursoFacadeLocal.class);
+//            correoBean = (CorreoLocal) serviceLocator.getLocalEJB(CorreoLocal.class);
+//            historicoBean = (HistoricoLocal) serviceLocator.getLocalEJB(HistoricoLocal.class);
+//            timerGenericoBean = (TimerGenericoBeanLocal) serviceLocator.getLocalEJB(TimerGenericoBeanLocal.class);
+//            periodicidadFacade = (PeriodicidadFacadeLocal) serviceLocator.getLocalEJB(PeriodicidadFacadeLocal.class);
+//
+//
+//            rangoFechasFacade = (RangoFechasGeneralFacadeLocal) serviceLocator.getLocalEJB(RangoFechasGeneralFacadeLocal.class);
+//
+//            tareaSencillaBean = (TareaSencillaLocal) serviceLocator.getLocalEJB(TareaSencillaLocal.class);
+//            tareaMultipleBean = (TareaMultipleLocal) serviceLocator.getLocalEJB(TareaMultipleLocal.class);
+//            tareaSencillaFacade = (TareaSencillaFacadeLocal) serviceLocator.getLocalEJB(TareaSencillaFacadeLocal.class);
+//            tareaBean = (TareaMultipleLocal) serviceLocator.getLocalEJB(TareaMultipleLocal.class);
+//
+//            parser = new ParserT();
+//        } catch (NamingException ex) {
+//            Logger.getLogger(ArchivosBean.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }
 
     //---------------------------------------
@@ -260,7 +260,7 @@ public class ArchivosBean implements ArchivosRemote, ArchivosLocal {
      * Retorna SeccionFacade
      * @return seccionFacade SeccionFacade
      */
-    private SeccionFacadeRemote getSeccionFacade() {
+    private SeccionFacadeLocal getSeccionFacade() {
         return seccionFacade;
     }
 
@@ -276,7 +276,7 @@ public class ArchivosBean implements ArchivosRemote, ArchivosLocal {
      * Retorna ConstanteBean
      * @return constanteBean ConstanteBean
      */
-    private ConstanteRemote getConstanteBean() {
+    private ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 
@@ -373,7 +373,7 @@ public class ArchivosBean implements ArchivosRemote, ArchivosLocal {
                 secciones = seccionFacade.findAll();
             } else {
                 //si no es el período actual se consulta el bean para consultar el histórico por período
-                return historicoBean.darArchivosProfesorPorPeriodoEnHistorico(comando);
+                return null; //historicoBean.darArchivosProfesorPorPeriodoEnHistorico(comando);
             }
 
             Secuencia secCursos = new Secuencia(getConstanteBean().getConstante(Constantes.TAG_PARAM_CURSOS), "");
@@ -468,7 +468,7 @@ public class ArchivosBean implements ArchivosRemote, ArchivosLocal {
                 secArchivo.agregarSecuencia(new Secuencia(getConstanteBean().getConstante(Constantes.TAG_PARAM_RUTA_DIRECTORIO), a.getRuta()));
                 secuencias.add(secArchivo);
             } else {
-                return historicoBean.darInfoArchivoHistorico(comando);
+                return null; // historicoBean.darInfoArchivoHistorico(comando);
             }
 
             return getParser().generarRespuesta(secuencias, getConstanteBean().getConstante(Constantes.CMD_DAR_INFO_ARCHIVO), getConstanteBean().getConstante(Constantes.VAL_TAG_TIPO_MENSAJE_MENSAJE), Mensajes.MSJ_0139, new Vector());
@@ -1039,7 +1039,7 @@ public class ArchivosBean implements ArchivosRemote, ArchivosLocal {
 
     public String darPeriodosConPlaneacionAcademica(String xml) {
         try {
-            Collection<String> periodos = historicoBean.darPeriodosPlaneacionAcademicaHistoricos();
+            Collection<String> periodos = null; // historicoBean.darPeriodosPlaneacionAcademicaHistoricos();
             Periodo periodoActual = periodoFacade.findActual();
             periodos.add(periodoActual.getPeriodo());
             ArrayList<Secuencia> secuencias = new ArrayList();

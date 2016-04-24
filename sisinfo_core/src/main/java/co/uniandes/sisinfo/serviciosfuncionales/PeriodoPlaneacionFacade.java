@@ -21,7 +21,7 @@ import org.hibernate.Hibernate;
  * @author Asistente
  */
 @Stateless
-public class PeriodoPlaneacionFacade implements PeriodoPlaneacionFacadeLocal, PeriodoPlaneacionFacadeRemote {
+public class PeriodoPlaneacionFacade implements PeriodoPlaneacionFacadeLocal {
 
     @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;

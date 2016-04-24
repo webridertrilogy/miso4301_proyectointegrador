@@ -18,7 +18,7 @@ import javax.persistence.Query;
  * @author Ivan Mauricio Melo Suarez
  */
 @Stateless
-public class CoasesorFacade extends AbstractFacade<Coasesor> implements CoasesorFacadeLocal, CoasesorFacadeRemote {
+public class CoasesorFacade extends AbstractFacade<Coasesor> implements CoasesorFacadeLocal {
     @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 

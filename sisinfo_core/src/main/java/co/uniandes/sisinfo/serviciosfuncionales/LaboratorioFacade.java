@@ -15,7 +15,7 @@ import javax.persistence.Query;
  * @author Marcela Morales
  */
 @Stateless
-public class LaboratorioFacade implements LaboratorioFacadeLocal, LaboratorioFacadeRemote {
+public class LaboratorioFacade implements LaboratorioFacadeLocal {
 
     @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;

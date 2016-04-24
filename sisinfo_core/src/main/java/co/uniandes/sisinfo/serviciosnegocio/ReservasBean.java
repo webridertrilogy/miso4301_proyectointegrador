@@ -24,7 +24,7 @@ import co.uniandes.sisinfo.entities.DiaDisponibilidad;
 import co.uniandes.sisinfo.entities.DisponibilidadCoordinacion;
 import co.uniandes.sisinfo.entities.Reserva;
 import co.uniandes.sisinfo.entities.datosmaestros.Persona;
-import co.uniandes.sisinfo.serviciosfuncionales.CorreoRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.CorreoLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.DatosContactoFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.DiaDisponibilidadFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.DisponibilidadCoordinacionFacadeLocal;
@@ -38,7 +38,7 @@ import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
  * @author German Florez, Marcela Morales
  */
 @Stateless
-public class ReservasBean implements ReservasBeanLocal, ReservasBeanRemote {
+public class ReservasBean implements ReservasBeanLocal {
 
     //----------------------------------------------
     // CONSTANTES
@@ -60,18 +60,18 @@ public class ReservasBean implements ReservasBeanLocal, ReservasBeanRemote {
     private ListaNegraReservaCitasLocal listaNegraReservaCitasLocal;
     //Útiles
     @EJB
-    private CorreoRemote correoBean;
+    private CorreoLocal correoBean;
     @EJB
-    private TimerGenericoBeanRemote timerGenerico;
+    private TimerGenericoBeanLocal timerGenerico;
     @EJB
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
     private ParserT parser;
     private ServiceLocator serviceLocator;
     private ConversorReservaCitas conversor;
     //---------------------------------------
     // Constantes
     //---------------------------------------
-    public final static String RUTA_INTERFAZ_REMOTA = "co.uniandes.sisinfo.serviciosnegocio.ReservasBeanRemote";
+    public final static String RUTA_INTERFAZ_REMOTA = "co.uniandes.sisinfo.serviciosnegocio.ReservasBeanLocal";
     public final static String NOMBRE_MODULO = "ReservaCitas";
 
     //----------------------------------------------
@@ -81,16 +81,16 @@ public class ReservasBean implements ReservasBeanLocal, ReservasBeanRemote {
      * Constructor de ReservasBean
      */
     public ReservasBean() throws NamingException {
-        try {
-            parser = new ParserT();
-            this.serviceLocator = new ServiceLocator();
-            constanteBean = (ConstanteRemote) serviceLocator.getRemoteEJB(ConstanteRemote.class);
-            conversor = new ConversorReservaCitas(constanteBean);
-            timerGenerico = (TimerGenericoBeanRemote) serviceLocator.getRemoteEJB(TimerGenericoBeanRemote.class);
-            correoBean = (CorreoRemote) serviceLocator.getRemoteEJB(CorreoRemote.class);
-        } catch (NamingException ex) {
-            Logger.getLogger(ReservasBean.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        try {
+//            parser = new ParserT();
+//            this.serviceLocator = new ServiceLocator();
+//            constanteBean = (ConstanteLocal) serviceLocator.getLocalEJB(ConstanteLocal.class);
+//            conversor = new ConversorReservaCitas(constanteBean);
+//            timerGenerico = (TimerGenericoBeanLocal) serviceLocator.getLocalEJB(TimerGenericoBeanLocal.class);
+//            correoBean = (CorreoLocal) serviceLocator.getLocalEJB(CorreoLocal.class);
+//        } catch (NamingException ex) {
+//            Logger.getLogger(ReservasBean.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }
 
     //----------------------------------------------
@@ -760,7 +760,7 @@ public class ReservasBean implements ReservasBeanLocal, ReservasBeanRemote {
     //----------------------------------------------
     // ATRIBUTOS
     //----------------------------------------------
-    private ConstanteRemote getConstanteBean() {
+    private ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 
@@ -775,7 +775,7 @@ public class ReservasBean implements ReservasBeanLocal, ReservasBeanRemote {
         return contactoFacade;
     }
 
-    private CorreoRemote getCorreoBean() {
+    private CorreoLocal getCorreoBean() {
         return correoBean;
     }
 
@@ -792,13 +792,13 @@ public class ReservasBean implements ReservasBeanLocal, ReservasBeanRemote {
     }
 
     private ConversorReservaCitas getConversor() {
-        if (conversor == null) {
-            conversor = new ConversorReservaCitas(getConstanteBean());
-        }
+//        if (conversor == null) {
+//            conversor = new ConversorReservaCitas(getConstanteBean());
+//        }
         return conversor;
     }
 
-    private TimerGenericoBeanRemote getTimerGenerico() {
+    private TimerGenericoBeanLocal getTimerGenerico() {
         return timerGenerico;
     }
 }

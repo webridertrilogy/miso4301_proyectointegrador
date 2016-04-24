@@ -19,7 +19,7 @@ import org.hibernate.Hibernate;
  * Servicio Facade de Archivo
  */
 @Stateless
-public class ArchivoFacade implements ArchivoFacadeLocal, ArchivoFacadeRemote {
+public class ArchivoFacade implements ArchivoFacadeLocal {
 	@PersistenceContext(unitName="SoporteSisinfoPU")
     private EntityManager em;
 

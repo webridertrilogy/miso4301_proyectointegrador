@@ -8,16 +8,16 @@
  */
 package co.uniandes.sisinfo.serviciosfuncionales;
 
-import co.uniandes.sisinfo.entities.ComandoAuditoria;
-import co.uniandes.sisinfo.serviciosnegocio.ComandoAuditoriaBeanRemote;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
+
+import co.uniandes.sisinfo.entities.ComandoAuditoria;
 
 /**
  * Servicio de negocio: Administración de comandos auditoría
  */
 @Stateless
-public class ComandoAuditoriaBean implements ComandoAuditoriaBeanLocal,ComandoAuditoriaBeanRemote{
+public class ComandoAuditoriaBean implements ComandoAuditoriaBeanLocal{
    
     //---------------------------------------
     // Atributos

@@ -20,7 +20,7 @@ import javax.persistence.Query;
  * @author Paola Gómez
  */
 @Stateless
-public class AuditoriaUsuarioFacade implements AuditoriaUsuarioFacadeLocal,AuditoriaUsuarioFacadeRemote{
+public class AuditoriaUsuarioFacade implements AuditoriaUsuarioFacadeLocal{
 
 	@PersistenceContext(unitName="SoporteSisinfoPU")
     private EntityManager em;

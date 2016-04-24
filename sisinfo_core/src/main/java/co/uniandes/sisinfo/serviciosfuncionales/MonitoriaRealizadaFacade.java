@@ -19,7 +19,7 @@ import javax.persistence.Query;
  * @author david
  */
 @Stateless
-public class MonitoriaRealizadaFacade implements MonitoriaRealizadaFacadeLocal, MonitoriaRealizadaFacadeRemote {
+public class MonitoriaRealizadaFacade implements MonitoriaRealizadaFacadeLocal {
     @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 

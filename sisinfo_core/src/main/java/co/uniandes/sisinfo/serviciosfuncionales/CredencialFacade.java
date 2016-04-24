@@ -10,10 +10,9 @@
 
 package co.uniandes.sisinfo.serviciosfuncionales;
 
-import co.uniandes.sisinfo.entities.Credencial;
-import co.uniandes.sisinfo.serviciosfuncionales.CredencialFacadeRemote;
 import java.util.Iterator;
 import java.util.List;
+
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -21,12 +20,14 @@ import javax.persistence.NoResultException;
 import javax.persistence.NonUniqueResultException;
 import javax.persistence.PersistenceContext;
 
+import co.uniandes.sisinfo.entities.Credencial;
+
 /**
  * Servicio Entidad Credencial
  */
 @Stateless
 @EJB(name = "CredencialFacade", beanInterface = co.uniandes.sisinfo.serviciosfuncionales.CredencialFacadeLocal.class)
-public class CredencialFacade implements CredencialFacadeLocal, CredencialFacadeRemote {
+public class CredencialFacade implements CredencialFacadeLocal {
 	@PersistenceContext(unitName="SoporteSisinfoPU")
     private EntityManager em;
 

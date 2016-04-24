@@ -41,13 +41,13 @@ import co.uniandes.sisinfo.entities.Laboratorio;
 import co.uniandes.sisinfo.entities.ReservaInventario;
 import co.uniandes.sisinfo.entities.ReservaMultiple;
 import co.uniandes.sisinfo.entities.datosmaestros.Persona;
-import co.uniandes.sisinfo.serviciosfuncionales.CorreoRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.CorreoLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.EncargadoFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.LaboratorioFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.ReservaInventarioFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.ReservaMultipleFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.ServiceLocator;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.PersonaFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.PersonaFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.ParserT;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
 
@@ -56,48 +56,48 @@ import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
  * @author Asistente
  */
 @Stateless
-public class ReservaInventarioBean implements ReservaInventarioBeanRemote, ReservaInventarioBeanLocal {
+public class ReservaInventarioBean implements  ReservaInventarioBeanLocal {
 
-    private final static String RUTA_INTERFAZ_REMOTA = "co.uniandes.sisinfo.serviciosnegocio.ReservaInventarioBeanRemote";
+    private final static String RUTA_INTERFAZ_REMOTA = "co.uniandes.sisinfo.serviciosnegocio.ReservaInventarioBeanLocal";
     private final static String NOMBRE_METODO_TIMER = "manejoTimersReservaInventario";
     private ServiceLocator serviceLocator;
     @EJB
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
     @EJB
     private ReservaInventarioFacadeLocal reservaInventarioFacade;
     @EJB
     private LaboratorioFacadeLocal laboratorioFacade;
     @EJB
-    private PersonaFacadeRemote personaFacade;
+    private PersonaFacadeLocal personaFacade;
     @EJB
     private EncargadoFacadeLocal encargadoFacade;
     @EJB
     private ReservaMultipleFacadeLocal reservaMultipleFacade;
     @EJB
-    private CorreoRemote correoBean;
+    private CorreoLocal correoBean;
     private ConversorReservaInventario conversor;
-    private TimerGenericoBeanRemote timerGenericoBean;
+    private TimerGenericoBeanLocal timerGenericoBean;
     private ParserT parser;
 
     public ReservaInventarioBean() {
-        try {
-            parser = new ParserT();
-            serviceLocator = new ServiceLocator();
-            constanteBean = (ConstanteRemote) serviceLocator.getRemoteEJB(ConstanteRemote.class);
-            personaFacade = (PersonaFacadeRemote) serviceLocator.getRemoteEJB(PersonaFacadeRemote.class);
-            correoBean = (CorreoRemote) serviceLocator.getRemoteEJB(CorreoRemote.class);
-            timerGenericoBean = (TimerGenericoBeanRemote) serviceLocator.getRemoteEJB(TimerGenericoBeanRemote.class);
-
-        } catch (NamingException ex) {
-            Logger.getLogger(ReservaInventarioBean.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        try {
+//            parser = new ParserT();
+//            serviceLocator = new ServiceLocator();
+//            constanteBean = (ConstanteLocal) serviceLocator.getLocalEJB(ConstanteLocal.class);
+//            personaFacade = (PersonaFacadeLocal) serviceLocator.getLocalEJB(PersonaFacadeLocal.class);
+//            correoBean = (CorreoLocal) serviceLocator.getLocalEJB(CorreoLocal.class);
+//            timerGenericoBean = (TimerGenericoBeanLocal) serviceLocator.getLocalEJB(TimerGenericoBeanLocal.class);
+//
+//        } catch (NamingException ex) {
+//            Logger.getLogger(ReservaInventarioBean.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }
 
-    public ConstanteRemote getConstanteBean() {
+    public ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 
-    public void setConstanteBean(ConstanteRemote constanteBean) {
+    public void setConstanteBean(ConstanteLocal constanteBean) {
         this.constanteBean = constanteBean;
     }
 
@@ -110,13 +110,13 @@ public class ReservaInventarioBean implements ReservaInventarioBeanRemote, Reser
     }
 
     public ConversorReservaInventario getConversor() {
-        if (conversor == null) {
-            conversor = new ConversorReservaInventario(constanteBean, laboratorioFacade, personaFacade, encargadoFacade, reservaMultipleFacade);
-        }
+//        if (conversor == null) {
+//            conversor = new ConversorReservaInventario(constanteBean, laboratorioFacade, personaFacade, encargadoFacade, reservaMultipleFacade);
+//        }
         return conversor;
     }
 
-    @Override
+    
     public String consultarReservasLaboratorio(String xml) {
         String respuesta = null;
         try {
@@ -135,7 +135,7 @@ public class ReservaInventarioBean implements ReservaInventarioBeanRemote, Reser
         }
     }
 
-    @Override
+    
     public String crearReserva(String xml) {
         String respuesta = null;
         try {
@@ -337,7 +337,7 @@ public class ReservaInventarioBean implements ReservaInventarioBeanRemote, Reser
         }
     }
 
-    @Override
+    
     public void manejoTimersReservaInventario(String info) {
         String[] partes = info.split("-");
         if (partes[0].equals(getConstanteBean().getConstante(Constantes.VAL_RESERVA_INVENTARIO_TIMER_CUENTAS_USUARIO))) {
@@ -989,12 +989,12 @@ public class ReservaInventarioBean implements ReservaInventarioBeanRemote, Reser
         eliminarTimersRecordatorioReserva("" + reserva.getId());
         eliminarTimersNotificarAdmonsis("" + reserva.getId());
 
-        if (!timerGenericoBean.existeTimerCompletamenteIgual(RUTA_INTERFAZ_REMOTA, NOMBRE_METODO_TIMER, getConstanteBean().getConstante(Constantes.VAL_RESERVA_INVENTARIO_TIMER_RESERVAS_DEL_DIA))) {
-            regenerarTimerCorreoReservasDia();
-        }
-        if (!timerGenericoBean.existeTimerCompletamenteIgual(RUTA_INTERFAZ_REMOTA, NOMBRE_METODO_TIMER, getConstanteBean().getConstante(Constantes.VAL_RESERVA_INVENTARIO_TIMER_COMPLETAR_RESERVAS))) {
-            regenerarTimerCompletarReservas();
-        }
+//        if (!timerGenericoBean.existeTimerCompletamenteIgual(RUTA_INTERFAZ_REMOTA, NOMBRE_METODO_TIMER, getConstanteBean().getConstante(Constantes.VAL_RESERVA_INVENTARIO_TIMER_RESERVAS_DEL_DIA))) {
+//            regenerarTimerCorreoReservasDia();
+//        }
+//        if (!timerGenericoBean.existeTimerCompletamenteIgual(RUTA_INTERFAZ_REMOTA, NOMBRE_METODO_TIMER, getConstanteBean().getConstante(Constantes.VAL_RESERVA_INVENTARIO_TIMER_COMPLETAR_RESERVAS))) {
+//            regenerarTimerCompletarReservas();
+//        }
         // Si la reserva se crea en el mismo dia en el que si hizo la reserva, entonces es necesario crear el timer de cuenta de invitado manualmente
         if (reserva.getFechaReserva().before(new Date()) && reserva.getLaboratorio().getCuentaInvitado() && reserva.isCuentaInvitado()) {
             regenerarTimerNotificarAdmonsis(reserva);

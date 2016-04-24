@@ -19,7 +19,7 @@ import javax.persistence.PersistenceContext;
  * @author Ivan Mauricio Melo Suarez
  */
 @Stateless
-public class ListaBlancaErroresSisinfoFacade extends AbstractFacade<ListaBlancaErroresSisinfo> implements ListaBlancaErroresSisinfoFacadeLocal, ListaBlancaErroresSisinfoFacadeRemote {
+public class ListaBlancaErroresSisinfoFacade extends AbstractFacade<ListaBlancaErroresSisinfo> implements ListaBlancaErroresSisinfoFacadeLocal {
     @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 

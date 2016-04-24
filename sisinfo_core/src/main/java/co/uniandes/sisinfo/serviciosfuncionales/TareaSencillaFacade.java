@@ -27,7 +27,7 @@ import org.hibernate.Hibernate;
  */
 @Stateless
 @EJB(name = "TareaSencillaFacade", beanInterface = co.uniandes.sisinfo.serviciosfuncionales.TareaSencillaFacadeLocal.class)
-public class TareaSencillaFacade implements TareaSencillaFacadeLocal, TareaSencillaFacadeRemote {
+public class TareaSencillaFacade implements TareaSencillaFacadeLocal {
 
 	@PersistenceContext(unitName="SoporteSisinfoPU")
     private EntityManager em;

@@ -9,240 +9,221 @@
  */
 package co.uniandes.sisinfo.nucleo.services;
 
-import co.uniandes.sisinfo.comun.constantes.Constantes;
-import co.uniandes.sisinfo.despachador.services.DespachadorLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.parser.ParserT;
-import co.uniandes.sisinfo.serviciosfuncionales.seguridad.AutorizacionRemote;
-import co.uniandes.sisinfo.serviciosnegocio.AccionVencidaBeanRemote;
-import co.uniandes.sisinfo.serviciosnegocio.AccionesBeanRemote;
-import co.uniandes.sisinfo.serviciosnegocio.AlertaMultipleRemote;
-import co.uniandes.sisinfo.serviciosnegocio.ArchivosRemote;
-import co.uniandes.sisinfo.serviciosnegocio.AspiranteRemote;
-import co.uniandes.sisinfo.serviciosnegocio.AuditoriaBeanRemote;
-import co.uniandes.sisinfo.serviciosnegocio.CargaYCompromisosBeanRemote;
-import co.uniandes.sisinfo.serviciosnegocio.CarteleraRemote;
-import co.uniandes.sisinfo.serviciosnegocio.ConfirmacionRemote;
-import co.uniandes.sisinfo.serviciosnegocio.ConflictoHorariosBeanRemote;
-import co.uniandes.sisinfo.serviciosnegocio.ConstanteRemote;
-import co.uniandes.sisinfo.serviciosnegocio.ConsultaRemote;
-import co.uniandes.sisinfo.serviciosnegocio.ContactoBeanRemote;
-import co.uniandes.sisinfo.serviciosnegocio.ConvenioRemote;
-import co.uniandes.sisinfo.serviciosnegocio.ConvocatoriaRemote;
-import co.uniandes.sisinfo.serviciosnegocio.CursoRemote;
-import co.uniandes.sisinfo.serviciosnegocio.DatosRemote;
-import co.uniandes.sisinfo.serviciosnegocio.DocumentoPrivadoRemote;
-import co.uniandes.sisinfo.serviciosnegocio.EstudiantePostgradoRemote;
-import co.uniandes.sisinfo.serviciosnegocio.ListaNegraRemote;
-import co.uniandes.sisinfo.serviciosnegocio.MonitoriaRemote;
-import co.uniandes.sisinfo.serviciosnegocio.OfertaRemote;
-import co.uniandes.sisinfo.serviciosnegocio.PensumRemote;
-import co.uniandes.sisinfo.serviciosnegocio.PreseleccionRemote;
-import co.uniandes.sisinfo.serviciosnegocio.ProfesorRemote;
-import co.uniandes.sisinfo.serviciosnegocio.ProponenteRemote;
-import co.uniandes.sisinfo.serviciosnegocio.ReglaRemote;
-import co.uniandes.sisinfo.serviciosnegocio.ReservasBeanRemote;
-import co.uniandes.sisinfo.serviciosnegocio.SolicitudRemote;
-import co.uniandes.sisinfo.serviciosnegocio.VotacionesRemote;
-import co.uniandes.sisinfo.serviciosnegocio.GrupoRemote;
-import co.uniandes.sisinfo.serviciosnegocio.HistoricoRemote;
-import co.uniandes.sisinfo.serviciosnegocio.InscripcionesBeanRemote;
-import co.uniandes.sisinfo.serviciosnegocio.MaterialBibliograficoRemote;
-import co.uniandes.sisinfo.serviciosnegocio.NivelFormacionRemote;
-import co.uniandes.sisinfo.serviciosnegocio.NivelPlantaBeanRemote;
-import co.uniandes.sisinfo.serviciosnegocio.ProyectoDeGradoBeanRemote;
-import co.uniandes.sisinfo.serviciosnegocio.RangoFechasBeanRemote;
-import co.uniandes.sisinfo.serviciosnegocio.ReportesRemote;
-import co.uniandes.sisinfo.serviciosnegocio.TesisBeanRemote;
-import co.uniandes.sisinfo.serviciosnegocio.CargaGrupoBeanRemote;
-import co.uniandes.sisinfo.serviciosnegocio.CarteleraCursosBeanRemote;
-import co.uniandes.sisinfo.serviciosnegocio.ConsultaRolBeanRemote;
-import co.uniandes.sisinfo.serviciosnegocio.EstudianteBeanRemote;
-import co.uniandes.sisinfo.serviciosnegocio.HistoricoTesis1Remote;
-import co.uniandes.sisinfo.serviciosnegocio.HistoricoTesis2Remote;
-import co.uniandes.sisinfo.serviciosnegocio.HistoricosTesisBeanRemote;
-import co.uniandes.sisinfo.serviciosnegocio.HistoricoTesisPregradoRemote;
-import co.uniandes.sisinfo.serviciosnegocio.IncidenteBeanRemote;
-import co.uniandes.sisinfo.serviciosnegocio.InscripcionSubAreaInvestiBeanRemote;
-import co.uniandes.sisinfo.serviciosnegocio.JuradosTesisBeanRemote;
-import co.uniandes.sisinfo.serviciosnegocio.PeriodoRemote;
-import co.uniandes.sisinfo.serviciosnegocio.PersonaRemote;
-import co.uniandes.sisinfo.serviciosnegocio.PersonaSoporteBeanRemote;
-import co.uniandes.sisinfo.serviciosnegocio.ReporteExcepcionesBeanRemote;
-import co.uniandes.sisinfo.serviciosnegocio.SubareaInvestigacionBeanRemote;
-import co.uniandes.sisinfo.serviciosnegocio.Tesis1BeanRemote;
-import co.uniandes.sisinfo.serviciosnegocio.Tesis2BeanRemote;
-import co.uniandes.sisinfo.serviciosnegocio.TimerGenericoBeanRemote;
-import co.uniandes.sisinfo.serviciosnegocio.AsistenciaGraduadaBeanRemote;
-import co.uniandes.sisinfo.serviciosnegocio.AuditoriaUsuarioBeanRemote;
-import co.uniandes.sisinfo.serviciosnegocio.CorreoAuditoriaRemote;
-import co.uniandes.sisinfo.serviciosnegocio.CorreoSinEnviarBeanRemote;
-import co.uniandes.sisinfo.serviciosnegocio.EventoExternoBeanRemote;
-import co.uniandes.sisinfo.serviciosnegocio.FiltroCorreoBeanRemote;
-import co.uniandes.sisinfo.serviciosnegocio.LaboratorioBeanRemote;
-import co.uniandes.sisinfo.serviciosnegocio.ListaNegraReservaCitasRemote;
-import co.uniandes.sisinfo.serviciosnegocio.RangoFechasGeneralRemote;
-import co.uniandes.sisinfo.serviciosnegocio.ReservaInventarioBeanRemote;
-import co.uniandes.sisinfo.serviciosnegocio.TareaMultipleRemote;
 import java.sql.Timestamp;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
+
+import co.uniandes.sisinfo.comun.constantes.Constantes;
+import co.uniandes.sisinfo.serviciosfuncionales.parser.ParserT;
+import co.uniandes.sisinfo.serviciosfuncionales.seguridad.AutorizacionLocal;
+import co.uniandes.sisinfo.serviciosnegocio.AccionVencidaBeanLocal;
+import co.uniandes.sisinfo.serviciosnegocio.AccionesBeanLocal;
+import co.uniandes.sisinfo.serviciosnegocio.AlertaMultipleLocal;
+import co.uniandes.sisinfo.serviciosnegocio.ArchivosLocal;
+import co.uniandes.sisinfo.serviciosnegocio.AsistenciaGraduadaBeanLocal;
+import co.uniandes.sisinfo.serviciosnegocio.AspiranteLocal;
+import co.uniandes.sisinfo.serviciosnegocio.AuditoriaBeanLocal;
+import co.uniandes.sisinfo.serviciosnegocio.AuditoriaUsuarioBeanLocal;
+import co.uniandes.sisinfo.serviciosnegocio.CargaGrupoBeanLocal;
+import co.uniandes.sisinfo.serviciosnegocio.CargaYCompromisosBeanLocal;
+import co.uniandes.sisinfo.serviciosnegocio.CarteleraLocal;
+import co.uniandes.sisinfo.serviciosnegocio.ConfirmacionLocal;
+import co.uniandes.sisinfo.serviciosnegocio.ConflictoHorariosBeanLocal;
+import co.uniandes.sisinfo.serviciosnegocio.ConstanteLocal;
+import co.uniandes.sisinfo.serviciosnegocio.ConsultaLocal;
+import co.uniandes.sisinfo.serviciosnegocio.ConsultaRolBeanLocal;
+import co.uniandes.sisinfo.serviciosnegocio.ContactoBeanLocal;
+import co.uniandes.sisinfo.serviciosnegocio.ConvenioLocal;
+import co.uniandes.sisinfo.serviciosnegocio.ConvocatoriaLocal;
+import co.uniandes.sisinfo.serviciosnegocio.CorreoAuditoriaLocal;
+import co.uniandes.sisinfo.serviciosnegocio.CorreoSinEnviarBeanLocal;
+import co.uniandes.sisinfo.serviciosnegocio.CursoLocal;
+import co.uniandes.sisinfo.serviciosnegocio.DatosLocal;
+import co.uniandes.sisinfo.serviciosnegocio.EstudianteBeanLocal;
+import co.uniandes.sisinfo.serviciosnegocio.EstudiantePostgradoLocal;
+import co.uniandes.sisinfo.serviciosnegocio.EventoExternoBeanLocal;
+import co.uniandes.sisinfo.serviciosnegocio.FiltroCorreoBeanLocal;
+import co.uniandes.sisinfo.serviciosnegocio.GrupoLocal;
+import co.uniandes.sisinfo.serviciosnegocio.IncidenteBeanLocal;
+import co.uniandes.sisinfo.serviciosnegocio.InscripcionSubAreaInvestiBeanLocal;
+import co.uniandes.sisinfo.serviciosnegocio.InscripcionesBeanLocal;
+import co.uniandes.sisinfo.serviciosnegocio.JuradosTesisBeanLocal;
+import co.uniandes.sisinfo.serviciosnegocio.LaboratorioBeanLocal;
+import co.uniandes.sisinfo.serviciosnegocio.ListaNegraLocal;
+import co.uniandes.sisinfo.serviciosnegocio.ListaNegraReservaCitasLocal;
+import co.uniandes.sisinfo.serviciosnegocio.MaterialBibliograficoLocal;
+import co.uniandes.sisinfo.serviciosnegocio.MonitoriaLocal;
+import co.uniandes.sisinfo.serviciosnegocio.NivelFormacionLocal;
+import co.uniandes.sisinfo.serviciosnegocio.NivelPlantaBeanLocal;
+import co.uniandes.sisinfo.serviciosnegocio.OfertaLocal;
+import co.uniandes.sisinfo.serviciosnegocio.PensumLocal;
+import co.uniandes.sisinfo.serviciosnegocio.PeriodoLocal;
+import co.uniandes.sisinfo.serviciosnegocio.PersonaLocal;
+import co.uniandes.sisinfo.serviciosnegocio.PersonaSoporteBeanLocal;
+import co.uniandes.sisinfo.serviciosnegocio.PreseleccionLocal;
+import co.uniandes.sisinfo.serviciosnegocio.ProfesorLocal;
+import co.uniandes.sisinfo.serviciosnegocio.ProponenteLocal;
+import co.uniandes.sisinfo.serviciosnegocio.ProyectoDeGradoBeanLocal;
+import co.uniandes.sisinfo.serviciosnegocio.RangoFechasBeanLocal;
+import co.uniandes.sisinfo.serviciosnegocio.RangoFechasGeneralLocal;
+import co.uniandes.sisinfo.serviciosnegocio.ReglaLocal;
+import co.uniandes.sisinfo.serviciosnegocio.ReporteExcepcionesBeanLocal;
+import co.uniandes.sisinfo.serviciosnegocio.ReportesLocal;
+import co.uniandes.sisinfo.serviciosnegocio.ReservaInventarioBeanLocal;
+import co.uniandes.sisinfo.serviciosnegocio.ReservasBeanLocal;
+import co.uniandes.sisinfo.serviciosnegocio.SolicitudLocal;
+import co.uniandes.sisinfo.serviciosnegocio.SubareaInvestigacionBeanLocal;
+import co.uniandes.sisinfo.serviciosnegocio.TareaMultipleLocal;
+import co.uniandes.sisinfo.serviciosnegocio.Tesis1BeanLocal;
+import co.uniandes.sisinfo.serviciosnegocio.Tesis2BeanLocal;
+import co.uniandes.sisinfo.serviciosnegocio.TesisBeanLocal;
+import co.uniandes.sisinfo.serviciosnegocio.TimerGenericoBeanLocal;
+import co.uniandes.sisinfo.serviciosnegocio.VotacionesLocal;
 
 /**
  * Servicios Núcleo
  */
 @Stateless
-public class NucleoBean implements NucleoRemote, NucleoLocal {
+public class NucleoBean implements  NucleoLocal {
 
     //----------------------------------------------
     // SERVICIOS
     //----------------------------------------------
     @EJB
-    private PersonaRemote personaBean;
+    private PersonaLocal personaBean;
     @EJB
-    private ProfesorRemote profesorBean;
+    private ProfesorLocal profesorBean;
     @EJB
-    private ConsultaRemote consultaBean;
+    private ConsultaLocal consultaBean;
     @EJB
-    private ListaNegraRemote listaNegraBean;
+    private ListaNegraLocal listaNegraBean;
     @EJB
-    private SolicitudRemote solicitudBean;
+    private SolicitudLocal solicitudBean;
     @EJB
-    private CursoRemote cursoBean;
+    private CursoLocal cursoBean;
     @EJB
-    private AspiranteRemote aspiranteBean;
+    private AspiranteLocal aspiranteBean;
     @EJB
-    private MonitoriaRemote monitoriaBean;
+    private MonitoriaLocal monitoriaBean;
     @EJB
-    private PreseleccionRemote preseleccionBean;
+    private PreseleccionLocal preseleccionBean;
+    
     @EJB
-    private HistoricoRemote historicoBean;
+    private TareaMultipleLocal tareaBean;
     @EJB
-    private HistoricoTesisPregradoRemote historicoTesisPregradoBean;
+    private AutorizacionLocal autorizacionBean;
     @EJB
-    private HistoricoTesis1Remote historicoTesis1;
+    private DatosLocal datosBean;
     @EJB
-    private HistoricoTesis2Remote historicoTesis2;
+    private ConvenioLocal convenioBean;
     @EJB
-    private HistoricosTesisBeanRemote historicoTesis;
+    private ConfirmacionLocal confirmacionBean;
     @EJB
-    private TareaMultipleRemote tareaBean;
+    private ConstanteLocal constanteBean;
     @EJB
-    private AutorizacionRemote autorizacionBean;
+    private PensumLocal pensumBean;
     @EJB
-    private DespachadorLocal despachadorBean;
+    private EstudiantePostgradoLocal estudiantePostgradoBean;
     @EJB
-    private DatosRemote datosBean;
+    private EstudianteBeanLocal estudianteBean;
     @EJB
-    private ConvenioRemote convenioBean;
+    private OfertaLocal ofertaBean;
     @EJB
-    private ConfirmacionRemote confirmacionBean;
+    private ProponenteLocal proponenteBean;
     @EJB
-    private ConstanteRemote constanteBean;
+    private ArchivosLocal archivosBean;
     @EJB
-    private PensumRemote pensumBean;
+    private AlertaMultipleLocal alertaBean;
+   
     @EJB
-    private EstudiantePostgradoRemote estudiantePostgradoBean;
+    private ReglaLocal reglaBean;
     @EJB
-    private EstudianteBeanRemote estudianteBean;
+    private CarteleraLocal carteleraBean;
     @EJB
-    private OfertaRemote ofertaBean;
+    private VotacionesLocal votacionesBean;
     @EJB
-    private ProponenteRemote proponenteBean;
+    private InscripcionesBeanLocal inscripcionesBean;
     @EJB
-    private ArchivosRemote archivosBean;
+    private GrupoLocal grupoBean;
     @EJB
-    private AlertaMultipleRemote alertaBean;
+    private MaterialBibliograficoLocal materialBibliograficoBean;
     @EJB
-    private DocumentoPrivadoRemote documentoPrivadoBean;
+    private ContactoBeanLocal contactoBean;
     @EJB
-    private ReglaRemote reglaBean;
+    private ReportesLocal reportesBean;
     @EJB
-    private CarteleraRemote carteleraBean;
+    private PeriodoLocal periodoBean;
     @EJB
-    private VotacionesRemote votacionesBean;
+    private NivelFormacionLocal nivelFormacionBean;
     @EJB
-    private InscripcionesBeanRemote inscripcionesBean;
+    private NivelPlantaBeanLocal nivelPlantaBean;
     @EJB
-    private GrupoRemote grupoBean;
+    private RangoFechasBeanLocal rangoFechasBean;
     @EJB
-    private MaterialBibliograficoRemote materialBibliograficoBean;
+    private CargaYCompromisosBeanLocal compromisosBean;
     @EJB
-    private ContactoBeanRemote contactoBean;
+    private ConvocatoriaLocal convocatoriaBean;
     @EJB
-    private ReportesRemote reportesBean;
+    private SubareaInvestigacionBeanLocal subareaBean;
     @EJB
-    private PeriodoRemote periodoBean;
+    private TesisBeanLocal tesisBean;
     @EJB
-    private NivelFormacionRemote nivelFormacionBean;
+    private ReservasBeanLocal reservasBean;
     @EJB
-    private NivelPlantaBeanRemote nivelPlantaBean;
+    private TimerGenericoBeanLocal timerGenericoBean;
     @EJB
-    private RangoFechasBeanRemote rangoFechasBean;
+    private ConflictoHorariosBeanLocal conflictosBean;
+  
     @EJB
-    private CargaYCompromisosBeanRemote compromisosBean;
+    private ProyectoDeGradoBeanLocal pgBean;
     @EJB
-    private ConvocatoriaRemote convocatoriaBean;
+    private CargaGrupoBeanLocal cargaGrupoBean;
     @EJB
-    private SubareaInvestigacionBeanRemote subareaBean;
+    private ConsultaRolBeanLocal consultaRolBean;
     @EJB
-    private TesisBeanRemote tesisBean;
+    private ReporteExcepcionesBeanLocal reporteExcepcionesBean;
     @EJB
-    private ReservasBeanRemote reservasBean;
+    private IncidenteBeanLocal incidenteBean;
     @EJB
-    private TimerGenericoBeanRemote timerGenericoBean;
+    private Tesis1BeanLocal tesis1Bean;
     @EJB
-    private ConflictoHorariosBeanRemote conflictosBean;
+    private Tesis2BeanLocal tesis2Bean;
     @EJB
-    private CarteleraCursosBeanRemote carteleraCursosRemote;
+    private JuradosTesisBeanLocal juradoTesisBean;
     @EJB
-    private ProyectoDeGradoBeanRemote pgBean;
+    private InscripcionSubAreaInvestiBeanLocal inscripcionSubareaBean;
     @EJB
-    private CargaGrupoBeanRemote cargaGrupoBean;
+    private PersonaSoporteBeanLocal personaSoporteBean;
     @EJB
-    private ConsultaRolBeanRemote consultaRolBean;
+    private AuditoriaBeanLocal auditoriaBean;
     @EJB
-    private ReporteExcepcionesBeanRemote reporteExcepcionesBean;
+    private AccionVencidaBeanLocal accionVencidaBean;
     @EJB
-    private IncidenteBeanRemote incidenteBean;
+    private RangoFechasGeneralLocal rangoFechasGeneralesBean;
     @EJB
-    private Tesis1BeanRemote tesis1Bean;
+    private ListaNegraReservaCitasLocal listaNegraReservaCitasBean;
     @EJB
-    private Tesis2BeanRemote tesis2Bean;
+    private AsistenciaGraduadaBeanLocal asistenciaGraduadaBean;
     @EJB
-    private JuradosTesisBeanRemote juradoTesisBean;
+    private CorreoAuditoriaLocal correoAuditoriaBean;
     @EJB
-    private InscripcionSubAreaInvestiBeanRemote inscripcionSubareaBean;
+    private AuditoriaUsuarioBeanLocal auditoriaUsuarioBean;
     @EJB
-    private PersonaSoporteBeanRemote personaSoporteBean;
+    private CorreoSinEnviarBeanLocal correoSinEnviarBean;
     @EJB
-    private AuditoriaBeanRemote auditoriaBean;
+    private FiltroCorreoBeanLocal filtroCorreoBean;
     @EJB
-    private AccionVencidaBeanRemote accionVencidaBean;
+    private LaboratorioBeanLocal laboratorioBean;
     @EJB
-    private RangoFechasGeneralRemote rangoFechasGeneralesBean;
+    private ReservaInventarioBeanLocal reservaInventarioBean;
     @EJB
-    private ListaNegraReservaCitasRemote listaNegraReservaCitasBean;
+    private AccionesBeanLocal accionesBean;
     @EJB
-    private AsistenciaGraduadaBeanRemote asistenciaGraduadaBean;
-    @EJB
-    private CorreoAuditoriaRemote correoAuditoriaBean;
-    @EJB
-    private AuditoriaUsuarioBeanRemote auditoriaUsuarioBean;
-    @EJB
-    private CorreoSinEnviarBeanRemote correoSinEnviarBean;
-    @EJB
-    private FiltroCorreoBeanRemote filtroCorreoBean;
-    @EJB
-    private LaboratorioBeanRemote laboratorioBean;
-    @EJB
-    private ReservaInventarioBeanRemote reservaInventarioBean;
-    @EJB
-    private AccionesBeanRemote accionesBean;
-    @EJB
-    private EventoExternoBeanRemote eventoExternoBean;
+    private EventoExternoBeanLocal eventoExternoBean;
     private ParserT parserBean;
 
     //----------------------------------------------
@@ -277,8 +258,8 @@ public class NucleoBean implements NucleoRemote, NucleoLocal {
             //En ruta el comando al despachador
             parserBean.leerXML(comandoXML);
             Timestamp fa = new Timestamp(new Date().getTime());
-            respuesta = despachadorBean.resolverComando(comandoXML);
-            reportarALogExcepciones(despachadorBean.getClass().getName(), "resolverComando", respuesta, fa, nombreComando, comandoXML);
+//            respuesta = despachadorBean.resolverComando(comandoXML);
+//            reportarALogExcepciones(despachadorBean.getClass().getName(), "resolverComando", respuesta, fa, nombreComando, comandoXML);
         } else {
             respuesta = getConstanteBean().getConstante(Constantes.MSJ_TIPO_COMANDO_INVALIDO);
         }
@@ -417,7 +398,7 @@ public class NucleoBean implements NucleoRemote, NucleoLocal {
             reportarALogExcepciones(rangoFechasBean.getClass().getCanonicalName(), "consultarRangos", respuesta, fa, nombreComando, comandoXML);
         } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_RANGO_INICIADO))) {
 
-            respuesta = rangoFechasBean.rangoIniciado(comandoXML);
+           // respuesta = rangoFechasBean.rangoIniciado(comandoXML);
             reportarALogExcepciones(rangoFechasBean.getClass().getCanonicalName(), "consultarRangos", respuesta, fa, nombreComando, comandoXML);
         } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_CREAR_RANGOS_FECHAS))) {
             respuesta = rangoFechasBean.crearRangosFechas(comandoXML);
@@ -563,10 +544,10 @@ public class NucleoBean implements NucleoRemote, NucleoLocal {
             respuesta = archivosBean.confirmarReemplazoArchivo(comandoXML);
             reportarALogExcepciones(archivosBean.getClass().getCanonicalName(), "confirmarReemplazoArchivo", respuesta, fa, nombreComando, comandoXML);
         } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_DAR_RUTA_ARCHIVO_POR_CRN_Y_TIPO))) {
-            respuesta = archivosBean.darRutaArchivoPorCRNyTipo(comandoXML);
+            //respuesta = archivosBean.darRutaArchivoPorCRNyTipo(comandoXML);
             reportarALogExcepciones(archivosBean.getClass().getCanonicalName(), "darRutaArchivoPorCRNyTipo", respuesta, fa, nombreComando, comandoXML);
         } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_DAR_PERIODOS_PLANEACION_ACADEMICA))) {
-            respuesta = archivosBean.darPeriodosConPlaneacionAcademica(comandoXML);
+           // respuesta = archivosBean.darPeriodosConPlaneacionAcademica(comandoXML);
             reportarALogExcepciones(archivosBean.getClass().getCanonicalName(), "darPeriodosConPlaneacionAcademica", respuesta, fa, nombreComando, comandoXML);
         } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_CONSULTAR_GRUPOS_INVESTIGACION))) {
             respuesta = profesorBean.consultarGruposInvestigacion(comandoXML);
@@ -604,10 +585,10 @@ public class NucleoBean implements NucleoRemote, NucleoLocal {
             respuesta = tareaBean.darTareasCorreoEstadoSinCaducar(comandoXML);
             reportarALogExcepciones(tareaBean.getClass().getCanonicalName(), "darTareasCorreoEstadoSinCaducar", respuesta, fa, nombreComando, comandoXML);
         } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_CONSULTAR_TAREAS_POR_LOGIN))) {
-            respuesta = tareaBean.darTareaCorreo(comandoXML);
+            //respuesta = tareaBean.dadarTareaCorreo(comandoXML);
             reportarALogExcepciones(tareaBean.getClass().getCanonicalName(), "darTareaCorreo", respuesta, fa, nombreComando, comandoXML);
         } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_DAR_TAREAS_PENDIENTES_VENCIDAS_USUARIO))) {
-            respuesta = tareaBean.darTareasVencidasUsuario(comandoXML);
+            //respuesta = tareaBean.darTareasVencidasUsuario(comandoXML);
             reportarALogExcepciones(tareaBean.getClass().getCanonicalName(), "darTareasVencidasUsuario", respuesta, fa, nombreComando, comandoXML);
         } //Comandos secretaria
         else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_DAR_CONVENIOS))) {
@@ -635,10 +616,10 @@ public class NucleoBean implements NucleoRemote, NucleoLocal {
             respuesta = convenioBean.registrarConvenioPendienteDepartamento(comandoXML);
             reportarALogExcepciones(convenioBean.getClass().getCanonicalName(), "registrarConvenioPendienteDepartamento", respuesta, fa, nombreComando, comandoXML);
         } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_REGISTRAR_FIRMAS_ESTUDIANTES))) {
-            respuesta = convenioBean.registrarFirmasEstudiantes(comandoXML);
+            //respuesta = convenioBean.registrarFirmasEstudiantes(comandoXML);
             reportarALogExcepciones(convenioBean.getClass().getCanonicalName(), "registrarFirmasEstudiantes", respuesta, fa, nombreComando, comandoXML);
         } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_REGISTRAR_FIRMAS_DEPARTAMENTO))) {
-            respuesta = convenioBean.registrarFirmasDepartamento(comandoXML);
+            //respuesta = convenioBean.registrarFirmasDepartamento(comandoXML);
             reportarALogExcepciones(convenioBean.getClass().getCanonicalName(), "registrarFirmasDepartamento", respuesta, fa, nombreComando, comandoXML);
         } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_REGISTRAR_CONVENIO_PENDIENTE_RADICACION))) {
             respuesta = convenioBean.registrarConvenioPendienteRadicacion(comandoXML);
@@ -744,39 +725,39 @@ public class NucleoBean implements NucleoRemote, NucleoLocal {
         //COMANDOS Documentos Privados
         //**********************************************************************
         else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_ACTUALIZAR_METADATOS_DOCPRIVADO))) {
-            respuesta = documentoPrivadoBean.actualizarMetadatosDocumentoPrivado(comandoXML);
-            reportarALogExcepciones(documentoPrivadoBean.getClass().getCanonicalName(), "actualizarMetadatosDocumentoPrivado", respuesta, fa, nombreComando, comandoXML);
+            //respuesta = documentoPrivadoBean.actualizarMetadatosDocumentoPrivado(comandoXML);
+        	// reportarALogExcepciones(documentoPrivadoBean.getClass().getCanonicalName(), "actualizarMetadatosDocumentoPrivado", respuesta, fa, nombreComando, comandoXML);
         } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_CONFIRMAR_SUBIDA_DOCPRIVADO))) {
-            respuesta = documentoPrivadoBean.confirmarSubidaDocumentoPrivado(comandoXML);
-            reportarALogExcepciones(documentoPrivadoBean.getClass().getCanonicalName(), "confirmarSubidaDocumentoPrivado", respuesta, fa, nombreComando, comandoXML);
+        	//respuesta = documentoPrivadoBean.confirmarSubidaDocumentoPrivado(comandoXML);
+        	// reportarALogExcepciones(documentoPrivadoBean.getClass().getCanonicalName(), "confirmarSubidaDocumentoPrivado", respuesta, fa, nombreComando, comandoXML);
         } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_CONSULTAR_DATOS_DOCPRIVADO))) {
-            respuesta = documentoPrivadoBean.consultarDatosDocumentoPrivado(comandoXML);
-            reportarALogExcepciones(documentoPrivadoBean.getClass().getCanonicalName(), "consultarDatosDocumentoPrivado", respuesta, fa, nombreComando, comandoXML);
+        	//respuesta = documentoPrivadoBean.consultarDatosDocumentoPrivado(comandoXML);
+        	//  reportarALogExcepciones(documentoPrivadoBean.getClass().getCanonicalName(), "consultarDatosDocumentoPrivado", respuesta, fa, nombreComando, comandoXML);
         } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_CONSULTAR_DOCUMENTOS_PRIVADOS))) {
-            respuesta = documentoPrivadoBean.consultarDocumentosPrivados(comandoXML);
-            reportarALogExcepciones(documentoPrivadoBean.getClass().getCanonicalName(), "consultarDocumentosPrivados", respuesta, fa, nombreComando, comandoXML);
+        	//respuesta = documentoPrivadoBean.consultarDocumentosPrivados(comandoXML);
+        	//reportarALogExcepciones(documentoPrivadoBean.getClass().getCanonicalName(), "consultarDocumentosPrivados", respuesta, fa, nombreComando, comandoXML);
         } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_DAR_INFO_DESCARGA_DOCPRIVADO))) {
-            respuesta = documentoPrivadoBean.darInfoDescargaDocumentoPrivado(comandoXML);
-            reportarALogExcepciones(documentoPrivadoBean.getClass().getCanonicalName(), "darInfoDescargaDocumentoPrivado", respuesta, fa, nombreComando, comandoXML);
+        	// respuesta = documentoPrivadoBean.darInfoDescargaDocumentoPrivado(comandoXML);
+        	//reportarALogExcepciones(documentoPrivadoBean.getClass().getCanonicalName(), "darInfoDescargaDocumentoPrivado", respuesta, fa, nombreComando, comandoXML);
         } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_ELIMINAR_DOCPRIVADO))) {//documentoPrivadoBean
-            respuesta = documentoPrivadoBean.eliminarDocumentoPrivado(comandoXML);
-            reportarALogExcepciones(documentoPrivadoBean.getClass().getCanonicalName(), "eliminarDocumentoPrivado", respuesta, fa, nombreComando, comandoXML);
+        	//respuesta = documentoPrivadoBean.eliminarDocumentoPrivado(comandoXML);
+        	// reportarALogExcepciones(documentoPrivadoBean.getClass().getCanonicalName(), "eliminarDocumentoPrivado", respuesta, fa, nombreComando, comandoXML);
         } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_SUBIR_METADATOS_DOCPRIVADO))) {
-            respuesta = documentoPrivadoBean.subirMetadatosDocumentoPrivado(comandoXML);
-            reportarALogExcepciones(documentoPrivadoBean.getClass().getCanonicalName(), "subirMetadatosDocumentoPrivado", respuesta, fa, nombreComando, comandoXML);
+        	//respuesta = documentoPrivadoBean.subirMetadatosDocumentoPrivado(comandoXML);
+        	////reportarALogExcepciones(documentoPrivadoBean.getClass().getCanonicalName(), "subirMetadatosDocumentoPrivado", respuesta, fa, nombreComando, comandoXML);
         }//NUEVOS PARA ARBOL DOCUMENTOS
         else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_ELIMINAR_NODO_ARBOL_DOCUMENTOS))) {
-            respuesta = documentoPrivadoBean.eliminarNodoArbolDocumentos(comandoXML);
-            reportarALogExcepciones(documentoPrivadoBean.getClass().getCanonicalName(), "eliminarNodoArbolDocumentos", respuesta, fa, nombreComando, comandoXML);
+        	// respuesta = documentoPrivadoBean.eliminarNodoArbolDocumentos(comandoXML);
+        	// reportarALogExcepciones(documentoPrivadoBean.getClass().getCanonicalName(), "eliminarNodoArbolDocumentos", respuesta, fa, nombreComando, comandoXML);
         } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_EDITAR_NODO_ARBOL_DOCUMENTOS))) {
-            respuesta = documentoPrivadoBean.editarNodoArbolDocumentos(comandoXML);
-            reportarALogExcepciones(documentoPrivadoBean.getClass().getCanonicalName(), "editarNodoArbolDocumentos", respuesta, fa, nombreComando, comandoXML);
+        	//respuesta = documentoPrivadoBean.editarNodoArbolDocumentos(comandoXML);
+        	//  reportarALogExcepciones(documentoPrivadoBean.getClass().getCanonicalName(), "editarNodoArbolDocumentos", respuesta, fa, nombreComando, comandoXML);
         } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_DAR_ARBOL_DOCUMENTOS))) {
-            respuesta = documentoPrivadoBean.darArbolDocumentos(comandoXML);
-            reportarALogExcepciones(documentoPrivadoBean.getClass().getCanonicalName(), "darArbolDocumentos", respuesta, fa, nombreComando, comandoXML);
+        	// respuesta = documentoPrivadoBean.darArbolDocumentos(comandoXML);
+        	//reportarALogExcepciones(documentoPrivadoBean.getClass().getCanonicalName(), "darArbolDocumentos", respuesta, fa, nombreComando, comandoXML);
         } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_AGREGAR_NODO_ARBOL_DOCUMENTOS))) {
-            respuesta = documentoPrivadoBean.agregarNodoArbolDocumentos(comandoXML);
-            reportarALogExcepciones(documentoPrivadoBean.getClass().getCanonicalName(), "agregarNodoArbolDocumentos", respuesta, fa, nombreComando, comandoXML);
+        	// respuesta = documentoPrivadoBean.agregarNodoArbolDocumentos(comandoXML);
+        	// reportarALogExcepciones(documentoPrivadoBean.getClass().getCanonicalName(), "agregarNodoArbolDocumentos", respuesta, fa, nombreComando, comandoXML);
         } /*else if(nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_ELIMINAR_ARBOL_DOCUMENTOS))){
         respuesta = documentoPrivadoBean.eliminarArbolDocumentos(comandoXML);
         }*/ //Reglas
@@ -876,7 +857,7 @@ public class NucleoBean implements NucleoRemote, NucleoLocal {
             respuesta = materialBibliograficoBean.enviarAutorizacionCompraMaterialBibliografico(comandoXML);
             reportarALogExcepciones(materialBibliograficoBean.getClass().getCanonicalName(), "enviarAutorizacionCompraMaterialBibliografico", respuesta, fa, nombreComando, comandoXML);
         } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_CONSULTAR_SOLICITUD_COMPRA_MATERIAL_BIBLIOGRAFICO_POR_ID_SOLICITUD))) {
-            respuesta = materialBibliograficoBean.consultarSolicitudPorIdSolicitud(comandoXML);
+        	//respuesta = materialBibliograficoBean.consultarSolicitudPorIdSolicitud(comandoXML);
             reportarALogExcepciones(materialBibliograficoBean.getClass().getCanonicalName(), "consultarSolicitudPorIdSolicitud", respuesta, fa, nombreComando, comandoXML);
         } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_ENVIAR_CONFIRMACION_COMPRA_MATERIAL_BIBLIOGRAFICO_BIBLIOTECA))) {
             respuesta = materialBibliograficoBean.enviarConfirmacionCompraMaterialBibliograficoBiblioteca(comandoXML);//	CMD_ENVIAR_CONFIRMACION_LLEGO_A_BIBLIOTECA_MATERIA
@@ -897,10 +878,10 @@ public class NucleoBean implements NucleoRemote, NucleoLocal {
          * CRM
          *-----------------------------------------------------------------------*/
         else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_DAR_INFO_ARCHIVO_TERMINOS_Y_CONDICIONES))) {
-            respuesta = contactoBean.darInformacionArchivoTerminosYCondiciones(comandoXML);
-            reportarALogExcepciones(contactoBean.getClass().getCanonicalName(), "darInformacionArchivoTerminosYCondiciones", respuesta, fa, nombreComando, comandoXML);
+        	// respuesta = contactoBean.darInformacionArchivoTerminosYCondiciones(comandoXML);
+        	// reportarALogExcepciones(contactoBean.getClass().getCanonicalName(), "darInformacionArchivoTerminosYCondiciones", respuesta, fa, nombreComando, comandoXML);
         } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_CONSULTAR_CONTACTOS_LIGHT))) {
-            respuesta = contactoBean.consultarContactosLight(comandoXML);
+        	// respuesta = contactoBean.consultarContactosLight(comandoXML);
             reportarALogExcepciones(contactoBean.getClass().getCanonicalName(), "consultarContactosLight", respuesta, fa, nombreComando, comandoXML);
         } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_CONSULTAR_CONTACTOS))) {
             respuesta = contactoBean.consultarContactos(comandoXML);
@@ -942,7 +923,7 @@ public class NucleoBean implements NucleoRemote, NucleoLocal {
             respuesta = contactoBean.activarUsuarioPublico(comandoXML);
             reportarALogExcepciones(contactoBean.getClass().getCanonicalName(), "cmdActivarUsuarioPublico", respuesta, fa, nombreComando, comandoXML);
         } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_ELIMINAR_INSCRIPCION_EVENTO_EXTERNO))) {
-            respuesta = contactoBean.eliminarInscripcion(comandoXML);
+        	// respuesta = contactoBean.eliminarInscripcion(comandoXML);
             reportarALogExcepciones(contactoBean.getClass().getCanonicalName(), "eliminarInscripcion", respuesta, fa, nombreComando, comandoXML);
         } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_CONSULTAR_CONTACTOS_CON_PARAMETROS))) {
             respuesta = contactoBean.consultarContactosFiltrados(comandoXML);
@@ -1051,36 +1032,36 @@ public class NucleoBean implements NucleoRemote, NucleoLocal {
             respuesta = compromisosBean.crearCargaVaciaAProfesor(comandoXML);
             reportarALogExcepciones(compromisosBean.getClass().getCanonicalName(), "crearCargaVaciaAProfesor", respuesta, fa, nombreComando, comandoXML);
             //Historicos
-        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_PASAR_MONITORIAS_A_HISTORICOS))) {
-            respuesta = compromisosBean.migrarCargasPorFinPeriodo(comandoXML);
-            reportarALogExcepciones(compromisosBean.getClass().getCanonicalName(), "migrarCargasPorFinPeriodo", respuesta, fa, nombreComando, comandoXML);
-            respuesta = historicoBean.pasarMonitoriasAHistoricos(comandoXML);
-            reportarALogExcepciones(historicoBean.getClass().getCanonicalName(), "pasarMonitoriasAHistoricos", respuesta, fa, nombreComando, comandoXML);
-            archivosBean.cerrarPeriodo();
-            reportarALogExcepciones(archivosBean.getClass().getCanonicalName(), "cerrarPeriodo", respuesta, fa, nombreComando, comandoXML);
-        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_DAR_MONITORIAS_HISTORICO_POR_CORREO))) {
-            respuesta = historicoBean.consultarMonitoriasEnHistorico(comandoXML);
-            reportarALogExcepciones(historicoBean.getClass().getCanonicalName(), "consultarMonitoriasEnHistorico", respuesta, fa, nombreComando, comandoXML);
-        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_DAR_HISTORICO_ESTUDIANTES_TESIS_MAESTRIA))) {
-            respuesta = historicoTesis.darHistoricoEstudiantesTesis(comandoXML);
-            reportarALogExcepciones(historicoTesis.getClass().getCanonicalName(), "darHistoricoEstudiantesTesis", respuesta, fa, nombreComando, comandoXML);
-        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_DAR_HISTORICO_ESTUDIANTES_TESIS_MAESTRIA_PROFESOR))) {
-            respuesta = historicoTesis.darHistoricosEstudiantesTesisMaestriaProfesor(comandoXML);
-            reportarALogExcepciones(historicoTesis.getClass().getCanonicalName(), "darHistoricoEstudiantesTesisProfesor", respuesta, fa, nombreComando, comandoXML);
-        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_DAR_HISTORICO_ESTUDIANTE_TESIS_MAESTRIA))) {
-            respuesta = historicoTesis.darHistoricoEstudianteTesis(comandoXML);
-            reportarALogExcepciones(historicoTesis.getClass().getCanonicalName(), "darHistoricoEstudianteTesis", respuesta, fa, nombreComando, comandoXML);
-            //Consulta de archivos profesor por período (Incluye históricos)
-        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_DAR_HISTORICO_ESTUDIANTES_TESIS_DE_PREGRADO))) {
-            respuesta = historicoTesisPregradoBean.darHistoricoEstudiantesTesisPregrado(comandoXML);
-            reportarALogExcepciones(historicoTesisPregradoBean.getClass().getCanonicalName(), "darHistoricoEstudiantesTesisPregrado", respuesta, fa, nombreComando, comandoXML);
-        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_DAR_HISTORICO_ESTUDIANTES_TESIS_DE_PREGRADO_POR_PROFESOR))) {
-            respuesta = historicoTesisPregradoBean.darHistoricoEstudiantesTesisPregradoProfesor(comandoXML);
-            reportarALogExcepciones(historicoTesisPregradoBean.getClass().getCanonicalName(), "darHistoricoEstudiantesTesisPregradoProfesor", respuesta, fa, nombreComando, comandoXML);
-        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_DAR_HISTORICO_ESTUDIANTE_TESIS_DE_PREGRADO))) {
-            respuesta = historicoTesisPregradoBean.darHistoricoEstudianteTesisPregrado(comandoXML);
-            reportarALogExcepciones(historicoTesisPregradoBean.getClass().getCanonicalName(), "darHistoricoEstudianteTesisPregrado", respuesta, fa, nombreComando, comandoXML);
-        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_DAR_ARCHIVOS_PROFESOR_POR_PERIODO))) {
+//        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_PASAR_MONITORIAS_A_HISTORICOS))) {
+//            respuesta = compromisosBean.migrarCargasPorFinPeriodo(comandoXML);
+//            reportarALogExcepciones(compromisosBean.getClass().getCanonicalName(), "migrarCargasPorFinPeriodo", respuesta, fa, nombreComando, comandoXML);
+//            respuesta = historicoBean.pasarMonitoriasAHistoricos(comandoXML);
+//            reportarALogExcepciones(historicoBean.getClass().getCanonicalName(), "pasarMonitoriasAHistoricos", respuesta, fa, nombreComando, comandoXML);
+//            archivosBean.cerrarPeriodo();
+//            reportarALogExcepciones(archivosBean.getClass().getCanonicalName(), "cerrarPeriodo", respuesta, fa, nombreComando, comandoXML);
+//        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_DAR_MONITORIAS_HISTORICO_POR_CORREO))) {
+//            respuesta = historicoBean.consultarMonitoriasEnHistorico(comandoXML);
+//            reportarALogExcepciones(historicoBean.getClass().getCanonicalName(), "consultarMonitoriasEnHistorico", respuesta, fa, nombreComando, comandoXML);
+//        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_DAR_HISTORICO_ESTUDIANTES_TESIS_MAESTRIA))) {
+//            respuesta = historicoTesis.darHistoricoEstudiantesTesis(comandoXML);
+//            reportarALogExcepciones(historicoTesis.getClass().getCanonicalName(), "darHistoricoEstudiantesTesis", respuesta, fa, nombreComando, comandoXML);
+//        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_DAR_HISTORICO_ESTUDIANTES_TESIS_MAESTRIA_PROFESOR))) {
+//            respuesta = historicoTesis.darHistoricosEstudiantesTesisMaestriaProfesor(comandoXML);
+//            reportarALogExcepciones(historicoTesis.getClass().getCanonicalName(), "darHistoricoEstudiantesTesisProfesor", respuesta, fa, nombreComando, comandoXML);
+//        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_DAR_HISTORICO_ESTUDIANTE_TESIS_MAESTRIA))) {
+//            respuesta = historicoTesis.darHistoricoEstudianteTesis(comandoXML);
+//            reportarALogExcepciones(historicoTesis.getClass().getCanonicalName(), "darHistoricoEstudianteTesis", respuesta, fa, nombreComando, comandoXML);
+//            //Consulta de archivos profesor por período (Incluye históricos)
+//        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_DAR_HISTORICO_ESTUDIANTES_TESIS_DE_PREGRADO))) {
+//            respuesta = historicoTesisPregradoBean.darHistoricoEstudiantesTesisPregrado(comandoXML);
+//            reportarALogExcepciones(historicoTesisPregradoBean.getClass().getCanonicalName(), "darHistoricoEstudiantesTesisPregrado", respuesta, fa, nombreComando, comandoXML);
+//        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_DAR_HISTORICO_ESTUDIANTES_TESIS_DE_PREGRADO_POR_PROFESOR))) {
+//            respuesta = historicoTesisPregradoBean.darHistoricoEstudiantesTesisPregradoProfesor(comandoXML);
+//            reportarALogExcepciones(historicoTesisPregradoBean.getClass().getCanonicalName(), "darHistoricoEstudiantesTesisPregradoProfesor", respuesta, fa, nombreComando, comandoXML);
+//        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_DAR_HISTORICO_ESTUDIANTE_TESIS_DE_PREGRADO))) {
+//            respuesta = historicoTesisPregradoBean.darHistoricoEstudianteTesisPregrado(comandoXML);
+//            reportarALogExcepciones(historicoTesisPregradoBean.getClass().getCanonicalName(), "darHistoricoEstudianteTesisPregrado", respuesta, fa, nombreComando, comandoXML);
+//        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_DAR_ARCHIVOS_PROFESOR_POR_PERIODO))) {
             respuesta = archivosBean.darArchivosProfesorPorPeriodo(comandoXML);
             reportarALogExcepciones(archivosBean.getClass().getCanonicalName(), "darArchivosProfesorPorPeriodo", respuesta, fa, nombreComando, comandoXML);
             //Es estudiante?
@@ -1287,14 +1268,14 @@ public class NucleoBean implements NucleoRemote, NucleoLocal {
             respuesta = tesis2Bean.actualizarDetallesTesis2(comandoXML);
             reportarALogExcepciones(tesis2Bean.getClass().getCanonicalName(), "cmdActualizarTesis2", respuesta, fa, nombreComando, comandoXML);
         } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_CONFIRMAR_INSCRIPCION_BANNER_TESIS1))) {
-            respuesta = tesis1Bean.confirmarTesis1EnBanner(comandoXML);
+        	// respuesta = tesis1Bean.confirmarTesis1EnBanner(comandoXML);
             reportarALogExcepciones(tesis2Bean.getClass().getCanonicalName(), "cmdConfirmarInscripcionBannerTesis1", respuesta, fa, nombreComando, comandoXML);
         } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_CONFIRMAR_INSCRIPCION_BANNER_TESIS2))) {
             respuesta = tesis2Bean.confirmarTesis2EnBanner(comandoXML);
             reportarALogExcepciones(tesis2Bean.getClass().getCanonicalName(), "cmdConfirmarInscripcionBannerTesis2", respuesta, fa, nombreComando, comandoXML);
         } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_DAR_HISTORICO_TESIS2_POR_ESTADO_SEMESTRE_Y_CORREO_ASESOR))) {
-            respuesta = historicoTesis2.consultarTesis2PorEstadoYSemestreYCorreoAsesor(comandoXML);
-            reportarALogExcepciones(historicoTesis2.getClass().getCanonicalName(), "consultarTesis2PorEstadoYSemestreYCorreoAsesor", respuesta, fa, nombreComando, comandoXML);
+        	// respuesta = historicoTesis2.consultarTesis2PorEstadoYSemestreYCorreoAsesor(comandoXML);
+        	//reportarALogExcepciones(historicoTesis2.getClass().getCanonicalName(), "consultarTesis2PorEstadoYSemestreYCorreoAsesor", respuesta, fa, nombreComando, comandoXML);
         } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_ESTABLECER_APROBACION_REVISTA_PARADIGMA_TESIS2))) {
             respuesta = tesis2Bean.establecerAprobacionParadigma(comandoXML);
             reportarALogExcepciones(tesis2Bean.getClass().getCanonicalName(), "establecerAprobacionParadigmaTesis2", respuesta, fa, nombreComando, comandoXML);
@@ -1302,10 +1283,10 @@ public class NucleoBean implements NucleoRemote, NucleoLocal {
             respuesta = tesis1Bean.establecerAprobacionParadigma(comandoXML);
             reportarALogExcepciones(tesis1Bean.getClass().getCanonicalName(), "establecerAprobacionParadigmaTesis1", respuesta, fa, nombreComando, comandoXML);
         } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_ESTABLECER_APROBACION_REVISTA_PARADIGMA_HISTORICOS_TESIS_2))) {
-            respuesta = historicoTesis2.establecerAprobacionParadigmaHistoricoTesis2(comandoXML);
+        	// respuesta = historicoTesis2.establecerAprobacionParadigmaHistoricoTesis2(comandoXML);
             reportarALogExcepciones(tesis2Bean.getClass().getCanonicalName(), "establecerAprobacionParadigmaHistoricoTesis2", respuesta, fa, nombreComando, comandoXML);
         } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_ESTABLECER_APROBACION_REVISTA_PARADIGMA_HISTORICOS_TESIS_1))) {
-            respuesta = historicoTesis1.establecerAprobacionParadigmaHistoricoTesis1(comandoXML);
+        	//  respuesta = historicoTesis1.establecerAprobacionParadigmaHistoricoTesis1(comandoXML);
             reportarALogExcepciones(tesis1Bean.getClass().getCanonicalName(), "establecerAprobacionParadigmaHistoricoTesis1", respuesta, fa, nombreComando, comandoXML);
         } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_RESERVAR_CITA))) {
             respuesta = reservasBean.reservarCita(comandoXML);
@@ -1360,10 +1341,10 @@ public class NucleoBean implements NucleoRemote, NucleoLocal {
             respuesta = conflictosBean.crearPeticionConflictoHorario(comandoXML);
             reportarALogExcepciones(conflictosBean.getClass().getCanonicalName(), "crearPeticionConflicto", respuesta, fa, nombreComando, comandoXML);
         } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_CONSULTAR_MATERIAS_PROGRAMA))) {
-            respuesta = carteleraCursosRemote.consultarCursosISIS(comandoXML);
+        	//respuesta = carteleraCursosLocal.consultarCursosISIS(comandoXML);
             reportarALogExcepciones(conflictosBean.getClass().getCanonicalName(), "consultarMaterias", respuesta, fa, nombreComando, comandoXML);
         } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_CONSULTAR_SECCIONES_MATERIA))) {
-            respuesta = carteleraCursosRemote.consultarSeccionesPorCodigoCurso(comandoXML);
+        	// respuesta = carteleraCursosLocal.consultarSeccionesPorCodigoCurso(comandoXML);
             reportarALogExcepciones(conflictosBean.getClass().getCanonicalName(), "consultarSecciones", respuesta, fa, nombreComando, comandoXML);
         } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_CONSULTAR_PETICIONES_CONFLICTO_HORARIO_ESTUDIANTE))) {
             respuesta = conflictosBean.consultarPeticionesPorCorreo(comandoXML);
@@ -1384,36 +1365,37 @@ public class NucleoBean implements NucleoRemote, NucleoLocal {
             respuesta = conflictosBean.actualizarEstadoYResolucionPeticiones(comandoXML);
             reportarALogExcepciones(conflictosBean.getClass().getCanonicalName(), "guardarEstadoPeticiones", respuesta, fa, nombreComando, comandoXML);
         } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_CREAR_CURSO_CONFLICTO_HORARIO))) {
-            respuesta = carteleraCursosRemote.crearCurso(comandoXML);
-            reportarALogExcepciones(carteleraCursosRemote.getClass().getCanonicalName(), "crearSeccionMateria", respuesta, fa, nombreComando, comandoXML);
+        	// respuesta = carteleraCursosLocal.crearCurso(comandoXML);
+        	// reportarALogExcepciones(carteleraCursosLocal.getClass().getCanonicalName(), "crearSeccionMateria", respuesta, fa, nombreComando, comandoXML);
         } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_CREAR_SECCION_CONFLICTO_HORARIO))) {
-            respuesta = carteleraCursosRemote.crearSeccionACurso(comandoXML);
-            reportarALogExcepciones(carteleraCursosRemote.getClass().getCanonicalName(), "crearSeccionMateria", respuesta, fa, nombreComando, comandoXML);
+        	//respuesta = carteleraCursosLocal.crearSeccionACurso(comandoXML);
+        	//reportarALogExcepciones(carteleraCursosLocal.getClass().getCanonicalName(), "crearSeccionMateria", respuesta, fa, nombreComando, comandoXML);
         } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_CONSULTAR_FECHAS_CONFLICTO_HORARIO))) {
             respuesta = conflictosBean.consultarFechasConflictoHorario(comandoXML);
             reportarALogExcepciones(conflictosBean.getClass().getCanonicalName(), "consultarFechas", respuesta, fa, nombreComando, comandoXML);
         } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_GUARDAR_FECHAS_CONFLICTO_HORARIO))) {
             respuesta = conflictosBean.actualizarFechasConflictoHorario(comandoXML);
             reportarALogExcepciones(conflictosBean.getClass().getCanonicalName(), "guardarFechas", respuesta, fa, nombreComando, comandoXML);
-        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_CARGAR_CARTELERA_CONFLICTO_HORARIOS))) {
-            respuesta = carteleraCursosRemote.cargarCarteleraWeb(comandoXML);
-            reportarALogExcepciones(carteleraCursosRemote.getClass().getCanonicalName(), "cargarCarteleraWeb", respuesta, fa, nombreComando, comandoXML);
-        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_EDITAR_DATOS_SECCION_CONFLICTO_HORARIO))) {
-            respuesta = carteleraCursosRemote.editarDatosSeccion(comandoXML);
-            reportarALogExcepciones(carteleraCursosRemote.getClass().getCanonicalName(), "editarDatosSeccion", respuesta, fa, nombreComando, comandoXML);
-        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_CONSULTAR_PROGRAMAS_CONFLICTO_HORARIO))) {
-            respuesta = conflictosBean.consultarProgramas(comandoXML);
-            reportarALogExcepciones(conflictosBean.getClass().getCanonicalName(), "consultarProgramas", respuesta, fa, nombreComando, comandoXML);
-        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_CONSULTAR_SECCION))) {
-            respuesta = carteleraCursosRemote.consultarSeccion(comandoXML);
-            reportarALogExcepciones(carteleraCursosRemote.getClass().getCanonicalName(), "consultarSeccion", respuesta, fa, nombreComando, comandoXML);
-        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_CONSULTAR_PROFESORES_ISIS))) {
-            respuesta = carteleraCursosRemote.consultarProfesoresISIS(comandoXML);
-            reportarALogExcepciones(carteleraCursosRemote.getClass().getCanonicalName(), "consultarProfesoresISIS", respuesta, fa, nombreComando, comandoXML);
-        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_ELIMINAR_SECCION_CONFLICTO_HORARIO))) {
-            respuesta = carteleraCursosRemote.eliminarSeccion(comandoXML);
-            reportarALogExcepciones(carteleraCursosRemote.getClass().getCanonicalName(), "eliminarSeccion", respuesta, fa, nombreComando, comandoXML);
-        } //seccion pg
+        } 
+ //           else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_CARGAR_CARTELERA_CONFLICTO_HORARIOS))) {
+//        	// respuesta = carteleraCursosLocal.cargarCarteleraWeb(comandoXML);
+//            reportarALogExcepciones(carteleraCursosLocal.getClass().getCanonicalName(), "cargarCarteleraWeb", respuesta, fa, nombreComando, comandoXML);
+//        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_EDITAR_DATOS_SECCION_CONFLICTO_HORARIO))) {
+//            respuesta = carteleraCursosLocal.editarDatosSeccion(comandoXML);
+//            reportarALogExcepciones(carteleraCursosLocal.getClass().getCanonicalName(), "editarDatosSeccion", respuesta, fa, nombreComando, comandoXML);
+//        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_CONSULTAR_PROGRAMAS_CONFLICTO_HORARIO))) {
+//            respuesta = conflictosBean.consultarProgramas(comandoXML);
+//            reportarALogExcepciones(conflictosBean.getClass().getCanonicalName(), "consultarProgramas", respuesta, fa, nombreComando, comandoXML);
+//        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_CONSULTAR_SECCION))) {
+//            respuesta = carteleraCursosLocal.consultarSeccion(comandoXML);
+//            reportarALogExcepciones(carteleraCursosLocal.getClass().getCanonicalName(), "consultarSeccion", respuesta, fa, nombreComando, comandoXML);
+//        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_CONSULTAR_PROFESORES_ISIS))) {
+//            respuesta = carteleraCursosLocal.consultarProfesoresISIS(comandoXML);
+//            reportarALogExcepciones(carteleraCursosLocal.getClass().getCanonicalName(), "consultarProfesoresISIS", respuesta, fa, nombreComando, comandoXML);
+//        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_ELIMINAR_SECCION_CONFLICTO_HORARIO))) {
+//            respuesta = carteleraCursosLocal.eliminarSeccion(comandoXML);
+//            reportarALogExcepciones(carteleraCursosLocal.getClass().getCanonicalName(), "eliminarSeccion", respuesta, fa, nombreComando, comandoXML);
+//        } //seccion pg
         else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_REPROBAR_PROYECTO_GRADO))) {
             respuesta = pgBean.reprobarProyectoGrado(comandoXML);
             reportarALogExcepciones(pgBean.getClass().getCanonicalName(), "reprobarProyectoGrado", respuesta, fa, nombreComando, comandoXML);
@@ -1528,7 +1510,7 @@ public class NucleoBean implements NucleoRemote, NucleoLocal {
             respuesta = personaBean.darPersonaPorCorreo(comandoXML);
             reportarALogExcepciones(personaBean.getClass().getCanonicalName(), "darPersonaPorCorreo", respuesta, fa, nombreComando, comandoXML);
         } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_ESTA_REGISTRADO_LDAP))) {
-            respuesta = autorizacionBean.estaRegistradoEnLDAP(comandoXML);
+           // respuesta = autorizacionBean.estaRegistradoEnLDAP(comandoXML);
             reportarALogExcepciones(personaBean.getClass().getCanonicalName(), "darPersonaPorCorreo", respuesta, fa, nombreComando, comandoXML);
             //ADMINISTRADOR SISINFO
         } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_SUBIR_ARCHIVO_CARGA_GRUPO))) {
@@ -1559,7 +1541,7 @@ public class NucleoBean implements NucleoRemote, NucleoLocal {
             respuesta = alertaBean.editarAlertaGenerica(comandoXML);
             reportarALogExcepciones(consultaRolBean.getClass().getCanonicalName(), "editarAlertaGenerica", respuesta, fa, nombreComando, comandoXML);
         } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_REGENERAR_ALERTA))) {
-            respuesta = alertaBean.regenerarAlerta(comandoXML);
+         //   respuesta = alertaBean.regenerarAlerta(comandoXML);
             reportarALogExcepciones(consultaRolBean.getClass().getCanonicalName(), "regenerarAlerta", respuesta, fa, nombreComando, comandoXML);
 
 
@@ -1632,44 +1614,46 @@ public class NucleoBean implements NucleoRemote, NucleoLocal {
             respuesta = auditoriaUsuarioBean.consultarAuditoriaUsuarioActividad(comandoXML);
             reportarALogExcepciones(auditoriaUsuarioBean.getClass().getCanonicalName(), "consultarAuditoriaUsuarioActividad", respuesta, fa, nombreComando, comandoXML);
             // correos sin enviar y filtros de correo
-        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_DAR_CORREOS_SIN_ENVIAR))) {
-            respuesta = correoSinEnviarBean.darCorreosSinEnviar(comandoXML);
-            reportarALogExcepciones(correoSinEnviarBean.getClass().getCanonicalName(), "darCorreosSinEnviar", respuesta, fa, nombreComando, comandoXML);
-        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_DAR_CORREO_SIN_ENVIAR))) {
-            respuesta = correoSinEnviarBean.darCorreoSinEnviar(comandoXML);
-            reportarALogExcepciones(correoSinEnviarBean.getClass().getCanonicalName(), "darCorreoSinEnviar", respuesta, fa, nombreComando, comandoXML);
-        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_EDITAR_CORREO_SIN_ENVIAR))) {
-            respuesta = correoSinEnviarBean.editarCorreoSinEnviar(comandoXML);
-            reportarALogExcepciones(correoSinEnviarBean.getClass().getCanonicalName(), "editarCorreoSinEnviar", respuesta, fa, nombreComando, comandoXML);
-        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_ELIMINAR_CORREOS_SIN_ENVIAR))) {
-            respuesta = correoSinEnviarBean.eliminarCorreosSinEnviar(comandoXML);
-            reportarALogExcepciones(correoSinEnviarBean.getClass().getCanonicalName(), "eliminarCorreosSinEnviar", respuesta, fa, nombreComando, comandoXML);
-        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_ENVIAR_CORREOS_SIN_ENVIAR))) {
-            respuesta = correoSinEnviarBean.enviarCorreosSinEnviar(comandoXML);
-            reportarALogExcepciones(correoSinEnviarBean.getClass().getCanonicalName(), "enviarCorreosSinEnviar", respuesta, fa, nombreComando, comandoXML);
-        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_DAR_FILTROS_CORREO))) {
-            respuesta = filtroCorreoBean.darFiltrosCorreo(comandoXML);
-            reportarALogExcepciones(filtroCorreoBean.getClass().getCanonicalName(), "darFiltrosCorreo", respuesta, fa, nombreComando, comandoXML);
-        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_DAR_FILTRO_CORREO))) {
-            respuesta = filtroCorreoBean.darFiltroCorreo(comandoXML);
-            reportarALogExcepciones(filtroCorreoBean.getClass().getCanonicalName(), "darFiltroCorreo", respuesta, fa, nombreComando, comandoXML);
-        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_AGREGAR_FILTRO_CORREO))) {
-            respuesta = filtroCorreoBean.agregarFiltroCorreo(comandoXML);
-            reportarALogExcepciones(filtroCorreoBean.getClass().getCanonicalName(), "agregarFiltroCorreo", respuesta, fa, nombreComando, comandoXML);
-        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_ELIMINAR_FILTRO_CORREO))) {
-            respuesta = filtroCorreoBean.eliminarFiltroCorreo(comandoXML);
-            reportarALogExcepciones(filtroCorreoBean.getClass().getCanonicalName(), "eliminarFiltroCorreo", respuesta, fa, nombreComando, comandoXML);
-        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_EDITAR_FILTRO_CORRREO))) {
-            respuesta = filtroCorreoBean.editarFiltroCorreo(comandoXML);
-            reportarALogExcepciones(filtroCorreoBean.getClass().getCanonicalName(), "editarFiltroCorreo", respuesta, fa, nombreComando, comandoXML);
-        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_DAR_TIPOS_FILTRO_CORREO))) {
-            respuesta = filtroCorreoBean.darTiposFiltroCorreo(comandoXML);
-            reportarALogExcepciones(filtroCorreoBean.getClass().getCanonicalName(), "darTiposFiltroCorreo", respuesta, fa, nombreComando, comandoXML);
-        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_DAR_OPERACIONES_FILTRO_CORREO))) {
-            respuesta = filtroCorreoBean.darOperacionesFiltroCorreo(comandoXML);
-            reportarALogExcepciones(filtroCorreoBean.getClass().getCanonicalName(), "darOperacionesFiltroCorreo", respuesta, fa, nombreComando, comandoXML);
-            //acciones rol admon sisinfo/soporte
-        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_SOLUCIONAR_EXCEPCION))) {
+        } 
+//        else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_DAR_CORREOS_SIN_ENVIAR))) {
+//            respuesta = correoSinEnviarBean.darCorreosSinEnviar(comandoXML);
+//            reportarALogExcepciones(correoSinEnviarBean.getClass().getCanonicalName(), "darCorreosSinEnviar", respuesta, fa, nombreComando, comandoXML);
+//        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_DAR_CORREO_SIN_ENVIAR))) {
+//            respuesta = correoSinEnviarBean.darCorreoSinEnviar(comandoXML);
+//            reportarALogExcepciones(correoSinEnviarBean.getClass().getCanonicalName(), "darCorreoSinEnviar", respuesta, fa, nombreComando, comandoXML);
+//        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_EDITAR_CORREO_SIN_ENVIAR))) {
+//            respuesta = correoSinEnviarBean.editarCorreoSinEnviar(comandoXML);
+//            reportarALogExcepciones(correoSinEnviarBean.getClass().getCanonicalName(), "editarCorreoSinEnviar", respuesta, fa, nombreComando, comandoXML);
+//        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_ELIMINAR_CORREOS_SIN_ENVIAR))) {
+//            respuesta = correoSinEnviarBean.eliminarCorreosSinEnviar(comandoXML);
+//            reportarALogExcepciones(correoSinEnviarBean.getClass().getCanonicalName(), "eliminarCorreosSinEnviar", respuesta, fa, nombreComando, comandoXML);
+//        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_ENVIAR_CORREOS_SIN_ENVIAR))) {
+//            respuesta = correoSinEnviarBean.enviarCorreosSinEnviar(comandoXML);
+//            reportarALogExcepciones(correoSinEnviarBean.getClass().getCanonicalName(), "enviarCorreosSinEnviar", respuesta, fa, nombreComando, comandoXML);
+//        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_DAR_FILTROS_CORREO))) {
+//            respuesta = filtroCorreoBean.darFiltrosCorreo(comandoXML);
+//            reportarALogExcepciones(filtroCorreoBean.getClass().getCanonicalName(), "darFiltrosCorreo", respuesta, fa, nombreComando, comandoXML);
+//        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_DAR_FILTRO_CORREO))) {
+//            respuesta = filtroCorreoBean.darFiltroCorreo(comandoXML);
+//            reportarALogExcepciones(filtroCorreoBean.getClass().getCanonicalName(), "darFiltroCorreo", respuesta, fa, nombreComando, comandoXML);
+//        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_AGREGAR_FILTRO_CORREO))) {
+//            respuesta = filtroCorreoBean.agregarFiltroCorreo(comandoXML);
+//            reportarALogExcepciones(filtroCorreoBean.getClass().getCanonicalName(), "agregarFiltroCorreo", respuesta, fa, nombreComando, comandoXML);
+//        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_ELIMINAR_FILTRO_CORREO))) {
+//            respuesta = filtroCorreoBean.eliminarFiltroCorreo(comandoXML);
+//            reportarALogExcepciones(filtroCorreoBean.getClass().getCanonicalName(), "eliminarFiltroCorreo", respuesta, fa, nombreComando, comandoXML);
+//        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_EDITAR_FILTRO_CORRREO))) {
+//            respuesta = filtroCorreoBean.editarFiltroCorreo(comandoXML);
+//            reportarALogExcepciones(filtroCorreoBean.getClass().getCanonicalName(), "editarFiltroCorreo", respuesta, fa, nombreComando, comandoXML);
+//        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_DAR_TIPOS_FILTRO_CORREO))) {
+//            respuesta = filtroCorreoBean.darTiposFiltroCorreo(comandoXML);
+//            reportarALogExcepciones(filtroCorreoBean.getClass().getCanonicalName(), "darTiposFiltroCorreo", respuesta, fa, nombreComando, comandoXML);
+//        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_DAR_OPERACIONES_FILTRO_CORREO))) {
+//            respuesta = filtroCorreoBean.darOperacionesFiltroCorreo(comandoXML);
+//            reportarALogExcepciones(filtroCorreoBean.getClass().getCanonicalName(), "darOperacionesFiltroCorreo", respuesta, fa, nombreComando, comandoXML);
+//            //acciones rol admon sisinfo/soporte
+//        }
+        else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_SOLUCIONAR_EXCEPCION))) {
             respuesta = reporteExcepcionesBean.solucionarExcepcion(comandoXML);
             reportarALogExcepciones(reporteExcepcionesBean.getClass().getCanonicalName(), "solucionarExcepcion", respuesta, fa, nombreComando, comandoXML);
         } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_MODIFICAR_INCIDENTE_SISINFO))) {
@@ -1712,7 +1696,7 @@ public class NucleoBean implements NucleoRemote, NucleoLocal {
             respuesta = auditoriaBean.eliminarComandoListaComando(comandoXML);
             reportarALogExcepciones(auditoriaBean.getClass().getCanonicalName(), "eliminarComandoListaComando", respuesta, fa, nombreComando, comandoXML);
         } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_ASIGNAR_INCIDENTE))) {
-            respuesta = incidenteBean.asignarIncidente(comandoXML);
+           // respuesta = incidenteBean.asignarIncidente(comandoXML);
             reportarALogExcepciones(incidenteBean.getClass().getCanonicalName(), "asignarIncidente", respuesta, fa, nombreComando, comandoXML);
         } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_CONSULTAR_PERSONA_SOPORTE_POR_ID))) {
             respuesta = personaSoporteBean.getPersonaSoportePorId(comandoXML);
@@ -1791,7 +1775,7 @@ public class NucleoBean implements NucleoRemote, NucleoLocal {
             reportarALogExcepciones(archivosBean.getClass().getCanonicalName(), "comportamientoFinRangoFechasCierreCursos", respuesta, fa, nombreComando, comandoXML);
             // Reserva inventario
         } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_EDITAR_LABORATORIO))) {
-            respuesta = laboratorioBean.editarLaboratorio(comandoXML);
+           // respuesta = laboratorioBean.editarLaboratorio(comandoXML);
             reportarALogExcepciones(laboratorioBean.getClass().getCanonicalName(), "editarlaboratorio", respuesta, fa, nombreComando, comandoXML);
         } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_EDITAR_EVENTO_EXTERNO))) {
             respuesta = eventoExternoBean.crearEditarEventoExterno(comandoXML);
@@ -1847,81 +1831,83 @@ public class NucleoBean implements NucleoRemote, NucleoLocal {
 
             respuesta = contactoBean.cambiarContrasena(comandoXML);
             reportarALogExcepciones(contactoBean.getClass().getCanonicalName(), "cmdCambiarContrasena", respuesta, fa, nombreComando, comandoXML);
-        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_INSCRIBIR_USUARIOS_VIP))) {
-
-            respuesta = contactoBean.inscribirUsuariosVIP(comandoXML);
-            reportarALogExcepciones(contactoBean.getClass().getCanonicalName(), "inscribirUsuariosVIP", respuesta, fa, nombreComando, comandoXML);
-        } ///FIN CONTACTOS CRM
-        else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_CONSULTAR_EVENTOS_EXTERNOS))) {
-            respuesta = eventoExternoBean.consultarEventosExternos(comandoXML);
-            reportarALogExcepciones(eventoExternoBean.getClass().getCanonicalName(), "consultarEventosExternos", respuesta, fa, nombreComando, comandoXML);
-        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_ACTUALIZAR_CATEGORIAS))) {
-            respuesta = eventoExternoBean.editarCategorias(comandoXML);
-            reportarALogExcepciones(eventoExternoBean.getClass().getCanonicalName(), "actualizarCategoriasContacto", respuesta, fa, nombreComando, comandoXML);
-        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_ELIMINAR_LABORATORIO))) {
-            respuesta = laboratorioBean.eliminarLaboratorio(comandoXML);
-            reportarALogExcepciones(laboratorioBean.getClass().getCanonicalName(), "eliminarlaboratorio", respuesta, fa, nombreComando, comandoXML);
-        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_CONSULTAR_RESERVAS_LABORATORIO))) {
-            respuesta = reservaInventarioBean.consultarReservasLaboratorio(comandoXML);
-            reportarALogExcepciones(reservaInventarioBean.getClass().getCanonicalName(), "consultarReservasLaboratorio", respuesta, fa, nombreComando, comandoXML);
-        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_CONSULTAR_LABORATORIO))) {
-            respuesta = laboratorioBean.consultarLaboratorio(comandoXML);
-            reportarALogExcepciones(laboratorioBean.getClass().getCanonicalName(), "consultarLaboratorio", respuesta, fa, nombreComando, comandoXML);
-        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_CONSULTAR_LABORATORIOS_AUTORIZADOS))) {
-            respuesta = laboratorioBean.consultarLaboratoriosAutorizados(comandoXML);
-            reportarALogExcepciones(laboratorioBean.getClass().getCanonicalName(), "consultarLaboratoriosAutorizados", respuesta, fa, nombreComando, comandoXML);
-        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_CONSULTAR_AUTORIZADO_LABORATORIO))) {
-            respuesta = laboratorioBean.consultarAutorizadoLaboratorio(comandoXML);
-            reportarALogExcepciones(laboratorioBean.getClass().getCanonicalName(), "consultarAutorizadoLaboratorio", respuesta, fa, nombreComando, comandoXML);
-        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_CREAR_RESERVA_LABORATORIO))) {
-            respuesta = reservaInventarioBean.crearReserva(comandoXML);
-            reportarALogExcepciones(reservaInventarioBean.getClass().getCanonicalName(), "crearReserva", respuesta, fa, nombreComando, comandoXML);
-        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_CONSULTAR_LABORATORIOS))) {
-            respuesta = laboratorioBean.consultarLaboratorios(comandoXML);
-            reportarALogExcepciones(laboratorioBean.getClass().getCanonicalName(), "consultarLaboratorios", respuesta, fa, nombreComando, comandoXML);
-        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_DAR_HORARIO_DISPONIBLE_LABORATORIO))) {
-            respuesta = laboratorioBean.darHorarioDisponibleLaboratorio(comandoXML);
-            reportarALogExcepciones(laboratorioBean.getClass().getCanonicalName(), "darHorarioDisponiblelaboratorio", respuesta, fa, nombreComando, comandoXML);
-        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_CONSULTAR_RESERVAS_PERSONA))) {
-            respuesta = reservaInventarioBean.consultarReservasPersona(comandoXML);
-            reportarALogExcepciones(reservaInventarioBean.getClass().getCanonicalName(), "consultarReservasPersona", respuesta, fa, nombreComando, comandoXML);
-        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_CANCELAR_RESERVA_INVENTARIO))) {
-            respuesta = reservaInventarioBean.cancelarReserva(comandoXML);
-            reportarALogExcepciones(reservaInventarioBean.getClass().getCanonicalName(), "cancelarReserva", respuesta, fa, nombreComando, comandoXML);
-        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_CONSULTAR_RESERVA_INVENTARIO))) {
-            respuesta = reservaInventarioBean.consultarReserva(comandoXML);
-            reportarALogExcepciones(reservaInventarioBean.getClass().getCanonicalName(), "consultarReserva", respuesta, fa, nombreComando, comandoXML);
-        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_CONSULTAR_RANGO_RESERVAS_LABORATORIO))) {
-            respuesta = reservaInventarioBean.consultarRangoReservas(comandoXML);
-            reportarALogExcepciones(reservaInventarioBean.getClass().getCanonicalName(), "consultarRangoReserva", respuesta, fa, nombreComando, comandoXML);
-        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_CANCELAR_GRUPO_RESERVAS_LABORATORIO))) {
-            respuesta = reservaInventarioBean.cancelarGrupoReservas(comandoXML);
-            reportarALogExcepciones(reservaInventarioBean.getClass().getCanonicalName(), "cancelarRangoReserva", respuesta, fa, nombreComando, comandoXML);
-        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_CONSULTAR_LABORATORIOS_ENCARGADO))) {
-            respuesta = laboratorioBean.consultarLaboratoriosEncargado(comandoXML);
-            reportarALogExcepciones(reservaInventarioBean.getClass().getCanonicalName(), "consultarLaboratoriosEncargado", respuesta, fa, nombreComando, comandoXML);
-        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_MARCAR_GRUPO_RESERVAS_LABORATORIO))) {
-            respuesta = reservaInventarioBean.marcarGrupoReservas(comandoXML);
-            reportarALogExcepciones(reservaInventarioBean.getClass().getCanonicalName(), "marcarGrupoReserva", respuesta, fa, nombreComando, comandoXML);
-        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_DAR_HORARIO_OCUPADO_LABORATORIO))) {
-            respuesta = laboratorioBean.darOcupacionLaboratorio(comandoXML);
-            reportarALogExcepciones(reservaInventarioBean.getClass().getCanonicalName(), "consultarLaboratoriosEncargado", respuesta, fa, nombreComando, comandoXML);
-        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_DAR_ACCIONES))) {
-            respuesta = accionesBean.darAcciones(comandoXML);
-            reportarALogExcepciones(accionesBean.getClass().getCanonicalName(), "darAcciones", respuesta, fa, nombreComando, comandoXML);
-        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_ACTIVAR_LABORATORIO))) {
-            respuesta = laboratorioBean.activarLaboratorio(comandoXML);
-            reportarALogExcepciones(laboratorioBean.getClass().getCanonicalName(), "activarLaboratorio", respuesta, fa, nombreComando, comandoXML);
-        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_CONSULTAR_LABORATORIOS_ADMINISTRADOR))) {
-            respuesta = laboratorioBean.consultarLaboratoriosAdministrador(comandoXML);
-            reportarALogExcepciones(laboratorioBean.getClass().getCanonicalName(), "consultarLaboratoriosAdministrador", respuesta, fa, nombreComando, comandoXML);
-        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_CONSULTAR_RESERVA_ISMULTIPLE))) {
-            respuesta = reservaInventarioBean.isMultiple(comandoXML);
-            reportarALogExcepciones(laboratorioBean.getClass().getCanonicalName(), "isMultiple", respuesta, fa, nombreComando, comandoXML);
-        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_CANCELAR_RESERVAMULTIPLE))) {
-            respuesta = reservaInventarioBean.cancelarReservaMultiple(comandoXML);
-            reportarALogExcepciones(reservaInventarioBean.getClass().getCanonicalName(), "cancelarReservaMultiple", respuesta, fa, nombreComando, comandoXML);
-        } /*else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_CONSULTAR_STAFF_POR_NOMBRE))) {
+        } 
+//        else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_INSCRIBIR_USUARIOS_VIP))) {
+//
+//            respuesta = contactoBean.inscribirUsuariosVIP(comandoXML);
+//            reportarALogExcepciones(contactoBean.getClass().getCanonicalName(), "inscribirUsuariosVIP", respuesta, fa, nombreComando, comandoXML);
+//        } ///FIN CONTACTOS CRM
+//        else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_CONSULTAR_EVENTOS_EXTERNOS))) {
+//            respuesta = eventoExternoBean.consultarEventosExternos(comandoXML);
+//            reportarALogExcepciones(eventoExternoBean.getClass().getCanonicalName(), "consultarEventosExternos", respuesta, fa, nombreComando, comandoXML);
+//        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_ACTUALIZAR_CATEGORIAS))) {
+//            respuesta = eventoExternoBean.editarCategorias(comandoXML);
+//            reportarALogExcepciones(eventoExternoBean.getClass().getCanonicalName(), "actualizarCategoriasContacto", respuesta, fa, nombreComando, comandoXML);
+//        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_ELIMINAR_LABORATORIO))) {
+//            respuesta = laboratorioBean.eliminarLaboratorio(comandoXML);
+//            reportarALogExcepciones(laboratorioBean.getClass().getCanonicalName(), "eliminarlaboratorio", respuesta, fa, nombreComando, comandoXML);
+//        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_CONSULTAR_RESERVAS_LABORATORIO))) {
+//            respuesta = reservaInventarioBean.consultarReservasLaboratorio(comandoXML);
+//            reportarALogExcepciones(reservaInventarioBean.getClass().getCanonicalName(), "consultarReservasLaboratorio", respuesta, fa, nombreComando, comandoXML);
+//        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_CONSULTAR_LABORATORIO))) {
+//            respuesta = laboratorioBean.consultarLaboratorio(comandoXML);
+//            reportarALogExcepciones(laboratorioBean.getClass().getCanonicalName(), "consultarLaboratorio", respuesta, fa, nombreComando, comandoXML);
+//        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_CONSULTAR_LABORATORIOS_AUTORIZADOS))) {
+//            respuesta = laboratorioBean.consultarLaboratoriosAutorizados(comandoXML);
+//            reportarALogExcepciones(laboratorioBean.getClass().getCanonicalName(), "consultarLaboratoriosAutorizados", respuesta, fa, nombreComando, comandoXML);
+//        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_CONSULTAR_AUTORIZADO_LABORATORIO))) {
+//            respuesta = laboratorioBean.consultarAutorizadoLaboratorio(comandoXML);
+//            reportarALogExcepciones(laboratorioBean.getClass().getCanonicalName(), "consultarAutorizadoLaboratorio", respuesta, fa, nombreComando, comandoXML);
+//        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_CREAR_RESERVA_LABORATORIO))) {
+//            respuesta = reservaInventarioBean.crearReserva(comandoXML);
+//            reportarALogExcepciones(reservaInventarioBean.getClass().getCanonicalName(), "crearReserva", respuesta, fa, nombreComando, comandoXML);
+//        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_CONSULTAR_LABORATORIOS))) {
+//            respuesta = laboratorioBean.consultarLaboratorios(comandoXML);
+//            reportarALogExcepciones(laboratorioBean.getClass().getCanonicalName(), "consultarLaboratorios", respuesta, fa, nombreComando, comandoXML);
+//        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_DAR_HORARIO_DISPONIBLE_LABORATORIO))) {
+//            respuesta = laboratorioBean.darHorarioDisponibleLaboratorio(comandoXML);
+//            reportarALogExcepciones(laboratorioBean.getClass().getCanonicalName(), "darHorarioDisponiblelaboratorio", respuesta, fa, nombreComando, comandoXML);
+//        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_CONSULTAR_RESERVAS_PERSONA))) {
+//            respuesta = reservaInventarioBean.consultarReservasPersona(comandoXML);
+//            reportarALogExcepciones(reservaInventarioBean.getClass().getCanonicalName(), "consultarReservasPersona", respuesta, fa, nombreComando, comandoXML);
+//        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_CANCELAR_RESERVA_INVENTARIO))) {
+//            respuesta = reservaInventarioBean.cancelarReserva(comandoXML);
+//            reportarALogExcepciones(reservaInventarioBean.getClass().getCanonicalName(), "cancelarReserva", respuesta, fa, nombreComando, comandoXML);
+//        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_CONSULTAR_RESERVA_INVENTARIO))) {
+//            respuesta = reservaInventarioBean.consultarReserva(comandoXML);
+//            reportarALogExcepciones(reservaInventarioBean.getClass().getCanonicalName(), "consultarReserva", respuesta, fa, nombreComando, comandoXML);
+//        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_CONSULTAR_RANGO_RESERVAS_LABORATORIO))) {
+//            respuesta = reservaInventarioBean.consultarRangoReservas(comandoXML);
+//            reportarALogExcepciones(reservaInventarioBean.getClass().getCanonicalName(), "consultarRangoReserva", respuesta, fa, nombreComando, comandoXML);
+//        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_CANCELAR_GRUPO_RESERVAS_LABORATORIO))) {
+//            respuesta = reservaInventarioBean.cancelarGrupoReservas(comandoXML);
+//            reportarALogExcepciones(reservaInventarioBean.getClass().getCanonicalName(), "cancelarRangoReserva", respuesta, fa, nombreComando, comandoXML);
+//        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_CONSULTAR_LABORATORIOS_ENCARGADO))) {
+//            respuesta = laboratorioBean.consultarLaboratoriosEncargado(comandoXML);
+//            reportarALogExcepciones(reservaInventarioBean.getClass().getCanonicalName(), "consultarLaboratoriosEncargado", respuesta, fa, nombreComando, comandoXML);
+//        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_MARCAR_GRUPO_RESERVAS_LABORATORIO))) {
+//            respuesta = reservaInventarioBean.marcarGrupoReservas(comandoXML);
+//            reportarALogExcepciones(reservaInventarioBean.getClass().getCanonicalName(), "marcarGrupoReserva", respuesta, fa, nombreComando, comandoXML);
+//        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_DAR_HORARIO_OCUPADO_LABORATORIO))) {
+//            respuesta = laboratorioBean.darOcupacionLaboratorio(comandoXML);
+//            reportarALogExcepciones(reservaInventarioBean.getClass().getCanonicalName(), "consultarLaboratoriosEncargado", respuesta, fa, nombreComando, comandoXML);
+//        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_DAR_ACCIONES))) {
+//            respuesta = accionesBean.darAcciones(comandoXML);
+//            reportarALogExcepciones(accionesBean.getClass().getCanonicalName(), "darAcciones", respuesta, fa, nombreComando, comandoXML);
+//        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_ACTIVAR_LABORATORIO))) {
+//            respuesta = laboratorioBean.activarLaboratorio(comandoXML);
+//            reportarALogExcepciones(laboratorioBean.getClass().getCanonicalName(), "activarLaboratorio", respuesta, fa, nombreComando, comandoXML);
+//        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_CONSULTAR_LABORATORIOS_ADMINISTRADOR))) {
+//            respuesta = laboratorioBean.consultarLaboratoriosAdministrador(comandoXML);
+//            reportarALogExcepciones(laboratorioBean.getClass().getCanonicalName(), "consultarLaboratoriosAdministrador", respuesta, fa, nombreComando, comandoXML);
+//        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_CONSULTAR_RESERVA_ISMULTIPLE))) {
+//            respuesta = reservaInventarioBean.isMultiple(comandoXML);
+//            reportarALogExcepciones(laboratorioBean.getClass().getCanonicalName(), "isMultiple", respuesta, fa, nombreComando, comandoXML);
+//        } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_CANCELAR_RESERVAMULTIPLE))) {
+//            respuesta = reservaInventarioBean.cancelarReservaMultiple(comandoXML);
+//            reportarALogExcepciones(reservaInventarioBean.getClass().getCanonicalName(), "cancelarReservaMultiple", respuesta, fa, nombreComando, comandoXML);
+//        } 
+        /*else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_CONSULTAR_STAFF_POR_NOMBRE))) {
         respuesta = staffDepartamentoBean.consultarStaffPorNombres(comandoXML);
         reportarALogExcepciones(staffDepartamentoBean.getClass().getCanonicalName(), "consultarStaffPorNombres", respuesta, fa, nombreComando, comandoXML);//acciones rol reportante sisinfo // cargadores compartidos
         } else if (nombreComando.equals(getConstanteBean().getConstante(Constantes.CMD_CONSULTAR_STAFF_POR_APELLIDOS))) {
@@ -1961,7 +1947,7 @@ public class NucleoBean implements NucleoRemote, NucleoLocal {
         reporteExcepcionesBean.crearLogMensaje(nombreBean, nombreMetodo, respuesta, fa, nombreComanddo, xmlEntrada);
     }
 
-    public ConstanteRemote getConstanteBean() {
+    public ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 }

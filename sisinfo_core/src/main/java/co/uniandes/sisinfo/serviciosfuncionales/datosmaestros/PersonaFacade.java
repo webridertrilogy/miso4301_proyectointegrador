@@ -19,7 +19,7 @@ import org.hibernate.Hibernate;
  * @author da-naran
  */
 @Stateless
-public class PersonaFacade implements PersonaFacadeLocal, PersonaFacadeRemote {
+public class PersonaFacade implements PersonaFacadeLocal {
 
 	@PersistenceContext(unitName="SoporteSisinfoPU")
     private EntityManager em;

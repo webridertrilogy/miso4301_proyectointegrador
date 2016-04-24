@@ -16,7 +16,7 @@ import javax.persistence.PersistenceContext;
  * @author Asistente
  */
 @Stateless
-public class TimerGenericoFacade extends AbstractFacade<TimerGenerico> implements TimerGenericoFacadeLocal, TimerGenericoFacadeRemote {
+public class TimerGenericoFacade extends AbstractFacade<TimerGenerico> implements TimerGenericoFacadeLocal {
     @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 

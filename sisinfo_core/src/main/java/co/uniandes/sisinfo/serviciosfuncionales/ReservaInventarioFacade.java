@@ -16,7 +16,7 @@ import javax.persistence.TemporalType;
  * @author Marcela Morales
  */
 @Stateless
-public class ReservaInventarioFacade implements ReservaInventarioFacadeLocal, ReservaInventarioFacadeRemote {
+public class ReservaInventarioFacade implements ReservaInventarioFacadeLocal {
     @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 

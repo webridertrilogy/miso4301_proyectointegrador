@@ -26,13 +26,13 @@ import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
  */
 public class ConversorEventoExterno {
 
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
     private SimpleDateFormat formatoFechaHora;
     private EventoExternoFacadeLocal eventoExternoFacade;
     private CategoriaEventoExternoFacadeLocal categoriaFacade;
     private SimpleDateFormat formatoFecha;
 
-    public ConversorEventoExterno(ConstanteRemote constanteBean, EventoExternoFacadeLocal eventoExternoFacade, CategoriaEventoExternoFacadeLocal categoriaFacade) {
+    public ConversorEventoExterno(ConstanteLocal constanteBean, EventoExternoFacadeLocal eventoExternoFacade, CategoriaEventoExternoFacadeLocal categoriaFacade) {
         this.constanteBean = constanteBean;
         this.eventoExternoFacade = eventoExternoFacade;
         this.categoriaFacade = categoriaFacade;
@@ -40,7 +40,7 @@ public class ConversorEventoExterno {
         formatoFecha = new SimpleDateFormat("dd-MM-yyyy");
     }
 
-    public ConstanteRemote getConstanteBean() {
+    public ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 

@@ -13,7 +13,7 @@ import javax.persistence.Query;
  * @author Marcela Morales
  */
 @Stateless
-public class EncargadoFacade implements EncargadoFacadeLocal, EncargadoFacadeRemote {
+public class EncargadoFacade implements EncargadoFacadeLocal {
     @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 

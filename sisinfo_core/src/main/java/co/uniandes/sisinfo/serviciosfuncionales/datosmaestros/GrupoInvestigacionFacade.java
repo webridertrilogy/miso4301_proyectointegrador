@@ -20,7 +20,7 @@ import org.hibernate.Hibernate;
  * @author da-naran
  */
 @Stateless
-public class GrupoInvestigacionFacade implements GrupoInvestigacionFacadeLocal, GrupoInvestigacionFacadeRemote {
+public class GrupoInvestigacionFacade implements GrupoInvestigacionFacadeLocal {
     @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 

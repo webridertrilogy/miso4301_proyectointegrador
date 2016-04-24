@@ -33,14 +33,14 @@ import co.uniandes.sisinfo.entities.Votante;
 import co.uniandes.sisinfo.entities.datosmaestros.Parametro;
 import co.uniandes.sisinfo.entities.datosmaestros.Persona;
 import co.uniandes.sisinfo.serviciosfuncionales.CandidatoFacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.CorreoRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.PeriodicidadFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.CorreoLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.PeriodicidadFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.ServiceLocator;
-import co.uniandes.sisinfo.serviciosfuncionales.TareaMultipleFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.TareaSencillaFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.TareaMultipleFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.TareaSencillaFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.VotacionFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.VotanteFacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.PersonaFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.PersonaFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.ParserT;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
 
@@ -50,7 +50,7 @@ import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
  */
 @Stateless
 @EJB(name = "VotacionesBean", beanInterface = co.uniandes.sisinfo.serviciosnegocio.VotacionesLocal.class)
-public class VotacionesBean implements VotacionesRemote, VotacionesLocal {
+public class VotacionesBean implements  VotacionesLocal {
 
     public final static String NOMBRE_MODULO = "Votaciones";
     public final static String METODO_MANEJO_TIMERS = "manejoTimers";
@@ -66,21 +66,21 @@ public class VotacionesBean implements VotacionesRemote, VotacionesLocal {
     private VotacionFacadeLocal votacionFacade;
     private ServiceLocator serviceLocator;
     @EJB
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
     @EJB
-    private TareaMultipleFacadeRemote tareaFacade;
+    private TareaMultipleFacadeLocal tareaFacade;
     @EJB
-    private PersonaFacadeRemote personaFacade;
+    private PersonaFacadeLocal personaFacade;
     @EJB
-    private TareaMultipleRemote tareaMultipleBean;
+    private TareaMultipleLocal tareaMultipleBean;
     @EJB
-    private PeriodicidadFacadeRemote periodicidadFacade;
+    private PeriodicidadFacadeLocal periodicidadFacade;
     @EJB
-    private CorreoRemote correoBean;
+    private CorreoLocal correoBean;
     @EJB
-    private TimerGenericoBeanRemote timerGenerico;
+    private TimerGenericoBeanLocal timerGenerico;
     @EJB
-    private TareaSencillaFacadeRemote tareaSencillaFacade;
+    private TareaSencillaFacadeLocal tareaSencillaFacade;
 
     //---------------------------------------
     // Constructor
@@ -89,20 +89,20 @@ public class VotacionesBean implements VotacionesRemote, VotacionesLocal {
      * Constructor de VotacionesBean
      */
     public VotacionesBean() {
-        try {
-            serviceLocator = new ServiceLocator();
-            tareaFacade = (TareaMultipleFacadeRemote) serviceLocator.getRemoteEJB(TareaMultipleFacadeRemote.class);
-            constanteBean = (ConstanteRemote) serviceLocator.getRemoteEJB(ConstanteRemote.class);
-            tareaMultipleBean = (TareaMultipleRemote) serviceLocator.getRemoteEJB(TareaMultipleRemote.class);
-            periodicidadFacade = (PeriodicidadFacadeRemote) serviceLocator.getRemoteEJB(PeriodicidadFacadeRemote.class);
-            correoBean = (CorreoRemote) serviceLocator.getRemoteEJB(CorreoRemote.class);
-            timerGenerico = (TimerGenericoBeanRemote) serviceLocator.getRemoteEJB(TimerGenericoBeanRemote.class);
-            personaFacade = (PersonaFacadeRemote) serviceLocator.getRemoteEJB(PersonaFacadeRemote.class);
-            tareaSencillaFacade = (TareaSencillaFacadeRemote) serviceLocator.getRemoteEJB(TareaSencillaFacadeRemote.class);
-            parser = new ParserT();
-        } catch (NamingException ex) {
-            Logger.getLogger(VotacionesBean.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        try {
+//            serviceLocator = new ServiceLocator();
+//            tareaFacade = (TareaMultipleFacadeLocal) serviceLocator.getLocalEJB(TareaMultipleFacadeLocal.class);
+//            constanteBean = (ConstanteLocal) serviceLocator.getLocalEJB(ConstanteLocal.class);
+//            tareaMultipleBean = (TareaMultipleLocal) serviceLocator.getLocalEJB(TareaMultipleLocal.class);
+//            periodicidadFacade = (PeriodicidadFacadeLocal) serviceLocator.getLocalEJB(PeriodicidadFacadeLocal.class);
+//            correoBean = (CorreoLocal) serviceLocator.getLocalEJB(CorreoLocal.class);
+//            timerGenerico = (TimerGenericoBeanLocal) serviceLocator.getLocalEJB(TimerGenericoBeanLocal.class);
+//            personaFacade = (PersonaFacadeLocal) serviceLocator.getLocalEJB(PersonaFacadeLocal.class);
+//            tareaSencillaFacade = (TareaSencillaFacadeLocal) serviceLocator.getLocalEJB(TareaSencillaFacadeLocal.class);
+//            parser = new ParserT();
+//        } catch (NamingException ex) {
+//            Logger.getLogger(VotacionesBean.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }
 
     /**
@@ -210,7 +210,7 @@ public class VotacionesBean implements VotacionesRemote, VotacionesLocal {
             }
             //Se crea el timer que cerrará la votación y terminará todas las tareas
             Timestamp timeStamp = new Timestamp(fechaFinDate.getTime());
-            timerGenerico.crearTimer2("co.uniandes.sisinfo.serviciosnegocio.VotacionesRemote", "cerrarVotacion", timeStamp, "" + votacion.getId(),
+            timerGenerico.crearTimer2("co.uniandes.sisinfo.serviciosnegocio.VotacionesLocal", "cerrarVotacion", timeStamp, "" + votacion.getId(),
                     "Votaciones", this.getClass().getName(), "crearVotacion", "Este timer se crea cuando se crea una nueva votación para cerrar la votacion en la fecha indicada y termine todas las tareas asociadas");
 
             respuesta = getParser().generarRespuesta(new ArrayList(), getConstanteBean().getConstante(Constantes.CMD_CREAR_VOTACION), getConstanteBean().getConstante(Constantes.VAL_TAG_TIPO_MENSAJE_MENSAJE), Mensajes.VOT_MSJ_0001, new ArrayList());
@@ -271,8 +271,8 @@ public class VotacionesBean implements VotacionesRemote, VotacionesLocal {
                 votanteFacade.edit(votante);
                 HashMap<String, String> params = new HashMap();
                 params.put(getConstanteBean().getConstante(Constantes.TAG_PARAM_ID_VOTACION), idVotacion);
-                tareaMultipleBean.realizarTareaPorCorreo(getConstanteBean().getConstante(Constantes.TAG_PARAM_TIPO_VOTAR),
-                        correoVotante, params);
+//                tareaMultipleBean.realizarTareaPorCorreo(getConstanteBean().getConstante(Constantes.TAG_PARAM_TIPO_VOTAR),
+//                        correoVotante, params);
 
             } else {
                 error = true;
@@ -774,7 +774,7 @@ public class VotacionesBean implements VotacionesRemote, VotacionesLocal {
         }
     }
 
-    public ConstanteRemote getConstanteBean() {
+    public ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 
@@ -820,7 +820,7 @@ public class VotacionesBean implements VotacionesRemote, VotacionesLocal {
 
     private void crearTimerAbrirVotacion(Votacion votacion) {
         String abrirVotacion = getConstanteBean().getConstante(Constantes.CMD_TIMER_ABRIR_VOTACION) + "-" + votacion.getId();
-        timerGenerico.crearTimer2(VotacionesRemote.class.getCanonicalName(), METODO_MANEJO_TIMERS, votacion.getFechaInicio(), abrirVotacion, NOMBRE_MODULO, VotacionesBean.class.getName(), "crearTimerAbrirVotacion", "Timer creado para abrir una votación en su fecha de inicio");
+        timerGenerico.crearTimer2(VotacionesLocal.class.getCanonicalName(), METODO_MANEJO_TIMERS, votacion.getFechaInicio(), abrirVotacion, NOMBRE_MODULO, VotacionesBean.class.getName(), "crearTimerAbrirVotacion", "Timer creado para abrir una votación en su fecha de inicio");
     }
 
     public void manejoTimers(String parametro) {       

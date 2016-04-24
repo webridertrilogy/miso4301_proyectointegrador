@@ -44,31 +44,31 @@ import co.uniandes.sisinfo.entities.datosmaestros.Persona;
 import co.uniandes.sisinfo.entities.datosmaestros.Seccion;
 import co.uniandes.sisinfo.entities.datosmaestros.Sesion;
 import co.uniandes.sisinfo.serviciosfuncionales.AspiranteFacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.CorreoRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.DiaCompletoFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.CorreoLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.DiaCompletoFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.Horario_DisponibleFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.MonitoriaOtroDepartamentoFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.MonitoriaRealizadaFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.Monitoria_SolicitadaFacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.ReglaFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.ReglaFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.ServiceLocator;
 import co.uniandes.sisinfo.serviciosfuncionales.SolicitudFacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.CursoFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.EstudianteFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.InformacionAcademicaFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.PersonaFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.SeccionFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.CursoFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.EstudianteFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.InformacionAcademicaFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.PersonaFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.SeccionFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Atributo;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.ParserT;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
-import co.uniandes.sisinfo.serviciosfuncionales.soporte.TipoCuentaFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.soporte.TipoCuentaFacadeLocal;
 
 /**
  * Servicio de negocio: Administración de solicitudes
  */
 @Stateless
 @EJB(name = "SolicitudBean", beanInterface = co.uniandes.sisinfo.serviciosnegocio.SolicitudLocal.class)
-public class SolicitudBean implements SolicitudRemote, SolicitudLocal {
+public class SolicitudBean implements  SolicitudLocal {
 
     private enum ValidacionInformacion {
 
@@ -105,17 +105,17 @@ public class SolicitudBean implements SolicitudRemote, SolicitudLocal {
      * Informacion_AcademicaFacade
      */
     @EJB
-    private InformacionAcademicaFacadeRemote informacion_AcademicaFacade;
+    private InformacionAcademicaFacadeLocal informacion_AcademicaFacade;
     /**
      * CursoFacade
      */
     @EJB
-    private CursoFacadeRemote cursoFacade;
+    private CursoFacadeLocal cursoFacade;
     /**
      * ReglaBean
      */
     @EJB
-    private ReglaRemote reglaBean;
+    private ReglaLocal reglaBean;
     /**
      * MonitoriaOtroDepartamentoFacade
      */
@@ -125,7 +125,7 @@ public class SolicitudBean implements SolicitudRemote, SolicitudLocal {
      * SeccionFacade
      */
     @EJB
-    private SeccionFacadeRemote seccionFacade;
+    private SeccionFacadeLocal seccionFacade;
     /**
      * ConsultaBean
      */
@@ -135,25 +135,25 @@ public class SolicitudBean implements SolicitudRemote, SolicitudLocal {
      *  ConstanteBean
      */
     @EJB
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
     /**
      * PreseleccionBean
      */
     @EJB
     private PreseleccionLocal preseleccionBean;
     @EJB
-    private PersonaFacadeRemote personaFacade;
+    private PersonaFacadeLocal personaFacade;
     @EJB
-    private EstudianteFacadeRemote estudianteFacade;
+    private EstudianteFacadeLocal estudianteFacade;
     @EJB
-    private TipoCuentaFacadeRemote tipoCuentaFacade;
+    private TipoCuentaFacadeLocal tipoCuentaFacade;
     private ServiceLocator serviceLocator;
     @EJB
-    private CorreoRemote correoBean;
+    private CorreoLocal correoBean;
     @EJB
     private RangoFechasBeanLocal rangoFechasBean;
     @EJB
-    private ConvocatoriaRemote convocatoriaBean;
+    private ConvocatoriaLocal convocatoriaBean;
     @EJB
     private ListaNegraLocal listaNegraBean;
     @EJB
@@ -161,11 +161,11 @@ public class SolicitudBean implements SolicitudRemote, SolicitudLocal {
     @EJB
     private MonitoriaRealizadaFacadeLocal monitoriaRealizadaFacade;
     @EJB
-    private DiaCompletoFacadeRemote diaCompletoFacade;
+    private DiaCompletoFacadeLocal diaCompletoFacade;
     @EJB
-    private ReglaFacadeRemote reglaFacade;
+    private ReglaFacadeLocal reglaFacade;
 
-    public DiaCompletoFacadeRemote getDiaCompletoFacade() {
+    public DiaCompletoFacadeLocal getDiaCompletoFacade() {
         return diaCompletoFacade;
 
     }
@@ -177,26 +177,26 @@ public class SolicitudBean implements SolicitudRemote, SolicitudLocal {
      * Constructor de SolicitudBean
      */
     public SolicitudBean() {
-        try {
-            serviceLocator = new ServiceLocator();
-            constanteBean = (ConstanteRemote) serviceLocator.getRemoteEJB(ConstanteRemote.class);
-
-            personaFacade = (PersonaFacadeRemote) serviceLocator.getRemoteEJB(PersonaFacadeRemote.class);
-            estudianteFacade = (EstudianteFacadeRemote) serviceLocator.getRemoteEJB(EstudianteFacadeRemote.class);
-            tipoCuentaFacade = (TipoCuentaFacadeRemote) serviceLocator.getRemoteEJB(TipoCuentaFacadeRemote.class);
-
-            seccionFacade = (SeccionFacadeRemote) serviceLocator.getRemoteEJB(SeccionFacadeRemote.class);
-            informacion_AcademicaFacade = (InformacionAcademicaFacadeRemote) serviceLocator.getRemoteEJB(InformacionAcademicaFacadeRemote.class);
-            cursoFacade = (CursoFacadeRemote) serviceLocator.getRemoteEJB(CursoFacadeRemote.class);
-            reglaBean = (ReglaRemote) serviceLocator.getRemoteEJB(ReglaRemote.class);
-            correoBean = (CorreoRemote) serviceLocator.getRemoteEJB(CorreoRemote.class);
-            convocatoriaBean = (ConvocatoriaRemote) serviceLocator.getRemoteEJB(ConvocatoriaRemote.class);
-            diaCompletoFacade = (DiaCompletoFacadeRemote) serviceLocator.getRemoteEJB(DiaCompletoFacadeRemote.class);
-            reglaFacade = (ReglaFacadeRemote) serviceLocator.getRemoteEJB(ReglaFacadeRemote.class);
-        } catch (NamingException ex) {
-            ex.printStackTrace();
-            Logger.getLogger(SolicitudBean.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        try {
+//            serviceLocator = new ServiceLocator();
+//            constanteBean = (ConstanteLocal) serviceLocator.getLocalEJB(ConstanteLocal.class);
+//
+//            personaFacade = (PersonaFacadeLocal) serviceLocator.getLocalEJB(PersonaFacadeLocal.class);
+//            estudianteFacade = (EstudianteFacadeLocal) serviceLocator.getLocalEJB(EstudianteFacadeLocal.class);
+//            tipoCuentaFacade = (TipoCuentaFacadeLocal) serviceLocator.getLocalEJB(TipoCuentaFacadeLocal.class);
+//
+//            seccionFacade = (SeccionFacadeLocal) serviceLocator.getLocalEJB(SeccionFacadeLocal.class);
+//            informacion_AcademicaFacade = (InformacionAcademicaFacadeLocal) serviceLocator.getLocalEJB(InformacionAcademicaFacadeLocal.class);
+//            cursoFacade = (CursoFacadeLocal) serviceLocator.getLocalEJB(CursoFacadeLocal.class);
+//            reglaBean = (ReglaLocal) serviceLocator.getLocalEJB(ReglaLocal.class);
+//            correoBean = (CorreoLocal) serviceLocator.getLocalEJB(CorreoLocal.class);
+//            convocatoriaBean = (ConvocatoriaLocal) serviceLocator.getLocalEJB(ConvocatoriaLocal.class);
+//            diaCompletoFacade = (DiaCompletoFacadeLocal) serviceLocator.getLocalEJB(DiaCompletoFacadeLocal.class);
+//            reglaFacade = (ReglaFacadeLocal) serviceLocator.getLocalEJB(ReglaFacadeLocal.class);
+//        } catch (NamingException ex) {
+//            ex.printStackTrace();
+//            Logger.getLogger(SolicitudBean.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }
 
     //---------------------------------------
@@ -1700,7 +1700,7 @@ public class SolicitudBean implements SolicitudRemote, SolicitudLocal {
      * Retorna Informacion_AcademicaFacade
      * @return informacion_AcademicaFacade Informacion_AcademicaFacade
      */
-    private InformacionAcademicaFacadeRemote getInformacion_AcademicaFacade() {
+    private InformacionAcademicaFacadeLocal getInformacion_AcademicaFacade() {
         return informacion_AcademicaFacade;
     }
 
@@ -1708,7 +1708,7 @@ public class SolicitudBean implements SolicitudRemote, SolicitudLocal {
      * Retorna CursoFacade
      * @return cursoFacade CursoFacade
      */
-    private CursoFacadeRemote getCursoFacade() {
+    private CursoFacadeLocal getCursoFacade() {
         return cursoFacade;
     }
 
@@ -1716,7 +1716,7 @@ public class SolicitudBean implements SolicitudRemote, SolicitudLocal {
      * Retorna Regla
      * @return regla Regla
      */
-    private ReglaRemote getReglaBean() {
+    private ReglaLocal getReglaBean() {
         return reglaBean;
     }
 
@@ -1732,7 +1732,7 @@ public class SolicitudBean implements SolicitudRemote, SolicitudLocal {
      * Retorna SeccionFacade
      * @return seccionFacade SeccionFacade
      */
-    private SeccionFacadeRemote getSeccionFacade() {
+    private SeccionFacadeLocal getSeccionFacade() {
         return seccionFacade;
     }
 
@@ -1748,7 +1748,7 @@ public class SolicitudBean implements SolicitudRemote, SolicitudLocal {
      * Retorna ConstanteBean
      * @return constanteBean ConstanteBean
      */
-    private ConstanteRemote getConstanteBean() {
+    private ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 
@@ -2214,19 +2214,19 @@ public class SolicitudBean implements SolicitudRemote, SolicitudLocal {
         }
     }
 
-    private TipoCuentaFacadeRemote getTipoCuentaFacade() {
+    private TipoCuentaFacadeLocal getTipoCuentaFacade() {
         return tipoCuentaFacade;
     }
 
-    private PersonaFacadeRemote getPersonaFacade() {
+    private PersonaFacadeLocal getPersonaFacade() {
         return personaFacade;
     }
 
-    private EstudianteFacadeRemote getEstudianteFacade() {
+    private EstudianteFacadeLocal getEstudianteFacade() {
         return estudianteFacade;
     }
 
-    private CorreoRemote getCorreoBean() {
+    private CorreoLocal getCorreoBean() {
         return correoBean;
     }
 

@@ -9,9 +9,8 @@
  */
 package co.uniandes.sisinfo.serviciosfuncionales.seguridad;
 
-import co.uniandes.sisinfo.comun.constantes.Constantes;
-import co.uniandes.sisinfo.serviciosnegocio.ConstanteRemote;
 import java.util.Hashtable;
+
 import javax.ejb.EJB;
 import javax.naming.AuthenticationException;
 import javax.naming.Context;
@@ -22,6 +21,9 @@ import javax.naming.directory.DirContext;
 import javax.naming.directory.InitialDirContext;
 import javax.naming.directory.SearchControls;
 import javax.naming.directory.SearchResult;
+
+import co.uniandes.sisinfo.comun.constantes.Constantes;
+import co.uniandes.sisinfo.serviciosnegocio.ConstanteLocal;
 
 /**
  *
@@ -37,7 +39,7 @@ public class AccesoLDAP {
      * @throws javax.naming.NamingException
      */
     @EJB
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
 
     public String autorizacion(String idUsuario, String password, Boolean enPrueba) throws AuthenticationException, NamingException {
 
@@ -189,7 +191,7 @@ public class AccesoLDAP {
         return ctx;
     }
 
-    public ConstanteRemote getConstanteBean() {
+    public ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 }

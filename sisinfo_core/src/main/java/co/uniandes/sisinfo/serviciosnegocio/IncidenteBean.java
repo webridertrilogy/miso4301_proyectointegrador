@@ -25,13 +25,13 @@ import co.uniandes.sisinfo.entities.Incidente;
 import co.uniandes.sisinfo.entities.ModuloSisinfo;
 import co.uniandes.sisinfo.entities.PersonaSoporte;
 import co.uniandes.sisinfo.entities.datosmaestros.Persona;
-import co.uniandes.sisinfo.serviciosfuncionales.CorreoRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.CorreoLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.IncidenteFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.ModuloSisinfoFacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.PeriodicidadFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.PersonaSoporteFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.PeriodicidadFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.PersonaSoporteFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.ServiceLocator;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.PersonaFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.PersonaFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.ParserT;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
 
@@ -40,19 +40,19 @@ import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
  * @author Ivan Mauricio Melo Suarez
  */
 @Stateless
-public class IncidenteBean implements IncidenteBeanRemote, IncidenteBeanLocal {
+public class IncidenteBean implements  IncidenteBeanLocal {
 
     @EJB
     private IncidenteFacadeLocal facadeIncidente;
     @EJB
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
     @EJB
-    private CorreoRemote correoBean;
+    private CorreoLocal correoBean;
   
     @EJB
-    private PeriodicidadFacadeRemote periodicidadFacade;
+    private PeriodicidadFacadeLocal periodicidadFacade;
     @EJB
-    private PersonaFacadeRemote personaFacade;
+    private PersonaFacadeLocal personaFacade;
     @EJB
     private ModuloSisinfoFacadeLocal moduloFacade;
 
@@ -60,24 +60,24 @@ public class IncidenteBean implements IncidenteBeanRemote, IncidenteBeanLocal {
      * Facade persona soporte.
      */
     @EJB
-    private PersonaSoporteFacadeRemote personaSoporteFacade;
+    private PersonaSoporteFacadeLocal personaSoporteFacade;
     
     private ParserT parser;
     private ServiceLocator serviceLocator;
 
     public IncidenteBean() {
-        try {
-            parser = new ParserT();
-            serviceLocator = new ServiceLocator();
-            constanteBean = (ConstanteRemote) serviceLocator.getRemoteEJB(ConstanteRemote.class);
-            correoBean = (CorreoRemote) serviceLocator.getRemoteEJB(CorreoRemote.class);
-            periodicidadFacade = (PeriodicidadFacadeRemote) serviceLocator.getRemoteEJB(PeriodicidadFacadeRemote.class);
-            personaFacade = (PersonaFacadeRemote) serviceLocator.getRemoteEJB(PersonaFacadeRemote.class);
-            personaSoporteFacade = (PersonaSoporteFacadeRemote) serviceLocator.getRemoteEJB(PersonaSoporteFacadeRemote.class);
-
-        } catch (NamingException ex) {
-            Logger.getLogger(IncidenteBean.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        try {
+//            parser = new ParserT();
+//            serviceLocator = new ServiceLocator();
+//            constanteBean = (ConstanteLocal) serviceLocator.getLocalEJB(ConstanteLocal.class);
+//            correoBean = (CorreoLocal) serviceLocator.getLocalEJB(CorreoLocal.class);
+//            periodicidadFacade = (PeriodicidadFacadeLocal) serviceLocator.getLocalEJB(PeriodicidadFacadeLocal.class);
+//            personaFacade = (PersonaFacadeLocal) serviceLocator.getLocalEJB(PersonaFacadeLocal.class);
+//            personaSoporteFacade = (PersonaSoporteFacadeLocal) serviceLocator.getLocalEJB(PersonaSoporteFacadeLocal.class);
+//
+//        } catch (NamingException ex) {
+//            Logger.getLogger(IncidenteBean.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }
 
     public String reportarIncidente(String xml) {
@@ -265,7 +265,7 @@ public class IncidenteBean implements IncidenteBeanRemote, IncidenteBeanLocal {
         }
     }
 
-    public ConstanteRemote getConstanteBean() {
+    public ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 

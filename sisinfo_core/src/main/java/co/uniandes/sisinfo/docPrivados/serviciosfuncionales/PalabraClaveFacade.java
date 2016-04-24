@@ -22,7 +22,7 @@ import javax.persistence.Query;
  * Servicio Facade Entidad Palabra Clave
  */
 @Stateless
-public class PalabraClaveFacade implements PalabraClaveFacadeLocal, PalabraClaveFacadeRemote {
+public class PalabraClaveFacade implements PalabraClaveFacadeLocal {
 
 	@PersistenceContext(unitName="SoporteSisinfoPU")
     private EntityManager em;

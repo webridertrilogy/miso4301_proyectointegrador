@@ -24,7 +24,7 @@ import co.uniandes.sisinfo.entities.datosmaestros.soporte.Pais;
  */
 @Stateless
 @EJB(name = "PaisFacade", beanInterface =co.uniandes.sisinfo.serviciosfuncionales.soporte.PaisFacadeLocal.class)
-public class PaisFacade implements PaisFacadeLocal, PaisFacadeRemote {
+public class PaisFacade implements PaisFacadeLocal {
 	@PersistenceContext(unitName="SoporteSisinfoPU")
     private EntityManager em;
 

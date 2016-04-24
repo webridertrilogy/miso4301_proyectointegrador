@@ -28,7 +28,7 @@ import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
  * @author Asistente
  */
 @Stateless
-public class FiltroCorreoBean implements FiltroCorreoBeanRemote, FiltroCorreoBeanLocal {
+public class FiltroCorreoBean implements  FiltroCorreoBeanLocal {
     
     private ParserT parser;
 
@@ -37,27 +37,27 @@ public class FiltroCorreoBean implements FiltroCorreoBeanRemote, FiltroCorreoBea
     private ConversorFiltrosCorreo conversorFiltrosCorreo;
             
     @EJB
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
     
     @EJB
     private FiltroCorreoFacadeLocal filtroCorreoFacade;
 
     public FiltroCorreoBean() {
-        try {
-            parser = new ParserT();
-            serviceLocator = new ServiceLocator();
-            constanteBean = (ConstanteRemote) serviceLocator.getRemoteEJB(ConstanteRemote.class);
-            conversorFiltrosCorreo = new ConversorFiltrosCorreo(constanteBean);
-        } catch (NamingException ex) {
-            Logger.getLogger(CorreoSinEnviarBean.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        try {
+//            parser = new ParserT();
+//            serviceLocator = new ServiceLocator();
+//            constanteBean = (ConstanteLocal) serviceLocator.getLocalEJB(ConstanteLocal.class);
+//            conversorFiltrosCorreo = new ConversorFiltrosCorreo(constanteBean);
+//        } catch (NamingException ex) {
+//            Logger.getLogger(CorreoSinEnviarBean.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }
 
-    public ConstanteRemote getConstanteBean() {
+    public ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 
-    @Override
+    
     public String darFiltrosCorreo(String xml) {
         try {
             parser.leerXML(xml);
@@ -72,7 +72,7 @@ public class FiltroCorreoBean implements FiltroCorreoBeanRemote, FiltroCorreoBea
         }
     }
 
-    @Override
+    
     public String agregarFiltroCorreo(String xml) {
         try {
             parser.leerXML(xml);
@@ -86,7 +86,7 @@ public class FiltroCorreoBean implements FiltroCorreoBeanRemote, FiltroCorreoBea
         }
     }
 
-    @Override
+    
     public String eliminarFiltroCorreo(String xml) {
         try {
             parser.leerXML(xml);
@@ -101,7 +101,7 @@ public class FiltroCorreoBean implements FiltroCorreoBeanRemote, FiltroCorreoBea
         }
     }
 
-    @Override
+    
     public String editarFiltroCorreo(String xml) {
         try {
             parser.leerXML(xml);
@@ -118,7 +118,7 @@ public class FiltroCorreoBean implements FiltroCorreoBeanRemote, FiltroCorreoBea
         }
     }
 
-    @Override
+    
     public String darFiltroCorreo(String xml) {
         try {
             parser.leerXML(xml);
@@ -135,7 +135,7 @@ public class FiltroCorreoBean implements FiltroCorreoBeanRemote, FiltroCorreoBea
         }
     }
 
-    @Override
+    
     public String darTiposFiltroCorreo(String xml) {
         try {
             parser.leerXML(xml);
@@ -153,7 +153,7 @@ public class FiltroCorreoBean implements FiltroCorreoBeanRemote, FiltroCorreoBea
         }
     }
 
-    @Override
+    
     public String darOperacionesFiltroCorreo(String xml) {
         try {
             parser.leerXML(xml);

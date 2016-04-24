@@ -25,7 +25,7 @@ import org.hibernate.Hibernate;
  * Servicios Entidad Alerta
  */
 @Stateless
-public class AlertaMultipleFacade implements AlertaMultipleFacadeLocal,AlertaMultipleFacadeRemote {
+public class AlertaMultipleFacade implements AlertaMultipleFacadeLocal {
 	@PersistenceContext(unitName="SoporteSisinfoPU")
     private EntityManager em;
 

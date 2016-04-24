@@ -19,12 +19,12 @@ public class ConversorAcciones {
     //----------------------------------------------
     // ATRIBUTOS
     //----------------------------------------------
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
 
     //----------------------------------------------
     // CONSTRUCTOR
     //----------------------------------------------
-    public ConversorAcciones(ConstanteRemote constanteBean) {
+    public ConversorAcciones(ConstanteLocal constanteBean) {
         this.constanteBean = constanteBean;
     }
 
@@ -45,7 +45,7 @@ public class ConversorAcciones {
         return secuenciaAcciones;
     }
 
-    public ConstanteRemote getConstanteBean() {
+    public ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 

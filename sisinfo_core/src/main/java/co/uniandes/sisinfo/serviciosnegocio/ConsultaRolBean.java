@@ -24,36 +24,36 @@ import co.uniandes.sisinfo.entities.datosmaestros.Usuario;
 import co.uniandes.sisinfo.entities.datosmaestros.soporte.Pais;
 import co.uniandes.sisinfo.entities.datosmaestros.soporte.TipoDocumento;
 import co.uniandes.sisinfo.serviciosfuncionales.ServiceLocator;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.PersonaFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.PersonaFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.ParserT;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
-import co.uniandes.sisinfo.serviciosfuncionales.seguridad.RolFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.seguridad.UsuarioFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.soporte.PaisFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.soporte.TipoDocumentoFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.seguridad.RolFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.seguridad.UsuarioFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.soporte.PaisFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.soporte.TipoDocumentoFacadeLocal;
 
 /**
  * Servicios de consulta y edición de datos de usuarios
  * @author Marcela Morales
  */
 @Stateless
-public class ConsultaRolBean implements ConsultaRolBeanRemote, ConsultaRolBeanLocal {
+public class ConsultaRolBean implements  ConsultaRolBeanLocal {
     
     //----------------------------------------------
     // ATRIBUTOS
     //----------------------------------------------
     @EJB
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
     @EJB
-    private RolFacadeRemote rolFacade;
+    private RolFacadeLocal rolFacade;
     @EJB
-    private PersonaFacadeRemote personaFacade;
+    private PersonaFacadeLocal personaFacade;
     @EJB
-    private UsuarioFacadeRemote usuarioFacade;
+    private UsuarioFacadeLocal usuarioFacade;
     @EJB
-    private PaisFacadeRemote paisFacade;
+    private PaisFacadeLocal paisFacade;
     @EJB
-    private TipoDocumentoFacadeRemote tipoDocumentoFacade;
+    private TipoDocumentoFacadeLocal tipoDocumentoFacade;
     private ParserT parser;
     private ServiceLocator serviceLocator;
 
@@ -61,18 +61,18 @@ public class ConsultaRolBean implements ConsultaRolBeanRemote, ConsultaRolBeanLo
     // CONSTRUCTOR
     //----------------------------------------------
     public ConsultaRolBean(){
-        try {
-            parser = new ParserT();
-            serviceLocator = new ServiceLocator();
-            rolFacade = (RolFacadeRemote) serviceLocator.getRemoteEJB(RolFacadeRemote.class);
-            personaFacade = (PersonaFacadeRemote) serviceLocator.getRemoteEJB(PersonaFacadeRemote.class);
-            usuarioFacade= (UsuarioFacadeRemote) serviceLocator.getRemoteEJB(UsuarioFacadeRemote.class);
-            constanteBean = (ConstanteRemote) serviceLocator.getRemoteEJB(ConstanteRemote.class);
-            paisFacade = (PaisFacadeRemote) serviceLocator.getRemoteEJB(PaisFacadeRemote.class);
-            tipoDocumentoFacade = (TipoDocumentoFacadeRemote) serviceLocator.getRemoteEJB(TipoDocumentoFacadeRemote.class);
-        } catch (NamingException ex) {
-            Logger.getLogger(ConsultaRolBean.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        try {
+//            parser = new ParserT();
+//            serviceLocator = new ServiceLocator();
+//            rolFacade = (RolFacadeLocal) serviceLocator.getLocalEJB(RolFacadeLocal.class);
+//            personaFacade = (PersonaFacadeLocal) serviceLocator.getLocalEJB(PersonaFacadeLocal.class);
+//            usuarioFacade= (UsuarioFacadeLocal) serviceLocator.getLocalEJB(UsuarioFacadeLocal.class);
+//            constanteBean = (ConstanteLocal) serviceLocator.getLocalEJB(ConstanteLocal.class);
+//            paisFacade = (PaisFacadeLocal) serviceLocator.getLocalEJB(PaisFacadeLocal.class);
+//            tipoDocumentoFacade = (TipoDocumentoFacadeLocal) serviceLocator.getLocalEJB(TipoDocumentoFacadeLocal.class);
+//        } catch (NamingException ex) {
+//            Logger.getLogger(ConsultaRolBean.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }
 
     //----------------------------------------------
@@ -454,7 +454,7 @@ public class ConsultaRolBean implements ConsultaRolBeanRemote, ConsultaRolBeanLo
     //----------------------------------------------
     // MÉTODOS PRIVADOS
     //----------------------------------------------
-    private ConstanteRemote getConstanteBean() {
+    private ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 
@@ -462,23 +462,23 @@ public class ConsultaRolBean implements ConsultaRolBeanRemote, ConsultaRolBeanLo
         return parser;
     }
 
-    private RolFacadeRemote getRolFacade() {
+    private RolFacadeLocal getRolFacade() {
         return rolFacade;
     }
 
-    private PersonaFacadeRemote getPersonaFacade() {
+    private PersonaFacadeLocal getPersonaFacade() {
         return personaFacade;
     }
 
-    private UsuarioFacadeRemote getUsuarioFacade() {
+    private UsuarioFacadeLocal getUsuarioFacade() {
         return usuarioFacade;
     }
 
-    private PaisFacadeRemote getPaisFacade() {
+    private PaisFacadeLocal getPaisFacade() {
         return paisFacade;
     }
 
-    private TipoDocumentoFacadeRemote getTipoDocumentoFacade() {
+    private TipoDocumentoFacadeLocal getTipoDocumentoFacade() {
         return tipoDocumentoFacade;
     }
 }

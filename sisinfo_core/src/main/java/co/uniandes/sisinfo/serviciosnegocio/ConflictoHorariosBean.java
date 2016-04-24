@@ -23,11 +23,11 @@ import co.uniandes.sisinfo.entities.datosmaestros.Curso;
 import co.uniandes.sisinfo.entities.datosmaestros.Estudiante;
 import co.uniandes.sisinfo.entities.datosmaestros.Programa;
 import co.uniandes.sisinfo.serviciosfuncionales.ConfiguracionFechasCHFacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.CorreoRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.CorreoLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.PeticionConflictoHorarioFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.ServiceLocator;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.CursoFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.ProgramaFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.CursoFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.ProgramaFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.ParserT;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
 
@@ -36,25 +36,25 @@ import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
  * @author German Florez, Marcela Morales, Paola Gómez
  */
 @Stateless
-public class ConflictoHorariosBean implements ConflictoHorariosBeanRemote, ConflictoHorariosBeanLocal {
+public class ConflictoHorariosBean implements  ConflictoHorariosBeanLocal {
 
     //----------------------------------------------
     // ATRIBUTOS
     //----------------------------------------------
     //Remotos
     @EJB
-    private CorreoRemote correoBean;
+    private CorreoLocal correoBean;
     @EJB
-    private CursoFacadeRemote cursoFacade;
+    private CursoFacadeLocal cursoFacade;
     @EJB
-    private ProgramaFacadeRemote programaFacade;
+    private ProgramaFacadeLocal programaFacade;
     //Locales
     @EJB
     private ConfiguracionFechasCHFacadeLocal configuracionFechasFacade;
     @EJB
     private PeticionConflictoHorarioFacadeLocal peticionConflictoHorarioFacade;
     @EJB
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
     private ParserT parser;
     private ServiceLocator serviceLocator;
     private ConflictoHorariosBeanHelper conversor;
@@ -63,17 +63,17 @@ public class ConflictoHorariosBean implements ConflictoHorariosBeanRemote, Confl
     // CONSTRUCTOR
     //----------------------------------------------
     public ConflictoHorariosBean() throws NamingException {
-        try {
-            parser = new ParserT();
-            serviceLocator = new ServiceLocator();
-            constanteBean = (ConstanteRemote) serviceLocator.getRemoteEJB(ConstanteRemote.class);
-            correoBean = (CorreoRemote) serviceLocator.getRemoteEJB(CorreoRemote.class);
-            cursoFacade = (CursoFacadeRemote) serviceLocator.getRemoteEJB(CursoFacadeRemote.class);
-            programaFacade = (ProgramaFacadeRemote) serviceLocator.getRemoteEJB(ProgramaFacadeRemote.class);
-            conversor = new ConflictoHorariosBeanHelper(getConstanteBean(), getCorreoBean());
-        } catch (NamingException ex) {
-            Logger.getLogger(ConflictoHorariosBean.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        try {
+//            parser = new ParserT();
+//            serviceLocator = new ServiceLocator();
+//            constanteBean = (ConstanteLocal) serviceLocator.getLocalEJB(ConstanteLocal.class);
+//            correoBean = (CorreoLocal) serviceLocator.getLocalEJB(CorreoLocal.class);
+//            cursoFacade = (CursoFacadeLocal) serviceLocator.getLocalEJB(CursoFacadeLocal.class);
+//            programaFacade = (ProgramaFacadeLocal) serviceLocator.getLocalEJB(ProgramaFacadeLocal.class);
+//            conversor = new ConflictoHorariosBeanHelper(getConstanteBean(), getCorreoBean());
+//        } catch (NamingException ex) {
+//            Logger.getLogger(ConflictoHorariosBean.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }
 
     //----------------------------------------------
@@ -489,7 +489,7 @@ public class ConflictoHorariosBean implements ConflictoHorariosBeanRemote, Confl
     //----------------------------------------------
     // MÉTODOS PRIVADOS
     //----------------------------------------------
-    private ConstanteRemote getConstanteBean() {
+    private ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 
@@ -504,11 +504,11 @@ public class ConflictoHorariosBean implements ConflictoHorariosBeanRemote, Confl
         return configuracionFechasFacade;
     }
 
-    private CorreoRemote getCorreoBean() {
+    private CorreoLocal getCorreoBean() {
         return correoBean;
     }
 
-    private CursoFacadeRemote getCursoFacade() {
+    private CursoFacadeLocal getCursoFacade() {
         return cursoFacade;
     }
 
@@ -520,7 +520,7 @@ public class ConflictoHorariosBean implements ConflictoHorariosBeanRemote, Confl
         return peticionConflictoHorarioFacade;
     }
 
-    private ProgramaFacadeRemote getProgramaFacade() {
+    private ProgramaFacadeLocal getProgramaFacade() {
         return programaFacade;
     }
 }

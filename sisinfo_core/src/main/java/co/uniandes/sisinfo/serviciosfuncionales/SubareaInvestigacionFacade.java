@@ -4,23 +4,25 @@
  */
 package co.uniandes.sisinfo.serviciosfuncionales;
 
-import co.uniandes.sisinfo.entities.SubareaInvestigacion;
-import co.uniandes.sisinfo.serviciosfuncionales.SubareaInvestigacionFacadeRemote;
-import javax.persistence.Query;
 import java.util.List;
+
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.NonUniqueResultException;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+
 import org.hibernate.Hibernate;
+
+import co.uniandes.sisinfo.entities.SubareaInvestigacion;
 
 /**
  *
  * @author Asistente
  */
 @Stateless
-public class SubareaInvestigacionFacade implements SubareaInvestigacionFacadeLocal, SubareaInvestigacionFacadeRemote {
+public class SubareaInvestigacionFacade implements SubareaInvestigacionFacadeLocal {
 
     @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;

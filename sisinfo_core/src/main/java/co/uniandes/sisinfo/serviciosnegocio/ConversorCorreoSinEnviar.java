@@ -20,12 +20,12 @@ import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
  */
 public class ConversorCorreoSinEnviar {
 
-        private ConstanteRemote constanteBean;
+        private ConstanteLocal constanteBean;
 
     //----------------------------------------------
     // CONSTRUCTOR
     //----------------------------------------------
-    public ConversorCorreoSinEnviar(ConstanteRemote constanteBean) {
+    public ConversorCorreoSinEnviar(ConstanteLocal constanteBean) {
         this.constanteBean = constanteBean;
     }
 
@@ -51,7 +51,7 @@ public class ConversorCorreoSinEnviar {
         return secCorreo;
     }
 
-    public ConstanteRemote getConstanteBean() {
+    public ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 

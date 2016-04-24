@@ -37,16 +37,16 @@ import co.uniandes.sisinfo.entities.datosmaestros.Parametro;
 import co.uniandes.sisinfo.entities.datosmaestros.Persona;
 import co.uniandes.sisinfo.entities.datosmaestros.Profesor;
 import co.uniandes.sisinfo.entities.datosmaestros.Seccion;
-import co.uniandes.sisinfo.serviciosfuncionales.CorreoRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.CorreoLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.MonitoriaFacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.PeriodicidadFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.PeriodoFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.PeriodicidadFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.PeriodoFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.RangoFechasFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.ServiceLocator;
 import co.uniandes.sisinfo.serviciosfuncionales.SolicitudFacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.TareaMultipleFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.CursoFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.SeccionFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.TareaMultipleFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.CursoFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.SeccionFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.ParserT;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
 
@@ -55,34 +55,34 @@ import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
  * @author Administrador
  */
 @Stateless
-public class RangoFechasBean implements RangoFechasBeanLocal, RangoFechasBeanRemote {
+public class RangoFechasBean implements RangoFechasBeanLocal {
 
-    public final static String RUTA_INTER = "co.uniandes.sisinfo.serviciosnegocio.RangoFechasBeanRemote";
+    public final static String RUTA_INTER = "co.uniandes.sisinfo.serviciosnegocio.RangoFechasBeanLocal";
     public final static String NOMBRE_METODO_MANEJO_TIMER = "manejoTimersMonitorias";
     @EJB
     private RangoFechasFacadeLocal rangoFechasFacade;
     @EJB
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
     @EJB
-    private ConvocatoriaRemote convocatoriaBean;
+    private ConvocatoriaLocal convocatoriaBean;
     @EJB
-    private CorreoRemote correoBean;
+    private CorreoLocal correoBean;
     @EJB
-    private CursoFacadeRemote cursoFacade;
+    private CursoFacadeLocal cursoFacade;
     @EJB
-    private PeriodicidadFacadeRemote periodicidadFacade;
+    private PeriodicidadFacadeLocal periodicidadFacade;
     @EJB
-    private PeriodoFacadeRemote periodoFacade;
+    private PeriodoFacadeLocal periodoFacade;
     @EJB
-    private SeccionFacadeRemote seccionFacade;
+    private SeccionFacadeLocal seccionFacade;
     @EJB
     private SolicitudFacadeLocal solicitudFacade;
     @EJB
-    private TareaMultipleFacadeRemote tareaFacade;
+    private TareaMultipleFacadeLocal tareaFacade;
     @EJB
-    private TareaMultipleRemote tareaBean;
+    private TareaMultipleLocal tareaBean;
     @EJB
-    private TimerGenericoBeanRemote timerGenerico;
+    private TimerGenericoBeanLocal timerGenerico;
     private ServiceLocator serviceLocator;   
     @EJB
     private MonitoriaFacadeLocal monitoriaAceptadaFacade;
@@ -90,27 +90,27 @@ public class RangoFechasBean implements RangoFechasBeanLocal, RangoFechasBeanRem
     private PreseleccionLocal preseleccionBean;
 
     @EJB
-    private TareaSencillaRemote  tareaSencillaBean;
+    private TareaSencillaLocal  tareaSencillaBean;
 
 
 
     public RangoFechasBean() {
-        try {
-            serviceLocator = new ServiceLocator();
-            constanteBean = (ConstanteRemote) serviceLocator.getRemoteEJB(ConstanteRemote.class);
-            convocatoriaBean = (ConvocatoriaRemote) serviceLocator.getRemoteEJB(ConvocatoriaRemote.class);
-            correoBean = (CorreoRemote) serviceLocator.getRemoteEJB(CorreoRemote.class);
-            cursoFacade = (CursoFacadeRemote) serviceLocator.getRemoteEJB(CursoFacadeRemote.class);
-            periodoFacade = (PeriodoFacadeRemote) serviceLocator.getRemoteEJB(PeriodoFacadeRemote.class);
-            periodicidadFacade = (PeriodicidadFacadeRemote) serviceLocator.getRemoteEJB(PeriodicidadFacadeRemote.class);
-            seccionFacade = (SeccionFacadeRemote) serviceLocator.getRemoteEJB(SeccionFacadeRemote.class);
-            tareaFacade = (TareaMultipleFacadeRemote) serviceLocator.getRemoteEJB(TareaMultipleFacadeRemote.class);
-            tareaBean = (TareaMultipleRemote) serviceLocator.getRemoteEJB(TareaMultipleRemote.class);
-            timerGenerico = (TimerGenericoBeanRemote) serviceLocator.getRemoteEJB(TimerGenericoBeanRemote.class);
-            tareaSencillaBean = (TareaSencillaRemote) serviceLocator.getRemoteEJB(TareaSencillaRemote.class);
-        } catch (NamingException ex) {
-            Logger.getLogger(RangoFechasBean.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        try {
+//            serviceLocator = new ServiceLocator();
+//            constanteBean = (ConstanteLocal) serviceLocator.getLocalEJB(ConstanteLocal.class);
+//            convocatoriaBean = (ConvocatoriaLocal) serviceLocator.getLocalEJB(ConvocatoriaLocal.class);
+//            correoBean = (CorreoLocal) serviceLocator.getLocalEJB(CorreoLocal.class);
+//            cursoFacade = (CursoFacadeLocal) serviceLocator.getLocalEJB(CursoFacadeLocal.class);
+//            periodoFacade = (PeriodoFacadeLocal) serviceLocator.getLocalEJB(PeriodoFacadeLocal.class);
+//            periodicidadFacade = (PeriodicidadFacadeLocal) serviceLocator.getLocalEJB(PeriodicidadFacadeLocal.class);
+//            seccionFacade = (SeccionFacadeLocal) serviceLocator.getLocalEJB(SeccionFacadeLocal.class);
+//            tareaFacade = (TareaMultipleFacadeLocal) serviceLocator.getLocalEJB(TareaMultipleFacadeLocal.class);
+//            tareaBean = (TareaMultipleLocal) serviceLocator.getLocalEJB(TareaMultipleLocal.class);
+//            timerGenerico = (TimerGenericoBeanLocal) serviceLocator.getLocalEJB(TimerGenericoBeanLocal.class);
+//            tareaSencillaBean = (TareaSencillaLocal) serviceLocator.getLocalEJB(TareaSencillaLocal.class);
+//        } catch (NamingException ex) {
+//            Logger.getLogger(RangoFechasBean.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }
     /**
      * Parser
@@ -613,7 +613,7 @@ public class RangoFechasBean implements RangoFechasBeanLocal, RangoFechasBeanRem
         }
     }
 
-    public TareaMultipleRemote getTareaBean() {
+    public TareaMultipleLocal getTareaBean() {
         return tareaBean;
     }
 
@@ -621,7 +621,7 @@ public class RangoFechasBean implements RangoFechasBeanLocal, RangoFechasBeanRem
      * Retorna CursoFacade
      * @return cursoFacade CursoFacade
      */
-    private CursoFacadeRemote getCursoFacade() {
+    private CursoFacadeLocal getCursoFacade() {
         return cursoFacade;
     }
 
@@ -629,7 +629,7 @@ public class RangoFechasBean implements RangoFechasBeanLocal, RangoFechasBeanRem
      * Retorna CorreoBean
      * @return correoBean CorreoBean
      */
-    private CorreoRemote getCorreoBean() {
+    private CorreoLocal getCorreoBean() {
         return correoBean;
     }
 
@@ -656,7 +656,7 @@ public class RangoFechasBean implements RangoFechasBeanLocal, RangoFechasBeanRem
      * Retorna ConstanteBean
      * @return constanteBean ConstanteBean
      */
-    private ConstanteRemote getConstanteBean() {
+    private ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 
@@ -691,7 +691,7 @@ public class RangoFechasBean implements RangoFechasBeanLocal, RangoFechasBeanRem
 
     }
 
-    @Override
+    
     public void crearTareaProfesorPreseleccionarPorSeccion(String crn) {
         Seccion seccion = seccionFacade.findByCRN(crn);
         if(seccion!=null)
@@ -1193,7 +1193,7 @@ public class RangoFechasBean implements RangoFechasBeanLocal, RangoFechasBeanRem
         /*long id = tareaBean.consultarIdTareaPorParametrosTipo(tipo, params);
         if(id != -1)
             tareaSencillaBean.realizarTareaPorId(id);*/
-        tareaSencillaBean.realizarTareasPorTipoYParametros(tipo, params);
+       // tareaSencillaBean.realizarTareasPorTipoYParametros(tipo, params);
 
     }
 
@@ -1211,7 +1211,7 @@ public class RangoFechasBean implements RangoFechasBeanLocal, RangoFechasBeanRem
             tareaSencillaBean.realizarTareaPorId(id);
     }
 
-    @Override
+    
     public String rangoIniciado(String xml){
          try {
             getParser().leerXML(xml);

@@ -14,7 +14,7 @@ import org.hibernate.Hibernate;
  * @author Marcela Morales
  */
 @Stateless
-public class ProponenteFacade implements ProponenteFacadeLocal, ProponenteFacadeRemote {
+public class ProponenteFacade implements ProponenteFacadeLocal {
 	@PersistenceContext(unitName="SoporteSisinfoPU")
     private EntityManager em;
 

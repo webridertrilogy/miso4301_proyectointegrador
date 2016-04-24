@@ -25,11 +25,11 @@ import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
  */
 public class ConversorTareaMultiple {
 
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
     private AlertaMultipleFacadeLocal alertaMultipleFacade;
     private TareaMultipleLocal tareaMultipleBean;
 
-    public ConversorTareaMultiple(ConstanteRemote constanteBean, AlertaMultipleFacadeLocal alertaMultipleFacade, TareaMultipleLocal tareaMultipleBean) {
+    public ConversorTareaMultiple(ConstanteLocal constanteBean, AlertaMultipleFacadeLocal alertaMultipleFacade, TareaMultipleLocal tareaMultipleBean) {
         this.constanteBean = constanteBean;
         this.alertaMultipleFacade = alertaMultipleFacade;
         this.tareaMultipleBean = tareaMultipleBean;
@@ -39,7 +39,7 @@ public class ConversorTareaMultiple {
         return alertaMultipleFacade;
     }
 
-    public ConstanteRemote getConstanteBean() {
+    public ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 

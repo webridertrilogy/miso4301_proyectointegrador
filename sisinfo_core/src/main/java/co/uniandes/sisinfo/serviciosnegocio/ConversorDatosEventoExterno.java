@@ -24,9 +24,9 @@ public class ConversorDatosEventoExterno {
      *  ConstanteBean
      */
     @EJB
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
 
-    public ConversorDatosEventoExterno(ConstanteRemote constanteBean) {
+    public ConversorDatosEventoExterno(ConstanteLocal constanteBean) {
         this.constanteBean = constanteBean;
     }
 
@@ -34,7 +34,7 @@ public class ConversorDatosEventoExterno {
      * Retorna Parser
      * @return parser Parser
      */
-    public ConstanteRemote getConstanteBean() {
+    public ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 

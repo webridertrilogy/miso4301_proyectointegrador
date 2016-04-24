@@ -27,17 +27,17 @@ import co.uniandes.sisinfo.entities.InscripcionSubareaInvestigacion;
 import co.uniandes.sisinfo.entities.PeriodoTesis;
 import co.uniandes.sisinfo.entities.TareaSencilla;
 import co.uniandes.sisinfo.entities.datosmaestros.Persona;
-import co.uniandes.sisinfo.serviciosfuncionales.CorreoRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.CorreoLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.CursoMaestriaFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.CursoTesisFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.InscripcionSubareaInvestigacionFacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.PeriodicidadFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.PeriodicidadFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.PeriodoTesisFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.ServiceLocator;
-import co.uniandes.sisinfo.serviciosfuncionales.SubareaInvestigacionFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.TareaSencillaFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.EstudianteFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.ProfesorFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.SubareaInvestigacionFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.TareaSencillaFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.EstudianteFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.ProfesorFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.ParserT;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
 
@@ -46,42 +46,42 @@ import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
  * @author Ivan Mauricio Melo Suarez
  */
 @Stateless
-public class InscripcionSubAreaInvestiBean implements InscripcionSubAreaInvestiBeanRemote, InscripcionSubAreaInvestiBeanLocal {
+public class InscripcionSubAreaInvestiBean implements  InscripcionSubAreaInvestiBeanLocal {
 
     // Add business logic below. (Right-click in editor and choose
     // "Insert Code > Add Business Method")
     //----CONSTANTES-------------
-    private final static String RUTA_INTERFAZ_REMOTA = "co.uniandes.sisinfo.serviciosnegocio.TesisBeanRemote";
+    private final static String RUTA_INTERFAZ_REMOTA = "co.uniandes.sisinfo.serviciosnegocio.TesisBeanLocal";
     private final static String NOMBRE_METODO_TIMER = "manejoTimmersTesisMaestria";
     //--------------------------
     @EJB
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
     @EJB
-    private ProfesorFacadeRemote profesorFacade;
+    private ProfesorFacadeLocal profesorFacade;
     @EJB
-    private EstudianteFacadeRemote estudianteFacadeRemote;
+    private EstudianteFacadeLocal estudianteFacadeLocal;
     @EJB
-    private SubareaInvestigacionFacadeRemote subareaInvestigacionFacadeRemote;
+    private SubareaInvestigacionFacadeLocal subareaInvestigacionFacadeLocal;
     @EJB
     private PeriodoTesisFacadeLocal periodoFacadelocal;
     @EJB
     private InscripcionSubareaInvestigacionFacadeLocal inscrippcionsubFacadeLocal;
     @EJB
-    private CorreoRemote correoBean;
+    private CorreoLocal correoBean;
     /*   @EJB
-    private AlertaRemote alertaBean;
+    private AlertaLocal alertaBean;
     @EJB
-    private TareaRemote tareaBean;
+    private TareaLocal tareaBean;
     @EJB
-    private TareaFacadeRemote tareaFacade;*/
+    private TareaFacadeLocal tareaFacade;*/
     @EJB
-    private PeriodicidadFacadeRemote periodicidadFacade;
+    private PeriodicidadFacadeLocal periodicidadFacade;
     @EJB
     private CursoMaestriaFacadeLocal cursoMaestriaFacade;
     @EJB
     private CursoTesisFacadeLocal cursoTesisFacade;
     @EJB
-    private AccionVencidaBeanRemote accionVencidaBean;
+    private AccionVencidaBeanLocal accionVencidaBean;
     //---OTROS--------------------
     private ParserT parser;
     private ServiceLocator serviceLocator;
@@ -90,38 +90,38 @@ public class InscripcionSubAreaInvestiBean implements InscripcionSubAreaInvestiB
      * -------------nuevo manejo de historicos
      **/
     @EJB
-    private TareaSencillaRemote tareaSencillaBean;
+    private TareaSencillaLocal tareaSencillaBean;
     @EJB
-    private TareaMultipleRemote tareaBean;
+    private TareaMultipleLocal tareaBean;
     @EJB
-    private TareaSencillaFacadeRemote tareaSencillaFacade;
+    private TareaSencillaFacadeLocal tareaSencillaFacade;
 
     public InscripcionSubAreaInvestiBean() {
 
-        try {
-            conversor = new ConversorTesisMaestria();
-            parser = new ParserT();
-            serviceLocator = new ServiceLocator();
-            constanteBean = (ConstanteRemote) serviceLocator.getRemoteEJB(ConstanteRemote.class);
-            profesorFacade = (ProfesorFacadeRemote) serviceLocator.getRemoteEJB(ProfesorFacadeRemote.class);
-            estudianteFacadeRemote = (EstudianteFacadeRemote) serviceLocator.getRemoteEJB(EstudianteFacadeRemote.class);
-            subareaInvestigacionFacadeRemote = (SubareaInvestigacionFacadeRemote) serviceLocator.getRemoteEJB(SubareaInvestigacionFacadeRemote.class);
-            correoBean = (CorreoRemote) serviceLocator.getRemoteEJB(CorreoRemote.class);
-            /*   alertaBean = (AlertaRemote) serviceLocator.getRemoteEJB(AlertaRemote.class);
-            tareaFacade = (TareaFacadeRemote) serviceLocator.getRemoteEJB(TareaFacadeRemote.class);
-            tareaBean = (TareaRemote) serviceLocator.getRemoteEJB(TareaRemote.class);*/
-            periodicidadFacade = (PeriodicidadFacadeRemote) serviceLocator.getRemoteEJB(PeriodicidadFacadeRemote.class);
-            accionVencidaBean = (AccionVencidaBeanRemote) serviceLocator.getRemoteEJB(AccionVencidaBeanRemote.class);
-            /*
-             * nuevo manejo de tareas
-             */
-            tareaSencillaBean = (TareaSencillaRemote) serviceLocator.getRemoteEJB(TareaSencillaRemote.class);
-            tareaSencillaFacade = (TareaSencillaFacadeRemote) serviceLocator.getRemoteEJB(TareaSencillaFacadeRemote.class);
-            tareaBean = (TareaMultipleRemote) serviceLocator.getRemoteEJB(TareaMultipleRemote.class);
-
-        } catch (Exception e) {
-            Logger.getLogger(InscripcionSubAreaInvestiBean.class.getName()).log(Level.SEVERE, null, e);
-        }
+//        try {
+//            conversor = new ConversorTesisMaestria();
+//            parser = new ParserT();
+//            serviceLocator = new ServiceLocator();
+//            constanteBean = (ConstanteLocal) serviceLocator.getLocalEJB(ConstanteLocal.class);
+//            profesorFacade = (ProfesorFacadeLocal) serviceLocator.getLocalEJB(ProfesorFacadeLocal.class);
+//            estudianteFacadeLocal = (EstudianteFacadeLocal) serviceLocator.getLocalEJB(EstudianteFacadeLocal.class);
+//            subareaInvestigacionFacadeLocal = (SubareaInvestigacionFacadeLocal) serviceLocator.getLocalEJB(SubareaInvestigacionFacadeLocal.class);
+//            correoBean = (CorreoLocal) serviceLocator.getLocalEJB(CorreoLocal.class);
+//            /*   alertaBean = (AlertaLocal) serviceLocator.getLocalEJB(AlertaLocal.class);
+//            tareaFacade = (TareaFacadeLocal) serviceLocator.getLocalEJB(TareaFacadeLocal.class);
+//            tareaBean = (TareaLocal) serviceLocator.getLocalEJB(TareaLocal.class);*/
+//            periodicidadFacade = (PeriodicidadFacadeLocal) serviceLocator.getLocalEJB(PeriodicidadFacadeLocal.class);
+//            accionVencidaBean = (AccionVencidaBeanLocal) serviceLocator.getLocalEJB(AccionVencidaBeanLocal.class);
+//            /*
+//             * nuevo manejo de tareas
+//             */
+//            tareaSencillaBean = (TareaSencillaLocal) serviceLocator.getLocalEJB(TareaSencillaLocal.class);
+//            tareaSencillaFacade = (TareaSencillaFacadeLocal) serviceLocator.getLocalEJB(TareaSencillaFacadeLocal.class);
+//            tareaBean = (TareaMultipleLocal) serviceLocator.getLocalEJB(TareaMultipleLocal.class);
+//
+//        } catch (Exception e) {
+//            Logger.getLogger(InscripcionSubAreaInvestiBean.class.getName()).log(Level.SEVERE, null, e);
+//        }
     }
 
     //=====================================================================================================
@@ -787,7 +787,7 @@ public class InscripcionSubAreaInvestiBean implements InscripcionSubAreaInvestiB
         }
     }
 
-    public ConstanteRemote getConstanteBean() {
+    public ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 

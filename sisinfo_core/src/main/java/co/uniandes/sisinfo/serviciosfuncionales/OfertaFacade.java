@@ -14,7 +14,7 @@ import javax.persistence.Query;
  * @author Marcela Morales
  */
 @Stateless
-public class OfertaFacade implements OfertaFacadeLocal, OfertaFacadeRemote {
+public class OfertaFacade implements OfertaFacadeLocal {
 
 	@PersistenceContext(unitName="SoporteSisinfoPU")
     private EntityManager em;

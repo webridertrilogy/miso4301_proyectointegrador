@@ -25,7 +25,7 @@ import org.hibernate.Hibernate;
  * @author da-naran
  */
 @Stateless
-public class SeccionFacade implements SeccionFacadeLocal, SeccionFacadeRemote {
+public class SeccionFacade implements SeccionFacadeLocal {
 
     @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;

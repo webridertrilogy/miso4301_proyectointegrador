@@ -50,18 +50,18 @@ import co.uniandes.sisinfo.entities.datosmaestros.Persona;
 import co.uniandes.sisinfo.entities.datosmaestros.soporte.Pais;
 import co.uniandes.sisinfo.entities.datosmaestros.soporte.TipoDocumento;
 import co.uniandes.sisinfo.serviciosfuncionales.EstudiantePosgradoFacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.EstudiantePosgradoFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.EstudiantePosgradoFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.HojaVidaFacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.HojaVidaFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.HojaVidaFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.ServiceLocator;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.EstudianteFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.InformacionAcademicaFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.NivelFormacionFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.PersonaFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.EstudianteFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.InformacionAcademicaFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.NivelFormacionFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.PersonaFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.ParserT;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
-import co.uniandes.sisinfo.serviciosfuncionales.soporte.PaisFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.soporte.TipoDocumentoFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.soporte.PaisFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.soporte.TipoDocumentoFacadeLocal;
 
 /**
  * Servicios de administración de estudiantes de postgrado
@@ -69,37 +69,37 @@ import co.uniandes.sisinfo.serviciosfuncionales.soporte.TipoDocumentoFacadeRemot
  */
 @Stateless
 @EJB(name = "EstudiantePostgradoBean", beanInterface = co.uniandes.sisinfo.serviciosnegocio.EstudiantePostgradoLocal.class)
-public class EstudiantePostgradoBean implements EstudiantePostgradoRemote, EstudiantePostgradoLocal {
+public class EstudiantePostgradoBean implements  EstudiantePostgradoLocal {
 
     //---------------------------------------
     // Atributos
     //---------------------------------------
     //Remotos
     @EJB
-    private InformacionAcademicaFacadeRemote informacionAcademicaFacade;
+    private InformacionAcademicaFacadeLocal informacionAcademicaFacade;
     @EJB
-    private PaisFacadeRemote paisFacade;
+    private PaisFacadeLocal paisFacade;
     @EJB
-    private PersonaFacadeRemote personaFacade;
+    private PersonaFacadeLocal personaFacade;
     @EJB
-    private EstudianteFacadeRemote estudianteFacade;
+    private EstudianteFacadeLocal estudianteFacade;
     @EJB
-    private TipoDocumentoFacadeRemote tipoDocumentofacade;
+    private TipoDocumentoFacadeLocal tipoDocumentofacade;
     @EJB
-    private NivelFormacionFacadeRemote nivelFormacionFacade;
+    private NivelFormacionFacadeLocal nivelFormacionFacade;
     //Locales
     @EJB
     private HojaVidaFacadeLocal hojaVidaFacade;
     @EJB
     private EstudiantePosgradoFacadeLocal estudiantePosgradoFacade;
     @EJB
-    private HojaVidaFacadeRemote hojaVidaFacadeRemote;
+    private HojaVidaFacadeLocal hojaVidaFacadeLocal;
     @EJB
-    private EstudiantePosgradoFacadeRemote estudiantePosgradoFacadeRemote;
+    private EstudiantePosgradoFacadeLocal estudiantePosgradoFacadeLocal;
     //Útiles
     private ParserT parser;
     @EJB
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
     private ServiceLocator serviceLocator;
     private ConversorBolsaEmpleo conversor;
     private ConversorEstudiante conversorEstudiante;
@@ -111,23 +111,23 @@ public class EstudiantePostgradoBean implements EstudiantePostgradoRemote, Estud
      * Constructor de EstudiantePostgradoBean
      */
     public EstudiantePostgradoBean() {
-        try {
-            serviceLocator = new ServiceLocator();
-            constanteBean = (ConstanteRemote) serviceLocator.getRemoteEJB(ConstanteRemote.class);
-            paisFacade = (PaisFacadeRemote) serviceLocator.getRemoteEJB(PaisFacadeRemote.class);
-            tipoDocumentofacade = (TipoDocumentoFacadeRemote) serviceLocator.getRemoteEJB(TipoDocumentoFacadeRemote.class);
-            personaFacade = (PersonaFacadeRemote) serviceLocator.getRemoteEJB(PersonaFacadeRemote.class);
-            estudianteFacade = (EstudianteFacadeRemote) serviceLocator.getRemoteEJB(EstudianteFacadeRemote.class);
-            informacionAcademicaFacade = (InformacionAcademicaFacadeRemote) serviceLocator.getRemoteEJB(InformacionAcademicaFacadeRemote.class);
-            nivelFormacionFacade = (NivelFormacionFacadeRemote) serviceLocator.getRemoteEJB(NivelFormacionFacadeRemote.class);
-            hojaVidaFacadeRemote = (HojaVidaFacadeRemote) serviceLocator.getRemoteEJB(HojaVidaFacadeRemote.class);
-            estudiantePosgradoFacadeRemote = (EstudiantePosgradoFacadeRemote) serviceLocator.getRemoteEJB(EstudiantePosgradoFacadeRemote.class);
-            conversorEstudiante = new ConversorEstudiante(
-                    getConstanteBean(), estudianteFacade, personaFacade, paisFacade,
-                    tipoDocumentofacade, informacionAcademicaFacade, hojaVidaFacadeRemote, estudiantePosgradoFacadeRemote);
-        } catch (NamingException ex) {
-            Logger.getLogger(EstudiantePostgradoBean.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        try {
+//            serviceLocator = new ServiceLocator();
+//            constanteBean = (ConstanteLocal) serviceLocator.getLocalEJB(ConstanteLocal.class);
+//            paisFacade = (PaisFacadeLocal) serviceLocator.getLocalEJB(PaisFacadeLocal.class);
+//            tipoDocumentofacade = (TipoDocumentoFacadeLocal) serviceLocator.getLocalEJB(TipoDocumentoFacadeLocal.class);
+//            personaFacade = (PersonaFacadeLocal) serviceLocator.getLocalEJB(PersonaFacadeLocal.class);
+//            estudianteFacade = (EstudianteFacadeLocal) serviceLocator.getLocalEJB(EstudianteFacadeLocal.class);
+//            informacionAcademicaFacade = (InformacionAcademicaFacadeLocal) serviceLocator.getLocalEJB(InformacionAcademicaFacadeLocal.class);
+//            nivelFormacionFacade = (NivelFormacionFacadeLocal) serviceLocator.getLocalEJB(NivelFormacionFacadeLocal.class);
+//            hojaVidaFacadeLocal = (HojaVidaFacadeLocal) serviceLocator.getLocalEJB(HojaVidaFacadeLocal.class);
+//            estudiantePosgradoFacadeLocal = (EstudiantePosgradoFacadeLocal) serviceLocator.getLocalEJB(EstudiantePosgradoFacadeLocal.class);
+//            conversorEstudiante = new ConversorEstudiante(
+//                    getConstanteBean(), estudianteFacade, personaFacade, paisFacade,
+//                    tipoDocumentofacade, informacionAcademicaFacade, hojaVidaFacadeLocal, estudiantePosgradoFacadeLocal);
+//        } catch (NamingException ex) {
+//            Logger.getLogger(EstudiantePostgradoBean.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }
 
     //---------------------------------------
@@ -585,7 +585,7 @@ public class EstudiantePostgradoBean implements EstudiantePostgradoRemote, Estud
         return parser;
     }
 
-    private ConstanteRemote getConstanteBean() {
+    private ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 
@@ -593,7 +593,7 @@ public class EstudiantePostgradoBean implements EstudiantePostgradoRemote, Estud
         return hojaVidaFacade;
     }
 
-    private InformacionAcademicaFacadeRemote getInformacionAcademicaFacade() {
+    private InformacionAcademicaFacadeLocal getInformacionAcademicaFacade() {
         return informacionAcademicaFacade;
     }
 
@@ -601,19 +601,19 @@ public class EstudiantePostgradoBean implements EstudiantePostgradoRemote, Estud
         return estudiantePosgradoFacade;
     }
 
-    private PaisFacadeRemote getPaisFacade() {
+    private PaisFacadeLocal getPaisFacade() {
         return paisFacade;
     }
 
-    private TipoDocumentoFacadeRemote getTipoDocumentofacade() {
+    private TipoDocumentoFacadeLocal getTipoDocumentofacade() {
         return tipoDocumentofacade;
     }
 
-    private EstudianteFacadeRemote getEstudianteFacade() {
+    private EstudianteFacadeLocal getEstudianteFacade() {
         return estudianteFacade;
     }
 
-    private PersonaFacadeRemote getPersonaFacade() {
+    private PersonaFacadeLocal getPersonaFacade() {
         return personaFacade;
     }
 
@@ -621,7 +621,7 @@ public class EstudiantePostgradoBean implements EstudiantePostgradoRemote, Estud
         return conversorEstudiante;
     }
 
-    private NivelFormacionFacadeRemote getNivelFormacionFacade() {
+    private NivelFormacionFacadeLocal getNivelFormacionFacade() {
         return nivelFormacionFacade;
     }
 

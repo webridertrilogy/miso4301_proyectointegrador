@@ -17,7 +17,7 @@ import javax.persistence.Query;
  * @author Asistente
  */
 @Stateless
-public class EventoFacade implements EventoFacadeLocal, EventoFacadeRemote {
+public class EventoFacade implements EventoFacadeLocal {
     @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 

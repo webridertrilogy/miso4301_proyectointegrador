@@ -34,9 +34,9 @@ import co.uniandes.sisinfo.comun.constantes.Constantes;
 import co.uniandes.sisinfo.comun.constantes.Notificaciones;
 import co.uniandes.sisinfo.entities.CorreoAuditoria;
 import co.uniandes.sisinfo.entities.FiltroCorreo;
-import co.uniandes.sisinfo.serviciosnegocio.ConstanteRemote;
+import co.uniandes.sisinfo.serviciosnegocio.ConstanteLocal;
 import co.uniandes.sisinfo.serviciosnegocio.CorreoSinEnviarBeanLocal;
-import co.uniandes.sisinfo.serviciosnegocio.CredencialRemote;
+import co.uniandes.sisinfo.serviciosnegocio.CredencialLocal;
 import co.uniandes.sisinfo.serviciosnegocio.FiltroCorreoBeanLocal;
 import java.io.ByteArrayInputStream;
 import java.io.File;
@@ -78,15 +78,15 @@ import javax.naming.NamingException;
  */
 @Stateless
 @EJB(name = "CorreoBean", beanInterface = co.uniandes.sisinfo.serviciosfuncionales.CorreoLocal.class)
-public class CorreoBean implements CorreoRemote, CorreoLocal {
+public class CorreoBean implements CorreoLocal {
 
     HashMap<String, String> escape = new HashMap<String, String>();
     @EJB
-    private CredencialRemote credencialBean;
+    private CredencialLocal credencialBean;
     @EJB
-    private CorreoAuditoriaFacadeLocal auditoriaRemote;
+    private CorreoAuditoriaFacadeLocal auditoriaLocal;
     @EJB
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
     @EJB
     private FiltroCorreoFacadeLocal filtroCorreoFacade;
 //    @EJB
@@ -108,14 +108,14 @@ public class CorreoBean implements CorreoRemote, CorreoLocal {
     private ServiceLocator serviceLocator;
 
     public CorreoBean() {
-        try {
-            serviceLocator = new ServiceLocator();
-            constanteBean = (ConstanteRemote) serviceLocator.getRemoteEJB(ConstanteRemote.class);
-            credencialBean = (CredencialRemote) serviceLocator.getRemoteEJB(CredencialRemote.class);
-            llenarHash();
-        } catch (NamingException ex) {
-            Logger.getLogger(CorreoBean.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        try {
+//            serviceLocator = new ServiceLocator();
+//            constanteBean = (ConstanteLocal) serviceLocator.getLocalEJB(ConstanteLocal.class);
+//            credencialBean = (CredencialLocal) serviceLocator.getLocalEJB(CredencialLocal.class);
+//            llenarHash();
+//        } catch (NamingException ex) {
+//            Logger.getLogger(CorreoBean.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }
 
     @Override
@@ -134,7 +134,7 @@ public class CorreoBean implements CorreoRemote, CorreoLocal {
 //        }      
     }
 
-    @Override
+    
     public void enviarMail(String para, String asunto, String cc, String cco, String archivo, String mensaje,String imagen) {
 //        FiltroCorreo filtro = filtroCorreoBean.evaluarFiltros(para, asunto, cc, cco, archivo, mensaje);
 //        if(filtro == null){
@@ -169,7 +169,7 @@ public class CorreoBean implements CorreoRemote, CorreoLocal {
         ca.setNombreAdjunto(archivo);
         ca.setEnviado(false);
         try{
-            auditoriaRemote.create(ca);
+            auditoriaLocal.create(ca);
         }
         catch(Exception e){
             Logger.getLogger(CorreoAuditoriaFacade.class.getName()).log(Level.SEVERE, null, e);
@@ -358,7 +358,7 @@ public class CorreoBean implements CorreoRemote, CorreoLocal {
             if (ca.getEnviado()) {
 
                try{
-                    auditoriaRemote.create(ca);
+                    auditoriaLocal.create(ca);
                 }
                 catch(Exception e){
                     Logger.getLogger(CorreoAuditoriaFacade.class.getName()).log(Level.SEVERE, null, e);
@@ -486,7 +486,7 @@ public class CorreoBean implements CorreoRemote, CorreoLocal {
         ca.setMensaje(mensajeAuditoria);
         ca.setNombreAdjunto("");
         try{
-            auditoriaRemote.create(ca);
+            auditoriaLocal.create(ca);
         }
         catch(Exception e){
             Logger.getLogger(CorreoAuditoriaFacade.class.getName()).log(Level.SEVERE, null, e);
@@ -743,7 +743,7 @@ public class CorreoBean implements CorreoRemote, CorreoLocal {
         msg.setDataHandler(new DataHandler(new HTMLDataSource(html)));
     }
 
-    public ConstanteRemote getConstanteBean() {
+    public ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 

@@ -11,7 +11,7 @@ import javax.persistence.PersistenceContext;
  * @author Marcela Morales
  */
 @Stateless
-public class HojaVidaFacade implements HojaVidaFacadeLocal, HojaVidaFacadeRemote {
+public class HojaVidaFacade implements HojaVidaFacadeLocal {
 	@PersistenceContext(unitName="SoporteSisinfoPU")
     private EntityManager em;
 

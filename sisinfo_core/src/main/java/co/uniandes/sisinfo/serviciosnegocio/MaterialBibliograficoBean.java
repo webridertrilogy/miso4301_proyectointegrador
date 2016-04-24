@@ -32,15 +32,15 @@ import co.uniandes.sisinfo.entities.TareaSencilla;
 import co.uniandes.sisinfo.entities.Volumen;
 import co.uniandes.sisinfo.entities.datosmaestros.Parametro;
 import co.uniandes.sisinfo.entities.datosmaestros.Profesor;
-import co.uniandes.sisinfo.serviciosfuncionales.AlertaMultipleFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.CorreoRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.AlertaMultipleFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.CorreoLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.MaterialBibliograficoFacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.PeriodicidadFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.PeriodicidadFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.ServiceLocator;
 import co.uniandes.sisinfo.serviciosfuncionales.SolicitudMaterialBibliograficoFacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.TareaMultipleFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.TareaSencillaFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.ProfesorFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.TareaMultipleFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.TareaSencillaFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.ProfesorFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.ParserT;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
 
@@ -49,57 +49,57 @@ import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
  * @author Marcela
  */
 @Stateless
-public class MaterialBibliograficoBean implements MaterialBibliograficoLocal, MaterialBibliograficoRemote {
+public class MaterialBibliograficoBean implements MaterialBibliograficoLocal {
 
     private ParserT parser;
     @EJB
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
     @EJB
     private SolicitudMaterialBibliograficoFacadeLocal solicitudFacade;
     @EJB
     private MaterialBibliograficoFacadeLocal materialBibliograficoFacadeLocal;
     private ServiceLocator serviceLocator;
     @EJB
-    private ProfesorFacadeRemote profesorFacade;
+    private ProfesorFacadeLocal profesorFacade;
     @EJB
-    private TareaMultipleRemote tareaBean;
+    private TareaMultipleLocal tareaBean;
     @EJB
-    private TareaSencillaRemote tareaSencillaBean;
+    private TareaSencillaLocal tareaSencillaBean;
     @EJB
-    private TareaSencillaFacadeRemote tareaSencillaFacade;
+    private TareaSencillaFacadeLocal tareaSencillaFacade;
     @EJB
-    private AlertaMultipleFacadeRemote alertaFacade;
+    private AlertaMultipleFacadeLocal alertaFacade;
     @EJB
-    private TareaMultipleFacadeRemote tareaFacade;
+    private TareaMultipleFacadeLocal tareaFacade;
     @EJB
-    private AlertaMultipleRemote alertaBean;
+    private AlertaMultipleLocal alertaBean;
     @EJB
-    private PeriodicidadFacadeRemote periodicidadFacade;
+    private PeriodicidadFacadeLocal periodicidadFacade;
     @EJB
-    private CorreoRemote correoBean;
+    private CorreoLocal correoBean;
     @EJB
-    private TimerGenericoBeanRemote timerGenerico;
+    private TimerGenericoBeanLocal timerGenerico;
 
     /** Contenedor para renovar tareas. */
     private List<String> listSolicitud;
 
     public MaterialBibliograficoBean() {
-        try {
-            serviceLocator = new ServiceLocator();
-            tareaFacade = (TareaMultipleFacadeRemote) serviceLocator.getRemoteEJB(TareaMultipleFacadeRemote.class);
-            tareaBean = (TareaMultipleRemote) serviceLocator.getRemoteEJB(TareaMultipleRemote.class);
-            tareaSencillaBean = (TareaSencillaRemote) serviceLocator.getRemoteEJB(TareaSencillaRemote.class);
-            tareaSencillaFacade = (TareaSencillaFacadeRemote) serviceLocator.getRemoteEJB(TareaSencillaFacadeRemote.class);
-            constanteBean = (ConstanteRemote) serviceLocator.getRemoteEJB(ConstanteRemote.class);
-            alertaBean = (AlertaMultipleRemote) serviceLocator.getRemoteEJB(AlertaMultipleRemote.class);
-            alertaFacade = (AlertaMultipleFacadeRemote) serviceLocator.getRemoteEJB(AlertaMultipleFacadeRemote.class);
-            profesorFacade = (ProfesorFacadeRemote) serviceLocator.getRemoteEJB(ProfesorFacadeRemote.class);
-            correoBean = (CorreoRemote) serviceLocator.getRemoteEJB(CorreoRemote.class);
-            periodicidadFacade = (PeriodicidadFacadeRemote) serviceLocator.getRemoteEJB(PeriodicidadFacadeRemote.class);
-            timerGenerico = (TimerGenericoBeanRemote) serviceLocator.getRemoteEJB(TimerGenericoBeanRemote.class);
-        } catch (NamingException ex) {
-            Logger.getLogger(MaterialBibliograficoBean.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        try {
+//            serviceLocator = new ServiceLocator();
+//            tareaFacade = (TareaMultipleFacadeLocal) serviceLocator.getLocalEJB(TareaMultipleFacadeLocal.class);
+//            tareaBean = (TareaMultipleLocal) serviceLocator.getLocalEJB(TareaMultipleLocal.class);
+//            tareaSencillaBean = (TareaSencillaLocal) serviceLocator.getLocalEJB(TareaSencillaLocal.class);
+//            tareaSencillaFacade = (TareaSencillaFacadeLocal) serviceLocator.getLocalEJB(TareaSencillaFacadeLocal.class);
+//            constanteBean = (ConstanteLocal) serviceLocator.getLocalEJB(ConstanteLocal.class);
+//            alertaBean = (AlertaMultipleLocal) serviceLocator.getLocalEJB(AlertaMultipleLocal.class);
+//            alertaFacade = (AlertaMultipleFacadeLocal) serviceLocator.getLocalEJB(AlertaMultipleFacadeLocal.class);
+//            profesorFacade = (ProfesorFacadeLocal) serviceLocator.getLocalEJB(ProfesorFacadeLocal.class);
+//            correoBean = (CorreoLocal) serviceLocator.getLocalEJB(CorreoLocal.class);
+//            periodicidadFacade = (PeriodicidadFacadeLocal) serviceLocator.getLocalEJB(PeriodicidadFacadeLocal.class);
+//            timerGenerico = (TimerGenericoBeanLocal) serviceLocator.getLocalEJB(TimerGenericoBeanLocal.class);
+//        } catch (NamingException ex) {
+//            Logger.getLogger(MaterialBibliograficoBean.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }
 
     @Override
@@ -696,7 +696,7 @@ public class MaterialBibliograficoBean implements MaterialBibliograficoLocal, Ma
         return parser;
     }
 
-    private ConstanteRemote getConstanteBean() {
+    private ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 
@@ -712,15 +712,15 @@ public class MaterialBibliograficoBean implements MaterialBibliograficoLocal, Ma
         return solicitudFacade;
     }
 
-    private ProfesorFacadeRemote getProfesorFacade() {
+    private ProfesorFacadeLocal getProfesorFacade() {
         return profesorFacade;
     }
 
-    private TareaMultipleRemote getTareaBean() {
+    private TareaMultipleLocal getTareaBean() {
         return tareaBean;
     }
 
-    private TareaMultipleFacadeRemote getTareaFacade() {
+    private TareaMultipleFacadeLocal getTareaFacade() {
         return tareaFacade;
     }
 
@@ -825,7 +825,7 @@ public class MaterialBibliograficoBean implements MaterialBibliograficoLocal, Ma
         return null;
     }
 
-    @Override
+    
     public String consultarSolicitudPorIdSolicitud(String xml) {
         try {
             getParser().leerXML(xml);
@@ -897,9 +897,9 @@ public class MaterialBibliograficoBean implements MaterialBibliograficoLocal, Ma
 
         Timestamp tsFechaTimer = new Timestamp(calSigMes.getTimeInMillis());
 
-        if (!timerGenerico.existeTimerCompletamenteIgual("co.uniandes.sisinfo.serviciosnegocio.MaterialBibliograficoRemote", "enviarNotificacionAdquisicionesUltimoMes", tsFechaTimer, ""))
+        if (!timerGenerico.existeTimerCompletamenteIgual("co.uniandes.sisinfo.serviciosnegocio.MaterialBibliograficoLocal", "enviarNotificacionAdquisicionesUltimoMes", tsFechaTimer, ""))
         {
-            timerGenerico.crearTimer2("co.uniandes.sisinfo.serviciosnegocio.MaterialBibliograficoRemote", "enviarNotificacionAdquisicionesUltimoMes", tsFechaTimer, "",
+            timerGenerico.crearTimer2("co.uniandes.sisinfo.serviciosnegocio.MaterialBibliograficoLocal", "enviarNotificacionAdquisicionesUltimoMes", tsFechaTimer, "",
                         "MaterialBibliografico", this.getClass().getName(), "enviarNotificacionAdquisicionesUltimoMes", "Este timer se crea cuando se envia notificación de adquisiciones del ultimo mes, una vez ejecutado se programa nuevamente para el proxima mes");
         }
 

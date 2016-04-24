@@ -35,16 +35,16 @@ import co.uniandes.sisinfo.entities.datosmaestros.InformacionAcademica;
 import co.uniandes.sisinfo.entities.datosmaestros.Persona;
 import co.uniandes.sisinfo.entities.datosmaestros.Profesor;
 import co.uniandes.sisinfo.entities.datosmaestros.Seccion;
-import co.uniandes.sisinfo.serviciosfuncionales.CorreoRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.CorreoLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.MonitoriaFacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.PeriodicidadFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.PeriodicidadFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.ServiceLocator;
 import co.uniandes.sisinfo.serviciosfuncionales.SolicitudFacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.CursoFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.EstudianteFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.InformacionAcademicaFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.ProfesorFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.SeccionFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.CursoFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.EstudianteFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.InformacionAcademicaFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.ProfesorFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.SeccionFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Atributo;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.ParserT;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
@@ -54,7 +54,7 @@ import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
  */
 @Stateless
 @EJB(name = "PreseleccionBean", beanInterface = co.uniandes.sisinfo.serviciosnegocio.PreseleccionLocal.class)
-public class PreseleccionBean implements PreseleccionRemote, PreseleccionLocal {
+public class PreseleccionBean implements  PreseleccionLocal {
 
     private enum EstadoPreseleccion {
 
@@ -81,7 +81,7 @@ public class PreseleccionBean implements PreseleccionRemote, PreseleccionLocal {
      * SeccionFacade
      */
     @EJB
-    private SeccionFacadeRemote seccionFacade;
+    private SeccionFacadeLocal seccionFacade;
     /**
      * ConsultaBean
      */
@@ -96,34 +96,34 @@ public class PreseleccionBean implements PreseleccionRemote, PreseleccionLocal {
      * ProfesorFacade
      */
     @EJB
-    private ProfesorFacadeRemote profesorFacade;
+    private ProfesorFacadeLocal profesorFacade;
     /**
      * CursoFacade
      */
     @EJB
-    private CursoFacadeRemote cursoFacade;
+    private CursoFacadeLocal cursoFacade;
     /**
      *  ConstanteBean
      */
     @EJB
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
     /**
      * CorreoBean
      */
     @EJB
-    private CorreoRemote correoBean;
+    private CorreoLocal correoBean;
     @EJB
-    private EstudianteFacadeRemote estudianteFacade;
+    private EstudianteFacadeLocal estudianteFacade;
     @EJB
     private RangoFechasBeanLocal rangoFechasBean;
     @EJB
-    private PeriodicidadFacadeRemote periodicidadFacade;
+    private PeriodicidadFacadeLocal periodicidadFacade;
     @EJB
-    private TimerGenericoBeanRemote timerGenericoBean;
+    private TimerGenericoBeanLocal timerGenericoBean;
     @EJB
     private SolicitudLocal solicitudBean;
     @EJB
-    private InformacionAcademicaFacadeRemote informacionAcademicaFacade;
+    private InformacionAcademicaFacadeLocal informacionAcademicaFacade;
     private ServiceLocator serviceLocator;
 
     //---------------------------------------
@@ -133,20 +133,20 @@ public class PreseleccionBean implements PreseleccionRemote, PreseleccionLocal {
      * Constructor de PreseleccionBean
      */
     public PreseleccionBean() {
-        try {
-            serviceLocator = new ServiceLocator();
-            correoBean = (CorreoRemote) serviceLocator.getRemoteEJB(CorreoRemote.class);
-            constanteBean = (ConstanteRemote) serviceLocator.getRemoteEJB(ConstanteRemote.class);
-            profesorFacade = (ProfesorFacadeRemote) serviceLocator.getRemoteEJB(ProfesorFacadeRemote.class);
-            seccionFacade = (SeccionFacadeRemote) serviceLocator.getRemoteEJB(SeccionFacadeRemote.class);
-            cursoFacade = (CursoFacadeRemote) serviceLocator.getRemoteEJB(CursoFacadeRemote.class);
-            estudianteFacade = (EstudianteFacadeRemote) serviceLocator.getRemoteEJB(EstudianteFacadeRemote.class);
-            periodicidadFacade = (PeriodicidadFacadeRemote) serviceLocator.getRemoteEJB(PeriodicidadFacadeRemote.class);
-            timerGenericoBean = (TimerGenericoBeanRemote) serviceLocator.getRemoteEJB(TimerGenericoBeanRemote.class);
-            informacionAcademicaFacade = (InformacionAcademicaFacadeRemote) serviceLocator.getRemoteEJB(InformacionAcademicaFacadeRemote.class);
-        } catch (NamingException ex) {
-            Logger.getLogger(PreseleccionBean.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        try {
+//            serviceLocator = new ServiceLocator();
+//            correoBean = (CorreoLocal) serviceLocator.getLocalEJB(CorreoLocal.class);
+//            constanteBean = (ConstanteLocal) serviceLocator.getLocalEJB(ConstanteLocal.class);
+//            profesorFacade = (ProfesorFacadeLocal) serviceLocator.getLocalEJB(ProfesorFacadeLocal.class);
+//            seccionFacade = (SeccionFacadeLocal) serviceLocator.getLocalEJB(SeccionFacadeLocal.class);
+//            cursoFacade = (CursoFacadeLocal) serviceLocator.getLocalEJB(CursoFacadeLocal.class);
+//            estudianteFacade = (EstudianteFacadeLocal) serviceLocator.getLocalEJB(EstudianteFacadeLocal.class);
+//            periodicidadFacade = (PeriodicidadFacadeLocal) serviceLocator.getLocalEJB(PeriodicidadFacadeLocal.class);
+//            timerGenericoBean = (TimerGenericoBeanLocal) serviceLocator.getLocalEJB(TimerGenericoBeanLocal.class);
+//            informacionAcademicaFacade = (InformacionAcademicaFacadeLocal) serviceLocator.getLocalEJB(InformacionAcademicaFacadeLocal.class);
+//        } catch (NamingException ex) {
+//            Logger.getLogger(PreseleccionBean.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }
 
     //---------------------------------------
@@ -678,7 +678,7 @@ public class PreseleccionBean implements PreseleccionRemote, PreseleccionLocal {
      * Retorna SeccionFacade
      * @return seccionFacade SeccionFacade
      */
-    private SeccionFacadeRemote getSeccionFacade() {
+    private SeccionFacadeLocal getSeccionFacade() {
         return seccionFacade;
     }
 
@@ -694,7 +694,7 @@ public class PreseleccionBean implements PreseleccionRemote, PreseleccionLocal {
      * Retorna ConstanteBean
      * @return constanteBean ConstanteBean
      */
-    private ConstanteRemote getConstanteBean() {
+    private ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 
@@ -702,7 +702,7 @@ public class PreseleccionBean implements PreseleccionRemote, PreseleccionLocal {
      * Retorna CursoFacade
      * @return cursoFacade CursoFacade
      */
-    private CursoFacadeRemote getCursoFacade() {
+    private CursoFacadeLocal getCursoFacade() {
         return cursoFacade;
     }
 
@@ -710,7 +710,7 @@ public class PreseleccionBean implements PreseleccionRemote, PreseleccionLocal {
      * Retorna ProfesorFacade
      * @return profesorFacade ProfesorFacade
      */
-    private ProfesorFacadeRemote getProfesorFacade() {
+    private ProfesorFacadeLocal getProfesorFacade() {
         return profesorFacade;
     }
 
@@ -718,7 +718,7 @@ public class PreseleccionBean implements PreseleccionRemote, PreseleccionLocal {
      * Retorna CorreoBean
      * @return correoBean CorreoBean
      */
-    private CorreoRemote getCorreoBean() {
+    private CorreoLocal getCorreoBean() {
         return correoBean;
     }
 
@@ -764,11 +764,11 @@ public class PreseleccionBean implements PreseleccionRemote, PreseleccionLocal {
 
     }
 
-    public EstudianteFacadeRemote getEstudianteFacade() {
+    public EstudianteFacadeLocal getEstudianteFacade() {
         return estudianteFacade;
     }
 
-    public InformacionAcademicaFacadeRemote getInformacionAcademicaFacade() {
+    public InformacionAcademicaFacadeLocal getInformacionAcademicaFacade() {
         return informacionAcademicaFacade;
     }
 

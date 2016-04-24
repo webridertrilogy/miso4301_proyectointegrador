@@ -27,19 +27,19 @@ import co.uniandes.sisinfo.entities.datosmaestros.Rol;
 import co.uniandes.sisinfo.entities.datosmaestros.Seccion;
 import co.uniandes.sisinfo.entities.datosmaestros.Sesion;
 import co.uniandes.sisinfo.entities.datosmaestros.Usuario;
-import co.uniandes.sisinfo.serviciosfuncionales.ArchivoFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.CorreoRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.ArchivoFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.CorreoLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.ServiceLocator;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.CursoFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.EstudianteFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.NivelFormacionFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.PersonaFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.ProfesorFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.ProgramaFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.SeccionFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.CursoFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.EstudianteFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.NivelFormacionFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.PersonaFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.ProfesorFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.ProgramaFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.SeccionFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
-import co.uniandes.sisinfo.serviciosfuncionales.seguridad.RolFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.seguridad.UsuarioFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.seguridad.RolFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.seguridad.UsuarioFacadeLocal;
 
 /**
  * Servicios de creación de secuencias para ConflictoHorariosBean
@@ -52,59 +52,59 @@ public class ConflictoHorariosBeanHelper {
     // ATRIBUTOS
     //----------------------------------------------
     @EJB
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
     @EJB
-    private CorreoRemote correoBean;
+    private CorreoLocal correoBean;
     @EJB
     private ServiceLocator serviceLocator;
     @EJB
-    private SeccionFacadeRemote seccionFacadeRemote;
+    private SeccionFacadeLocal seccionFacadeLocal;
     @EJB
-    private ProgramaFacadeRemote programaFacadeRemote;
+    private ProgramaFacadeLocal programaFacadeLocal;
     @EJB
-    private NivelFormacionFacadeRemote nivelFormacionFacadeRemote;
+    private NivelFormacionFacadeLocal nivelFormacionFacadeLocal;
     @EJB
-    private EstudianteFacadeRemote estudianteFacadeRemote;
+    private EstudianteFacadeLocal estudianteFacadeLocal;
     @EJB
-    private ProfesorFacadeRemote profesorFacadeRemote;
+    private ProfesorFacadeLocal profesorFacadeLocal;
     @EJB
-    private CursoFacadeRemote cursoFacadeRemote;
+    private CursoFacadeLocal cursoFacadeLocal;
     @EJB
-    private PersonaFacadeRemote personaFacade;
+    private PersonaFacadeLocal personaFacade;
     @EJB
-    private RolFacadeRemote rolFacade;
+    private RolFacadeLocal rolFacade;
     @EJB
-    private UsuarioFacadeRemote usuarioFacade;
+    private UsuarioFacadeLocal usuarioFacade;
     @EJB
-    private ArchivoFacadeRemote archivoFacade;
+    private ArchivoFacadeLocal archivoFacade;
     @EJB
-    private PeticionConflictoHorario peticionConflictoHorarioRemote;
+    private PeticionConflictoHorario peticionConflictoHorarioLocal;
     private ConversorServiciosSoporteProcesos conversorHorario;
     public final static String PROGRAMA_ISIS = "INGENIERIA DE SISTEMAS";
     //----------------------------------------------
     // CONSTRUCTOR
     //----------------------------------------------
 
-    public ConflictoHorariosBeanHelper(ConstanteRemote constanteBean, CorreoRemote correoBean) {
-        try {
-            serviceLocator = new ServiceLocator();
-            this.constanteBean = constanteBean;
-            this.correoBean = correoBean;
-
-            estudianteFacadeRemote = (EstudianteFacadeRemote) serviceLocator.getRemoteEJB(EstudianteFacadeRemote.class);
-            cursoFacadeRemote = (CursoFacadeRemote) serviceLocator.getRemoteEJB(CursoFacadeRemote.class);
-            seccionFacadeRemote = (SeccionFacadeRemote) serviceLocator.getRemoteEJB(SeccionFacadeRemote.class);
-            programaFacadeRemote = (ProgramaFacadeRemote) serviceLocator.getRemoteEJB(ProgramaFacadeRemote.class);
-            nivelFormacionFacadeRemote = (NivelFormacionFacadeRemote) serviceLocator.getRemoteEJB(NivelFormacionFacadeRemote.class);
-            profesorFacadeRemote = (ProfesorFacadeRemote) serviceLocator.getRemoteEJB(ProfesorFacadeRemote.class);
-            personaFacade = (PersonaFacadeRemote) serviceLocator.getRemoteEJB(PersonaFacadeRemote.class);
-            rolFacade = (RolFacadeRemote) serviceLocator.getRemoteEJB(RolFacadeRemote.class);
-            usuarioFacade = (UsuarioFacadeRemote) serviceLocator.getRemoteEJB(UsuarioFacadeRemote.class);
-            archivoFacade = (ArchivoFacadeRemote) serviceLocator.getRemoteEJB(ArchivoFacadeRemote.class);
-            conversorHorario = new ConversorServiciosSoporteProcesos();
-        } catch (NamingException ex) {
-            Logger.getLogger(ConflictoHorariosBeanHelper.class.getName()).log(Level.SEVERE, null, ex);
-        }
+    public ConflictoHorariosBeanHelper(ConstanteLocal constanteBean, CorreoLocal correoBean) {
+//        try {
+//            serviceLocator = new ServiceLocator();
+//            this.constanteBean = constanteBean;
+//            this.correoBean = correoBean;
+//
+//            estudianteFacadeLocal = (EstudianteFacadeLocal) serviceLocator.getLocalEJB(EstudianteFacadeLocal.class);
+//            cursoFacadeLocal = (CursoFacadeLocal) serviceLocator.getLocalEJB(CursoFacadeLocal.class);
+//            seccionFacadeLocal = (SeccionFacadeLocal) serviceLocator.getLocalEJB(SeccionFacadeLocal.class);
+//            programaFacadeLocal = (ProgramaFacadeLocal) serviceLocator.getLocalEJB(ProgramaFacadeLocal.class);
+//            nivelFormacionFacadeLocal = (NivelFormacionFacadeLocal) serviceLocator.getLocalEJB(NivelFormacionFacadeLocal.class);
+//            profesorFacadeLocal = (ProfesorFacadeLocal) serviceLocator.getLocalEJB(ProfesorFacadeLocal.class);
+//            personaFacade = (PersonaFacadeLocal) serviceLocator.getLocalEJB(PersonaFacadeLocal.class);
+//            rolFacade = (RolFacadeLocal) serviceLocator.getLocalEJB(RolFacadeLocal.class);
+//            usuarioFacade = (UsuarioFacadeLocal) serviceLocator.getLocalEJB(UsuarioFacadeLocal.class);
+//            archivoFacade = (ArchivoFacadeLocal) serviceLocator.getLocalEJB(ArchivoFacadeLocal.class);
+//            conversorHorario = new ConversorServiciosSoporteProcesos();
+//        } catch (NamingException ex) {
+//            Logger.getLogger(ConflictoHorariosBeanHelper.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }
 
 
@@ -351,7 +351,7 @@ public class ConflictoHorariosBeanHelper {
         if (seccion.getCrn() != null) {
             Secuencia secCrn = new Secuencia(getConstanteBean().getConstante(Constantes.TAG_PARAM_CRN_SECCION), seccion.getCrn());
             secPrincipal.agregarSecuencia(secCrn);
-            Curso c = cursoFacadeRemote.findByCRNSeccion(seccion.getCrn());
+            Curso c = cursoFacadeLocal.findByCRNSeccion(seccion.getCrn());
             if (c != null) {
                 Secuencia secCurso = crearSecuenciaCurso(c);
                 secPrincipal.agregarSecuencia(secCurso);
@@ -406,7 +406,7 @@ public class ConflictoHorariosBeanHelper {
 
         for (int i = 0; i < tipos.length; i++) {
             Archivo arch = getArchivoFacade().findBySeccionAndTipo(seccion.getCrn(), tipos[i]);
-            Curso c = cursoFacadeRemote.findByCRNSeccion(seccion.getCrn());
+            Curso c = cursoFacadeLocal.findByCRNSeccion(seccion.getCrn());
             boolean requerido = !cursosNoRequeridos[i].contains(c.getCodigo());
             secArchivo = new Secuencia(getConstanteBean().getConstante(Constantes.TAG_PARAM_ARCHIVO), "");
             if (arch != null) {
@@ -707,7 +707,7 @@ public class ConflictoHorariosBeanHelper {
                     ? Long.parseLong(secuencia.obtenerPrimeraSecuencia(getConstanteBean().getConstante(Constantes.TAG_PARAM_ID_GENERAL)).getValor().trim())
                     : null;
             if (id != null) {
-                Curso c = cursoFacadeRemote.find(id);
+                Curso c = cursoFacadeLocal.find(id);
                 return c;
             } else {
                 String codigoCurso = secuencia.obtenerPrimeraSecuencia(getConstanteBean().getConstante(Constantes.TAG_PARAM_CODIGO_CURSO)) != null
@@ -715,14 +715,14 @@ public class ConflictoHorariosBeanHelper {
                         : null;
 
                 if (codigoCurso != null) {
-                    Curso c = cursoFacadeRemote.findByCodigo(codigoCurso);
+                    Curso c = cursoFacadeLocal.findByCodigo(codigoCurso);
                     return c;
                 } else {
                     String nombreCurso = secuencia.obtenerPrimeraSecuencia(getConstanteBean().getConstante(Constantes.TAG_PARAM_NOMBRE)) != null
                             ? secuencia.obtenerPrimeraSecuencia(getConstanteBean().getConstante(Constantes.TAG_PARAM_NOMBRE)).getValor().trim()
                             : null;
                     if (nombreCurso != null) {
-                        Curso c = cursoFacadeRemote.findByNombre(nombreCurso);
+                        Curso c = cursoFacadeLocal.findByNombre(nombreCurso);
                         return c;
                     }
                 }
@@ -745,14 +745,14 @@ public class ConflictoHorariosBeanHelper {
                 : null;
 
         if (id != null) {
-            Seccion s = seccionFacadeRemote.find(id);
+            Seccion s = seccionFacadeLocal.find(id);
             return s;
         } else {
             String nombre = secuencia.obtenerPrimeraSecuencia(getConstanteBean().getConstante(Constantes.TAG_PARAM_CRN_SECCION)) != null
                     ? secuencia.obtenerPrimeraSecuencia(getConstanteBean().getConstante(Constantes.TAG_PARAM_CRN_SECCION)).getValor().trim()
                     : null;
             if (nombre != null) {
-                Seccion s = seccionFacadeRemote.findByCRN(nombre);
+                Seccion s = seccionFacadeLocal.findByCRN(nombre);
                 return s;
             } else {
                 Secuencia secCurso = secuencia.obtenerPrimeraSecuencia(getConstanteBean().getConstante(Constantes.TAG_PARAM_CURSO));
@@ -764,7 +764,7 @@ public class ConflictoHorariosBeanHelper {
                             ? secuencia.obtenerPrimeraSecuencia(getConstanteBean().getConstante(Constantes.TAG_PARAM_NUMERO_SECCION)).getValorInt()
                             : -1;
                     if (nombreCurso != null && numeroSeccion != -1) {
-                        Curso curso = cursoFacadeRemote.findByNombre(nombreCurso);
+                        Curso curso = cursoFacadeLocal.findByNombre(nombreCurso);
                         Collection<Seccion> secciones = curso.getSecciones();
                         for (Seccion seccion : secciones) {
                             if (seccion.getNumeroSeccion() == numeroSeccion) {
@@ -784,7 +784,7 @@ public class ConflictoHorariosBeanHelper {
                     ? Long.parseLong(secuencia.obtenerPrimeraSecuencia(getConstanteBean().getConstante(Constantes.TAG_PARAM_ID_GENERAL)).getValor().trim())
                     : null;
             if (id != null) {
-                Estudiante e = estudianteFacadeRemote.find(id);
+                Estudiante e = estudianteFacadeLocal.find(id);
                 return e;
             } else {
                 String correo = secuencia.obtenerPrimeraSecuencia(getConstanteBean().getConstante(Constantes.TAG_PARAM_CORREO)) != null
@@ -792,7 +792,7 @@ public class ConflictoHorariosBeanHelper {
                         : null;
 
                 if (correo != null) {
-                    Estudiante e = estudianteFacadeRemote.findByCorreo(correo);
+                    Estudiante e = estudianteFacadeLocal.findByCorreo(correo);
                     return e;
                 }
                 return null;
@@ -810,14 +810,14 @@ public class ConflictoHorariosBeanHelper {
                 : null;
 
         if (id != null) {
-            Programa p = programaFacadeRemote.find(id);
+            Programa p = programaFacadeLocal.find(id);
             return p;
         } else {
             String nombre = secuencia.obtenerPrimeraSecuencia(getConstanteBean().getConstante(Constantes.TAG_PARAM_NOMBRE)) != null
                     ? secuencia.obtenerPrimeraSecuencia(getConstanteBean().getConstante(Constantes.TAG_PARAM_NOMBRE)).getValor().trim()
                     : null;
             if (nombre != null) {
-                Programa p = programaFacadeRemote.findByNombre(nombre);
+                Programa p = programaFacadeLocal.findByNombre(nombre);
                 return p;
             }
             return null;
@@ -830,14 +830,14 @@ public class ConflictoHorariosBeanHelper {
                 : null;
 
         if (id != null) {
-            NivelFormacion n = nivelFormacionFacadeRemote.find(id);
+            NivelFormacion n = nivelFormacionFacadeLocal.find(id);
             return n;
         } else {
             String nombre = secuencia.obtenerPrimeraSecuencia(getConstanteBean().getConstante(Constantes.TAG_PARAM_NOMBRE)) != null
                     ? secuencia.obtenerPrimeraSecuencia(getConstanteBean().getConstante(Constantes.TAG_PARAM_NOMBRE)).getValor().trim()
                     : null;
             if (nombre != null) {
-                NivelFormacion n = nivelFormacionFacadeRemote.findByName(nombre);
+                NivelFormacion n = nivelFormacionFacadeLocal.findByName(nombre);
                 return n;
             }
             return null;
@@ -850,7 +850,7 @@ public class ConflictoHorariosBeanHelper {
                     ? Long.parseLong(secuencia.obtenerPrimeraSecuencia(getConstanteBean().getConstante(Constantes.TAG_PARAM_ID_GENERAL)).getValor().trim())
                     : null;
             if (id != null) {
-                Profesor p = profesorFacadeRemote.find(id);
+                Profesor p = profesorFacadeLocal.find(id);
                 return p;
             } else {
                 String correo = secuencia.obtenerPrimeraSecuencia(getConstanteBean().getConstante(Constantes.TAG_PARAM_CORREO)) != null
@@ -858,7 +858,7 @@ public class ConflictoHorariosBeanHelper {
                         : null;
 
                 if (correo != null) {
-                    Profesor p = profesorFacadeRemote.findByCorreo(correo);
+                    Profesor p = profesorFacadeLocal.findByCorreo(correo);
                     return p;
                 }
                 return null;
@@ -983,29 +983,29 @@ public class ConflictoHorariosBeanHelper {
     //----------------------------------------------
     // MÉTODOS PRIVADOS
     //----------------------------------------------
-    public ConstanteRemote getConstanteBean() {
+    public ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 
-    public CorreoRemote getCorreoBean() {
+    public CorreoLocal getCorreoBean() {
         return correoBean;
     }
 
     void crearPrograma(String codigo, String nombre) {
-        Programa programa = programaFacadeRemote.findByNombre(nombre);
+        Programa programa = programaFacadeLocal.findByNombre(nombre);
         if (programa == null) {
             programa = new Programa();
             programa.setId(null);
             programa.setNombre(nombre);
             programa.setFacultad(null);
             programa.setCodigo(codigo);
-            programaFacadeRemote.create(programa);
+            programaFacadeLocal.create(programa);
         }
     }
 
     void crearSeccion(int crnSeccion, String codigoCurso, int numeroSeccion, double creditos, String nombreCurso, double monitores, String esPresencial, String esObligatoria, String nombreNivel, String horaInicio, String horaFin, String salon, String dias, String horaInicio2, String horaFin2, String salon2, String dias2, String horaInicio3, String horaFin3, String salon3, String dias3, String loginProfesor1, String loginProfesor2, String loginProfesor3, String relacionados) throws Exception {
         //Creación de curso
-        Curso curso = cursoFacadeRemote.findByCodigo(codigoCurso);
+        Curso curso = cursoFacadeLocal.findByCodigo(codigoCurso);
         if (curso == null) {
             crearCurso(codigoCurso, creditos, nombreNivel, nombreCurso, esPresencial, esObligatoria, relacionados);
         }
@@ -1038,7 +1038,7 @@ public class ConflictoHorariosBeanHelper {
         //Profesores
         Collection<Profesor> profesores = new ArrayList<Profesor>();
         if (!loginProfesor1.equals("")) {
-            Profesor profesor1 = profesorFacadeRemote.findByCorreo(loginProfesor1 + "@uniandes.edu.co");
+            Profesor profesor1 = profesorFacadeLocal.findByCorreo(loginProfesor1 + "@uniandes.edu.co");
             if (profesor1 == null) {
                 getCorreoBean().enviarMail(getConstanteBean().getConstante(Constantes.CONFIG_MAIL_USER) + getConstanteBean().getConstante(Constantes.TAG_PARAM_SUFIJO_CORREO), "Profesor Faltante", null, null, null, "El profesor con correo " + loginProfesor1 + " no se encuentra registrado en el sistema. "
                         + "Se ha agregado como profesor de catedra, por favor actualizar la información.");
@@ -1052,7 +1052,7 @@ public class ConflictoHorariosBeanHelper {
             profesores.add(profesor1);
         }
         if (!loginProfesor2.equals("")) {
-            Profesor profesor2 = profesorFacadeRemote.findByCorreo(loginProfesor2 + "@uniandes.edu.co");
+            Profesor profesor2 = profesorFacadeLocal.findByCorreo(loginProfesor2 + "@uniandes.edu.co");
             if (profesor2 == null) {
                 getCorreoBean().enviarMail(getConstanteBean().getConstante(Constantes.CONFIG_MAIL_USER) + getConstanteBean().getConstante(Constantes.TAG_PARAM_SUFIJO_CORREO), "Profesor Faltante", null, null, null, "El profesor con correo " + loginProfesor2 + " no se encuentra registrado en el sistema. "
                         + "Se ha agregado como profesor de planta, por favor actualizar la información.");
@@ -1061,7 +1061,7 @@ public class ConflictoHorariosBeanHelper {
             profesores.add(profesor2);
         }
         if (!loginProfesor3.equals("")) {
-            Profesor profesor3 = profesorFacadeRemote.findByCorreo(loginProfesor3 + "@uniandes.edu.co");
+            Profesor profesor3 = profesorFacadeLocal.findByCorreo(loginProfesor3 + "@uniandes.edu.co");
             if (profesor3 == null) {
                 getCorreoBean().enviarMail(getConstanteBean().getConstante(Constantes.CONFIG_MAIL_USER) + getConstanteBean().getConstante(Constantes.TAG_PARAM_SUFIJO_CORREO), "Profesor Faltante", null, null, null, "El profesor con correo " + loginProfesor3 + " no se encuentra registrado en el sistema. "
                         + "Se ha agregado como profesor de planta, por favor actualizar la información.");
@@ -1070,15 +1070,15 @@ public class ConflictoHorariosBeanHelper {
             profesores.add(profesor3);
         }
         seccion.setProfesores(profesores);
-        seccionFacadeRemote.create(seccion);
+        seccionFacadeLocal.create(seccion);
 
         //Agrega la sección al curso
-        curso = cursoFacadeRemote.findByCodigo(codigoCurso);
-        seccion = seccionFacadeRemote.findByCRN(crnSeccion + "");
+        curso = cursoFacadeLocal.findByCodigo(codigoCurso);
+        seccion = seccionFacadeLocal.findByCRN(crnSeccion + "");
         Collection<Seccion> secciones = curso.getSecciones();
         secciones.add(seccion);
         curso.setSecciones(secciones);
-        cursoFacadeRemote.edit(curso);
+        cursoFacadeLocal.edit(curso);
     }
 
     void crearCurso(String codigoCurso, double creditos, String nombreNivel, String nombreCurso, String esPresencial, String esObligatoria, String relacionados) {
@@ -1086,24 +1086,24 @@ public class ConflictoHorariosBeanHelper {
         curso.setCodigo(codigoCurso);
         curso.setCreditos(creditos);
         curso.setId(null);
-        NivelFormacion nivel = nivelFormacionFacadeRemote.findByName(nombreNivel);
+        NivelFormacion nivel = nivelFormacionFacadeLocal.findByName(nombreNivel);
         curso.setNivelPrograma(nivel);
         curso.setNivel(Integer.parseInt(nivel.getId().toString()));
         curso.setNombre(nombreCurso);
         curso.setPresencial(Boolean.parseBoolean(esPresencial));
-        Programa programa = programaFacadeRemote.findByNombre(PROGRAMA_ISIS);
+        Programa programa = programaFacadeLocal.findByNombre(PROGRAMA_ISIS);
         curso.setPrograma(programa);
         curso.setRequerido(Boolean.parseBoolean(esObligatoria));
         curso.setSecciones(new ArrayList<Seccion>());
         Collection<Curso> cursosRelacionados = new ArrayList<Curso>();
         for (String nombreRelacionado : relacionados.split(", ")) {
-            Curso cursoRelacionado = cursoFacadeRemote.findByNombre(nombreRelacionado);
+            Curso cursoRelacionado = cursoFacadeLocal.findByNombre(nombreRelacionado);
             if (cursoRelacionado != null) {
                 cursosRelacionados.add(cursoRelacionado);
             }
         }
         curso.setCursosRelacionados(cursosRelacionados);
-        cursoFacadeRemote.create(curso);
+        cursoFacadeLocal.create(curso);
     }
 
     private void crearProfesor(String correo) {
@@ -1140,7 +1140,7 @@ public class ConflictoHorariosBeanHelper {
 
         profesor.setPersona(personaFacade.findByCorreo(correo));
         profesor.setActivo(true);
-        profesorFacadeRemote.create(profesor);
+        profesorFacadeLocal.create(profesor);
 
         //Se busca al usuario con este correo
         Usuario usuario = usuarioFacade.findByLogin(correo);
@@ -1267,7 +1267,7 @@ public class ConflictoHorariosBeanHelper {
     }
 
 
-    public ArchivoFacadeRemote getArchivoFacade() {
+    public ArchivoFacadeLocal getArchivoFacade() {
         return archivoFacade;
     }
 }

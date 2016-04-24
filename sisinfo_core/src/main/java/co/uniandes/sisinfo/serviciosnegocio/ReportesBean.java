@@ -28,13 +28,13 @@ import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
  */
 @Stateless
 @EJB(name = "ReportesBean", beanInterface = co.uniandes.sisinfo.serviciosnegocio.ReportesLocal.class)
-public class ReportesBean implements ReportesLocal, ReportesRemote {
+public class ReportesBean implements ReportesLocal {
 
     /**
      * ArchivoFacade
      */
     @EJB
-    private CargaYCompromisosBeanRemote cycRemote;
+    private CargaYCompromisosBeanLocal cycLocal;
     /**
      * ArchivoFacade
      */
@@ -44,12 +44,12 @@ public class ReportesBean implements ReportesLocal, ReportesRemote {
      *  ConstanteBean
      */
     @EJB
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
     /**
      * EstudiantePostgrado
      */
     @EJB
-    private EstudiantePostgradoRemote estPostgradoRemote;
+    private EstudiantePostgradoLocal estPostgradoLocal;
     private ServiceLocator serviceLocator;
     private ParserT parser;
     //---------------------------------------
@@ -60,14 +60,14 @@ public class ReportesBean implements ReportesLocal, ReportesRemote {
      * Constructor de ArchivosBean
      */
     public ReportesBean() {
-        serviceLocator = new ServiceLocator();
-        try {
-            constanteBean = (ConstanteRemote) serviceLocator.getRemoteEJB(ConstanteRemote.class);
-            estPostgradoRemote = (EstudiantePostgradoRemote) serviceLocator.getRemoteEJB(EstudiantePostgradoRemote.class);
-            cycRemote = (CargaYCompromisosBeanRemote) serviceLocator.getRemoteEJB(CargaYCompromisosBeanRemote.class);
-        } catch (NamingException ex) {
-            Logger.getLogger(ReportesBean.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        serviceLocator = new ServiceLocator();
+//        try {
+//            constanteBean = (ConstanteLocal) serviceLocator.getLocalEJB(ConstanteLocal.class);
+//            estPostgradoLocal = (EstudiantePostgradoLocal) serviceLocator.getLocalEJB(EstudiantePostgradoLocal.class);
+//            cycLocal = (CargaYCompromisosBeanLocal) serviceLocator.getLocalEJB(CargaYCompromisosBeanLocal.class);
+//        } catch (NamingException ex) {
+//            Logger.getLogger(ReportesBean.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }
 
     @Override
@@ -119,7 +119,7 @@ public class ReportesBean implements ReportesLocal, ReportesRemote {
                 rutaReporte = reportesFacade.hacerReportesContactosCrm();
             } else if (tipoReporte.equals("reporte_cargaycompromisos_periodo")) {
                 //Realizar actualización en línea de indicadores
-                cycRemote.actualizarIndicadoresCarga();
+                cycLocal.actualizarIndicadoresCarga();
 
                 //Seguir con el proceso normal
                 Secuencia secPeriodo = getParser().obtenerSecuencia(getConstanteBean().getConstante(Constantes.TAG_PARAM_PERIODO_PLANEACION));
@@ -139,7 +139,7 @@ public class ReportesBean implements ReportesLocal, ReportesRemote {
              */
             else if (tipoReporte.equals("reporte_bolsa_hojas_vida")) {
                 //rutaReporte = reportesFacade.hacerReporteHojasDeVidaEstudiantes();
-                rutaReporte = estPostgradoRemote.hacerReporteTodasHojasDeVida(comandoXML);
+                rutaReporte = estPostgradoLocal.hacerReporteTodasHojasDeVida(comandoXML);
             } else if (tipoReporte.equals("reporte_bolsa_ofertas_totales")) {
                 rutaReporte = reportesFacade.hacerReporteTodasOfertasBolsaEmpleo();
             } /**
@@ -356,7 +356,7 @@ public class ReportesBean implements ReportesLocal, ReportesRemote {
      * Retorna ConstanteBean
      * @return constanteBean ConstanteBean
      */
-    private ConstanteRemote getConstanteBean() {
+    private ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 }

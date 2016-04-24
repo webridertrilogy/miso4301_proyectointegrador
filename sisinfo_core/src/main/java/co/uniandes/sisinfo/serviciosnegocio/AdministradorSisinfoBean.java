@@ -18,11 +18,11 @@ import co.uniandes.sisinfo.comun.constantes.Constantes;
 import co.uniandes.sisinfo.comun.constantes.Notificaciones;
 import co.uniandes.sisinfo.entities.AlertaMultiple;
 import co.uniandes.sisinfo.entities.datosmaestros.Usuario;
-import co.uniandes.sisinfo.serviciosfuncionales.AlertaMultipleFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.CorreoRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.AlertaMultipleFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.CorreoLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.ServiceLocator;
-import co.uniandes.sisinfo.serviciosfuncionales.TimerGenericoFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.seguridad.UsuarioFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.TimerGenericoFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.seguridad.UsuarioFacadeLocal;
 
 /**
  *
@@ -30,29 +30,29 @@ import co.uniandes.sisinfo.serviciosfuncionales.seguridad.UsuarioFacadeRemote;
  */
 @Stateless
 //@EJB(name = "AdministradorSisinfoBean", beanInterface = co.uniandes.sisinfo.serviciosnegocio.AdministradorSisinfoBeanLocal.class)
-public class AdministradorSisinfoBean implements AdministradorSisinfoBeanRemote, AdministradorSisinfoBeanLocal {
+public class AdministradorSisinfoBean implements AdministradorSisinfoBeanLocal {
 
     //---------------------------------------
     // Atributos
     //---------------------------------------
     //@EJB
-    //private AlertaMultipleRemote alertaMultipleBean;
+    //private AlertaMultipleLocal alertaMultipleBean;
     @EJB
-    private TimerGenericoBeanRemote timerGenericoBean;
+    private TimerGenericoBeanLocal timerGenericoBean;
     @EJB
-    private UsuarioFacadeRemote usuarioFacade;
+    private UsuarioFacadeLocal usuarioFacade;
     @EJB
-    private AlertaMultipleFacadeRemote alertaMultipleFacade;
+    private AlertaMultipleFacadeLocal alertaMultipleFacade;
     @EJB
-    private CorreoRemote correoBean;
+    private CorreoLocal correoBean;
     @Resource
     private SessionContext ctx;
     @PersistenceContext(unitName="SoporteSisinfoPU")
     private EntityManager em;
     @EJB
-    private TimerGenericoFacadeRemote timerGenericoFacade;
+    private TimerGenericoFacadeLocal timerGenericoFacade;
     @EJB
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
 
     private ServiceLocator serviceLocator;
     public String tablaAlertas = "";
@@ -65,14 +65,14 @@ public class AdministradorSisinfoBean implements AdministradorSisinfoBeanRemote,
      * Constructor de AdministradorSisinfoBean
      */
     public AdministradorSisinfoBean() throws NamingException {
-        serviceLocator = new ServiceLocator();
-        //alertaMultipleBean =  (AlertaMultipleRemote) serviceLocator.getRemoteEJB(AlertaMultipleRemote.class);
-        timerGenericoBean = (TimerGenericoBeanRemote) serviceLocator.getRemoteEJB(TimerGenericoBeanRemote.class);
-        timerGenericoFacade = (TimerGenericoFacadeRemote) serviceLocator.getRemoteEJB(TimerGenericoFacadeRemote.class);
-        alertaMultipleFacade = (AlertaMultipleFacadeRemote) serviceLocator.getRemoteEJB(AlertaMultipleFacadeRemote.class);
-        usuarioFacade = (UsuarioFacadeRemote) serviceLocator.getRemoteEJB(UsuarioFacadeRemote.class);
-        correoBean = (CorreoRemote) serviceLocator.getRemoteEJB(CorreoRemote.class);
-        constanteBean = (ConstanteRemote) serviceLocator.getRemoteEJB(ConstanteRemote.class);
+//        serviceLocator = new ServiceLocator();
+//        //alertaMultipleBean =  (AlertaMultipleLocal) serviceLocator.getLocalEJB(AlertaMultipleLocal.class);
+//        timerGenericoBean = (TimerGenericoBeanLocal) serviceLocator.getLocalEJB(TimerGenericoBeanLocal.class);
+//        timerGenericoFacade = (TimerGenericoFacadeLocal) serviceLocator.getLocalEJB(TimerGenericoFacadeLocal.class);
+//        alertaMultipleFacade = (AlertaMultipleFacadeLocal) serviceLocator.getLocalEJB(AlertaMultipleFacadeLocal.class);
+//        usuarioFacade = (UsuarioFacadeLocal) serviceLocator.getLocalEJB(UsuarioFacadeLocal.class);
+//        correoBean = (CorreoLocal) serviceLocator.getLocalEJB(CorreoLocal.class);
+//        constanteBean = (ConstanteLocal) serviceLocator.getLocalEJB(ConstanteLocal.class);
 
     }
 
@@ -120,12 +120,12 @@ public class AdministradorSisinfoBean implements AdministradorSisinfoBeanRemote,
                 + "</tr>";
 
         for (AlertaMultiple alerta : alertas) {
-            boolean existeBD = timerGenericoBean.timerExisteEnBD(alerta.getIdTimer());
-            boolean existeMemoria = timerGenericoBean.timerExisteEnMemoria(alerta.getIdTimer());
-            if (!existeBD || !existeMemoria) {
-                alertasConProblemas = true;
-                tablaAlertas += "<tr><td>" + alerta.getTipo() + "</td><td>" + alerta.getNombre() + "</td><td>" + existeBD + "</td><td>" + existeMemoria + "</td></tr>";
-            }
+//            boolean existeBD = timerGenericoBean.timerExisteEnBD(alerta.getIdTimer());
+//            boolean existeMemoria = timerGenericoBean.timerExisteEnMemoria(alerta.getIdTimer());
+//            if (!existeBD || !existeMemoria) {
+//                alertasConProblemas = true;
+//                tablaAlertas += "<tr><td>" + alerta.getTipo() + "</td><td>" + alerta.getNombre() + "</td><td>" + existeBD + "</td><td>" + existeMemoria + "</td></tr>";
+//            }
         }
         tablaAlertas += "</table>";
 
@@ -154,7 +154,7 @@ public class AdministradorSisinfoBean implements AdministradorSisinfoBeanRemote,
                 + "</table>";
     }
 
-    private ConstanteRemote getConstanteBean() {
+    private ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 

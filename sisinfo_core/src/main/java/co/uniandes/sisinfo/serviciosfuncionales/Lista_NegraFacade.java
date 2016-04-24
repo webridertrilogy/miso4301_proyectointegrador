@@ -24,7 +24,7 @@ import javax.persistence.PersistenceContext;
  */
 @Stateless
 @EJB(name = "Lista_NegraFacade", beanInterface = co.uniandes.sisinfo.serviciosfuncionales.Lista_NegraFacadeLocal.class)
-public class Lista_NegraFacade implements Lista_NegraFacadeLocal, Lista_NegraFacadeRemote {
+public class Lista_NegraFacade implements Lista_NegraFacadeLocal {
 
 	@PersistenceContext(unitName="SoporteSisinfoPU")
     private EntityManager em;

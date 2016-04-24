@@ -23,18 +23,18 @@ import co.uniandes.sisinfo.entities.datosmaestros.NivelFormacion;
 import co.uniandes.sisinfo.entities.datosmaestros.Profesor;
 import co.uniandes.sisinfo.entities.datosmaestros.Seccion;
 import co.uniandes.sisinfo.entities.datosmaestros.Sesion;
-import co.uniandes.sisinfo.serviciosfuncionales.ArchivoFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.ArchivoFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.ConfiguracionFechasCHFacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.CorreoRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.PeriodoFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.CorreoLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.PeriodoFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.PeticionConflictoHorarioFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.ServiceLocator;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.CursoFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.NivelFormacionFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.ProfesorFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.ProgramaFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.SeccionFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.SesionFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.CursoFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.NivelFormacionFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.ProfesorFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.ProgramaFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.SeccionFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.SesionFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.ParserT;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
 
@@ -43,32 +43,32 @@ import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
  * @author German Florez, Marcela Morales
  */
 @Stateless
-public class CarteleraCursosBean implements CarteleraCursosBeanLocal, CarteleraCursosBeanRemote {
+public class CarteleraCursosBean implements CarteleraCursosBeanLocal {
 
     //----------------------------------------------
     // ATRIBUTOS
     //----------------------------------------------
     //Remotos
     @EJB
-    private CorreoRemote correoBean;
+    private CorreoLocal correoBean;
     @EJB
-    private ProgramaFacadeRemote programaFacade;
+    private ProgramaFacadeLocal programaFacade;
     @EJB
-    private SeccionFacadeRemote seccionFacade;
+    private SeccionFacadeLocal seccionFacade;
     @EJB
-    private SesionFacadeRemote horarioFacade;
+    private SesionFacadeLocal horarioFacade;
     @EJB
-    private CursoFacadeRemote cursoFacade;
+    private CursoFacadeLocal cursoFacade;
     @EJB
-    private PeriodoFacadeRemote periodoFacade;
+    private PeriodoFacadeLocal periodoFacade;
     @EJB
-    private ProfesorFacadeRemote profesorFacade;
+    private ProfesorFacadeLocal profesorFacade;
     @EJB
-    private IntegracionConflictoHorariosBeanRemote serviciosIntegracion;
+    private IntegracionConflictoHorariosBeanLocal serviciosIntegracion;
     @EJB
-    private ArchivoFacadeRemote archivoFacade;
+    private ArchivoFacadeLocal archivoFacade;
     @EJB
-    private NivelFormacionFacadeRemote nivelFormacionFacade;
+    private NivelFormacionFacadeLocal nivelFormacionFacade;
     //Locales
     @EJB
     private ConfiguracionFechasCHFacadeLocal configuracionFechasFacade;
@@ -77,7 +77,7 @@ public class CarteleraCursosBean implements CarteleraCursosBeanLocal, CarteleraC
     @EJB
     private ConflictoHorariosBeanLocal conflictoHorarios;
     @EJB
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
     private ParserT parser;
     private ServiceLocator serviceLocator;
     private ConflictoHorariosBeanHelper conversor;
@@ -86,23 +86,23 @@ public class CarteleraCursosBean implements CarteleraCursosBeanLocal, CarteleraC
     // CONSTRUCTOR
     //----------------------------------------------
     public CarteleraCursosBean() throws NamingException {
-        try {
-            parser = new ParserT();
-            serviceLocator = new ServiceLocator();
-            constanteBean = (ConstanteRemote) serviceLocator.getRemoteEJB(ConstanteRemote.class);
-            correoBean = (CorreoRemote) serviceLocator.getRemoteEJB(CorreoRemote.class);
-            programaFacade = (ProgramaFacadeRemote) serviceLocator.getRemoteEJB(ProgramaFacadeRemote.class);
-            seccionFacade = (SeccionFacadeRemote) serviceLocator.getRemoteEJB(SeccionFacadeRemote.class);
-            horarioFacade = (SesionFacadeRemote) serviceLocator.getRemoteEJB(SesionFacadeRemote.class);
-            cursoFacade = (CursoFacadeRemote) serviceLocator.getRemoteEJB(CursoFacadeRemote.class);
-            periodoFacade = (PeriodoFacadeRemote) serviceLocator.getRemoteEJB(PeriodoFacadeRemote.class);
-            serviciosIntegracion = (IntegracionConflictoHorariosBeanRemote) serviceLocator.getRemoteEJB(IntegracionConflictoHorariosBeanRemote.class);
-            archivoFacade = (ArchivoFacadeRemote) serviceLocator.getRemoteEJB(ArchivoFacadeRemote.class);
-            nivelFormacionFacade = (NivelFormacionFacadeRemote) serviceLocator.getRemoteEJB(NivelFormacionFacadeRemote.class);
-            conversor = new ConflictoHorariosBeanHelper(getConstanteBean(), getCorreoBean());
-        } catch (NamingException ex) {
-            Logger.getLogger(CarteleraCursosBean.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        try {
+//            parser = new ParserT();
+//            serviceLocator = new ServiceLocator();
+//            constanteBean = (ConstanteLocal) serviceLocator.getLocalEJB(ConstanteLocal.class);
+//            correoBean = (CorreoLocal) serviceLocator.getLocalEJB(CorreoLocal.class);
+//            programaFacade = (ProgramaFacadeLocal) serviceLocator.getLocalEJB(ProgramaFacadeLocal.class);
+//            seccionFacade = (SeccionFacadeLocal) serviceLocator.getLocalEJB(SeccionFacadeLocal.class);
+//            horarioFacade = (SesionFacadeLocal) serviceLocator.getLocalEJB(SesionFacadeLocal.class);
+//            cursoFacade = (CursoFacadeLocal) serviceLocator.getLocalEJB(CursoFacadeLocal.class);
+//            periodoFacade = (PeriodoFacadeLocal) serviceLocator.getLocalEJB(PeriodoFacadeLocal.class);
+//            serviciosIntegracion = (IntegracionConflictoHorariosBeanLocal) serviceLocator.getLocalEJB(IntegracionConflictoHorariosBeanLocal.class);
+//            archivoFacade = (ArchivoFacadeLocal) serviceLocator.getLocalEJB(ArchivoFacadeLocal.class);
+//            nivelFormacionFacade = (NivelFormacionFacadeLocal) serviceLocator.getLocalEJB(NivelFormacionFacadeLocal.class);
+//            conversor = new ConflictoHorariosBeanHelper(getConstanteBean(), getCorreoBean());
+//        } catch (NamingException ex) {
+//            Logger.getLogger(CarteleraCursosBean.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }
 
     //----------------------------------------------
@@ -345,7 +345,7 @@ public class CarteleraCursosBean implements CarteleraCursosBeanLocal, CarteleraC
 
             //Se eliminan los archivos asociados a la seccion
             ArrayList<Archivo> archivosDeSeccion = new ArrayList<Archivo>();
-            archivosDeSeccion = (ArrayList<Archivo>) getArchivoFacade().findBySeccion(seccion.getCrn());
+            archivosDeSeccion = null;//(ArrayList<Archivo>) getArchivoFacade().findBySeccion(seccion.getCrn());
             System.out.println(archivosDeSeccion.size());
             for (Archivo archivo : archivosDeSeccion) {
                 System.out.println(archivo.getTipoMime());
@@ -445,7 +445,7 @@ public class CarteleraCursosBean implements CarteleraCursosBeanLocal, CarteleraC
 
             //Carga la cartelera
 
-            new LectorCartelera(getConstanteBean(), getCorreoBean(), getProgramaFacade()).cargarCartelera(new FileInputStream(rutaCartelera));
+        //    new LectorCartelera(getConstanteBean(), getCorreoBean(), getProgramaFacade()).cargarCartelera(new FileInputStream(rutaCartelera));
 
             ArrayList<Secuencia> secuencias = new ArrayList<Secuencia>();
             return getParser().generarRespuesta(new ArrayList<Secuencia>(), getConstanteBean().getConstante(Constantes.CMD_CARGAR_CARTELERA_CONFLICTO_HORARIOS), getConstanteBean().getConstante(Constantes.VAL_TAG_TIPO_MENSAJE_MENSAJE), Mensajes.CONFLICTOS_MSJ_014, secuencias);
@@ -493,7 +493,7 @@ public class CarteleraCursosBean implements CarteleraCursosBeanLocal, CarteleraC
     // MÉTODOS PRIVADOS
     //----------------------------------------------
 
-    private ConstanteRemote getConstanteBean() {
+    private ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 
@@ -508,15 +508,15 @@ public class CarteleraCursosBean implements CarteleraCursosBeanLocal, CarteleraC
         return configuracionFechasFacade;
     }
 
-    private CorreoRemote getCorreoBean() {
+    private CorreoLocal getCorreoBean() {
         return correoBean;
     }
 
-    private CursoFacadeRemote getCursoFacade() {
+    private CursoFacadeLocal getCursoFacade() {
         return cursoFacade;
     }
 
-    public NivelFormacionFacadeRemote getNivelFormacionFacade() {
+    public NivelFormacionFacadeLocal getNivelFormacionFacade() {
         return nivelFormacionFacade;
     }
 
@@ -524,7 +524,7 @@ public class CarteleraCursosBean implements CarteleraCursosBeanLocal, CarteleraC
         return conversor;
     }
 
-    private SesionFacadeRemote getHorarioFacade() {
+    private SesionFacadeLocal getHorarioFacade() {
         return horarioFacade;
     }
 
@@ -532,23 +532,23 @@ public class CarteleraCursosBean implements CarteleraCursosBeanLocal, CarteleraC
         return peticionConflictoHorarioFacade;
     }
 
-    private ProgramaFacadeRemote getProgramaFacade() {
+    private ProgramaFacadeLocal getProgramaFacade() {
         return programaFacade;
     }
 
-    private SeccionFacadeRemote getSeccionFacade() {
+    private SeccionFacadeLocal getSeccionFacade() {
         return seccionFacade;
     }
 
-    private PeriodoFacadeRemote getPeriodoFacade() {
+    private PeriodoFacadeLocal getPeriodoFacade() {
         return periodoFacade;
     }
 
-    private ProfesorFacadeRemote getProfesorFacade() {
+    private ProfesorFacadeLocal getProfesorFacade() {
         return profesorFacade;
     }
 
-    public ArchivoFacadeRemote getArchivoFacade() {
+    public ArchivoFacadeLocal getArchivoFacade() {
         return archivoFacade;
     }
 

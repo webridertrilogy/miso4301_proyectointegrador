@@ -17,7 +17,7 @@ import co.uniandes.sisinfo.entities.InscripcionAsistente;
 import co.uniandes.sisinfo.entities.datosmaestros.Persona;
 import co.uniandes.sisinfo.serviciosfuncionales.InscripcionAsistenteFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.InscripcionFacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.PersonaFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.PersonaFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
 
 /**
@@ -30,11 +30,11 @@ public class ConversorInscripciones {
     // ATRIBUTOS
     //----------------------------------------------
     //Útil
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
     //Servicios
     private InscripcionFacadeLocal inscripcionFacade;
     private InscripcionAsistenteFacadeLocal inscripcionAsistenteFacade;
-    private PersonaFacadeRemote personaFacade;
+    private PersonaFacadeLocal personaFacade;
 
     //----------------------------------------------
     // CONSTRUCTOR
@@ -43,8 +43,8 @@ public class ConversorInscripciones {
      * Conversor del módulo de inscripciones
      * @param constanteBean Referencia a los servicios de las constantes
      */
-    public ConversorInscripciones(ConstanteRemote constanteBean, InscripcionFacadeLocal inscripcionFacade, InscripcionAsistenteFacadeLocal inscripcionAsistenteFacade,
-            PersonaFacadeRemote personaFacade) {
+    public ConversorInscripciones(ConstanteLocal constanteBean, InscripcionFacadeLocal inscripcionFacade, InscripcionAsistenteFacadeLocal inscripcionAsistenteFacade,
+            PersonaFacadeLocal personaFacade) {
             this.constanteBean = constanteBean;
             this.inscripcionAsistenteFacade = inscripcionAsistenteFacade;
             this.inscripcionFacade = inscripcionFacade;
@@ -398,7 +398,7 @@ public class ConversorInscripciones {
     //----------------------------------------------
     // MÉTODOS PRIVADOS
     //----------------------------------------------
-    private ConstanteRemote getConstanteBean() {
+    private ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 
@@ -410,11 +410,11 @@ public class ConversorInscripciones {
         return inscripcionAsistenteFacade;
     }
 
-    private PersonaFacadeRemote getPersonaFacade() {
+    private PersonaFacadeLocal getPersonaFacade() {
         return personaFacade;
     }
 
-    public void setConstanteBean(ConstanteRemote constanteBean) {
+    public void setConstanteBean(ConstanteLocal constanteBean) {
         this.constanteBean = constanteBean;
     }
 
@@ -426,7 +426,7 @@ public class ConversorInscripciones {
         this.inscripcionFacade = inscripcionFacade;
     }
 
-    public void setPersonaFacade(PersonaFacadeRemote personaFacade) {
+    public void setPersonaFacade(PersonaFacadeLocal personaFacade) {
         this.personaFacade = personaFacade;
     }
 

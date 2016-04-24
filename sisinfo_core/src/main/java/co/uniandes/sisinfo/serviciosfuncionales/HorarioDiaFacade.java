@@ -11,7 +11,7 @@ import javax.persistence.PersistenceContext;
  * @author Marcela Morales
  */
 @Stateless
-public class HorarioDiaFacade implements HorarioDiaFacadeLocal, HorarioDiaFacadeRemote {
+public class HorarioDiaFacade implements HorarioDiaFacadeLocal {
     @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 

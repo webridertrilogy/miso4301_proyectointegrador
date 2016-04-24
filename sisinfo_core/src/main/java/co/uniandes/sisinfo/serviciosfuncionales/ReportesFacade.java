@@ -4,14 +4,6 @@
  */
 package co.uniandes.sisinfo.serviciosfuncionales;
 
-import co.uniandes.sisinfo.comun.constantes.Constantes;
-import co.uniandes.sisinfo.serviciosnegocio.ConstanteRemote;
-import com.lowagie.text.Document;
-import com.lowagie.text.pdf.BaseFont;
-import com.lowagie.text.pdf.PdfContentByte;
-import com.lowagie.text.pdf.PdfImportedPage;
-import com.lowagie.text.pdf.PdfReader;
-import com.lowagie.text.pdf.PdfWriter;
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.ByteArrayOutputStream;
@@ -35,12 +27,26 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
+
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import javax.naming.Context;
-import javax.naming.NamingException;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+import com.lowagie.text.Document;
+import com.lowagie.text.pdf.BaseFont;
+import com.lowagie.text.pdf.PdfContentByte;
+import com.lowagie.text.pdf.PdfImportedPage;
+import com.lowagie.text.pdf.PdfReader;
+import com.lowagie.text.pdf.PdfWriter;
+
+import co.uniandes.sisinfo.comun.constantes.Constantes;
+import co.uniandes.sisinfo.serviciosnegocio.ConstanteLocal;
 import net.sf.jasperreports.crosstabs.JRCrosstab;
 import net.sf.jasperreports.engine.JRBreak;
 import net.sf.jasperreports.engine.JRChart;
@@ -73,9 +79,6 @@ import net.sf.jasperreports.engine.export.JRXlsExporter;
 import net.sf.jasperreports.engine.export.JRXlsExporterParameter;
 import net.sf.jasperreports.engine.util.JRElementsVisitor;
 import net.sf.jasperreports.engine.util.JRSaver;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
 
 /**
  *
@@ -83,7 +86,7 @@ import org.hibernate.cfg.Configuration;
  */
 @Stateless
 @EJB(name = "ReportesFacade", beanInterface = co.uniandes.sisinfo.serviciosfuncionales.ReportesFacadeLocal.class)
-public class ReportesFacade implements ReportesFacadeLocal, ReportesFacadeRemote {
+public class ReportesFacade implements ReportesFacadeLocal {
 
     private String rutaReportes = "/u1/especiales/sisinfo/servapp/prod/srcReportesJasper/";
     private String rutaReportesHistoricos = "/u1/especiales/sisinfo/servapp/prod/srcReportesJasper/";
@@ -121,28 +124,28 @@ public class ReportesFacade implements ReportesFacadeLocal, ReportesFacadeRemote
     /**
      * Reportes históricos Bean
      */
-    @EJB
-    private h_reportesFacadeRemote reportesHistoricos;
+//    @EJB
+//    private h_reportesFacadeLocal reportesHistoricos;
     /**
      *  ConstanteBean
      */
     @EJB
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
 
     public ReportesFacade() {
-        try {
-            serviceLocator = new ServiceLocator();
-            reportesHistoricos = (h_reportesFacadeRemote) serviceLocator.getRemoteEJB(h_reportesFacadeRemote.class);
-            constanteBean = (ConstanteRemote) serviceLocator.getRemoteEJB(ConstanteRemote.class);
-            CONNECTSTRING = constanteBean.getConstante(Constantes.CONFIGURACION_PARAM_CONNECTSTRING);
-            USER = constanteBean.getConstante(Constantes.CONFIGURACION_PARAM_USER);
-            PASSWORD = constanteBean.getConstante(Constantes.CONFIGURACION_PARAM_PASSWORD);
-            CONNECTSTRING_HISTORICO = constanteBean.getConstante(Constantes.CONFIGURACION_PARAM_CONNECTSTRING_HISTORICO);
-            USER_HISTORICO = constanteBean.getConstante(Constantes.CONFIGURACION_PARAM_USER_HISTORICO);
-            PASSWORD_HISTORICO = constanteBean.getConstante(Constantes.CONFIGURACION_PARAM_PASSWORD_HISTORICO);
-        } catch (NamingException ex) {
-            Logger.getLogger(ReportesFacade.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        try {
+//            serviceLocator = new ServiceLocator();
+//            reportesHistoricos = (h_reportesFacadeLocal) serviceLocator.getLocalEJB(h_reportesFacadeLocal.class);
+//            constanteBean = (ConstanteLocal) serviceLocator.getLocalEJB(ConstanteLocal.class);
+//            CONNECTSTRING = constanteBean.getConstante(Constantes.CONFIGURACION_PARAM_CONNECTSTRING);
+//            USER = constanteBean.getConstante(Constantes.CONFIGURACION_PARAM_USER);
+//            PASSWORD = constanteBean.getConstante(Constantes.CONFIGURACION_PARAM_PASSWORD);
+//            CONNECTSTRING_HISTORICO = constanteBean.getConstante(Constantes.CONFIGURACION_PARAM_CONNECTSTRING_HISTORICO);
+//            USER_HISTORICO = constanteBean.getConstante(Constantes.CONFIGURACION_PARAM_USER_HISTORICO);
+//            PASSWORD_HISTORICO = constanteBean.getConstante(Constantes.CONFIGURACION_PARAM_PASSWORD_HISTORICO);
+//        } catch (NamingException ex) {
+//            Logger.getLogger(ReportesFacade.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }
 
     @Override
@@ -696,8 +699,8 @@ public class ReportesFacade implements ReportesFacadeLocal, ReportesFacadeRemote
                 //eXPORTAR ARCHIVO A XLS
                 exportarAXLS(destFileXLS, jasperPrint);
                 //Llamar reporte de histórico
-                reportesHistoricos.setRutaReportes(rutaReportes);
-                String rutaArchivoHistorico = reportesHistoricos.hacerReporteMonitoriasHistoricosPorCorreo(correoEstudiante);
+               //reportesHistoricos.setRutaReportes(rutaReportes);
+                String rutaArchivoHistorico = "";//reportesHistoricos.hacerReporteMonitoriasHistoricosPorCorreo(correoEstudiante);
                 File archivoHistorico = new File(rutaArchivoHistorico);
 
                 //Hacer un ZIP
@@ -1617,7 +1620,7 @@ public class ReportesFacade implements ReportesFacadeLocal, ReportesFacadeRemote
      * Retorna ConstanteBean
      * @return constanteBean ConstanteBean
      */
-    private ConstanteRemote getConstanteBean() {
+    private ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 

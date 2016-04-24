@@ -18,7 +18,7 @@ import javax.naming.NamingException;
 import co.uniandes.sisinfo.comun.constantes.Constantes;
 import co.uniandes.sisinfo.comun.constantes.Mensajes;
 import co.uniandes.sisinfo.entities.RangoFechasGeneral;
-import co.uniandes.sisinfo.nucleo.services.NucleoRemote;
+import co.uniandes.sisinfo.nucleo.services.NucleoLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.RangoFechasGeneralFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.ServiceLocator;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.ParserT;
@@ -29,12 +29,12 @@ import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
  * @author Marcela Morales
  */
 @Stateless
-public class RangoFechasGeneralBean implements RangoFechasGeneralLocal, RangoFechasGeneralRemote {
+public class RangoFechasGeneralBean implements RangoFechasGeneralLocal {
 
     //---------------------------------------
     // Constantes
     //---------------------------------------
-    private final static String RUTA_INTERFAZ_REMOTA = "co.uniandes.sisinfo.serviciosnegocio.RangoFechasGeneralRemote";
+    private final static String RUTA_INTERFAZ_REMOTA = "co.uniandes.sisinfo.serviciosnegocio.RangoFechasGeneralLocal";
     private final static String NOMBRE_METODO_TIMER = "manejoTimersRangoFechasGeneral";
     //---------------------------------------
     // Atributos
@@ -49,11 +49,11 @@ public class RangoFechasGeneralBean implements RangoFechasGeneralLocal, RangoFec
     //Servicios Remotos
     //Servicios Útiles
     @EJB
-    private NucleoRemote nucleoBean;
+    private NucleoLocal nucleoBean;
     @EJB
-    private TimerGenericoBeanRemote timerGenerico;
+    private TimerGenericoBeanLocal timerGenerico;
     @EJB
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
     private ParserT parser;
     private ServiceLocator serviceLocator;
 
@@ -64,16 +64,16 @@ public class RangoFechasGeneralBean implements RangoFechasGeneralLocal, RangoFec
      * Constructor de RangoFechasGeneralBean
      */
     public RangoFechasGeneralBean() {
-        try {
-            serviceLocator = new ServiceLocator();
-            constanteBean = (ConstanteRemote) serviceLocator.getRemoteEJB(ConstanteRemote.class);
-            timerGenerico = (TimerGenericoBeanRemote) serviceLocator.getRemoteEJB(TimerGenericoBeanRemote.class);
-            nucleoBean = (NucleoRemote) serviceLocator.getRemoteEJB(NucleoRemote.class);
-
-            inicializarTiposRangoFechasGeneral();
-        } catch (NamingException ex) {
-            Logger.getLogger(RangoFechasGeneralBean.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        try {
+//            serviceLocator = new ServiceLocator();
+//            constanteBean = (ConstanteLocal) serviceLocator.getLocalEJB(ConstanteLocal.class);
+//            timerGenerico = (TimerGenericoBeanLocal) serviceLocator.getLocalEJB(TimerGenericoBeanLocal.class);
+//            nucleoBean = (NucleoLocal) serviceLocator.getLocalEJB(NucleoLocal.class);
+//
+//            inicializarTiposRangoFechasGeneral();
+//        } catch (NamingException ex) {
+//            Logger.getLogger(RangoFechasGeneralBean.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }
 
     /**
@@ -389,7 +389,7 @@ public class RangoFechasGeneralBean implements RangoFechasGeneralLocal, RangoFec
         }
     }
 
-    private ConstanteRemote getConstanteBean() {
+    private ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 
@@ -412,7 +412,7 @@ public class RangoFechasGeneralBean implements RangoFechasGeneralLocal, RangoFec
         return hashRangoYComandosInicio;
     }
 
-    private TimerGenericoBeanRemote getTimerGenerico() {
+    private TimerGenericoBeanLocal getTimerGenerico() {
         return timerGenerico;
     }
 

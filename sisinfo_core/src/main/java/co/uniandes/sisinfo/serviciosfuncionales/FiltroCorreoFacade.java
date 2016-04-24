@@ -19,7 +19,7 @@ import co.uniandes.sisinfo.entities.FiltroCorreo;
  * @author Asistente
  */
 @Stateless
-public class FiltroCorreoFacade extends AbstractFacade<FiltroCorreo> implements FiltroCorreoFacadeLocal, FiltroCorreoFacadeRemote {
+public class FiltroCorreoFacade extends AbstractFacade<FiltroCorreo> implements FiltroCorreoFacadeLocal {
     @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 

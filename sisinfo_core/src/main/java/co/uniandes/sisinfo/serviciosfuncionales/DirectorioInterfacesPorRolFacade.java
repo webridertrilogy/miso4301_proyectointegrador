@@ -17,7 +17,7 @@ import javax.persistence.PersistenceContext;
  * @author Asistente
  */
 @Stateless
-public class DirectorioInterfacesPorRolFacade extends AbstractFacade<DirectorioInterfacesPorRol> implements DirectorioInterfacesPorRolFacadeLocal, DirectorioInterfacesPorRolFacadeRemote {
+public class DirectorioInterfacesPorRolFacade extends AbstractFacade<DirectorioInterfacesPorRol> implements DirectorioInterfacesPorRolFacadeLocal {
     @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 

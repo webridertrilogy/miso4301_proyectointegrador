@@ -9,20 +9,21 @@
  */
 package co.uniandes.sisinfo.serviciosfuncionales;
 
-import co.uniandes.sisinfo.entities.Convocatoria;
-import co.uniandes.sisinfo.serviciosfuncionales.ConvocatoriaFacadeRemote;
 import java.util.List;
+
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+
+import co.uniandes.sisinfo.entities.Convocatoria;
 
 /**
  * Servicios Entidad Convocatoria
  */
 @Stateless
 @EJB(name = "ConvocatoriaFacade", beanInterface = co.uniandes.sisinfo.serviciosfuncionales.ConvocatoriaFacadeLocal.class)
-public class ConvocatoriaFacade implements ConvocatoriaFacadeLocal, ConvocatoriaFacadeRemote {
+public class ConvocatoriaFacade implements ConvocatoriaFacadeLocal {
 
 	@PersistenceContext(unitName="SoporteSisinfoPU")
     private EntityManager em;

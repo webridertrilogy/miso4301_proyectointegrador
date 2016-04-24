@@ -17,7 +17,7 @@ import javax.persistence.Query;
  * @author Ivan Mauricio Melo S
  */
 @Stateless
-public class CategoriaProyectoDeGradoFacade implements CategoriaProyectoDeGradoFacadeLocal, CategoriaProyectoDeGradoFacadeRemote {
+public class CategoriaProyectoDeGradoFacade implements CategoriaProyectoDeGradoFacadeLocal {
     @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 

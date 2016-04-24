@@ -14,7 +14,7 @@ import javax.persistence.Query;
  * @author Marcela Morales
  */
 @Stateless
-public class EstudianteMatriculadoFacade implements EstudianteMatriculadoFacadeLocal, EstudianteMatriculadoFacadeRemote {
+public class EstudianteMatriculadoFacade implements EstudianteMatriculadoFacadeLocal {
 
     //----------------------------------------------
     // ATRIBUTOS

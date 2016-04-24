@@ -35,12 +35,12 @@ import co.uniandes.sisinfo.entities.datosmaestros.DiaCompleto;
 import co.uniandes.sisinfo.entities.datosmaestros.InformacionAcademica;
 import co.uniandes.sisinfo.entities.datosmaestros.Seccion;
 import co.uniandes.sisinfo.serviciosfuncionales.AspiranteFacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.CorreoRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.CorreoLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.Horario_DisponibleFacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.ReglaFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.ReglaFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.ServiceLocator;
 import co.uniandes.sisinfo.serviciosfuncionales.SolicitudFacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.CursoFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.CursoFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.ParserT;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
 
@@ -49,7 +49,7 @@ import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
  */
 @Stateless
 @EJB(name = "ConfirmacionBean", beanInterface = co.uniandes.sisinfo.serviciosnegocio.ConfirmacionLocal.class)
-public class ConfirmacionBean implements ConfirmacionRemote, ConfirmacionLocal {
+public class ConfirmacionBean implements  ConfirmacionLocal {
 
     //---------------------------------------
     // Atributos
@@ -67,7 +67,7 @@ public class ConfirmacionBean implements ConfirmacionRemote, ConfirmacionLocal {
      * CorreoBean
      */
     @EJB
-    private CorreoRemote correoBean;
+    private CorreoLocal correoBean;
     /**
      * PreseleccionBean
      */
@@ -77,7 +77,7 @@ public class ConfirmacionBean implements ConfirmacionRemote, ConfirmacionLocal {
      * ReglaBean
      */
     @EJB
-    private ReglaRemote reglaBean;
+    private ReglaLocal reglaBean;
     /**
      * Horario_DisponibleFacade
      */
@@ -92,17 +92,17 @@ public class ConfirmacionBean implements ConfirmacionRemote, ConfirmacionLocal {
      * CursoFacade
      */
     @EJB
-    private CursoFacadeRemote cursoFacade;
+    private CursoFacadeLocal cursoFacade;
     /**
      * ReglaFacade
      */
     @EJB
-    private ReglaFacadeRemote reglaFacade;
+    private ReglaFacadeLocal reglaFacade;
     /**
      *  ConstanteBean
      */
     @EJB
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
     @EJB
     private RangoFechasBeanLocal rangoBean;
     @EJB
@@ -117,17 +117,17 @@ public class ConfirmacionBean implements ConfirmacionRemote, ConfirmacionLocal {
      * Constructor de ConfirmacionBean
      */
     public ConfirmacionBean() {
-        try {
-            serviceLocator = new ServiceLocator();
-            correoBean = (CorreoRemote) serviceLocator.getRemoteEJB(CorreoRemote.class);
-            constanteBean = (ConstanteRemote) serviceLocator.getRemoteEJB(ConstanteRemote.class);
-            cursoFacade = (CursoFacadeRemote) serviceLocator.getRemoteEJB(CursoFacadeRemote.class);
-            reglaFacade = (ReglaFacadeRemote) serviceLocator.getRemoteEJB(ReglaFacadeRemote.class);
-            reglaBean = (ReglaRemote) serviceLocator.getRemoteEJB(ReglaRemote.class);
-            conversorServiciosSoporteProcesos = new ConversorServiciosSoporteProcesos();
-        } catch (NamingException ex) {
-            Logger.getLogger(ConfirmacionBean.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        try {
+//            serviceLocator = new ServiceLocator();
+//            correoBean = (CorreoLocal) serviceLocator.getLocalEJB(CorreoLocal.class);
+//            constanteBean = (ConstanteLocal) serviceLocator.getLocalEJB(ConstanteLocal.class);
+//            cursoFacade = (CursoFacadeLocal) serviceLocator.getLocalEJB(CursoFacadeLocal.class);
+//            reglaFacade = (ReglaFacadeLocal) serviceLocator.getLocalEJB(ReglaFacadeLocal.class);
+//            reglaBean = (ReglaLocal) serviceLocator.getLocalEJB(ReglaLocal.class);
+//            conversorServiciosSoporteProcesos = new ConversorServiciosSoporteProcesos();
+//        } catch (NamingException ex) {
+//            Logger.getLogger(ConfirmacionBean.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }
 
     //---------------------------------------
@@ -296,7 +296,7 @@ public class ConfirmacionBean implements ConfirmacionRemote, ConfirmacionLocal {
      * Retorna ReglaBean
      * @return reglaBean ReglaBean
      */
-    private ReglaRemote getReglaBean() {
+    private ReglaLocal getReglaBean() {
         return reglaBean;
     }
 
@@ -312,7 +312,7 @@ public class ConfirmacionBean implements ConfirmacionRemote, ConfirmacionLocal {
      * Retorna ReglaFacade
      * @return reglaFacade ReglaFacade
      */
-    private ReglaFacadeRemote getReglaFacade() {
+    private ReglaFacadeLocal getReglaFacade() {
         return reglaFacade;
     }
 
@@ -328,7 +328,7 @@ public class ConfirmacionBean implements ConfirmacionRemote, ConfirmacionLocal {
      * Retorna ConstanteBean
      * @return constanteBean ConstanteBean
      */
-    private ConstanteRemote getConstanteBean() {
+    private ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 

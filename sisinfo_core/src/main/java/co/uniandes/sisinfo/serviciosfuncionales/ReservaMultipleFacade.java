@@ -22,7 +22,7 @@ import javax.persistence.Query;
  * @author Asistente
  */
 @Stateless
-public class ReservaMultipleFacade extends AbstractFacade<ReservaMultiple> implements ReservaMultipleFacadeLocal, ReservaMultipleFacadeRemote {
+public class ReservaMultipleFacade extends AbstractFacade<ReservaMultiple> implements ReservaMultipleFacadeLocal {
 
     @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;

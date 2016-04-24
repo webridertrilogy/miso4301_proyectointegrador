@@ -16,7 +16,7 @@ import javax.persistence.PersistenceContext;
  * @author Manuel
  */
 @Stateless
-public class TimerAuditoriaFacade implements TimerAuditoriaFacadeLocal,TimerAuditoriaFacadeRemote{
+public class TimerAuditoriaFacade implements TimerAuditoriaFacadeLocal{
 
 	@PersistenceContext(unitName="SoporteSisinfoPU")
     private EntityManager em;

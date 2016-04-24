@@ -22,7 +22,7 @@ import javax.persistence.PersistenceContext;
  */
 @Stateless
 @EJB(name = "HorarioFacade", beanInterface = co.uniandes.sisinfo.serviciosfuncionales.HorarioFacadeLocal.class)
-public class HorarioFacade implements HorarioFacadeLocal, HorarioFacadeRemote {
+public class HorarioFacade implements HorarioFacadeLocal {
 
 	@PersistenceContext(unitName="SoporteSisinfoPU")
     private EntityManager em;

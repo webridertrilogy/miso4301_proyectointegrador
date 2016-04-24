@@ -18,7 +18,7 @@ import javax.persistence.Query;
  * @author German Florez, Marcela Morales
  */
 @Stateless
-public class ReservaFacade implements ReservaFacadeLocal, ReservaFacadeRemote {
+public class ReservaFacade implements ReservaFacadeLocal {
 
     @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;

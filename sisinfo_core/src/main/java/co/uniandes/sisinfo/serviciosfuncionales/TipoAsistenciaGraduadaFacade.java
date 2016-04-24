@@ -13,7 +13,7 @@ import javax.persistence.PersistenceContext;
  * @author Marcela Morales
  */
 @Stateless
-public class TipoAsistenciaGraduadaFacade implements TipoAsistenciaGraduadaFacadeLocal, TipoAsistenciaGraduadaFacadeRemote {
+public class TipoAsistenciaGraduadaFacade implements TipoAsistenciaGraduadaFacadeLocal {
 
     @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;

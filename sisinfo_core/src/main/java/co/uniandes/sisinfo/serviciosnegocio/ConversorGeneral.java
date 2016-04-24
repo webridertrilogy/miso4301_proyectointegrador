@@ -26,19 +26,19 @@ public class ConversorGeneral {
      *  ConstanteBean
      */
     @EJB
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
 
      /**
      * Constructor.
      */
     public ConversorGeneral(String xml) {
-        try{
-            getParser().leerXML(xml);
-            ServiceLocator serviceLocator = new ServiceLocator();
-            constanteBean = (ConstanteRemote) serviceLocator.getRemoteEJB(ConstanteRemote.class);
-        }catch(Exception e){
-            e.printStackTrace();
-        }
+//        try{
+//            getParser().leerXML(xml);
+//            ServiceLocator serviceLocator = new ServiceLocator();
+//            constanteBean = (ConstanteLocal) serviceLocator.getLocalEJB(ConstanteLocal.class);
+//        }catch(Exception e){
+//            e.printStackTrace();
+//        }
     }
 
     public String obtenerResponsable(){
@@ -56,7 +56,7 @@ public class ConversorGeneral {
         return parser;
     }
 
-    public ConstanteRemote getConstanteBean() {
+    public ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 

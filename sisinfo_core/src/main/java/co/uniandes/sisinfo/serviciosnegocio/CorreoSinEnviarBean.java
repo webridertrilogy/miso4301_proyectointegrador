@@ -30,7 +30,7 @@ import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
  * @author Asistente
  */
 @Stateless
-public class CorreoSinEnviarBean implements CorreoSinEnviarBeanRemote, CorreoSinEnviarBeanLocal {
+public class CorreoSinEnviarBean implements  CorreoSinEnviarBeanLocal {
 
     private ParserT parser;
 
@@ -39,21 +39,21 @@ public class CorreoSinEnviarBean implements CorreoSinEnviarBeanRemote, CorreoSin
     private ConversorCorreoSinEnviar conversorCorreoSinEnviar;
 
     @EJB
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
     @EJB
     private CorreoSinEnviarFacadeLocal correoSinEnviarFacade;
     @EJB
     private CorreoLocal correoBean;
 
     public CorreoSinEnviarBean() {
-        try {
-            parser = new ParserT();
-            serviceLocator = new ServiceLocator();
-            constanteBean = (ConstanteRemote) serviceLocator.getRemoteEJB(ConstanteRemote.class);
-            conversorCorreoSinEnviar = new ConversorCorreoSinEnviar(constanteBean);
-        } catch (NamingException ex) {
-            Logger.getLogger(CorreoSinEnviarBean.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        try {
+//            parser = new ParserT();
+//            serviceLocator = new ServiceLocator();
+//            constanteBean = (ConstanteLocal) serviceLocator.getLocalEJB(ConstanteLocal.class);
+//            conversorCorreoSinEnviar = new ConversorCorreoSinEnviar(constanteBean);
+//        } catch (NamingException ex) {
+//            Logger.getLogger(CorreoSinEnviarBean.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }
 
 
@@ -70,7 +70,7 @@ public class CorreoSinEnviarBean implements CorreoSinEnviarBeanRemote, CorreoSin
 
     }
 
-    @Override
+    
     public String darCorreosSinEnviar(String xml) {
         try {
             parser.leerXML(xml);
@@ -89,11 +89,11 @@ public class CorreoSinEnviarBean implements CorreoSinEnviarBeanRemote, CorreoSin
 
 
 
-    public ConstanteRemote getConstanteBean() {
+    public ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 
-    @Override
+    
     public String eliminarCorreosSinEnviar(String xml) {
         try {
             parser.leerXML(xml);
@@ -110,7 +110,7 @@ public class CorreoSinEnviarBean implements CorreoSinEnviarBeanRemote, CorreoSin
         }
     }
 
-    @Override
+    
     public String enviarCorreosSinEnviar(String xml) {
         try {
             parser.leerXML(xml);
@@ -128,7 +128,7 @@ public class CorreoSinEnviarBean implements CorreoSinEnviarBeanRemote, CorreoSin
         }
     }
 
-    @Override
+    
     public String darCorreoSinEnviar(String xml) {
         try {
             parser.leerXML(xml);

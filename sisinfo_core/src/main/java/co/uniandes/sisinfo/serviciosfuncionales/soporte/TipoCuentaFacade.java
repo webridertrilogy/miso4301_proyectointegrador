@@ -20,7 +20,7 @@ import co.uniandes.sisinfo.entities.datosmaestros.soporte.TipoCuenta;
  * @author Asistente
  */
 @Stateless
-public class TipoCuentaFacade implements TipoCuentaFacadeLocal, TipoCuentaFacadeRemote {
+public class TipoCuentaFacade implements TipoCuentaFacadeLocal {
     @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 

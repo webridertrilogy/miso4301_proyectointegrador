@@ -22,7 +22,7 @@ import javax.persistence.Query;
  * Servicio Facade Entidad Nodo
  */
 @Stateless
-public class NodoFacade implements NodoFacadeLocal, NodoFacadeRemote {
+public class NodoFacade implements NodoFacadeLocal {
 
 	@PersistenceContext(unitName="SoporteSisinfoPU")
     private EntityManager em;

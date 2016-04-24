@@ -16,7 +16,7 @@ import javax.persistence.PersistenceContext;
  * @author Asistente
  */
 @Stateless
-public class DiaCompletoFacade extends AbstractFacade<DiaCompleto> implements DiaCompletoFacadeLocal, DiaCompletoFacadeRemote {
+public class DiaCompletoFacade extends AbstractFacade<DiaCompleto> implements DiaCompletoFacadeLocal {
 	@PersistenceContext(unitName="SoporteSisinfoPU")
     private EntityManager em;
 

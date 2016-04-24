@@ -28,7 +28,7 @@ import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
  */
 @Stateless
 @EJB(name = "CorreoAuditoriaBean", beanInterface = co.uniandes.sisinfo.serviciosnegocio.CorreoAuditoriaLocal.class)
-public class CorreoAuditoriaBean implements CorreoAuditoriaLocal, CorreoAuditoriaRemote {
+public class CorreoAuditoriaBean implements CorreoAuditoriaLocal {
 
     //---------------------------------------
     // Atributos
@@ -36,7 +36,7 @@ public class CorreoAuditoriaBean implements CorreoAuditoriaLocal, CorreoAuditori
     @EJB
     private CorreoAuditoriaFacadeLocal correoAuditoriaFacade;
     @EJB
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
     private ServiceLocator serviceLocator;
     private ParserT parser;
     private ConversorCorreoAuditoria conversor;
@@ -47,12 +47,12 @@ public class CorreoAuditoriaBean implements CorreoAuditoriaLocal, CorreoAuditori
     public CorreoAuditoriaBean() {
         parser = new ParserT();
         serviceLocator = new ServiceLocator();
-        try {
-            constanteBean = (ConstanteRemote) serviceLocator.getRemoteEJB(ConstanteRemote.class);
-            conversor = new ConversorCorreoAuditoria(constanteBean);
-        } catch (NamingException ex) {
-            Logger.getLogger(CorreoAuditoriaBean.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        try {
+//            constanteBean = (ConstanteLocal) serviceLocator.getLocalEJB(ConstanteLocal.class);
+//            conversor = new ConversorCorreoAuditoria(constanteBean);
+//        } catch (NamingException ex) {
+//            Logger.getLogger(CorreoAuditoriaBean.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }
 
     //---------------------------------------
@@ -263,7 +263,7 @@ public class CorreoAuditoriaBean implements CorreoAuditoriaLocal, CorreoAuditori
      * Retorna ConstanteBean
      * @return constanteBean ConstanteBean
      */
-    private ConstanteRemote getConstanteBean() {
+    private ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 

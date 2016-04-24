@@ -27,44 +27,44 @@ import co.uniandes.sisinfo.entities.datosmaestros.NivelFormacion;
 import co.uniandes.sisinfo.entities.datosmaestros.Seccion;
 import co.uniandes.sisinfo.serviciosfuncionales.CargaProfesorFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.NivelTesisFacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.ProyectoDeGradoFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.Tesis1FacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.Tesis2FacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.TipoPublicacionFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.CursoFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.EstudianteFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.NivelFormacionFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.SeccionFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.ProyectoDeGradoFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.Tesis1FacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.Tesis2FacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.TipoPublicacionFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.CursoFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.EstudianteFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.NivelFormacionFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.SeccionFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
 
 public class ConversorCargaYCompromisos {
 
-    private SeccionFacadeRemote seccionFacadeRemote;
-    private CursoFacadeRemote cursoFacadeRemote;
-    private Tesis1FacadeRemote tesis1Facade;
-    private Tesis2FacadeRemote tesis2Facade;
-    private ProyectoDeGradoFacadeRemote proyectoDeGradoFacade;
-    private NivelTesisFacadeLocal nivelTesisFacadeRemote;
-    private TipoPublicacionFacadeRemote tipoPublicacionFacade;
-    private NivelFormacionFacadeRemote nivelFormacionRemote;
-    private EstudianteFacadeRemote estudianteFacadeRemote;
+    private SeccionFacadeLocal seccionFacadeLocal;
+    private CursoFacadeLocal cursoFacadeLocal;
+    private Tesis1FacadeLocal tesis1Facade;
+    private Tesis2FacadeLocal tesis2Facade;
+    private ProyectoDeGradoFacadeLocal proyectoDeGradoFacade;
+    private NivelTesisFacadeLocal nivelTesisFacadeLocal;
+    private TipoPublicacionFacadeLocal tipoPublicacionFacade;
+    private NivelFormacionFacadeLocal nivelFormacionLocal;
+    private EstudianteFacadeLocal estudianteFacadeLocal;
     private CargaProfesorFacadeLocal cargaProfesorFacade;
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
 
-    public ConversorCargaYCompromisos(SeccionFacadeRemote seccionFacadeRemote, CursoFacadeRemote cursoFacadeRemote, Tesis1FacadeRemote tesis1Facade,
-            Tesis2FacadeRemote tesis2Facade, ProyectoDeGradoFacadeRemote proyectoDeGradoFacade, NivelTesisFacadeLocal nivelTesisFacadeRemote,
-            TipoPublicacionFacadeRemote tipoPublicacionFacade, NivelFormacionFacadeRemote nivelFormacionRemote, EstudianteFacadeRemote estudianteFacadeRemote,
-            CargaProfesorFacadeLocal cargaProfesorFacade, ConstanteRemote constanteBean) {
+    public ConversorCargaYCompromisos(SeccionFacadeLocal seccionFacadeLocal, CursoFacadeLocal cursoFacadeLocal, Tesis1FacadeLocal tesis1Facade,
+            Tesis2FacadeLocal tesis2Facade, ProyectoDeGradoFacadeLocal proyectoDeGradoFacade, NivelTesisFacadeLocal nivelTesisFacadeLocal,
+            TipoPublicacionFacadeLocal tipoPublicacionFacade, NivelFormacionFacadeLocal nivelFormacionLocal, EstudianteFacadeLocal estudianteFacadeLocal,
+            CargaProfesorFacadeLocal cargaProfesorFacade, ConstanteLocal constanteBean) {
 
-        this.seccionFacadeRemote = seccionFacadeRemote;
-        this.cursoFacadeRemote = cursoFacadeRemote;
+        this.seccionFacadeLocal = seccionFacadeLocal;
+        this.cursoFacadeLocal = cursoFacadeLocal;
         this.tesis1Facade = tesis1Facade;
         this.tesis2Facade = tesis2Facade;
         this.proyectoDeGradoFacade = proyectoDeGradoFacade;
-        this.nivelTesisFacadeRemote = nivelTesisFacadeRemote;
+        this.nivelTesisFacadeLocal = nivelTesisFacadeLocal;
         this.tipoPublicacionFacade = tipoPublicacionFacade;
-        this.nivelFormacionRemote = nivelFormacionRemote;
-        this.estudianteFacadeRemote = estudianteFacadeRemote;
+        this.nivelFormacionLocal = nivelFormacionLocal;
+        this.estudianteFacadeLocal = estudianteFacadeLocal;
         this.cargaProfesorFacade = cargaProfesorFacade;
         this.constanteBean = constanteBean;
     }
@@ -215,10 +215,10 @@ public class ConversorCargaYCompromisos {
         Secuencia secPrincipalCarga = new Secuencia(getConstanteBean().getConstante(Constantes.TAG_PARAM_INFORMACION_CURSOS), "");
 
         //Agregar cursos de monitorías de este profesor
-        List<Seccion> listaSeccionesMonitorias = seccionFacadeRemote.findByCorreoProfesor(carga.getProfesor().getPersona().getCorreo());
+        List<Seccion> listaSeccionesMonitorias = seccionFacadeLocal.findByCorreoProfesor(carga.getProfesor().getPersona().getCorreo());
         for (Seccion seccion : listaSeccionesMonitorias) {
 
-            Curso c = cursoFacadeRemote.findByCRNSeccion(seccion.getCrn());
+            Curso c = cursoFacadeLocal.findByCRNSeccion(seccion.getCrn());
             Secuencia secCurso = new Secuencia(getConstanteBean().getConstante(Constantes.TAG_PARAM_INFORMACION_CURSO), "");
             Secuencia secIdCurso = new Secuencia(getConstanteBean().getConstante(Constantes.TAG_PARAM_ID_GENERAL), "-1");
             Secuencia secNombreCurso = new Secuencia(getConstanteBean().getConstante(Constantes.TAG_PARAM_NOMBRE_CURSO), c.getCodigo() + " - " + c.getNombre() + " Sección " + seccion.getNumeroSeccion());
@@ -531,7 +531,7 @@ public class ConversorCargaYCompromisos {
         }
         cursoP.setNombreCurso(nombreCurso);
 
-        NivelFormacion nivel = nivelFormacionRemote.findByName(nombreNivelFormacion);
+        NivelFormacion nivel = nivelFormacionLocal.findByName(nombreNivelFormacion);
         cursoP.setNivelDelCurso(nivel);
         if (observaciones != null) {
             cursoP.setObservaciones(observaciones);
@@ -662,14 +662,14 @@ public class ConversorCargaYCompromisos {
         nuevaTesis.setObservaciones(observaciones);
         nuevaTesis.setTitulo(titulo);
 
-        Estudiante estud = estudianteFacadeRemote.findByCorreo(correoEstudiante);
-        NivelFormacion nivelFormacion = nivelFormacionRemote.findByName(strNivelFormacion);
+        Estudiante estud = estudianteFacadeLocal.findByCorreo(correoEstudiante);
+        NivelFormacion nivelFormacion = nivelFormacionLocal.findByName(strNivelFormacion);
 
         nuevaTesis.setAutorEstudiante(estud);
         nuevaTesis.setNivelFormacionTesis(nivelFormacion);
 
         if (strNivelEstadoTesis != null) {
-            Collection<NivelTesis> niveles = nivelTesisFacadeRemote.findAll();
+            Collection<NivelTesis> niveles = nivelTesisFacadeLocal.findAll();
             for (NivelTesis nivelTesis : niveles) {
                 if (nivelTesis.getNivelTesis().equals(strNivelEstadoTesis)) {
                     nuevaTesis.setEstadoTesis(nivelTesis);
@@ -745,7 +745,7 @@ public class ConversorCargaYCompromisos {
         return otraAct;
     }
 
-    private ConstanteRemote getConstanteBean() {
+    private ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 }

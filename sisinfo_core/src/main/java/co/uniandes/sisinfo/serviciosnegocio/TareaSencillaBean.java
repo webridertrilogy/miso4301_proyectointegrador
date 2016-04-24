@@ -36,7 +36,7 @@ import co.uniandes.sisinfo.serviciosfuncionales.seguridad.RolFacadeLocal;
  */
 @Stateless
 @EJB(name = "TareaSencillaBean", beanInterface = co.uniandes.sisinfo.serviciosnegocio.TareaMultipleLocal.class)
-public class TareaSencillaBean implements TareaSencillaLocal, TareaSencillaRemote {
+public class TareaSencillaBean implements TareaSencillaLocal {
 
     //---------------------------------------
     // Atributos
@@ -50,7 +50,7 @@ public class TareaSencillaBean implements TareaSencillaLocal, TareaSencillaRemot
      *  ConstanteBean
      */
     @EJB
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
     @EJB
     private AlertaMultipleFacadeLocal alertaMultipleFacade;
     @EJB
@@ -66,12 +66,12 @@ public class TareaSencillaBean implements TareaSencillaLocal, TareaSencillaRemot
 
     public TareaSencillaBean()
     {
-        try {
-            serviceLocator = new ServiceLocator();
-            constanteBean = (ConstanteRemote) serviceLocator.getRemoteEJB(ConstanteRemote.class);
-        } catch (NamingException ex) {
-            Logger.getLogger(TareaSencillaBean.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        try {
+//            serviceLocator = new ServiceLocator();
+//            constanteBean = (ConstanteLocal) serviceLocator.getLocalEJB(ConstanteLocal.class);
+//        } catch (NamingException ex) {
+//            Logger.getLogger(TareaSencillaBean.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }
 
     @Override
@@ -102,7 +102,7 @@ public class TareaSencillaBean implements TareaSencillaLocal, TareaSencillaRemot
 
    
 
-    public ConstanteRemote getConstanteBean() {
+    public ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 

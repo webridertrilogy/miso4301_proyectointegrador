@@ -21,7 +21,7 @@ import org.hibernate.Hibernate;
  * @author Asistente
  */
 @Stateless
-public class DireccionTesisFacade implements DireccionTesisFacadeLocal, DireccionTesisFacadeRemote {
+public class DireccionTesisFacade implements DireccionTesisFacadeLocal {
 
     @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;

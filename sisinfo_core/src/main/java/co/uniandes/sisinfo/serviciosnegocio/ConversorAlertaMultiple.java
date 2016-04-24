@@ -23,7 +23,7 @@ import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
  */
 public class ConversorAlertaMultiple {
 
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
 
     private ConversorTareaMultiple conversorTareaMultiple;
 
@@ -33,20 +33,20 @@ public class ConversorAlertaMultiple {
     
     TareaMultipleLocal tareaMultipleBean;
 
-    TimerGenericoBeanRemote timerGenericoBeanRemote;
+    TimerGenericoBeanLocal timerGenericoBeanLocal;
 
-    public ConversorAlertaMultiple(ConstanteRemote constanteBean,AlertaMultipleFacadeLocal alertaMultipleFacade,TareaMultipleLocal tareaMultipleBean,PeriodicidadFacadeLocal periodicidadFacade,TimerGenericoBeanRemote timerGenericoRemote){
+    public ConversorAlertaMultiple(ConstanteLocal constanteBean,AlertaMultipleFacadeLocal alertaMultipleFacade,TareaMultipleLocal tareaMultipleBean,PeriodicidadFacadeLocal periodicidadFacade,TimerGenericoBeanLocal timerGenericoLocal){
         this.constanteBean = constanteBean;
         this.alertaMultipleFacade = alertaMultipleFacade;
         this.tareaMultipleBean = tareaMultipleBean;
         this.periodicidadFacade = periodicidadFacade;
-        this.timerGenericoBeanRemote = timerGenericoRemote;
-        conversorTareaMultiple = new ConversorTareaMultiple(constanteBean, alertaMultipleFacade, tareaMultipleBean);
+        this.timerGenericoBeanLocal = timerGenericoLocal;
+       // conversorTareaMultiple = new ConversorTareaMultiple(constanteBean, alertaMultipleFacade, tareaMultipleBean);
     }
 
 
 
-    public ConstanteRemote getConstanteBean() {
+    public ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 
@@ -75,10 +75,10 @@ public class ConversorAlertaMultiple {
         secuenciaAlerta.agregarSecuencia(new Secuencia(getConstanteBean().getConstante(Constantes.TAG_PARAM_NOMBRE), alerta.getNombre()));
         secuenciaAlerta.agregarSecuencia(new Secuencia(getConstanteBean().getConstante(Constantes.TAG_PARAM_DESCRIPCION), alerta.getDescripcion()));
         secuenciaAlerta.agregarSecuencia(new Secuencia(getConstanteBean().getConstante(Constantes.TAG_PARAM_COMANDO), alerta.getComando()));
-        boolean existeBD = timerGenericoBeanRemote.timerExisteEnBD(alerta.getIdTimer());
-        boolean existeMemoria = timerGenericoBeanRemote.timerExisteEnMemoria(alerta.getIdTimer());
-        secuenciaAlerta.agregarSecuencia(new Secuencia(getConstanteBean().getConstante(Constantes.TAG_PARAM_EXISTE_EN_BD),Boolean.toString(existeBD)));
-        secuenciaAlerta.agregarSecuencia(new Secuencia(getConstanteBean().getConstante(Constantes.TAG_PARAM_EXISTE_EN_MEMORIA), Boolean.toString(existeMemoria)));
+//        boolean existeBD = timerGenericoBeanLocal.timerExisteEnBD(alerta.getIdTimer());
+//        boolean existeMemoria = timerGenericoBeanLocal.timerExisteEnMemoria(alerta.getIdTimer());
+//        secuenciaAlerta.agregarSecuencia(new Secuencia(getConstanteBean().getConstante(Constantes.TAG_PARAM_EXISTE_EN_BD),Boolean.toString(existeBD)));
+//        secuenciaAlerta.agregarSecuencia(new Secuencia(getConstanteBean().getConstante(Constantes.TAG_PARAM_EXISTE_EN_MEMORIA), Boolean.toString(existeMemoria)));
         return secuenciaAlerta;
     }
 
@@ -103,10 +103,10 @@ public class ConversorAlertaMultiple {
         secuenciaAlerta.agregarSecuencia(new Secuencia(getConstanteBean().getConstante(Constantes.TAG_PARAM_ACTIVA), Boolean.toString(alerta.isActiva())));
         secuenciaAlerta.agregarSecuencia(new Secuencia(getConstanteBean().getConstante(Constantes.TAG_PARAM_ENVIA_CORREO), Boolean.toString(alerta.isEnviaCorreo())));
         boolean existeBD,existeMemoria;
-        existeBD = timerGenericoBeanRemote.timerExisteEnBD(alerta.getIdTimer());
-        existeMemoria = timerGenericoBeanRemote.timerExisteEnMemoria(alerta.getIdTimer());
-        secuenciaAlerta.agregarSecuencia(new Secuencia(getConstanteBean().getConstante(Constantes.TAG_PARAM_EXISTE_EN_BD),Boolean.toString(existeBD)));
-        secuenciaAlerta.agregarSecuencia(new Secuencia(getConstanteBean().getConstante(Constantes.TAG_PARAM_EXISTE_EN_MEMORIA), Boolean.toString(existeMemoria)));
+//        existeBD = timerGenericoBeanLocal.timerExisteEnBD(alerta.getIdTimer());
+//        existeMemoria = timerGenericoBeanLocal.timerExisteEnMemoria(alerta.getIdTimer());
+//        secuenciaAlerta.agregarSecuencia(new Secuencia(getConstanteBean().getConstante(Constantes.TAG_PARAM_EXISTE_EN_BD),Boolean.toString(existeBD)));
+//        secuenciaAlerta.agregarSecuencia(new Secuencia(getConstanteBean().getConstante(Constantes.TAG_PARAM_EXISTE_EN_MEMORIA), Boolean.toString(existeMemoria)));
         return secuenciaAlerta;
     }
 

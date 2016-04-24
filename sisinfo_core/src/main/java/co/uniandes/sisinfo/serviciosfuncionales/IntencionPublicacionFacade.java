@@ -17,7 +17,7 @@ import javax.persistence.Query;
  * @author Asistente
  */
 @Stateless
-public class IntencionPublicacionFacade implements IntencionPublicacionFacadeLocal, IntencionPublicacionFacadeRemote {
+public class IntencionPublicacionFacade implements IntencionPublicacionFacadeLocal {
     @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 

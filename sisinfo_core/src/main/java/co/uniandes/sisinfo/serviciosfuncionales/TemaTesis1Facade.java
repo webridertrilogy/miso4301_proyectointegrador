@@ -19,7 +19,7 @@ import org.hibernate.Hibernate;
  * @author Ivan Mauricio Melo S
  */
 @Stateless
-public class TemaTesis1Facade implements TemaTesis1FacadeLocal, TemaTesis1FacadeRemote {
+public class TemaTesis1Facade implements TemaTesis1FacadeLocal {
     @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 

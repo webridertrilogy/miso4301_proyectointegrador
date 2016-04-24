@@ -17,7 +17,7 @@ import co.uniandes.sisinfo.comun.constantes.Constantes;
 import co.uniandes.sisinfo.comun.constantes.Mensajes;
 import co.uniandes.sisinfo.entities.datosmaestros.Persona;
 import co.uniandes.sisinfo.serviciosfuncionales.ServiceLocator;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.PersonaFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.PersonaFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.ParserT;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
 
@@ -26,31 +26,31 @@ import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
  * @author da-naran
  */
 @Stateless
-public class PersonaBean implements PersonaRemote, PersonaLocal {
+public class PersonaBean implements  PersonaLocal {
 
-    private final static String RUTA_INTERFAZ_REMOTA = "co.uniandes.sisinfo.serviciosnegocio.TesisBeanRemote";
-
-    @EJB
-    private ConstanteRemote constanteBean;
+    private final static String RUTA_INTERFAZ_REMOTA = "co.uniandes.sisinfo.serviciosnegocio.TesisBeanLocal";
 
     @EJB
-    private PersonaFacadeRemote personaFacade;
+    private ConstanteLocal constanteBean;
+
+    @EJB
+    private PersonaFacadeLocal personaFacade;
 
     private ParserT parser;
     private ServiceLocator serviceLocator;
 
     public PersonaBean() {
-        try {
-            parser = new ParserT();
-            serviceLocator = new ServiceLocator();
-            constanteBean = (ConstanteRemote) serviceLocator.getRemoteEJB(ConstanteRemote.class);
-            personaFacade = (PersonaFacadeRemote)serviceLocator.getRemoteEJB(PersonaFacadeRemote.class);
-        } catch (Exception e) {
-            Logger.getLogger(PersonaBean.class.getName()).log(Level.SEVERE, null, e);
-        }
+//        try {
+//            parser = new ParserT();
+//            serviceLocator = new ServiceLocator();
+//            constanteBean = (ConstanteLocal) serviceLocator.getLocalEJB(ConstanteLocal.class);
+//            personaFacade = (PersonaFacadeLocal)serviceLocator.getLocalEJB(PersonaFacadeLocal.class);
+//        } catch (Exception e) {
+//            Logger.getLogger(PersonaBean.class.getName()).log(Level.SEVERE, null, e);
+//        }
     }
 
-    public ConstanteRemote getConstanteBean() {
+    public ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 

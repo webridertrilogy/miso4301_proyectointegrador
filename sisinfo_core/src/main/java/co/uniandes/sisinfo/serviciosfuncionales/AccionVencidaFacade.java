@@ -21,7 +21,7 @@ import co.uniandes.sisinfo.entities.AccionVencida;
  * @author Ivan Mauricio Melo Suarez
  */
 @Stateless
-public class AccionVencidaFacade extends AbstractFacade<AccionVencida> implements AccionVencidaFacadeLocal, AccionVencidaFacadeRemote {
+public class AccionVencidaFacade extends AbstractFacade<AccionVencida> implements AccionVencidaFacadeLocal {
 
     @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;

@@ -19,7 +19,7 @@ import javax.persistence.Query;
  * @author Asistente
  */
 @Stateless
-public class PeriodoTesisFacade implements PeriodoTesisFacadeLocal, PeriodoTesisFacadeRemote {
+public class PeriodoTesisFacade implements PeriodoTesisFacadeLocal {
     @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 

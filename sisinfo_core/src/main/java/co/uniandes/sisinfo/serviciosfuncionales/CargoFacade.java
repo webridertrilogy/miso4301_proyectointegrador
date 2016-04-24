@@ -16,7 +16,7 @@ import javax.persistence.PersistenceContext;
  * @author Administrador
  */
 @Stateless
-public class CargoFacade extends AbstractFacade<Cargo> implements CargoFacadeLocal, CargoFacadeRemote {
+public class CargoFacade extends AbstractFacade<Cargo> implements CargoFacadeLocal {
     @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 

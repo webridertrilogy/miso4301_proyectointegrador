@@ -47,47 +47,47 @@ import co.uniandes.sisinfo.serviciosfuncionales.CalificacionJuradoFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.CategoriaCriterioTesis2FacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.CoasesorFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.ComentarioTesisFacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.CorreoRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.CorreoLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.CriterioCalificacionFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.InscripcionSubareaInvestigacionFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.JuradoExternoUniversidadFacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.PeriodicidadFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.PeriodoFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.PeriodicidadFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.PeriodoFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.PeriodoTesisFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.ServiceLocator;
-import co.uniandes.sisinfo.serviciosfuncionales.TareaSencillaFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.TareaSencillaFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.Tesis1FacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.Tesis2FacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.EstudianteFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.PersonaFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.ProfesorFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.EstudianteFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.PersonaFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.ProfesorFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.ParserT;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
-import co.uniandes.sisinfo.serviciosfuncionales.seguridad.UsuarioFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.seguridad.UsuarioFacadeLocal;
 
 /**
  *
  * @author Ivan Mauricio Melo Suarez
  */
 @Stateless
-public class Tesis2Bean implements Tesis2BeanRemote, Tesis2BeanLocal {
+public class Tesis2Bean implements  Tesis2BeanLocal {
 
     //----CONSTANTES-------------
-    private final static String RUTA_INTERFAZ_REMOTA = "co.uniandes.sisinfo.serviciosnegocio.TesisBeanRemote";
+    private final static String RUTA_INTERFAZ_REMOTA = "co.uniandes.sisinfo.serviciosnegocio.TesisBeanLocal";
     private final static String NOMBRE_METODO_TIMER = "manejoTimmersTesisMaestria";
     //--------------------------
     @EJB
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
     @EJB
-    private ProfesorFacadeRemote profesorFacade;
+    private ProfesorFacadeLocal profesorFacade;
     @EJB
-    private EstudianteFacadeRemote estudianteFacadeRemote;
+    private EstudianteFacadeLocal estudianteFacadeLocal;
     @EJB
     private PeriodoTesisFacadeLocal periodoFacadelocal;
     @EJB
-    private CorreoRemote correoBean;
+    private CorreoLocal correoBean;
     @EJB
-    private PeriodicidadFacadeRemote periodicidadFacade;
+    private PeriodicidadFacadeLocal periodicidadFacade;
     @EJB
     private InscripcionSubareaInvestigacionFacadeLocal inscripcionSubAreaFacade;
     @EJB
@@ -95,13 +95,12 @@ public class Tesis2Bean implements Tesis2BeanRemote, Tesis2BeanLocal {
     @EJB
     private Tesis2FacadeLocal tesis2Facade;
     @EJB
-    private PersonaFacadeRemote personaFacade;
+    private PersonaFacadeLocal personaFacade;
     @EJB
-    private PeriodoFacadeRemote periodoFacade;
+    private PeriodoFacadeLocal periodoFacade;
+  
     @EJB
-    private HistoricosTesisBeanRemote historicoTesis;
-    @EJB
-    private TimerGenericoBeanRemote timerGenerico;
+    private TimerGenericoBeanLocal timerGenerico;
     @EJB
     private ComentarioTesisFacadeLocal comentarioTesisFacade;
     @EJB
@@ -118,61 +117,56 @@ public class Tesis2Bean implements Tesis2BeanRemote, Tesis2BeanLocal {
     private TesisBeanLocal tesisBean;
     @EJB
     private CoasesorFacadeLocal coasesorFacade;
-    @EJB
-    private HistoricoTesis2Remote historicoBean;
-    @EJB
-    private HistoricoTesis1Remote historicoTesis1Bean;
-    @EJB
-    private HistoricoInscripcionSubareaInvestRemote historicoInscripcionSubareaInvestBean;
+   
     @EJB
     private JuradosTesisBeanLocal juradoTesisFacade;
     @EJB
-    private AccionVencidaBeanRemote accionVencidaBean;
+    private AccionVencidaBeanLocal accionVencidaBean;
     //---OTROS--------------------
     private ParserT parser;
     private ServiceLocator serviceLocator;
     private ConversorTesisMaestria conversor;
     @EJB
-    private TareaSencillaRemote tareaSencillaBean;
+    private TareaSencillaLocal tareaSencillaBean;
     @EJB
-    private TareaMultipleRemote tareaBean;
+    private TareaMultipleLocal tareaBean;
     @EJB
-    private TareaSencillaFacadeRemote tareaSencillaFacade;
+    private TareaSencillaFacadeLocal tareaSencillaFacade;
     @EJB
     private PeriodoTesisFacadeLocal periodoTesis2Facade;
     @EJB
-    private UsuarioFacadeRemote usuarioFacade;
+    private UsuarioFacadeLocal usuarioFacade;
 
     public Tesis2Bean() {
-        try {
-            parser = new ParserT();
-            serviceLocator = new ServiceLocator();
-            constanteBean = (ConstanteRemote) serviceLocator.getRemoteEJB(ConstanteRemote.class);
-            profesorFacade = (ProfesorFacadeRemote) serviceLocator.getRemoteEJB(ProfesorFacadeRemote.class);
-            estudianteFacadeRemote = (EstudianteFacadeRemote) serviceLocator.getRemoteEJB(EstudianteFacadeRemote.class);
-//          subareaInvestigacionFacadeRemote = (SubareaInvestigacionFacadeRemote) serviceLocator.getRemoteEJB(SubareaInvestigacionFacadeRemote.class);
-            correoBean = (CorreoRemote) serviceLocator.getRemoteEJB(CorreoRemote.class);
-            periodicidadFacade = (PeriodicidadFacadeRemote) serviceLocator.getRemoteEJB(PeriodicidadFacadeRemote.class);
-            personaFacade = (PersonaFacadeRemote) serviceLocator.getRemoteEJB(PersonaFacadeRemote.class);
-            periodoFacade = (PeriodoFacadeRemote) serviceLocator.getRemoteEJB(PeriodoFacadeRemote.class);
-            historicoTesis = (HistoricosTesisBeanRemote) serviceLocator.getRemoteEJB(HistoricosTesisBeanRemote.class);
-            timerGenerico = (TimerGenericoBeanRemote) serviceLocator.getRemoteEJB(TimerGenericoBeanRemote.class);
-            //           reporteFacadeRemote = (ReportesFacadeRemote) serviceLocator.getRemoteEJB(ReportesFacadeRemote.class);
-            //          grupoInvestigacionFacade = (GrupoInvestigacionFacadeRemote) serviceLocator.getRemoteEJB(GrupoInvestigacionFacadeRemote.class);
-            //           nivelFormacionFacade = (NivelFormacionFacadeRemote) serviceLocator.getRemoteEJB(NivelFormacionFacadeRemote.class);
-            historicoBean = (HistoricoTesis2Remote) serviceLocator.getRemoteEJB(HistoricoTesis2Remote.class);
-            historicoTesis1Bean = (HistoricoTesis1Remote) serviceLocator.getRemoteEJB(HistoricoTesis1Remote.class);
-            historicoInscripcionSubareaInvestBean = (HistoricoInscripcionSubareaInvestRemote) serviceLocator.getRemoteEJB(HistoricoInscripcionSubareaInvestRemote.class);
-            accionVencidaBean = (AccionVencidaBeanRemote) serviceLocator.getRemoteEJB(AccionVencidaBeanRemote.class);
-            conversor = new ConversorTesisMaestria();
-            tareaSencillaBean = (TareaSencillaRemote) serviceLocator.getRemoteEJB(TareaSencillaRemote.class);
-            tareaSencillaFacade = (TareaSencillaFacadeRemote) serviceLocator.getRemoteEJB(TareaSencillaFacadeRemote.class);
-            tareaBean = (TareaMultipleRemote) serviceLocator.getRemoteEJB(TareaMultipleRemote.class);
-            usuarioFacade = (UsuarioFacadeRemote) serviceLocator.getRemoteEJB(UsuarioFacadeRemote.class);
-
-        } catch (Exception e) {
-            Logger.getLogger(TesisBean.class.getName()).log(Level.SEVERE, null, e);
-        }
+//        try {
+//            parser = new ParserT();
+//            serviceLocator = new ServiceLocator();
+//            constanteBean = (ConstanteLocal) serviceLocator.getLocalEJB(ConstanteLocal.class);
+//            profesorFacade = (ProfesorFacadeLocal) serviceLocator.getLocalEJB(ProfesorFacadeLocal.class);
+//            estudianteFacadeLocal = (EstudianteFacadeLocal) serviceLocator.getLocalEJB(EstudianteFacadeLocal.class);
+////          subareaInvestigacionFacadeLocal = (SubareaInvestigacionFacadeLocal) serviceLocator.getLocalEJB(SubareaInvestigacionFacadeLocal.class);
+//            correoBean = (CorreoLocal) serviceLocator.getLocalEJB(CorreoLocal.class);
+//            periodicidadFacade = (PeriodicidadFacadeLocal) serviceLocator.getLocalEJB(PeriodicidadFacadeLocal.class);
+//            personaFacade = (PersonaFacadeLocal) serviceLocator.getLocalEJB(PersonaFacadeLocal.class);
+//            periodoFacade = (PeriodoFacadeLocal) serviceLocator.getLocalEJB(PeriodoFacadeLocal.class);
+//            historicoTesis = (HistoricosTesisBeanLocal) serviceLocator.getLocalEJB(HistoricosTesisBeanLocal.class);
+//            timerGenerico = (TimerGenericoBeanLocal) serviceLocator.getLocalEJB(TimerGenericoBeanLocal.class);
+//            //           reporteFacadeLocal = (ReportesFacadeLocal) serviceLocator.getLocalEJB(ReportesFacadeLocal.class);
+//            //          grupoInvestigacionFacade = (GrupoInvestigacionFacadeLocal) serviceLocator.getLocalEJB(GrupoInvestigacionFacadeLocal.class);
+//            //           nivelFormacionFacade = (NivelFormacionFacadeLocal) serviceLocator.getLocalEJB(NivelFormacionFacadeLocal.class);
+//            historicoBean = (HistoricoTesis2Local) serviceLocator.getLocalEJB(HistoricoTesis2Local.class);
+//            historicoTesis1Bean = (HistoricoTesis1Local) serviceLocator.getLocalEJB(HistoricoTesis1Local.class);
+//            historicoInscripcionSubareaInvestBean = (HistoricoInscripcionSubareaInvestLocal) serviceLocator.getLocalEJB(HistoricoInscripcionSubareaInvestLocal.class);
+//            accionVencidaBean = (AccionVencidaBeanLocal) serviceLocator.getLocalEJB(AccionVencidaBeanLocal.class);
+//            conversor = new ConversorTesisMaestria();
+//            tareaSencillaBean = (TareaSencillaLocal) serviceLocator.getLocalEJB(TareaSencillaLocal.class);
+//            tareaSencillaFacade = (TareaSencillaFacadeLocal) serviceLocator.getLocalEJB(TareaSencillaFacadeLocal.class);
+//            tareaBean = (TareaMultipleLocal) serviceLocator.getLocalEJB(TareaMultipleLocal.class);
+//            usuarioFacade = (UsuarioFacadeLocal) serviceLocator.getLocalEJB(UsuarioFacadeLocal.class);
+//
+//        } catch (Exception e) {
+//            Logger.getLogger(TesisBean.class.getName()).log(Level.SEVERE, null, e);
+//        }
     }
 
     /**
@@ -1511,7 +1505,7 @@ public class Tesis2Bean implements Tesis2BeanRemote, Tesis2BeanLocal {
         }
     }
 
-    public ConstanteRemote getConstanteBean() {
+    public ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 
@@ -1676,7 +1670,7 @@ public class Tesis2Bean implements Tesis2BeanRemote, Tesis2BeanLocal {
         String tipoSubirArticulo = getConstanteBean().getConstante(Constantes.TAG_PARAM_TIPO_SUBIR_ARTICULO_TESIS_2);
         HashMap<String, String> params = new HashMap<String, String>();
         params.put(getConstanteBean().getConstante(Constantes.TAG_PARAM_ID_GENERAL), tesis2.getId().toString());
-        tareaBean.realizarTareaPorCorreo(tipoSubirArticulo, tesis2.getAsesor().getPersona().getCorreo(), params);
+       // tareaBean.realizarTareaPorCorreo(tipoSubirArticulo, tesis2.getAsesor().getPersona().getCorreo(), params);
 
         String tipoCalificar = getConstanteBean().getConstante(Constantes.TAG_PARAM_TIPO_CALIFICAR_SUSTENTACION_TESIS2);
         for (CalificacionJurado calificacion : tesis2.getCalificacionesJurados()) {
@@ -1696,7 +1690,7 @@ public class Tesis2Bean implements Tesis2BeanRemote, Tesis2BeanLocal {
                 }
             }
             if (correo != null) {
-                tareaBean.realizarTareaPorCorreo(tipoCalificar, correo, params);
+             //   tareaBean.realizarTareaPorCorreo(tipoCalificar, correo, params);
             }
         }
 
@@ -2612,7 +2606,7 @@ public class Tesis2Bean implements Tesis2BeanRemote, Tesis2BeanLocal {
 
                 secs.add(secTesis);
                 String comandoXML = parser.crearComando(getConstanteBean().getConstante(Constantes.CMD_MIGRAR_TESIS2_RECHAZADAS_A_HISTORICOS), getConstanteBean().getConstante(Constantes.VAL_TAG_TIPO_CMD_CONSULTA), getConstanteBean().getConstante(Constantes.ROL_COORDINACION), secs);
-                String resp = historicoBean.pasarTesis2RechazadaAHistorico(comandoXML);
+                String resp = null;// historicoBean.pasarTesis2RechazadaAHistorico(comandoXML);
                 if (resp == null) {
                     String mensajeAsociadoMigrarTesis2 = getConstanteBean().getConstante(Constantes.CMD_MIGRAR_TESIS2_RECHAZADAS_A_HISTORICOS) + "-" + tesis.getId();
                     timerGenerico.crearTimer2(RUTA_INTERFAZ_REMOTA, NOMBRE_METODO_TIMER, new Timestamp(new Date().getTime() + 2000 * 60 * 20), mensajeAsociadoMigrarTesis2,
@@ -2642,7 +2636,7 @@ public class Tesis2Bean implements Tesis2BeanRemote, Tesis2BeanLocal {
             Secuencia secTesis = conversor.pasarTesises2ASecuencia(tesis2);
             secs.add(secTesis);
             String comandoXML = parser.crearComando(getConstanteBean().getConstante(Constantes.CMD_MIGRAR_TESIS2_PERDIDAS_A_HISTORICOS), getConstanteBean().getConstante(Constantes.VAL_TAG_TIPO_CMD_CONSULTA), getConstanteBean().getConstante(Constantes.ROL_COORDINACION), secs);
-            String respTesis2 = historicoBean.pasarTesis2RetiradasAHistorico(comandoXML);
+            String respTesis2 = null; //historicoBean.pasarTesis2RetiradasAHistorico(comandoXML);
 
             if (respTesis2 == null) {
                 migracionCompletaExitosa = false;
@@ -2740,7 +2734,7 @@ public class Tesis2Bean implements Tesis2BeanRemote, Tesis2BeanLocal {
             Secuencia secTesis = conversor.pasarTesises2ASecuencia(tesis2);
             secs.add(secTesis);
             String comandoXML = parser.crearComando(getConstanteBean().getConstante(Constantes.CMD_MIGRAR_TESIS2_PERDIDAS_A_HISTORICOS), getConstanteBean().getConstante(Constantes.VAL_TAG_TIPO_CMD_CONSULTA), getConstanteBean().getConstante(Constantes.ROL_COORDINACION), secs);
-            String respTesis2 = historicoBean.pasarTesis2PerdidasAHistorico(comandoXML);
+            String respTesis2 = null;//historicoBean.pasarTesis2PerdidasAHistorico(comandoXML);
 
             if (respTesis2 == null) {
                 migracionCompletaExitosa = false;
@@ -2914,7 +2908,7 @@ public class Tesis2Bean implements Tesis2BeanRemote, Tesis2BeanLocal {
                     Secuencia secTesis1 = conversor.pasarTesises1ASecuencias(tesis1);
                     secsTesis1.add(secTesis1);
                     String comandoXML_Tesis1 = parser.crearComando(getConstanteBean().getConstante(Constantes.CMD_MIGRAR_TESIS1_TERMINADAS_A_HISTORICOS), getConstanteBean().getConstante(Constantes.VAL_TAG_TIPO_CMD_CONSULTA), getConstanteBean().getConstante(Constantes.ROL_COORDINACION), secsTesis1);
-                    respTesis1 = historicoTesis1Bean.pasarTesis1TerminadasAHistorico(comandoXML_Tesis1);
+                    respTesis1 = null;// historicoTesis1Bean.pasarTesis1TerminadasAHistorico(comandoXML_Tesis1);
                 }
 
                 if (respTesis1 == null) {
@@ -2923,7 +2917,7 @@ public class Tesis2Bean implements Tesis2BeanRemote, Tesis2BeanLocal {
                     Secuencia secInscripcion = conversor.pasarInscripcionSubareaASecuencia(inscripcionSubareaInvestigacion);
                     secsInscripcion.add(secInscripcion);
                     String comandoXML_Inscripcion = parser.crearComando(getConstanteBean().getConstante(Constantes.CMD_MIGRAR_INSCRIPCION_SUBAREA_A_HISTORICOS), getConstanteBean().getConstante(Constantes.VAL_TAG_TIPO_CMD_CONSULTA), getConstanteBean().getConstante(Constantes.ROL_COORDINACION), secsInscripcion);
-                    respInscripcion = historicoInscripcionSubareaInvestBean.pasarInscripcionSubAreaInvestigacionAHistorico(comandoXML_Inscripcion);
+                    respInscripcion = null;//historicoInscripcionSubareaInvestBean.pasarInscripcionSubAreaInvestigacionAHistorico(comandoXML_Inscripcion);
 
                     if (respInscripcion == null) {
                         migracionCompletaExitosa = false;
@@ -2932,7 +2926,7 @@ public class Tesis2Bean implements Tesis2BeanRemote, Tesis2BeanLocal {
                         Secuencia secTesis2 = conversor.pasarTesises2ASecuencia(tesis2);
                         secsTesis2.add(secTesis2);
                         String comandoXML_Tesis2 = parser.crearComando(getConstanteBean().getConstante(Constantes.CMD_MIGRAR_TESIS2_TERMINADAS_A_HISTORICOS), getConstanteBean().getConstante(Constantes.VAL_TAG_TIPO_CMD_CONSULTA), getConstanteBean().getConstante(Constantes.ROL_COORDINACION), secsTesis2);
-                        respTesis2 = historicoBean.pasarTesis2TerminadasAHistorico(comandoXML_Tesis2);
+                        respTesis2 = null;//historicoBean.pasarTesis2TerminadasAHistorico(comandoXML_Tesis2);
                         if (respTesis2 == null) {
                             migracionCompletaExitosa = false;
                             String asunto = Notificaciones.ASUNTO_MIGRACION_TESIS_A_HISTORICOS_PROBLEMA;

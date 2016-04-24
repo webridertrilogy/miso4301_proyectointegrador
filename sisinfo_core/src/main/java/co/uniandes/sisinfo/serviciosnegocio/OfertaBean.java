@@ -37,22 +37,22 @@ import co.uniandes.sisinfo.entities.HojaVida;
 import co.uniandes.sisinfo.entities.Oferta;
 import co.uniandes.sisinfo.entities.Proponente;
 import co.uniandes.sisinfo.entities.datosmaestros.Persona;
-import co.uniandes.sisinfo.serviciosfuncionales.CorreoRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.CorreoLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.EstudiantePosgradoFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.HojaVidaFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.InformacionEmpresaFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.OfertaFacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.PeriodoFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.PeriodoFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.ProponenteFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.ServiceLocator;
 import co.uniandes.sisinfo.serviciosfuncionales.TipoAsistenciaGraduadaFacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.EstudianteFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.InformacionAcademicaFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.PersonaFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.EstudianteFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.InformacionAcademicaFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.PersonaFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.ParserT;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
-import co.uniandes.sisinfo.serviciosfuncionales.soporte.PaisFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.soporte.TipoDocumentoFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.soporte.PaisFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.soporte.TipoDocumentoFacadeLocal;
 
 /**
  * Servicios de administración de ofertas de empleo
@@ -60,24 +60,24 @@ import co.uniandes.sisinfo.serviciosfuncionales.soporte.TipoDocumentoFacadeRemot
  */
 @Stateless
 @EJB(name = "OfertaBean", beanInterface = co.uniandes.sisinfo.serviciosnegocio.OfertaLocal.class)
-public class OfertaBean implements OfertaRemote, OfertaLocal {
+public class OfertaBean implements  OfertaLocal {
 
     //---------------------------------------
     // Atributos
     //---------------------------------------
     //Remotos
     @EJB
-    private EstudianteFacadeRemote estudianteFacade;
+    private EstudianteFacadeLocal estudianteFacade;
     @EJB
-    private PersonaFacadeRemote personaFacade;
+    private PersonaFacadeLocal personaFacade;
     @EJB
-    private PeriodoFacadeRemote periodoFacade;
+    private PeriodoFacadeLocal periodoFacade;
     @EJB
-    private PaisFacadeRemote paisFacade;
+    private PaisFacadeLocal paisFacade;
     @EJB
-    private TipoDocumentoFacadeRemote tipoDocumentoFacade;
+    private TipoDocumentoFacadeLocal tipoDocumentoFacade;
     @EJB
-    private InformacionAcademicaFacadeRemote informacionAcademicaFacade;
+    private InformacionAcademicaFacadeLocal informacionAcademicaFacade;
     //Locales
     @EJB
     private TipoAsistenciaGraduadaFacadeLocal tipoAsistenciaFacade;
@@ -93,11 +93,11 @@ public class OfertaBean implements OfertaRemote, OfertaLocal {
     private InformacionEmpresaFacadeLocal informacionEmpresaFacade;
     //Útiles
     @EJB
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
     @EJB
-    private TimerGenericoBeanRemote timerGenerico;
+    private TimerGenericoBeanLocal timerGenerico;
     @EJB
-    private CorreoRemote correoBean;
+    private CorreoLocal correoBean;
     private ParserT parser;
     private ServiceLocator serviceLocator;
     private ConversorBolsaEmpleo conversor;
@@ -105,7 +105,7 @@ public class OfertaBean implements OfertaRemote, OfertaLocal {
     //---------------------------------------
     // Constantes
     //---------------------------------------
-    public final static String RUTA_INTERFAZ_REMOTA = "co.uniandes.sisinfo.serviciosnegocio.OfertaRemote";
+    public final static String RUTA_INTERFAZ_REMOTA = "co.uniandes.sisinfo.serviciosnegocio.OfertaLocal";
     public final static String NOMBRE_MODULO = "BolsaEmpleo";
     
     //---------------------------------------
@@ -115,22 +115,22 @@ public class OfertaBean implements OfertaRemote, OfertaLocal {
      * Constructor de OfertaBean
      */
     public OfertaBean() {
-        try {
-            serviceLocator = new ServiceLocator();
-            constanteBean = (ConstanteRemote) serviceLocator.getRemoteEJB(ConstanteRemote.class);
-            timerGenerico = (TimerGenericoBeanRemote) serviceLocator.getRemoteEJB(TimerGenericoBeanRemote.class);
-            correoBean = (CorreoRemote) serviceLocator.getRemoteEJB(CorreoRemote.class);
-            parser = new ParserT();
-            periodoFacade = (PeriodoFacadeRemote) serviceLocator.getRemoteEJB(PeriodoFacadeRemote.class);
-            personaFacade = (PersonaFacadeRemote) serviceLocator.getRemoteEJB(PersonaFacadeRemote.class);
-            estudianteFacade = (EstudianteFacadeRemote) serviceLocator.getRemoteEJB(EstudianteFacadeRemote.class);
-            paisFacade = (PaisFacadeRemote) serviceLocator.getRemoteEJB(PaisFacadeRemote.class);
-            tipoDocumentoFacade = (TipoDocumentoFacadeRemote) serviceLocator.getRemoteEJB(TipoDocumentoFacadeRemote.class);
-            informacionAcademicaFacade = (InformacionAcademicaFacadeRemote) serviceLocator.getRemoteEJB(InformacionAcademicaFacadeRemote.class);
-            conversor = new ConversorBolsaEmpleo(constanteBean, estudianteFacade, personaFacade, periodoFacade, paisFacade, tipoAsistenciaFacade, tipoDocumentoFacade, informacionAcademicaFacade, hojaVidaFacade, estudiantePostgradoFacade, proponenteFacade, ofertaFacade, informacionEmpresaFacade);
-        } catch (NamingException ex) {
-            Logger.getLogger(OfertaBean.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        try {
+//            serviceLocator = new ServiceLocator();
+//            constanteBean = (ConstanteLocal) serviceLocator.getLocalEJB(ConstanteLocal.class);
+//            timerGenerico = (TimerGenericoBeanLocal) serviceLocator.getLocalEJB(TimerGenericoBeanLocal.class);
+//            correoBean = (CorreoLocal) serviceLocator.getLocalEJB(CorreoLocal.class);
+//            parser = new ParserT();
+//            periodoFacade = (PeriodoFacadeLocal) serviceLocator.getLocalEJB(PeriodoFacadeLocal.class);
+//            personaFacade = (PersonaFacadeLocal) serviceLocator.getLocalEJB(PersonaFacadeLocal.class);
+//            estudianteFacade = (EstudianteFacadeLocal) serviceLocator.getLocalEJB(EstudianteFacadeLocal.class);
+//            paisFacade = (PaisFacadeLocal) serviceLocator.getLocalEJB(PaisFacadeLocal.class);
+//            tipoDocumentoFacade = (TipoDocumentoFacadeLocal) serviceLocator.getLocalEJB(TipoDocumentoFacadeLocal.class);
+//            informacionAcademicaFacade = (InformacionAcademicaFacadeLocal) serviceLocator.getLocalEJB(InformacionAcademicaFacadeLocal.class);
+//            conversor = new ConversorBolsaEmpleo(constanteBean, estudianteFacade, personaFacade, periodoFacade, paisFacade, tipoAsistenciaFacade, tipoDocumentoFacade, informacionAcademicaFacade, hojaVidaFacade, estudiantePostgradoFacade, proponenteFacade, ofertaFacade, informacionEmpresaFacade);
+//        } catch (NamingException ex) {
+//            Logger.getLogger(OfertaBean.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }
 
     //---------------------------------------
@@ -546,7 +546,7 @@ public void eliminarOfertaPorVencimiento(String idOferta) {
         return parser;
     }
 
-    private ConstanteRemote getConstanteBean() {
+    private ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 
@@ -558,7 +558,7 @@ public void eliminarOfertaPorVencimiento(String idOferta) {
         return proponenteFacade;
     }
 
-    private CorreoRemote getCorreoBean() {
+    private CorreoLocal getCorreoBean() {
         return correoBean;
     }
 
@@ -566,7 +566,7 @@ public void eliminarOfertaPorVencimiento(String idOferta) {
         return estudiantePostgradoFacade;
     }
 
-    private TimerGenericoBeanRemote getTimerGenerico() {
+    private TimerGenericoBeanLocal getTimerGenerico() {
         return timerGenerico;
     }
 

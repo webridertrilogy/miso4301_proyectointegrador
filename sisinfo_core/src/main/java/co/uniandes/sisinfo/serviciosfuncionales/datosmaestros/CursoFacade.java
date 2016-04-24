@@ -30,8 +30,8 @@ import org.hibernate.Hibernate;
  * Servicios Entidad Curso
  */
 @Stateless
-@EJB(name = "CursoFacade", beanInterface = co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.CursoFacadeRemote.class)
-public class CursoFacade implements CursoFacadeLocal, CursoFacadeRemote {
+@EJB(name = "CursoFacade", beanInterface = co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.CursoFacadeLocal.class)
+public class CursoFacade implements CursoFacadeLocal {
 
 	@PersistenceContext(unitName="SoporteSisinfoPU")
     private EntityManager em;

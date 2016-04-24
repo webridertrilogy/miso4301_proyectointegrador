@@ -19,17 +19,17 @@ import co.uniandes.sisinfo.serviciosfuncionales.EstudiantePosgradoFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.HojaVidaFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.InformacionEmpresaFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.OfertaFacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.PeriodoFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.PeriodoFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.ProponenteFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.ServiceLocator;
 import co.uniandes.sisinfo.serviciosfuncionales.TipoAsistenciaGraduadaFacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.EstudianteFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.InformacionAcademicaFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.PersonaFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.EstudianteFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.InformacionAcademicaFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.PersonaFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.ParserT;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
-import co.uniandes.sisinfo.serviciosfuncionales.soporte.PaisFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.soporte.TipoDocumentoFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.soporte.PaisFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.soporte.TipoDocumentoFacadeLocal;
 
 /**
  * Servicios de administración de proponentes
@@ -37,7 +37,7 @@ import co.uniandes.sisinfo.serviciosfuncionales.soporte.TipoDocumentoFacadeRemot
  */
 @Stateless
 @EJB(name = "ProponenteBean", beanInterface = co.uniandes.sisinfo.serviciosnegocio.ProponenteLocal.class)
-public class ProponenteBean implements ProponenteRemote, ProponenteLocal {
+public class ProponenteBean implements  ProponenteLocal {
 
     //---------------------------------------
     // Atributos
@@ -58,21 +58,21 @@ public class ProponenteBean implements ProponenteRemote, ProponenteLocal {
     @EJB
     private OfertaFacadeLocal ofertaFacade;
     @EJB
-    private InformacionAcademicaFacadeRemote informacionAcademicaFacade;
+    private InformacionAcademicaFacadeLocal informacionAcademicaFacade;
     //Remotos
     @EJB
-    private PersonaFacadeRemote personaFacade;
+    private PersonaFacadeLocal personaFacade;
     @EJB
-    private EstudianteFacadeRemote estudianteFacade;
+    private EstudianteFacadeLocal estudianteFacade;
     @EJB
-    private PeriodoFacadeRemote periodoFacade;
+    private PeriodoFacadeLocal periodoFacade;
     @EJB
-    private PaisFacadeRemote paisFacade;
+    private PaisFacadeLocal paisFacade;
     @EJB
-    private TipoDocumentoFacadeRemote tipoDocumentoFacade;
+    private TipoDocumentoFacadeLocal tipoDocumentoFacade;
     //Útiles
     private ServiceLocator serviceLocator;
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
     private ParserT parser;
     private ConversorBolsaEmpleo conversor;
 
@@ -83,14 +83,14 @@ public class ProponenteBean implements ProponenteRemote, ProponenteLocal {
      * Constructor de ProponenteBean
      */
     public ProponenteBean() {
-        try {
-            serviceLocator = new ServiceLocator();
-            constanteBean = (ConstanteRemote) serviceLocator.getRemoteEJB(ConstanteRemote.class);
-            personaFacade = (PersonaFacadeRemote) serviceLocator.getRemoteEJB(PersonaFacadeRemote.class);
-            conversor = new ConversorBolsaEmpleo(constanteBean, estudianteFacade, personaFacade, periodoFacade, paisFacade, tipoAsistenciaFacade, tipoDocumentoFacade, informacionAcademicaFacade, hojaVidaFacade, estudiantePostgradoFacade, proponenteFacade, ofertaFacade, informacionEmpresaFacade);
-        } catch (NamingException ex) {
-            Logger.getLogger(ProponenteBean.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        try {
+//            serviceLocator = new ServiceLocator();
+//            constanteBean = (ConstanteLocal) serviceLocator.getLocalEJB(ConstanteLocal.class);
+//            personaFacade = (PersonaFacadeLocal) serviceLocator.getLocalEJB(PersonaFacadeLocal.class);
+//            conversor = new ConversorBolsaEmpleo(constanteBean, estudianteFacade, personaFacade, periodoFacade, paisFacade, tipoAsistenciaFacade, tipoDocumentoFacade, informacionAcademicaFacade, hojaVidaFacade, estudiantePostgradoFacade, proponenteFacade, ofertaFacade, informacionEmpresaFacade);
+//        } catch (NamingException ex) {
+//            Logger.getLogger(ProponenteBean.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }
 
     //---------------------------------------
@@ -286,7 +286,7 @@ public class ProponenteBean implements ProponenteRemote, ProponenteLocal {
     //---------------------------------------
     // Métodos privados
     //---------------------------------------
-    private ConstanteRemote getConstanteBean() {
+    private ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 
@@ -301,7 +301,7 @@ public class ProponenteBean implements ProponenteRemote, ProponenteLocal {
         return empresaFacade;
     }
 
-    private PersonaFacadeRemote getPersonaFacade() {
+    private PersonaFacadeLocal getPersonaFacade() {
         return personaFacade;
     }
 

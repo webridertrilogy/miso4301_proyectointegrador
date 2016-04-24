@@ -13,7 +13,7 @@ import javax.persistence.PersistenceContext;
  * @author Marcela Morales
  */
 @Stateless
-public class RangoFechasGeneralFacade implements RangoFechasGeneralFacadeLocal, RangoFechasGeneralFacadeRemote {
+public class RangoFechasGeneralFacade implements RangoFechasGeneralFacadeLocal {
 
 	@PersistenceContext(unitName="SoporteSisinfoPU")
     private EntityManager em;

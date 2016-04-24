@@ -15,7 +15,7 @@ import org.hibernate.Hibernate;
  * @author Juan Manuel Moreno B.
  */
 @Stateless
-public class PersonaSoporteFacade extends AbstractFacade<PersonaSoporte> implements PersonaSoporteFacadeLocal, PersonaSoporteFacadeRemote {
+public class PersonaSoporteFacade extends AbstractFacade<PersonaSoporte> implements PersonaSoporteFacadeLocal {
     @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 

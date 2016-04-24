@@ -22,7 +22,7 @@ import org.hibernate.Hibernate;
  * @author Ivan Mauricio Melo Suarez
  */
 @Stateless
-public class IncidenteFacade extends AbstractFacade<Incidente> implements IncidenteFacadeLocal, IncidenteFacadeRemote {
+public class IncidenteFacade extends AbstractFacade<Incidente> implements IncidenteFacadeLocal {
 
     @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;

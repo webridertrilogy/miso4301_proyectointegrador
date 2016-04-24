@@ -28,18 +28,18 @@ import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
 public class ConversorServiciosSoporteProcesos {
 
     @EJB
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
 
     public ConversorServiciosSoporteProcesos() {
-        try{
-            ServiceLocator serviceLocator = new ServiceLocator();
-            constanteBean = (ConstanteRemote) serviceLocator.getRemoteEJB(ConstanteRemote.class);
-        } catch (NamingException ex) {
-            Logger.getLogger(ConversorServiciosSoporteProcesos.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        try{
+//            ServiceLocator serviceLocator = new ServiceLocator();
+//            constanteBean = (ConstanteLocal) serviceLocator.getLocalEJB(ConstanteLocal.class);
+//        } catch (NamingException ex) {
+//            Logger.getLogger(ConversorServiciosSoporteProcesos.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }
 
-    public ConstanteRemote getConstanteBean() {
+    public ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 

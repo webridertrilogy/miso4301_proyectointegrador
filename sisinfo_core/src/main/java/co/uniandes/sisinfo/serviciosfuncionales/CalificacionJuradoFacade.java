@@ -22,7 +22,7 @@ import org.hibernate.Hibernate;
  * @author Ivan Mauricio Melo Suarez
  */
 @Stateless
-public class CalificacionJuradoFacade extends AbstractFacade<CalificacionJurado> implements CalificacionJuradoFacadeLocal, CalificacionJuradoFacadeRemote {
+public class CalificacionJuradoFacade extends AbstractFacade<CalificacionJurado> implements CalificacionJuradoFacadeLocal {
 
     @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;

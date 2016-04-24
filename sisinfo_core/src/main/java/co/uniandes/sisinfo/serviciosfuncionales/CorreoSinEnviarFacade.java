@@ -17,7 +17,7 @@ import javax.persistence.PersistenceContext;
  * @author Asistente
  */
 @Stateless
-public class CorreoSinEnviarFacade extends AbstractFacade<CorreoSinEnviar> implements CorreoSinEnviarFacadeLocal, CorreoSinEnviarFacadeRemote {
+public class CorreoSinEnviarFacade extends AbstractFacade<CorreoSinEnviar> implements CorreoSinEnviarFacadeLocal {
     @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 

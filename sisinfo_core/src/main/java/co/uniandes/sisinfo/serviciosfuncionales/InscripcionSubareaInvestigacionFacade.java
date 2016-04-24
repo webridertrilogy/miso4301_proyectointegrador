@@ -22,7 +22,7 @@ import org.hibernate.Hibernate;
  * @author Asistente
  */
 @Stateless
-public class InscripcionSubareaInvestigacionFacade implements InscripcionSubareaInvestigacionFacadeLocal, InscripcionSubareaInvestigacionFacadeRemote {
+public class InscripcionSubareaInvestigacionFacade implements InscripcionSubareaInvestigacionFacadeLocal {
 
     @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;

@@ -14,7 +14,7 @@ import co.uniandes.sisinfo.comun.constantes.Constantes;
 import co.uniandes.sisinfo.comun.constantes.Mensajes;
 import co.uniandes.sisinfo.entities.PersonaSoporte;
 import co.uniandes.sisinfo.entities.datosmaestros.Persona;
-import co.uniandes.sisinfo.serviciosfuncionales.CorreoRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.CorreoLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.PersonaSoporteFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.ServiceLocator;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.ParserT;
@@ -25,7 +25,7 @@ import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
  * @author Juan Manuel Moreno B.
  */
 @Stateless
-public class PersonaSoporteBean implements PersonaSoporteBeanLocal, PersonaSoporteBeanRemote {
+public class PersonaSoporteBean implements PersonaSoporteBeanLocal {
 
     /**
      * Facade.
@@ -37,7 +37,7 @@ public class PersonaSoporteBean implements PersonaSoporteBeanLocal, PersonaSopor
      * Constantes.
      */
     @EJB
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
 
     /**
      * ParserT.
@@ -48,7 +48,7 @@ public class PersonaSoporteBean implements PersonaSoporteBeanLocal, PersonaSopor
      * Correo.
      */
     @EJB
-    private CorreoRemote correoBean;
+    private CorreoLocal correoBean;
     
     /**
      * Locator.
@@ -56,18 +56,18 @@ public class PersonaSoporteBean implements PersonaSoporteBeanLocal, PersonaSopor
     private ServiceLocator serviceLocator;
     public PersonaSoporteBean() {
 
-        try {
-            
-            parser = new ParserT();
-            serviceLocator = new ServiceLocator();
-            constanteBean = (ConstanteRemote) serviceLocator.getRemoteEJB(ConstanteRemote.class);
-            correoBean = (CorreoRemote) serviceLocator.getRemoteEJB(CorreoRemote.class);
-            /*alertaBean = (AlertaRemote) serviceLocator.getRemoteEJB(AlertaRemote.class);
-            tareaFacade = (TareaFacadeRemote) serviceLocator.getRemoteEJB(TareaFacadeRemote.class);
-            tareaBean = (TareaRemote) serviceLocator.getRemoteEJB(TareaRemote.class);*/
-        } catch (NamingException ex) {
-            Logger.getLogger(IncidenteBean.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        try {
+//            
+//            parser = new ParserT();
+//            serviceLocator = new ServiceLocator();
+//            constanteBean = (ConstanteLocal) serviceLocator.getLocalEJB(ConstanteLocal.class);
+//            correoBean = (CorreoLocal) serviceLocator.getLocalEJB(CorreoLocal.class);
+//            /*alertaBean = (AlertaLocal) serviceLocator.getLocalEJB(AlertaLocal.class);
+//            tareaFacade = (TareaFacadeLocal) serviceLocator.getLocalEJB(TareaFacadeLocal.class);
+//            tareaBean = (TareaLocal) serviceLocator.getLocalEJB(TareaLocal.class);*/
+//        } catch (NamingException ex) {
+//            Logger.getLogger(IncidenteBean.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }
 
     /**
@@ -189,7 +189,7 @@ public class PersonaSoporteBean implements PersonaSoporteBeanLocal, PersonaSopor
      * Da constanteBean.
      * @return
      */
-    public ConstanteRemote getConstanteBean() {
+    public ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 

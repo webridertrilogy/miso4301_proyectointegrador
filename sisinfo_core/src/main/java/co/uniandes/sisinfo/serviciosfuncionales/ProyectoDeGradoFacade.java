@@ -18,7 +18,7 @@ import org.hibernate.Hibernate;
  * @author Ivan Mauricio Melo S, Paola Andres Gómez B
  */
 @Stateless
-public class ProyectoDeGradoFacade implements ProyectoDeGradoFacadeLocal, ProyectoDeGradoFacadeRemote {
+public class ProyectoDeGradoFacade implements ProyectoDeGradoFacadeLocal {
 
     @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;

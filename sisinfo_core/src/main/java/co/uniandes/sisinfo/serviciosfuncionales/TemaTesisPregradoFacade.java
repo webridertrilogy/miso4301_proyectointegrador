@@ -20,7 +20,7 @@ import org.hibernate.NonUniqueObjectException;
  * @author Ivan Mauricio Melo S
  */
 @Stateless
-public class TemaTesisPregradoFacade implements TemaTesisPregradoFacadeLocal, TemaTesisPregradoFacadeRemote {
+public class TemaTesisPregradoFacade implements TemaTesisPregradoFacadeLocal {
 
     @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;

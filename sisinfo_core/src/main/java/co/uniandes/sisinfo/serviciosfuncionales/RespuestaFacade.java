@@ -16,7 +16,7 @@ import javax.persistence.PersistenceContext;
  * @author Administrador
  */
 @Stateless
-public class RespuestaFacade extends AbstractFacade<Respuesta> implements RespuestaFacadeLocal, RespuestaFacadeRemote {
+public class RespuestaFacade extends AbstractFacade<Respuesta> implements RespuestaFacadeLocal {
     @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 

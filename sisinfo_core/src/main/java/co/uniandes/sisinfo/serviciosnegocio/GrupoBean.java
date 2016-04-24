@@ -22,10 +22,10 @@ import co.uniandes.sisinfo.comun.constantes.Mensajes;
 import co.uniandes.sisinfo.comun.constantes.Notificaciones;
 import co.uniandes.sisinfo.entities.Grupo;
 import co.uniandes.sisinfo.entities.datosmaestros.Persona;
-import co.uniandes.sisinfo.serviciosfuncionales.CorreoRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.CorreoLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.GrupoFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.ServiceLocator;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.PersonaFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.PersonaFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.ParserT;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
 
@@ -34,38 +34,38 @@ import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
  * @author da-naran
  */
 @Stateless
-public class GrupoBean implements GrupoRemote, GrupoLocal {
+public class GrupoBean implements  GrupoLocal {
 
     //----CONSTANTES-------------
-    private final static String RUTA_INTERFAZ_REMOTA = "co.uniandes.sisinfo.serviciosnegocio.TesisBeanRemote";
+    private final static String RUTA_INTERFAZ_REMOTA = "co.uniandes.sisinfo.serviciosnegocio.TesisBeanLocal";
     private final static String NOMBRE_METODO_TIMER = "manejoTimmerGrupoBean";
     //---------------------------------------
     // Atributos
     //---------------------------------------
     private ParserT parser;
     @EJB
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
     private ServiceLocator serviceLocator;
     @EJB
     private GrupoFacadeLocal grupoFacade;
     @EJB
-    private PersonaFacadeRemote personaFacade;
+    private PersonaFacadeLocal personaFacade;
     @EJB
-    private TimerGenericoBeanRemote timerGenerico;
+    private TimerGenericoBeanLocal timerGenerico;
     @EJB
-    private CorreoRemote correoBean;
+    private CorreoLocal correoBean;
 
     public GrupoBean() {
-        try {
-            serviceLocator = new ServiceLocator();
-            constanteBean = (ConstanteRemote) serviceLocator.getRemoteEJB(ConstanteRemote.class);
-            timerGenerico = (TimerGenericoBeanRemote) serviceLocator.getRemoteEJB(TimerGenericoBeanRemote.class);
-            personaFacade = (PersonaFacadeRemote) serviceLocator.getRemoteEJB(PersonaFacadeRemote.class);
-            parser = new ParserT();
-            correoBean = (CorreoRemote) serviceLocator.getRemoteEJB(CorreoRemote.class);
-        } catch (NamingException ex) {
-            Logger.getLogger(GrupoBean.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        try {
+//            serviceLocator = new ServiceLocator();
+//            constanteBean = (ConstanteLocal) serviceLocator.getLocalEJB(ConstanteLocal.class);
+//            timerGenerico = (TimerGenericoBeanLocal) serviceLocator.getLocalEJB(TimerGenericoBeanLocal.class);
+//            personaFacade = (PersonaFacadeLocal) serviceLocator.getLocalEJB(PersonaFacadeLocal.class);
+//            parser = new ParserT();
+//            correoBean = (CorreoLocal) serviceLocator.getLocalEJB(CorreoLocal.class);
+//        } catch (NamingException ex) {
+//            Logger.getLogger(GrupoBean.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }
 
     public String crearGrupo(String comando) {
@@ -229,7 +229,7 @@ public class GrupoBean implements GrupoRemote, GrupoLocal {
         }
     }
 
-    private ConstanteRemote getConstanteBean() {
+    private ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 

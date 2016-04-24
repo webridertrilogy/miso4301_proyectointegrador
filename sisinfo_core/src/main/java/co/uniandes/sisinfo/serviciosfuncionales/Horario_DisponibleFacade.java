@@ -27,8 +27,8 @@ import org.hibernate.Hibernate;
  * Servicios Entidad Horario Disponible
  */
 @Stateless
-@EJB(name = "Horario_DisponibleFacade", beanInterface = co.uniandes.sisinfo.serviciosfuncionales.Horario_DisponibleFacadeRemote.class)
-public class Horario_DisponibleFacade implements Horario_DisponibleFacadeLocal, Horario_DisponibleFacadeRemote {
+@EJB(name = "Horario_DisponibleFacade", beanInterface = co.uniandes.sisinfo.serviciosfuncionales.Horario_DisponibleFacadeLocal.class)
+public class Horario_DisponibleFacade implements Horario_DisponibleFacadeLocal {
 
 	@PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;

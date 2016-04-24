@@ -34,12 +34,12 @@ import co.uniandes.sisinfo.entities.Tesis1;
 import co.uniandes.sisinfo.entities.Tesis2;
 import co.uniandes.sisinfo.entities.datosmaestros.Estudiante;
 import co.uniandes.sisinfo.entities.datosmaestros.Profesor;
-import co.uniandes.sisinfo.serviciosfuncionales.CursoMaestriaFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.PeriodoTesisFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.CursoMaestriaFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.PeriodoTesisFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.ServiceLocator;
-import co.uniandes.sisinfo.serviciosfuncionales.SubareaInvestigacionFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.EstudianteFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.ProfesorFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.SubareaInvestigacionFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.EstudianteFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.ProfesorFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
 
 /**
@@ -52,31 +52,31 @@ public class ConversorTesisMaestria {
      *  ConstanteBean
      */
     @EJB
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
     @EJB
-    private ProfesorFacadeRemote profesorFacade;
+    private ProfesorFacadeLocal profesorFacade;
     @EJB
-    private EstudianteFacadeRemote estudianteFacadeRemote;
+    private EstudianteFacadeLocal estudianteFacadeLocal;
     @EJB
-    private PeriodoTesisFacadeRemote periodoFacadeRemote;
+    private PeriodoTesisFacadeLocal periodoFacadeLocal;
     @EJB
-    private SubareaInvestigacionFacadeRemote subareaInvestigacionFacadeRemote;
+    private SubareaInvestigacionFacadeLocal subareaInvestigacionFacadeLocal;
     @EJB
-    private CursoMaestriaFacadeRemote cursoMaestriaRemote;
+    private CursoMaestriaFacadeLocal cursoMaestriaLocal;
     private ServiceLocator serviceLocator;
 
     public ConversorTesisMaestria() {
-        try {
-            serviceLocator = new ServiceLocator();
-            constanteBean = (ConstanteRemote) serviceLocator.getRemoteEJB(ConstanteRemote.class);
-            profesorFacade = (ProfesorFacadeRemote) serviceLocator.getRemoteEJB(ProfesorFacadeRemote.class);
-            estudianteFacadeRemote = (EstudianteFacadeRemote) serviceLocator.getRemoteEJB(EstudianteFacadeRemote.class);
-            subareaInvestigacionFacadeRemote = (SubareaInvestigacionFacadeRemote) serviceLocator.getRemoteEJB(SubareaInvestigacionFacadeRemote.class);
-            periodoFacadeRemote = (PeriodoTesisFacadeRemote) serviceLocator.getRemoteEJB(PeriodoTesisFacadeRemote.class);
-            cursoMaestriaRemote = (CursoMaestriaFacadeRemote) serviceLocator.getRemoteEJB(CursoMaestriaFacadeRemote.class);
-        } catch (NamingException ex) {
-            Logger.getLogger(ConversorTesisMaestria.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        try {
+//            serviceLocator = new ServiceLocator();
+//            constanteBean = (ConstanteLocal) serviceLocator.getLocalEJB(ConstanteLocal.class);
+//            profesorFacade = (ProfesorFacadeLocal) serviceLocator.getLocalEJB(ProfesorFacadeLocal.class);
+//            estudianteFacadeLocal = (EstudianteFacadeLocal) serviceLocator.getLocalEJB(EstudianteFacadeLocal.class);
+//            subareaInvestigacionFacadeLocal = (SubareaInvestigacionFacadeLocal) serviceLocator.getLocalEJB(SubareaInvestigacionFacadeLocal.class);
+//            periodoFacadeLocal = (PeriodoTesisFacadeLocal) serviceLocator.getLocalEJB(PeriodoTesisFacadeLocal.class);
+//            cursoMaestriaLocal = (CursoMaestriaFacadeLocal) serviceLocator.getLocalEJB(CursoMaestriaFacadeLocal.class);
+//        } catch (NamingException ex) {
+//            Logger.getLogger(ConversorTesisMaestria.class.getName()).log(Level.SEVERE, null, ex);
+//        }
 
     }
 
@@ -145,7 +145,7 @@ public class ConversorTesisMaestria {
         return curso;
     }
 
-    public ConstanteRemote getConstanteBean() {
+    public ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 
@@ -651,7 +651,7 @@ public class ConversorTesisMaestria {
 
 
         if (id != null) {
-            Estudiante e = estudianteFacadeRemote.find(id);
+            Estudiante e = estudianteFacadeLocal.find(id);
 
 
             return e;
@@ -665,7 +665,7 @@ public class ConversorTesisMaestria {
 
 
             if (correo != null) {
-                Estudiante e = estudianteFacadeRemote.findByCorreo(correo);
+                Estudiante e = estudianteFacadeLocal.findByCorreo(correo);
 
 
                 return e;
@@ -724,7 +724,7 @@ public class ConversorTesisMaestria {
 
 
         if (id != null) {
-            SubareaInvestigacion grupo = subareaInvestigacionFacadeRemote.find(id);
+            SubareaInvestigacion grupo = subareaInvestigacionFacadeLocal.find(id);
 
 
             return grupo;
@@ -738,7 +738,7 @@ public class ConversorTesisMaestria {
 
 
             if (nombreGrupo != null) {
-                SubareaInvestigacion g = subareaInvestigacionFacadeRemote.findByNombreSubarea(nombreGrupo);
+                SubareaInvestigacion g = subareaInvestigacionFacadeLocal.findByNombreSubarea(nombreGrupo);
 
 
                 return g;
@@ -774,7 +774,7 @@ public class ConversorTesisMaestria {
                     ? secuencia.obtenerPrimeraSecuencia(getConstanteBean().getConstante(Constantes.TAG_PARAM_NOMBRE_MATERIA)).getValor().trim()
                     : null;
             // curso.setNombre(nombreCurso);
-            CursoMaestria cursoCurso = cursoMaestriaRemote.findByNombre(nombreCurso);
+            CursoMaestria cursoCurso = cursoMaestriaLocal.findByNombre(nombreCurso);
 
 
             if (cursoCurso != null) {
@@ -821,15 +821,15 @@ public class ConversorTesisMaestria {
     public PeriodoTesis pasarSecuenciaAPeriodo(Secuencia secSemestre) {
         // System.out.println("LLego al metodo :pasarSecuenciaAPeriodo ");
         String nombreSemestre = secSemestre.getValor();
-        PeriodoTesis p = periodoFacadeRemote.findByPeriodo(nombreSemestre);
+        PeriodoTesis p = periodoFacadeLocal.findByPeriodo(nombreSemestre);
 
 
         if (p == null) {
             p = new PeriodoTesis();
             p.setPeriodo(nombreSemestre);
             p.setActual(false);
-            periodoFacadeRemote.create(p);
-            p = periodoFacadeRemote.findByPeriodo(nombreSemestre);
+            periodoFacadeLocal.create(p);
+            p = periodoFacadeLocal.findByPeriodo(nombreSemestre);
             // System.out.println("Lo creo y lo va a devolver...");
         }
         return p;

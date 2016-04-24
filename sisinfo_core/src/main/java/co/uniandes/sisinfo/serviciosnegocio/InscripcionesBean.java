@@ -22,12 +22,12 @@ import co.uniandes.sisinfo.entities.Inscripcion;
 import co.uniandes.sisinfo.entities.InscripcionAsistente;
 import co.uniandes.sisinfo.entities.TareaSencilla;
 import co.uniandes.sisinfo.entities.datosmaestros.Persona;
-import co.uniandes.sisinfo.serviciosfuncionales.CorreoRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.CorreoLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.InscripcionAsistenteFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.InscripcionFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.ServiceLocator;
-import co.uniandes.sisinfo.serviciosfuncionales.TareaSencillaFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.PersonaFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.TareaSencillaFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.PersonaFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.ParserT;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
 
@@ -36,7 +36,7 @@ import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
  * @author Ivan Melo, Marcela Morales
  */
 @Stateless
-public class InscripcionesBean implements InscripcionesBeanRemote, InscripcionesBeanLocal {
+public class InscripcionesBean implements  InscripcionesBeanLocal {
 
     //----------------------------------------------
     // ATRIBUTOS
@@ -48,20 +48,20 @@ public class InscripcionesBean implements InscripcionesBeanRemote, Inscripciones
     private InscripcionFacadeLocal inscripcionFacade;
     //Remotos
     @EJB
-    private PersonaFacadeRemote personaFacade;
+    private PersonaFacadeLocal personaFacade;
     //Útiles
     @EJB
-    private CorreoRemote correoBean;
+    private CorreoLocal correoBean;
     @EJB
-    private TareaMultipleRemote tareaBean;
+    private TareaMultipleLocal tareaBean;
     @EJB
-    private TareaSencillaFacadeRemote tareaSencillaFacade;
+    private TareaSencillaFacadeLocal tareaSencillaFacade;
     @EJB
-    private TareaSencillaRemote tareaSencillaBean;
+    private TareaSencillaLocal tareaSencillaBean;
     @EJB
-    private TimerGenericoBeanRemote timerGenerico;
+    private TimerGenericoBeanLocal timerGenerico;
     @EJB
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
     private ServiceLocator serviceLocator;
     private ParserT parser;
     private ConversorInscripciones conversor;
@@ -70,19 +70,19 @@ public class InscripcionesBean implements InscripcionesBeanRemote, Inscripciones
     // CONSTRUCTOR
     //----------------------------------------------
     public InscripcionesBean() {
-        try {
-            serviceLocator = new ServiceLocator();
-            timerGenerico = (TimerGenericoBeanRemote) serviceLocator.getRemoteEJB(TimerGenericoBeanRemote.class);
-            personaFacade = (PersonaFacadeRemote) serviceLocator.getRemoteEJB(PersonaFacadeRemote.class);
-            constanteBean = (ConstanteRemote) serviceLocator.getRemoteEJB(ConstanteRemote.class);
-            tareaBean = (TareaMultipleRemote) serviceLocator.getRemoteEJB(TareaMultipleRemote.class);
-            tareaSencillaFacade = (TareaSencillaFacadeRemote) serviceLocator.getRemoteEJB(TareaSencillaFacadeRemote.class);
-            tareaSencillaBean = (TareaSencillaRemote) serviceLocator.getRemoteEJB(TareaSencillaRemote.class);
-            parser = new ParserT();
-            correoBean = (CorreoRemote) serviceLocator.getRemoteEJB(CorreoRemote.class);
-        } catch (NamingException ex) {
-            Logger.getLogger(InscripcionesBean.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        try {
+//            serviceLocator = new ServiceLocator();
+//            timerGenerico = (TimerGenericoBeanLocal) serviceLocator.getLocalEJB(TimerGenericoBeanLocal.class);
+//            personaFacade = (PersonaFacadeLocal) serviceLocator.getLocalEJB(PersonaFacadeLocal.class);
+//            constanteBean = (ConstanteLocal) serviceLocator.getLocalEJB(ConstanteLocal.class);
+//            tareaBean = (TareaMultipleLocal) serviceLocator.getLocalEJB(TareaMultipleLocal.class);
+//            tareaSencillaFacade = (TareaSencillaFacadeLocal) serviceLocator.getLocalEJB(TareaSencillaFacadeLocal.class);
+//            tareaSencillaBean = (TareaSencillaLocal) serviceLocator.getLocalEJB(TareaSencillaLocal.class);
+//            parser = new ParserT();
+//            correoBean = (CorreoLocal) serviceLocator.getLocalEJB(CorreoLocal.class);
+//        } catch (NamingException ex) {
+//            Logger.getLogger(InscripcionesBean.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }
 
     //----------------------------------------------
@@ -152,7 +152,7 @@ public class InscripcionesBean implements InscripcionesBeanRemote, Inscripciones
             HashMap<String, String> params = new HashMap<String, String>();
             params.put(getConstanteBean().getConstante(Constantes.TAG_PARAM_ID_INSCRIPCION), inscripcion.getId() + "");
             params.put(getConstanteBean().getConstante(Constantes.TAG_PARAM_ID_INVITADO), asistente.getId() + "");
-            getTareaBean().realizarTareaPorCorreo(tipo, correo, params);
+            //getTareaBean().realizarTareaPorCorreo(tipo, correo, params);
         }
 
     }
@@ -529,7 +529,7 @@ public class InscripcionesBean implements InscripcionesBeanRemote, Inscripciones
         }
     }
 
-    @Override
+    
     public void manejoTimersInscripcion(String info) {
         String[] splittedInfo = info.split("-");
         String cmd = splittedInfo[0];
@@ -572,13 +572,13 @@ public class InscripcionesBean implements InscripcionesBeanRemote, Inscripciones
 
     private void crearTimerFinInscripcion(Timestamp fechaFin, String idInscripcion) {
         String mensajeAsociado = getConstanteBean().getConstante(Constantes.CMD_ELIMINAR_INSCRIPCION) + "-" + idInscripcion;
-        getTimerGenerico().crearTimer2("co.uniandes.sisinfo.serviciosnegocio.InscripcionesBeanRemote", "manejoTimersInscripcion", fechaFin, mensajeAsociado,
+        getTimerGenerico().crearTimer2("co.uniandes.sisinfo.serviciosnegocio.InscripcionesBeanLocal", "manejoTimersInscripcion", fechaFin, mensajeAsociado,
                 "InscripcionesGen", this.getClass().getName(), "crearTimerFinInscripcion", "Este timer se crea cuando se crea o edita una inscripción para cerrarla en el momento en que esta expire");
     }
 
     private void crearTimerInicioInscripcion(Timestamp fechaInicio, String idInscripcion) {
         String mensajeAsociado = getConstanteBean().getConstante(Constantes.CMD_CREAR_INSCRIPCION) + "-" + idInscripcion;
-        getTimerGenerico().crearTimer2("co.uniandes.sisinfo.serviciosnegocio.InscripcionesBeanRemote", "manejoTimersInscripcion", fechaInicio, mensajeAsociado,
+        getTimerGenerico().crearTimer2("co.uniandes.sisinfo.serviciosnegocio.InscripcionesBeanLocal", "manejoTimersInscripcion", fechaInicio, mensajeAsociado,
                 "InscripcionesGen", this.getClass().getName(), "crearTimerInicioInscripcion", "Este timer se crea cuando se crea o edita una inscripción para abrirla una vez se cumpla su fecha de inicio");
     }
 
@@ -769,7 +769,7 @@ public class InscripcionesBean implements InscripcionesBeanRemote, Inscripciones
     //----------------------------------------------
     // MÉTODOS PRIVADOS
     //----------------------------------------------
-    private CorreoRemote getCorreoBean() {
+    private CorreoLocal getCorreoBean() {
         return correoBean;
     }
 
@@ -781,23 +781,23 @@ public class InscripcionesBean implements InscripcionesBeanRemote, Inscripciones
         return inscripcionFacade;
     }
 
-    private TareaMultipleRemote getTareaBean() {
+    private TareaMultipleLocal getTareaBean() {
         return tareaBean;
     }
 
-    private TimerGenericoBeanRemote getTimerGenerico() {
+    private TimerGenericoBeanLocal getTimerGenerico() {
         return timerGenerico;
     }
 
-    private TareaSencillaFacadeRemote getTareaSencillaFacade() {
+    private TareaSencillaFacadeLocal getTareaSencillaFacade() {
         return tareaSencillaFacade;
     }
 
-    private TareaSencillaRemote getTareaSencillaBean() {
+    private TareaSencillaLocal getTareaSencillaBean() {
         return tareaSencillaBean;
     }
 
-    private ConstanteRemote getConstanteBean() {
+    private ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 
@@ -808,7 +808,7 @@ public class InscripcionesBean implements InscripcionesBeanRemote, Inscripciones
         return parser;
     }
 
-    public PersonaFacadeRemote getPersonaFacade() {
+    public PersonaFacadeLocal getPersonaFacade() {
         return personaFacade;
     }
 

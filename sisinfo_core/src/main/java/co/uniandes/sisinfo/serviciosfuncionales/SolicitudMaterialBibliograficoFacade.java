@@ -20,7 +20,7 @@ import javax.persistence.Query;
  * @author Marcela
  */
 @Stateless
-public class SolicitudMaterialBibliograficoFacade implements SolicitudMaterialBibliograficoFacadeLocal, SolicitudMaterialBibliograficoFacadeRemote {
+public class SolicitudMaterialBibliograficoFacade implements SolicitudMaterialBibliograficoFacadeLocal {
 	@PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 

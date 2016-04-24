@@ -5,22 +5,22 @@
 
 package co.uniandes.sisinfo.serviciosfuncionales;
 
-import co.uniandes.sisinfo.entities.Grupo;
-import co.uniandes.sisinfo.serviciosfuncionales.GrupoFacadeRemote;
-import java.util.Collection;
 import java.util.List;
+
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.NonUniqueResultException;
 import javax.persistence.PersistenceContext;
 
+import co.uniandes.sisinfo.entities.Grupo;
+
 /**
  *
  * @author da-naran
  */
 @Stateless
-public class GrupoFacade implements GrupoFacadeLocal, GrupoFacadeRemote {
+public class GrupoFacade implements GrupoFacadeLocal {
 	@PersistenceContext(unitName="SoporteSisinfoPU")
     private EntityManager em;
 

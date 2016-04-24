@@ -37,12 +37,12 @@ import co.uniandes.sisinfo.entities.datosmaestros.Parametro;
 import co.uniandes.sisinfo.entities.datosmaestros.Persona;
 import co.uniandes.sisinfo.entities.datosmaestros.Rol;
 import co.uniandes.sisinfo.serviciosfuncionales.AlertaMultipleFacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.CorreoRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.CorreoLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.PeriodicidadFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.ServiceLocator;
 import co.uniandes.sisinfo.serviciosfuncionales.TareaMultipleFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.TareaSencillaFacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.PersonaFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.PersonaFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.ParserT;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
 import co.uniandes.sisinfo.serviciosfuncionales.seguridad.RolFacadeLocal;
@@ -52,9 +52,9 @@ import co.uniandes.sisinfo.serviciosfuncionales.seguridad.RolFacadeLocal;
  */
 @Stateless
 @EJB(name = "TareaMultipleBean", beanInterface = co.uniandes.sisinfo.serviciosnegocio.TareaMultipleLocal.class)
-public class TareaMultipleBean implements TareaMultipleLocal, TareaMultipleRemote {
+public class TareaMultipleBean implements TareaMultipleLocal {
 
-    private final static String DIRECCION_INTERFAZ = "co.uniandes.sisinfo.serviciosnegocio.TareaMultipleRemote";
+    private final static String DIRECCION_INTERFAZ = "co.uniandes.sisinfo.serviciosnegocio.TareaMultipleLocal";
 
     private final static String METODO_MANEJO_TIMER_TAREAS_VENCIDAS = "manejoTimerTareasVencidas";
 
@@ -76,12 +76,12 @@ public class TareaMultipleBean implements TareaMultipleLocal, TareaMultipleRemot
      * ResponsableFacade
      */
     @EJB
-    private PersonaFacadeRemote personaFacade;
+    private PersonaFacadeLocal personaFacade;
     /**
      *  ConstanteBean
      */
     @EJB
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
     @EJB
     private AlertaMultipleFacadeLocal alertaMultipleFacade;
     @EJB
@@ -91,7 +91,7 @@ public class TareaMultipleBean implements TareaMultipleLocal, TareaMultipleRemot
     @EJB
     private TareaSencillaFacadeLocal tareaSencillaFacade;
     @EJB
-    private CorreoRemote correoBean;
+    private CorreoLocal correoBean;
     @EJB
     private TimerGenericoBeanLocal timerGenericoBean;
     @EJB
@@ -100,14 +100,14 @@ public class TareaMultipleBean implements TareaMultipleLocal, TareaMultipleRemot
     private ConversorTareaMultiple conversorTareaMultiple;
 
     public TareaMultipleBean() {
-        try {
-            serviceLocator = new ServiceLocator();
-            personaFacade = (PersonaFacadeRemote) serviceLocator.getRemoteEJB(PersonaFacadeRemote.class);
-            constanteBean = (ConstanteRemote) serviceLocator.getRemoteEJB(ConstanteRemote.class);
-            correoBean = (CorreoRemote) serviceLocator.getRemoteEJB(CorreoRemote.class);
-        } catch (NamingException ex) {
-            Logger.getLogger(TareaMultipleBean.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        try {
+//            serviceLocator = new ServiceLocator();
+//            personaFacade = (PersonaFacadeLocal) serviceLocator.getLocalEJB(PersonaFacadeLocal.class);
+//            constanteBean = (ConstanteLocal) serviceLocator.getLocalEJB(ConstanteLocal.class);
+//            correoBean = (CorreoLocal) serviceLocator.getLocalEJB(CorreoLocal.class);
+//        } catch (NamingException ex) {
+//            Logger.getLogger(TareaMultipleBean.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }
 
     //---------------------------------------
@@ -337,7 +337,7 @@ public class TareaMultipleBean implements TareaMultipleLocal, TareaMultipleRemot
         tareaSencillaFacade.edit(tarea);
     }
 
-    @Override
+    
     public void realizarTareaPorCorreo(String tipo, String correo, HashMap<String, String> params) {
         Collection<TareaMultiple> tareas = tareaMultipleFacade.findByCorreoYTipo(tipo, correo);
 
@@ -708,7 +708,7 @@ public class TareaMultipleBean implements TareaMultipleLocal, TareaMultipleRemot
         return mensaje;
     }
 
-    public ConstanteRemote getConstanteBean() {
+    public ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 
@@ -724,9 +724,9 @@ public class TareaMultipleBean implements TareaMultipleLocal, TareaMultipleRemot
     }
 
     public ConversorTareaMultiple getConversorTareaMultiple() {
-        if (conversorTareaMultiple == null) {
-            conversorTareaMultiple = new ConversorTareaMultiple(constanteBean, alertaMultipleFacade, this);
-        }
+//        if (conversorTareaMultiple == null) {
+//            conversorTareaMultiple = new ConversorTareaMultiple(constanteBean, alertaMultipleFacade, this);
+//        }
         return conversorTareaMultiple;
     }
 
@@ -857,7 +857,7 @@ public class TareaMultipleBean implements TareaMultipleLocal, TareaMultipleRemot
         crearTimerManejoTareasVencidas();
     }
   
-    public CorreoRemote getCorreoBean() {
+    public CorreoLocal getCorreoBean() {
         return correoBean;
     }
 

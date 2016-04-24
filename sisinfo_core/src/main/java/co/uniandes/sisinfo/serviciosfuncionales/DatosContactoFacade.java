@@ -13,7 +13,7 @@ import javax.persistence.PersistenceContext;
  * @author Germán Florez, Marcela Morales
  */
 @Stateless
-public class DatosContactoFacade implements DatosContactoFacadeLocal, DatosContactoFacadeRemote {
+public class DatosContactoFacade implements DatosContactoFacadeLocal {
     @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 

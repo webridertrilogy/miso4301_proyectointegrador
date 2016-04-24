@@ -14,7 +14,7 @@ import org.hibernate.Hibernate;
  * @author Marcela Morales
  */
 @Stateless
-public class EstudiantePosgradoFacade implements EstudiantePosgradoFacadeLocal, EstudiantePosgradoFacadeRemote {
+public class EstudiantePosgradoFacade implements EstudiantePosgradoFacadeLocal {
     @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 

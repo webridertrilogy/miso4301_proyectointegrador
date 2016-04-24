@@ -28,7 +28,7 @@ import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
  * @author Juan Manuel Moreno B.
  */
 @Stateless
-public class AccionVencidaBean implements AccionVencidaBeanRemote, AccionVencidaBeanLocal {
+public class AccionVencidaBean implements AccionVencidaBeanLocal {
 
     @EJB
     private AccionVencidaFacadeLocal accionVencidaFacade;
@@ -38,21 +38,21 @@ public class AccionVencidaBean implements AccionVencidaBeanRemote, AccionVencida
     private ServiceLocator serviceLocator;
     
     @EJB
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
 
     public AccionVencidaBean() {
-        try {
-            
-            parser = new ParserT();
-            serviceLocator = new ServiceLocator();
-            constanteBean = (ConstanteRemote) serviceLocator.getRemoteEJB(ConstanteRemote.class);
-        } catch (Exception ex) {
-
-            Logger.getLogger(AccionVencidaBean.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        try {
+//            
+//            parser = new ParserT();
+//            serviceLocator = new ServiceLocator();
+//            constanteBean = (ConstanteLocal) serviceLocator.getLocalEJB(ConstanteLocal.class);
+//        } catch (Exception ex) {
+//
+//            Logger.getLogger(AccionVencidaBean.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }
 
-    public ConstanteRemote getConstanteBean() {
+    public ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 

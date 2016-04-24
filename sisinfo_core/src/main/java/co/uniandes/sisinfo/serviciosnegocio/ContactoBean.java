@@ -35,7 +35,7 @@ import co.uniandes.sisinfo.entities.UsuarioEventos;
 import co.uniandes.sisinfo.seguridad.Protector2;
 import co.uniandes.sisinfo.serviciosfuncionales.CargoFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.ContactoFacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.CorreoRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.CorreoLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.EventoExternoFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.InscripcionEventoExternoFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.PreguntaFacadeLocal;
@@ -45,27 +45,27 @@ import co.uniandes.sisinfo.serviciosfuncionales.UsuarioEventosFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.ParserT;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
 import co.uniandes.sisinfo.serviciosfuncionales.seguridad.AccesoLDAP;
-import co.uniandes.sisinfo.serviciosfuncionales.soporte.DepartamentoFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.soporte.PaisFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.soporte.TipoDocumentoFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.soporte.DepartamentoFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.soporte.PaisFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.soporte.TipoDocumentoFacadeLocal;
 
 /**
  *
  * @author Asistente
  */
 @Stateless
-public class ContactoBean implements ContactoBeanRemote, ContactoBeanLocal {
+public class ContactoBean implements  ContactoBeanLocal {
 
     @EJB
     private ContactoFacadeLocal contactoFacade;
     @EJB
     private SectorCorporativoFacadeLocal sectorFacade;
     @EJB
-    private PaisFacadeRemote paisFacade;
+    private PaisFacadeLocal paisFacade;
     @EJB
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
     @EJB
-    private CorreoRemote correoBean;
+    private CorreoLocal correoBean;
     @EJB
     private CargoFacadeLocal cargoFacade;
     @EJB
@@ -73,9 +73,9 @@ public class ContactoBean implements ContactoBeanRemote, ContactoBeanLocal {
     @EJB
     private InscripcionEventoExternoFacadeLocal inscripcionFacade;
     @EJB
-    private TipoDocumentoFacadeRemote tipoDocumentoFacade;
+    private TipoDocumentoFacadeLocal tipoDocumentoFacade;
     @EJB
-    private DepartamentoFacadeRemote departamentoFacade;
+    private DepartamentoFacadeLocal departamentoFacade;
     @EJB
     private UsuarioEventosFacadeLocal usuarioFacade;
     @EJB
@@ -86,18 +86,18 @@ public class ContactoBean implements ContactoBeanRemote, ContactoBeanLocal {
     private AccesoLDAP ldap;
 
     public ContactoBean() {
-        try {
-            serviceLocator = new ServiceLocator();
-            paisFacade = (PaisFacadeRemote) serviceLocator.getRemoteEJB(PaisFacadeRemote.class);
-            parser = new ParserT();
-            constanteBean = (ConstanteRemote) serviceLocator.getRemoteEJB(ConstanteRemote.class);
-            correoBean = (CorreoRemote) serviceLocator.getRemoteEJB(CorreoRemote.class);
-            tipoDocumentoFacade = (TipoDocumentoFacadeRemote) serviceLocator.getRemoteEJB(TipoDocumentoFacadeRemote.class);
-            departamentoFacade = (DepartamentoFacadeRemote) serviceLocator.getRemoteEJB(DepartamentoFacadeRemote.class);
-
-        } catch (NamingException ex) {
-            Logger.getLogger(ContactoBean.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        try {
+//            serviceLocator = new ServiceLocator();
+//            paisFacade = (PaisFacadeLocal) serviceLocator.getLocalEJB(PaisFacadeLocal.class);
+//            parser = new ParserT();
+//            constanteBean = (ConstanteLocal) serviceLocator.getLocalEJB(ConstanteLocal.class);
+//            correoBean = (CorreoLocal) serviceLocator.getLocalEJB(CorreoLocal.class);
+//            tipoDocumentoFacade = (TipoDocumentoFacadeLocal) serviceLocator.getLocalEJB(TipoDocumentoFacadeLocal.class);
+//            departamentoFacade = (DepartamentoFacadeLocal) serviceLocator.getLocalEJB(DepartamentoFacadeLocal.class);
+//
+//        } catch (NamingException ex) {
+//            Logger.getLogger(ContactoBean.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }
 
     public AccesoLDAP getLdap() {
@@ -108,9 +108,9 @@ public class ContactoBean implements ContactoBeanRemote, ContactoBeanLocal {
     }
 
     public ConversorContacto getConversor() {
-        if (conversor == null) {
-            conversor = new ConversorContacto(cargoFacade, paisFacade, sectorFacade, tipoDocumentoFacade, departamentoFacade, preguntaFacade);
-        }
+//        if (conversor == null) {
+//            conversor = new ConversorContacto(cargoFacade, paisFacade, sectorFacade, tipoDocumentoFacade, departamentoFacade, preguntaFacade);
+//        }
         return conversor;
     }
 
@@ -338,7 +338,7 @@ public class ContactoBean implements ContactoBeanRemote, ContactoBeanLocal {
         }
     }
 
-    public ConstanteRemote getConstanteBean() {
+    public ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 
@@ -350,7 +350,7 @@ public class ContactoBean implements ContactoBeanRemote, ContactoBeanLocal {
         return inscripcionFacade;
     }
 
-    public PaisFacadeRemote getPaisFacade() {
+    public PaisFacadeLocal getPaisFacade() {
         return paisFacade;
     }
 
@@ -528,7 +528,7 @@ public class ContactoBean implements ContactoBeanRemote, ContactoBeanLocal {
                 Notificaciones.ASUNTO_INSCRIPCION_EVENTO_EXITOSA,
                 null, null,
                 null,
-                mensajeCorreo, adjunto);
+                mensajeCorreo);
     }
 
     private Contacto actualizarContacto(Contacto actual, Contacto nuevo) {
@@ -722,7 +722,7 @@ public class ContactoBean implements ContactoBeanRemote, ContactoBeanLocal {
         }
     }
 
-    public CorreoRemote getCorreoBean() {
+    public CorreoLocal getCorreoBean() {
         return correoBean;
     }
 

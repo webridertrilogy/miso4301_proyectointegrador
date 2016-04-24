@@ -11,7 +11,7 @@ import javax.persistence.PersistenceContext;
  * @author Germán Florez, Marcela Morales
  */
 @Stateless
-public class DiaDisponibilidadFacade implements DiaDisponibilidadFacadeLocal, DiaDisponibilidadFacadeRemote {
+public class DiaDisponibilidadFacade implements DiaDisponibilidadFacadeLocal {
     @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 

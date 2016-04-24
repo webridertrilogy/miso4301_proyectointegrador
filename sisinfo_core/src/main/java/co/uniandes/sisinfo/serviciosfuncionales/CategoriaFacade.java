@@ -11,7 +11,7 @@ import javax.persistence.PersistenceContext;
  * @author Marcela Morales
  */
 @Stateless
-public class CategoriaFacade implements CategoriaFacadeLocal, CategoriaFacadeRemote {
+public class CategoriaFacade implements CategoriaFacadeLocal {
     @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 

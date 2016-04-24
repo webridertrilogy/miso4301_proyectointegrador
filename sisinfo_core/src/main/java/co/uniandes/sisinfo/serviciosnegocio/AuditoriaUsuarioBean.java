@@ -29,23 +29,23 @@ import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
  * @author Paola Gómez
  */
 @Stateless
-public class AuditoriaUsuarioBean implements AuditoriaUsuarioBeanRemote, AuditoriaUsuarioBeanLocal {
+public class AuditoriaUsuarioBean implements  AuditoriaUsuarioBeanLocal {
 
     @EJB
     private AuditoriaUsuarioFacadeLocal auditoriaUsuariosFacade;
 
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
     private ServiceLocator serviceLocator;
     private ParserT parser;
 
     public AuditoriaUsuarioBean(){
-        try {
-            parser = new ParserT();
-            serviceLocator = new ServiceLocator();
-            constanteBean = (ConstanteRemote) serviceLocator.getRemoteEJB(ConstanteRemote.class);
-        } catch (NamingException ex) {
-            Logger.getLogger(AuditoriaUsuarioBean.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        try {
+//            parser = new ParserT();
+//            serviceLocator = new ServiceLocator();
+//            constanteBean = (ConstanteLocal) serviceLocator.getLocalEJB(ConstanteLocal.class);
+//        } catch (NamingException ex) {
+//            Logger.getLogger(AuditoriaUsuarioBean.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }
 
     public void crearRegistroAuditoriaUsuario(String usuarioActual, String rol, String comando, String parametros, Timestamp fecha, Boolean accionExitosa) {
@@ -176,12 +176,12 @@ public class AuditoriaUsuarioBean implements AuditoriaUsuarioBeanRemote, Auditor
     }
 
 
-    private ConstanteRemote getConstanteBean(){
+    private ConstanteLocal getConstanteBean(){
         return constanteBean;
     }
 
     private ConversorAuditoriaUsuario getConversor(){
-        return new ConversorAuditoriaUsuario(constanteBean);
+        return null; // new ConversorAuditoriaUsuario(constanteBean);
     }
 
     /**

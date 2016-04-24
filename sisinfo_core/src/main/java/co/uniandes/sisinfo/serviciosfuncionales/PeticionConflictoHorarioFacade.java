@@ -3,7 +3,7 @@ package co.uniandes.sisinfo.serviciosfuncionales;
 import co.uniandes.sisinfo.base.AbstractFacadeCH;
 import co.uniandes.sisinfo.comun.constantes.Constantes;
 import co.uniandes.sisinfo.entities.PeticionConflictoHorario;
-import co.uniandes.sisinfo.serviciosnegocio.ConstanteRemote;
+import co.uniandes.sisinfo.serviciosnegocio.ConstanteLocal;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.LinkedList;
@@ -21,10 +21,10 @@ import javax.persistence.Query;
  * Servicios Fachada entidad PeticionConflictoHorarios
  */
 @Stateless
-public class PeticionConflictoHorarioFacade extends AbstractFacadeCH<PeticionConflictoHorario> implements PeticionConflictoHorarioFacadeLocal, PeticionConflictoHorarioFacadeRemote {
+public class PeticionConflictoHorarioFacade extends AbstractFacadeCH<PeticionConflictoHorario> implements PeticionConflictoHorarioFacadeLocal {
 
     @EJB
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
 
     @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
@@ -33,18 +33,18 @@ public class PeticionConflictoHorarioFacade extends AbstractFacadeCH<PeticionCon
         return em;
     }
 
-    private ConstanteRemote getConstanteBean() {
+    private ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 
     public PeticionConflictoHorarioFacade() {
         super(PeticionConflictoHorario.class);
-        try {
-            ServiceLocator serviceLocator = new ServiceLocator();
-            constanteBean = (ConstanteRemote) serviceLocator.getRemoteEJB(ConstanteRemote.class);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+//        try {
+//            ServiceLocator serviceLocator = new ServiceLocator();
+//            constanteBean = (ConstanteLocal) serviceLocator.getLocalEJB(ConstanteLocal.class);
+//        } catch (Exception e) {
+//            throw new RuntimeException(e);
+//        }
 
     }
 

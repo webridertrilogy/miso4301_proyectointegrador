@@ -19,7 +19,7 @@ import javax.persistence.Query;
  * @author da-naran
  */
 @Stateless
-public class VotanteFacade implements VotanteFacadeLocal, VotanteFacadeRemote {
+public class VotanteFacade implements VotanteFacadeLocal {
 	@PersistenceContext(unitName="SoporteSisinfoPU")
     private EntityManager em;
 

@@ -31,17 +31,17 @@ import co.uniandes.sisinfo.entities.datosmaestros.Persona;
 import co.uniandes.sisinfo.entities.datosmaestros.Profesor;
 import co.uniandes.sisinfo.serviciosfuncionales.CategoriaProyectoDeGradoFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.ComentarioTesisPregradoFacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.CorreoRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.PeriodoFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.CorreoLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.PeriodoFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.PeriodoTesisPregradoFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.ProyectoDeGradoFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.ServiceLocator;
-import co.uniandes.sisinfo.serviciosfuncionales.TareaMultipleFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.TareaSencillaFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.TareaMultipleFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.TareaSencillaFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.TemaTesisPregradoFacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.EstudianteFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.NivelFormacionFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.ProfesorFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.EstudianteFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.NivelFormacionFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.ProfesorFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.ParserT;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
 
@@ -50,29 +50,29 @@ import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
  * @author Ivan Mauricio Melo S, Marcela Morales, Paola Gómez
  */
 @Stateless
-public class ProyectoDeGradoBean implements ProyectoDeGradoBeanRemote, ProyectoDeGradoBeanLocal {
+public class ProyectoDeGradoBean implements  ProyectoDeGradoBeanLocal {
 
     //----------------------------------------------
     // CONSTANTES
     //----------------------------------------------
-    private final static String RUTA_INTERFAZ_REMOTA = "co.uniandes.sisinfo.serviciosnegocio.ProyectoDeGradoBeanRemote";
+    private final static String RUTA_INTERFAZ_REMOTA = "co.uniandes.sisinfo.serviciosnegocio.ProyectoDeGradoBeanLocal";
     private final static String NOMBRE_METODO_TIMER = "manejoTimmersTesisPregrado";
     //----------------------------------------------
     // ATRIBUTOS
     //----------------------------------------------
     //Remotos
+//    @EJB
+//    private HistoricoTesisPregradoLocal historicoBean;
     @EJB
-    private HistoricoTesisPregradoRemote historicoBean;
+    private ProfesorFacadeLocal profesorFacade;
     @EJB
-    private ProfesorFacadeRemote profesorFacade;
-    @EJB
-    private EstudianteFacadeRemote estudianteFacadeRemote;
+    private EstudianteFacadeLocal estudianteFacadeLocal;
     @EJB
     private PeriodoTesisPregradoFacadeLocal periodoFacadelocal;
     @EJB
-    private NivelFormacionFacadeRemote nivelFormacionFacade;
+    private NivelFormacionFacadeLocal nivelFormacionFacade;
     @EJB
-    private PeriodoFacadeRemote periodoBaseFacadeRemote;
+    private PeriodoFacadeLocal periodoBaseFacadeLocal;
     //Locales
     @EJB
     private ProyectoDeGradoFacadeLocal proyectoGradoFacade;
@@ -84,21 +84,21 @@ public class ProyectoDeGradoBean implements ProyectoDeGradoBeanRemote, ProyectoD
     private TemaTesisPregradoFacadeLocal temaTesisFacade;
     //Útiles
     @EJB
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
     @EJB
-    private CorreoRemote correoBean;
+    private CorreoLocal correoBean;
     @EJB
-    private TimerGenericoBeanRemote timerGenerico;
+    private TimerGenericoBeanLocal timerGenerico;
     @EJB
-    private AccionVencidaBeanRemote accionVencidaBean;
+    private AccionVencidaBeanLocal accionVencidaBean;
     @EJB
-    private TareaMultipleRemote tareaBean;
+    private TareaMultipleLocal tareaBean;
     @EJB
-    private TareaMultipleFacadeRemote tareaFacade;
+    private TareaMultipleFacadeLocal tareaFacade;
     @EJB
-    private TareaSencillaFacadeRemote tareaSencillaFacade;
+    private TareaSencillaFacadeLocal tareaSencillaFacade;
     @EJB
-    private TareaSencillaRemote tareaSencillaBean;
+    private TareaSencillaLocal tareaSencillaBean;
     private ParserT parser;
     private ServiceLocator serviceLocator;
     private ConversorProyectoDeGrado conversor;
@@ -111,26 +111,26 @@ public class ProyectoDeGradoBean implements ProyectoDeGradoBeanRemote, ProyectoD
      * Inicializa ProyectoDeGradoBean
      */
     public ProyectoDeGradoBean() {
-        try {
-            parser = new ParserT();
-            serviceLocator = new ServiceLocator();
-            constanteBean = (ConstanteRemote) serviceLocator.getRemoteEJB(ConstanteRemote.class);
-            profesorFacade = (ProfesorFacadeRemote) serviceLocator.getRemoteEJB(ProfesorFacadeRemote.class);
-            estudianteFacadeRemote = (EstudianteFacadeRemote) serviceLocator.getRemoteEJB(EstudianteFacadeRemote.class);
-            correoBean = (CorreoRemote) serviceLocator.getRemoteEJB(CorreoRemote.class);
-            tareaBean = (TareaMultipleRemote) serviceLocator.getRemoteEJB(TareaMultipleRemote.class);
-            nivelFormacionFacade = (NivelFormacionFacadeRemote) serviceLocator.getRemoteEJB(NivelFormacionFacadeRemote.class);
-            timerGenerico = (TimerGenericoBeanRemote) serviceLocator.getRemoteEJB(TimerGenericoBeanRemote.class);
-            historicoBean = (HistoricoTesisPregradoRemote) serviceLocator.getRemoteEJB(HistoricoTesisPregradoRemote.class);
-            accionVencidaBean = (AccionVencidaBeanRemote) serviceLocator.getRemoteEJB(AccionVencidaBeanRemote.class);
-            tareaSencillaFacade = (TareaSencillaFacadeRemote) serviceLocator.getRemoteEJB(TareaSencillaFacadeRemote.class);
-            tareaSencillaBean = (TareaSencillaRemote) serviceLocator.getRemoteEJB(TareaSencillaRemote.class);
-            tareaFacade = (TareaMultipleFacadeRemote) serviceLocator.getRemoteEJB(TareaMultipleFacadeRemote.class);
-            periodoBaseFacadeRemote = (PeriodoFacadeRemote) serviceLocator.getRemoteEJB(PeriodoFacadeRemote.class);
-            conversor = new ConversorProyectoDeGrado(getConstanteBean(), profesorFacade, categoriaTesisFacade, periodoFacadelocal, estudianteFacadeRemote);
-        } catch (Exception e) {
-            Logger.getLogger(ProyectoDeGradoBean.class.getName()).log(Level.SEVERE, null, e);
-        }
+//        try {
+//            parser = new ParserT();
+//            serviceLocator = new ServiceLocator();
+//            constanteBean = (ConstanteLocal) serviceLocator.getLocalEJB(ConstanteLocal.class);
+//            profesorFacade = (ProfesorFacadeLocal) serviceLocator.getLocalEJB(ProfesorFacadeLocal.class);
+//            estudianteFacadeLocal = (EstudianteFacadeLocal) serviceLocator.getLocalEJB(EstudianteFacadeLocal.class);
+//            correoBean = (CorreoLocal) serviceLocator.getLocalEJB(CorreoLocal.class);
+//            tareaBean = (TareaMultipleLocal) serviceLocator.getLocalEJB(TareaMultipleLocal.class);
+//            nivelFormacionFacade = (NivelFormacionFacadeLocal) serviceLocator.getLocalEJB(NivelFormacionFacadeLocal.class);
+//            timerGenerico = (TimerGenericoBeanLocal) serviceLocator.getLocalEJB(TimerGenericoBeanLocal.class);
+//            historicoBean = (HistoricoTesisPregradoLocal) serviceLocator.getLocalEJB(HistoricoTesisPregradoLocal.class);
+//            accionVencidaBean = (AccionVencidaBeanLocal) serviceLocator.getLocalEJB(AccionVencidaBeanLocal.class);
+//            tareaSencillaFacade = (TareaSencillaFacadeLocal) serviceLocator.getLocalEJB(TareaSencillaFacadeLocal.class);
+//            tareaSencillaBean = (TareaSencillaLocal) serviceLocator.getLocalEJB(TareaSencillaLocal.class);
+//            tareaFacade = (TareaMultipleFacadeLocal) serviceLocator.getLocalEJB(TareaMultipleFacadeLocal.class);
+//            periodoBaseFacadeLocal = (PeriodoFacadeLocal) serviceLocator.getLocalEJB(PeriodoFacadeLocal.class);
+//            conversor = new ConversorProyectoDeGrado(getConstanteBean(), profesorFacade, categoriaTesisFacade, periodoFacadelocal, estudianteFacadeLocal);
+//        } catch (Exception e) {
+//            Logger.getLogger(ProyectoDeGradoBean.class.getName()).log(Level.SEVERE, null, e);
+//        }
     }
 
     //----------------------------------------------
@@ -146,7 +146,7 @@ public class ProyectoDeGradoBean implements ProyectoDeGradoBeanRemote, ProyectoD
             if (estudiante.getTipoEstudiante() == null) {
                 NivelFormacion nivelFormacion = nivelFormacionFacade.findByName(getConstanteBean().getConstante(Constantes.TAG_PARAM_NIVEL_PREGRADO));
                 estudiante.setTipoEstudiante(nivelFormacion);
-                estudianteFacadeRemote.edit(estudiante);
+                estudianteFacadeLocal.edit(estudiante);
             }
 
             //Valida que el estudiante sea de pregrado
@@ -708,7 +708,7 @@ public class ProyectoDeGradoBean implements ProyectoDeGradoBeanRemote, ProyectoD
                 secs.add(secTesis);
 
                 String comandoXML = parser.crearComando(getConstanteBean().getConstante(Constantes.CMD_MIGRAR_TESIS_PREGRADO_RECHAZADAS_A_HISTORICOS), getConstanteBean().getConstante(Constantes.VAL_TAG_TIPO_CMD_CONSULTA), getConstanteBean().getConstante(Constantes.ROL_COORDINACION), secs);
-                String resp = historicoBean.pasarTesisPregradoRechazadaAHistorico(comandoXML);
+                String resp = null;// historicoBean.pasarTesisPregradoRechazadaAHistorico(comandoXML);
                 if (resp == null) {
                     String mensajeAsociadoMigrarTesisPregrado = getConstanteBean().getConstante(Constantes.CMD_MIGRAR_TESIS_PREGRADO_RECHAZADAS_A_HISTORICOS) + "-" + tesis.getId();
                     timerGenerico.crearTimer2(RUTA_INTERFAZ_REMOTA, NOMBRE_METODO_TIMER, new Timestamp(new Date().getTime() + 1000 * 60 * 10), mensajeAsociadoMigrarTesisPregrado,
@@ -742,7 +742,7 @@ public class ProyectoDeGradoBean implements ProyectoDeGradoBeanRemote, ProyectoD
                 Secuencia secTesis = conversor.pasarProyectosDeGradoASecuencia(tesises);
                 secs.add(secTesis);
                 String comandoXML = parser.crearComando(getConstanteBean().getConstante(Constantes.CMD_MIGRAR_TESIS_PREGRADO_RETIRADAS_A_HISTORICOS), getConstanteBean().getConstante(Constantes.VAL_TAG_TIPO_CMD_CONSULTA), getConstanteBean().getConstante(Constantes.ROL_COORDINACION), secs);
-                String resp = historicoBean.pasarTesisPregradoRetiradaAHistorico(comandoXML);
+                String resp =null;//historicoBean.pasarTesisPregradoRetiradaAHistorico(comandoXML);
                 if (resp == null) {
                     String mensajeAsociadoMigrarTesisPregrado = getConstanteBean().getConstante(Constantes.CMD_MIGRAR_TESIS_PREGRADO_RETIRADAS_A_HISTORICOS);
                     timerGenerico.crearTimer2(RUTA_INTERFAZ_REMOTA, NOMBRE_METODO_TIMER, new Timestamp(new Date().getTime() + 1000 * 60 * 10), mensajeAsociadoMigrarTesisPregrado,
@@ -805,7 +805,7 @@ public class ProyectoDeGradoBean implements ProyectoDeGradoBeanRemote, ProyectoD
                 Secuencia secTesis = conversor.pasarProyectosDeGradoASecuencia(tesises);
                 secs.add(secTesis);
                 String comandoXML = parser.crearComando(getConstanteBean().getConstante(Constantes.CMD_MIGRAR_TESIS_PREGRADO_PERDIDAS_A_HISTORICOS), getConstanteBean().getConstante(Constantes.VAL_TAG_TIPO_CMD_CONSULTA), getConstanteBean().getConstante(Constantes.ROL_COORDINACION), secs);
-                String resp = historicoBean.pasarTesisPregradoPerdidaAHistorico(comandoXML);
+                String resp =null;//historicoBean.pasarTesisPregradoPerdidaAHistorico(comandoXML);
                 if (resp == null) {
                     String mensajeAsociadoMigrarTesisPregrado = getConstanteBean().getConstante(Constantes.CMD_MIGRAR_TESIS_PREGRADO_PERDIDAS_A_HISTORICOS);
                     timerGenerico.crearTimer2(RUTA_INTERFAZ_REMOTA, NOMBRE_METODO_TIMER, new Timestamp(new Date().getTime() + 1000 * 60 * 10), mensajeAsociadoMigrarTesisPregrado,
@@ -872,7 +872,7 @@ public class ProyectoDeGradoBean implements ProyectoDeGradoBeanRemote, ProyectoD
                 Secuencia secTesis = conversor.pasarProyectosDeGradoASecuencia(tesises);
                 secs.add(secTesis);
                 String comandoXML = parser.crearComando(getConstanteBean().getConstante(Constantes.CMD_MIGRAR_TESIS_PREGRADO_TERMINADAS_A_HISTORICOS), getConstanteBean().getConstante(Constantes.VAL_TAG_TIPO_CMD_CONSULTA), getConstanteBean().getConstante(Constantes.ROL_COORDINACION), secs);
-                String resp = historicoBean.pasarTesisPregradoTerminadaAHistorico(comandoXML);
+                String resp = null;// historicoBean.pasarTesisPregradoTerminadaAHistorico(comandoXML);
                 if (resp == null) {
                     String mensajeAsociadoMigrarTesisPregrado = getConstanteBean().getConstante(Constantes.CMD_MIGRAR_TESIS_PREGRADO_TERMINADAS_A_HISTORICOS);
                     timerGenerico.crearTimer2(RUTA_INTERFAZ_REMOTA, NOMBRE_METODO_TIMER, new Timestamp(new Date().getTime() + 1000 * 60 * 10), mensajeAsociadoMigrarTesisPregrado,
@@ -990,16 +990,16 @@ public class ProyectoDeGradoBean implements ProyectoDeGradoBeanRemote, ProyectoD
             if (tesis.getEstadoTesis().equals(getConstanteBean().getConstante(Constantes.CTE_TESIS_PREGRADO_RETIRADA))) {
                 estado = tesis.getEstadoTesis();
                 comandoXML = parser.crearComando(getConstanteBean().getConstante(Constantes.CMD_MIGRAR_TESIS_PREGRADO_RETIRADAS_A_HISTORICOS), getConstanteBean().getConstante(Constantes.VAL_TAG_TIPO_CMD_CONSULTA), getConstanteBean().getConstante(Constantes.ROL_COORDINACION), secs);
-                resp = historicoBean.pasarTesisPregradoRetiradaAHistorico(comandoXML);
+                resp = null;//historicoBean.pasarTesisPregradoRetiradaAHistorico(comandoXML);
             } else if (tesis.getEstadoTesis().equals(getConstanteBean().getConstante(Constantes.CTE_TESIS_PY_TERMINADA))) {
                 if (tesis.getCalificacionTesis() < 3.0) {
                     estado = "Perdida";
                     comandoXML = parser.crearComando(getConstanteBean().getConstante(Constantes.CMD_MIGRAR_TESIS_PREGRADO_PERDIDAS_A_HISTORICOS), getConstanteBean().getConstante(Constantes.VAL_TAG_TIPO_CMD_CONSULTA), getConstanteBean().getConstante(Constantes.ROL_COORDINACION), secs);
-                    resp = historicoBean.pasarTesisPregradoPerdidaAHistorico(comandoXML);
+                    //resp = historicoBean.pasarTesisPregradoPerdidaAHistorico(comandoXML);
                 } else {
                     estado = tesis.getEstadoTesis();
                     comandoXML = parser.crearComando(getConstanteBean().getConstante(Constantes.CMD_MIGRAR_TESIS_PREGRADO_TERMINADAS_A_HISTORICOS), getConstanteBean().getConstante(Constantes.VAL_TAG_TIPO_CMD_CONSULTA), getConstanteBean().getConstante(Constantes.ROL_COORDINACION), secs);
-                    resp = historicoBean.pasarTesisPregradoTerminadaAHistorico(comandoXML);
+                   // resp = historicoBean.pasarTesisPregradoTerminadaAHistorico(comandoXML);
                 }
             }
 
@@ -3956,7 +3956,7 @@ public class ProyectoDeGradoBean implements ProyectoDeGradoBeanRemote, ProyectoD
             if (estudiante.getTipoEstudiante() == null) {
                 NivelFormacion nf = nivelFormacionFacade.findByName(getConstanteBean().getConstante(Constantes.TAG_PARAM_NIVEL_PREGRADO));
                 estudiante.setTipoEstudiante(nf);
-                estudianteFacadeRemote.edit(estudiante);
+                estudianteFacadeLocal.edit(estudiante);
             }
 
             //valida que el estudiante sea de pregrado
@@ -4004,7 +4004,7 @@ public class ProyectoDeGradoBean implements ProyectoDeGradoBeanRemote, ProyectoD
         }
     }
 
-    private ConstanteRemote getConstanteBean() {
+    private ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 
@@ -4017,13 +4017,13 @@ public class ProyectoDeGradoBean implements ProyectoDeGradoBeanRemote, ProyectoD
     }
 
     private ConversorProyectoDeGrado getConversorProyectoDeGrado() {
-        return new ConversorProyectoDeGrado(getConstanteBean(), profesorFacade, categoriaTesisFacade, periodoFacadelocal, estudianteFacadeRemote);
+        return new ConversorProyectoDeGrado(getConstanteBean(), profesorFacade, categoriaTesisFacade, periodoFacadelocal, estudianteFacadeLocal);
     }
 
     public Collection<AccionBO> darAcciones(String rol, String login) {
 
         acciones = new ArrayList<AccionBO>();
-        Estudiante estudiante = estudianteFacadeRemote.findByCorreo(login);
+        Estudiante estudiante = estudianteFacadeLocal.findByCorreo(login);
         String cteRolEstudiante = getConstanteBean().getConstante(Constantes.ROL_ESTUDIANTE);
         NivelFormacion nivelDeFormacion = estudiante.getTipoEstudiante();
         String cteNivelPregrado = getConstanteBean().getConstante(Constantes.TAG_PARAM_NIVEL_PREGRADO);

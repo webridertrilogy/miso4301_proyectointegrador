@@ -19,7 +19,7 @@ import javax.persistence.Query;
  * @author Asistente
  */
 @Stateless
-public class DescargaProfesorFacade implements DescargaProfesorFacadeLocal, DescargaProfesorFacadeRemote {
+public class DescargaProfesorFacade implements DescargaProfesorFacadeLocal {
     @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 

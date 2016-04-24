@@ -23,12 +23,12 @@ import co.uniandes.sisinfo.comun.constantes.Mensajes;
 import co.uniandes.sisinfo.comun.constantes.Notificaciones;
 import co.uniandes.sisinfo.entities.ExcepcionSisinfo;
 import co.uniandes.sisinfo.entities.ListaBlancaErroresSisinfo;
-import co.uniandes.sisinfo.serviciosfuncionales.CorreoRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.CorreoLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.ExcepcionSisinfoFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.ListaBlancaErroresSisinfoFacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.PeriodicidadFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.PeriodicidadFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.ServiceLocator;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.PersonaFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.PersonaFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.ParserT;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
 
@@ -37,43 +37,42 @@ import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
  * @author Ivan Mauricio Melo Suarez
  */
 @Stateless
-public class ReporteExcepcionesBean implements ReporteExcepcionesBeanRemote, ReporteExcepcionesBeanLocal {
+public class ReporteExcepcionesBean implements  ReporteExcepcionesBeanLocal {
 
     @EJB
     private ExcepcionSisinfoFacadeLocal facadeExcepcion;
     @EJB
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
+   
     @EJB
-    private ComandoAuditoriaBeanRemote comandoAuditoriaBean;
-    @EJB
-    private CorreoRemote correoBean;
+    private CorreoLocal correoBean;
     
     @EJB
-    private PeriodicidadFacadeRemote periodicidadFacade;
+    private PeriodicidadFacadeLocal periodicidadFacade;
     @EJB
-    private PersonaFacadeRemote personaFacade;
+    private PersonaFacadeLocal personaFacade;
     @EJB
     private ListaBlancaErroresSisinfoFacadeLocal listaBlancaFacade;
     @EJB
-    private AuditoriaUsuarioBeanRemote auditoriaUsuariosBean;
+    private AuditoriaUsuarioBeanLocal auditoriaUsuariosBean;
 
     private ParserT parser;
     private ServiceLocator serviceLocator;
 
     public ReporteExcepcionesBean() {
-        try {
-            parser = new ParserT();
-            serviceLocator = new ServiceLocator();
-            constanteBean = (ConstanteRemote) serviceLocator.getRemoteEJB(ConstanteRemote.class);
-            comandoAuditoriaBean = (ComandoAuditoriaBeanRemote) serviceLocator.getRemoteEJB(ComandoAuditoriaBeanRemote.class);
-            correoBean = (CorreoRemote) serviceLocator.getRemoteEJB(CorreoRemote.class);
-          
-            periodicidadFacade = (PeriodicidadFacadeRemote) serviceLocator.getRemoteEJB(PeriodicidadFacadeRemote.class);
-            personaFacade = (PersonaFacadeRemote) serviceLocator.getRemoteEJB(PersonaFacadeRemote.class);
-            auditoriaUsuariosBean = (AuditoriaUsuarioBeanRemote) serviceLocator.getRemoteEJB(AuditoriaUsuarioBeanRemote.class);
-        } catch (NamingException ex) {
-            Logger.getLogger(ReporteExcepcionesBean.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        try {
+//            parser = new ParserT();
+//            serviceLocator = new ServiceLocator();
+//            constanteBean = (ConstanteLocal) serviceLocator.getLocalEJB(ConstanteLocal.class);
+//            comandoAuditoriaBean = (ComandoAuditoriaBeanLocal) serviceLocator.getLocalEJB(ComandoAuditoriaBeanLocal.class);
+//            correoBean = (CorreoLocal) serviceLocator.getLocalEJB(CorreoLocal.class);
+//          
+//            periodicidadFacade = (PeriodicidadFacadeLocal) serviceLocator.getLocalEJB(PeriodicidadFacadeLocal.class);
+//            personaFacade = (PersonaFacadeLocal) serviceLocator.getLocalEJB(PersonaFacadeLocal.class);
+//            auditoriaUsuariosBean = (AuditoriaUsuarioBeanLocal) serviceLocator.getLocalEJB(AuditoriaUsuarioBeanLocal.class);
+//        } catch (NamingException ex) {
+//            Logger.getLogger(ReporteExcepcionesBean.class.getName()).log(Level.SEVERE, null, ex);
+//        }
 
     }
 
@@ -90,9 +89,9 @@ public class ReporteExcepcionesBean implements ReporteExcepcionesBeanRemote, Rep
             Secuencia secuenciaPrincipal = parser.leerRespuesta(respuesta);
             validarRespuestaConsulta(secuenciaPrincipal);
 
-            if( getComandoAuditoriaBean().getComandoAuditoriaEstado(comando).booleanValue() == (true) ){
-                auditoriaUsuariosBean.crearRegistroAuditoriaUsuario(xmlEntrada, true);
-            }
+//            if( getComandoAuditoriaBean().getComandoAuditoriaEstado(comando).booleanValue() == (true) ){
+//                auditoriaUsuariosBean.crearRegistroAuditoriaUsuario(xmlEntrada, true);
+//            }
 
         } catch (Exception ex) {
 
@@ -130,10 +129,10 @@ public class ReporteExcepcionesBean implements ReporteExcepcionesBeanRemote, Rep
                 mensaje = mensaje.replace("%3", "<pre>" + respuesta + "</pre>");
                 
                 correoBean.enviarMail(correo, asunto, null, null, null, mensaje);
-
-                if( getComandoAuditoriaBean().getComandoAuditoriaEstado(comando).booleanValue() == (true)){
-                    auditoriaUsuariosBean.crearRegistroAuditoriaUsuario(xmlEntrada, false);
-                }
+//
+//                if( getComandoAuditoriaBean().getComandoAuditoriaEstado(comando).booleanValue() == (true)){
+//                    auditoriaUsuariosBean.crearRegistroAuditoriaUsuario(xmlEntrada, false);
+//                }
 
                 /*boolean activa = true;
                 String intervalo = constanteBean.getConstante(Constantes.VAL_TIPO_INTERVALO_INTERVALO);
@@ -163,13 +162,13 @@ public class ReporteExcepcionesBean implements ReporteExcepcionesBeanRemote, Rep
         }
     }
 
-    public ConstanteRemote getConstanteBean() {
+    public ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 
-    public ComandoAuditoriaBeanRemote getComandoAuditoriaBean() {
-        return comandoAuditoriaBean;
-    }
+//    public ComandoAuditoriaBeanLocal getComandoAuditoriaBean() {
+//        return comandoAuditoriaBean;
+//    }
 
     
 

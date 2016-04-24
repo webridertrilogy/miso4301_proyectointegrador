@@ -18,7 +18,7 @@ import co.uniandes.sisinfo.serviciosfuncionales.ConstanteFacadeLocal;
  * Servicio de negocio: Administración de constantes
  */
 @Stateless
-public class ConstanteBean implements ConstanteLocal,ConstanteRemote{
+public class ConstanteBean implements ConstanteLocal{
    
     //---------------------------------------
     // Atributos

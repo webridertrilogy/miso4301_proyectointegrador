@@ -19,7 +19,7 @@ import javax.persistence.Query;
  * @author Ivan Melo
  */
 @Stateless
-public class SectorCorporativoFacade implements SectorCorporativoFacadeLocal, SectorCorporativoFacadeRemote {
+public class SectorCorporativoFacade implements SectorCorporativoFacadeLocal {
     @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 

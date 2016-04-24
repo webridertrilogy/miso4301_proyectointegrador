@@ -30,9 +30,9 @@ import co.uniandes.sisinfo.serviciosfuncionales.PreguntaFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.SectorCorporativoFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.ServiceLocator;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
-import co.uniandes.sisinfo.serviciosfuncionales.soporte.DepartamentoFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.soporte.PaisFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.soporte.TipoDocumentoFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.soporte.DepartamentoFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.soporte.PaisFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.soporte.TipoDocumentoFacadeLocal;
 
 /**
  *
@@ -43,34 +43,34 @@ public class ConversorContacto {
     @EJB
     private SectorCorporativoFacadeLocal sectorFacade;
     @EJB
-    private PaisFacadeRemote paisFacade;
+    private PaisFacadeLocal paisFacade;
     @EJB
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
     @EJB
     private CargoFacadeLocal cargoFacade;
     @EJB
-    private DepartamentoFacadeRemote departamentoFacade;
+    private DepartamentoFacadeLocal departamentoFacade;
     @EJB
     private PreguntaFacadeLocal preguntaFacade;
     private ServiceLocator serviceLocator;
-    private TipoDocumentoFacadeRemote tipoDocumentoFacade;
+    private TipoDocumentoFacadeLocal tipoDocumentoFacade;
 
-    public ConversorContacto(CargoFacadeLocal cargoFacadeLo, PaisFacadeRemote paisFacadeRe, SectorCorporativoFacadeLocal sectorFacadeLo, TipoDocumentoFacadeRemote tipoDocumentoFacadeRe, DepartamentoFacadeRemote departamentoFacadeRe, PreguntaFacadeLocal preguntaFacadeLo) {
-        try {
-            serviceLocator = new ServiceLocator();
-            constanteBean = (ConstanteRemote) serviceLocator.getRemoteEJB(ConstanteRemote.class);
-            cargoFacade = cargoFacadeLo;
-            paisFacade = paisFacadeRe;
-            sectorFacade = sectorFacadeLo;
-            tipoDocumentoFacade = tipoDocumentoFacadeRe;
-            departamentoFacade = departamentoFacadeRe;
-            preguntaFacade = preguntaFacadeLo;
-        } catch (NamingException ex) {
-            Logger.getLogger(ConversorContacto.class.getName()).log(Level.SEVERE, null, ex);
-        }
+    public ConversorContacto(CargoFacadeLocal cargoFacadeLo, PaisFacadeLocal paisFacadeRe, SectorCorporativoFacadeLocal sectorFacadeLo, TipoDocumentoFacadeLocal tipoDocumentoFacadeRe, DepartamentoFacadeLocal departamentoFacadeRe, PreguntaFacadeLocal preguntaFacadeLo) {
+//        try {
+//            serviceLocator = new ServiceLocator();
+//            constanteBean = (ConstanteLocal) serviceLocator.getLocalEJB(ConstanteLocal.class);
+//            cargoFacade = cargoFacadeLo;
+//            paisFacade = paisFacadeRe;
+//            sectorFacade = sectorFacadeLo;
+//            tipoDocumentoFacade = tipoDocumentoFacadeRe;
+//            departamentoFacade = departamentoFacadeRe;
+//            preguntaFacade = preguntaFacadeLo;
+//        } catch (NamingException ex) {
+//            Logger.getLogger(ConversorContacto.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }
 
-    public ConstanteRemote getConstanteBean() {
+    public ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 

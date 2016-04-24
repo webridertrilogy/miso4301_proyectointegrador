@@ -11,7 +11,7 @@ import javax.persistence.PersistenceContext;
  * Servicios fachada de la entidad ConfiguracionFechasCH
  */
 @Stateless
-public class ConfiguracionFechasCHFacade extends AbstractFacadeCH<ConfiguracionFechasCH> implements ConfiguracionFechasCHFacadeLocal, ConfiguracionFechasCHFacadeRemote {
+public class ConfiguracionFechasCHFacade extends AbstractFacadeCH<ConfiguracionFechasCH> implements ConfiguracionFechasCHFacadeLocal {
 
     @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;

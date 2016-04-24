@@ -35,23 +35,23 @@ import co.uniandes.sisinfo.serviciosfuncionales.LaboratorioFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.ReservaInventarioFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.ReservaMultipleFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.ServiceLocator;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.PersonaFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.ProfesorFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.PersonaFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.ProfesorFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.ParserT;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
-import co.uniandes.sisinfo.serviciosfuncionales.seguridad.RolFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.seguridad.UsuarioFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.seguridad.RolFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.seguridad.UsuarioFacadeLocal;
 
 /**
  *
  * @author Asistente
  */
 @Stateless
-public class LaboratorioBean implements LaboratorioBeanRemote, LaboratorioBeanLocal {
+public class LaboratorioBean implements  LaboratorioBeanLocal {
 
     private ServiceLocator serviceLocator;
     @EJB
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
     @EJB
     private LaboratorioFacadeLocal laboratorioFacade;
     @EJB
@@ -59,37 +59,37 @@ public class LaboratorioBean implements LaboratorioBeanRemote, LaboratorioBeanLo
     @EJB
     private ReservaMultipleFacadeLocal reservaMultipleFacade;
     @EJB
-    private PersonaFacadeRemote personaFacade;
+    private PersonaFacadeLocal personaFacade;
     @EJB
     private EncargadoFacadeLocal encargadoFacade;
     @EJB
-    private UsuarioFacadeRemote usuarioFacade;
+    private UsuarioFacadeLocal usuarioFacade;
     @EJB
-    private RolFacadeRemote rolFacade;
+    private RolFacadeLocal rolFacade;
     @EJB
-    private ProfesorFacadeRemote profesorFacade;
+    private ProfesorFacadeLocal profesorFacade;
     private ConversorReservaInventario conversor;
     private ParserT parser;
 
     public LaboratorioBean() {
-        try {
-            parser = new ParserT();
-            serviceLocator = new ServiceLocator();
-            constanteBean = (ConstanteRemote) serviceLocator.getRemoteEJB(ConstanteRemote.class);
-            personaFacade = (PersonaFacadeRemote) serviceLocator.getRemoteEJB(PersonaFacadeRemote.class);
-            usuarioFacade = (UsuarioFacadeRemote) serviceLocator.getRemoteEJB(UsuarioFacadeRemote.class);
-            rolFacade = (RolFacadeRemote) serviceLocator.getRemoteEJB(RolFacadeRemote.class);
-            profesorFacade = (ProfesorFacadeRemote) serviceLocator.getRemoteEJB(ProfesorFacadeRemote.class);
-        } catch (NamingException ex) {
-            Logger.getLogger(LaboratorioBean.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        try {
+//            parser = new ParserT();
+//            serviceLocator = new ServiceLocator();
+//            constanteBean = (ConstanteLocal) serviceLocator.getLocalEJB(ConstanteLocal.class);
+//            personaFacade = (PersonaFacadeLocal) serviceLocator.getLocalEJB(PersonaFacadeLocal.class);
+//            usuarioFacade = (UsuarioFacadeLocal) serviceLocator.getLocalEJB(UsuarioFacadeLocal.class);
+//            rolFacade = (RolFacadeLocal) serviceLocator.getLocalEJB(RolFacadeLocal.class);
+//            profesorFacade = (ProfesorFacadeLocal) serviceLocator.getLocalEJB(ProfesorFacadeLocal.class);
+//        } catch (NamingException ex) {
+//            Logger.getLogger(LaboratorioBean.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }
 
     public ParserT getParser() {
         return parser;
     }
 
-    public ConstanteRemote getConstanteBean() {
+    public ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 
@@ -100,7 +100,7 @@ public class LaboratorioBean implements LaboratorioBeanRemote, LaboratorioBeanLo
         return conversor;
     }
 
-    @Override
+    
     public String consultarLaboratoriosAutorizados(String xml) {
         String respuesta = null;
         try {
@@ -145,7 +145,7 @@ public class LaboratorioBean implements LaboratorioBeanRemote, LaboratorioBeanLo
         }
     }
 
-    @Override
+    
     public String consultarLaboratorio(String xml) {
         String respuesta = null;
         try {
@@ -164,7 +164,7 @@ public class LaboratorioBean implements LaboratorioBeanRemote, LaboratorioBeanLo
         }
     }
 
-    @Override
+    
     public String consultarAutorizadoLaboratorio(String xml) {
         String respuesta = null;
         try {
@@ -191,7 +191,7 @@ public class LaboratorioBean implements LaboratorioBeanRemote, LaboratorioBeanLo
         }
     }
 
-    @Override
+    
     public String consultarLaboratorios(String xml) {
         String respuesta = null;
         try {
@@ -226,7 +226,7 @@ public class LaboratorioBean implements LaboratorioBeanRemote, LaboratorioBeanLo
         }
     }
 
-    @Override
+    
     public String darHorarioDisponibleLaboratorio(String xml) {
         String respuesta = null;
         try {

@@ -9,19 +9,12 @@
  */
 package co.uniandes.sisinfo.serviciosfuncionales;
 
-import co.uniandes.sisinfo.comun.constantes.Constantes;
-import co.uniandes.sisinfo.entities.MonitoriaAceptada;
-import co.uniandes.sisinfo.entities.Solicitud;
-import co.uniandes.sisinfo.entities.datosmaestros.Seccion;
-import co.uniandes.sisinfo.nucleo.services.NucleoRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.parser.ParserT;
-import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
-import co.uniandes.sisinfo.serviciosnegocio.ConstanteRemote;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
 import javax.annotation.Resource;
 import javax.ejb.EJB;
 import javax.ejb.SessionContext;
@@ -31,12 +24,21 @@ import javax.ejb.Timer;
 import javax.ejb.TimerService;
 import javax.naming.NamingException;
 
+import co.uniandes.sisinfo.comun.constantes.Constantes;
+import co.uniandes.sisinfo.entities.MonitoriaAceptada;
+import co.uniandes.sisinfo.entities.Solicitud;
+import co.uniandes.sisinfo.entities.datosmaestros.Seccion;
+import co.uniandes.sisinfo.nucleo.services.NucleoLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.parser.ParserT;
+import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
+import co.uniandes.sisinfo.serviciosnegocio.ConstanteLocal;
+
 /**
  * Servicios Timer Profesor
  */
 @Stateless
 @EJB(name = "TimerProfesorBean", beanInterface = co.uniandes.sisinfo.serviciosfuncionales.TimerProfesorLocal.class)
-public class TimerProfesorBean implements TimerProfesorRemote, TimerProfesorLocal {
+public class TimerProfesorBean implements  TimerProfesorLocal {
 
     @Resource
     private SessionContext ctx;
@@ -46,21 +48,21 @@ public class TimerProfesorBean implements TimerProfesorRemote, TimerProfesorLoca
     private SolicitudFacadeLocal solicitudFacade;
 
     @EJB
-    private NucleoRemote nucleo;
+    private NucleoLocal nucleo;
 
     @EJB
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
     private ServiceLocator serviceLocator;
 
     public TimerProfesorBean() {
-    try {
-            parser = new ParserT();
-            serviceLocator = new ServiceLocator();
-            nucleo = (NucleoRemote) serviceLocator.getRemoteEJB(NucleoRemote.class);
-            constanteBean = (ConstanteRemote) serviceLocator.getRemoteEJB(ConstanteRemote.class);
-        } catch (NamingException ex) {
-            Logger.getLogger(TimerProfesorBean.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//    try {
+//            parser = new ParserT();
+//            serviceLocator = new ServiceLocator();
+//            //nucleo = (NucleoLocal) serviceLocator.getLocalEJB(NucleoLocal.class);
+//            constanteBean = (ConstanteLocal) serviceLocator.getLocalEJB(ConstanteLocal.class);
+//        } catch (NamingException ex) {
+//            Logger.getLogger(TimerProfesorBean.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }
 
     @Override
@@ -118,7 +120,7 @@ public class TimerProfesorBean implements TimerProfesorRemote, TimerProfesorLoca
         }
     }
 
-    public ConstanteRemote getConstanteBean() {
+    public ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 }

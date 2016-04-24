@@ -18,7 +18,7 @@ import javax.persistence.PersistenceContext;
  * @author Ivan Mauricio Melo Suarez
  */
 @Stateless
-public class ExcepcionSisinfoFacade extends AbstractFacade<ExcepcionSisinfo> implements ExcepcionSisinfoFacadeLocal, ExcepcionSisinfoFacadeRemote {
+public class ExcepcionSisinfoFacade extends AbstractFacade<ExcepcionSisinfo> implements ExcepcionSisinfoFacadeLocal {
     @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 

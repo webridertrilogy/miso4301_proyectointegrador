@@ -19,12 +19,12 @@ import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
  */
 public class ConversorFiltrosCorreo {
 
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
 
     //----------------------------------------------
     // CONSTRUCTOR
     //----------------------------------------------
-    public ConversorFiltrosCorreo(ConstanteRemote constanteBean) {
+    public ConversorFiltrosCorreo(ConstanteLocal constanteBean) {
         this.constanteBean = constanteBean;
     }
 
@@ -63,7 +63,7 @@ public class ConversorFiltrosCorreo {
         return secCondiciones;
     }
 
-    public ConstanteRemote getConstanteBean() {
+    public ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 

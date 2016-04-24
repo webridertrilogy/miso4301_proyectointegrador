@@ -17,15 +17,15 @@ import co.uniandes.sisinfo.entities.datosmaestros.InformacionAcademica;
 import co.uniandes.sisinfo.entities.datosmaestros.Persona;
 import co.uniandes.sisinfo.entities.datosmaestros.soporte.Pais;
 import co.uniandes.sisinfo.entities.datosmaestros.soporte.TipoDocumento;
-import co.uniandes.sisinfo.serviciosfuncionales.EstudiantePosgradoFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.HojaVidaFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.EstudiantePosgradoFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.HojaVidaFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.ServiceLocator;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.EstudianteFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.InformacionAcademicaFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.PersonaFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.EstudianteFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.InformacionAcademicaFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.PersonaFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
-import co.uniandes.sisinfo.serviciosfuncionales.soporte.PaisFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.soporte.TipoDocumentoFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.soporte.PaisFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.soporte.TipoDocumentoFacadeLocal;
 
 /**
  * Conversor del módulo de Asistencias Graduadas y Bolsa de Empleo
@@ -38,24 +38,24 @@ public class ConversorEstudiante {
     //----------------------------------------------
     //Útil
     @EJB
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
     @EJB
     private ServiceLocator serviceLocator;
     //Servicios
     @EJB
-    private EstudianteFacadeRemote estudianteFacade;
+    private EstudianteFacadeLocal estudianteFacade;
     @EJB
-    private PersonaFacadeRemote personaFacade;
+    private PersonaFacadeLocal personaFacade;
     @EJB
-    private PaisFacadeRemote paisFacade;
+    private PaisFacadeLocal paisFacade;
     @EJB
-    private TipoDocumentoFacadeRemote tipoDocumentoFacade;
+    private TipoDocumentoFacadeLocal tipoDocumentoFacade;
     @EJB
-    private InformacionAcademicaFacadeRemote informacionAcademicaFacade;
+    private InformacionAcademicaFacadeLocal informacionAcademicaFacade;
     @EJB
-    private HojaVidaFacadeRemote hojaVidaFacade;
+    private HojaVidaFacadeLocal hojaVidaFacade;
     @EJB
-    private EstudiantePosgradoFacadeRemote estudiantePostgradoFacade;
+    private EstudiantePosgradoFacadeLocal estudiantePostgradoFacade;
 
     //----------------------------------------------
     // CONSTRUCTOR
@@ -65,14 +65,14 @@ public class ConversorEstudiante {
      * Conversor del módulo de asistencias graduadas
      * @param constanteBean Referencia a los servicios de las constantes
      */
-    public ConversorEstudiante(ConstanteRemote constanteBean,
-            EstudianteFacadeRemote estudianteFacade,
-            PersonaFacadeRemote personaFacade,
-            PaisFacadeRemote paisFacade,
-            TipoDocumentoFacadeRemote tipoDocumentofacade,
-            InformacionAcademicaFacadeRemote informacionAcademicaFacade,
-            HojaVidaFacadeRemote hojaVidaFacade,
-            EstudiantePosgradoFacadeRemote estudiantePosgradoFacade) {
+    public ConversorEstudiante(ConstanteLocal constanteBean,
+            EstudianteFacadeLocal estudianteFacade,
+            PersonaFacadeLocal personaFacade,
+            PaisFacadeLocal paisFacade,
+            TipoDocumentoFacadeLocal tipoDocumentofacade,
+            InformacionAcademicaFacadeLocal informacionAcademicaFacade,
+            HojaVidaFacadeLocal hojaVidaFacade,
+            EstudiantePosgradoFacadeLocal estudiantePosgradoFacade) {
         //try {
             serviceLocator = new ServiceLocator();
             this.constanteBean = constanteBean;

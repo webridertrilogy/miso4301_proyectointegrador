@@ -42,7 +42,7 @@ import co.uniandes.sisinfo.serviciosfuncionales.seguridad.AccesoLDAP;
  */
 @Stateless
 @EJB(name = "ListaNegraBean", beanInterface = co.uniandes.sisinfo.serviciosnegocio.ListaNegraLocal.class)
-public class ListaNegraBean implements ListaNegraRemote, ListaNegraLocal {
+public class ListaNegraBean implements  ListaNegraLocal {
 
     //---------------------------------------
     // Atributos
@@ -70,7 +70,7 @@ public class ListaNegraBean implements ListaNegraRemote, ListaNegraLocal {
      *  ConstanteBean
      */
     @EJB
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
 
     private ServiceLocator serviceLocator;
 
@@ -81,12 +81,12 @@ public class ListaNegraBean implements ListaNegraRemote, ListaNegraLocal {
      * Constructor de ListaNegraBean
      */
     public ListaNegraBean() {
-        try {
-            serviceLocator = new ServiceLocator();
-            constanteBean = (ConstanteRemote) serviceLocator.getRemoteEJB( ConstanteRemote.class);
-        } catch (NamingException ex) {
-            Logger.getLogger(ListaNegraBean.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        try {
+//            serviceLocator = new ServiceLocator();
+//            constanteBean = (ConstanteLocal) serviceLocator.getLocalEJB( ConstanteLocal.class);
+//        } catch (NamingException ex) {
+//            Logger.getLogger(ListaNegraBean.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }
 
     //---------------------------------------
@@ -382,7 +382,7 @@ public class ListaNegraBean implements ListaNegraRemote, ListaNegraLocal {
      * Retorna ConstanteBean
      * @return constanteBean ConstanteBean
      */
-    private ConstanteRemote getConstanteBean() {
+    private ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 

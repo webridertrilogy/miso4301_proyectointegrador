@@ -19,11 +19,11 @@ import co.uniandes.sisinfo.entities.DisponibilidadCoordinacion;
 import co.uniandes.sisinfo.entities.ListaNegraReservaCitas;
 import co.uniandes.sisinfo.entities.Reserva;
 import co.uniandes.sisinfo.entities.datosmaestros.Persona;
-import co.uniandes.sisinfo.serviciosfuncionales.DatosContactoFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.DiaDisponibilidadFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.DisponibilidadCoordinacionFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.DatosContactoFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.DiaDisponibilidadFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.DisponibilidadCoordinacionFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.ServiceLocator;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.PersonaFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.PersonaFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
 
 /**
@@ -37,18 +37,18 @@ public class ConversorReservaCitas {
     //----------------------------------------------
     //Útil
     @EJB
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
     @EJB
     private ServiceLocator serviceLocator;
     //Servicios
     @EJB
-    private DatosContactoFacadeRemote datosContacto;
+    private DatosContactoFacadeLocal datosContacto;
     @EJB
-    private PersonaFacadeRemote personaFacade;
+    private PersonaFacadeLocal personaFacade;
     @EJB
-    private DisponibilidadCoordinacionFacadeRemote disponibilidadCoordinacionFacade;
+    private DisponibilidadCoordinacionFacadeLocal disponibilidadCoordinacionFacade;
     @EJB
-    private DiaDisponibilidadFacadeRemote diaFacade;
+    private DiaDisponibilidadFacadeLocal diaFacade;
 
     //----------------------------------------------
     // CONSTRUCTOR
@@ -58,18 +58,18 @@ public class ConversorReservaCitas {
      * Conversor del módulo de reserva de citas
      * @param constanteBean Referencia a los servicios de las constantes
      */
-    public ConversorReservaCitas(ConstanteRemote constanteBean) {
-        try {
-            serviceLocator = new ServiceLocator();
-            this.constanteBean = constanteBean;
-            personaFacade = (PersonaFacadeRemote) serviceLocator.getRemoteEJB(PersonaFacadeRemote.class);
-            datosContacto = (DatosContactoFacadeRemote) serviceLocator.getRemoteEJB(DatosContactoFacadeRemote.class);
-            disponibilidadCoordinacionFacade = (DisponibilidadCoordinacionFacadeRemote) serviceLocator.getRemoteEJB(DisponibilidadCoordinacionFacadeRemote.class);
-            diaFacade = (DiaDisponibilidadFacadeRemote) serviceLocator.getRemoteEJB(DiaDisponibilidadFacadeRemote.class);
-
-        } catch (NamingException ex) {
-            Logger.getLogger(ConversorReservaCitas.class.getName()).log(Level.SEVERE, null, ex);
-        }
+    public ConversorReservaCitas(ConstanteLocal constanteBean) {
+//        try {
+//            serviceLocator = new ServiceLocator();
+//            this.constanteBean = constanteBean;
+//            personaFacade = (PersonaFacadeLocal) serviceLocator.getLocalEJB(PersonaFacadeLocal.class);
+//            datosContacto = (DatosContactoFacadeLocal) serviceLocator.getLocalEJB(DatosContactoFacadeLocal.class);
+//            disponibilidadCoordinacionFacade = (DisponibilidadCoordinacionFacadeLocal) serviceLocator.getLocalEJB(DisponibilidadCoordinacionFacadeLocal.class);
+//            diaFacade = (DiaDisponibilidadFacadeLocal) serviceLocator.getLocalEJB(DiaDisponibilidadFacadeLocal.class);
+//
+//        } catch (NamingException ex) {
+//            Logger.getLogger(ConversorReservaCitas.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }
 
     //----------------------------------------------
@@ -361,23 +361,23 @@ public class ConversorReservaCitas {
     //----------------------------------------------
     // MÉTODOS PRIVADOS
     //----------------------------------------------
-    private ConstanteRemote getConstanteBean() {
+    private ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 
-    private DatosContactoFacadeRemote getDatosContacto() {
+    private DatosContactoFacadeLocal getDatosContacto() {
         return datosContacto;
     }
 
-    private PersonaFacadeRemote getPersonaFacade() {
+    private PersonaFacadeLocal getPersonaFacade() {
         return personaFacade;
     }
 
-    private DisponibilidadCoordinacionFacadeRemote getDisponibilidadCoordinacionFacade() {
+    private DisponibilidadCoordinacionFacadeLocal getDisponibilidadCoordinacionFacade() {
         return disponibilidadCoordinacionFacade;
     }
 
-    private DiaDisponibilidadFacadeRemote getDiaFacade() {
+    private DiaDisponibilidadFacadeLocal getDiaFacade() {
         return diaFacade;
     }
 

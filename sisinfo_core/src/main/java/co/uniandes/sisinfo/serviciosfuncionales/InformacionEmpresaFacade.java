@@ -11,7 +11,7 @@ import javax.persistence.PersistenceContext;
  * @author Marcela Morales
  */
 @Stateless
-public class InformacionEmpresaFacade implements InformacionEmpresaFacadeLocal, InformacionEmpresaFacadeRemote {
+public class InformacionEmpresaFacade implements InformacionEmpresaFacadeLocal {
 	@PersistenceContext(unitName="SoporteSisinfoPU")
     private EntityManager em;
 

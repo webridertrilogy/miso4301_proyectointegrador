@@ -1,6 +1,20 @@
 package co.uniandes.sisinfo.sdocPrivados.erviciosnegocio;
 
-import co.uniandes.sisinfo.serviciosnegocio.DocumentoPrivadoRemote;
+import java.io.File;
+import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import javax.ejb.EJB;
+import javax.ejb.Stateless;
+import javax.naming.NamingException;
+
 import co.uniandes.sisinfo.comun.constantes.Constantes;
 import co.uniandes.sisinfo.comun.constantes.Mensajes;
 import co.uniandes.sisinfo.docPrivados.entities.DocumentoPrivado;
@@ -12,30 +26,17 @@ import co.uniandes.sisinfo.docPrivados.serviciosfuncionales.NodoFacadeLocal;
 import co.uniandes.sisinfo.docPrivados.serviciosfuncionales.PublicadorFacadeLocal;
 import co.uniandes.sisinfo.entities.datosmaestros.Persona;
 import co.uniandes.sisinfo.serviciosfuncionales.ServiceLocator;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.PersonaFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.PersonaFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.ParserT;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
-import co.uniandes.sisinfo.serviciosnegocio.ConstanteRemote;
-import java.io.File;
-import java.sql.Timestamp;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.ejb.EJB;
-import javax.ejb.Stateless;
-import javax.naming.NamingException;
+import co.uniandes.sisinfo.serviciosnegocio.ConstanteLocal;
 
 /**
  * Servicios de administración de documentos
  * @author David Naranjo, Camilo Cortés, Marcela Morales
  */
 @Stateless
-public class DocumentoPrivadoBean implements DocumentoPrivadoRemote, DocumentoPrivadoLocal {
+public class DocumentoPrivadoBean implements DocumentoPrivadoLocal {
 
     //---------------------------------------
     // Atributos
@@ -49,11 +50,11 @@ public class DocumentoPrivadoBean implements DocumentoPrivadoRemote, DocumentoPr
     private PublicadorFacadeLocal publicadorFacade;
     //Remotos
     @EJB
-    private PersonaFacadeRemote personaFacade;
+    private PersonaFacadeLocal personaFacade;
     //Útiles
     private ParserT parser;
     @EJB
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
     private ServiceLocator serviceLocator;
     
     //---------------------------------------
@@ -63,13 +64,13 @@ public class DocumentoPrivadoBean implements DocumentoPrivadoRemote, DocumentoPr
      * Constructor de DocumentoPrivadoBean
      */
     public DocumentoPrivadoBean() {
-        try {
-            serviceLocator = new ServiceLocator();
-            constanteBean = (ConstanteRemote) serviceLocator.getRemoteEJB(ConstanteRemote.class);
-            personaFacade = (PersonaFacadeRemote) serviceLocator.getRemoteEJB(PersonaFacadeRemote.class);
-        } catch (NamingException ex) {
-            Logger.getLogger(DocumentoPrivadoBean.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        try {
+//            serviceLocator = new ServiceLocator();
+////            constanteBean = (ConstanteLocal) serviceLocator.getLocalEJB(ConstanteLocal.class);
+////            personaFacade = (PersonaFacadeLocal) serviceLocator.getLocalEJB(PersonaFacadeLocal.class);
+//        } catch (NamingException ex) {
+//            Logger.getLogger(DocumentoPrivadoBean.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }
 
     //---------------------------------------
@@ -679,7 +680,7 @@ public class DocumentoPrivadoBean implements DocumentoPrivadoRemote, DocumentoPr
         return parser;
     }
 
-    private ConstanteRemote getConstanteBean() {
+    private ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 
@@ -691,7 +692,7 @@ public class DocumentoPrivadoBean implements DocumentoPrivadoRemote, DocumentoPr
         return nodoFacade;
     }
 
-    private PersonaFacadeRemote getPersonaFacade() {
+    private PersonaFacadeLocal getPersonaFacade() {
         return personaFacade;
     }
 

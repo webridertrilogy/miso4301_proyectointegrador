@@ -17,7 +17,7 @@ import javax.persistence.Query;
  * @author Asistente
  */
 @Stateless
-public class OtrasActividadesFacade implements OtrasActividadesFacadeLocal, OtrasActividadesFacadeRemote {
+public class OtrasActividadesFacade implements OtrasActividadesFacadeLocal {
     @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 

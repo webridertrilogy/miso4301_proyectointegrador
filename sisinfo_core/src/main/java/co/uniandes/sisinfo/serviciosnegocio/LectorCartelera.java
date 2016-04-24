@@ -14,8 +14,8 @@ import org.apache.poi.ss.usermodel.WorkbookFactory;
 
 import co.uniandes.sisinfo.comun.constantes.Constantes;
 import co.uniandes.sisinfo.entities.datosmaestros.Programa;
-import co.uniandes.sisinfo.serviciosfuncionales.CorreoRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.ProgramaFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.CorreoLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.ProgramaFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.seguridad.AccesoLDAP;
 
 
@@ -29,17 +29,17 @@ public class LectorCartelera {
     // ATRIBUTOS
     //----------------------------------------------
     @EJB
-    private ProgramaFacadeRemote programaFacade;
+    private ProgramaFacadeLocal programaFacade;
     @EJB
-    private CorreoRemote correoBean;
+    private CorreoLocal correoBean;
     @EJB
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
     private ConflictoHorariosBeanHelper conversor;
 
     //----------------------------------------------
     // CONSTRUCTOR
     //----------------------------------------------
-    public LectorCartelera(ConstanteRemote constanteBean, CorreoRemote correoBean, ProgramaFacadeRemote programaFacade) {
+    public LectorCartelera(ConstanteLocal constanteBean, CorreoLocal correoBean, ProgramaFacadeLocal programaFacade) {
         this.constanteBean = constanteBean;
         this.correoBean = correoBean;
         this.programaFacade = programaFacade;
@@ -417,15 +417,15 @@ public class LectorCartelera {
     //----------------------------------------------
     // MÉTODOS PRIVADOS
     //----------------------------------------------
-    private ConstanteRemote getConstanteBean() {
+    private ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 
-    private CorreoRemote getCorreoBean() {
+    private CorreoLocal getCorreoBean() {
         return correoBean;
     }
 
-    private ProgramaFacadeRemote getProgramaFacade() {
+    private ProgramaFacadeLocal getProgramaFacade() {
         return programaFacade;
     }
 

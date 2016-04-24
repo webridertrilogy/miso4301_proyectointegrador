@@ -20,7 +20,7 @@ import javax.persistence.Query;
  * @author Asistente
  */
 @Stateless
-public class ListaNegraReservaCitasFacade extends AbstractFacade<ListaNegraReservaCitas> implements ListaNegraReservaCitasFacadeLocal, ListaNegraReservaCitasFacadeRemote {
+public class ListaNegraReservaCitasFacade extends AbstractFacade<ListaNegraReservaCitas> implements ListaNegraReservaCitasFacadeLocal {
     @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 

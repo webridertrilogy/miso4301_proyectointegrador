@@ -21,10 +21,10 @@ import co.uniandes.sisinfo.entities.datosmaestros.Seccion;
 import co.uniandes.sisinfo.serviciosfuncionales.MonitoriaFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.ServiceLocator;
 import co.uniandes.sisinfo.serviciosfuncionales.SolicitudFacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.TareaMultipleFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.CursoFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.ProfesorFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.SeccionFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.TareaMultipleFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.CursoFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.ProfesorFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.SeccionFacadeLocal;
 
 /**
  *
@@ -32,13 +32,13 @@ import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.SeccionFacadeRemot
  */
 @Stateless
 @EJB(name = "IntegracionConflictoHorariosBean", beanInterface = co.uniandes.sisinfo.serviciosnegocio.IntegracionConflictoHorariosBeanLocal.class)
-public class IntegracionConflictoHorariosBean implements IntegracionConflictoHorariosBeanRemote, IntegracionConflictoHorariosBeanLocal {
+public class IntegracionConflictoHorariosBean implements  IntegracionConflictoHorariosBeanLocal {
 
     @EJB
     private RangoFechasBeanLocal rangoFechasBean;
 
     @EJB
-    private SeccionFacadeRemote seccionFacade;
+    private SeccionFacadeLocal seccionFacade;
 
     @EJB
     private SolicitudFacadeLocal solicitudFacade;
@@ -47,37 +47,37 @@ public class IntegracionConflictoHorariosBean implements IntegracionConflictoHor
     private PreseleccionLocal preseleccionBean;
 
     @EJB
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
 
     @EJB
-    private TareaMultipleFacadeRemote tareaMultipleFacade;
+    private TareaMultipleFacadeLocal tareaMultipleFacade;
 
     @EJB
     private MonitoriaFacadeLocal monitoriaFacade;
 
     @EJB
-    private ProfesorFacadeRemote profesorFacade;
+    private ProfesorFacadeLocal profesorFacade;
 
     @EJB
     private ConvocatoriaLocal convocatoriaBean;
 
     @EJB
-    private CursoFacadeRemote cursoFacade;
+    private CursoFacadeLocal cursoFacade;
 
     private ServiceLocator serviceLocator;
 
     public IntegracionConflictoHorariosBean(){
-        try{
-            serviceLocator = new ServiceLocator();
-
-            seccionFacade = (SeccionFacadeRemote)serviceLocator.getRemoteEJB(SeccionFacadeRemote.class);
-            constanteBean = (ConstanteRemote)serviceLocator.getRemoteEJB(ConstanteRemote.class);
-            tareaMultipleFacade =  (TareaMultipleFacadeRemote)serviceLocator.getRemoteEJB(TareaMultipleFacadeRemote.class);
-            profesorFacade = (ProfesorFacadeRemote)serviceLocator.getRemoteEJB(ProfesorFacadeRemote.class);
-            cursoFacade = (CursoFacadeRemote)serviceLocator.getRemoteEJB(CursoFacadeRemote.class);
-        }catch(Exception ex){
-            Logger.getLogger(IntegracionConflictoHorariosBean.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        try{
+//            serviceLocator = new ServiceLocator();
+//
+//            seccionFacade = (SeccionFacadeLocal)serviceLocator.getLocalEJB(SeccionFacadeLocal.class);
+//            constanteBean = (ConstanteLocal)serviceLocator.getLocalEJB(ConstanteLocal.class);
+//            tareaMultipleFacade =  (TareaMultipleFacadeLocal)serviceLocator.getLocalEJB(TareaMultipleFacadeLocal.class);
+//            profesorFacade = (ProfesorFacadeLocal)serviceLocator.getLocalEJB(ProfesorFacadeLocal.class);
+//            cursoFacade = (CursoFacadeLocal)serviceLocator.getLocalEJB(CursoFacadeLocal.class);
+//        }catch(Exception ex){
+//            Logger.getLogger(IntegracionConflictoHorariosBean.class.getName()).log(Level.SEVERE, null, ex);
+//        }
         
     }
 

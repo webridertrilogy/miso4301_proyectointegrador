@@ -19,7 +19,7 @@ import javax.persistence.PersistenceContext;
  * Servicio Facade Documento Privado
  */
 @Stateless
-public class DocumentoPrivadoFacade implements DocumentoPrivadoFacadeLocal, DocumentoPrivadoFacadeRemote {
+public class DocumentoPrivadoFacade implements DocumentoPrivadoFacadeLocal {
 
 	@PersistenceContext(unitName="SoporteSisinfoPU")
     private EntityManager em;

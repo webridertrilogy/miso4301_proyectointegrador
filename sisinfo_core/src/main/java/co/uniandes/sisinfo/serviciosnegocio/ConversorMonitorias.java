@@ -36,23 +36,23 @@ import co.uniandes.sisinfo.entities.datosmaestros.Persona;
 import co.uniandes.sisinfo.entities.datosmaestros.soporte.Pais;
 import co.uniandes.sisinfo.entities.datosmaestros.soporte.TipoCuenta;
 import co.uniandes.sisinfo.entities.datosmaestros.soporte.TipoDocumento;
-import co.uniandes.sisinfo.serviciosfuncionales.AspiranteFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.Horario_DisponibleFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.MonitoriaOtroDepartamentoFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.AspiranteFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.Horario_DisponibleFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.MonitoriaOtroDepartamentoFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.ServiceLocator;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.CursoFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.EstudianteFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.InformacionAcademicaFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.NivelFormacionFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.PersonaFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.ProgramaFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.CursoFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.EstudianteFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.InformacionAcademicaFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.NivelFormacionFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.PersonaFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.ProgramaFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Atributo;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.ParserT;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
 import co.uniandes.sisinfo.serviciosfuncionales.seguridad.AccesoLDAP;
-import co.uniandes.sisinfo.serviciosfuncionales.soporte.PaisFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.soporte.TipoCuentaFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.soporte.TipoDocumentoFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.soporte.PaisFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.soporte.TipoCuentaFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.soporte.TipoDocumentoFacadeLocal;
 
 /**
  *
@@ -69,79 +69,79 @@ public class ConversorMonitorias {
      *  ConstanteBean
      */
     @EJB
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
 
     /**
      * AspiranteFacade
      */
     @EJB
-    private AspiranteFacadeRemote aspiranteFacade;
+    private AspiranteFacadeLocal aspiranteFacade;
     
     /**
      * TipoCuentaFacade
      */
     @EJB
-    private TipoCuentaFacadeRemote tipoCuentaFacade;
+    private TipoCuentaFacadeLocal tipoCuentaFacade;
 
     /**
      * PersonaFacade
      */
     @EJB
-    private PersonaFacadeRemote personaFacade;
+    private PersonaFacadeLocal personaFacade;
 
     /**
      * EstudianteFacade
      */
     @EJB
-    private EstudianteFacadeRemote estudianteFacade;
+    private EstudianteFacadeLocal estudianteFacade;
 
     /**
      * TipoDocumentoFacade
      */
     @EJB
-    private TipoDocumentoFacadeRemote tipoDocumentoFacade;
+    private TipoDocumentoFacadeLocal tipoDocumentoFacade;
 
     /**
      * PaisFacade
      */
     @EJB
-    private PaisFacadeRemote paisFacade;
+    private PaisFacadeLocal paisFacade;
 
     /**
      * ProgramaFacade
      */
     @EJB
-    private ProgramaFacadeRemote programaFacade;
+    private ProgramaFacadeLocal programaFacade;
 
     /**
      * CursoFacade
      */
     @EJB
-    private CursoFacadeRemote cursoFacade;
+    private CursoFacadeLocal cursoFacade;
 
     /**
      * MonitoriaOtroDepartamentoFacade
      */
     @EJB
-    private MonitoriaOtroDepartamentoFacadeRemote monitoriaOtrosDepartamentosFacade;
+    private MonitoriaOtroDepartamentoFacadeLocal monitoriaOtrosDepartamentosFacade;
 
     /**
      * Informacion_AcademicaFacade
      */
     @EJB
-    private InformacionAcademicaFacadeRemote informacionAcademicaFacade;
+    private InformacionAcademicaFacadeLocal informacionAcademicaFacade;
 
     /**
      * Horario_DisponibleFacade
      */
     @EJB
-    private Horario_DisponibleFacadeRemote horario_DisponibleFacade;
+    private Horario_DisponibleFacadeLocal horario_DisponibleFacade;
 
     /**
      * NivelFormacionFacade
      */
     @EJB
-    private NivelFormacionFacadeRemote nivelFormacionFacade;
+    private NivelFormacionFacadeLocal nivelFormacionFacade;
 
     /**
      * Retorna Parser
@@ -158,21 +158,21 @@ public class ConversorMonitorias {
      * Retorna ConstanteBean
      * @return constanteBean ConstanteBean
      */
-    private ConstanteRemote getConstanteBean() {
+    private ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 
-    private TipoCuentaFacadeRemote getTipoCuentaFacade() {
+    private TipoCuentaFacadeLocal getTipoCuentaFacade() {
 
         return tipoCuentaFacade;
     }
 
-    private PersonaFacadeRemote getPersonaFacade() {
+    private PersonaFacadeLocal getPersonaFacade() {
 
         return personaFacade;
     }
 
-    private EstudianteFacadeRemote getEstudianteFacade() {
+    private EstudianteFacadeLocal getEstudianteFacade() {
         
         return estudianteFacade;
     }
@@ -181,7 +181,7 @@ public class ConversorMonitorias {
      * Retorna TipoDocumentoFacade
      * @return tipoDocumentoFacade TipoDocumentoFacade
      */
-    private TipoDocumentoFacadeRemote getTipoDocumentoFacade() {
+    private TipoDocumentoFacadeLocal getTipoDocumentoFacade() {
         
         return tipoDocumentoFacade;
     }
@@ -190,7 +190,7 @@ public class ConversorMonitorias {
      * Retorna PaisFacade
      * @return paisFacade PaisFacade
      */
-    private PaisFacadeRemote getPaisFacade() {
+    private PaisFacadeLocal getPaisFacade() {
         
         return paisFacade;
     }
@@ -199,7 +199,7 @@ public class ConversorMonitorias {
      * Retorna ProgramaFacade
      * @return programaFacade ProgramaFacade
      */
-    private ProgramaFacadeRemote getProgramaFacade() {
+    private ProgramaFacadeLocal getProgramaFacade() {
         
         return programaFacade;
     }
@@ -208,7 +208,7 @@ public class ConversorMonitorias {
      * Retorna CursoFacade
      * @return cursoFacade CursoFacade
      */
-    private CursoFacadeRemote getCursoFacade() {
+    private CursoFacadeLocal getCursoFacade() {
         
         return cursoFacade;
     }
@@ -217,7 +217,7 @@ public class ConversorMonitorias {
      * Retorna MonitoriaOtroDepartamentoFacade
      * @return monitoriaOtrosDepartamentosFacade MonitoriaOtroDepartamentoFacade
      */
-    private MonitoriaOtroDepartamentoFacadeRemote getMonitoriaOtrosDepartamentosFacade() {
+    private MonitoriaOtroDepartamentoFacadeLocal getMonitoriaOtrosDepartamentosFacade() {
         
         return monitoriaOtrosDepartamentosFacade;
     }
@@ -226,7 +226,7 @@ public class ConversorMonitorias {
      * Retorna Informacion_AcademicaFacade
      * @return informacion_AcademicaFacade Informacion_AcademicaFacade
      */
-    private InformacionAcademicaFacadeRemote getInformacionAcademicaFacade() {
+    private InformacionAcademicaFacadeLocal getInformacionAcademicaFacade() {
 
         return informacionAcademicaFacade;
     }
@@ -235,7 +235,7 @@ public class ConversorMonitorias {
      * Retorna Horario_DisponibleFacade
      * @return horario_DisponibleFacade Horario_DisponibleFacade
      */
-    private Horario_DisponibleFacadeRemote getHorario_DisponibleFacade() {
+    private Horario_DisponibleFacadeLocal getHorario_DisponibleFacade() {
         
         return horario_DisponibleFacade;
     }
@@ -252,27 +252,27 @@ public class ConversorMonitorias {
      * Constructor.
      */
     public ConversorMonitorias() {
-        try {
-
-            ServiceLocator serviceLocator = new ServiceLocator();
-            constanteBean = (ConstanteRemote) serviceLocator.getRemoteEJB(ConstanteRemote.class);
-            tipoDocumentoFacade = (TipoDocumentoFacadeRemote) serviceLocator.getRemoteEJB(TipoDocumentoFacadeRemote.class);
-            personaFacade = (PersonaFacadeRemote) serviceLocator.getRemoteEJB(PersonaFacadeRemote.class);
-            estudianteFacade = (EstudianteFacadeRemote) serviceLocator.getRemoteEJB(EstudianteFacadeRemote.class);
-            tipoCuentaFacade = (TipoCuentaFacadeRemote) serviceLocator.getRemoteEJB(TipoCuentaFacadeRemote.class);
-            paisFacade = (PaisFacadeRemote) serviceLocator.getRemoteEJB(PaisFacadeRemote.class);
-            programaFacade = (ProgramaFacadeRemote) serviceLocator.getRemoteEJB(ProgramaFacadeRemote.class);
-            informacionAcademicaFacade = (InformacionAcademicaFacadeRemote) serviceLocator.getRemoteEJB(InformacionAcademicaFacadeRemote.class);
-            cursoFacade = (CursoFacadeRemote) serviceLocator.getRemoteEJB(CursoFacadeRemote.class);
-            nivelFormacionFacade = (NivelFormacionFacadeRemote) serviceLocator.getRemoteEJB(NivelFormacionFacadeRemote.class);
-            aspiranteFacade = (AspiranteFacadeRemote) serviceLocator.getRemoteEJB(AspiranteFacadeRemote.class);
-            monitoriaOtrosDepartamentosFacade = (MonitoriaOtroDepartamentoFacadeRemote) serviceLocator.getRemoteEJB(MonitoriaOtroDepartamentoFacadeRemote.class);
-            horario_DisponibleFacade = (Horario_DisponibleFacadeRemote) serviceLocator.getRemoteEJB(Horario_DisponibleFacadeRemote.class);
-        } catch (NamingException ex) {
-            
-            ex.printStackTrace();
-            Logger.getLogger(SolicitudBean.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        try {
+//
+//            ServiceLocator serviceLocator = new ServiceLocator();
+//            constanteBean = (ConstanteLocal) serviceLocator.getLocalEJB(ConstanteLocal.class);
+//            tipoDocumentoFacade = (TipoDocumentoFacadeLocal) serviceLocator.getLocalEJB(TipoDocumentoFacadeLocal.class);
+//            personaFacade = (PersonaFacadeLocal) serviceLocator.getLocalEJB(PersonaFacadeLocal.class);
+//            estudianteFacade = (EstudianteFacadeLocal) serviceLocator.getLocalEJB(EstudianteFacadeLocal.class);
+//            tipoCuentaFacade = (TipoCuentaFacadeLocal) serviceLocator.getLocalEJB(TipoCuentaFacadeLocal.class);
+//            paisFacade = (PaisFacadeLocal) serviceLocator.getLocalEJB(PaisFacadeLocal.class);
+//            programaFacade = (ProgramaFacadeLocal) serviceLocator.getLocalEJB(ProgramaFacadeLocal.class);
+//            informacionAcademicaFacade = (InformacionAcademicaFacadeLocal) serviceLocator.getLocalEJB(InformacionAcademicaFacadeLocal.class);
+//            cursoFacade = (CursoFacadeLocal) serviceLocator.getLocalEJB(CursoFacadeLocal.class);
+//            nivelFormacionFacade = (NivelFormacionFacadeLocal) serviceLocator.getLocalEJB(NivelFormacionFacadeLocal.class);
+//            aspiranteFacade = (AspiranteFacadeLocal) serviceLocator.getLocalEJB(AspiranteFacadeLocal.class);
+//            monitoriaOtrosDepartamentosFacade = (MonitoriaOtroDepartamentoFacadeLocal) serviceLocator.getLocalEJB(MonitoriaOtroDepartamentoFacadeLocal.class);
+//            horario_DisponibleFacade = (Horario_DisponibleFacadeLocal) serviceLocator.getLocalEJB(Horario_DisponibleFacadeLocal.class);
+//        } catch (NamingException ex) {
+//            
+//            ex.printStackTrace();
+//            Logger.getLogger(SolicitudBean.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }
 
     /**

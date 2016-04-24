@@ -25,7 +25,7 @@ import co.uniandes.sisinfo.entities.datosmaestros.Persona;
 import co.uniandes.sisinfo.serviciosfuncionales.EncargadoFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.LaboratorioFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.ReservaMultipleFacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.PersonaFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.PersonaFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
 import co.uniandes.sisinfo.serviciosfuncionales.seguridad.AccesoLDAP;
 
@@ -35,14 +35,14 @@ import co.uniandes.sisinfo.serviciosfuncionales.seguridad.AccesoLDAP;
  */
 public class ConversorReservaInventario {
 
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
     private LaboratorioFacadeLocal laboratorioFacade;
-    private PersonaFacadeRemote personaFacade;
+    private PersonaFacadeLocal personaFacade;
     private EncargadoFacadeLocal encargadoFacade;
     private SimpleDateFormat formatoFecha;
     private ReservaMultipleFacadeLocal reservaMultipleFacade;
 
-    public ConversorReservaInventario(ConstanteRemote constanteBean, LaboratorioFacadeLocal laboratorioFacade, PersonaFacadeRemote personaFacade, EncargadoFacadeLocal encargadoFacadeLocal, ReservaMultipleFacadeLocal reservaMultipleFacade) {
+    public ConversorReservaInventario(ConstanteLocal constanteBean, LaboratorioFacadeLocal laboratorioFacade, PersonaFacadeLocal personaFacade, EncargadoFacadeLocal encargadoFacadeLocal, ReservaMultipleFacadeLocal reservaMultipleFacade) {
         this.constanteBean = constanteBean;
         this.laboratorioFacade = laboratorioFacade;
         this.personaFacade = personaFacade;
@@ -51,7 +51,7 @@ public class ConversorReservaInventario {
         this.reservaMultipleFacade = reservaMultipleFacade;
     }
 
-    public ConstanteRemote getConstanteBean() {
+    public ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 

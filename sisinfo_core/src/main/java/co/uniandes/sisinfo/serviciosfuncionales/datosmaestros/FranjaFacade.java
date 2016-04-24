@@ -17,7 +17,7 @@ import javax.persistence.Query;
  * @author da-naran
  */
 @Stateless
-public class FranjaFacade implements FranjaFacadeLocal, FranjaFacadeRemote {
+public class FranjaFacade implements FranjaFacadeLocal {
     @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 

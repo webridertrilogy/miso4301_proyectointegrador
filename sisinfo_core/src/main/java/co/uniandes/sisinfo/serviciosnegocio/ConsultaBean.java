@@ -36,9 +36,9 @@ import co.uniandes.sisinfo.entities.datosmaestros.Seccion;
 import co.uniandes.sisinfo.entities.datosmaestros.Sesion;
 import co.uniandes.sisinfo.serviciosfuncionales.AspiranteFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.MonitoriaFacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.ReglaFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.ReglaFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.ServiceLocator;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.SeccionFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.SeccionFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Atributo;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.ParserT;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
@@ -48,7 +48,7 @@ import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
  */
 @Stateless
 @EJB(name = "ConsultaBean", beanInterface = co.uniandes.sisinfo.serviciosnegocio.ConsultaLocal.class)
-public class ConsultaBean implements ConsultaRemote, ConsultaLocal {
+public class ConsultaBean implements  ConsultaLocal {
 
     //---------------------------------------
     // Atributos
@@ -57,7 +57,7 @@ public class ConsultaBean implements ConsultaRemote, ConsultaLocal {
      * SeccionFacade
      */
     @EJB
-    private SeccionFacadeRemote seccionFacade;
+    private SeccionFacadeLocal seccionFacade;
     /**
      * AspiranteFacade
      */
@@ -81,10 +81,10 @@ public class ConsultaBean implements ConsultaRemote, ConsultaLocal {
      *  ConstanteBean
      */
     @EJB
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
 
     @EJB
-    private ReglaFacadeRemote reglaFacade;
+    private ReglaFacadeLocal reglaFacade;
 
     private ServiceLocator serviceLocator;
 
@@ -95,14 +95,14 @@ public class ConsultaBean implements ConsultaRemote, ConsultaLocal {
      * Constructor de ConsultaBean
      */
     public ConsultaBean() {
-        try {
-            serviceLocator = new ServiceLocator();
-            constanteBean = (ConstanteRemote) serviceLocator.getRemoteEJB(ConstanteRemote.class);
-            seccionFacade = (SeccionFacadeRemote) serviceLocator.getRemoteEJB(SeccionFacadeRemote.class);
-            reglaFacade = (ReglaFacadeRemote) serviceLocator.getRemoteEJB(ReglaFacadeRemote.class);
-        } catch (NamingException ex) {
-            Logger.getLogger(ConsultaBean.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        try {
+//            serviceLocator = new ServiceLocator();
+//            constanteBean = (ConstanteLocal) serviceLocator.getLocalEJB(ConstanteLocal.class);
+//            seccionFacade = (SeccionFacadeLocal) serviceLocator.getLocalEJB(SeccionFacadeLocal.class);
+//            reglaFacade = (ReglaFacadeLocal) serviceLocator.getLocalEJB(ReglaFacadeLocal.class);
+//        } catch (NamingException ex) {
+//            Logger.getLogger(ConsultaBean.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }
 
     //---------------------------------------
@@ -299,7 +299,7 @@ public class ConsultaBean implements ConsultaRemote, ConsultaLocal {
      * Retorna SeccionFacade
      * @return seccionFacade SeccionFacade
      */
-    private SeccionFacadeRemote getSeccionFacade() {
+    private SeccionFacadeLocal getSeccionFacade() {
         return seccionFacade;
     }
 
@@ -315,7 +315,7 @@ public class ConsultaBean implements ConsultaRemote, ConsultaLocal {
      * Retorna ConstanteBean
      * @return constanteBean ConstanteBean
      */
-    private ConstanteRemote getConstanteBean() {
+    private ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 

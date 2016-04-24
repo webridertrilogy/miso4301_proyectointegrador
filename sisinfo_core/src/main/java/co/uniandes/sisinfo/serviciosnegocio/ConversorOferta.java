@@ -26,20 +26,20 @@ import co.uniandes.sisinfo.entities.datosmaestros.InformacionAcademica;
 import co.uniandes.sisinfo.entities.datosmaestros.Persona;
 import co.uniandes.sisinfo.entities.datosmaestros.soporte.Pais;
 import co.uniandes.sisinfo.entities.datosmaestros.soporte.TipoDocumento;
-import co.uniandes.sisinfo.serviciosfuncionales.EstudiantePosgradoFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.HojaVidaFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.InformacionEmpresaFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.OfertaFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.PeriodoFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.ProponenteFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.EstudiantePosgradoFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.HojaVidaFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.InformacionEmpresaFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.OfertaFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.PeriodoFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.ProponenteFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.ServiceLocator;
-import co.uniandes.sisinfo.serviciosfuncionales.TipoAsistenciaGraduadaFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.EstudianteFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.InformacionAcademicaFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.PersonaFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.TipoAsistenciaGraduadaFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.EstudianteFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.InformacionAcademicaFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.PersonaFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
-import co.uniandes.sisinfo.serviciosfuncionales.soporte.PaisFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.soporte.TipoDocumentoFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.soporte.PaisFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.soporte.TipoDocumentoFacadeLocal;
 
 /**
  * Conversor del módulo de Asistencias Graduadas y Bolsa de Empleo
@@ -52,34 +52,34 @@ public class ConversorOferta {
     //----------------------------------------------
     //Útil
     @EJB
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
     @EJB
     private ServiceLocator serviceLocator;
     //Servicios
     @EJB
-    private EstudianteFacadeRemote estudianteFacade;
+    private EstudianteFacadeLocal estudianteFacade;
     @EJB
-    private PersonaFacadeRemote personaFacade;
+    private PersonaFacadeLocal personaFacade;
     @EJB
-    private PeriodoFacadeRemote periodoFacade;
+    private PeriodoFacadeLocal periodoFacade;
     @EJB
-    private TipoAsistenciaGraduadaFacadeRemote tipoAsistenciaFacade;
+    private TipoAsistenciaGraduadaFacadeLocal tipoAsistenciaFacade;
     @EJB
-    private PaisFacadeRemote paisFacade;
+    private PaisFacadeLocal paisFacade;
     @EJB
-    private TipoDocumentoFacadeRemote tipoDocumentoFacade;
+    private TipoDocumentoFacadeLocal tipoDocumentoFacade;
     @EJB
-    private InformacionAcademicaFacadeRemote informacionAcademicaFacade;
+    private InformacionAcademicaFacadeLocal informacionAcademicaFacade;
     @EJB
-    private HojaVidaFacadeRemote hojaVidaFacade;
+    private HojaVidaFacadeLocal hojaVidaFacade;
     @EJB
-    private EstudiantePosgradoFacadeRemote estudiantePostgradoFacade;
+    private EstudiantePosgradoFacadeLocal estudiantePostgradoFacade;
     @EJB
-    private ProponenteFacadeRemote proponenteFacade;
+    private ProponenteFacadeLocal proponenteFacade;
     @EJB
-    private OfertaFacadeRemote ofertaFacade;
+    private OfertaFacadeLocal ofertaFacade;
     @EJB
-    private InformacionEmpresaFacadeRemote informacionEmpresaFacade;
+    private InformacionEmpresaFacadeLocal informacionEmpresaFacade;
 
     //----------------------------------------------
     // CONSTRUCTOR
@@ -89,25 +89,25 @@ public class ConversorOferta {
      * Conversor del módulo de asistencias graduadas
      * @param constanteBean Referencia a los servicios de las constantes
      */
-    public ConversorOferta(ConstanteRemote constanteBean) {
-        try {
-            serviceLocator = new ServiceLocator();
-            this.constanteBean = constanteBean;
-            estudianteFacade = (EstudianteFacadeRemote) serviceLocator.getRemoteEJB(EstudianteFacadeRemote.class);
-            personaFacade = (PersonaFacadeRemote) serviceLocator.getRemoteEJB(PersonaFacadeRemote.class);
-            periodoFacade = (PeriodoFacadeRemote) serviceLocator.getRemoteEJB(PeriodoFacadeRemote.class);
-            paisFacade = (PaisFacadeRemote) serviceLocator.getRemoteEJB(PaisFacadeRemote.class);
-            tipoAsistenciaFacade = (TipoAsistenciaGraduadaFacadeRemote) serviceLocator.getRemoteEJB(TipoAsistenciaGraduadaFacadeRemote.class);
-            tipoDocumentoFacade = (TipoDocumentoFacadeRemote) serviceLocator.getRemoteEJB(TipoDocumentoFacadeRemote.class);
-            informacionAcademicaFacade = (InformacionAcademicaFacadeRemote) serviceLocator.getRemoteEJB(InformacionAcademicaFacadeRemote.class);
-            hojaVidaFacade = (HojaVidaFacadeRemote) serviceLocator.getRemoteEJB(HojaVidaFacadeRemote.class);
-            estudiantePostgradoFacade = (EstudiantePosgradoFacadeRemote) serviceLocator.getRemoteEJB(EstudiantePosgradoFacadeRemote.class);
-            proponenteFacade = (ProponenteFacadeRemote) serviceLocator.getRemoteEJB(ProponenteFacadeRemote.class);
-            ofertaFacade = (OfertaFacadeRemote) serviceLocator.getRemoteEJB(OfertaFacadeRemote.class);
-            informacionEmpresaFacade = (InformacionEmpresaFacadeRemote) serviceLocator.getRemoteEJB(InformacionEmpresaFacadeRemote.class);
-        } catch (NamingException ex) {
-            Logger.getLogger(ConversorOferta.class.getName()).log(Level.SEVERE, null, ex);
-        }
+    public ConversorOferta(ConstanteLocal constanteBean) {
+//        try {
+//            serviceLocator = new ServiceLocator();
+//            this.constanteBean = constanteBean;
+//            estudianteFacade = (EstudianteFacadeLocal) serviceLocator.getLocalEJB(EstudianteFacadeLocal.class);
+//            personaFacade = (PersonaFacadeLocal) serviceLocator.getLocalEJB(PersonaFacadeLocal.class);
+//            periodoFacade = (PeriodoFacadeLocal) serviceLocator.getLocalEJB(PeriodoFacadeLocal.class);
+//            paisFacade = (PaisFacadeLocal) serviceLocator.getLocalEJB(PaisFacadeLocal.class);
+//            tipoAsistenciaFacade = (TipoAsistenciaGraduadaFacadeLocal) serviceLocator.getLocalEJB(TipoAsistenciaGraduadaFacadeLocal.class);
+//            tipoDocumentoFacade = (TipoDocumentoFacadeLocal) serviceLocator.getLocalEJB(TipoDocumentoFacadeLocal.class);
+//            informacionAcademicaFacade = (InformacionAcademicaFacadeLocal) serviceLocator.getLocalEJB(InformacionAcademicaFacadeLocal.class);
+//            hojaVidaFacade = (HojaVidaFacadeLocal) serviceLocator.getLocalEJB(HojaVidaFacadeLocal.class);
+//            estudiantePostgradoFacade = (EstudiantePosgradoFacadeLocal) serviceLocator.getLocalEJB(EstudiantePosgradoFacadeLocal.class);
+//            proponenteFacade = (ProponenteFacadeLocal) serviceLocator.getLocalEJB(ProponenteFacadeLocal.class);
+//            ofertaFacade = (OfertaFacadeLocal) serviceLocator.getLocalEJB(OfertaFacadeLocal.class);
+//            informacionEmpresaFacade = (InformacionEmpresaFacadeLocal) serviceLocator.getLocalEJB(InformacionEmpresaFacadeLocal.class);
+//        } catch (NamingException ex) {
+//            Logger.getLogger(ConversorOferta.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }
 
     //----------------------------------------------

@@ -45,25 +45,25 @@ import co.uniandes.sisinfo.entities.datosmaestros.Parametro;
 import co.uniandes.sisinfo.entities.datosmaestros.Persona;
 import co.uniandes.sisinfo.entities.datosmaestros.Profesor;
 import co.uniandes.sisinfo.serviciosfuncionales.ComentarioTesisFacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.CorreoRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.CorreoLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.CursoMaestriaFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.CursoTesisFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.InscripcionSubareaInvestigacionFacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.PeriodicidadFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.PeriodoFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.PeriodicidadFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.PeriodoFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.PeriodoTesisFacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.ReportesFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.ReportesFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.ServiceLocator;
-import co.uniandes.sisinfo.serviciosfuncionales.TareaMultipleFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.TareaSencillaFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.TareaMultipleFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.TareaSencillaFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.TemaTesis1FacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.Tesis1FacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.Tesis2FacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.EstudianteFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.GrupoInvestigacionFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.NivelFormacionFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.PersonaFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.ProfesorFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.EstudianteFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.GrupoInvestigacionFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.NivelFormacionFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.PersonaFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.ProfesorFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.ParserT;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
 
@@ -72,26 +72,26 @@ import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
  * @author Ivan Melo
  */
 @Stateless
-public class TesisBean implements TesisBeanRemote, TesisBeanLocal {
+public class TesisBean implements  TesisBeanLocal {
 
     //----CONSTANTES-------------
-    private final static String RUTA_INTERFAZ_REMOTA = "co.uniandes.sisinfo.serviciosnegocio.TesisBeanRemote";
+    private final static String RUTA_INTERFAZ_REMOTA = "co.uniandes.sisinfo.serviciosnegocio.TesisBeanLocal";
     private final static String NOMBRE_METODO_TIMER = "manejoTimmersTesisMaestria";
     //--------------------------
     @EJB
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
     @EJB
-    private ProfesorFacadeRemote profesorFacade;
+    private ProfesorFacadeLocal profesorFacade;
     @EJB
-    private EstudianteFacadeRemote estudianteFacadeRemote;
+    private EstudianteFacadeLocal estudianteFacadeLocal;
     @EJB
     private PeriodoTesisFacadeLocal periodoFacadelocal;
     @EJB
     private InscripcionSubareaInvestigacionFacadeLocal inscrippcionsubFacadeLocal;
     @EJB
-    private CorreoRemote correoBean;
+    private CorreoLocal correoBean;
     @EJB
-    private PeriodicidadFacadeRemote periodicidadFacade;
+    private PeriodicidadFacadeLocal periodicidadFacade;
     @EJB
     private Tesis1FacadeLocal tesis1Facade;
     @EJB
@@ -99,31 +99,30 @@ public class TesisBean implements TesisBeanRemote, TesisBeanLocal {
     @EJB
     private Tesis2FacadeLocal tesis2Facade;
     @EJB
-    private PersonaFacadeRemote personaFacade;
+    private PersonaFacadeLocal personaFacade;
     @EJB
     private CursoTesisFacadeLocal cursoTesisFacade;
     @EJB
-    private PeriodoFacadeRemote periodoFacade;
+    private PeriodoFacadeLocal periodoFacade;
+    
     @EJB
-    private HistoricosTesisBeanRemote historicoTesis;
+    private TimerGenericoBeanLocal timerGenerico;
     @EJB
-    private TimerGenericoBeanRemote timerGenerico;
-    @EJB
-    private ReportesFacadeRemote reporteFacadeRemote;
+    private ReportesFacadeLocal reporteFacadeLocal;
     @EJB
     private TemaTesis1FacadeLocal temaTesisFacade;
     @EJB
-    private GrupoInvestigacionFacadeRemote grupoInvestigacionFacade;
+    private GrupoInvestigacionFacadeLocal grupoInvestigacionFacade;
     @EJB
     private ComentarioTesisFacadeLocal comentarioTesisFacade;
     @EJB
-    private NivelFormacionFacadeRemote nivelFormacionFacade;
+    private NivelFormacionFacadeLocal nivelFormacionFacade;
     @EJB
     private Tesis2BeanLocal tesis2Bean;
     @EJB
     private Tesis1BeanLocal tesis1Bean;
     @EJB
-    private AccionVencidaBeanRemote accionVencidaBean;
+    private AccionVencidaBeanLocal accionVencidaBean;
     //---OTROS--------------------
     private ParserT parser;
     private ServiceLocator serviceLocator;
@@ -132,58 +131,58 @@ public class TesisBean implements TesisBeanRemote, TesisBeanLocal {
      * nuevo manejo de tareas
      */
     @EJB
-    private TareaSencillaRemote tareaSencillaBean;
+    private TareaSencillaLocal tareaSencillaBean;
     @EJB
-    private TareaMultipleRemote tareaBean;
+    private TareaMultipleLocal tareaBean;
     @EJB
-    private TareaSencillaFacadeRemote tareaSencillaFacade;
+    private TareaSencillaFacadeLocal tareaSencillaFacade;
     @EJB
-    private TareaMultipleFacadeRemote tareaMultipleFacade;
+    private TareaMultipleFacadeLocal tareaMultipleFacade;
     @EJB
     private InscripcionSubAreaInvestiBeanLocal inscripcionesSubareaBean;
     Collection<AccionBO> acciones;
 
     public TesisBean() {
-        try {
-            parser = new ParserT();
-            serviceLocator = new ServiceLocator();
-            constanteBean = (ConstanteRemote) serviceLocator.getRemoteEJB(ConstanteRemote.class);
-            profesorFacade = (ProfesorFacadeRemote) serviceLocator.getRemoteEJB(ProfesorFacadeRemote.class);
-            estudianteFacadeRemote = (EstudianteFacadeRemote) serviceLocator.getRemoteEJB(EstudianteFacadeRemote.class);
-
-            correoBean = (CorreoRemote) serviceLocator.getRemoteEJB(CorreoRemote.class);
-
-            periodicidadFacade = (PeriodicidadFacadeRemote) serviceLocator.getRemoteEJB(PeriodicidadFacadeRemote.class);
-            personaFacade = (PersonaFacadeRemote) serviceLocator.getRemoteEJB(PersonaFacadeRemote.class);
-            periodoFacade = (PeriodoFacadeRemote) serviceLocator.getRemoteEJB(PeriodoFacadeRemote.class);
-            historicoTesis = (HistoricosTesisBeanRemote) serviceLocator.getRemoteEJB(HistoricosTesisBeanRemote.class);
-            timerGenerico = (TimerGenericoBeanRemote) serviceLocator.getRemoteEJB(TimerGenericoBeanRemote.class);
-            reporteFacadeRemote = (ReportesFacadeRemote) serviceLocator.getRemoteEJB(ReportesFacadeRemote.class);
-            grupoInvestigacionFacade = (GrupoInvestigacionFacadeRemote) serviceLocator.getRemoteEJB(GrupoInvestigacionFacadeRemote.class);
-
-            nivelFormacionFacade = (NivelFormacionFacadeRemote) serviceLocator.getRemoteEJB(NivelFormacionFacadeRemote.class);
-            accionVencidaBean = (AccionVencidaBeanRemote) serviceLocator.getRemoteEJB(AccionVencidaBeanRemote.class);
-
-            conversor = new ConversorTesisMaestria();
-
-            /*
-             * Manejo nuevo tareas y alertas
-             */
-            tareaSencillaBean = (TareaSencillaRemote) serviceLocator.getRemoteEJB(TareaSencillaRemote.class);
-            tareaSencillaFacade = (TareaSencillaFacadeRemote) serviceLocator.getRemoteEJB(TareaSencillaFacadeRemote.class);
-            tareaBean = (TareaMultipleRemote) serviceLocator.getRemoteEJB(TareaMultipleRemote.class);
-
-            tareaMultipleFacade = (TareaMultipleFacadeRemote) serviceLocator.getRemoteEJB(TareaMultipleFacadeRemote.class);
-
-        } catch (Exception e) {
-            Logger.getLogger(TesisBean.class.getName()).log(Level.SEVERE, null, e);
-        }
+//        try {
+//            parser = new ParserT();
+//            serviceLocator = new ServiceLocator();
+//            constanteBean = (ConstanteLocal) serviceLocator.getLocalEJB(ConstanteLocal.class);
+//            profesorFacade = (ProfesorFacadeLocal) serviceLocator.getLocalEJB(ProfesorFacadeLocal.class);
+//            estudianteFacadeLocal = (EstudianteFacadeLocal) serviceLocator.getLocalEJB(EstudianteFacadeLocal.class);
+//
+//            correoBean = (CorreoLocal) serviceLocator.getLocalEJB(CorreoLocal.class);
+//
+//            periodicidadFacade = (PeriodicidadFacadeLocal) serviceLocator.getLocalEJB(PeriodicidadFacadeLocal.class);
+//            personaFacade = (PersonaFacadeLocal) serviceLocator.getLocalEJB(PersonaFacadeLocal.class);
+//            periodoFacade = (PeriodoFacadeLocal) serviceLocator.getLocalEJB(PeriodoFacadeLocal.class);
+//            historicoTesis = (HistoricosTesisBeanLocal) serviceLocator.getLocalEJB(HistoricosTesisBeanLocal.class);
+//            timerGenerico = (TimerGenericoBeanLocal) serviceLocator.getLocalEJB(TimerGenericoBeanLocal.class);
+//            reporteFacadeLocal = (ReportesFacadeLocal) serviceLocator.getLocalEJB(ReportesFacadeLocal.class);
+//            grupoInvestigacionFacade = (GrupoInvestigacionFacadeLocal) serviceLocator.getLocalEJB(GrupoInvestigacionFacadeLocal.class);
+//
+//            nivelFormacionFacade = (NivelFormacionFacadeLocal) serviceLocator.getLocalEJB(NivelFormacionFacadeLocal.class);
+//            accionVencidaBean = (AccionVencidaBeanLocal) serviceLocator.getLocalEJB(AccionVencidaBeanLocal.class);
+//
+//            conversor = new ConversorTesisMaestria();
+//
+//            /*
+//             * Manejo nuevo tareas y alertas
+//             */
+//            tareaSencillaBean = (TareaSencillaLocal) serviceLocator.getLocalEJB(TareaSencillaLocal.class);
+//            tareaSencillaFacade = (TareaSencillaFacadeLocal) serviceLocator.getLocalEJB(TareaSencillaFacadeLocal.class);
+//            tareaBean = (TareaMultipleLocal) serviceLocator.getLocalEJB(TareaMultipleLocal.class);
+//
+//            tareaMultipleFacade = (TareaMultipleFacadeLocal) serviceLocator.getLocalEJB(TareaMultipleFacadeLocal.class);
+//
+//        } catch (Exception e) {
+//            Logger.getLogger(TesisBean.class.getName()).log(Level.SEVERE, null, e);
+//        }
     }
 
     //=====================================================================================================
     //===================================  METODOS AUXILARES: OTROS =======================================================
     //=====================================================================================================
-    public ConstanteRemote getConstanteBean() {
+    public ConstanteLocal getConstanteBean() {
         return constanteBean;
 
 
@@ -1285,7 +1284,7 @@ public class TesisBean implements TesisBeanRemote, TesisBeanLocal {
         }
 
         NivelFormacion nf = nivelFormacionFacade.findByName(getConstanteBean().getConstante(Constantes.TAG_PARAM_NIVEL_MAESTRIA));
-        Collection<Estudiante> estudiantesMagister = estudianteFacadeRemote.findByTipo(nf.getNombre());
+        Collection<Estudiante> estudiantesMagister = estudianteFacadeLocal.findByTipo(nf.getNombre());
         for (Estudiante estudiante : estudiantesMagister) {
             if ((!noInvitados.containsKey(estudiante.getPersona().getCorreo())) && (estudiante.getPrograma().getCodigo().equals("ISIS"))) {
                 String asuntoCreacion = Notificaciones.ASUNTO_ULTIMA_FECHA_INSCRIPCION_TESIS_1_ESTUDIANTE;
@@ -1585,7 +1584,7 @@ public class TesisBean implements TesisBeanRemote, TesisBeanLocal {
             Timestamp fFin = new Timestamp(fechaFinDate.getTime());
             String rol = getConstanteBean().getConstante(Constantes.ROL_PROFESOR_PLANTA);
 
-            tareaBean.realizarTareaPorCorreo(tipo, persona.getCorreo(), parametros);
+           // tareaBean.realizarTareaPorCorreo(tipo, persona.getCorreo(), parametros);
             if (find.getRutaArticuloTesis() == null || find.getRutaArticuloTesis().isEmpty()) {
                 tareaBean.crearTareaPersona(mensajeBullet, tipo, persona.getCorreo(), false, mensajeHeader, mensajeFooter, new Timestamp(fechaInicioDate.getTime()), fFin, cmd, rol, parametros, asunto);
             }
@@ -2773,7 +2772,7 @@ public class TesisBean implements TesisBeanRemote, TesisBeanLocal {
 
         String programasConTesis = getConstanteBean().getConstante(Constantes.CTE_CODIGOS_MAESTRIAS_CON_TESIS);
         NivelFormacion nf = nivelFormacionFacade.findByName(getConstanteBean().getConstante(Constantes.TAG_PARAM_NIVEL_MAESTRIA));
-        Collection<Estudiante> estudiantesMagister = estudianteFacadeRemote.findByTipo(nf.getNombre());
+        Collection<Estudiante> estudiantesMagister = estudianteFacadeLocal.findByTipo(nf.getNombre());
         Collection<Estudiante> estudiantesMagisterConTesis = new ArrayList<Estudiante>();
         for (Estudiante estudiante : estudiantesMagister) {
             if (!noInvitados.containsKey(estudiante.getPersona().getCorreo()) && programasConTesis.contains(estudiante.getPrograma().getCodigo())) {
@@ -2790,7 +2789,7 @@ public class TesisBean implements TesisBeanRemote, TesisBeanLocal {
             login += getConstanteBean().getConstante(Constantes.TAG_PARAM_SUFIJO_CORREO);
         }
 
-        Estudiante estudiante = estudianteFacadeRemote.findByCorreo(login);
+        Estudiante estudiante = estudianteFacadeLocal.findByCorreo(login);
         NivelFormacion nivelDeFormacion = estudiante.getTipoEstudiante();
 
         String cteNivelMaestría = getConstanteBean().getConstante(Constantes.TAG_PARAM_NIVEL_MAESTRIA);
@@ -2925,7 +2924,7 @@ public class TesisBean implements TesisBeanRemote, TesisBeanLocal {
         }
 
         NivelFormacion nf = nivelFormacionFacade.findByName(getConstanteBean().getConstante(Constantes.TAG_PARAM_NIVEL_MAESTRIA));
-        Collection<Estudiante> estudiantesMagister = estudianteFacadeRemote.findByTipo(nf.getNombre());
+        Collection<Estudiante> estudiantesMagister = estudianteFacadeLocal.findByTipo(nf.getNombre());
         for (Estudiante estudiante : estudiantesMagister) {
             if ((!noInvitados.containsKey(estudiante.getPersona().getCorreo())) && (!estudiante.getPrograma().getCodigo().equals("ISIS"))) {
                 String asuntoCreacion = Notificaciones.ASUNTO_ULTIMA_FECHA_INSCRIPCION_TESIS_1_ESTUDIANTE_OPCIONAL;

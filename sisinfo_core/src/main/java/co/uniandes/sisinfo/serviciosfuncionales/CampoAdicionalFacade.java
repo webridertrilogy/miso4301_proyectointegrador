@@ -16,7 +16,7 @@ import javax.persistence.PersistenceContext;
  * @author Administrador
  */
 @Stateless
-public class CampoAdicionalFacade extends AbstractFacade<CampoAdicional> implements CampoAdicionalFacadeLocal, CampoAdicionalFacadeRemote {
+public class CampoAdicionalFacade extends AbstractFacade<CampoAdicional> implements CampoAdicionalFacadeLocal {
     @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 

@@ -24,24 +24,24 @@ import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
  * @author david
  */
 @Stateless
-public class PeriodoBean implements PeriodoRemote, PeriodoLocal {
+public class PeriodoBean implements  PeriodoLocal {
 
     @EJB
     private PeriodoFacadeLocal periodoFacade;
 
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
 
     private ServiceLocator serviceLocator;
 
     private ParserT parser;
 
     public PeriodoBean(){
-        try {
-            serviceLocator = new ServiceLocator();
-            constanteBean = (ConstanteRemote) serviceLocator.getRemoteEJB(ConstanteRemote.class);
-        } catch (NamingException ex) {
-            Logger.getLogger(PeriodoBean.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        try {
+//            serviceLocator = new ServiceLocator();
+//            constanteBean = (ConstanteLocal) serviceLocator.getLocalEJB(ConstanteLocal.class);
+//        } catch (NamingException ex) {
+//            Logger.getLogger(PeriodoBean.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }
 
     /**
@@ -197,7 +197,7 @@ public class PeriodoBean implements PeriodoRemote, PeriodoLocal {
         }
     }
 
-    private ConstanteRemote getConstanteBean(){
+    private ConstanteLocal getConstanteBean(){
         return constanteBean;
     }
 

@@ -33,12 +33,12 @@ import co.uniandes.sisinfo.serviciosfuncionales.CalificacionCriterioFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.CalificacionJuradoFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.CategoriaCriterioJuradoFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.CoasesorFacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.CorreoRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.CorreoLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.JuradoExternoUniversidadFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.ServiceLocator;
-import co.uniandes.sisinfo.serviciosfuncionales.TareaSencillaFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.TareaSencillaFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.Tesis2FacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.PersonaFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.PersonaFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.ParserT;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
 
@@ -47,7 +47,7 @@ import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
  * @author Ivan Mauricio Melo Suarez
  */
 @Stateless
-public class JuradosTesisBean implements JuradosTesisBeanRemote, JuradosTesisBeanLocal {
+public class JuradosTesisBean implements  JuradosTesisBeanLocal {
 
     @EJB
     private JuradoExternoUniversidadFacadeLocal juradoEFacade;
@@ -56,7 +56,7 @@ public class JuradosTesisBean implements JuradosTesisBeanRemote, JuradosTesisBea
     @EJB
     private Tesis2FacadeLocal tesis2Facade;
     @EJB
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
     @EJB
     private CalificacionJuradoFacadeLocal calJuradoFacade;
     @EJB
@@ -64,37 +64,37 @@ public class JuradosTesisBean implements JuradosTesisBeanRemote, JuradosTesisBea
     @EJB
     private CategoriaCriterioJuradoFacadeLocal categoriafriterioJurado;
     @EJB
-    private PersonaFacadeRemote personaFacade;
+    private PersonaFacadeLocal personaFacade;
     @EJB
-    private CorreoRemote correoBean;
+    private CorreoLocal correoBean;
     private ParserT parser;
     private ServiceLocator serviceLocator;
     private ConversorTesisMaestria conversor;
     @EJB
-    private TareaSencillaRemote tareaSencillaBean;
+    private TareaSencillaLocal tareaSencillaBean;
     @EJB
-    private TareaMultipleRemote tareaBean;
+    private TareaMultipleLocal tareaBean;
     @EJB
-    private TareaSencillaFacadeRemote tareaSencillaFacade;
+    private TareaSencillaFacadeLocal tareaSencillaFacade;
 
     public JuradosTesisBean() {
-        try {
-            parser = new ParserT();
-            serviceLocator = new ServiceLocator();
-            constanteBean = (ConstanteRemote) serviceLocator.getRemoteEJB(ConstanteRemote.class);
-            conversor = new ConversorTesisMaestria();
-
-            personaFacade = (PersonaFacadeRemote) serviceLocator.getRemoteEJB(PersonaFacadeRemote.class);
-            correoBean = (CorreoRemote) serviceLocator.getRemoteEJB(CorreoRemote.class);
-
-            tareaSencillaBean = (TareaSencillaRemote) serviceLocator.getRemoteEJB(TareaSencillaRemote.class);
-            tareaSencillaFacade = (TareaSencillaFacadeRemote) serviceLocator.getRemoteEJB(TareaSencillaFacadeRemote.class);
-            tareaBean = (TareaMultipleRemote) serviceLocator.getRemoteEJB(TareaMultipleRemote.class);
-
-
-        } catch (NamingException ex) {
-            Logger.getLogger(JuradosTesisBean.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        try {
+//            parser = new ParserT();
+//            serviceLocator = new ServiceLocator();
+//            constanteBean = (ConstanteLocal) serviceLocator.getLocalEJB(ConstanteLocal.class);
+//            conversor = new ConversorTesisMaestria();
+//
+//            personaFacade = (PersonaFacadeLocal) serviceLocator.getLocalEJB(PersonaFacadeLocal.class);
+//            correoBean = (CorreoLocal) serviceLocator.getLocalEJB(CorreoLocal.class);
+//
+//            tareaSencillaBean = (TareaSencillaLocal) serviceLocator.getLocalEJB(TareaSencillaLocal.class);
+//            tareaSencillaFacade = (TareaSencillaFacadeLocal) serviceLocator.getLocalEJB(TareaSencillaFacadeLocal.class);
+//            tareaBean = (TareaMultipleLocal) serviceLocator.getLocalEJB(TareaMultipleLocal.class);
+//
+//
+//        } catch (NamingException ex) {
+//            Logger.getLogger(JuradosTesisBean.class.getName()).log(Level.SEVERE, null, ex);
+ //       }
     }
 
     public String consultarJuradosExternosPorCorreo(String xml) {
@@ -166,7 +166,7 @@ public class JuradosTesisBean implements JuradosTesisBeanRemote, JuradosTesisBea
         }
     }
 
-    public ConstanteRemote getConstanteBean() {
+    public ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 

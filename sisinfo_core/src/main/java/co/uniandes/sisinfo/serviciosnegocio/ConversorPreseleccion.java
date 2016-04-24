@@ -22,8 +22,8 @@ import co.uniandes.sisinfo.entities.Solicitud;
 import co.uniandes.sisinfo.entities.datosmaestros.Profesor;
 import co.uniandes.sisinfo.entities.datosmaestros.Seccion;
 import co.uniandes.sisinfo.serviciosfuncionales.ServiceLocator;
-import co.uniandes.sisinfo.serviciosfuncionales.SolicitudFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.SeccionFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.SolicitudFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.SeccionFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Atributo;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.ParserT;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
@@ -43,7 +43,7 @@ public class ConversorPreseleccion {
      *  ConstanteBean
      */
     @EJB
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
 
     /**
      *  ServiceLocator
@@ -54,13 +54,13 @@ public class ConversorPreseleccion {
      * SolicitudFacade
      */
     @EJB
-    private SolicitudFacadeRemote solicitudFacade;
+    private SolicitudFacadeLocal solicitudFacade;
 
     /**
      * SeccionFacade
      */
     @EJB
-    private SeccionFacadeRemote seccionFacade;
+    private SeccionFacadeLocal seccionFacade;
 
     private Hashtable<String,Collection> seccionesSolicitud;
 
@@ -83,11 +83,11 @@ public class ConversorPreseleccion {
      * Inicializa las caracteristicas
      */
     public void initConversor() throws NamingException {
-
-        serviceLocator = new ServiceLocator();
-        constanteBean = (ConstanteRemote) serviceLocator.getRemoteEJB(ConstanteRemote.class);
-        solicitudFacade = (SolicitudFacadeRemote) serviceLocator.getRemoteEJB(SolicitudFacadeRemote.class);
-        seccionFacade = (SeccionFacadeRemote) serviceLocator.getRemoteEJB(SeccionFacadeRemote.class);
+//
+//        serviceLocator = new ServiceLocator();
+//        constanteBean = (ConstanteLocal) serviceLocator.getLocalEJB(ConstanteLocal.class);
+//        solicitudFacade = (SolicitudFacadeLocal) serviceLocator.getLocalEJB(SolicitudFacadeLocal.class);
+//        seccionFacade = (SeccionFacadeLocal) serviceLocator.getLocalEJB(SeccionFacadeLocal.class);
     }
     
     /**
@@ -267,7 +267,7 @@ public class ConversorPreseleccion {
      * Retorna ConstanteBean
      * @return constanteBean ConstanteBean
      */
-    private ConstanteRemote getConstanteBean() {
+    private ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 }

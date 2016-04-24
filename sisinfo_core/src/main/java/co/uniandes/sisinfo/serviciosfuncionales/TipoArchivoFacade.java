@@ -18,7 +18,7 @@ import javax.persistence.PersistenceContext;
  * @author ju-cort1
  */
 @Stateless
-public class TipoArchivoFacade implements TipoArchivoFacadeLocal, TipoArchivoFacadeRemote {
+public class TipoArchivoFacade implements TipoArchivoFacadeLocal {
 	@PersistenceContext(unitName="SoporteSisinfoPU")
     private EntityManager em;
 

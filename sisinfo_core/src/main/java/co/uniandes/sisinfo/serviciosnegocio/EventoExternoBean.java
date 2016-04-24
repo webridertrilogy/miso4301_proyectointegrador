@@ -38,13 +38,13 @@ import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
  * @author Administrador
  */
 @Stateless
-public class EventoExternoBean implements EventoExternoBeanRemote, EventoExternoBeanLocal {
+public class EventoExternoBean implements  EventoExternoBeanLocal {
 
-    private final static String RUTA_INTERFAZ_REMOTA = "co.uniandes.sisinfo.serviciosnegocio.EventoExternoBeanRemote";
+    private final static String RUTA_INTERFAZ_REMOTA = "co.uniandes.sisinfo.serviciosnegocio.EventoExternoBeanLocal";
     private final static String NOMBRE_METODO_TIMER = "manejoTimmersEventoExterno";
     private ServiceLocator serviceLocator;
     @EJB
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
     @EJB
     private EventoExternoFacadeLocal eventoExternoFacade;
     private ParserT parser;
@@ -56,21 +56,21 @@ public class EventoExternoBean implements EventoExternoBeanRemote, EventoExterno
     @EJB
     private TipoCampoFacadeLocal tipoCampoFacade;
     @EJB
-    private TimerGenericoBeanRemote timerGenerico;
+    private TimerGenericoBeanLocal timerGenerico;
 
     public EventoExternoBean() {
         parser = new ParserT();
-        try {
-            serviceLocator = new ServiceLocator();
-            constanteBean = (ConstanteRemote) serviceLocator.getRemoteEJB(ConstanteRemote.class);
-            timerGenerico = (TimerGenericoBeanRemote) serviceLocator.getRemoteEJB(TimerGenericoBeanRemote.class);
-
-        } catch (NamingException ex) {
-            Logger.getLogger(EventoExternoBean.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        try {
+//            serviceLocator = new ServiceLocator();
+//            constanteBean = (ConstanteLocal) serviceLocator.getLocalEJB(ConstanteLocal.class);
+//            timerGenerico = (TimerGenericoBeanLocal) serviceLocator.getLocalEJB(TimerGenericoBeanLocal.class);
+//
+//        } catch (NamingException ex) {
+//            Logger.getLogger(EventoExternoBean.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }
 
-    public ConstanteRemote getConstanteBean() {
+    public ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 
@@ -117,12 +117,12 @@ public class EventoExternoBean implements EventoExternoBeanRemote, EventoExterno
             eventoExternoFacade.edit(eventoexterno);
 
             //Si no existe, se crea un timer que revise todos los dias los eventos que ya pasaron y les cambie el estado a "Cerrado"
-            boolean existe = timerGenerico.existeTimerCompletamenteIgual(RUTA_INTERFAZ_REMOTA, NOMBRE_METODO_TIMER, getConstanteBean().getConstante(Constantes.CMD_CERRAR_EVENTOS_CON_FECHAS_ANTERIORES_A_HOY));
-            if (!existe) {
-                long day = 1000 * 60 * 60 * 24;
-                long time = diaDeHoySinHora().getTime() + day;
-                timerGenerico.crearTimer2(RUTA_INTERFAZ_REMOTA, NOMBRE_METODO_TIMER, new Timestamp(time), getConstanteBean().getConstante(Constantes.CMD_CERRAR_EVENTOS_CON_FECHAS_ANTERIORES_A_HOY), "EventoExternoBean", this.getClass().getName(), "cerrarEventosConFechasAnterioresAHoy", "este timer cierra todos los eventos que ya pasaron");
-            }
+//            boolean existe = timerGenerico.existeTimerCompletamenteIgual(RUTA_INTERFAZ_REMOTA, NOMBRE_METODO_TIMER, getConstanteBean().getConstante(Constantes.CMD_CERRAR_EVENTOS_CON_FECHAS_ANTERIORES_A_HOY));
+//            if (!existe) {
+//                long day = 1000 * 60 * 60 * 24;
+//                long time = diaDeHoySinHora().getTime() + day;
+//                timerGenerico.crearTimer2(RUTA_INTERFAZ_REMOTA, NOMBRE_METODO_TIMER, new Timestamp(time), getConstanteBean().getConstante(Constantes.CMD_CERRAR_EVENTOS_CON_FECHAS_ANTERIORES_A_HOY), "EventoExternoBean", this.getClass().getName(), "cerrarEventosConFechasAnterioresAHoy", "este timer cierra todos los eventos que ya pasaron");
+//            }
 
 
             ArrayList<Secuencia> secuencias = new ArrayList<Secuencia>();

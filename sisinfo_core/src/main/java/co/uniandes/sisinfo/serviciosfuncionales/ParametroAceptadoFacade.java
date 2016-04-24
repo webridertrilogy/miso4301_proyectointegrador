@@ -5,21 +5,21 @@
 
 package co.uniandes.sisinfo.serviciosfuncionales;
 
-import co.uniandes.sisinfo.entities.ParametroAceptado;
-import co.uniandes.sisinfo.serviciosfuncionales.ParametroAceptadoFacadeRemote;
 import java.util.List;
+
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
-import javax.persistence.NonUniqueResultException;
 import javax.persistence.PersistenceContext;
+
+import co.uniandes.sisinfo.entities.ParametroAceptado;
 
 /**
  *
  * @author david
  */
 @Stateless
-public class ParametroAceptadoFacade implements ParametroAceptadoFacadeLocal, ParametroAceptadoFacadeRemote {
+public class ParametroAceptadoFacade implements ParametroAceptadoFacadeLocal {
 	@PersistenceContext(unitName="SoporteSisinfoPU")
     private EntityManager em;
 

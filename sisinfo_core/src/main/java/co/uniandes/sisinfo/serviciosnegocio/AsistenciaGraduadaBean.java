@@ -24,48 +24,48 @@ import co.uniandes.sisinfo.entities.TipoAsistenciaGraduada;
 import co.uniandes.sisinfo.entities.datosmaestros.Estudiante;
 import co.uniandes.sisinfo.entities.datosmaestros.Persona;
 import co.uniandes.sisinfo.serviciosfuncionales.AsistenciaGraduadaFacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.CorreoRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.CorreoLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.EstudiantePosgradoFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.HojaVidaFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.InformacionEmpresaFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.OfertaFacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.PeriodoFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.PeriodoFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.ProponenteFacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.RangoFechasGeneralFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.RangoFechasGeneralFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.ServiceLocator;
-import co.uniandes.sisinfo.serviciosfuncionales.TareaSencillaFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.TareaSencillaFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.TipoAsistenciaGraduadaFacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.EstudianteFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.InformacionAcademicaFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.PersonaFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.EstudianteFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.InformacionAcademicaFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.PersonaFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.ParserT;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
-import co.uniandes.sisinfo.serviciosfuncionales.soporte.PaisFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.soporte.TipoDocumentoFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.soporte.PaisFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.soporte.TipoDocumentoFacadeLocal;
 
 /**
  * Servicios de administración de asistencias graduadas
  * @author Marcela Morales
  */
 @Stateless
-public class AsistenciaGraduadaBean implements AsistenciaGraduadaBeanLocal, AsistenciaGraduadaBeanRemote {
+public class AsistenciaGraduadaBean implements AsistenciaGraduadaBeanLocal {
 
     //----------------------------------------------
     // ATRIBUTOS
     //----------------------------------------------
     //Remotos
     @EJB
-    private EstudianteFacadeRemote estudianteFacade;
+    private EstudianteFacadeLocal estudianteFacade;
     @EJB
-    private PersonaFacadeRemote personaFacade;
+    private PersonaFacadeLocal personaFacade;
     @EJB
-    private PeriodoFacadeRemote periodoFacade;
+    private PeriodoFacadeLocal periodoFacade;
     @EJB
-    private PaisFacadeRemote paisFacade;
+    private PaisFacadeLocal paisFacade;
     @EJB
-    private TipoDocumentoFacadeRemote tipoDocumentoFacade;
+    private TipoDocumentoFacadeLocal tipoDocumentoFacade;
     @EJB
-    private InformacionAcademicaFacadeRemote informacionAcademicaFacade;
+    private InformacionAcademicaFacadeLocal informacionAcademicaFacade;
     //Locales
     @EJB
     private AsistenciaGraduadaFacadeLocal asistenciaGraduadaFacade;
@@ -83,17 +83,17 @@ public class AsistenciaGraduadaBean implements AsistenciaGraduadaBeanLocal, Asis
     private InformacionEmpresaFacadeLocal informacionEmpresaFacade;
     //Útiles
     @EJB
-    private RangoFechasGeneralFacadeRemote rangoFechasGeneralFacade;
+    private RangoFechasGeneralFacadeLocal rangoFechasGeneralFacade;
     @EJB
-    private TareaSencillaFacadeRemote tareaSencillaFacade;
+    private TareaSencillaFacadeLocal tareaSencillaFacade;
     @EJB
-    private TareaSencillaRemote tareaSencillaBean;
+    private TareaSencillaLocal tareaSencillaBean;
     @EJB
-    private CorreoRemote correoBean;
+    private CorreoLocal correoBean;
     @EJB
-    private TareaMultipleRemote tareaBean;
+    private TareaMultipleLocal tareaBean;
     @EJB
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
     private ParserT parser;
     private ServiceLocator serviceLocator;
     private ConversorBolsaEmpleo conversor;
@@ -105,25 +105,25 @@ public class AsistenciaGraduadaBean implements AsistenciaGraduadaBeanLocal, Asis
      * Constructor de AsistenciaGraduadaBean
      */
     public AsistenciaGraduadaBean() throws NamingException {
-        try {
-            parser = new ParserT();
-            serviceLocator = new ServiceLocator();
-            constanteBean = (ConstanteRemote) serviceLocator.getRemoteEJB(ConstanteRemote.class);
-            correoBean = (CorreoRemote) serviceLocator.getRemoteEJB(CorreoRemote.class);
-            periodoFacade = (PeriodoFacadeRemote) serviceLocator.getRemoteEJB(PeriodoFacadeRemote.class);
-            personaFacade = (PersonaFacadeRemote) serviceLocator.getRemoteEJB(PersonaFacadeRemote.class);
-            estudianteFacade = (EstudianteFacadeRemote) serviceLocator.getRemoteEJB(EstudianteFacadeRemote.class);
-            tareaBean = (TareaMultipleRemote) serviceLocator.getRemoteEJB(TareaMultipleRemote.class);
-            paisFacade = (PaisFacadeRemote) serviceLocator.getRemoteEJB(PaisFacadeRemote.class);
-            tipoDocumentoFacade = (TipoDocumentoFacadeRemote) serviceLocator.getRemoteEJB(TipoDocumentoFacadeRemote.class);
-            informacionAcademicaFacade = (InformacionAcademicaFacadeRemote) serviceLocator.getRemoteEJB(InformacionAcademicaFacadeRemote.class);
-            tareaSencillaFacade = (TareaSencillaFacadeRemote) serviceLocator.getRemoteEJB(TareaSencillaFacadeRemote.class);
-            tareaSencillaBean = (TareaSencillaRemote) serviceLocator.getRemoteEJB(TareaSencillaRemote.class);
-            rangoFechasGeneralFacade = (RangoFechasGeneralFacadeRemote) serviceLocator.getRemoteEJB(RangoFechasGeneralFacadeRemote.class);
-            conversor = new ConversorBolsaEmpleo(getConstanteBean(), estudianteFacade, personaFacade, periodoFacade, paisFacade, tipoAsistenciaGraduadaFacade, tipoDocumentoFacade, informacionAcademicaFacade, hojaVidaFacade, estudiantePostgradoFacade, proponenteFacade, ofertaFacade, informacionEmpresaFacade);
-        } catch (NamingException ex) {
-            Logger.getLogger(AsistenciaGraduadaBean.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        try {
+//            parser = new ParserT();
+//            serviceLocator = new ServiceLocator();
+//            constanteBean = (ConstanteLocal) serviceLocator.getLocalEJB(ConstanteLocal.class);
+//            correoBean = (CorreoLocal) serviceLocator.getLocalEJB(CorreoLocal.class);
+//            periodoFacade = (PeriodoFacadeLocal) serviceLocator.getLocalEJB(PeriodoFacadeLocal.class);
+//            personaFacade = (PersonaFacadeLocal) serviceLocator.getLocalEJB(PersonaFacadeLocal.class);
+//            estudianteFacade = (EstudianteFacadeLocal) serviceLocator.getLocalEJB(EstudianteFacadeLocal.class);
+//            tareaBean = (TareaMultipleLocal) serviceLocator.getLocalEJB(TareaMultipleLocal.class);
+//            paisFacade = (PaisFacadeLocal) serviceLocator.getLocalEJB(PaisFacadeLocal.class);
+//            tipoDocumentoFacade = (TipoDocumentoFacadeLocal) serviceLocator.getLocalEJB(TipoDocumentoFacadeLocal.class);
+//            informacionAcademicaFacade = (InformacionAcademicaFacadeLocal) serviceLocator.getLocalEJB(InformacionAcademicaFacadeLocal.class);
+//            tareaSencillaFacade = (TareaSencillaFacadeLocal) serviceLocator.getLocalEJB(TareaSencillaFacadeLocal.class);
+//            tareaSencillaBean = (TareaSencillaLocal) serviceLocator.getLocalEJB(TareaSencillaLocal.class);
+//            rangoFechasGeneralFacade = (RangoFechasGeneralFacadeLocal) serviceLocator.getLocalEJB(RangoFechasGeneralFacadeLocal.class);
+//            conversor = new ConversorBolsaEmpleo(getConstanteBean(), estudianteFacade, personaFacade, periodoFacade, paisFacade, tipoAsistenciaGraduadaFacade, tipoDocumentoFacade, informacionAcademicaFacade, hojaVidaFacade, estudiantePostgradoFacade, proponenteFacade, ofertaFacade, informacionEmpresaFacade);
+//        } catch (NamingException ex) {
+//            Logger.getLogger(AsistenciaGraduadaBean.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }
 
     //----------------------------------------------
@@ -479,7 +479,7 @@ public class AsistenciaGraduadaBean implements AsistenciaGraduadaBeanLocal, Asis
     //----------------------------------------------
     // MÉTODOS PRIVADOS
     //----------------------------------------------
-    private ConstanteRemote getConstanteBean() {
+    private ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 
@@ -490,15 +490,15 @@ public class AsistenciaGraduadaBean implements AsistenciaGraduadaBeanLocal, Asis
         return parser;
     }
 
-    private CorreoRemote getCorreoBean() {
+    private CorreoLocal getCorreoBean() {
         return correoBean;
     }
 
-    private PeriodoFacadeRemote getPeriodoFacade() {
+    private PeriodoFacadeLocal getPeriodoFacade() {
         return periodoFacade;
     }
 
-    private PersonaFacadeRemote getPersonaFacade() {
+    private PersonaFacadeLocal getPersonaFacade() {
         return personaFacade;
     }
 
@@ -510,19 +510,19 @@ public class AsistenciaGraduadaBean implements AsistenciaGraduadaBeanLocal, Asis
         return tipoAsistenciaGraduadaFacade;
     }
 
-    private EstudianteFacadeRemote getEstudianteFacade() {
+    private EstudianteFacadeLocal getEstudianteFacade() {
         return estudianteFacade;
     }
 
     private ConversorBolsaEmpleo getConversor() {
-        return new ConversorBolsaEmpleo(getConstanteBean(), estudianteFacade, personaFacade, periodoFacade, paisFacade, tipoAsistenciaGraduadaFacade, tipoDocumentoFacade, informacionAcademicaFacade, hojaVidaFacade, estudiantePostgradoFacade, proponenteFacade, ofertaFacade, informacionEmpresaFacade);
+        return null;// new ConversorBolsaEmpleo(getConstanteBean(), estudianteFacade, personaFacade, periodoFacade, paisFacade, tipoAsistenciaGraduadaFacade, tipoDocumentoFacade, informacionAcademicaFacade, hojaVidaFacade, estudiantePostgradoFacade, proponenteFacade, ofertaFacade, informacionEmpresaFacade);
     }
 
-    private TareaMultipleRemote getTareaBean() {
+    private TareaMultipleLocal getTareaBean() {
         return tareaBean;
     }
 
-    public RangoFechasGeneralFacadeRemote getRangoFechasGeneralFacade() {
+    public RangoFechasGeneralFacadeLocal getRangoFechasGeneralFacade() {
         return rangoFechasGeneralFacade;
     }
 }

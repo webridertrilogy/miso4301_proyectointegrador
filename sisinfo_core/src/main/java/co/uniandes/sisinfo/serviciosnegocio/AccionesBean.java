@@ -13,14 +13,13 @@ import java.util.logging.Logger;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
-import javax.naming.NamingException;
 
 import co.uniandes.sisinfo.bo.AccionBO;
 import co.uniandes.sisinfo.comun.constantes.Constantes;
 import co.uniandes.sisinfo.comun.constantes.Mensajes;
 import co.uniandes.sisinfo.comun.constantes.Notificaciones;
 import co.uniandes.sisinfo.entities.DirectorioInterfacesPorRol;
-import co.uniandes.sisinfo.serviciosfuncionales.CorreoRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.CorreoLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.DirectorioInterfacesPorRolFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.ServiceLocator;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.ParserT;
@@ -31,7 +30,7 @@ import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
  * @author Asistente
  */
 @Stateless
-public class AccionesBean implements AccionesBeanRemote, AccionesBeanLocal {
+public class AccionesBean implements  AccionesBeanLocal {
     
     private ParserT parser;
 
@@ -40,24 +39,24 @@ public class AccionesBean implements AccionesBeanRemote, AccionesBeanLocal {
     private ConversorAcciones conversorAcciones;
 
     @EJB
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
 
     @EJB
-    private CorreoRemote correoBean;
+    private CorreoLocal correoBean;
 
     @EJB
     private DirectorioInterfacesPorRolFacadeLocal directorioInterfacesPorRolFacade;
 
     public AccionesBean() {
-        try {
-            parser = new ParserT();
-            serviceLocator = new ServiceLocator();
-            constanteBean = (ConstanteRemote) serviceLocator.getRemoteEJB(ConstanteRemote.class);
-            correoBean = (CorreoRemote) serviceLocator.getRemoteEJB(CorreoRemote.class);
-            conversorAcciones = new ConversorAcciones(constanteBean);
-        } catch (NamingException ex) {
-            Logger.getLogger(CorreoSinEnviarBean.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        try {
+//            parser = new ParserT();
+//            serviceLocator = new ServiceLocator();
+//            constanteBean = (ConstanteLocal) serviceLocator.getLocalEJB(ConstanteLocal.class);
+//            correoBean = (CorreoLocal) serviceLocator.getLocalEJB(CorreoLocal.class);
+//            conversorAcciones = new ConversorAcciones(constanteBean);
+//        } catch (NamingException ex) {
+//            Logger.getLogger(CorreoSinEnviarBean.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }
 
     public String darAcciones(String xml) {
@@ -74,7 +73,7 @@ public class AccionesBean implements AccionesBeanRemote, AccionesBeanLocal {
                 try{
                     Class claseInterfaz = Class.forName(directorioInterfacesPorRol.getDireccionInterfaz());
                     Method m = claseInterfaz.getMethod(getConstanteBean().getConstante(Constantes.VAL_NOMBRE_METODO_DAR_ACCIONES), String.class, String.class);
-                    Object instance = serviceLocator.getRemoteEJB(Class.forName(directorioInterfacesPorRol.getDireccionInterfaz()));
+                    Object instance = null;//serviceLocator.getLocalEJB(Class.forName(directorioInterfacesPorRol.getDireccionInterfaz()));
                     Collection results = (Collection)m.invoke(instance, strRol,strLogin);
                     acciones.addAll(results);
                 }catch(NoSuchMethodException nsme){
@@ -120,7 +119,7 @@ public class AccionesBean implements AccionesBeanRemote, AccionesBeanLocal {
         return parser;
     }
 
-    public ConstanteRemote getConstanteBean() {
+    public ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 

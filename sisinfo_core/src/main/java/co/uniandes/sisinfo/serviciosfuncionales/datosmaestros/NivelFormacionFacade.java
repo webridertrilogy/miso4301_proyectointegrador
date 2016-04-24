@@ -19,7 +19,7 @@ import javax.persistence.Query;
  * @author david
  */
 @Stateless
-public class NivelFormacionFacade implements NivelFormacionFacadeLocal, NivelFormacionFacadeRemote {
+public class NivelFormacionFacade implements NivelFormacionFacadeLocal {
     @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 

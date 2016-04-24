@@ -19,7 +19,7 @@ import javax.persistence.PersistenceContext;
  * @author Asistente
  */
 @Stateless
-public class MonitoriaOtroDepartamentoFacade extends AbstractFacade<MonitoriaOtroDepartamento> implements MonitoriaOtroDepartamentoFacadeLocal, MonitoriaOtroDepartamentoFacadeRemote {
+public class MonitoriaOtroDepartamentoFacade extends AbstractFacade<MonitoriaOtroDepartamento> implements MonitoriaOtroDepartamentoFacadeLocal {
     @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 

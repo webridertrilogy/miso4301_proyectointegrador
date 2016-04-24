@@ -32,10 +32,10 @@ import co.uniandes.sisinfo.comun.constantes.Constantes;
 import co.uniandes.sisinfo.comun.constantes.Mensajes;
 import co.uniandes.sisinfo.entities.TimerAuditoria;
 import co.uniandes.sisinfo.entities.TimerGenerico;
-import co.uniandes.sisinfo.serviciosfuncionales.PeriodicidadFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.PeriodicidadFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.ServiceLocator;
 import co.uniandes.sisinfo.serviciosfuncionales.TimerAuditoriaFacade;
-import co.uniandes.sisinfo.serviciosfuncionales.TimerAuditoriaFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.TimerAuditoriaFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.TimerGenericoFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.ParserT;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
@@ -45,7 +45,7 @@ import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
  * @author im.melo33, Marcela Morales
  */
 @Stateless
-public class TimerGenericoBean implements TimerGenericoBeanRemote, TimerGenericoBeanLocal {
+public class TimerGenericoBean implements TimerGenericoBeanLocal {
 
     // ----------------------------------------------------------------------
     // Atributos
@@ -57,11 +57,11 @@ public class TimerGenericoBean implements TimerGenericoBeanRemote, TimerGenerico
     @Resource
     private SessionContext ctx;
     @EJB
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
     @EJB
-    private TimerAuditoriaFacadeRemote timerAuditoriaRemote;
+    private TimerAuditoriaFacadeLocal timerAuditoriaLocal;
     private ParserT parser;
-    private PeriodicidadFacadeRemote periodicidadFacade;
+    private PeriodicidadFacadeLocal periodicidadFacade;
     @EJB
     private TimerGenericoFacadeLocal timerGenericoFacade;
 
@@ -69,16 +69,16 @@ public class TimerGenericoBean implements TimerGenericoBeanRemote, TimerGenerico
     // Constructor
     // ----------------------------------------------------------------------
     public TimerGenericoBean() {
-        try {
-            sdf = new SimpleDateFormat("yyyy-MM-dd");
-            sdfHMS = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-            ServiceLocator serviceLocator = new ServiceLocator();
-            constanteBean = (ConstanteRemote) serviceLocator.getRemoteEJB(ConstanteRemote.class);
-            timerAuditoriaRemote = (TimerAuditoriaFacadeRemote) serviceLocator.getRemoteEJB(TimerAuditoriaFacadeRemote.class);
-            periodicidadFacade = (PeriodicidadFacadeRemote) serviceLocator.getRemoteEJB(PeriodicidadFacadeRemote.class);
-        } catch (NamingException ex) {
-            Logger.getLogger(TimerGenericoBean.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        try {
+//            sdf = new SimpleDateFormat("yyyy-MM-dd");
+//            sdfHMS = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+//            ServiceLocator serviceLocator = new ServiceLocator();
+//            constanteBean = (ConstanteLocal) serviceLocator.getLocalEJB(ConstanteLocal.class);
+//            timerAuditoriaLocal = (TimerAuditoriaFacadeLocal) serviceLocator.getLocalEJB(TimerAuditoriaFacadeLocal.class);
+//            periodicidadFacade = (PeriodicidadFacadeLocal) serviceLocator.getLocalEJB(PeriodicidadFacadeLocal.class);
+//        } catch (NamingException ex) {
+//            Logger.getLogger(TimerGenericoBean.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }
 
     // ----------------------------------------------------------------------
@@ -88,7 +88,7 @@ public class TimerGenericoBean implements TimerGenericoBeanRemote, TimerGenerico
      * Método que crea un timer genérico, el cual al vencerse llamará al método de la interfaz (remota) que se especifique
      * el método debe recibir un sólo parámetro el cual es un string donde esta la informacion que necesite
      *
-     * @param direccionInterfazRemotaBean: dirección de la interfaz remota EJ: co.edu.uniandes.sisinfo.serviciosFuncionales.XXXRemote
+     * @param direccionInterfazRemotaBean: dirección de la interfaz remota EJ: co.edu.uniandes.sisinfo.serviciosFuncionales.XXXLocal
      * @param nombreMetodoALLamar: nombre del método que recibe como único parametro un string y sabe que hacer cuando se venza el timer
      * @param fechaFin: fecha en la cual se debe activar el timer
      * @param infoTimer: la información que se debe devolver del timer debería ser un string
@@ -241,7 +241,7 @@ public class TimerGenericoBean implements TimerGenericoBeanRemote, TimerGenerico
         tAudit.setFechaEjecucionTimer(new Timestamp(System.currentTimeMillis()));
         tAudit.setInfoTimer(infoBean);
         try {
-            timerAuditoriaRemote.create(tAudit);
+            timerAuditoriaLocal.create(tAudit);
         } catch (Exception e) {
             Logger.getLogger(TimerAuditoriaFacade.class.getName()).log(Level.SEVERE, null, e);
         }
@@ -681,7 +681,7 @@ public class TimerGenericoBean implements TimerGenericoBeanRemote, TimerGenerico
         }
     }
 
-    @Override
+    
     public boolean timerExisteEnMemoria(Long id) {
         Collection<Timer> timersMemoria = ctx.getTimerService().getTimers();
         for (Timer timerMemoria : timersMemoria) {
@@ -698,7 +698,7 @@ public class TimerGenericoBean implements TimerGenericoBeanRemote, TimerGenerico
         return false;
     }
 
-    @Override
+    
     public boolean timerExisteEnBD(Long id) {
         try {
             TimerGenerico timerBD = (TimerGenerico) em.createNamedQuery("TimerGenerico.findById").setParameter("id", id).getSingleResult();
@@ -952,7 +952,7 @@ public class TimerGenericoBean implements TimerGenericoBeanRemote, TimerGenerico
      * Retorna ConstanteBean
      * @return constanteBean ConstanteBean
      */
-    private ConstanteRemote getConstanteBean() {
+    private ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 
@@ -999,7 +999,7 @@ public class TimerGenericoBean implements TimerGenericoBeanRemote, TimerGenerico
             eliminarTimer(timer.getId());
         }
 
-        String RUTA_INTERFAZ_REMOTA = "co.uniandes.sisinfo.serviciosnegocio.AdministradorSisinfoBeanRemote";
+        String RUTA_INTERFAZ_REMOTA = "co.uniandes.sisinfo.serviciosnegocio.AdministradorSisinfoBeanLocal";
         String NOMBRE_METODO_TIMER = "enviarCorreoDiagnosticoSisinfo";
 
         Long tiempo = periodicidadFacade.findByNombre(getConstanteBean().getConstante(Constantes.VAL_PERIODICIDAD_ENVIO_CORREO_DIAGNOSTICO)).getValor();
@@ -1019,7 +1019,7 @@ public class TimerGenericoBean implements TimerGenericoBeanRemote, TimerGenerico
             eliminarTimer(timer.getId());
         }
 
-        String RUTA_INTERFAZ_REMOTA = "co.uniandes.sisinfo.serviciosnegocio.AlertaMultipleRemote";
+        String RUTA_INTERFAZ_REMOTA = "co.uniandes.sisinfo.serviciosnegocio.AlertaMultipleLocal";
         String NOMBRE_METODO_TIMER = "enviarRecordatorioTareasVencidas";
 
         Long tiempo = periodicidadFacade.findByNombre(getConstanteBean().getConstante(Constantes.VAL_PERIODICIDAD_ENVIO_CORREO_DIAGNOSTICO)).getValor();

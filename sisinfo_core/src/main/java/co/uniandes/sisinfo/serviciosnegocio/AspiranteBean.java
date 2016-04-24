@@ -40,22 +40,22 @@ import co.uniandes.sisinfo.entities.datosmaestros.soporte.TipoDocumento;
 import co.uniandes.sisinfo.serviciosfuncionales.AspiranteFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.ServiceLocator;
 import co.uniandes.sisinfo.serviciosfuncionales.SolicitudFacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.EstudianteFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.PersonaFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.ProgramaFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.EstudianteFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.PersonaFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.ProgramaFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Atributo;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.ParserT;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
-import co.uniandes.sisinfo.serviciosfuncionales.soporte.PaisFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.soporte.TipoCuentaFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.soporte.TipoDocumentoFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.soporte.PaisFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.soporte.TipoCuentaFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.soporte.TipoDocumentoFacadeLocal;
 
 /**
  * Servicio de negocio: Administración de Aspirantes
  */
 @Stateless
 @EJB(name = "AspiranteBean", beanInterface = co.uniandes.sisinfo.serviciosnegocio.AspiranteLocal.class)
-public class AspiranteBean implements AspiranteRemote, AspiranteLocal {
+public class AspiranteBean implements  AspiranteLocal {
 
     //---------------------------------------
     // Atributos
@@ -78,31 +78,31 @@ public class AspiranteBean implements AspiranteRemote, AspiranteLocal {
      * PaisFacade
      */
     @EJB
-    private PaisFacadeRemote paisFacade;
+    private PaisFacadeLocal paisFacade;
     /**
      * ProgramaFacade
      */
     @EJB
-    private ProgramaFacadeRemote programaFacade;
+    private ProgramaFacadeLocal programaFacade;
     /**
      * TipoDocumentoFacade
      */
     @EJB
-    private TipoDocumentoFacadeRemote tipoDocumentofacade;
+    private TipoDocumentoFacadeLocal tipoDocumentofacade;
     @EJB
-    private TipoCuentaFacadeRemote tipoCuentaFacade;
+    private TipoCuentaFacadeLocal tipoCuentaFacade;
     @EJB
-    private PersonaFacadeRemote personaFacade;
+    private PersonaFacadeLocal personaFacade;
     @EJB
-    private EstudianteFacadeRemote estudianteFacade;
+    private EstudianteFacadeLocal estudianteFacade;
     /**
      *  ConstanteBean
      */
     @EJB
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
     private ServiceLocator serviceLocator;
     @EJB
-    private ReglaRemote reglaBean;
+    private ReglaLocal reglaBean;
 
     //---------------------------------------
     // Constructor
@@ -111,19 +111,19 @@ public class AspiranteBean implements AspiranteRemote, AspiranteLocal {
      * Constructor de AspiranteBean 
      */
     public AspiranteBean() {
-        try {
-            serviceLocator = new ServiceLocator();
-            constanteBean = (ConstanteRemote) serviceLocator.getRemoteEJB( ConstanteRemote.class);
-            tipoDocumentofacade = (TipoDocumentoFacadeRemote) serviceLocator.getRemoteEJB(TipoDocumentoFacadeRemote.class);
-            tipoCuentaFacade = (TipoCuentaFacadeRemote) serviceLocator.getRemoteEJB(TipoCuentaFacadeRemote.class);
-            paisFacade = (PaisFacadeRemote) serviceLocator.getRemoteEJB(PaisFacadeRemote.class);
-            programaFacade = (ProgramaFacadeRemote) serviceLocator.getRemoteEJB( ProgramaFacadeRemote.class);
-            personaFacade = (PersonaFacadeRemote) serviceLocator.getRemoteEJB( PersonaFacadeRemote.class);
-            estudianteFacade = (EstudianteFacadeRemote) serviceLocator.getRemoteEJB(EstudianteFacadeRemote.class);
-            reglaBean = (ReglaRemote) serviceLocator.getRemoteEJB(ReglaRemote.class);
-        } catch (NamingException ex) {
-            Logger.getLogger(AspiranteBean.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        try {
+//            serviceLocator = new ServiceLocator();
+//            constanteBean = (ConstanteLocal) serviceLocator.getLocalEJB( ConstanteLocal.class);
+//            tipoDocumentofacade = (TipoDocumentoFacadeLocal) serviceLocator.getLocalEJB(TipoDocumentoFacadeLocal.class);
+//            tipoCuentaFacade = (TipoCuentaFacadeLocal) serviceLocator.getLocalEJB(TipoCuentaFacadeLocal.class);
+//            paisFacade = (PaisFacadeLocal) serviceLocator.getLocalEJB(PaisFacadeLocal.class);
+//            programaFacade = (ProgramaFacadeLocal) serviceLocator.getLocalEJB( ProgramaFacadeLocal.class);
+//            personaFacade = (PersonaFacadeLocal) serviceLocator.getLocalEJB( PersonaFacadeLocal.class);
+//            estudianteFacade = (EstudianteFacadeLocal) serviceLocator.getLocalEJB(EstudianteFacadeLocal.class);
+//            reglaBean = (ReglaLocal) serviceLocator.getLocalEJB(ReglaLocal.class);
+//        } catch (NamingException ex) {
+//            Logger.getLogger(AspiranteBean.class.getName()).log(Level.SEVERE, null, ex);
+       // }
     }
 
     //---------------------------------------
@@ -720,7 +720,7 @@ public class AspiranteBean implements AspiranteRemote, AspiranteLocal {
      * Retorna TipoDocumentoFacade
      * @return tipoDocumentoFacade TipoDocumentoFacade
      */
-    private TipoDocumentoFacadeRemote getTipoDocumentofacade() {
+    private TipoDocumentoFacadeLocal getTipoDocumentofacade() {
         return tipoDocumentofacade;
     }
 
@@ -728,7 +728,7 @@ public class AspiranteBean implements AspiranteRemote, AspiranteLocal {
      * Retorna PaisFacade
      * @return paisFacade PaisFacade
      */
-    private PaisFacadeRemote getPaisFacade() {
+    private PaisFacadeLocal getPaisFacade() {
         return paisFacade;
     }
 
@@ -736,7 +736,7 @@ public class AspiranteBean implements AspiranteRemote, AspiranteLocal {
      * Retorna ProgramaFacade
      * @return programaFacade ProgramaFacade
      */
-    private ProgramaFacadeRemote getProgramaFacade() {
+    private ProgramaFacadeLocal getProgramaFacade() {
         return programaFacade;
     }
 
@@ -744,7 +744,7 @@ public class AspiranteBean implements AspiranteRemote, AspiranteLocal {
      * Retorna ReglaBean
      * @return reglaBean ReglaBean
      */
-    private ReglaRemote getReglaBean() {
+    private ReglaLocal getReglaBean() {
         return reglaBean;
     }
     
@@ -760,19 +760,19 @@ public class AspiranteBean implements AspiranteRemote, AspiranteLocal {
      * Retorna ConstanteBean
      * @return constanteBean ConstanteBean
      */
-    private ConstanteRemote getConstanteBean() {
+    private ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 
-    public TipoCuentaFacadeRemote getTipoCuentaFacade() {
+    public TipoCuentaFacadeLocal getTipoCuentaFacade() {
         return tipoCuentaFacade;
     }
 
-    public EstudianteFacadeRemote getEstudianteFacade() {
+    public EstudianteFacadeLocal getEstudianteFacade() {
         return estudianteFacade;
     }
 
-    public PersonaFacadeRemote getPersonaFacade() {
+    public PersonaFacadeLocal getPersonaFacade() {
         return personaFacade;
     }
 }

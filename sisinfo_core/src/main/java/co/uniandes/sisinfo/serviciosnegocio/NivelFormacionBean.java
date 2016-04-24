@@ -20,7 +20,7 @@ import co.uniandes.sisinfo.comun.constantes.Constantes;
 import co.uniandes.sisinfo.comun.constantes.Mensajes;
 import co.uniandes.sisinfo.entities.datosmaestros.NivelFormacion;
 import co.uniandes.sisinfo.serviciosfuncionales.ServiceLocator;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.NivelFormacionFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.NivelFormacionFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.ParserT;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
 
@@ -29,7 +29,7 @@ import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
  * @author Administrador
  */
 @Stateless
-public class NivelFormacionBean implements NivelFormacionRemote, NivelFormacionLocal {
+public class NivelFormacionBean implements  NivelFormacionLocal {
 
     //---------------------------------------
     // Atributos
@@ -44,10 +44,10 @@ public class NivelFormacionBean implements NivelFormacionRemote, NivelFormacionL
      *  ConstanteBean
      */
     @EJB
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
 
     @EJB
-    private NivelFormacionFacadeRemote nivelFormacionFacade;
+    private NivelFormacionFacadeLocal nivelFormacionFacade;
 
     private ServiceLocator serviceLocator;
     //---------------------------------------
@@ -55,14 +55,14 @@ public class NivelFormacionBean implements NivelFormacionRemote, NivelFormacionL
     //---------------------------------------
 
     public NivelFormacionBean() {
-        try {
-            serviceLocator = new ServiceLocator();
-            constanteBean = (ConstanteRemote) serviceLocator.getRemoteEJB( ConstanteRemote.class);
-            nivelFormacionFacade = (NivelFormacionFacadeRemote)serviceLocator.getRemoteEJB(NivelFormacionFacadeRemote.class);
-            } catch (NamingException ex) {
-            Logger.getLogger(NivelFormacionBean.class.getName()).log(Level.SEVERE, null, ex);
-          
-        }
+//        try {
+//            serviceLocator = new ServiceLocator();
+//            constanteBean = (ConstanteLocal) serviceLocator.getLocalEJB( ConstanteLocal.class);
+//            nivelFormacionFacade = (NivelFormacionFacadeLocal)serviceLocator.getLocalEJB(NivelFormacionFacadeLocal.class);
+//            } catch (NamingException ex) {
+//            Logger.getLogger(NivelFormacionBean.class.getName()).log(Level.SEVERE, null, ex);
+//          
+//        }
     }
 
     public String consultarNivelesFormacion(String comando) {
@@ -104,7 +104,7 @@ public class NivelFormacionBean implements NivelFormacionRemote, NivelFormacionL
      * Retorna ConstanteBean
      * @return constanteBean ConstanteBean
      */
-    private ConstanteRemote getConstanteBean() {
+    private ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 }

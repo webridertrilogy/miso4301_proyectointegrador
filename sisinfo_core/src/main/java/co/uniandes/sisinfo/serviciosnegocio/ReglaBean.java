@@ -32,7 +32,7 @@ import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
  */
 @Stateless
 @EJB(name = "ReglaBean", beanInterface = co.uniandes.sisinfo.serviciosnegocio.ReglaLocal.class)
-public class ReglaBean implements ReglaRemote, ReglaLocal {
+public class ReglaBean implements ReglaLocal {
 
     //---------------------------------------
     // Atributos
@@ -50,7 +50,7 @@ public class ReglaBean implements ReglaRemote, ReglaLocal {
      *  ConstanteBean
      */
     @EJB
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
 
     private ServiceLocator serviceLocator;
 
@@ -61,12 +61,12 @@ public class ReglaBean implements ReglaRemote, ReglaLocal {
      * Constructor de ReglaBean
      */
     public ReglaBean() {
-        try {
-            serviceLocator = new ServiceLocator();
-            constanteBean = (ConstanteRemote) serviceLocator.getRemoteEJB(ConstanteRemote.class);
-            } catch (NamingException ex) {
-            Logger.getLogger(ReglaBean.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        try {
+//            serviceLocator = new ServiceLocator();
+//            constanteBean = (ConstanteLocal) serviceLocator.getLocalEJB(ConstanteLocal.class);
+//            } catch (NamingException ex) {
+//            Logger.getLogger(ReglaBean.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }
 
     //---------------------------------------
@@ -266,7 +266,7 @@ public class ReglaBean implements ReglaRemote, ReglaLocal {
      * Retorna ConstanteBean
      * @return constanteBean ConstanteBean
      */
-    private ConstanteRemote getConstanteBean() {
+    private ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 }

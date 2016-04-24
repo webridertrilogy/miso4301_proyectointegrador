@@ -21,7 +21,7 @@ import javax.persistence.PersistenceContext;
  */
 @Stateless
 @EJB(name = "Monitoria_SolicitadaFacade", beanInterface = co.uniandes.sisinfo.serviciosfuncionales.Monitoria_SolicitadaFacadeLocal.class)
-public class Monitoria_SolicitadaFacade implements Monitoria_SolicitadaFacadeLocal, Monitoria_SolicitadaFacadeRemote {
+public class Monitoria_SolicitadaFacade implements Monitoria_SolicitadaFacadeLocal {
 
 	@PersistenceContext(unitName="SoporteSisinfoPU")
     private EntityManager em;

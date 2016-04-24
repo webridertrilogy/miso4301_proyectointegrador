@@ -17,7 +17,7 @@ import javax.persistence.Query;
  * @author da-naran
  */
 @Stateless
-public class DiaFacade implements DiaFacadeLocal, DiaFacadeRemote {
+public class DiaFacade implements DiaFacadeLocal {
     @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 

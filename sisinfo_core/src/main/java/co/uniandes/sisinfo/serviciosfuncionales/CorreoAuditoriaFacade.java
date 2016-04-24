@@ -13,7 +13,7 @@ import javax.persistence.PersistenceContext;
  * @author Manuel Rodríguez, Marcela Morales
  */
 @Stateless
-public class CorreoAuditoriaFacade extends AbstractFacade<CorreoAuditoria> implements CorreoAuditoriaFacadeLocal, CorreoAuditoriaFacadeRemote {
+public class CorreoAuditoriaFacade extends AbstractFacade<CorreoAuditoria> implements CorreoAuditoriaFacadeLocal {
 
     @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;

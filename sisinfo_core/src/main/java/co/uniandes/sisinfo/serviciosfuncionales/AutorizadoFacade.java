@@ -18,7 +18,7 @@ import javax.persistence.Query;
  * @author Admin
  */
 @Stateless
-public class AutorizadoFacade extends AbstractFacade<Autorizado> implements AutorizadoFacadeLocal, AutorizadoFacadeRemote {
+public class AutorizadoFacade extends AbstractFacade<Autorizado> implements AutorizadoFacadeLocal {
     @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 

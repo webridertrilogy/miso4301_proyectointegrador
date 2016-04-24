@@ -28,11 +28,11 @@ import co.uniandes.sisinfo.entities.MonitoriaAceptada;
 import co.uniandes.sisinfo.entities.Solicitud;
 import co.uniandes.sisinfo.entities.datosmaestros.Curso;
 import co.uniandes.sisinfo.entities.datosmaestros.Seccion;
-import co.uniandes.sisinfo.serviciosfuncionales.CorreoRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.CorreoLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.MonitoriaFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.ServiceLocator;
 import co.uniandes.sisinfo.serviciosfuncionales.SolicitudFacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.CursoFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.CursoFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Atributo;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.ParserT;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
@@ -42,7 +42,7 @@ import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
  */
 @Stateless
 @EJB(name = "ConvenioBean", beanInterface = co.uniandes.sisinfo.serviciosnegocio.ConvenioLocal.class)
-public class ConvenioBean implements ConvenioRemote, ConvenioLocal {
+public class ConvenioBean implements  ConvenioLocal {
 
     //---------------------------------------
     // Atributos
@@ -60,7 +60,7 @@ public class ConvenioBean implements ConvenioRemote, ConvenioLocal {
      * CursoFacade
      */
     @EJB
-    private CursoFacadeRemote cursoFacade;
+    private CursoFacadeLocal cursoFacade;
     /**
      * MonitoriaFacade
      */
@@ -70,13 +70,13 @@ public class ConvenioBean implements ConvenioRemote, ConvenioLocal {
      *  ConstanteBean
      */
     @EJB
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
 
     /**
      * CorreoBean
      */
     @EJB
-    private CorreoRemote correoBean;
+    private CorreoLocal correoBean;
     @EJB
     private RangoFechasBeanLocal rangoFechasBean;
 
@@ -90,14 +90,14 @@ public class ConvenioBean implements ConvenioRemote, ConvenioLocal {
      * Constructor de ConvenioBean
      */
     public ConvenioBean() {
-        try {
-            serviceLocator = new ServiceLocator();
-            correoBean = (CorreoRemote) serviceLocator.getRemoteEJB(CorreoRemote.class);
-            constanteBean = (ConstanteRemote) serviceLocator.getRemoteEJB(ConstanteRemote.class);
-            cursoFacade = (CursoFacadeRemote) serviceLocator.getRemoteEJB(CursoFacadeRemote.class);
-        } catch (NamingException ex) {
-            Logger.getLogger(ConvenioBean.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        try {
+//            serviceLocator = new ServiceLocator();
+//            correoBean = (CorreoLocal) serviceLocator.getLocalEJB(CorreoLocal.class);
+//            constanteBean = (ConstanteLocal) serviceLocator.getLocalEJB(ConstanteLocal.class);
+//            cursoFacade = (CursoFacadeLocal) serviceLocator.getLocalEJB(CursoFacadeLocal.class);
+//        } catch (NamingException ex) {
+//            Logger.getLogger(ConvenioBean.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }
 
     //---------------------------------------
@@ -516,7 +516,7 @@ public class ConvenioBean implements ConvenioRemote, ConvenioLocal {
      * Retorna CursoFacade
      * @return cursoFacade CursoFacade
      */
-    private CursoFacadeRemote getCursoFacade() {
+    private CursoFacadeLocal getCursoFacade() {
         return cursoFacade;
     }
 
@@ -524,7 +524,7 @@ public class ConvenioBean implements ConvenioRemote, ConvenioLocal {
      * Retorna ConstanteBean
      * @return constanteBean ConstanteBean
      */
-    private ConstanteRemote getConstanteBean() {
+    private ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 
@@ -541,11 +541,11 @@ public class ConvenioBean implements ConvenioRemote, ConvenioLocal {
      * Retorna CorreoBean
      * @return correoBean CorreoBean
      */
-    private CorreoRemote getCorreoBean() {
+    private CorreoLocal getCorreoBean() {
         return correoBean;
     }
 
-    @Override
+    
     public String registrarFirmasEstudiantes(String xml) {
         try {
             getParser().leerXML(xml);
@@ -572,7 +572,7 @@ public class ConvenioBean implements ConvenioRemote, ConvenioLocal {
         }
     }
 
-    @Override
+    
     public String registrarFirmasDepartamento(String xml) {
         try {
             getParser().leerXML(xml);

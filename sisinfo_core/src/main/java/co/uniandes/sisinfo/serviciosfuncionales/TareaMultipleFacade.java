@@ -30,7 +30,7 @@ import org.hibernate.Hibernate;
  */
 @Stateless
 @EJB(name = "TareaMultipleFacade", beanInterface = co.uniandes.sisinfo.serviciosfuncionales.TareaMultipleFacadeLocal.class)
-public class TareaMultipleFacade implements TareaMultipleFacadeLocal, TareaMultipleFacadeRemote {
+public class TareaMultipleFacade implements TareaMultipleFacadeLocal {
 
 	@PersistenceContext(unitName="SoporteSisinfoPU")
     private EntityManager em;

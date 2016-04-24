@@ -17,8 +17,8 @@ import co.uniandes.sisinfo.entities.datosmaestros.Estudiante;
 import co.uniandes.sisinfo.entities.datosmaestros.Profesor;
 import co.uniandes.sisinfo.serviciosfuncionales.CategoriaProyectoDeGradoFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.PeriodoTesisPregradoFacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.EstudianteFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.ProfesorFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.EstudianteFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.ProfesorFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
 
 /**
@@ -27,19 +27,19 @@ import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
  */
 public class ConversorProyectoDeGrado {
 
-    private ConstanteRemote constanteBean;
-    private ProfesorFacadeRemote profesorFacade;
+    private ConstanteLocal constanteBean;
+    private ProfesorFacadeLocal profesorFacade;
     private CategoriaProyectoDeGradoFacadeLocal categoriaTesisFacade;
     private PeriodoTesisPregradoFacadeLocal periodoFacadelocal;
-    private EstudianteFacadeRemote estudianteFacadeRemote;
+    private EstudianteFacadeLocal estudianteFacadeLocal;
 
-    public ConversorProyectoDeGrado(ConstanteRemote constanteBean, ProfesorFacadeRemote profesorFacade, CategoriaProyectoDeGradoFacadeLocal categoriaTesisFacade,
-            PeriodoTesisPregradoFacadeLocal periodoFacadelocal, EstudianteFacadeRemote estudianteFacadeRemote) {
+    public ConversorProyectoDeGrado(ConstanteLocal constanteBean, ProfesorFacadeLocal profesorFacade, CategoriaProyectoDeGradoFacadeLocal categoriaTesisFacade,
+            PeriodoTesisPregradoFacadeLocal periodoFacadelocal, EstudianteFacadeLocal estudianteFacadeLocal) {
         this.constanteBean = constanteBean;
         this.profesorFacade = profesorFacade;
         this.categoriaTesisFacade = categoriaTesisFacade;
         this.periodoFacadelocal = periodoFacadelocal;
-        this.estudianteFacadeRemote = estudianteFacadeRemote;
+        this.estudianteFacadeLocal = estudianteFacadeLocal;
     }
 
     public TemaTesisPregrado pasarSecuenciaATemaTesisPregrado(Secuencia secTemaTesis) {
@@ -336,14 +336,14 @@ public class ConversorProyectoDeGrado {
                 ? Long.parseLong(secEstudiante.obtenerSecuenciaHija(getConstanteBean().getConstante(Constantes.TAG_PARAM_ID_GENERAL)).getValor().trim())
                 : null;
         if (id != null) {
-            Estudiante estudiante = estudianteFacadeRemote.find(id);
+            Estudiante estudiante = estudianteFacadeLocal.find(id);
             return estudiante;
         } else {
             String correo = secEstudiante.obtenerSecuenciaHija(getConstanteBean().getConstante(Constantes.TAG_PARAM_CORREO)) != null
                     ? secEstudiante.obtenerSecuenciaHija(getConstanteBean().getConstante(Constantes.TAG_PARAM_CORREO)).getValor().trim()
                     : null;
             if (correo != null) {
-                Estudiante estudiante = estudianteFacadeRemote.findByCorreo(correo);
+                Estudiante estudiante = estudianteFacadeLocal.findByCorreo(correo);
                 return estudiante;
             }
             return null;
@@ -787,7 +787,7 @@ public class ConversorProyectoDeGrado {
         return fArchivo.exists();
     }
 
-    private ConstanteRemote getConstanteBean() {
+    private ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 }

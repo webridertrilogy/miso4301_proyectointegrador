@@ -33,11 +33,11 @@ import co.uniandes.sisinfo.entities.datosmaestros.Programa;
 import co.uniandes.sisinfo.entities.datosmaestros.Seccion;
 import co.uniandes.sisinfo.entities.datosmaestros.Sesion;
 import co.uniandes.sisinfo.serviciosfuncionales.ServiceLocator;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.CursoFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.FacultadFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.ProfesorFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.ProgramaFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.SeccionFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.CursoFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.FacultadFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.ProfesorFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.ProgramaFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.SeccionFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Atributo;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.ParserT;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
@@ -47,7 +47,7 @@ import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
  */
 @Stateless
 @EJB(name = "CursoBean", beanInterface = co.uniandes.sisinfo.serviciosnegocio.CursoLocal.class)
-public class CursoBean implements CursoRemote, CursoLocal {
+public class CursoBean implements  CursoLocal {
 
     //---------------------------------------
     // Atributos
@@ -60,34 +60,34 @@ public class CursoBean implements CursoRemote, CursoLocal {
      * CursoFacade 
      */
     @EJB
-    private CursoFacadeRemote cursoFacade;
+    private CursoFacadeLocal cursoFacade;
     /**
      * SeccionFacade 
      */
     @EJB
-    private SeccionFacadeRemote seccionFacade;
+    private SeccionFacadeLocal seccionFacade;
     /**
      * FacultadFacade 
      */
     @EJB
-    private FacultadFacadeRemote facultadFacade;
+    private FacultadFacadeLocal facultadFacade;
     /**
      * ProfesorFacade
      */
     @EJB
-    private ProfesorFacadeRemote profesorFacade;
+    private ProfesorFacadeLocal profesorFacade;
     /**
      * ProgramaFacade
      */
     @EJB
-    private ProgramaFacadeRemote programaFacade;
+    private ProgramaFacadeLocal programaFacade;
     /**
      * Monitoria bean
      */
     @EJB
-    private MonitoriaRemote monitoriaBean;
+    private MonitoriaLocal monitoriaBean;
     @EJB
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
     @EJB
     private ConvocatoriaLocal convocatoriaBean;
     private ConversorServiciosSoporteProcesos conversorServiciosSoporteProcesos;
@@ -100,19 +100,19 @@ public class CursoBean implements CursoRemote, CursoLocal {
      * Constructor de CursoBean
      */
     public CursoBean() {
-        try {
-            serviceLocator = new ServiceLocator();
-            constanteBean = (ConstanteRemote) serviceLocator.getRemoteEJB(ConstanteRemote.class);
-            profesorFacade = (ProfesorFacadeRemote) serviceLocator.getRemoteEJB(ProfesorFacadeRemote.class);
-            seccionFacade = (SeccionFacadeRemote) serviceLocator.getRemoteEJB(SeccionFacadeRemote.class);
-            programaFacade = (ProgramaFacadeRemote) serviceLocator.getRemoteEJB(ProgramaFacadeRemote.class);
-            facultadFacade = (FacultadFacadeRemote) serviceLocator.getRemoteEJB(FacultadFacadeRemote.class);
-            cursoFacade = (CursoFacadeRemote) serviceLocator.getRemoteEJB(CursoFacadeRemote.class);
-            monitoriaBean = (MonitoriaRemote) serviceLocator.getRemoteEJB(MonitoriaRemote.class);
-            conversorServiciosSoporteProcesos = new ConversorServiciosSoporteProcesos();
-        } catch (NamingException ex) {
-            Logger.getLogger(CursoBean.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        try {
+//            serviceLocator = new ServiceLocator();
+//            constanteBean = (ConstanteLocal) serviceLocator.getLocalEJB(ConstanteLocal.class);
+//            profesorFacade = (ProfesorFacadeLocal) serviceLocator.getLocalEJB(ProfesorFacadeLocal.class);
+//            seccionFacade = (SeccionFacadeLocal) serviceLocator.getLocalEJB(SeccionFacadeLocal.class);
+//            programaFacade = (ProgramaFacadeLocal) serviceLocator.getLocalEJB(ProgramaFacadeLocal.class);
+//            facultadFacade = (FacultadFacadeLocal) serviceLocator.getLocalEJB(FacultadFacadeLocal.class);
+//            cursoFacade = (CursoFacadeLocal) serviceLocator.getLocalEJB(CursoFacadeLocal.class);
+//            monitoriaBean = (MonitoriaLocal) serviceLocator.getLocalEJB(MonitoriaLocal.class);
+//            conversorServiciosSoporteProcesos = new ConversorServiciosSoporteProcesos();
+//        } catch (NamingException ex) {
+//            Logger.getLogger(CursoBean.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }
 
     //---------------------------------------
@@ -1075,7 +1075,7 @@ public class CursoBean implements CursoRemote, CursoLocal {
      * Retorna CursoFacade
      * @return cursoFacade CursoFacade
      */
-    private CursoFacadeRemote getCursoFacade() {
+    private CursoFacadeLocal getCursoFacade() {
         return cursoFacade;
     }
 
@@ -1083,7 +1083,7 @@ public class CursoBean implements CursoRemote, CursoLocal {
      * Retorna SeccionFacade
      * @return seccionFacade SeccionFacade
      */
-    private SeccionFacadeRemote getSeccionFacade() {
+    private SeccionFacadeLocal getSeccionFacade() {
         return seccionFacade;
     }
 
@@ -1091,7 +1091,7 @@ public class CursoBean implements CursoRemote, CursoLocal {
      * Retorna FacultadFacade
      * @return facultadFacade FacultadFacade
      */
-    private FacultadFacadeRemote getFacultadFacade() {
+    private FacultadFacadeLocal getFacultadFacade() {
         return facultadFacade;
     }
 
@@ -1099,7 +1099,7 @@ public class CursoBean implements CursoRemote, CursoLocal {
      * Retorna ProfesorFacade
      * @return profesorFacade ProfesorFacade
      */
-    private ProfesorFacadeRemote getProfesorFacade() {
+    private ProfesorFacadeLocal getProfesorFacade() {
         return profesorFacade;
     }
 
@@ -1107,7 +1107,7 @@ public class CursoBean implements CursoRemote, CursoLocal {
      * Retorna ProgramaFacade
      * @return programaFacade ProgramaFacade
      */
-    private ProgramaFacadeRemote getProgramaFacade() {
+    private ProgramaFacadeLocal getProgramaFacade() {
         return programaFacade;
     }
 
@@ -1115,7 +1115,7 @@ public class CursoBean implements CursoRemote, CursoLocal {
      * Retorna ConstanteBean
      * @return constanteBean ConstanteBean
      */
-    private ConstanteRemote getConstanteBean() {
+    private ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 
@@ -1173,7 +1173,7 @@ public class CursoBean implements CursoRemote, CursoLocal {
                     return getParser().generarRespuesta(new LinkedList<Secuencia>(), getConstanteBean().getConstante(Constantes.CMD_MODIFICAR_DATOS_CURSO), getConstanteBean().getConstante(Constantes.VAL_TAG_TIPO_MENSAJE_MENSAJE), Mensajes.MSJ_0077, new LinkedList<Secuencia>());
                 } else {
                     // Se omitio ya que la convoctoria esta cerrada y no hay solicitudes
-                    //if(!integracionConflictoRemote.validarCambioCaracteristicasMonitoria(curso.getCodigo()))
+                    //if(!integracionConflictoLocal.validarCambioCaracteristicasMonitoria(curso.getCodigo()))
                     //    return getParser().generarRespuesta(new LinkedList<Secuencia>(), getConstanteBean().getConstante(Constantes.CMD_MODIFICAR_DATOS_CURSO), getConstanteBean().getConstante(Constantes.VAL_TAG_TIPO_MENSAJE_ERROR), Mensajes.MON_ERR_0028, new LinkedList<Secuencia>());
 
 

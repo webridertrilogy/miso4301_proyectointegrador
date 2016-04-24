@@ -9,9 +9,8 @@
  */
 package co.uniandes.sisinfo.serviciosfuncionales;
 
-import co.uniandes.sisinfo.entities.Regla;
-import co.uniandes.sisinfo.serviciosfuncionales.ReglaFacadeRemote;
 import java.util.List;
+
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -19,12 +18,14 @@ import javax.persistence.NoResultException;
 import javax.persistence.NonUniqueResultException;
 import javax.persistence.PersistenceContext;
 
+import co.uniandes.sisinfo.entities.Regla;
+
 /**
  * Servicios Entidad Regla
  */
 @Stateless
 @EJB(name = "ReglaFacade", beanInterface = co.uniandes.sisinfo.serviciosfuncionales.ReglaFacadeLocal.class)
-public class ReglaFacade implements ReglaFacadeLocal, ReglaFacadeRemote {
+public class ReglaFacade implements ReglaFacadeLocal {
 
 	@PersistenceContext(unitName="SoporteSisinfoPU")
     private EntityManager em;

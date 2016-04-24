@@ -21,7 +21,7 @@ import javax.persistence.Query;
  * Servicio Facade Entidad Publicador
  */
 @Stateless
-public class PublicadorFacade implements PublicadorFacadeLocal, PublicadorFacadeRemote {
+public class PublicadorFacade implements PublicadorFacadeLocal {
 
 	@PersistenceContext(unitName="SoporteSisinfoPU")
     private EntityManager em;

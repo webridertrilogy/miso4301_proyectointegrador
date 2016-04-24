@@ -29,64 +29,64 @@ import co.uniandes.sisinfo.entities.datosmaestros.Persona;
 import co.uniandes.sisinfo.entities.datosmaestros.Profesor;
 import co.uniandes.sisinfo.entities.datosmaestros.Rol;
 import co.uniandes.sisinfo.entities.datosmaestros.Usuario;
-import co.uniandes.sisinfo.serviciosfuncionales.EstudianteMatriculadoFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.EstudianteMatriculadoFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.ServiceLocator;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.EstudianteFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.GrupoInvestigacionFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.InformacionAcademicaFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.NivelFormacionFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.NivelPlantaFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.PersonaFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.ProfesorFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.ProgramaFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.EstudianteFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.GrupoInvestigacionFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.InformacionAcademicaFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.NivelFormacionFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.NivelPlantaFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.PersonaFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.ProfesorFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.ProgramaFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.ParserT;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
-import co.uniandes.sisinfo.serviciosfuncionales.seguridad.RolFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.seguridad.UsuarioFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.soporte.PaisFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.soporte.TipoCuentaFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.soporte.TipoDocumentoFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.seguridad.RolFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.seguridad.UsuarioFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.soporte.PaisFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.soporte.TipoCuentaFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.soporte.TipoDocumentoFacadeLocal;
 
 /**
  * Servicios de carga de grupo
  * @author Marcela Morales
  */
 @Stateless
-public class CargaGrupoBean implements CargaGrupoBeanRemote, CargaGrupoBeanLocal {
+public class CargaGrupoBean implements  CargaGrupoBeanLocal {
 
     //----------------------------------------------
     // ATRIBUTOS
     //----------------------------------------------
     @EJB
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
     @EJB
-    private EstudianteMatriculadoFacadeRemote estudianteMatriculadoFacade;
+    private EstudianteMatriculadoFacadeLocal estudianteMatriculadoFacade;
     @EJB
-    private PaisFacadeRemote paisFacade;
+    private PaisFacadeLocal paisFacade;
     @EJB
-    private TipoDocumentoFacadeRemote tipoDocumentoFacadeRemote;
+    private TipoDocumentoFacadeLocal tipoDocumentoFacadeLocal;
     @EJB
-    private PersonaFacadeRemote personaFacade;
+    private PersonaFacadeLocal personaFacade;
     @EJB
-    private EstudianteFacadeRemote estudianteFacade;
+    private EstudianteFacadeLocal estudianteFacade;
     @EJB
-    private ProgramaFacadeRemote programaFacade;
+    private ProgramaFacadeLocal programaFacade;
     @EJB
-    private TipoCuentaFacadeRemote tipoCuentaFacade;
+    private TipoCuentaFacadeLocal tipoCuentaFacade;
     @EJB
-    private NivelFormacionFacadeRemote nivelFormacionFacade;
+    private NivelFormacionFacadeLocal nivelFormacionFacade;
     @EJB
-    private InformacionAcademicaFacadeRemote infoAcademicaFacade;
+    private InformacionAcademicaFacadeLocal infoAcademicaFacade;
     @EJB
-    private ProfesorFacadeRemote profesorFacade;
+    private ProfesorFacadeLocal profesorFacade;
     @EJB
-    private GrupoInvestigacionFacadeRemote grupoInvestigacionFacade;
+    private GrupoInvestigacionFacadeLocal grupoInvestigacionFacade;
     @EJB
-    private NivelPlantaFacadeRemote nivelPlantaFacade;
+    private NivelPlantaFacadeLocal nivelPlantaFacade;
     @EJB
-    private UsuarioFacadeRemote usuarioFacade;
+    private UsuarioFacadeLocal usuarioFacade;
     @EJB
-    private RolFacadeRemote rolFacade;
+    private RolFacadeLocal rolFacade;
     private ParserT parser;
     private ServiceLocator serviceLocator;
     
@@ -94,25 +94,25 @@ public class CargaGrupoBean implements CargaGrupoBeanRemote, CargaGrupoBeanLocal
     // CONSTRUCTOR
     //----------------------------------------------
     public CargaGrupoBean(){
-        try {
-            parser = new ParserT();
-            serviceLocator = new ServiceLocator();
-            estudianteMatriculadoFacade = (EstudianteMatriculadoFacadeRemote) serviceLocator.getRemoteEJB(EstudianteMatriculadoFacadeRemote.class);
-            constanteBean = (ConstanteRemote) serviceLocator.getRemoteEJB(ConstanteRemote.class);
-            paisFacade = (PaisFacadeRemote) serviceLocator.getRemoteEJB(PaisFacadeRemote.class);
-            tipoDocumentoFacadeRemote = (TipoDocumentoFacadeRemote) serviceLocator.getRemoteEJB(TipoDocumentoFacadeRemote.class);
-            personaFacade = (PersonaFacadeRemote) serviceLocator.getRemoteEJB(PersonaFacadeRemote.class);
-            estudianteFacade = (EstudianteFacadeRemote) serviceLocator.getRemoteEJB(EstudianteFacadeRemote.class);
-            programaFacade = (ProgramaFacadeRemote) serviceLocator.getRemoteEJB(ProgramaFacadeRemote.class);
-            tipoCuentaFacade = (TipoCuentaFacadeRemote) serviceLocator.getRemoteEJB(TipoCuentaFacadeRemote.class);
-            nivelFormacionFacade = (NivelFormacionFacadeRemote) serviceLocator.getRemoteEJB(NivelFormacionFacadeRemote.class);
-            infoAcademicaFacade = (InformacionAcademicaFacadeRemote) serviceLocator.getRemoteEJB(InformacionAcademicaFacadeRemote.class);
-            profesorFacade = (ProfesorFacadeRemote) serviceLocator.getRemoteEJB(ProfesorFacadeRemote.class);
-            grupoInvestigacionFacade = (GrupoInvestigacionFacadeRemote) serviceLocator.getRemoteEJB(GrupoInvestigacionFacadeRemote.class);
-            nivelPlantaFacade = (NivelPlantaFacadeRemote) serviceLocator.getRemoteEJB(NivelPlantaFacadeRemote.class);
-        } catch (NamingException ex) {
-            Logger.getLogger(CargaGrupoBean.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        try {
+//            parser = new ParserT();
+//            serviceLocator = new ServiceLocator();
+//            estudianteMatriculadoFacade = (EstudianteMatriculadoFacadeLocal) serviceLocator.getLocalEJB(EstudianteMatriculadoFacadeLocal.class);
+//            constanteBean = (ConstanteLocal) serviceLocator.getLocalEJB(ConstanteLocal.class);
+//            paisFacade = (PaisFacadeLocal) serviceLocator.getLocalEJB(PaisFacadeLocal.class);
+//            tipoDocumentoFacadeLocal = (TipoDocumentoFacadeLocal) serviceLocator.getLocalEJB(TipoDocumentoFacadeLocal.class);
+//            personaFacade = (PersonaFacadeLocal) serviceLocator.getLocalEJB(PersonaFacadeLocal.class);
+//            estudianteFacade = (EstudianteFacadeLocal) serviceLocator.getLocalEJB(EstudianteFacadeLocal.class);
+//            programaFacade = (ProgramaFacadeLocal) serviceLocator.getLocalEJB(ProgramaFacadeLocal.class);
+//            tipoCuentaFacade = (TipoCuentaFacadeLocal) serviceLocator.getLocalEJB(TipoCuentaFacadeLocal.class);
+//            nivelFormacionFacade = (NivelFormacionFacadeLocal) serviceLocator.getLocalEJB(NivelFormacionFacadeLocal.class);
+//            infoAcademicaFacade = (InformacionAcademicaFacadeLocal) serviceLocator.getLocalEJB(InformacionAcademicaFacadeLocal.class);
+//            profesorFacade = (ProfesorFacadeLocal) serviceLocator.getLocalEJB(ProfesorFacadeLocal.class);
+//            grupoInvestigacionFacade = (GrupoInvestigacionFacadeLocal) serviceLocator.getLocalEJB(GrupoInvestigacionFacadeLocal.class);
+//            nivelPlantaFacade = (NivelPlantaFacadeLocal) serviceLocator.getLocalEJB(NivelPlantaFacadeLocal.class);
+//        } catch (NamingException ex) {
+//            Logger.getLogger(CargaGrupoBean.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }
 
     //----------------------------------------------
@@ -1286,7 +1286,7 @@ public class CargaGrupoBean implements CargaGrupoBeanRemote, CargaGrupoBeanLocal
                     if(paisNacimiento != null) persona.setPais(getPaisFacade().findByNombre(paisNacimiento));
                     else persona.setPais(null);
                     persona.setTelefono(telefono);
-                    if(tipoDocumento != null) persona.setTipoDocumento(getTipoDocumentoFacadeRemote().findByTipo(tipoDocumento));
+                    if(tipoDocumento != null) persona.setTipoDocumento(getTipoDocumentoFacadeLocal().findByTipo(tipoDocumento));
                     else persona.setTipoDocumento(null);
                     getPersonaFacade().create(persona);
                 }else{
@@ -1306,7 +1306,7 @@ public class CargaGrupoBean implements CargaGrupoBeanRemote, CargaGrupoBeanLocal
                     if(paisNacimiento != null) persona.setPais(getPaisFacade().findByNombre(paisNacimiento));
                     else persona.setPais(null);
                     persona.setTelefono(telefono);
-                    if(tipoDocumento != null) persona.setTipoDocumento(getTipoDocumentoFacadeRemote().findByTipo(tipoDocumento));
+                    if(tipoDocumento != null) persona.setTipoDocumento(getTipoDocumentoFacadeLocal().findByTipo(tipoDocumento));
                     else persona.setTipoDocumento(null);
                     getPersonaFacade().edit(persona);
                 }
@@ -1366,7 +1366,7 @@ public class CargaGrupoBean implements CargaGrupoBeanRemote, CargaGrupoBeanLocal
                     informacionAcademica.setPromedioUltimo(promedioUltimo);
                     informacionAcademica.setSemestreSegunCreditos(semestreSegunCreditos);
                     getInfoAcademicaFacade().create(informacionAcademica);
-                    estudiante.setInformacion_Academica(getInfoAcademicaFacade().findByCodigoEstudiante(codigo));
+                   // estudiante.setInformacion_Academica(getInfoAcademicaFacade().findByCodigoEstudiante(codigo));
 
                     getEstudianteFacade().create(estudiante);
                 }else{
@@ -1385,7 +1385,7 @@ public class CargaGrupoBean implements CargaGrupoBeanRemote, CargaGrupoBeanLocal
                     estudiante.setAvisarEmergenciaNombres(emergenciaNombres);
                     estudiante.setTelefonoEmergencia(emergenciaTelefono);
                     //Información académica
-                    InformacionAcademica informacionAcademica = getInfoAcademicaFacade().findByCodigoEstudiante(codigo);
+                    InformacionAcademica informacionAcademica = null;//getInfoAcademicaFacade().findByCodigoEstudiante(codigo);
                     if(informacionAcademica == null){
                         informacionAcademica = new InformacionAcademica();
                         informacionAcademica.setCreditosAprobados(creditosAprobados);
@@ -1410,7 +1410,7 @@ public class CargaGrupoBean implements CargaGrupoBeanRemote, CargaGrupoBeanLocal
                         informacionAcademica.setSemestreSegunCreditos(semestreSegunCreditos);
                         getInfoAcademicaFacade().edit(informacionAcademica);
                     }
-                    estudiante.setInformacion_Academica(getInfoAcademicaFacade().findByCodigoEstudiante(codigo));
+                    //estudiante.setInformacion_Academica(getInfoAcademicaFacade().findByCodigoEstudiante(codigo));
                     
                     getEstudianteFacade().edit(estudiante);
                 }
@@ -1867,7 +1867,7 @@ public class CargaGrupoBean implements CargaGrupoBeanRemote, CargaGrupoBeanLocal
                     if(paisNacimiento != null) persona.setPais(getPaisFacade().findByNombre(paisNacimiento));
                     else persona.setPais(null);
                     persona.setTelefono(telefono);
-                    if(tipoDocumento != null) persona.setTipoDocumento(getTipoDocumentoFacadeRemote().findByTipo(tipoDocumento));
+                    if(tipoDocumento != null) persona.setTipoDocumento(getTipoDocumentoFacadeLocal().findByTipo(tipoDocumento));
                     else persona.setTipoDocumento(null);
                     getPersonaFacade().create(persona);
                 }else{
@@ -1887,7 +1887,7 @@ public class CargaGrupoBean implements CargaGrupoBeanRemote, CargaGrupoBeanLocal
                     if(paisNacimiento != null) persona.setPais(getPaisFacade().findByNombre(paisNacimiento));
                     else persona.setPais(null);
                     persona.setTelefono(telefono);
-                    if(tipoDocumento != null) persona.setTipoDocumento(getTipoDocumentoFacadeRemote().findByTipo(tipoDocumento));
+                    if(tipoDocumento != null) persona.setTipoDocumento(getTipoDocumentoFacadeLocal().findByTipo(tipoDocumento));
                     else persona.setTipoDocumento(null);
                     getPersonaFacade().edit(persona);
                 }
@@ -1967,7 +1967,7 @@ public class CargaGrupoBean implements CargaGrupoBeanRemote, CargaGrupoBeanLocal
     //----------------------------------------------
     // MÉTODOS PRIVADOS
     //----------------------------------------------
-    private ConstanteRemote getConstanteBean() {
+    private ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 
@@ -1977,59 +1977,59 @@ public class CargaGrupoBean implements CargaGrupoBeanRemote, CargaGrupoBeanLocal
         return parser;
     }
 
-    private EstudianteMatriculadoFacadeRemote getEstudianteMatriculadoFacade() {
+    private EstudianteMatriculadoFacadeLocal getEstudianteMatriculadoFacade() {
         return estudianteMatriculadoFacade;
     }
 
-    private PaisFacadeRemote getPaisFacade() {
+    private PaisFacadeLocal getPaisFacade() {
         return paisFacade;
     }
 
-    private TipoDocumentoFacadeRemote getTipoDocumentoFacadeRemote() {
-        return tipoDocumentoFacadeRemote;
+    private TipoDocumentoFacadeLocal getTipoDocumentoFacadeLocal() {
+        return tipoDocumentoFacadeLocal;
     }
 
-    private PersonaFacadeRemote getPersonaFacade() {
+    private PersonaFacadeLocal getPersonaFacade() {
         return personaFacade;
     }
 
-    private EstudianteFacadeRemote getEstudianteFacade() {
+    private EstudianteFacadeLocal getEstudianteFacade() {
         return estudianteFacade;
     }
 
-    private ProgramaFacadeRemote getProgramaFacade() {
+    private ProgramaFacadeLocal getProgramaFacade() {
         return programaFacade;
     }
 
-    private TipoCuentaFacadeRemote getTipoCuentaFacade() {
+    private TipoCuentaFacadeLocal getTipoCuentaFacade() {
         return tipoCuentaFacade;
     }
 
-    private NivelFormacionFacadeRemote getNivelFormacionFacade() {
+    private NivelFormacionFacadeLocal getNivelFormacionFacade() {
         return nivelFormacionFacade;
     }
 
-    private InformacionAcademicaFacadeRemote getInfoAcademicaFacade() {
+    private InformacionAcademicaFacadeLocal getInfoAcademicaFacade() {
         return infoAcademicaFacade;
     }
 
-    private ProfesorFacadeRemote getProfesorFacade() {
+    private ProfesorFacadeLocal getProfesorFacade() {
         return profesorFacade;
     }
 
-    private GrupoInvestigacionFacadeRemote getGrupoInvestigacionFacade() {
+    private GrupoInvestigacionFacadeLocal getGrupoInvestigacionFacade() {
         return grupoInvestigacionFacade;
     }
 
-    private NivelPlantaFacadeRemote getNivelPlantaFacade() {
+    private NivelPlantaFacadeLocal getNivelPlantaFacade() {
         return nivelPlantaFacade;
     }
 
-    private RolFacadeRemote getRolFacade() {
+    private RolFacadeLocal getRolFacade() {
         return rolFacade;
     }
 
-    private UsuarioFacadeRemote getUsuarioFacade() {
+    private UsuarioFacadeLocal getUsuarioFacade() {
         return usuarioFacade;
     }
 }

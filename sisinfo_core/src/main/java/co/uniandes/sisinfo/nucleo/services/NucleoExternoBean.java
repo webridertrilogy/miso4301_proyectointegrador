@@ -1,40 +1,40 @@
 package co.uniandes.sisinfo.nucleo.services;
 
-import co.uniandes.sisinfo.comun.constantes.Constantes;
-import co.uniandes.sisinfo.despachador.services.DespachadorLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.parser.ParserT;
-import co.uniandes.sisinfo.serviciosnegocio.ConstanteRemote;
-import co.uniandes.sisinfo.serviciosnegocio.ProyectoDeGradoBeanRemote;
-import co.uniandes.sisinfo.serviciosnegocio.ReporteExcepcionesBeanRemote;
-import co.uniandes.sisinfo.serviciosnegocio.Tesis1BeanRemote;
-import co.uniandes.sisinfo.serviciosnegocio.Tesis2BeanRemote;
 import java.sql.Timestamp;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
+
+import co.uniandes.sisinfo.comun.constantes.Constantes;
+import co.uniandes.sisinfo.serviciosfuncionales.parser.ParserT;
+import co.uniandes.sisinfo.serviciosnegocio.ConstanteLocal;
+import co.uniandes.sisinfo.serviciosnegocio.ProyectoDeGradoBeanLocal;
+import co.uniandes.sisinfo.serviciosnegocio.ReporteExcepcionesBeanLocal;
+import co.uniandes.sisinfo.serviciosnegocio.Tesis1BeanLocal;
+import co.uniandes.sisinfo.serviciosnegocio.Tesis2BeanLocal;
 
 /**
  * Servicios Núcleo Externo
  * @author Marcela Morales
  */
 @Stateless
-public class NucleoExternoBean implements NucleoExternoLocal, NucleoExternoRemote {
+public class NucleoExternoBean implements NucleoExternoLocal {
 
     private ParserT parserBean;
+   
     @EJB
-    private DespachadorLocal despachadorBean;
+    private ConstanteLocal constanteBean;
     @EJB
-    private ConstanteRemote constanteBean;
+    private ProyectoDeGradoBeanLocal proyectoGradoBean;
     @EJB
-    private ProyectoDeGradoBeanRemote proyectoGradoBean;
+    private Tesis1BeanLocal tesis1Bean;
     @EJB
-    private Tesis1BeanRemote tesis1Bean;
+    private Tesis2BeanLocal tesis2Bean;
     @EJB
-    private Tesis2BeanRemote tesis2Bean;
-    @EJB
-    private ReporteExcepcionesBeanRemote reporteExcepcionesBean;
+    private ReporteExcepcionesBeanLocal reporteExcepcionesBean;
 
     public NucleoExternoBean() {
         parserBean = new ParserT();
@@ -57,8 +57,8 @@ public class NucleoExternoBean implements NucleoExternoLocal, NucleoExternoRemot
             respuesta = enRutarComandoConsulta(nombreComando, comandoXML);
         } else if (tipoComando.equals(getConstanteBean().getConstante(Constantes.VAL_TAG_TIPO_CMD_PROCESO))) {
             parserBean.leerXML(comandoXML);
-            respuesta = despachadorBean.resolverComando(comandoXML);
-            reportarALogExcepciones(despachadorBean.getClass().getName(), "resolverComando", respuesta, new Timestamp(new Date().getTime()), nombreComando , comandoXML);
+//            respuesta = despachadorBean.resolverComando(comandoXML);
+//            reportarALogExcepciones(despachadorBean.getClass().getName(), "resolverComando", respuesta, new Timestamp(new Date().getTime()), nombreComando , comandoXML);
         } else {
             respuesta = getConstanteBean().getConstante(Constantes.MSJ_TIPO_COMANDO_INVALIDO);
         }
@@ -101,7 +101,7 @@ public class NucleoExternoBean implements NucleoExternoLocal, NucleoExternoRemot
         reporteExcepcionesBean.crearLogMensaje(nombreBean, nombreMetodo, respuesta, fa, nombreComanddo, xmlEntrada);
     }
 
-    private ConstanteRemote getConstanteBean() {
+    private ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 }

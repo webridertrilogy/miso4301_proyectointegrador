@@ -29,17 +29,17 @@ import co.uniandes.sisinfo.entities.datosmaestros.soporte.TipoDocumento;
 import co.uniandes.sisinfo.serviciosfuncionales.ServiceLocator;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.ParserT;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
-import co.uniandes.sisinfo.serviciosfuncionales.soporte.CiudadFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.soporte.DepartamentoFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.soporte.PaisFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.soporte.TipoDocumentoFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.soporte.CiudadFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.soporte.DepartamentoFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.soporte.PaisFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.soporte.TipoDocumentoFacadeLocal;
 
 /**
  * Servicio de negocio: Administración de datos
  */
 @Stateless
 @EJB(name = "DatosBean", beanInterface = co.uniandes.sisinfo.serviciosnegocio.DatosLocal.class)
-public class DatosBean implements DatosRemote, DatosLocal {
+public class DatosBean implements  DatosLocal {
 
     //---------------------------------------
     // Atributos
@@ -52,27 +52,27 @@ public class DatosBean implements DatosRemote, DatosLocal {
      * PaisFacade
      */
     @EJB
-    private PaisFacadeRemote paisFacade;
+    private PaisFacadeLocal paisFacade;
     /**
      * TipoDocumentoFacade
      */
     @EJB
-    private TipoDocumentoFacadeRemote tipoDocumentoFacade;
+    private TipoDocumentoFacadeLocal tipoDocumentoFacade;
     /**
      * DepartamentoFacade
      */
     @EJB
-    private DepartamentoFacadeRemote departamentoFacade;
+    private DepartamentoFacadeLocal departamentoFacade;
     /**
      * CiudadFacade
      */
     @EJB
-    private CiudadFacadeRemote ciudadFacade;
+    private CiudadFacadeLocal ciudadFacade;
     /**
      *  ConstanteBean
      */
     @EJB
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
     private ServiceLocator serviceLocator;
     private ConversorDatosEventoExterno conversor;
 
@@ -83,15 +83,15 @@ public class DatosBean implements DatosRemote, DatosLocal {
      * Constructor de AlertaBean
      */
     public DatosBean() {
-        try {
-            serviceLocator = new ServiceLocator();
-            constanteBean = (ConstanteRemote) serviceLocator.getRemoteEJB(ConstanteRemote.class);
-            tipoDocumentoFacade = (TipoDocumentoFacadeRemote) serviceLocator.getRemoteEJB(TipoDocumentoFacadeRemote.class);
-            departamentoFacade = (DepartamentoFacadeRemote) serviceLocator.getRemoteEJB(DepartamentoFacadeRemote.class);
-            paisFacade = (PaisFacadeRemote) serviceLocator.getRemoteEJB(PaisFacadeRemote.class);
-        } catch (NamingException ex) {
-            Logger.getLogger(DatosBean.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        try {
+//            serviceLocator = new ServiceLocator();
+//            constanteBean = (ConstanteLocal) serviceLocator.getLocalEJB(ConstanteLocal.class);
+//            tipoDocumentoFacade = (TipoDocumentoFacadeLocal) serviceLocator.getLocalEJB(TipoDocumentoFacadeLocal.class);
+//            departamentoFacade = (DepartamentoFacadeLocal) serviceLocator.getLocalEJB(DepartamentoFacadeLocal.class);
+//            paisFacade = (PaisFacadeLocal) serviceLocator.getLocalEJB(PaisFacadeLocal.class);
+//        } catch (NamingException ex) {
+//            Logger.getLogger(DatosBean.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }
 
     public ConversorDatosEventoExterno getConversor() {
@@ -186,7 +186,7 @@ public class DatosBean implements DatosRemote, DatosLocal {
      * Retorna TipoDocumentoFacade
      * @return tipoDocumentoFacade TipoDocumentoFacade
      */
-    private TipoDocumentoFacadeRemote getTipoDocumentoFacade() {
+    private TipoDocumentoFacadeLocal getTipoDocumentoFacade() {
         return tipoDocumentoFacade;
     }
 
@@ -194,7 +194,7 @@ public class DatosBean implements DatosRemote, DatosLocal {
      * Retorna ConstanteBean
      * @return constanteBean ConstanteBean
      */
-    private ConstanteRemote getConstanteBean() {
+    private ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 
@@ -202,7 +202,7 @@ public class DatosBean implements DatosRemote, DatosLocal {
      * Retorna PaisFacade
      * @return paisFacade PaisFacade
      */
-    private PaisFacadeRemote getPaisFacade() {
+    private PaisFacadeLocal getPaisFacade() {
         return paisFacade;
     }
 

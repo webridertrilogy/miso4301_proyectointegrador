@@ -16,7 +16,7 @@ import javax.persistence.PersistenceContext;
  * @author Ivan Mauricio Melo Suarez
  */
 @Stateless
-public class CategoriaCriterioJuradoFacade extends AbstractFacade<CategoriaCriterioJurado> implements CategoriaCriterioJuradoFacadeLocal, CategoriaCriterioJuradoFacadeRemote {
+public class CategoriaCriterioJuradoFacade extends AbstractFacade<CategoriaCriterioJurado> implements CategoriaCriterioJuradoFacadeLocal {
     @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 

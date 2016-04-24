@@ -37,61 +37,61 @@ import co.uniandes.sisinfo.entities.datosmaestros.Persona;
 import co.uniandes.sisinfo.entities.datosmaestros.Profesor;
 import co.uniandes.sisinfo.entities.datosmaestros.Rol;
 import co.uniandes.sisinfo.entities.datosmaestros.Usuario;
-import co.uniandes.sisinfo.nucleo.services.NucleoRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.CorreoRemote;
+import co.uniandes.sisinfo.nucleo.services.NucleoLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.CorreoLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.ServiceLocator;
-import co.uniandes.sisinfo.serviciosfuncionales.TareaMultipleFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.TareaMultipleFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.EstudianteFacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.GrupoInvestigacionFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.NivelFormacionFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.NivelPlantaFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.PersonaFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.ProfesorFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.GrupoInvestigacionFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.NivelFormacionFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.NivelPlantaFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.PersonaFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.ProfesorFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.ParserT;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
-import co.uniandes.sisinfo.serviciosfuncionales.seguridad.RolFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.seguridad.UsuarioFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.soporte.PaisFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.soporte.TipoDocumentoFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.seguridad.RolFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.seguridad.UsuarioFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.soporte.PaisFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.soporte.TipoDocumentoFacadeLocal;
 
 /**
  * Servicio de negocio: Administración de profesores
  */
 @Stateless
 @EJB(name = "ProfesorBean", beanInterface = co.uniandes.sisinfo.serviciosnegocio.ProfesorLocal.class)
-public class ProfesorBean implements ProfesorRemote, ProfesorLocal {
+public class ProfesorBean implements  ProfesorLocal {
 
     //---------------------------------------
     // Atributos
     //---------------------------------------   
     @EJB
-    private ProfesorFacadeRemote profesorFacade;
+    private ProfesorFacadeLocal profesorFacade;
     @EJB
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
     @EJB
-    private UsuarioFacadeRemote usuarioFacade;
+    private UsuarioFacadeLocal usuarioFacade;
     @EJB
-    private RolFacadeRemote rolFacade;
+    private RolFacadeLocal rolFacade;
     @EJB
-    private GrupoInvestigacionFacadeRemote grupoInvestigacionFacade;
+    private GrupoInvestigacionFacadeLocal grupoInvestigacionFacade;
     @EJB
-    private NivelFormacionFacadeRemote nivelFormacionFacade;
+    private NivelFormacionFacadeLocal nivelFormacionFacade;
     @EJB
-    private NivelPlantaFacadeRemote nivelPlantaFacade;
+    private NivelPlantaFacadeLocal nivelPlantaFacade;
     @EJB
-    private NucleoRemote nucleoBean;
+    private NucleoLocal nucleoBean;
     @EJB
-    private PersonaFacadeRemote personaFacade;
+    private PersonaFacadeLocal personaFacade;
     @EJB
-    private PaisFacadeRemote paisFacade;
+    private PaisFacadeLocal paisFacade;
     @EJB
-    private TipoDocumentoFacadeRemote documentoFacade;
+    private TipoDocumentoFacadeLocal documentoFacade;
     @EJB
-    private TareaMultipleFacadeRemote tareaFacade;
+    private TareaMultipleFacadeLocal tareaFacade;
     @EJB
     private EstudianteFacadeLocal estudianteFacade;
     @EJB
-    private CorreoRemote correoBean;
+    private CorreoLocal correoBean;
     private ServiceLocator serviceLocator;
     private ParserT parser;
 
@@ -102,23 +102,23 @@ public class ProfesorBean implements ProfesorRemote, ProfesorLocal {
      * Constructor de ProfesorBean
      */
     public ProfesorBean() {
-        try {
-            serviceLocator = new ServiceLocator();
-            personaFacade = (PersonaFacadeRemote) serviceLocator.getRemoteEJB(PersonaFacadeRemote.class);
-            profesorFacade = (ProfesorFacadeRemote) serviceLocator.getRemoteEJB(ProfesorFacadeRemote.class);
-            usuarioFacade = (UsuarioFacadeRemote) serviceLocator.getRemoteEJB(UsuarioFacadeRemote.class);
-            rolFacade = (RolFacadeRemote) serviceLocator.getRemoteEJB(RolFacadeRemote.class);
-            grupoInvestigacionFacade = (GrupoInvestigacionFacadeRemote) serviceLocator.getRemoteEJB(GrupoInvestigacionFacadeRemote.class);
-            nivelFormacionFacade = (NivelFormacionFacadeRemote) serviceLocator.getRemoteEJB(NivelFormacionFacadeRemote.class);
-            nivelPlantaFacade = (NivelPlantaFacadeRemote) serviceLocator.getRemoteEJB(NivelPlantaFacadeRemote.class);
-            constanteBean = (ConstanteRemote) serviceLocator.getRemoteEJB(ConstanteRemote.class);
-            tareaFacade = (TareaMultipleFacadeRemote) serviceLocator.getRemoteEJB(TareaMultipleFacadeRemote.class);
-            nucleoBean = (NucleoRemote) serviceLocator.getRemoteEJB(NucleoRemote.class);
-            correoBean = (CorreoRemote) serviceLocator.getRemoteEJB(CorreoRemote.class);
-
-        } catch (NamingException ex) {
-            Logger.getLogger(ProfesorBean.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        try {
+//            serviceLocator = new ServiceLocator();
+//            personaFacade = (PersonaFacadeLocal) serviceLocator.getLocalEJB(PersonaFacadeLocal.class);
+//            profesorFacade = (ProfesorFacadeLocal) serviceLocator.getLocalEJB(ProfesorFacadeLocal.class);
+//            usuarioFacade = (UsuarioFacadeLocal) serviceLocator.getLocalEJB(UsuarioFacadeLocal.class);
+//            rolFacade = (RolFacadeLocal) serviceLocator.getLocalEJB(RolFacadeLocal.class);
+//            grupoInvestigacionFacade = (GrupoInvestigacionFacadeLocal) serviceLocator.getLocalEJB(GrupoInvestigacionFacadeLocal.class);
+//            nivelFormacionFacade = (NivelFormacionFacadeLocal) serviceLocator.getLocalEJB(NivelFormacionFacadeLocal.class);
+//            nivelPlantaFacade = (NivelPlantaFacadeLocal) serviceLocator.getLocalEJB(NivelPlantaFacadeLocal.class);
+//            constanteBean = (ConstanteLocal) serviceLocator.getLocalEJB(ConstanteLocal.class);
+//            tareaFacade = (TareaMultipleFacadeLocal) serviceLocator.getLocalEJB(TareaMultipleFacadeLocal.class);
+//            nucleoBean = (NucleoLocal) serviceLocator.getLocalEJB(NucleoLocal.class);
+//            correoBean = (CorreoLocal) serviceLocator.getLocalEJB(CorreoLocal.class);
+//
+//        } catch (NamingException ex) {
+//            Logger.getLogger(ProfesorBean.class.getName()).log(Level.SEVERE, null, ex);
+//        }
 
     }
 
@@ -1193,7 +1193,7 @@ public class ProfesorBean implements ProfesorRemote, ProfesorLocal {
      * Retorna ProfesorFacade
      * @return profesorFacade ProfesorFacade
      */
-    private ProfesorFacadeRemote getProfesorFacade() {
+    private ProfesorFacadeLocal getProfesorFacade() {
         return profesorFacade;
     }
 
@@ -1201,39 +1201,39 @@ public class ProfesorBean implements ProfesorRemote, ProfesorLocal {
      * Retorna ConstanteBean
      * @return constanteBean ConstanteBean
      */
-    private ConstanteRemote getConstanteBean() {
+    private ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 
-    private GrupoInvestigacionFacadeRemote getGrupoInvestigacionFacade() {
+    private GrupoInvestigacionFacadeLocal getGrupoInvestigacionFacade() {
         return grupoInvestigacionFacade;
     }
 
-    private RolFacadeRemote getRolFacade() {
+    private RolFacadeLocal getRolFacade() {
         return rolFacade;
     }
 
-    private UsuarioFacadeRemote getUsuarioFacade() {
+    private UsuarioFacadeLocal getUsuarioFacade() {
         return usuarioFacade;
     }
 
-    private NivelFormacionFacadeRemote getNivelFormacionFacade() {
+    private NivelFormacionFacadeLocal getNivelFormacionFacade() {
         return nivelFormacionFacade;
     }
 
-    private NivelPlantaFacadeRemote getNivelPlantaFacade() {
+    private NivelPlantaFacadeLocal getNivelPlantaFacade() {
         return nivelPlantaFacade;
     }
 
-    private PersonaFacadeRemote getPersonaFacade() {
+    private PersonaFacadeLocal getPersonaFacade() {
         return personaFacade;
     }
 
-    private TipoDocumentoFacadeRemote getDocumentoFacade() {
+    private TipoDocumentoFacadeLocal getDocumentoFacade() {
         return documentoFacade;
     }
 
-    private PaisFacadeRemote getPaisFacade() {
+    private PaisFacadeLocal getPaisFacade() {
         return paisFacade;
     }
 }

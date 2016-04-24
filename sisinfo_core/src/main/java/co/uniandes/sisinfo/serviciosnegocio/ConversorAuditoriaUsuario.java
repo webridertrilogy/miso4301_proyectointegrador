@@ -17,12 +17,12 @@ public class ConversorAuditoriaUsuario {
     // ATRIBUTOS
     //----------------------------------------------
     //Útil
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
 
     //----------------------------------------------
     // CONSTRUCTOR
     //----------------------------------------------
-    public ConversorAuditoriaUsuario(ConstanteRemote constanteBean) {
+    public ConversorAuditoriaUsuario(ConstanteLocal constanteBean) {
         this.constanteBean = constanteBean;
     }
 

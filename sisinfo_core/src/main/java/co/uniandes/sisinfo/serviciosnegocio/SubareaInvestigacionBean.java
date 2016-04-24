@@ -26,7 +26,7 @@ import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
  * @author Asistente
  */
 @Stateless
-public class SubareaInvestigacionBean implements SubareaInvestigacionBeanRemote, SubareaInvestigacionBeanLocal {
+public class SubareaInvestigacionBean implements  SubareaInvestigacionBeanLocal {
 
     // Add business logic below. (Right-click in editor and choose
     // "Insert Code > Add Business Method")
@@ -43,7 +43,7 @@ public class SubareaInvestigacionBean implements SubareaInvestigacionBeanRemote,
      *  ConstanteBean
      */
     @EJB
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
 
     private ServiceLocator serviceLocator;
 
@@ -51,13 +51,13 @@ public class SubareaInvestigacionBean implements SubareaInvestigacionBeanRemote,
      * constructor
      */
     public SubareaInvestigacionBean() {
-        try {
-            parser = new ParserT();
-            serviceLocator = new ServiceLocator();
-            constanteBean = (ConstanteRemote) serviceLocator.getRemoteEJB(ConstanteRemote.class);
-        } catch (NamingException ex) {
-            Logger.getLogger(SubareaInvestigacionBean.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        try {
+//            parser = new ParserT();
+//            serviceLocator = new ServiceLocator();
+//            constanteBean = (ConstanteLocal) serviceLocator.getLocalEJB(ConstanteLocal.class);
+//        } catch (NamingException ex) {
+//            Logger.getLogger(SubareaInvestigacionBean.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }
 
     public String obtenerSubareasInvestigacion(String xml) {
@@ -80,7 +80,7 @@ public class SubareaInvestigacionBean implements SubareaInvestigacionBeanRemote,
 
     }
 
-    public ConstanteRemote getConstanteBean() {
+    public ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 

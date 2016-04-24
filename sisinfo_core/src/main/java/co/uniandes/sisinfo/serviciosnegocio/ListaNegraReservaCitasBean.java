@@ -24,7 +24,7 @@ import co.uniandes.sisinfo.entities.ListaNegraReservaCitas;
 import co.uniandes.sisinfo.entities.datosmaestros.Persona;
 import co.uniandes.sisinfo.serviciosfuncionales.ListaNegraReservaCitasFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.ServiceLocator;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.PersonaFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.PersonaFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.ParserT;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
 
@@ -33,34 +33,34 @@ import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
  * @author Asistente
  */
 @Stateless
-public class ListaNegraReservaCitasBean implements ListaNegraReservaCitasRemote, ListaNegraReservaCitasLocal {
+public class ListaNegraReservaCitasBean implements  ListaNegraReservaCitasLocal {
 
-    public final static String RUTA_INTERFAZ_REMOTA = "co.uniandes.sisinfo.serviciosnegocio.ListaNegraReservaCitasRemote";
+    public final static String RUTA_INTERFAZ_REMOTA = "co.uniandes.sisinfo.serviciosnegocio.ListaNegraReservaCitasLocal";
     public final static String NOMBRE_MODULO = "ReservaCitas";
     public final static String METODO_TIMERS = "manejoTimersListaNegraReservaCitas";
     @EJB
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
     private ParserT parser;
     private ServiceLocator serviceLocator;
     private ConversorReservaCitas conversor;
     @EJB
-    private TimerGenericoBeanRemote timerGenerico;
+    private TimerGenericoBeanLocal timerGenerico;
     @EJB
     private ListaNegraReservaCitasFacadeLocal listaNegraReservaCitasFacade;
     @EJB
-    private PersonaFacadeRemote personaFacade;
+    private PersonaFacadeLocal personaFacade;
 
     public ListaNegraReservaCitasBean() {
-        try {
-            parser = new ParserT();
-            serviceLocator = new ServiceLocator();
-            constanteBean = (ConstanteRemote) serviceLocator.getRemoteEJB(ConstanteRemote.class);
-            conversor = new ConversorReservaCitas(constanteBean);
-            timerGenerico = (TimerGenericoBeanRemote) serviceLocator.getRemoteEJB(TimerGenericoBeanRemote.class);
-            personaFacade = (PersonaFacadeRemote) serviceLocator.getRemoteEJB(PersonaFacadeRemote.class);
-        } catch (Exception e) {
-            Logger.getLogger(ListaNegraReservaCitasBean.class.getName()).log(Level.SEVERE, null, e);
-        }
+//        try {
+//            parser = new ParserT();
+//            serviceLocator = new ServiceLocator();
+//            constanteBean = (ConstanteLocal) serviceLocator.getLocalEJB(ConstanteLocal.class);
+//            conversor = new ConversorReservaCitas(constanteBean);
+//            timerGenerico = (TimerGenericoBeanLocal) serviceLocator.getLocalEJB(TimerGenericoBeanLocal.class);
+//            personaFacade = (PersonaFacadeLocal) serviceLocator.getLocalEJB(PersonaFacadeLocal.class);
+//        } catch (Exception e) {
+//            Logger.getLogger(ListaNegraReservaCitasBean.class.getName()).log(Level.SEVERE, null, e);
+//        }
     }
 
     public String crearListaNegraReservaCitas(String comando) {
@@ -175,11 +175,11 @@ public class ListaNegraReservaCitasBean implements ListaNegraReservaCitasRemote,
         }
     }
 
-    public ConstanteRemote getConstanteBean() {
+    public ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 
-    public void setConstanteBean(ConstanteRemote constanteBean) {
+    public void setConstanteBean(ConstanteLocal constanteBean) {
         this.constanteBean = constanteBean;
     }
 
@@ -215,11 +215,11 @@ public class ListaNegraReservaCitasBean implements ListaNegraReservaCitasRemote,
         this.listaNegraReservaCitasFacade = listaNegraReservaCitasFacade;
     }
 
-    public TimerGenericoBeanRemote getTimerGenerico() {
+    public TimerGenericoBeanLocal getTimerGenerico() {
         return timerGenerico;
     }
 
-    public void setTimerGenerico(TimerGenericoBeanRemote timerGenerico) {
+    public void setTimerGenerico(TimerGenericoBeanLocal timerGenerico) {
         this.timerGenerico = timerGenerico;
     }
 

@@ -28,9 +28,9 @@ import co.uniandes.sisinfo.entities.Solicitud;
 import co.uniandes.sisinfo.entities.datosmaestros.Curso;
 import co.uniandes.sisinfo.entities.datosmaestros.Seccion;
 import co.uniandes.sisinfo.entities.datosmaestros.Sesion;
-import co.uniandes.sisinfo.serviciosfuncionales.CorreoRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.CorreoLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.ServiceLocator;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.CursoFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.CursoFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Atributo;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.ParserT;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
@@ -40,7 +40,7 @@ import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
  */
 @Stateless
 @EJB(name = "ResolucionBean", beanInterface = co.uniandes.sisinfo.serviciosnegocio.ResolucionLocal.class)
-public class ResolucionBean implements ResolucionRemote, ResolucionLocal {
+public class ResolucionBean implements  ResolucionLocal {
 
     //---------------------------------------
     // Atributos
@@ -53,20 +53,20 @@ public class ResolucionBean implements ResolucionRemote, ResolucionLocal {
      * CorreoBean
      */
     @EJB
-    private CorreoRemote correoBean;
+    private CorreoLocal correoBean;
     /**
      * CursoFacade
      */
     @EJB
-    private CursoFacadeRemote cursoFacade;
+    private CursoFacadeLocal cursoFacade;
     /**
      *  ConstanteBean
      */
     @EJB
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
 
     @EJB
-    private MonitoriaRemote monitoriaBean;
+    private MonitoriaLocal monitoriaBean;
 
     private ServiceLocator serviceLocator;
 
@@ -79,16 +79,16 @@ public class ResolucionBean implements ResolucionRemote, ResolucionLocal {
      * Constructor de ResolucionBean
      */
     public ResolucionBean() {
-        try {
-            serviceLocator = new ServiceLocator();
-            constanteBean = (ConstanteRemote) serviceLocator.getRemoteEJB(ConstanteRemote.class);
-            correoBean = (CorreoRemote) serviceLocator.getRemoteEJB(CorreoRemote.class);
-            cursoFacade = (CursoFacadeRemote) serviceLocator.getRemoteEJB(CursoFacadeRemote.class);
-            monitoriaBean = (MonitoriaRemote) serviceLocator.getRemoteEJB(MonitoriaRemote.class);
-            conversorServiciosSoporteProcesos = new ConversorServiciosSoporteProcesos();
-        } catch (NamingException ex) {
-            Logger.getLogger(ResolucionBean.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        try {
+//            serviceLocator = new ServiceLocator();
+//            constanteBean = (ConstanteLocal) serviceLocator.getLocalEJB(ConstanteLocal.class);
+//            correoBean = (CorreoLocal) serviceLocator.getLocalEJB(CorreoLocal.class);
+//            cursoFacade = (CursoFacadeLocal) serviceLocator.getLocalEJB(CursoFacadeLocal.class);
+//            monitoriaBean = (MonitoriaLocal) serviceLocator.getLocalEJB(MonitoriaLocal.class);
+//            conversorServiciosSoporteProcesos = new ConversorServiciosSoporteProcesos();
+//        } catch (NamingException ex) {
+//            Logger.getLogger(ResolucionBean.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }
 
     //---------------------------------------
@@ -320,7 +320,7 @@ public class ResolucionBean implements ResolucionRemote, ResolucionLocal {
      * Retorna CorreoBean
      * @return correoBean CorreoBean
      */
-    private CorreoRemote getCorreoBean() {
+    private CorreoLocal getCorreoBean() {
         return correoBean;
     }
 
@@ -328,7 +328,7 @@ public class ResolucionBean implements ResolucionRemote, ResolucionLocal {
      * Retorna CursoFacade
      * @return cursoFacade CursoFacade
      */
-    private CursoFacadeRemote getCursoFacade() {
+    private CursoFacadeLocal getCursoFacade() {
         return cursoFacade;
     }
 
@@ -347,7 +347,7 @@ public class ResolucionBean implements ResolucionRemote, ResolucionLocal {
      * Retorna ConstanteBean
      * @return constanteBean ConstanteBean
      */
-    private ConstanteRemote getConstanteBean() {
+    private ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 

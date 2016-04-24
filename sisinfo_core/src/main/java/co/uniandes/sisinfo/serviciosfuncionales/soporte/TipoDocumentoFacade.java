@@ -22,7 +22,7 @@ import co.uniandes.sisinfo.entities.datosmaestros.soporte.TipoDocumento;
  * @author lj.bautista31
  */
 @Stateless
-public class TipoDocumentoFacade implements TipoDocumentoFacadeLocal, TipoDocumentoFacadeRemote {
+public class TipoDocumentoFacade implements TipoDocumentoFacadeLocal {
 	@PersistenceContext(unitName="SoporteSisinfoPU")
     private EntityManager em;
 

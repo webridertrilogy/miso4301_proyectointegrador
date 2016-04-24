@@ -19,7 +19,7 @@ import org.hibernate.Hibernate;
  * @author Ivan Mauricio Melo Suarez
  */
 @Stateless
-public class ListaComandoXMLFacade extends AbstractFacade<ListaComandoXML> implements ListaComandoXMLFacadeLocal, ListaComandoXMLFacadeRemote {
+public class ListaComandoXMLFacade extends AbstractFacade<ListaComandoXML> implements ListaComandoXMLFacadeLocal {
 
     @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;

@@ -24,7 +24,7 @@ import javax.persistence.Query;
  */
 @Stateless
 @EJB(name = "MonitoriaFacade", beanInterface = co.uniandes.sisinfo.serviciosfuncionales.MonitoriaFacadeLocal.class)
-public class MonitoriaFacade implements MonitoriaFacadeLocal,MonitoriaFacadeRemote {
+public class MonitoriaFacade implements MonitoriaFacadeLocal {
 
 	@PersistenceContext(unitName="SoporteSisinfoPU")
     private EntityManager em;

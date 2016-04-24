@@ -21,7 +21,7 @@ import org.hibernate.Hibernate;
  * @author Asistente
  */
 @Stateless
-public class CargaProfesorFacade implements CargaProfesorFacadeLocal, CargaProfesorFacadeRemote {
+public class CargaProfesorFacade implements CargaProfesorFacadeLocal {
 
     @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;

@@ -22,7 +22,7 @@ import org.hibernate.Hibernate;
  * @author Asistente
  */
 @Stateless
-public class ProyectoFinanciadoFacade implements ProyectoFinanciadoFacadeLocal, ProyectoFinanciadoFacadeRemote {
+public class ProyectoFinanciadoFacade implements ProyectoFinanciadoFacadeLocal {
     @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 

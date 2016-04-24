@@ -11,7 +11,7 @@ import javax.persistence.PersistenceContext;
  * @author Germán Florez, Marcela Morales
  */
 @Stateless
-public class DisponibilidadCoordinacionFacade implements DisponibilidadCoordinacionFacadeLocal, DisponibilidadCoordinacionFacadeRemote {
+public class DisponibilidadCoordinacionFacade implements DisponibilidadCoordinacionFacadeLocal {
     @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 

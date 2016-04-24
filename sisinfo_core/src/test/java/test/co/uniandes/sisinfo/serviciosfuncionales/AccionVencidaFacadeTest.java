@@ -15,10 +15,8 @@ import co.uniandes.sisinfo.entities.AccionVencida;
 import co.uniandes.sisinfo.entities.AsistenciaGraduada;
 import co.uniandes.sisinfo.serviciosfuncionales.AccionVencidaFacade;
 import co.uniandes.sisinfo.serviciosfuncionales.AccionVencidaFacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.AccionVencidaFacadeRemote;
 import co.uniandes.sisinfo.serviciosfuncionales.AsistenciaGraduadaFacade;
 import co.uniandes.sisinfo.serviciosfuncionales.AsistenciaGraduadaFacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.AsistenciaGraduadaFacadeRemote;
 
 /**
  * Prueba unitaria para ejecutar de manera explicita todos los metodos de todas
@@ -44,11 +42,9 @@ public class AccionVencidaFacadeTest {
 		return ShrinkWrap.create(WebArchive.class, "SisinfoCore.war")
 				.addPackage(AccionVencidaFacade.class.getPackage())
 				.addPackage(AccionVencidaFacadeLocal.class.getPackage())
-				.addPackage(AccionVencidaFacadeRemote.class.getPackage())
 				.addPackage(AccionVencida.class.getPackage())
 				.addPackage(AsistenciaGraduadaFacade.class.getPackage())
 				.addPackage(AsistenciaGraduadaFacadeLocal.class.getPackage())
-				.addPackage(AsistenciaGraduadaFacadeRemote.class.getPackage())
 				.addPackage(AsistenciaGraduada.class.getPackage())
 				.addAsResource("persistence.xml", "META-INF/persistence.xml")
 				.addAsWebInfResource("META-INF/beans.xml", "beans.xml");

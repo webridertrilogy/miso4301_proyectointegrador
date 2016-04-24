@@ -17,7 +17,7 @@ import javax.persistence.Query;
  * @author da-naran
  */
 @Stateless
-public class SesionFacade implements SesionFacadeLocal, SesionFacadeRemote {
+public class SesionFacade implements SesionFacadeLocal {
     @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 

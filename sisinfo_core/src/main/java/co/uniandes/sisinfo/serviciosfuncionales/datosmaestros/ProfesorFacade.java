@@ -20,7 +20,7 @@ import org.hibernate.Hibernate;
  * @author da-naran
  */
 @Stateless
-public class ProfesorFacade implements ProfesorFacadeLocal, ProfesorFacadeRemote {
+public class ProfesorFacade implements ProfesorFacadeLocal {
     @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 

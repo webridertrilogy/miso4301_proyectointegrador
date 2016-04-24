@@ -29,11 +29,11 @@ import co.uniandes.sisinfo.entities.datosmaestros.Curso;
 import co.uniandes.sisinfo.entities.datosmaestros.Parametro;
 import co.uniandes.sisinfo.entities.datosmaestros.Seccion;
 import co.uniandes.sisinfo.serviciosfuncionales.ConvocatoriaFacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.CorreoRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.PeriodoFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.CorreoLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.PeriodoFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.ServiceLocator;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.CursoFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.SeccionFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.CursoFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.SeccionFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.ParserT;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
 
@@ -42,7 +42,7 @@ import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
  */
 @Stateless
 @EJB(name = "ConvocatoriaBean", beanInterface = co.uniandes.sisinfo.serviciosnegocio.ConvocatoriaLocal.class)
-public class ConvocatoriaBean implements ConvocatoriaRemote, ConvocatoriaLocal {
+public class ConvocatoriaBean implements  ConvocatoriaLocal {
 
     @EJB
     private ConvocatoriaFacadeLocal convocatoriaFacade;
@@ -57,35 +57,35 @@ public class ConvocatoriaBean implements ConvocatoriaRemote, ConvocatoriaLocal {
      * PeriodoFacade
      */
     @EJB
-    private PeriodoFacadeRemote periodoFacade;
+    private PeriodoFacadeLocal periodoFacade;
     /**
      * CursoFacade
      */
     @EJB
-    private CursoFacadeRemote cursoFacade;
+    private CursoFacadeLocal cursoFacade;
     /**
      * CorreoBean
      */
     @EJB
-    private CorreoRemote correoBean;
+    private CorreoLocal correoBean;
     /**
      * SeccionFacade
      */
     @EJB
-    private SeccionFacadeRemote seccionFacade;
+    private SeccionFacadeLocal seccionFacade;
     /**
      *  ConstanteBean
      */
     @EJB
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
     
     private ServiceLocator serviceLocator;
    /* @EJB
-    private TareaFacadeRemote tareaFacade;
+    private TareaFacadeLocal tareaFacade;
     @EJB
-    private TareaRemote tareaBean;
+    private TareaLocal tareaBean;
     @EJB
-    private AlertaFacadeRemote alertaFacade;*/
+    private AlertaFacadeLocal alertaFacade;*/
 
     //---------------------------------------
     // Constructor
@@ -94,20 +94,20 @@ public class ConvocatoriaBean implements ConvocatoriaRemote, ConvocatoriaLocal {
      * Constructor de ConvocatoriaBean
      */
     public ConvocatoriaBean() {
-        try {
-            serviceLocator = new ServiceLocator();
-            correoBean = (CorreoRemote) serviceLocator.getRemoteEJB(CorreoRemote.class);
-            constanteBean = (ConstanteRemote) serviceLocator.getRemoteEJB(ConstanteRemote.class);
-            //alertaFacade = (AlertaFacadeRemote) serviceLocator.getRemoteEJB(AlertaFacadeRemote.class);
-            seccionFacade = (SeccionFacadeRemote) serviceLocator.getRemoteEJB(SeccionFacadeRemote.class);
-            cursoFacade = (CursoFacadeRemote) serviceLocator.getRemoteEJB(CursoFacadeRemote.class);
-          //  tareaFacade = (TareaFacadeRemote) serviceLocator.getRemoteEJB(TareaFacadeRemote.class);
-            periodoFacade = (PeriodoFacadeRemote) serviceLocator.getRemoteEJB(PeriodoFacadeRemote.class);
-          //  tareaBean = (TareaRemote)serviceLocator.getRemoteEJB(TareaRemote.class);
-
-        } catch (NamingException ex) {
-            Logger.getLogger(ConvocatoriaBean.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        try {
+//            serviceLocator = new ServiceLocator();
+//            correoBean = (CorreoLocal) serviceLocator.getLocalEJB(CorreoLocal.class);
+//            constanteBean = (ConstanteLocal) serviceLocator.getLocalEJB(ConstanteLocal.class);
+//            //alertaFacade = (AlertaFacadeLocal) serviceLocator.getLocalEJB(AlertaFacadeLocal.class);
+//            seccionFacade = (SeccionFacadeLocal) serviceLocator.getLocalEJB(SeccionFacadeLocal.class);
+//            cursoFacade = (CursoFacadeLocal) serviceLocator.getLocalEJB(CursoFacadeLocal.class);
+//          //  tareaFacade = (TareaFacadeLocal) serviceLocator.getLocalEJB(TareaFacadeLocal.class);
+//            periodoFacade = (PeriodoFacadeLocal) serviceLocator.getLocalEJB(PeriodoFacadeLocal.class);
+//          //  tareaBean = (TareaLocal)serviceLocator.getLocalEJB(TareaLocal.class);
+//
+//        } catch (NamingException ex) {
+//            Logger.getLogger(ConvocatoriaBean.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }
 
     //---------------------------------------
@@ -337,7 +337,7 @@ public class ConvocatoriaBean implements ConvocatoriaRemote, ConvocatoriaLocal {
      * Retorna PeriodoFacade
      * @return periodoFacade PeriodoFacade
      */
-    private PeriodoFacadeRemote getPeriodoFacade() {
+    private PeriodoFacadeLocal getPeriodoFacade() {
         return periodoFacade;
     }
 
@@ -345,7 +345,7 @@ public class ConvocatoriaBean implements ConvocatoriaRemote, ConvocatoriaLocal {
      * Retorna CursoFacade
      * @return cursoFacade CursoFacade
      */
-    private CursoFacadeRemote getCursoFacade() {
+    private CursoFacadeLocal getCursoFacade() {
         return cursoFacade;
     }
 
@@ -353,7 +353,7 @@ public class ConvocatoriaBean implements ConvocatoriaRemote, ConvocatoriaLocal {
      * Retorna CorreoBean
      * @return correoBean CorreoBean
      */
-    private CorreoRemote getCorreoBean() {
+    private CorreoLocal getCorreoBean() {
         return correoBean;
     }
 
@@ -361,7 +361,7 @@ public class ConvocatoriaBean implements ConvocatoriaRemote, ConvocatoriaLocal {
      * Retorna SeccionFacade
      * @return seccionFacade SeccionFacade
      */
-    private SeccionFacadeRemote getSeccionFacade() {
+    private SeccionFacadeLocal getSeccionFacade() {
         return seccionFacade;
     }
 
@@ -369,7 +369,7 @@ public class ConvocatoriaBean implements ConvocatoriaRemote, ConvocatoriaLocal {
      * Retorna ConstanteBean
      * @return constanteBean ConstanteBean
      */
-    private ConstanteRemote getConstanteBean() {
+    private ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 
@@ -377,11 +377,11 @@ public class ConvocatoriaBean implements ConvocatoriaRemote, ConvocatoriaLocal {
         return convocatoriaFacade;
     }
 
-    /*public TareaRemote getTareaBean() {
+    /*public TareaLocal getTareaBean() {
         return tareaBean;
     }
 
-    public TareaFacadeRemote getTareaFacade() {
+    public TareaFacadeLocal getTareaFacade() {
         return tareaFacade;
     }*/
 

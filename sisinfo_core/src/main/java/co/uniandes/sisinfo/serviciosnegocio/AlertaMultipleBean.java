@@ -21,7 +21,6 @@ import java.util.logging.Logger;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
-import javax.naming.NamingException;
 
 import co.uniandes.sisinfo.comun.constantes.Constantes;
 import co.uniandes.sisinfo.comun.constantes.Mensajes;
@@ -32,7 +31,7 @@ import co.uniandes.sisinfo.entities.TareaMultiple;
 import co.uniandes.sisinfo.entities.TareaSencilla;
 import co.uniandes.sisinfo.entities.datosmaestros.Usuario;
 import co.uniandes.sisinfo.serviciosfuncionales.AlertaMultipleFacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.CorreoRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.CorreoLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.PeriodicidadFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.ServiceLocator;
 import co.uniandes.sisinfo.serviciosfuncionales.TareaMultipleFacadeLocal;
@@ -45,7 +44,7 @@ import co.uniandes.sisinfo.serviciosfuncionales.seguridad.UsuarioFacadeLocal;
  */
 @Stateless
 @EJB(name = "AlertaMultipleBean", beanInterface = co.uniandes.sisinfo.serviciosnegocio.AlertaMultipleLocal.class)
-public class AlertaMultipleBean implements AlertaMultipleRemote, AlertaMultipleLocal {
+public class AlertaMultipleBean implements  AlertaMultipleLocal {
     //---------------------------------------
     // Atributos
     //---------------------------------------
@@ -63,14 +62,14 @@ public class AlertaMultipleBean implements AlertaMultipleRemote, AlertaMultipleL
      * ResponsableFacade
      */
     @EJB
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
     /**
      * CorreoBean
      */
     @EJB
-    private CorreoRemote correoBean;
+    private CorreoLocal correoBean;
     @EJB
-    private TimerGenericoBeanRemote timerGenericoBean;
+    private TimerGenericoBeanLocal timerGenericoBean;
     /**
      *  ConstanteBean
      */
@@ -92,20 +91,20 @@ public class AlertaMultipleBean implements AlertaMultipleRemote, AlertaMultipleL
      * Constructor de AlertaBean
      */
     public AlertaMultipleBean() {
-        try {
-            serviceLocator = new ServiceLocator();
-            constanteBean = (ConstanteRemote) serviceLocator.getRemoteEJB(ConstanteRemote.class);
-            timerGenericoBean = (TimerGenericoBeanRemote) serviceLocator.getRemoteEJB(TimerGenericoBeanRemote.class);
-            correoBean = (CorreoRemote) serviceLocator.getRemoteEJB(CorreoRemote.class);
-        } catch (NamingException ex) {
-            Logger.getLogger(AlertaMultipleBean.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        try {
+//            serviceLocator = new ServiceLocator();
+//            constanteBean = (ConstanteLocal) serviceLocator.getLocalEJB(ConstanteLocal.class);
+//            timerGenericoBean = (TimerGenericoBeanLocal) serviceLocator.getLocalEJB(TimerGenericoBeanLocal.class);
+//            correoBean = (CorreoLocal) serviceLocator.getLocalEJB(CorreoLocal.class);
+//        } catch (NamingException ex) {
+//            Logger.getLogger(AlertaMultipleBean.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }
 
     //---------------------------------------
     // Métodos
     //---------------------------------------
-    @Override
+    
     public String cargarAlertas(String comando) {
         try {
             getParser().leerXML(comando);
@@ -333,7 +332,7 @@ public class AlertaMultipleBean implements AlertaMultipleRemote, AlertaMultipleL
                 throw new Exception("La periodicidad para la alerta de tipo " + tipo + " no existe dentro del sistema");
             }
             Timestamp fechaInicioTimer = new Timestamp(new Date().getTime() + periodicidad.getValor());
-            Long idTimer = timerGenericoBean.crearTimer2("co.uniandes.sisinfo.serviciosnegocio.AlertaMultipleRemote", "ejecutarAlertaPorTipo", fechaInicioTimer, tipo, "Alertas y tareas", this.getClass().toString(), "ejecutarAlertaPorTipo", "El timer es creado periodicamente para ejecutar las tareas de una alerta");
+            Long idTimer = timerGenericoBean.crearTimer2("co.uniandes.sisinfo.serviciosnegocio.AlertaMultipleLocal", "ejecutarAlertaPorTipo", fechaInicioTimer, tipo, "Alertas y tareas", this.getClass().toString(), "ejecutarAlertaPorTipo", "El timer es creado periodicamente para ejecutar las tareas de una alerta");
             am.setIdTimer(idTimer);
             alertaMultipleFacade.edit(am);
             // Se verifica que el timer de tareas vencidas se encuentre creado
@@ -364,7 +363,7 @@ public class AlertaMultipleBean implements AlertaMultipleRemote, AlertaMultipleL
                 return getParser().generarRespuesta(new Vector(), getConstanteBean().getConstante(Constantes.CMD_REGENERAR_ALERTA), getConstanteBean().getConstante(Constantes.VAL_TAG_TIPO_MENSAJE_ERROR), Mensajes.CONFIGURAR_ALERTAS_GENERICAS_ERR_0003, new ArrayList());
             }
             Timestamp fechaInicioTimer = new Timestamp(new Date().getTime() + periodicidad.getValor());
-            Long idTimer = timerGenericoBean.crearTimer2("co.uniandes.sisinfo.serviciosnegocio.AlertaMultipleRemote", "ejecutarAlertaPorTipo", fechaInicioTimer, tipoAlerta, "Alertas y tareas", this.getClass().toString(), "ejecutarAlertaPorTipo", "El timer es creado periodicamente para ejecutar las tareas de una alerta");
+            Long idTimer = timerGenericoBean.crearTimer2("co.uniandes.sisinfo.serviciosnegocio.AlertaMultipleLocal", "ejecutarAlertaPorTipo", fechaInicioTimer, tipoAlerta, "Alertas y tareas", this.getClass().toString(), "ejecutarAlertaPorTipo", "El timer es creado periodicamente para ejecutar las tareas de una alerta");
             am.setIdTimer(idTimer);
             alertaMultipleFacade.edit(am);
             return getParser().generarRespuesta(new Vector(), getConstanteBean().getConstante(Constantes.CMD_REGENERAR_ALERTA), getConstanteBean().getConstante(Constantes.VAL_TAG_TIPO_MENSAJE_MENSAJE), Mensajes.COM_MSJ_0001, new Vector());
@@ -503,14 +502,14 @@ public class AlertaMultipleBean implements AlertaMultipleRemote, AlertaMultipleL
         alertaMultiple.setNombre(nombre);
 
         Timestamp fechaInicioTimer = new Timestamp(new Date().getTime() + periodicidad.getValor());
-        Long idTimer = timerGenericoBean.crearTimer2("co.uniandes.sisinfo.serviciosnegocio.AlertaMultipleRemote", "ejecutarAlertaPorTipo", fechaInicioTimer, tipo, "Alertas y tareas", this.getClass().toString(), "crearAlertaMultiple", "El timer es creado cuando se crea la alerta por primera vez y es usado para realizar la ejecución de las tareas de la alerta");
+        Long idTimer = timerGenericoBean.crearTimer2("co.uniandes.sisinfo.serviciosnegocio.AlertaMultipleLocal", "ejecutarAlertaPorTipo", fechaInicioTimer, tipo, "Alertas y tareas", this.getClass().toString(), "crearAlertaMultiple", "El timer es creado cuando se crea la alerta por primera vez y es usado para realizar la ejecución de las tareas de la alerta");
         alertaMultiple.setIdTimer(idTimer);
         alertaMultipleFacade.edit(alertaMultiple);
         return alertaMultiple;
 
     }
 
-    public ConstanteRemote getConstanteBean() {
+    public ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 
@@ -536,9 +535,9 @@ public class AlertaMultipleBean implements AlertaMultipleRemote, AlertaMultipleL
     }
 
     public ConversorAlertaMultiple getConversorAlertaMultiple() {
-        if (conversorAlertaMultiple == null) {
-            conversorAlertaMultiple = new ConversorAlertaMultiple(constanteBean, alertaMultipleFacade, tareaMultipleBean, periodicidadFacade, timerGenericoBean);
-        }
+//        if (conversorAlertaMultiple == null) {
+//            conversorAlertaMultiple = new ConversorAlertaMultiple(constanteBean, alertaMultipleFacade, tareaMultipleBean, periodicidadFacade, timerGenericoBean);
+//        }
         return conversorAlertaMultiple;
     }
 

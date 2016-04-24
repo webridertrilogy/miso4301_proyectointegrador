@@ -21,7 +21,7 @@ import co.uniandes.sisinfo.entities.datosmaestros.soporte.Departamento;
  * @author Administrador
  */
 @Stateless
-public class DepartamentoFacade extends AbstractFacade<Departamento> implements DepartamentoFacadeLocal, DepartamentoFacadeRemote {
+public class DepartamentoFacade extends AbstractFacade<Departamento> implements DepartamentoFacadeLocal {
 
     @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;

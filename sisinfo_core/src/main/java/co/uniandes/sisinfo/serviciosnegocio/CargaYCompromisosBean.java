@@ -37,29 +37,29 @@ import co.uniandes.sisinfo.entities.datosmaestros.NivelFormacion;
 import co.uniandes.sisinfo.entities.datosmaestros.Persona;
 import co.uniandes.sisinfo.entities.datosmaestros.Profesor;
 import co.uniandes.sisinfo.serviciosfuncionales.CargaProfesorFacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.CorreoRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.CorreoLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.CursoPlaneadoFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.DescargaProfesorFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.DireccionTesisFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.IntencionPublicacionFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.NivelTesisFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.OtrasActividadesFacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.PeriodicidadFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.PeriodicidadFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.PeriodoPlaneacionFacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.ProyectoDeGradoFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.ProyectoDeGradoFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.ProyectoFinanciadoFacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.ReportesFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.ReportesFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.ServiceLocator;
-import co.uniandes.sisinfo.serviciosfuncionales.TareaSencillaFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.Tesis1FacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.Tesis2FacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.TipoPublicacionFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.CursoFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.EstudianteFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.NivelFormacionFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.PersonaFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.ProfesorFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.SeccionFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.TareaSencillaFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.Tesis1FacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.Tesis2FacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.TipoPublicacionFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.CursoFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.EstudianteFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.NivelFormacionFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.PersonaFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.ProfesorFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.SeccionFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.ParserT;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
 
@@ -68,12 +68,12 @@ import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
  * @author Ivan Melo, Marcela Morales
  */
 @Stateless
-public class CargaYCompromisosBean implements CargaYCompromisosBeanRemote, CargaYCompromisosBeanLocal {
+public class CargaYCompromisosBean implements  CargaYCompromisosBeanLocal {
 
     //-----------------------------------------------------------------
     // CONSTANTES
     //-----------------------------------------------------------------
-    private final static String RUTA_INTERFAZ_REMOTA = "co.uniandes.sisinfo.serviciosnegocio.CargaYCompromisosBeanRemote";
+    private final static String RUTA_INTERFAZ_REMOTA = "co.uniandes.sisinfo.serviciosnegocio.CargaYCompromisosBeanLocal";
     private final static String NOMBRE_METODO_TIMER = "manejarTimerCYC";
     //--------BEANS---------
     @EJB
@@ -85,33 +85,33 @@ public class CargaYCompromisosBean implements CargaYCompromisosBeanRemote, Carga
     @EJB
     private PeriodoPlaneacionFacadeLocal periodoPlaneacionFacade;
     @EJB
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
     @EJB
-    private ProfesorFacadeRemote profesorFacade;
+    private ProfesorFacadeLocal profesorFacade;
     @EJB
-    private TareaMultipleRemote tareaBean;
+    private TareaMultipleLocal tareaBean;
     @EJB
-    private TareaSencillaFacadeRemote tareaSencillaFacade;
+    private TareaSencillaFacadeLocal tareaSencillaFacade;
     @EJB
-    private PeriodicidadFacadeRemote periodicidadFacade;
+    private PeriodicidadFacadeLocal periodicidadFacade;
     @EJB
-    private CorreoRemote correoBean;
+    private CorreoLocal correoBean;
     @EJB
-    private TimerGenericoBeanRemote timerGenerico;
+    private TimerGenericoBeanLocal timerGenerico;
     @EJB
-    private PersonaFacadeRemote personaFacade;
+    private PersonaFacadeLocal personaFacade;
     @EJB
-    private NivelFormacionFacadeRemote nivelFormacionRemote;
+    private NivelFormacionFacadeLocal nivelFormacionLocal;
     @EJB
-    private TipoPublicacionFacadeRemote tipoPublicacionFacade;
+    private TipoPublicacionFacadeLocal tipoPublicacionFacade;
     @EJB
     private DireccionTesisFacadeLocal direccionTesisFacade;
     @EJB
-    private Tesis1FacadeRemote tesis1Facade;
+    private Tesis1FacadeLocal tesis1Facade;
     @EJB
-    private Tesis2FacadeRemote tesis2Facade;
+    private Tesis2FacadeLocal tesis2Facade;
     @EJB
-    private ProyectoDeGradoFacadeRemote proyectoDeGradoFacade;
+    private ProyectoDeGradoFacadeLocal proyectoDeGradoFacade;
     @EJB
     private ProyectoFinanciadoFacadeLocal proyectoFinanciadoFacadeLocal;
     @EJB
@@ -119,56 +119,55 @@ public class CargaYCompromisosBean implements CargaYCompromisosBeanRemote, Carga
     @EJB
     private DescargaProfesorFacadeLocal descargaProfesorFacadeLocal;
     @EJB
-    private EstudianteFacadeRemote estudianteFacadeRemote;
+    private EstudianteFacadeLocal estudianteFacadeLocal;
     @EJB
-    private SeccionFacadeRemote seccionFacadeRemote;
+    private SeccionFacadeLocal seccionFacadeLocal;
     @EJB
-    private CursoFacadeRemote cursoFacadeRemote;
+    private CursoFacadeLocal cursoFacadeLocal;
     @EJB
-    private NivelTesisFacadeLocal nivelTesisFacadeRemote;
+    private NivelTesisFacadeLocal nivelTesisFacadeLocal;
+   
     @EJB
-    private HistoricoCargaYCompromisosBeanRemote beanCargaHistoricas;
-    @EJB
-    private ReportesFacadeRemote reporteFacadeRemote;
+    private ReportesFacadeLocal reporteFacadeLocal;
     //---OTROS--------------------
     private ParserT parser;
     private ServiceLocator serviceLocator;
     @EJB
-    private TareaSencillaRemote tareaSencillaBean;
+    private TareaSencillaLocal tareaSencillaBean;
     private ConversorCargaYCompromisos conversor;
 
     //-----------------------------------------------------------------
     // CONSTRUCTOR
     //-----------------------------------------------------------------
     public CargaYCompromisosBean() {
-        try {
-            parser = new ParserT();
-            serviceLocator = new ServiceLocator();
-            constanteBean = (ConstanteRemote) serviceLocator.getRemoteEJB(ConstanteRemote.class);
-            profesorFacade = (ProfesorFacadeRemote) serviceLocator.getRemoteEJB(ProfesorFacadeRemote.class);
-            tareaSencillaFacade = (TareaSencillaFacadeRemote) serviceLocator.getRemoteEJB(TareaSencillaFacadeRemote.class);
-            tareaBean = (TareaMultipleRemote) serviceLocator.getRemoteEJB(TareaMultipleRemote.class);
-            periodicidadFacade = (PeriodicidadFacadeRemote) serviceLocator.getRemoteEJB(PeriodicidadFacadeRemote.class);
-            //Tesis de Maestría
-            tesis1Facade = (Tesis1FacadeRemote) serviceLocator.getRemoteEJB(Tesis1FacadeRemote.class);
-            tesis2Facade = (Tesis2FacadeRemote) serviceLocator.getRemoteEJB(Tesis2FacadeRemote.class);
-            //Proyecto de Grado
-            proyectoDeGradoFacade = (ProyectoDeGradoFacadeRemote) serviceLocator.getRemoteEJB(ProyectoDeGradoFacadeRemote.class);
-            correoBean = (CorreoRemote) serviceLocator.getRemoteEJB(CorreoRemote.class);
-            timerGenerico = (TimerGenericoBeanRemote) serviceLocator.getRemoteEJB(TimerGenericoBeanRemote.class);
-            personaFacade = (PersonaFacadeRemote) serviceLocator.getRemoteEJB(PersonaFacadeRemote.class);
-            nivelFormacionRemote = (NivelFormacionFacadeRemote) serviceLocator.getRemoteEJB(NivelFormacionFacadeRemote.class);
-            tipoPublicacionFacade = (TipoPublicacionFacadeRemote) serviceLocator.getRemoteEJB(TipoPublicacionFacadeRemote.class);
-            estudianteFacadeRemote = (EstudianteFacadeRemote) serviceLocator.getRemoteEJB(EstudianteFacadeRemote.class);
-            seccionFacadeRemote = (SeccionFacadeRemote) serviceLocator.getRemoteEJB(SeccionFacadeRemote.class);
-            cursoFacadeRemote = (CursoFacadeRemote) serviceLocator.getRemoteEJB(CursoFacadeRemote.class);
-            reporteFacadeRemote = (ReportesFacadeRemote) serviceLocator.getRemoteEJB(ReportesFacadeRemote.class);
-            beanCargaHistoricas = (HistoricoCargaYCompromisosBeanRemote) serviceLocator.getRemoteEJB(HistoricoCargaYCompromisosBeanRemote.class);
-            tareaSencillaBean = (TareaSencillaRemote) serviceLocator.getRemoteEJB(TareaSencillaRemote.class);
-            conversor = new ConversorCargaYCompromisos(seccionFacadeRemote, cursoFacadeRemote, tesis1Facade, tesis2Facade, proyectoDeGradoFacade, nivelTesisFacadeRemote, tipoPublicacionFacade, nivelFormacionRemote, estudianteFacadeRemote, cargaProfesorFacade, constanteBean);
-        } catch (NamingException ex) {
-            Logger.getLogger(CargaYCompromisosBean.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        try {
+//            parser = new ParserT();
+//            serviceLocator = new ServiceLocator();
+//            constanteBean = (ConstanteLocal) serviceLocator.getLocalEJB(ConstanteLocal.class);
+//            profesorFacade = (ProfesorFacadeLocal) serviceLocator.getLocalEJB(ProfesorFacadeLocal.class);
+//            tareaSencillaFacade = (TareaSencillaFacadeLocal) serviceLocator.getLocalEJB(TareaSencillaFacadeLocal.class);
+//            tareaBean = (TareaMultipleLocal) serviceLocator.getLocalEJB(TareaMultipleLocal.class);
+//            periodicidadFacade = (PeriodicidadFacadeLocal) serviceLocator.getLocalEJB(PeriodicidadFacadeLocal.class);
+//            //Tesis de Maestría
+//            tesis1Facade = (Tesis1FacadeLocal) serviceLocator.getLocalEJB(Tesis1FacadeLocal.class);
+//            tesis2Facade = (Tesis2FacadeLocal) serviceLocator.getLocalEJB(Tesis2FacadeLocal.class);
+//            //Proyecto de Grado
+//            proyectoDeGradoFacade = (ProyectoDeGradoFacadeLocal) serviceLocator.getLocalEJB(ProyectoDeGradoFacadeLocal.class);
+//            correoBean = (CorreoLocal) serviceLocator.getLocalEJB(CorreoLocal.class);
+//            timerGenerico = (TimerGenericoBeanLocal) serviceLocator.getLocalEJB(TimerGenericoBeanLocal.class);
+//            personaFacade = (PersonaFacadeLocal) serviceLocator.getLocalEJB(PersonaFacadeLocal.class);
+//            nivelFormacionLocal = (NivelFormacionFacadeLocal) serviceLocator.getLocalEJB(NivelFormacionFacadeLocal.class);
+//            tipoPublicacionFacade = (TipoPublicacionFacadeLocal) serviceLocator.getLocalEJB(TipoPublicacionFacadeLocal.class);
+//            estudianteFacadeLocal = (EstudianteFacadeLocal) serviceLocator.getLocalEJB(EstudianteFacadeLocal.class);
+//            seccionFacadeLocal = (SeccionFacadeLocal) serviceLocator.getLocalEJB(SeccionFacadeLocal.class);
+//            cursoFacadeLocal = (CursoFacadeLocal) serviceLocator.getLocalEJB(CursoFacadeLocal.class);
+//            reporteFacadeLocal = (ReportesFacadeLocal) serviceLocator.getLocalEJB(ReportesFacadeLocal.class);
+//            beanCargaHistoricas = (HistoricoCargaYCompromisosBeanLocal) serviceLocator.getLocalEJB(HistoricoCargaYCompromisosBeanLocal.class);
+//            tareaSencillaBean = (TareaSencillaLocal) serviceLocator.getLocalEJB(TareaSencillaLocal.class);
+//            conversor = new ConversorCargaYCompromisos(seccionFacadeLocal, cursoFacadeLocal, tesis1Facade, tesis2Facade, proyectoDeGradoFacade, nivelTesisFacadeLocal, tipoPublicacionFacade, nivelFormacionLocal, estudianteFacadeLocal, cargaProfesorFacade, constanteBean);
+//        } catch (NamingException ex) {
+//            Logger.getLogger(CargaYCompromisosBean.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }
 
     //-----------------------------------------------------------------
@@ -509,7 +508,7 @@ public class CargaYCompromisosBean implements CargaYCompromisosBeanRemote, Carga
                 return getParser().generarRespuesta(secuencias, getConstanteBean().getConstante(Constantes.CMD_CONSULTAR_CARGAYCOMPROMISOS_PROFESOR_POR_CORREO_PERIODO), getConstanteBean().getConstante(Constantes.VAL_TAG_TIPO_MENSAJE_MENSAJE), Mensajes.CYC_MSJ_0000, new ArrayList());
             } else {
                 //: llamar a historicos para buscar la carga
-                String resp = beanCargaHistoricas.consultarCargaPorCorreoPeriodo(xml);
+                String resp = null;// beanCargaHistoricas.consultarCargaPorCorreoPeriodo(xml);
                 return resp;
             }
 
@@ -1349,9 +1348,9 @@ public class CargaYCompromisosBean implements CargaYCompromisosBeanRemote, Carga
      */
     private NivelFormacion definirReglaNivelTesis(Profesor profesor) {
         if (profesor.getNivelPlanta() != null && profesor.getNivelPlanta().getNombre().equals(getConstanteBean().getConstante(Constantes.TAG_PARAM_NIVEL_INSTRUCTOR))) {
-            return nivelFormacionRemote.findByName(getConstanteBean().getConstante(Constantes.TAG_PARAM_NIVEL_PREGRADO));
+            return nivelFormacionLocal.findByName(getConstanteBean().getConstante(Constantes.TAG_PARAM_NIVEL_PREGRADO));
         } else {
-            return nivelFormacionRemote.findByName(getConstanteBean().getConstante(Constantes.TAG_PARAM_NIVEL_DOCTORADO));
+            return nivelFormacionLocal.findByName(getConstanteBean().getConstante(Constantes.TAG_PARAM_NIVEL_DOCTORADO));
         }
     }
 
@@ -1433,7 +1432,7 @@ public class CargaYCompromisosBean implements CargaYCompromisosBeanRemote, Carga
     public String darPeriodosPlaneacion(String xml) {
         try {
             //consulta secuencia de períodos históricos
-            String respPeriodosHistoricos = beanCargaHistoricas.consultarPeriodos(xml);
+            String respPeriodosHistoricos = null;// beanCargaHistoricas.consultarPeriodos(xml);
             Secuencia secRespuestaPeriodosHistoricos = parser.leerRespuesta(respPeriodosHistoricos);
             Secuencia secPeriodosRespuesta = secRespuestaPeriodosHistoricos.obtenerPrimeraSecuencia(getConstanteBean().getConstante(Constantes.TAG_PARAM_PERIODOS));
 
@@ -1493,7 +1492,7 @@ public class CargaYCompromisosBean implements CargaYCompromisosBeanRemote, Carga
      */
     public String darNivelesTesis(String xml) {
         try {
-            Collection<NivelTesis> nivelesT = nivelTesisFacadeRemote.findAll();
+            Collection<NivelTesis> nivelesT = nivelTesisFacadeLocal.findAll();
             Secuencia secNivelesTesis = new Secuencia(getConstanteBean().getConstante(Constantes.TAG_PARAM_NIVELES_ESTADO_TESIS), "");
             for (NivelTesis elem : nivelesT) {
                 Secuencia sec = new Secuencia(getConstanteBean().getConstante(Constantes.TAG_PARAM_NIVEL_ESTADO_TESIS), elem.getNivelTesis());
@@ -1553,15 +1552,15 @@ public class CargaYCompromisosBean implements CargaYCompromisosBeanRemote, Carga
         return periodoPlaneacionFacade;
     }
 
-    public ProfesorFacadeRemote getProfesorFacade() {
+    public ProfesorFacadeLocal getProfesorFacade() {
         return profesorFacade;
     }
 
     public ConversorCargaYCompromisos getConversor(){
-        return new ConversorCargaYCompromisos(seccionFacadeRemote, cursoFacadeRemote, tesis1Facade, tesis2Facade, proyectoDeGradoFacade, nivelTesisFacadeRemote, tipoPublicacionFacade, nivelFormacionRemote, estudianteFacadeRemote, cargaProfesorFacade, constanteBean);
+        return null;// new ConversorCargaYCompromisos(seccionFacadeLocal, cursoFacadeLocal, tesis1Facade, tesis2Facade, proyectoDeGradoFacade, nivelTesisFacadeLocal, tipoPublicacionFacade, nivelFormacionLocal, estudianteFacadeLocal, cargaProfesorFacade, constanteBean);
     }
 
-    public ConstanteRemote getConstanteBean() {
+    public ConstanteLocal getConstanteBean() {
         return constanteBean;
     }
 
@@ -1586,7 +1585,7 @@ public class CargaYCompromisosBean implements CargaYCompromisosBeanRemote, Carga
             if (enPrueba != null && enPrueba) {
                 resp = "TEST";
             } else {
-                resp = reporteFacadeRemote.hacerReporteCargaYcompromisosDepto(periodod.getId(), periodod.getPeriodo(), rutaHistoricos, rutaHistoricos);
+                resp = reporteFacadeLocal.hacerReporteCargaYcompromisosDepto(periodod.getId(), periodod.getPeriodo(), rutaHistoricos, rutaHistoricos);
             }
 
             if (resp == null || resp.equals("")) {
@@ -1907,7 +1906,7 @@ public class CargaYCompromisosBean implements CargaYCompromisosBeanRemote, Carga
             Secuencia secCargas = getConversor().crearSecuenciaCargasProfesor(cargas);
             secs.add(secCargas);
             String comandoXML = parser.crearComando(getConstanteBean().getConstante(Constantes.CMD_MIGRAR_CARGAS_PROFESORES_A_HISTORICOS), getConstanteBean().getConstante(Constantes.VAL_TAG_TIPO_CMD_CONSULTA), getConstanteBean().getConstante(Constantes.ROL_COORDINACION), secs);
-            String resp = beanCargaHistoricas.pasarCargasProfesoresAHistoricos(comandoXML);
+            String resp = null;// beanCargaHistoricas.pasarCargasProfesoresAHistoricos(comandoXML);
             System.out.println("Carga Y cOmromisos:migrarCargaYCompromisosPorPeriodo resp=" + resp);
             if (resp == null) {
                 System.out.println("CREO TIMER LINEA 2696 CYC BEAN");

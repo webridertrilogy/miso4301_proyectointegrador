@@ -18,7 +18,7 @@ import javax.persistence.PersistenceContext;
  * @author Administrador
  */
 @Stateless
-public class InscripcionEventoExternoFacade extends AbstractFacade<InscripcionEventoExterno> implements InscripcionEventoExternoFacadeLocal, InscripcionEventoExternoFacadeRemote {
+public class InscripcionEventoExternoFacade extends AbstractFacade<InscripcionEventoExterno> implements InscripcionEventoExternoFacadeLocal {
     @PersistenceContext(unitName = "SoporteSisinfoPU")
     private EntityManager em;
 

@@ -27,15 +27,15 @@ import co.uniandes.sisinfo.serviciosfuncionales.EstudiantePosgradoFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.HojaVidaFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.InformacionEmpresaFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.OfertaFacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.PeriodoFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.PeriodoFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.ProponenteFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.TipoAsistenciaGraduadaFacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.EstudianteFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.InformacionAcademicaFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.PersonaFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.EstudianteFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.InformacionAcademicaFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.PersonaFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.parser.Secuencia;
-import co.uniandes.sisinfo.serviciosfuncionales.soporte.PaisFacadeRemote;
-import co.uniandes.sisinfo.serviciosfuncionales.soporte.TipoDocumentoFacadeRemote;
+import co.uniandes.sisinfo.serviciosfuncionales.soporte.PaisFacadeLocal;
+import co.uniandes.sisinfo.serviciosfuncionales.soporte.TipoDocumentoFacadeLocal;
 
 /**
  * Conversor del módulo de Asistencias Graduadas y Bolsa de Empleo
@@ -47,15 +47,15 @@ public class ConversorBolsaEmpleo {
     // ATRIBUTOS
     //----------------------------------------------
     //Útil
-    private ConstanteRemote constanteBean;
+    private ConstanteLocal constanteBean;
     //Servicios
-    private EstudianteFacadeRemote estudianteFacade;
-    private PersonaFacadeRemote personaFacade;
-    private PeriodoFacadeRemote periodoFacade;
+    private EstudianteFacadeLocal estudianteFacade;
+    private PersonaFacadeLocal personaFacade;
+    private PeriodoFacadeLocal periodoFacade;
     private TipoAsistenciaGraduadaFacadeLocal tipoAsistenciaGraduadaFacade;
-    private PaisFacadeRemote paisFacade;
-    private TipoDocumentoFacadeRemote tipoDocumentoFacade;
-    private InformacionAcademicaFacadeRemote informacionAcademicaFacade;
+    private PaisFacadeLocal paisFacade;
+    private TipoDocumentoFacadeLocal tipoDocumentoFacade;
+    private InformacionAcademicaFacadeLocal informacionAcademicaFacade;
     private HojaVidaFacadeLocal hojaVidaFacade;
     private EstudiantePosgradoFacadeLocal estudiantePostgradoFacade;
     private ProponenteFacadeLocal proponenteFacade;
@@ -70,9 +70,9 @@ public class ConversorBolsaEmpleo {
      * Conversor del módulo de asistencias graduadas
      * @param constanteBean Referencia a los servicios de las constantes
      */
-    public ConversorBolsaEmpleo(ConstanteRemote constanteBean, EstudianteFacadeRemote estudianteFacade, PersonaFacadeRemote personaFacade,
-            PeriodoFacadeRemote periodoFacade, PaisFacadeRemote paisFacade, TipoAsistenciaGraduadaFacadeLocal tipoAsistenciaGraduadaFacade,
-            TipoDocumentoFacadeRemote tipoDocumentoFacade, InformacionAcademicaFacadeRemote informacionAcademicaFacade, HojaVidaFacadeLocal hojaVidaFacade,
+    public ConversorBolsaEmpleo(ConstanteLocal constanteBean, EstudianteFacadeLocal estudianteFacade, PersonaFacadeLocal personaFacade,
+            PeriodoFacadeLocal periodoFacade, PaisFacadeLocal paisFacade, TipoAsistenciaGraduadaFacadeLocal tipoAsistenciaGraduadaFacade,
+            TipoDocumentoFacadeLocal tipoDocumentoFacade, InformacionAcademicaFacadeLocal informacionAcademicaFacade, HojaVidaFacadeLocal hojaVidaFacade,
             EstudiantePosgradoFacadeLocal estudiantePostgradoFacade, ProponenteFacadeLocal proponenteFacade, OfertaFacadeLocal ofertaFacade,
             InformacionEmpresaFacadeLocal informacionEmpresaFacade) {
         this.constanteBean = constanteBean;
