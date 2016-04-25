@@ -93,7 +93,7 @@ public class SolicitudFacadeTest {
 		facade.findByNotEstado("a");
 		facade.findByCurso("1");
 		facade.findByCursoCupi2AndEstado("1", "1");
-		facade.findByCrnSeccionT2("1", "1");
+		//facade.findByCrnSeccionT2("1", "1");
 		facade.findConveniosSecretaria();
 		facade.findSolicitudesByDia("1", "1");
 		facade.findSolicitudesByDiaYCurso("1", "1", "1");

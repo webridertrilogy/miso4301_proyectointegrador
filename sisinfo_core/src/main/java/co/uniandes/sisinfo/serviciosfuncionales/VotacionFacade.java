@@ -66,6 +66,9 @@ public class VotacionFacade implements VotacionFacadeLocal {
         } catch (NonUniqueResultException e) {
             return (Votante) q.getResultList().get(0);
         }
+        catch (Exception e) {
+            return null;
+        }
     }
 
     public List<Votante> findByIdVotacion(String idVotacion) {
