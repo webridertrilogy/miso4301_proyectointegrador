@@ -50,14 +50,14 @@ operation generarDiagramaSimplificado() {
 	"\n\nInstanciarMetricasConectores".println();
 	instanciarMetricasConectores();
 	
-	var itemsdelete = target!Item.allInstances()->select(c | not c.name.isDefined());
+	//var itemsdelete = target!Item.allInstances()->select(c | not c.name.isDefined());
 	
-	"\tNúmero itemsDelete: ".println();
-	itemsdelete.size().println();
+	//"\tNúmero itemsDelete: ".println();
+	//itemsdelete.size().println();
 	
-	for (c in itemsdelete) {
-		delete c;
-	}
+	//for (c in itemsdelete) {
+	//	delete c;
+	//}
 
 	delete target!InvocacionV.allInstances();
 	delete target!Paquete.allInstances();

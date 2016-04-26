@@ -56,8 +56,8 @@ operation generarDiagramaSimplificado() {
 			}
 			elipseOrigen = simplificado.elementos.select(e | e.name = relacion.source.name and e.isTypeOf(target!Elipse)).first();
 			asociacion = new target!Asociacion();
-			
-			asociacion.color = target!Color#green;
+			asociacion.grosor = 3;
+			asociacion.color = target!Color#purple;
 			asociacion.estilo = target!EstiloLinea#SOLIDA;
 			asociacion.enrutamiento = target!TipoEnrutamiento#DIRECTO;
 			asociacion.flecha_source = target!TipoFlecha#NO_TIENE;
@@ -65,7 +65,7 @@ operation generarDiagramaSimplificado() {
 			asociacion.source = elipseOrigen;
 			asociacion.target = tablaDestino;
 			asociacion.nameSource = "".toString();
-			asociacion.nameTarget = "".toString();
+			asociacion.nameTarget = "C".toString();
 			elipseOrigen.conectores.add(asociacion);
 		}
 		for(relacion in microservicio.relaciones.select(r | r.tipos.first().isTypeOf(source!Read))){
@@ -81,8 +81,8 @@ operation generarDiagramaSimplificado() {
 			}
 			elipseOrigen = simplificado.elementos.select(e | e.name = relacion.source.name and e.isTypeOf(target!Elipse)).first();
 			asociacion = new target!Asociacion();
-			
-			asociacion.color = target!Color#black;
+			asociacion.grosor = 1;
+			asociacion.color = target!Color#green;
 			asociacion.estilo = target!EstiloLinea#SOLIDA;
 			asociacion.enrutamiento = target!TipoEnrutamiento#DIRECTO;
 			asociacion.flecha_source = target!TipoFlecha#NO_TIENE;
@@ -90,7 +90,7 @@ operation generarDiagramaSimplificado() {
 			asociacion.source = elipseOrigen;
 			asociacion.target = tablaDestino;
 			asociacion.nameSource = "".toString();
-			asociacion.nameTarget = "".toString();
+			asociacion.nameTarget = "R".toString();
 			elipseOrigen.conectores.add(asociacion);			
 		}
 		for(relacion in microservicio.relaciones.select(r | r.tipos.first().isTypeOf(source!Update))){
@@ -106,7 +106,7 @@ operation generarDiagramaSimplificado() {
 			}
 			elipseOrigen = simplificado.elementos.select(e | e.name = relacion.source.name and e.isTypeOf(target!Elipse)).first();
 			asociacion = new target!Asociacion();
-			
+			asociacion.grosor = 2;
 			asociacion.color = target!Color#orange;
 			asociacion.estilo = target!EstiloLinea#SOLIDA;
 			asociacion.enrutamiento = target!TipoEnrutamiento#DIRECTO;
@@ -115,7 +115,7 @@ operation generarDiagramaSimplificado() {
 			asociacion.source = elipseOrigen;
 			asociacion.target = tablaDestino;
 			asociacion.nameSource = "".toString();
-			asociacion.nameTarget = "".toString();	
+			asociacion.nameTarget = "U".toString();	
 			elipseOrigen.conectores.add(asociacion);		
 		}
 		for(relacion in microservicio.relaciones.select(r | r.tipos.first().isTypeOf(source!Delete))){
@@ -131,7 +131,7 @@ operation generarDiagramaSimplificado() {
 			}
 			elipseOrigen = simplificado.elementos.select(e | e.name = relacion.source.name and e.isTypeOf(target!Elipse)).first();
 			asociacion = new target!Asociacion();
-			
+			asociacion.grosor = 4;
 			asociacion.color = target!Color#red;
 			asociacion.estilo = target!EstiloLinea#SOLIDA;
 			asociacion.enrutamiento = target!TipoEnrutamiento#DIRECTO;
@@ -140,7 +140,7 @@ operation generarDiagramaSimplificado() {
 			asociacion.source = elipseOrigen;
 			asociacion.target = tablaDestino;
 			asociacion.nameSource = "".toString();
-			asociacion.nameTarget = "".toString();
+			asociacion.nameTarget = "D".toString();
 			elipseOrigen.conectores.add(asociacion);
 		}
 	}
