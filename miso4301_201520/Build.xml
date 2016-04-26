@@ -2,11 +2,12 @@
 <project xmlns:qvto="http://www.eclipse.org/qvt/1.0.0/Operational" name="kdm" default="main">
 	
 	
-	<property name="Kdm" value="./models/sisinfo_core_kdm.xmi"></property>
-	<property name="SubKdm" value="./models/res5/kdmResultadoSub.xmi"></property>
-	<property name="Cluster" value="./models/res5/representacion.xmi"></property>
-	<property name="Visualizacion" value="./models/res5/visualizacion.xmi"></property>
-	<property name="Simplificacion" value="./models/res5/simplificacion.xmi"></property>
+	<property name="Kdm" value="./models/votaciones-core_kdm.xmi"></property>
+	<property name="SubKdm" value="./models/res10/kdmResultadoSub.xmi"></property>
+	<property name="Cluster" value="./models/res10/representacion.xmi"></property>
+	<property name="Visualizacion" value="./models/res10/visualizacion.xmi"></property>
+	<property name="Simplificacion" value="./models/res10/simplificacion.xmi"></property>
+	<property name="Tablas" value="./models/res10/tablas.xmi"></property>
 	<!--<property name="Simplificacion" value="./models/res2/simplificacion3.xmi"></property>-->
 
 			
@@ -96,6 +97,21 @@
 				
 				<epsilon.disposeModel model="target"></epsilon.disposeModel>
 			</target>
+
+			<target name="loadModelsT6">	
+				<epsilon.emf.loadModel name="source" modelfile="${Cluster}" metamodeluri="http://visualizacionMetricas3,http://visualizacionMetricas3/representacion" read="true" store="false"></epsilon.emf.loadModel>
+				<epsilon.emf.loadModel name="target" modelfile="${Tablas}" metamodeluri="http://visualizacionMetricas3,http://visualizacionMetricas3/visualizacion" read="false" store="true"></epsilon.emf.loadModel>
+			</target>
+				
+			<target name="representacion2Tablas" depends="loadModelsT6">
+				<epsilon.etl src="./transformations/M2M/Visualizacion/representacion2tablas.etl">
+					<model ref="source"></model>
+					<model ref="target"></model>
+				</epsilon.etl>
+				
+				<epsilon.disposeModel model="target"></epsilon.disposeModel>
+			</target>
+	
 	<!-- Main -->
 	
 	<target name="main">		
@@ -103,8 +119,8 @@
 		<antcall target="micro2sdm"></antcall>
 		<antcall target="sdm2Representacion"></antcall>
 		<antcall target="representacion2Visualizacion"></antcall>
-		<antcall target="representacion2Simplificacion"></antcall> 
-		
-		 <!-- epsilon.disposeModels></epsilon.disposeModels> -->  
+		<antcall target="representacion2Simplificacion"></antcall>
+		<antcall target="representacion2Tablas"></antcall>
+		 <!--<epsilon.disposeModels></epsilon.disposeModels> -->  
 	</target>
 </project>

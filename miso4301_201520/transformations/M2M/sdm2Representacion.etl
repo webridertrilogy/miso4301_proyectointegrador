@@ -807,7 +807,7 @@ operation crearTablasCompartidasMicroservicios() {
 					tabla = clase.tablasAccedidas->select(t | t.name == tablaKey).first();
 					if (tabla.isDefined()){
 						for (tipoQuery in tabla.tiposQuery) {
-							if (tipoQuery == target!TipoQueryEnum#Create){
+							if (tipoQuery.tipo == target!TipoQueryEnum#Create){
 								if (not(microservicio.relaciones->select(r | r.target.name == tablaCompartida.name and r.tipos.first().isTypeOf(target!Create)).first().isDefined())){
 									("    ").println(microservicio.name + " - CREATE    ");
 									arco = new target!Arco;
@@ -816,7 +816,7 @@ operation crearTablasCompartidasMicroservicios() {
 								    arco.tipos.add(create);	
 								}	
 							}
-							else if (tipoQuery == target!TipoQueryEnum#Read){
+							else if (tipoQuery.tipo == target!TipoQueryEnum#Read){
 								if (not(microservicio.relaciones->select(r | r.target.name == tablaCompartida.name and r.tipos.first().isTypeOf(target!Read)).first().isDefined())){
 									("    ").println(microservicio.name + " - READ    ");
 									arco = new target!Arco;
@@ -825,7 +825,7 @@ operation crearTablasCompartidasMicroservicios() {
 								    arco.tipos.add(read);
 								}
 							}
-							else if (tipoQuery == target!TipoQueryEnum#Update){
+							else if (tipoQuery.tipo == target!TipoQueryEnum#Update){
 								if (not(microservicio.relaciones->select(r | r.target.name == tablaCompartida.name and r.tipos.first().isTypeOf(target!Update)).first().isDefined())){
 									("    ").println(microservicio.name + " - UPDATE    ");
 									arco = new target!Arco;
@@ -834,7 +834,7 @@ operation crearTablasCompartidasMicroservicios() {
 								    arco.tipos.add(update);
 								}
 							}
-							else if (tipoQuery == target!TipoQueryEnum#Delete){
+							else if (tipoQuery.tipo == target!TipoQueryEnum#Delete){
 								if (not(microservicio.relaciones->select(r | r.target.name == tablaCompartida.name and r.tipos.first().isTypeOf(target!Delete)).first().isDefined())){
 									("    ").println(microservicio.name + " - DELETE    ");
 									arco = new target!Arco;
@@ -866,35 +866,36 @@ operation crearTablasAccedidasClase() {
 		var claseTabla = it.next();
 		var nombreClase = claseTabla;
 
-		//" ".println("Clase: " + nombreClase);
+		" ".println("Clase: " + nombreClase);
 		//Se buscan todas las ClasesR para adicionarle a todas las tablas
 		var clasesR = target!ClaseR.allInstances()->select(c | c.name == nombreClase);
-		//(" " + clasesR.size()).println(" Clases Repetidas");
+		(" " + clasesR.size()).println(" Clases Repetidas");
 		//Si encontro alguna coincidencia en las ClasesR ingresa, de lo contrario no
 		if (claseR.size() > 0){
 			//Se recorren todas las tablas a las que accede una ClaseR
 			for (relacionTabla in clasesTablas.get(claseTabla)){
-				//" ".println("Tabla: " + relacionTabla.tabla + " - TipoRelacion: " + relacionTabla.tipoRelacion);
+				" ".println("Tabla: " + relacionTabla.tabla + " - TipoRelacion: " + relacionTabla.tipoRelacion);
 				for(claseR in clasesR){
 					var tabla = null;
+					var tipoQuery = null;
 					//if (not(tabla.isDefined())){
 					//	"    tablaNula".println();
 					//}
 					if (claseR.tablasAccedidas.isDefined()){
-						//"    TablasAccedidas definidas".println();
+						"    TablasAccedidas definidas".println();
 						tabla = claseR.tablasAccedidas->select(c | c.name == relacionTabla.tabla).first(); 
 						if (tabla.isDefined()){
-							//"    Tabla definida".println();
+							"    Tabla definida".println();
 						}
 						else {
-							//"    Tabla no definida".println();
+							"    Tabla no definida".println();
 							tabla = new target!Tabla();
 							tabla.name = relacionTabla.tabla;
 							tabla.tiposQuery = new Set;
 						}
 					}
 					else{
-						//"    TablasAccedidas no definidas".println();
+						"    TablasAccedidas no definidas".println();
 						claseR.tablasAccedidas = new Set;
 						tabla = new target!Tabla();
 						tabla.name = relacionTabla.tabla;
@@ -902,17 +903,33 @@ operation crearTablasAccedidasClase() {
 					}
 
 					if (relacionTabla.tipoRelacion == "select"){
-						//"    Relacion Select".println();
-						if (not(tabla.tiposQuery->exists(c | c == target!TipoQueryEnum#Read))){
-							//"    ADD Select".println();
-							tabla.tiposQuery.add(target!TipoQueryEnum#Read);
-						} 
+						"    Relacion Select".println();
+						tipoQuery = tabla.tiposQuery->select(c | c.tipo == target!TipoQueryEnum#Read).first();
+						if (not(tipoQuery.isDefined())){
+							"    ADD Select".println();
+							tipoQuery = new target!TipoQuery();
+							tipoQuery.cantidad = 1.asDouble();
+							tipoQuery.tipo = target!TipoQueryEnum#Read;
+							tabla.tiposQuery.add(tipoQuery);
+						}
+						else {
+							"    ADD Select EXISTE".println();
+							tipoQuery.cantidad = tipoQuery.cantidad + 1.asDouble();
+						}
 					}
 					else if(relacionTabla.tipoRelacion == "create"){
-						//"    Relacion Create".println();
-						if (not(tabla.tiposQuery->exists(c | c == target!TipoQueryEnum#Create))){
-							//"    ADD Create".println();
-							tabla.tiposQuery.add(target!TipoQueryEnum#Create);
+						"    Relacion Create".println();
+						tipoQuery = tabla.tiposQuery->select(c | c.tipo == target!TipoQueryEnum#Create).first();
+						if (not(tipoQuery.isDefined())){
+							"    ADD Create".println();
+							tipoQuery = new target!TipoQuery();
+							tipoQuery.cantidad = 1.asDouble();
+							tipoQuery.tipo = target!TipoQueryEnum#Create;
+							tabla.tiposQuery.add(tipoQuery);
+						}
+						else {
+							"    ADD Create EXISTE".println();
+							tipoQuery.cantidad = tipoQuery.cantidad + 1.asDouble();
 						}
 					}
 					//else if(relacionTabla.tipoRelacion == "expression"){
@@ -922,31 +939,63 @@ operation crearTablasAccedidasClase() {
 						//}
 					//}	
 					else if(relacionTabla.tipoRelacion == "replace"){
-						//"    Relacion Replace".println();
-						if (not(tabla.tiposQuery->exists(c | c == target!TipoQueryEnum#Update))){
-							//"    ADD Update".println();
-							tabla.tiposQuery.add(target!TipoQueryEnum#Update);
+						"    Relacion Replace1".println();
+						tipoQuery = tabla.tiposQuery->select(c | c.tipo == target!TipoQueryEnum#Update).first();
+						if (not(tipoQuery.isDefined())){
+							"    ADD Update".println();
+							tipoQuery = new target!TipoQuery();
+							tipoQuery.cantidad = 1.asDouble();
+							tipoQuery.tipo = target!TipoQueryEnum#Update;
+							tabla.tiposQuery.add(tipoQuery);
+						}
+						else {
+							"    ADD Update EXISTE".println();
+							tipoQuery.cantidad = tipoQuery.cantidad + 1.asDouble();
 						}
 					}	
 					else if(relacionTabla.tipoRelacion == "insert"){
-						//"    Relacion Insert".println();
-						if (not(tabla.tiposQuery->exists(c | c == target!TipoQueryEnum#Create))){
-							//"    ADD Create".println();
-							tabla.tiposQuery.add(target!TipoQueryEnum#Create);
+						"    Relacion Insert".println();
+						tipoQuery = tabla.tiposQuery->select(c | c.tipo == target!TipoQueryEnum#Create).first();
+						if (not(tipoQuery.isDefined())){
+							"    ADD Insert".println();
+							tipoQuery = new target!TipoQuery();
+							tipoQuery.cantidad = 1.asDouble();
+							tipoQuery.tipo = target!TipoQueryEnum#Create;
+							tabla.tiposQuery.add(tipoQuery);
+						}
+						else {
+							"    ADD Insert EXISTE".println();
+							tipoQuery.cantidad = tipoQuery.cantidad + 1.asDouble();
 						}
 					}	
 					else if(relacionTabla.tipoRelacion == "update"){
-						//"    Relacion Update".println();
-						if (not(tabla.tiposQuery->exists(c | c == target!TipoQueryEnum#Update))){
-							//"    ADD Update".println();
-							tabla.tiposQuery.add(target!TipoQueryEnum#Update);
+						"    Relacion Update2".println();
+						tipoQuery = tabla.tiposQuery->select(c | c.tipo == target!TipoQueryEnum#Update).first();
+						if (not(tipoQuery.isDefined())){
+							"    ADD Update".println();
+							tipoQuery = new target!TipoQuery();
+							tipoQuery.cantidad = 1.asDouble();
+							tipoQuery.tipo = target!TipoQueryEnum#Update;
+							tabla.tiposQuery.add(tipoQuery);
+						}
+						else {
+							"    ADD Update EXISTE".println();
+							tipoQuery.cantidad = tipoQuery.cantidad + 1.asDouble();
 						}
 					}	
 					else if(relacionTabla.tipoRelacion == "delete"){
-						//"    Relacion Delete".println();
-						if (not(tabla.tiposQuery->exists(c | c == target!TipoQueryEnum#Delete))){
-							//"    ADD Delete".println();
-							tabla.tiposQuery.add(target!TipoQueryEnum#Delete);
+						"    Relacion Delete".println();
+						tipoQuery = tabla.tiposQuery->select(c | c.tipo == target!TipoQueryEnum#Delete).first();
+						if (not(tipoQuery.isDefined())){
+							"    ADD Delete".println();
+							tipoQuery = new target!TipoQuery();
+							tipoQuery.cantidad = 1.asDouble();
+							tipoQuery.tipo = target!TipoQueryEnum#Delete;
+							tabla.tiposQuery.add(tipoQuery);
+						}
+						else {
+							"    ADD Delete EXISTE".println();
+							tipoQuery.cantidad = tipoQuery.cantidad + 1.asDouble();
 						}
 					}					
 					claseR.tablasAccedidas.add(tabla);

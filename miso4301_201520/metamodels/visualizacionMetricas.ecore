@@ -81,7 +81,7 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Tabla" eSuperTypes="#//Nodo">
       <eStructuralFeatures xsi:type="ecore:EReference" name="tiposQuery" upperBound="-1"
-          eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EEnumLiteral"/>
+          eType="#//representacion/TipoQuery"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Aplicacion" eSuperTypes="#//Nodo"/>
     <eClassifiers xsi:type="ecore:EClass" name="Dependencia" eSuperTypes="#//TipoRelacion"/>
@@ -113,6 +113,11 @@
     <eClassifiers xsi:type="ecore:EClass" name="Read" eSuperTypes="#//TipoRelacion"/>
     <eClassifiers xsi:type="ecore:EClass" name="Update" eSuperTypes="#//TipoRelacion"/>
     <eClassifiers xsi:type="ecore:EClass" name="Delete" eSuperTypes="#//TipoRelacion"/>
+    <eClassifiers xsi:type="ecore:EClass" name="TipoQuery">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="cantidad" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Double"
+          defaultValueLiteral="0"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="tipo" eType="#//TipoQueryEnum"/>
+    </eClassifiers>
   </eSubpackages>
   <eSubpackages name="visualizacion" nsURI="http://visualizacionMetricas3/visualizacion"
       nsPrefix="visualizacionMetricas3.visualizacion">
