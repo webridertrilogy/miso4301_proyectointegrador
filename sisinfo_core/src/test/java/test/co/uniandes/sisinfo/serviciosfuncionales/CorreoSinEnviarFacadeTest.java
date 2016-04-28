@@ -74,6 +74,8 @@ public class CorreoSinEnviarFacadeTest {
 		facade.edit(av);
 		facade.remove(av);
 		facade.find(1L);	
+		facade.findAll();
+		facade.count();
 		
 	
 	}

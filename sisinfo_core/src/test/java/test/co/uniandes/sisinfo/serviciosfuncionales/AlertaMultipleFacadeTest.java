@@ -75,6 +75,8 @@ public class AlertaMultipleFacadeTest {
 		alertaMultipleFacade.edit(av);
 		alertaMultipleFacade.remove(av);
 		alertaMultipleFacade.find(1L);
+		alertaMultipleFacade.findAll();
+		alertaMultipleFacade.findByTipo("12");
 
 	}
 

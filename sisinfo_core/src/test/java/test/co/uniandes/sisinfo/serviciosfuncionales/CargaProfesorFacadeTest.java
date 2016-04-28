@@ -74,10 +74,13 @@ public class CargaProfesorFacadeTest {
 		facade.edit(av);
 		facade.remove(av);
 		facade.find(1L);
+		facade.findAll();
+		facade.count();
 		facade.findByCorreo("a");
 		facade.findByidProfesorYPeriodo(1L, "q");
 		facade.findByPeriodo("a");
 		facade.findCargaByCorreoProfesorYNombrePeriodo("a", "aaa");
+		facade.flushear();
 		
 	
 	}

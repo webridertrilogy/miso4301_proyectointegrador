@@ -78,6 +78,7 @@ public class AspiranteFacadeTest {
 		facade.edit(av);
 		facade.remove(av);
 		facade.find(1L);
+		facade.findAll();
 		facade.findByCodigo("a");
 		facade.findByCorreo("aa");
 		

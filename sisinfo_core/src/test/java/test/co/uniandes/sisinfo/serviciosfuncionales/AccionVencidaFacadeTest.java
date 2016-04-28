@@ -72,18 +72,9 @@ public class AccionVencidaFacadeTest {
 		av.setAccion("accion");
 		accionVencidaFacade.edit(av);
 		accionVencidaFacade.remove(av);
-//		
-//		AsistenciaGraduada ag = new AsistenciaGraduada();
-//		asistenciaGraduadaFacadeLocal.create(ag);
-//		asistenciaGraduadaFacadeLocal.edit(ag);
-//		asistenciaGraduadaFacadeLocal.find(ag.getId());
-//		asistenciaGraduadaFacadeLocal.remove(ag);
-//		asistenciaGraduadaFacadeLocal.findAll();
-//		asistenciaGraduadaFacadeLocal.findById(1L);
-//		asistenciaGraduadaFacadeLocal.findByPeriodo("1");
-//		asistenciaGraduadaFacadeLocal.findByCorreoProfesor("aa");
-//		asistenciaGraduadaFacadeLocal.findByCorreoEstudiante("aa");
-//		asistenciaGraduadaFacadeLocal.findByPeriodoYCorreoEstudiante("1", "aa");
+		accionVencidaFacade.find(1L);
+		accionVencidaFacade.findAll();
+
 
 	}
 

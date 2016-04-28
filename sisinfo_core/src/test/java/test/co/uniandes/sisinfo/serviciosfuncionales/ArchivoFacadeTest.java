@@ -75,6 +75,8 @@ public class ArchivoFacadeTest {
 		archivoFacade.edit(av);
 		archivoFacade.remove(av);
 		archivoFacade.find(1L);
+		archivoFacade.findById(1L);
+		archivoFacade.findAll();
 		archivoFacade.findBySeccionAndTipo("1", "1");
 	
 	}

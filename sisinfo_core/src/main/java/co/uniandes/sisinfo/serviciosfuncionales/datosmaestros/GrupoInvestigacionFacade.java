@@ -88,7 +88,7 @@ public class GrupoInvestigacionFacade implements GrupoInvestigacionFacadeLocal {
      * @param seccion Sección
      */
     private void hibernateInitialize(GrupoInvestigacion grupoI) {
-        Hibernate.initialize(grupoI);
+//        Hibernate.initialize(grupoI);
 
         /*
         if(seccion.getProfesorPrincipal()!=null){

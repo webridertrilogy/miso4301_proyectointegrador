@@ -78,8 +78,12 @@ public class CorreoAuditoriaFacadeTest {
 		facade.findByDestinatarios("a");
 		facade.findByFecha(new Date(), new Date());
 		facade.findByAsunto("a");
-		
-		
+		facade.findAll();
+		facade.count();
+		facade.findByDestinatariosYFecha("12", new Date(), new Date());
+		facade.findByAsuntoYFecha("b", new Date(), new Date());
+		facade.findByDestinatariosYAsunto("1", "12");
+		facade.findByDestinatariosFechaYAsunto("a", new Date(), new Date(), "12");
 	
 	}
 }

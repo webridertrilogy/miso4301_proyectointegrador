@@ -74,7 +74,8 @@ public class CategoriaCriterioTesis2FacadeTest {
 		facade.edit(av);
 		facade.remove(av);
 		facade.find(1L);	
-		
+		facade.findAll();
+		facade.count();
 	
 	}
 }

@@ -74,6 +74,8 @@ public class ConstanteFacadeTest {
 		facade.edit(av);
 		facade.remove(av);
 		facade.find(1L);	
+		facade.findAll();
+		facade.findById(1L);
 		facade.findByNombre("a");
 		
 	

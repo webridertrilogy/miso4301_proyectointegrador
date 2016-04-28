@@ -73,6 +73,8 @@ public class ComandoXMLFacadeTest {
 		av.setNombre("aa");
 		facade.edit(av);
 		facade.remove(av);
+		facade.find(1l);
+		facade.findAll();
 		
 		
 		

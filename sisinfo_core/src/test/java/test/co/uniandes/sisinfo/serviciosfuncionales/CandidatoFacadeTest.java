@@ -74,6 +74,7 @@ public class CandidatoFacadeTest {
 		facade.edit(av);
 		facade.remove(av);
 		facade.find(1L);
+		facade.findAll();
 		facade.findByCorreoYIDVotacion("1", "1");
 		facade.findVotoEnBlancoYIDVotacion("1");
 		

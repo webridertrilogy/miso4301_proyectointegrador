@@ -75,6 +75,7 @@ public class AuditoriaUsuarioFacadeTest {
 		facade.edit(av);
 		facade.remove(av);
 		facade.find(1L);
+		facade.findAll();
 		facade.findByUsuario("a");
 		facade.findByFecha(new Date(), new Date());
 		facade.findByRol("a");

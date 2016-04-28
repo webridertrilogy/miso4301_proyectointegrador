@@ -83,7 +83,7 @@ public class ProgramaFacade implements ProgramaFacadeLocal {
      * @param programa Programa
      */
     private void hibernateInitialize(Programa programa){
-        Hibernate.initialize(programa);
+        //Hibernate.initialize(programa);
     }
 
     public void removeAll(){

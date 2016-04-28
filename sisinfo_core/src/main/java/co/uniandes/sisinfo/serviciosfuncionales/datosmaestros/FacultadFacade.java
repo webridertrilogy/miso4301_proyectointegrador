@@ -74,8 +74,8 @@ public class FacultadFacade implements FacultadFacadeLocal {
      * @param facultad Facultad
      */
     private void hibernateInitialize(Facultad facultad){
-        Hibernate.initialize(facultad);
-        Hibernate.initialize(facultad.getProgramas());
+//        Hibernate.initialize(facultad);
+//        Hibernate.initialize(facultad.getProgramas());
     }
 @Override
     public List<Facultad> findAll() {

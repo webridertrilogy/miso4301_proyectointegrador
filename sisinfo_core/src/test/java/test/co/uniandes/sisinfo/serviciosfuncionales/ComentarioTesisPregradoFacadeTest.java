@@ -73,7 +73,9 @@ public class ComentarioTesisPregradoFacadeTest {
 		av.setComentario("a");
 		facade.edit(av);
 		facade.remove(av);
-		facade.find(1L);	
+		facade.find(1L);
+		facade.findAll();
+		facade.count();
 		
 		
 	

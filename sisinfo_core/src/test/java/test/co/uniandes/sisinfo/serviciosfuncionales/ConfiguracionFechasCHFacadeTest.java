@@ -74,6 +74,9 @@ public class ConfiguracionFechasCHFacadeTest {
 		facade.edit(av);
 		facade.remove(av);
 		facade.find(1L);	
+		facade.findAll();
+		facade.removeAll();
+		facade.count();
 		
 		
 	

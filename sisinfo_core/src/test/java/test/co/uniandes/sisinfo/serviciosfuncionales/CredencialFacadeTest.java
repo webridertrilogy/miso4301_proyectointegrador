@@ -75,7 +75,8 @@ public class CredencialFacadeTest {
 		facade.remove(av);
 		facade.find(1L);	
 		facade.findByCuenta("a");
-		
+		facade.findAll();
+		facade.removeAll();
 	
 	}
 }

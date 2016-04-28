@@ -1,4 +1,4 @@
-package test.co.uniandes.sisinfo.serviciosfuncionales;
+package test.co.uniandes.sisinfo.serviciosfuncionales.datosmaestros;
 
 import java.sql.SQLException;
 
@@ -12,10 +12,9 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import co.uniandes.sisinfo.entities.AccionVencida;
-import co.uniandes.sisinfo.entities.CategoriaProyectoDeGrado;
+import co.uniandes.sisinfo.entities.datosmaestros.Programa;
 import co.uniandes.sisinfo.serviciosfuncionales.AccionVencidaFacade;
 import co.uniandes.sisinfo.serviciosfuncionales.AccionVencidaFacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.CategoriaProyectoDeGradoFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.ConstanteFacade;
 import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.ProgramaFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.seguridad.RolFacadeLocal;
@@ -38,7 +37,7 @@ import co.uniandes.sisinfo.serviciosnegocio.EventoExternoBeanLocal;
  * 
  */
 @RunWith(Arquillian.class)
-public class CategoriaProyectoDeGradoFacadeTest {
+public class ProgramaFacadeTest {
 
 	@Deployment
 	public static WebArchive createDeployment() {
@@ -55,28 +54,33 @@ public class CategoriaProyectoDeGradoFacadeTest {
 				 
 				.addPackage(EventoExternoBeanLocal.class.getPackage())
 				.addPackage(ProgramaFacadeLocal.class.getPackage())
-				 
+				
 				.addPackage(RolFacadeLocal.class.getPackage())
 				.addPackage(TipoDocumentoFacadeLocal.class.getPackage())
 				
 				.addAsResource("persistence.xml", "META-INF/persistence.xml")
 				.addAsWebInfResource("META-INF/beans.xml", "beans.xml");
 	}
-	
+
 	@EJB
-	private CategoriaProyectoDeGradoFacadeLocal facade;
+	private ProgramaFacadeLocal facade;
 	
+
 	@Test
 	public void testAll() throws SQLException {
-		CategoriaProyectoDeGrado av = new CategoriaProyectoDeGrado();
+		Programa av = new Programa();
 		facade.create(av);
-		av.setNombre("aa");
+		av.setCodigo("12");
 		facade.edit(av);
 		facade.remove(av);
-		facade.find(1L);	
+		facade.find(1l);
 		facade.findAll();
-		facade.count();
 		
-	
+		facade.findByNombre("a");
+		facade.findByCodigo("1");
+		facade.removeAll();
+		
+
 	}
+
 }

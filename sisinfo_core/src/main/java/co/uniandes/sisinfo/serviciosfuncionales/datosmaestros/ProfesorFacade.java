@@ -124,17 +124,17 @@ public class ProfesorFacade implements ProfesorFacadeLocal {
      * @param profesor Profesor
      */
     private void hibernateInitialize(Profesor profesor) {
-        Hibernate.initialize(profesor);
-        Hibernate.initialize(profesor.getGrupoInvestigacion());
-        Hibernate.initialize(profesor.getPersona());
-        Hibernate.initialize(profesor.getNivelFormacion());
-        Hibernate.initialize(profesor.getNivelPlanta());
-        Hibernate.initialize(profesor.getPersona().getTipoDocumento());
-        if(profesor.getPersona().getTipoDocumento() != null)
-            Hibernate.initialize(profesor.getPersona().getTipoDocumento().getTipo());
-        Hibernate.initialize(profesor.getPersona().getPais());
-        if(profesor.getPersona().getPais() != null)
-            Hibernate.initialize(profesor.getPersona().getPais().getNombre());
+//        Hibernate.initialize(profesor);
+//        Hibernate.initialize(profesor.getGrupoInvestigacion());
+//        Hibernate.initialize(profesor.getPersona());
+//        Hibernate.initialize(profesor.getNivelFormacion());
+//        Hibernate.initialize(profesor.getNivelPlanta());
+//        Hibernate.initialize(profesor.getPersona().getTipoDocumento());
+//        if(profesor.getPersona().getTipoDocumento() != null)
+//            Hibernate.initialize(profesor.getPersona().getTipoDocumento().getTipo());
+//        Hibernate.initialize(profesor.getPersona().getPais());
+//        if(profesor.getPersona().getPais() != null)
+//            Hibernate.initialize(profesor.getPersona().getPais().getNombre());
     }
 
 }

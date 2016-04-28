@@ -1,4 +1,4 @@
-package test.co.uniandes.sisinfo.serviciosfuncionales;
+package test.co.uniandes.sisinfo.serviciosfuncionales.datosmaestros;
 
 import java.sql.SQLException;
 
@@ -12,11 +12,11 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import co.uniandes.sisinfo.entities.AccionVencida;
-import co.uniandes.sisinfo.entities.CategoriaProyectoDeGrado;
+import co.uniandes.sisinfo.entities.datosmaestros.Estudiante;
 import co.uniandes.sisinfo.serviciosfuncionales.AccionVencidaFacade;
 import co.uniandes.sisinfo.serviciosfuncionales.AccionVencidaFacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.CategoriaProyectoDeGradoFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.ConstanteFacade;
+import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.EstudianteFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.ProgramaFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.seguridad.RolFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.soporte.TipoDocumentoFacadeLocal;
@@ -38,7 +38,7 @@ import co.uniandes.sisinfo.serviciosnegocio.EventoExternoBeanLocal;
  * 
  */
 @RunWith(Arquillian.class)
-public class CategoriaProyectoDeGradoFacadeTest {
+public class EstudianteFacadeTest {
 
 	@Deployment
 	public static WebArchive createDeployment() {
@@ -55,28 +55,29 @@ public class CategoriaProyectoDeGradoFacadeTest {
 				 
 				.addPackage(EventoExternoBeanLocal.class.getPackage())
 				.addPackage(ProgramaFacadeLocal.class.getPackage())
-				 
+				
 				.addPackage(RolFacadeLocal.class.getPackage())
 				.addPackage(TipoDocumentoFacadeLocal.class.getPackage())
 				
 				.addAsResource("persistence.xml", "META-INF/persistence.xml")
 				.addAsWebInfResource("META-INF/beans.xml", "beans.xml");
 	}
-	
+
 	@EJB
-	private CategoriaProyectoDeGradoFacadeLocal facade;
+	private EstudianteFacadeLocal facade;
 	
+
 	@Test
 	public void testAll() throws SQLException {
-		CategoriaProyectoDeGrado av = new CategoriaProyectoDeGrado();
+		Estudiante av = new Estudiante();
 		facade.create(av);
-		av.setNombre("aa");
+		av.setActivo(true);
 		facade.edit(av);
 		facade.remove(av);
-		facade.find(1L);	
-		facade.findAll();
-		facade.count();
-		
-	
+		facade.findByCorreo("123");
+		facade.findByCodigo("123");
+		facade.findByTipo("123");
+
 	}
+
 }
