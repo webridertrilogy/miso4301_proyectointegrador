@@ -48,8 +48,7 @@ public class ReportesBean implements ReportesLocal {
     /**
      * EstudiantePostgrado
      */
-    @EJB
-    private EstudiantePostgradoLocal estPostgradoLocal;
+   
     private ServiceLocator serviceLocator;
     private ParserT parser;
     //---------------------------------------
@@ -139,7 +138,7 @@ public class ReportesBean implements ReportesLocal {
              */
             else if (tipoReporte.equals("reporte_bolsa_hojas_vida")) {
                 //rutaReporte = reportesFacade.hacerReporteHojasDeVidaEstudiantes();
-                rutaReporte = estPostgradoLocal.hacerReporteTodasHojasDeVida(comandoXML);
+               // rutaReporte = estPostgradoLocal.hacerReporteTodasHojasDeVida(comandoXML);
             } else if (tipoReporte.equals("reporte_bolsa_ofertas_totales")) {
                 rutaReporte = reportesFacade.hacerReporteTodasOfertasBolsaEmpleo();
             } /**
