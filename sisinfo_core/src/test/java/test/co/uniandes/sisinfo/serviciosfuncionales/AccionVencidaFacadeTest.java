@@ -72,8 +72,7 @@ public class AccionVencidaFacadeTest {
 		av.setAccion("accion");
 		accionVencidaFacade.edit(av);
 		accionVencidaFacade.remove(av);
-		accionVencidaFacade.find(1L);
-		accionVencidaFacade.findAll();
+		
 
 
 	}
