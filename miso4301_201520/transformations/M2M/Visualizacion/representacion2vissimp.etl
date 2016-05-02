@@ -121,6 +121,8 @@ operation generarDiagramaSimplificado() {
 			//}			
 			elipseMs.largo = (elipseMs.largo + cantLineas)/10;
 			elipseMs.alto = (elipseMs.alto + cantLineas)/10;
+			elipseMs.largo = (elipseMs.largo + 8);
+			elipseMs.alto = (elipseMs.alto + 8);
 			simplificado.elementos.add(elipseMs);
 	}
 
