@@ -12,12 +12,9 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import co.uniandes.sisinfo.entities.AccionVencida;
-import co.uniandes.sisinfo.entities.AsistenciaGraduada;
 import co.uniandes.sisinfo.entities.Aspirante;
 import co.uniandes.sisinfo.serviciosfuncionales.AccionVencidaFacade;
 import co.uniandes.sisinfo.serviciosfuncionales.AccionVencidaFacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.AsistenciaGraduadaFacade;
-import co.uniandes.sisinfo.serviciosfuncionales.AsistenciaGraduadaFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.AspiranteFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.ConstanteFacade;
 import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.ProgramaFacadeLocal;
@@ -50,11 +47,11 @@ public class AspiranteFacadeTest {
 				.addPackage(AccionVencidaFacade.class.getPackage())
 				.addPackage(AccionVencidaFacadeLocal.class.getPackage())
 				.addPackage(AccionVencida.class.getPackage())
-				.addPackage(AsistenciaGraduadaFacade.class.getPackage())
-				.addPackage(AsistenciaGraduadaFacadeLocal.class.getPackage())
-				.addPackage(AsistenciaGraduada.class.getPackage())
+				 
+				 
+				 
 				.addPackage(ConstanteFacade.class.getPackage())
-				.addPackage(AsistenciaGraduadaFacadeLocal.class.getPackage())
+				 
 				 
 				.addPackage(EventoExternoBeanLocal.class.getPackage())
 				.addPackage(ProgramaFacadeLocal.class.getPackage())
@@ -81,6 +78,7 @@ public class AspiranteFacadeTest {
 		facade.edit(av);
 		facade.remove(av);
 		facade.find(1L);
+		facade.findAll();
 		facade.findByCodigo("a");
 		facade.findByCorreo("aa");
 		

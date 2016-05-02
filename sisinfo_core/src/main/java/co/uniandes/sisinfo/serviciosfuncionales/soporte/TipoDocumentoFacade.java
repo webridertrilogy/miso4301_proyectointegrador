@@ -66,7 +66,7 @@ public class TipoDocumentoFacade implements TipoDocumentoFacadeLocal {
 
     private void hibernateInitialize(TipoDocumento td)
     {
-        Hibernate.initialize(td);
+      //  Hibernate.initialize(td);
     }
 
     public TipoDocumento findByDescripcion(String descripcion) {

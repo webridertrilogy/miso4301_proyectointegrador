@@ -55,13 +55,14 @@ operation generarDiagramaSimplificado() {
 	//"\tNúmero itemsDelete: ".println();
 	//itemsdelete.size().println();
 	
-	//for (c in itemsdelete) {
-	//	delete c;
-	//}
+	/*for (c in itemsdelete) {
+		delete c;
+	}
 
 	delete target!InvocacionV.allInstances();
 	delete target!Paquete.allInstances();
 	delete target!RelacionInvocacion.allInstances();
+	*/
 		
 	"Numero microservicios obtenidos: ".println();
 	microservicios.size().println();

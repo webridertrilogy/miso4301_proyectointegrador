@@ -133,50 +133,50 @@ public class CursoFacade implements CursoFacadeLocal {
      * @param curso Curso
      */
     private void hibernateInitialize(Curso curso) {
-        Hibernate.initialize(curso);
-        Hibernate.initialize(curso.getNivelPrograma());
-        Collection<Seccion> secciones = curso.getSecciones();
-        Hibernate.initialize(secciones);
-        for (Iterator<Seccion> it = secciones.iterator(); it.hasNext();) {
-            Seccion seccion = it.next();
-            Hibernate.initialize(seccion);
-
-            if(seccion.getHorarios() != null){
-                Hibernate.initialize(seccion.getHorarios());
-                for (Iterator<Sesion> it1 = seccion.getHorarios().iterator(); it1.hasNext();) {
-                    Sesion sesion = it1.next();
-                    Hibernate.initialize(sesion);
-                    Hibernate.initialize(sesion.getDias());
-                    for (Iterator<DiaCompleto> it2 = sesion.getDias().iterator(); it2.hasNext();) {
-                        DiaCompleto dia = it2.next();
-                        Hibernate.initialize(dia);
-                    }
-                }
-            }
-
-            if(seccion.getProfesorPrincipal() != null){
-                Hibernate.initialize(seccion.getProfesorPrincipal());
-                Hibernate.initialize(seccion.getProfesorPrincipal().getPersona());
-            }
-
-            Collection<Profesor> profesoresRelacionados = seccion.getProfesores();
-            Hibernate.initialize(profesoresRelacionados);
-            for(Iterator<Profesor> itProfesor = profesoresRelacionados.iterator(); itProfesor.hasNext();){
-               Profesor profesorRelacionado = itProfesor.next();
-               Hibernate.initialize(profesorRelacionado);
-               if(profesorRelacionado != null){
-                    Hibernate.initialize(profesorRelacionado.getPersona());
-               }
-            }
-        }
-        Collection<Curso> cursosRelacionados = curso.getCursosRelacionados();
-        Hibernate.initialize(cursosRelacionados);
-        for(Iterator<Curso> itCurso = cursosRelacionados.iterator(); itCurso.hasNext();){
-            Curso cursoRelacionado = itCurso.next();
-            Hibernate.initialize(cursoRelacionado);
-        }
-        Hibernate.initialize(curso.getPrograma());
-        Hibernate.initialize(curso.getNivelPrograma());
+//        Hibernate.initialize(curso);
+//        Hibernate.initialize(curso.getNivelPrograma());
+//        Collection<Seccion> secciones = curso.getSecciones();
+//        Hibernate.initialize(secciones);
+//        for (Iterator<Seccion> it = secciones.iterator(); it.hasNext();) {
+//            Seccion seccion = it.next();
+//            Hibernate.initialize(seccion);
+//
+//            if(seccion.getHorarios() != null){
+//                Hibernate.initialize(seccion.getHorarios());
+//                for (Iterator<Sesion> it1 = seccion.getHorarios().iterator(); it1.hasNext();) {
+//                    Sesion sesion = it1.next();
+//                    Hibernate.initialize(sesion);
+//                    Hibernate.initialize(sesion.getDias());
+//                    for (Iterator<DiaCompleto> it2 = sesion.getDias().iterator(); it2.hasNext();) {
+//                        DiaCompleto dia = it2.next();
+//                        Hibernate.initialize(dia);
+//                    }
+//                }
+//            }
+//
+//            if(seccion.getProfesorPrincipal() != null){
+//                Hibernate.initialize(seccion.getProfesorPrincipal());
+//                Hibernate.initialize(seccion.getProfesorPrincipal().getPersona());
+//            }
+//
+//            Collection<Profesor> profesoresRelacionados = seccion.getProfesores();
+//            Hibernate.initialize(profesoresRelacionados);
+//            for(Iterator<Profesor> itProfesor = profesoresRelacionados.iterator(); itProfesor.hasNext();){
+//               Profesor profesorRelacionado = itProfesor.next();
+//               Hibernate.initialize(profesorRelacionado);
+//               if(profesorRelacionado != null){
+//                    Hibernate.initialize(profesorRelacionado.getPersona());
+//               }
+//            }
+//        }
+//        Collection<Curso> cursosRelacionados = curso.getCursosRelacionados();
+//        Hibernate.initialize(cursosRelacionados);
+//        for(Iterator<Curso> itCurso = cursosRelacionados.iterator(); itCurso.hasNext();){
+//            Curso cursoRelacionado = itCurso.next();
+//            Hibernate.initialize(cursoRelacionado);
+//        }
+//        Hibernate.initialize(curso.getPrograma());
+//        Hibernate.initialize(curso.getNivelPrograma());
     }
 
     public long contarCursos() {

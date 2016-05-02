@@ -13,12 +13,9 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import co.uniandes.sisinfo.entities.AccionVencida;
-import co.uniandes.sisinfo.entities.AsistenciaGraduada;
 import co.uniandes.sisinfo.entities.CorreoAuditoria;
 import co.uniandes.sisinfo.serviciosfuncionales.AccionVencidaFacade;
 import co.uniandes.sisinfo.serviciosfuncionales.AccionVencidaFacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.AsistenciaGraduadaFacade;
-import co.uniandes.sisinfo.serviciosfuncionales.AsistenciaGraduadaFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.ConstanteFacade;
 import co.uniandes.sisinfo.serviciosfuncionales.CorreoAuditoriaFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.ProgramaFacadeLocal;
@@ -51,11 +48,11 @@ public class CorreoAuditoriaFacadeTest {
 				.addPackage(AccionVencidaFacade.class.getPackage())
 				.addPackage(AccionVencidaFacadeLocal.class.getPackage())
 				.addPackage(AccionVencida.class.getPackage())
-				.addPackage(AsistenciaGraduadaFacade.class.getPackage())
-				.addPackage(AsistenciaGraduadaFacadeLocal.class.getPackage())
-				.addPackage(AsistenciaGraduada.class.getPackage())
+				 
+				 
+				 
 				.addPackage(ConstanteFacade.class.getPackage())
-				.addPackage(AsistenciaGraduadaFacadeLocal.class.getPackage())
+				 
 				 
 				.addPackage(EventoExternoBeanLocal.class.getPackage())
 				.addPackage(ProgramaFacadeLocal.class.getPackage())
@@ -81,8 +78,12 @@ public class CorreoAuditoriaFacadeTest {
 		facade.findByDestinatarios("a");
 		facade.findByFecha(new Date(), new Date());
 		facade.findByAsunto("a");
-		
-		
+		facade.findAll();
+		facade.count();
+		facade.findByDestinatariosYFecha("12", new Date(), new Date());
+		facade.findByAsuntoYFecha("b", new Date(), new Date());
+		facade.findByDestinatariosYAsunto("1", "12");
+		facade.findByDestinatariosFechaYAsunto("a", new Date(), new Date(), "12");
 	
 	}
 }

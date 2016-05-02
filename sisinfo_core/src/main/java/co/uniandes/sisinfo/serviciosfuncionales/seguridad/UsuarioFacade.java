@@ -50,15 +50,15 @@ public class UsuarioFacade implements UsuarioFacadeLocal {
     @Override
     public Usuario find(Object id) {
         Usuario usuario = em.find(Usuario.class, id);
-        Hibernate.initialize(usuario);
-        if(usuario.getPersona() != null)
-            Hibernate.initialize(usuario.getPersona());
-        if(usuario.getRoles() != null){
-            Hibernate.initialize(usuario.getRoles());
-            for(Rol rol : usuario.getRoles()){
-                Hibernate.initialize(rol);
-            }
-        }
+//        Hibernate.initialize(usuario);
+//        if(usuario.getPersona() != null)
+//            Hibernate.initialize(usuario.getPersona());
+//        if(usuario.getRoles() != null){
+//            Hibernate.initialize(usuario.getRoles());
+//            for(Rol rol : usuario.getRoles()){
+//                Hibernate.initialize(rol);
+//            }
+//        }
         return usuario;
     }
 

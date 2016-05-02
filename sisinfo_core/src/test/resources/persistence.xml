@@ -11,17 +11,17 @@
 		<class>co.uniandes.sisinfo.entities.AccionVencida</class>
 		<class>co.uniandes.sisinfo.entities.AlertaMultiple</class>
 		<class>co.uniandes.sisinfo.entities.Archivo</class>
-		<class>co.uniandes.sisinfo.entities.AsistenciaGraduada</class>
+		
 		<class>co.uniandes.sisinfo.entities.Aspirante</class>
 		<class>co.uniandes.sisinfo.entities.AuditoriaUsuario</class>
-		<class>co.uniandes.sisinfo.entities.Autorizado</class>
+		
 		<class>co.uniandes.sisinfo.entities.CalificacionCriterio</class>
 		<class>co.uniandes.sisinfo.entities.CalificacionJurado</class>
 		
 		<class>co.uniandes.sisinfo.entities.Candidato</class>
 		<class>co.uniandes.sisinfo.entities.CargaProfesor</class>
 
-		<class>co.uniandes.sisinfo.entities.Categoria</class>
+		
 		<class>co.uniandes.sisinfo.entities.CategoriaCriterioJurado</class>
 		<class>co.uniandes.sisinfo.entities.CategoriaCriterioTesis2</class>
 		
@@ -50,29 +50,29 @@
 		<class>co.uniandes.sisinfo.entities.DireccionTesis</class>
 		<class>co.uniandes.sisinfo.entities.DirectorioInterfacesPorRol</class>
 		<class>co.uniandes.sisinfo.entities.DisponibilidadCoordinacion</class>
-		<class>co.uniandes.sisinfo.entities.Elemento</class>
-		<class>co.uniandes.sisinfo.entities.Encargado</class>
+		
+		
 		<class>co.uniandes.sisinfo.entities.EstadoTesis</class>
 		<class>co.uniandes.sisinfo.entities.EstudianteMatriculado</class>
-		<class>co.uniandes.sisinfo.entities.EstudiantePosgrado</class>
+		
 		<class>co.uniandes.sisinfo.entities.Evento</class>
 	
 		<class>co.uniandes.sisinfo.entities.ExcepcionSisinfo</class>
 		<class>co.uniandes.sisinfo.entities.FiltroCorreo</class>
 		<class>co.uniandes.sisinfo.entities.Grupo</class>
-		<class>co.uniandes.sisinfo.entities.HojaVida</class>
-		<class>co.uniandes.sisinfo.entities.HorarioDia</class>
+		
+		
 		<class>co.uniandes.sisinfo.entities.HorarioSustentacionTesis</class>
 		<class>co.uniandes.sisinfo.entities.Horario_Disponible</class>
 		<class>co.uniandes.sisinfo.entities.Incidente</class>
-		<class>co.uniandes.sisinfo.entities.InformacionEmpresa</class>
+		
 		<class>co.uniandes.sisinfo.entities.Inscripcion</class>
 		<class>co.uniandes.sisinfo.entities.InscripcionAsistente</class>
 	
 		<class>co.uniandes.sisinfo.entities.InscripcionSubareaInvestigacion</class>
 		<class>co.uniandes.sisinfo.entities.IntencionPublicacion</class>
 		<class>co.uniandes.sisinfo.entities.JuradoExternoUniversidad</class>
-		<class>co.uniandes.sisinfo.entities.Laboratorio</class>
+		
 		<class>co.uniandes.sisinfo.entities.ListaBlancaErroresSisinfo</class>
 		<class>co.uniandes.sisinfo.entities.ListaComandoXML</class>
 		<class>co.uniandes.sisinfo.entities.ListaNegraReservaCitas</class>
@@ -84,7 +84,7 @@
 		<class>co.uniandes.sisinfo.entities.MonitoriaRealizada</class>
 		<class>co.uniandes.sisinfo.entities.Monitoria_Solicitada</class>
 		<class>co.uniandes.sisinfo.entities.NivelTesis</class>
-		<class>co.uniandes.sisinfo.entities.Oferta</class>
+		
 		<class>co.uniandes.sisinfo.entities.OtrasActividades</class>
 		<class>co.uniandes.sisinfo.entities.ParametroAceptado</class>
 		<class>co.uniandes.sisinfo.entities.Periodicidad</class>
@@ -95,15 +95,15 @@
 		<class>co.uniandes.sisinfo.entities.PersonaSoporte</class>
 		<class>co.uniandes.sisinfo.entities.PeticionConflictoHorario</class>
 	
-		<class>co.uniandes.sisinfo.entities.Proponente</class>
+		
 		<class>co.uniandes.sisinfo.entities.ProyectoDeGrado</class>
 		<class>co.uniandes.sisinfo.entities.ProyectoFinanciado</class>
 		<class>co.uniandes.sisinfo.entities.RangoFechas</class>
 		<class>co.uniandes.sisinfo.entities.RangoFechasGeneral</class>
 		<class>co.uniandes.sisinfo.entities.Regla</class>
 		<class>co.uniandes.sisinfo.entities.Reserva</class>
-		<class>co.uniandes.sisinfo.entities.ReservaInventario</class>
-		<class>co.uniandes.sisinfo.entities.ReservaMultiple</class>
+		
+		
 
 
 		<class>co.uniandes.sisinfo.entities.Solicitud</class>
@@ -118,7 +118,7 @@
 		<class>co.uniandes.sisinfo.entities.TimerAuditoria</class>
 		<class>co.uniandes.sisinfo.entities.TimerGenerico</class>
 		<class>co.uniandes.sisinfo.entities.TipoArchivo</class>
-		<class>co.uniandes.sisinfo.entities.TipoAsistenciaGraduada</class>
+		
 
 		<class>co.uniandes.sisinfo.entities.TipoPublicacion</class>
 

@@ -41,11 +41,21 @@ public class RolFacade implements RolFacadeLocal {
     }
 
     public Rol findByRol(String rol) {
-        return (Rol)em.createNamedQuery("Rol.findByRol").setParameter("rol", rol).getSingleResult();
+    	try {
+    		return (Rol)em.createNamedQuery("Rol.findByRol").setParameter("rol", rol).getSingleResult();
+    	}
+    	catch(Exception e) {
+    		return null;
+    	}
     }
 
     public Rol findByDescripcion(String descripcion) {
-        return (Rol)em.createNamedQuery("Rol.findByDescripcion").setParameter("descripcion", descripcion).getSingleResult();
+    	try {
+    		return (Rol)em.createNamedQuery("Rol.findByDescripcion").setParameter("descripcion", descripcion).getSingleResult();
+    	}
+    	catch(Exception e) {
+    		return null;
+    	}
     }
 
 }

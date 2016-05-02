@@ -86,7 +86,7 @@ public class EstudianteFacade implements EstudianteFacadeLocal {
 
     public Estudiante findByCodigo(String codigo) {
         try {
-            Estudiante estudiante = (Estudiante) em.createNamedQuery("Estudiante.findByCodigo").setParameter("correo", codigo).getSingleResult();
+            Estudiante estudiante = (Estudiante) em.createNamedQuery("Estudiante.findByCodigo").setParameter("codigo", codigo).getSingleResult();
             hibernateInitialize(estudiante);
             return estudiante;
         } catch (NoResultException e) {
@@ -99,25 +99,25 @@ public class EstudianteFacade implements EstudianteFacadeLocal {
      * @param seccion Sección
      */
     private void hibernateInitialize(Estudiante e) {
-        if (e != null) {
-            Hibernate.initialize(e);
-            if(e.getTipoCuenta() != null)
-                Hibernate.initialize(e.getTipoCuenta());
-            if(e.getInformacion_Academica() != null)
-                Hibernate.initialize(e.getInformacion_Academica());
-            if(e.getPersona() != null){
-                Hibernate.initialize(e.getPersona());
-                if(e.getPersona().getTipoDocumento() != null)
-                    Hibernate.initialize(e.getPersona().getTipoDocumento());
-                if(e.getPersona().getPais() != null)
-                    Hibernate.initialize(e.getPersona().getPais());
-            }
-            if(e.getPrograma() != null){
-                Hibernate.initialize(e.getPrograma());
-                if(e.getPrograma().getFacultad() != null)
-                    Hibernate.initialize(e.getPrograma().getFacultad());
-            }
-            Hibernate.initialize(e.getTipoEstudiante());
-        }
+//        if (e != null) {
+//            Hibernate.initialize(e);
+//            if(e.getTipoCuenta() != null)
+//                Hibernate.initialize(e.getTipoCuenta());
+//            if(e.getInformacion_Academica() != null)
+//                Hibernate.initialize(e.getInformacion_Academica());
+//            if(e.getPersona() != null){
+//                Hibernate.initialize(e.getPersona());
+//                if(e.getPersona().getTipoDocumento() != null)
+//                    Hibernate.initialize(e.getPersona().getTipoDocumento());
+//                if(e.getPersona().getPais() != null)
+//                    Hibernate.initialize(e.getPersona().getPais());
+//            }
+//            if(e.getPrograma() != null){
+//                Hibernate.initialize(e.getPrograma());
+//                if(e.getPrograma().getFacultad() != null)
+//                    Hibernate.initialize(e.getPrograma().getFacultad());
+//            }
+//            Hibernate.initialize(e.getTipoEstudiante());
+//        }
     }
 }

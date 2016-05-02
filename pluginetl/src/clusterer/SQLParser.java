@@ -52,14 +52,11 @@ public class SQLParser {
 	// Fabrica de elementos del modelo de visualizacion.
 	private VisualizacionMetricas3Factory factory;
 	// Patron de las lineas a extraer del log, la cual contiene una sentencia sql y la clase que la manda a ejecutar 
-	private String LINE_PATTERN1 = 
-			"\\d\\. Connection.prepareStatement\\((.*)\\) returned net.sf.log4jdbc.PreparedStatementSpy@\\w+ .*\\((\\w+)\\.java:\\d+\\)";
-	private String LINE_PATTERN2 = 
-			"\\d\\. Statement.executeQuery\\((.+)\\) returned net.sf.log4jdbc.ResultSetSpy@\\w+ .*\\((\\w+)\\.java:\\d+\\)";
+	private String LINE_PATTERN1 = "(prepareStatement|executeQuery)\\((.*)\\) clase   \\((\\w+)\\.java\\)";
 	
 	
 	private Pattern p1 = Pattern.compile(LINE_PATTERN1);
-	private Pattern p2 = Pattern.compile(LINE_PATTERN2);
+	
 	
 	public SQLParser() {
 		//factory = VisualizacionMetricas3Factory.eINSTANCE;
@@ -81,16 +78,11 @@ public class SQLParser {
 					while (it.hasNext()) {
 						String line = it.nextLine();
 						Matcher m1 = p1.matcher(line);
-						Matcher m2 = p2.matcher(line);
 						
-						Matcher m = m1;
-						if (m2.find()) {
-							m = m2;
-						}
 												
-						if (m.find()) {							
-							String sql = m.group(1);
-							String clase = m.group(2);							
+						if (m1.find()) {							
+							String sql = m1.group(2);
+							String clase = m1.group(3);							
 							System.out.println("Clase " + clase + ", parseando SQL: " + sql);
 		
 							try {
@@ -169,8 +161,8 @@ public class SQLParser {
 	
 	public static void main(String...strings){
 		SQLParser p = new SQLParser();
-		//p.analyzeSQL("C:\\Users\\caespinosam\\Documents\\uniandes\\PIN\\VersionDiego\\GITHUB\\miso4301_proyectointegrador\\miso4301_201520\\models\\votaciones-log-sql.log");
-		p.analyzeSQL("C:\\Andes\\ProyectoIntegraodrCodigoVF\\miso4301_201520\\models\\votaciones-log-sql.log");
+		p.analyzeSQL("C:\\Users\\caespinosam\\Documents\\uniandes\\PIN\\VersionDiego\\GITHUB\\miso4301_proyectointegrador\\miso4301_201520\\models\\votaciones-log-sql.log");
+		//p.analyzeSQL("C:\\Andes\\ProyectoIntegraodrCodigoVF\\miso4301_201520\\models\\votaciones-log-sql.log");
 				
 	}
 }

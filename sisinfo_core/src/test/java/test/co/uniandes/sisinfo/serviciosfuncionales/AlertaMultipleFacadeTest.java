@@ -13,12 +13,9 @@ import org.junit.runner.RunWith;
 
 import co.uniandes.sisinfo.entities.AccionVencida;
 import co.uniandes.sisinfo.entities.AlertaMultiple;
-import co.uniandes.sisinfo.entities.AsistenciaGraduada;
 import co.uniandes.sisinfo.serviciosfuncionales.AccionVencidaFacade;
 import co.uniandes.sisinfo.serviciosfuncionales.AccionVencidaFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.AlertaMultipleFacadeLocal;
-import co.uniandes.sisinfo.serviciosfuncionales.AsistenciaGraduadaFacade;
-import co.uniandes.sisinfo.serviciosfuncionales.AsistenciaGraduadaFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.ConstanteFacade;
 import co.uniandes.sisinfo.serviciosfuncionales.datosmaestros.ProgramaFacadeLocal;
 import co.uniandes.sisinfo.serviciosfuncionales.seguridad.RolFacadeLocal;
@@ -50,11 +47,11 @@ public class AlertaMultipleFacadeTest {
 				.addPackage(AccionVencidaFacade.class.getPackage())
 				.addPackage(AccionVencidaFacadeLocal.class.getPackage())
 				.addPackage(AccionVencida.class.getPackage())
-				.addPackage(AsistenciaGraduadaFacade.class.getPackage())
-				.addPackage(AsistenciaGraduadaFacadeLocal.class.getPackage())
-				.addPackage(AsistenciaGraduada.class.getPackage())
+				 
+				 
+				 
 				.addPackage(ConstanteFacade.class.getPackage())
-				.addPackage(AsistenciaGraduadaFacadeLocal.class.getPackage())
+				 
 				 
 				.addPackage(EventoExternoBeanLocal.class.getPackage())
 				.addPackage(ProgramaFacadeLocal.class.getPackage())
@@ -78,6 +75,8 @@ public class AlertaMultipleFacadeTest {
 		alertaMultipleFacade.edit(av);
 		alertaMultipleFacade.remove(av);
 		alertaMultipleFacade.find(1L);
+		alertaMultipleFacade.findAll();
+		alertaMultipleFacade.findByTipo("12");
 
 	}
 
