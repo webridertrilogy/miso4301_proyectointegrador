@@ -1,9 +1,9 @@
 pre {
-  	"Running Tablas Transformationd".println();
+  	"Running Tablas Repetidas Transformationd".println();
 	var microservicios = source!Microservicio.allInstances();	
 	var rangoColores = Sequence {target!Color#blue, target!Color#green, target!Color#yellow, target!Color#orange, target!Color#red, target!Color#purple, target!Color#gray};  
 	var simplificado = new target!Diagrama();
-	simplificado.name = "Microservicios";
+	simplificado.name = "MicroserviciosTablasRepetidas";
 	simplificado.elementos = new Sequence();
 	simplificado.isRoot = true;
 }

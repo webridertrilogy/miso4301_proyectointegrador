@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="ASCII"?>
+<visualizacionMetricas3.visualizacion:Diagrama xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:visualizacionMetricas3.visualizacion="http://visualizacionMetricas3/visualizacion" name="MicroserviciosTablasRepetidas" isRoot="true">
+  <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Microservicio 1" color="green" largo="8" alto="8">
+    <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" grosor="3" color="purple" source="//@elementos.0" target="//@elementos.12" nameSource="" nameTarget="C"/>
+    <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" grosor="3" color="purple" source="//@elementos.0" target="//@elementos.13" nameSource="" nameTarget="C"/>
+    <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" grosor="3" color="purple" source="//@elementos.0" target="//@elementos.14" nameSource="" nameTarget="C"/>
+    <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" grosor="1" color="green" source="//@elementos.0" target="//@elementos.15" nameSource="" nameTarget="R"/>
+    <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" grosor="4" color="red" source="//@elementos.0" target="//@elementos.12" nameSource="" nameTarget="D"/>
+    <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" grosor="4" color="red" source="//@elementos.0" target="//@elementos.13" nameSource="" nameTarget="D"/>
+  </elementos>
+  <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Microservicio 10" color="yellow" largo="8" alto="8"/>
+  <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Microservicio 12" color="orange" largo="8" alto="8"/>
+  <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Microservicio 11" color="red" largo="8" alto="8">
+    <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" grosor="3" color="purple" source="//@elementos.3" target="//@elementos.14" nameSource="" nameTarget="C"/>
+    <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" grosor="1" color="green" source="//@elementos.3" target="//@elementos.14" nameSource="" nameTarget="R"/>
+  </elementos>
+  <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Microservicio 5" color="purple" largo="8" alto="8">
+    <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" grosor="1" color="green" source="//@elementos.4" target="//@elementos.16" nameSource="" nameTarget="R"/>
+    <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" grosor="1" color="green" source="//@elementos.4" target="//@elementos.17" nameSource="" nameTarget="R"/>
+  </elementos>
+  <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Microservicio 4" largo="8" alto="8">
+    <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" grosor="3" color="purple" source="//@elementos.5" target="//@elementos.15" nameSource="" nameTarget="C"/>
+    <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" grosor="1" color="green" source="//@elementos.5" target="//@elementos.16" nameSource="" nameTarget="R"/>
+    <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" grosor="1" color="green" source="//@elementos.5" target="//@elementos.17" nameSource="" nameTarget="R"/>
+    <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" grosor="1" color="green" source="//@elementos.5" target="//@elementos.15" nameSource="" nameTarget="R"/>
+    <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" grosor="2" color="orange" source="//@elementos.5" target="//@elementos.15" nameSource="" nameTarget="U"/>
+  </elementos>
+  <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Microservicio 3" color="blue" largo="8" alto="8">
+    <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" grosor="3" color="purple" source="//@elementos.6" target="//@elementos.12" nameSource="" nameTarget="C"/>
+    <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" grosor="3" color="purple" source="//@elementos.6" target="//@elementos.13" nameSource="" nameTarget="C"/>
+    <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" grosor="3" color="purple" source="//@elementos.6" target="//@elementos.15" nameSource="" nameTarget="C"/>
+    <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" grosor="1" color="green" source="//@elementos.6" target="//@elementos.12" nameSource="" nameTarget="R"/>
+    <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" grosor="1" color="green" source="//@elementos.6" target="//@elementos.13" nameSource="" nameTarget="R"/>
+    <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" grosor="1" color="green" source="//@elementos.6" target="//@elementos.15" nameSource="" nameTarget="R"/>
+    <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" grosor="4" color="red" source="//@elementos.6" target="//@elementos.12" nameSource="" nameTarget="D"/>
+    <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" grosor="4" color="red" source="//@elementos.6" target="//@elementos.13" nameSource="" nameTarget="D"/>
+  </elementos>
+  <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Microservicio 2" color="green" largo="8" alto="8">
+    <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" grosor="1" color="green" source="//@elementos.7" target="//@elementos.18" nameSource="" nameTarget="R"/>
+  </elementos>
+  <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Microservicio 9" color="yellow" largo="8" alto="8">
+    <conectores xsi:type="visualizacionMetricas3.visualizacion:Asociacion" grosor="1" color="green" source="//@elementos.8" target="//@elementos.18" nameSource="" nameTarget="R"/>
+  </elementos>
+  <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Microservicio 8" color="orange" largo="8" alto="8"/>
+  <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Microservicio 7" color="red" largo="8" alto="8"/>
+  <elementos xsi:type="visualizacionMetricas3.visualizacion:Elipse" name="Microservicio 6" color="purple" largo="8" alto="8"/>
+  <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" name="proceso_evento"/>
+  <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" name="proceso_electoral"/>
+  <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" name="auditoria"/>
+  <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" name="candidato"/>
+  <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" name="ma_relacion_cencost"/>
+  <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" name="secretaria_programa"/>
+  <elementos xsi:type="visualizacionMetricas3.visualizacion:Clase" name="VIE_PROFESOR_PROGRAMA"/>
+</visualizacionMetricas3.visualizacion:Diagrama>
