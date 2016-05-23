@@ -1,0 +1,15 @@
+
+Codigo: Código fuente de la transformación.
+	-extras: codigo fuente de los casos de estudio y/o proyectos de ayuda.
+		* log4jdbcfork: Fork de la librería log4jdbc para hacer logging de las sentencias sql. 
+		* sisinfo_core: codigo fuente de la capa de negocio del Proyecto SinsInfo. No contiene la capa web ni los módulos historico, ant, serviciosEnrutacion, bolsaEmpleo, documentosPrivados, crm, ReservaInventario. 
+	- transformacion: codigo fuente de la transformación.
+		* miso4301_201520: contiene los etl, metamodelos y modelos de la cadena de transformación.
+		* pluginetl: Plugin Eclipse que contiene algoritmo EJBPath  y procesamiento de archivo de log de sentencias sql. 
+		* SiriusLayoutOraForms6Cartography: Plugin para generar los diagramas de manera radial.
+		* Visualizacion3SIRIUS: Proyecto modeling que contiene el viewpoint o definiciones de las gráficas a generar en Sirius. 
+
+Documentos: Manuales de la ejecución de la cadena.
+	- manual_archivo_log_sql.pdf: Manual para generar el archvio de log de sentencias sql (paso opcional en la cadena de transformación).
+	- manual_ejecucion_cadena_transformacion.pdf: Manual para instalar y ejecutar toda la acdena de transformación y ver las gráficas en Sirius.
+	- VisualizacionSIRIUS.pdf: Otro manual centrado en cómo generar las gráficas en Sirius.  
