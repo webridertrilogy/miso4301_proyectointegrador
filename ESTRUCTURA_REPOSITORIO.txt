@@ -14,3 +14,50 @@ Documentos: Manuales de la ejecución de la cadena.
 	- manual_ejecucion_cadena_transformacion.pdf: Manual para instalar y ejecutar toda la acdena de transformación y ver las gráficas en Sirius.
 	- VisualizacionSIRIUS.pdf: Otro manual centrado en cómo generar las gráficas en Sirius.  
     - Informe_ProyectoIntegrdor201520.pdf: Informe de lo realizado en el 2015-02. Creación del proyecto.
+    - Diagramas obtenidos.zip:
+                    1. CARRITO: Resultados de la ejecución con Market-Place.
+ 
+
+                        Para Carrito no se generaron diagramas de Microservicio-Tablas, ya que esta nueva visualización se realizo solo con SISINFO y con Votaciones. Dentro de Carrito se encuentran tres carpetas.
+                            50: Resultado de Microservicios al 50% de acoplamiento.
+                            80: Resultado de Microservicios al 80% de acoplamiento.
+                            Visualización: Resultado del diagrama de visualización (semestre 201502).
+                         
+                    2. SISINFO: Resultados de la ejecución con SisInfo.
+
+                        Dentro de SisInfo se encuentran tres carpetas.
+                         
+                        20: Resultado de Microservicios al 20% de acoplamiento. Dentro de esta carpeta se encuentra:
+                            simplificacion20.jpg: Diagrama de Microservicios al 20%.
+                            tablas20.png: Diagrama de dependencias entre Microservicios y Tablas al 20%.
+                        50: Resultado de Microservicios al 50% de acoplamiento. Dentro de esta carpeta se encuentra:
+                            simplificacion50.jpg: Diagrama de Microservicios al 50%.
+                            tablas50.jpg: Diagrama de dependencias entre Microservicios y Tablas al 50%.
+                        80: Resultado de Microservicios al 80% de acoplamiento. Dentro de esta carpeta se encuentra:
+                            CasosEspecificos: Carpeta en el cual se muestran unos diagramas ampliados de lo que se puede ver en la visualización de dependencias entre Microservicios y Tablas al 80%. Dentro de esta carpeta se encuentra:
+                                MicrosDependientesDebil.jpg: Diagrama que muestra una dependencia debil entre dos Microservicios y dos tablas. Le decimos debil, ya que a una de las dos tablas se realizan solo lecturas. 
+                                MicrosDependientesFuerte.jpg: Diagrama que muestra una dependencia fuerte entre dos Microservicios y una tabla. Le decimos fuerte, ya que cada uno de los dos Microservicios hacen practicamente un CRUD sobre la misma tabla.
+                                MicrosIndependientes.jpg: Diagrama que muestra dos Microservicios que acceden a dos tablas (CRUD) y son completamente independientes. Le decimos independientes, ya que ningún otro Microservicio accede a dichas tablas.
+                            Simplificacion: Carpeta que muestra el resultado de los Microservicios al 80% de acoplamiento. Dentro de esta carpeta se encuentra:
+                                simplificacion80.jpg: Diagrama de Microservicios al 80%.
+                            tablas: Carpeta que muestra el resultado de la dependencia entre Microservicio-Tablas al 80%. Dentro de esta carpeta se encuentran dos subcarpetas (Se recomienda usar el diagrama de la subcarpeta con nombre SVG):
+                                svg: Carpeta que tiene el diagrama generado en formato svg de Microservicio-Tablas al 80%.
+                                    tablas80.svg: Diagrama de dependencia entre Microservicio-Tablas al 80%.
+                        Visualización: Resultado del diagrama de visualización (semestre 201502).
+                    3. Votaciones: Resultados de la ejecución con Votaciones.
+
+                        Dentro de Votaciones se encuentran tres carpetas.
+                         
+                        70: Resultado de Microservicios al 70% de acoplamiento. Dentro de esta carpeta se encuentra:
+                            simplificacion70.jpg: Diagrama de Microservicios al 70%.
+                            repetidas.jpg: Diagrama de dependencias entre Microservicios y Tablas al 70%. (Solo se muestran las tablas que son accedidas por minimo dos Microservicios al mismo tiempo)
+                            total.jpg: Diagrama de dependencias entre Microservicios y Tablas al 70%. (Se muestran las tablas que son accedidas por cualquier Microservicio, sin importar si a una tabla accede acceden dos Microservicios al mismo tiempo, es decir, muestra tambien las tablas que son accedidas por un único Microservicio).
+                        80: Resultado de Microservicios al 80% de acoplamiento. Dentro de esta carpeta se encuentra:
+                            CasosEspecificos: Carpeta en el cual se muestran unos diagramas ampliados de lo que se puede ver en la visualización de dependencias entre Microservicios y Tablas al 80%. Dentro de esta carpeta se encuentra:
+                                MicrosDependientesDebil.jpg: Diagrama que muestra una dependencia debil entre dos Microservicios y dos tablas. Le decimos debil, ya que a una de las tres tablas se realizan solo lecturas. 
+                                MicrosDependientesFuerte.jpg: Diagrama que muestra una dependencia fuerte entre dos Microservicios y dos tablas. Le decimos fuerte, ya que cada uno de los dos Microservicios hacen practicamente un CRUD sobre cada una de las dos tablas.
+                                MicrosDependientesFuerte1.jpg: Diagrama que muestra una dependencia fuerte entre cuatro Microservicios y una tabla. Le decimos fuerte, ya que cada uno de los dos Microservicios acceden a la misma tabla.
+                                MicrosIndependientes.jpg: Diagrama que muestra dos Microservicios que acceden a dos tablas y son completamente independientes. Le decimos independientes, ya que ningún otro Microservicio accede a dichas tablas.
+                            simplificacion80.jpg: Diagrama de Microservicios al 80%.
+                            tablasTotal80.jpg: Diagrama de dependencias entre Microservicios y Tablas al 80%. (Se muestran las tablas que son accedidas por cualquier Microservicio, sin importar si a una tabla accede acceden dos Microservicios al mismo tiempo, es decir, muestra también las tablas que son accedidas por un único Microservicio).
+                        Visualización: Resultado del diagrama de visualización (semestre 201502).
